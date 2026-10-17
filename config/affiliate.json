@@ -1,0 +1,19 @@
+{
+  "partner_id": "123436",
+  "klook": {
+    "aid": "123436",
+    "base_url": "https://www.klook.com/zh-TW/",
+    "param_name": "aid",
+    "extra_params": {
+      "utm_medium": "affiliate-alwayson",
+      "utm_source": "non-network",
+      "utm_campaign": "123436"
+    }
+  },
+  "hotels": {
+    "aid": "123436",
+    "agoda_cid": "123436",
+    "booking_aid": "123436",
+    "klook_hotel_search_base": "https://www.klook.com/zh-TW/hotels/searchresult/"
+  }
+}

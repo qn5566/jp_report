@@ -1,0 +1,662 @@
+[
+  {
+    "id": "tokyo-jingu-gai-ginkgo",
+    "city": "tokyo",
+    "area_zh": "青山・信濃町",
+    "name_zh": "明治神宮外苑 銀杏大道",
+    "name_ja": "明治神宮外苑 いちょう並木",
+    "type": "flower",
+    "sub_type": "koyo",
+    "lat": 35.6729,
+    "lng": 139.7176,
+    "station_zh": "銀座線「外苑前站」步行 3 分鐘",
+    "status_badge": "🍁 最佳觀賞期・見頃 (85%)",
+    "status_level": "peak",
+    "progress_pct": 85,
+    "season_period": "11月中旬 ～ 12月上旬",
+    "updated_at": "今日 06:00 自動更新 (tenki.jp)",
+    "summary_zh": "東京秋季最具代表性的 300 公尺金黃色銀杏隧道！146 棵巨型銀杏樹同時轉黃，週末封街步行者天國超好拍。",
+    "tips_zh": "建議早上 08:30 前抵達避開人潮，拍完可順遊表參道或直接前往澀谷 SHIBUYA SKY。",
+    "source_url": "https://koyo.walkerplus.com/detail/ar0313e12751/",
+    "hotel_area_keyword": "Aoyama Shinjuku Tokyo",
+    "nearby_hotels": [
+      {
+        "name": "三井花園飯店神宮外苑東京普米爾",
+        "distance": "步行 5 分鐘 (400m)",
+        "tag": "陽台直看外苑綠意・大浴場",
+        "price_hint": "NT$ 4,800 起/晚",
+        "search_query": "Mitsui Garden Hotel Jingugaien Tokyo Premier"
+      },
+      {
+        "name": "東京東急 Stay 青山 Premier",
+        "distance": "距離 950m",
+        "tag": "房內附洗脫烘衣機・高樓夜景",
+        "price_hint": "NT$ 4,200 起/晚",
+        "search_query": "Tokyu Stay Aoyama Premier"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-shibuya-sky",
+        "title": "SHIBUYA SKY 展望台電子門票",
+        "tag": "距離 2.1km・東京銷量 No.1",
+        "price": "NT$ 525 起",
+        "rating": "4.9 (6.8萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/70672-shibuya-sky-tokyo/"
+      },
+      {
+        "id": "klook-tokyo-subway",
+        "title": "東京地鐵一日券 / 二日券 / 三日券",
+        "tag": "直達外苑前站必備",
+        "price": "NT$ 170 起",
+        "rating": "4.9 (12萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/1552-subway-ticket-tokyo/"
+      }
+    ]
+  },
+  {
+    "id": "tokyo-showa-kinen-koyo",
+    "city": "tokyo",
+    "area_zh": "立川・多摩",
+    "name_zh": "國營昭和紀念公園 紅葉＆銀杏夜楓",
+    "name_ja": "国営昭和記念公園 黄葉・紅葉まつり",
+    "type": "flower",
+    "sub_type": "koyo",
+    "lat": 35.7006,
+    "lng": 139.3998,
+    "station_zh": "JR 中央線「西立川站」步行 2 分鐘",
+    "status_badge": "🍁 滿開見頃・夜楓點燈中 (95%)",
+    "status_level": "peak",
+    "progress_pct": 95,
+    "season_period": "10月下旬 ～ 11月下旬 (夜間點燈 16:30–20:30)",
+    "updated_at": "今日 06:00 自動更新 (Weathernews)",
+    "summary_zh": "鋪滿金黃銀杏地毯的「運河銀杏並木」與「日本庭園夜楓點燈」，水池倒映火紅楓葉宛如仙境。",
+    "tips_zh": "建議下午 14:30 入園先拍金黃銀杏大道，16:30 接著看日本庭園夜楓點燈。",
+    "source_url": "https://koyo.walkerplus.com/detail/ar0313e12708/",
+    "hotel_area_keyword": "Tachikawa Station Tokyo",
+    "nearby_hotels": [
+      {
+        "name": "SORANO HOTEL 立川空之飯店",
+        "distance": "公園正對面 (步行 1 分鐘)",
+        "tag": "無邊際溫泉泳池俯瞰整座昭和公園",
+        "price_hint": "NT$ 7,900 起/晚",
+        "search_query": "SORANO HOTEL Tachikawa Tokyo"
+      },
+      {
+        "name": "立川埃米西亞東京飯店 (Hotel Emisia Tokyo Tachikawa)",
+        "distance": "立川站步行 2 分鐘",
+        "tag": "高CP值・直通伊勢丹商圈",
+        "price_hint": "NT$ 2,600 起/晚",
+        "search_query": "Hotel Emisia Tokyo Tachikawa"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-jr-tokyo-wide",
+        "title": "JR 東京廣域周遊券 (可搭中央線特急)",
+        "tag": "近郊賞楓必買神券",
+        "price": "NT$ 3,250 起",
+        "rating": "4.9 (4.2萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/19690-jr-tokyo-wide-pass/"
+      }
+    ]
+  },
+  {
+    "id": "tokyo-meguro-sakura",
+    "city": "tokyo",
+    "area_zh": "中目黑・代官山",
+    "name_zh": "目黑川 櫻花並木＆夜櫻點燈",
+    "name_ja": "目黒川の桜並木",
+    "type": "flower",
+    "sub_type": "sakura",
+    "lat": 35.6443,
+    "lng": 139.6991,
+    "station_zh": "東急東橫線・日比谷線「中目黑站」步行 1 分鐘",
+    "status_badge": "🌸 春季名所・歷年 3月下旬滿開",
+    "status_level": "upcoming",
+    "progress_pct": 100,
+    "season_period": "每年 3月下旬 ～ 4月上旬 (含粉紅燈籠夜櫻)",
+    "updated_at": "歷年滿開基準 03/28 (WNI 櫻花資料庫)",
+    "summary_zh": "全長 4 公里的河岸種滿 800 棵染井吉野櫻，花瓣飄落河面形成夢幻「粉紅花筏（櫻吹雪）」，沿岸還有草莓香檳攤位。",
+    "tips_zh": "可從池尻大橋站往中目黑方向散步，人潮較少且橋上視角最佳。",
+    "source_url": "https://sakura.walkerplus.com/detail/ar0313e12628/",
+    "hotel_area_keyword": "Shibuya Nakameguro Tokyo",
+    "nearby_hotels": [
+      {
+        "name": "澀谷 STREAM 卓越大飯店 (Shibuya Stream Hotel)",
+        "distance": "東橫線 1 站直達 (1.8km)",
+        "tag": "澀谷站直結・下樓即餐廳街",
+        "price_hint": "NT$ 6,500 起/晚",
+        "search_query": "Shibuya Stream Hotel Tokyo"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-shibuya-sky-2",
+        "title": "SHIBUYA SKY 展望台電子門票",
+        "tag": "中目黑搭車 4 分鐘即達",
+        "price": "NT$ 525 起",
+        "rating": "4.9 (6.8萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/70672-shibuya-sky-tokyo/"
+      }
+    ]
+  },
+  {
+    "id": "tokyo-ueno-sakura",
+    "city": "tokyo",
+    "area_zh": "上野・淺草",
+    "name_zh": "上野恩賜公園 櫻花通＆不忍池",
+    "name_ja": "上野恩賜公園 桜まつり",
+    "type": "flower",
+    "sub_type": "sakura",
+    "lat": 35.7147,
+    "lng": 139.7732,
+    "station_zh": "JR・東京Metro「上野站」公園口步行 2 分鐘",
+    "status_badge": "🌸 日本櫻花百選・屋台祭典名所",
+    "status_level": "upcoming",
+    "progress_pct": 100,
+    "season_period": "3月中旬 ～ 4月上旬 (秋季 11月為銀杏紅葉期)",
+    "updated_at": "今日 06:00 自動更新",
+    "summary_zh": "東京最熱鬧的賞花聖地！超過 1,200 棵櫻花與秋冬銀杏交織，園內有上野動物園、美術館與東照宮屋台市集。",
+    "tips_zh": "從成田機場搭 Skyliner 41 分鐘直達京成上野站，放好行李就能馬上開始逛！",
+    "source_url": "https://sakura.walkerplus.com/detail/ar0313e12602/",
+    "hotel_area_keyword": "Ueno Station Tokyo",
+    "nearby_hotels": [
+      {
+        "name": "NOHGA HOTEL UENO TOKYO (上野諾加上野飯店)",
+        "distance": "上野站步行 3 分鐘",
+        "tag": "台灣人最愛質感設計旅店",
+        "price_hint": "NT$ 4,900 起/晚",
+        "search_query": "NOHGA HOTEL UENO TOKYO"
+      },
+      {
+        "name": "MIMARU 東京上野 NORTH (美滿如家公寓式飯店)",
+        "distance": "上野站步行 4 分鐘",
+        "tag": "家庭/好友多人房首選・附廚房",
+        "price_hint": "NT$ 6,800 起/晚",
+        "search_query": "MIMARU Tokyo Ueno North"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-skyliner",
+        "title": "京成電鐵 Skyliner 車票 (成田機場 ⇄ 上野 41分鐘)",
+        "tag": "住上野必買・掃 QR Code 兌換",
+        "price": "NT$ 515 起",
+        "rating": "4.9 (15萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/1410-skyliner-tokyo/"
+      },
+      {
+        "id": "klook-skytree",
+        "title": "東京晴空塔展望台門票",
+        "tag": "距離 2.4km・淺草上野順遊",
+        "price": "NT$ 410 起",
+        "rating": "4.8 (5.4萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/41352-tokyo-skytree/"
+      }
+    ]
+  },
+  {
+    "id": "tokyo-odaiba-rainbow-hanabi",
+    "city": "tokyo",
+    "area_zh": "台場・豐洲",
+    "name_zh": "台場彩虹煙火大會 (お台場レインボー花火)",
+    "name_ja": "お台場レインボー花火",
+    "type": "fireworks",
+    "sub_type": "winter_hanabi",
+    "lat": 35.6295,
+    "lng": 139.7745,
+    "station_zh": "百合海鷗號「台場站」或「御台場海濱公園站」步行 3 分鐘",
+    "status_badge": "🎆 開催決定・每週六施放倒數",
+    "status_level": "countdown",
+    "event_date_iso": "2026-12-05T19:00:00+09:00",
+    "fireworks_count": "每次約 1,300 發 (全 4 場)",
+    "season_period": "12月每週六 19:00～19:05 (自由女神像＋彩虹大橋同框)",
+    "updated_at": "今日同步自 Walkerplus 花火",
+    "summary_zh": "秋冬限定超浪漫海灣煙火！在凜冽清澈的冬夜空氣中，從台場海濱公園與自由女神像後方綻放璀璨煙火與聖誕音樂秀。",
+    "tips_zh": "推薦預約「東京灣屋形船」在船上邊吃天婦羅邊看煙火，或入住台場日航/希爾頓海景房直接在房間看！",
+    "source_url": "https://hanabi.walkerplus.com/list/ar0313/",
+    "hotel_area_keyword": "Odaiba Tokyo",
+    "nearby_hotels": [
+      {
+        "name": "東京台場希爾頓飯店 (Hilton Tokyo Odaiba)",
+        "distance": "煙火正對面 (步行 1 分鐘)",
+        "tag": "私人陽台正對彩虹大橋與煙火施放點",
+        "price_hint": "NT$ 7,200 起/晚",
+        "search_query": "Hilton Tokyo Odaiba"
+      },
+      {
+        "name": "東京台場日航大酒店 (Grand Nikko Tokyo Daiba)",
+        "distance": "台場站直結 (步行 2 分鐘)",
+        "tag": "高樓層港灣夜景無敵・房間寬敞",
+        "price_hint": "NT$ 5,600 起/晚",
+        "search_query": "Grand Nikko Tokyo Daiba"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-teamlab-planets",
+        "title": "豐洲 teamLab Planets TOKYO 門票",
+        "tag": "距離 2.2km・台場半日順遊必排",
+        "price": "NT$ 820 起",
+        "rating": "4.9 (9.5萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/25300-teamlab-planets-toyosu-tokyo-ticket/"
+      },
+      {
+        "id": "klook-joypolis",
+        "title": "東京台場 JOYPOLIS 室內主題樂園門票",
+        "tag": "看煙火前室內玩樂首選",
+        "price": "NT$ 750 起",
+        "rating": "4.8 (8,200則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/1523-tokyo-joypolis-ticket/"
+      }
+    ]
+  },
+  {
+    "id": "tokyo-sumidagawa-hanabi",
+    "city": "tokyo",
+    "area_zh": "淺草・押上",
+    "name_zh": "隅田川花火大會 (東京最大級 2萬發)",
+    "name_ja": "隅田川花火大会",
+    "type": "fireworks",
+    "sub_type": "summer_hanabi",
+    "lat": 35.7145,
+    "lng": 139.8016,
+    "station_zh": "東京Metro・都營「淺草站」步行 5 分鐘",
+    "status_badge": "🎆 夏季指標・20,000發雙會場",
+    "status_level": "scheduled",
+    "event_date_iso": "2027-07-24T19:00:00+09:00",
+    "fireworks_count": "約 20,000 發 (第一會場＋第二會場)",
+    "season_period": "每年 7月最後一個週六 19:00～20:30",
+    "updated_at": "同步自 Walkerplus 花火 (ar0313)",
+    "summary_zh": "傳承自江戶時代的東京第一花火盛會！晴空塔夜間點燈與兩萬發高空煙火同框，吸引近百萬人穿著浴衣朝聖。",
+    "tips_zh": "煙火當天淺草周邊飯店極度搶手，建議提前 3～6 個月透過下方連結卡位河景飯店與浴衣體驗！",
+    "source_url": "https://hanabi.walkerplus.com/detail/ar0313e00858/",
+    "hotel_area_keyword": "Asakusa Skytree Tokyo",
+    "nearby_hotels": [
+      {
+        "name": "淺草東武飯店 (Asakusa Tobu Hotel)",
+        "distance": "淺草站正對面 (步行 1 分鐘)",
+        "tag": "雷門旁超新飯店・散場免擠電車",
+        "price_hint": "NT$ 4,500 起/晚",
+        "search_query": "Asakusa Tobu Hotel"
+      },
+      {
+        "name": "ONE@Tokyo 押上設計旅店 (隈研吾設計)",
+        "distance": "晴空塔旁步行 3 分鐘",
+        "tag": "頂樓露台直看晴空塔與花火方向",
+        "price_hint": "NT$ 3,600 起/晚",
+        "search_query": "ONE@Tokyo Oshiage"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-asakusa-kimono",
+        "title": "淺草和服＆夏季浴衣租借體驗 (含髮型設計)",
+        "tag": "花火大會＆雷門拍照必備",
+        "price": "NT$ 680 起",
+        "rating": "4.9 (1.8萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/3085-kimono-experience-tokyo/"
+      },
+      {
+        "id": "klook-skytree-hanabi",
+        "title": "東京晴空塔展望台門票 (俯瞰隅田川全景)",
+        "tag": "距離 900m",
+        "price": "NT$ 410 起",
+        "rating": "4.8 (5.4萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/41352-tokyo-skytree/"
+      }
+    ]
+  },
+  {
+    "id": "tokyo-christmas-market-event",
+    "city": "tokyo",
+    "area_zh": "明治神宮外苑・六本木",
+    "name_zh": "東京聖誕市集 ＆ 六本木けやき坂冬季燈飾",
+    "name_ja": "東京クリスマスマーケット & 六本木ヒルズイルミネーション",
+    "type": "event",
+    "sub_type": "festival",
+    "lat": 35.6604,
+    "lng": 139.7292,
+    "station_zh": "日比谷線「六本木站」直結 / 外苑前站步行 5 分鐘",
+    "status_badge": "🎪 期間限定・熱烈舉辦中",
+    "status_level": "active",
+    "season_period": "11月上旬 ～ 12月25日 11:00–21:30",
+    "updated_at": "今日同步自 東京都 Open Data / Walkerplus",
+    "summary_zh": "14 公尺高的德國原裝聖誕金字塔、熱紅酒馬克杯與歐洲手作木偶市集，搭配六本木櫸木坂 80 萬顆銀白藍光燈海與東京鐵塔同框！",
+    "tips_zh": "六本木櫸木坂每天 17:00 準時亮燈，亮燈瞬間整條大道與遠處紅白東京鐵塔同框最震撼。",
+    "source_url": "https://www.walkerplus.com/event_list/ar0313/",
+    "hotel_area_keyword": "Roppongi Tokyo Tower",
+    "nearby_hotels": [
+      {
+        "name": "東京六本木光芒飯店 (Candeo Hotels Tokyo Roppongi)",
+        "distance": "六本木站步行 2 分鐘",
+        "tag": "頂樓露天大浴場可看東京鐵塔",
+        "price_hint": "NT$ 5,400 起/晚",
+        "search_query": "Candeo Hotels Tokyo Roppongi"
+      },
+      {
+        "name": "東京皇家王子大飯店花園塔 (The Prince Park Tower Tokyo)",
+        "distance": "距離 1.5km",
+        "tag": "落地窗零死角正對東京鐵塔神級飯店",
+        "price_hint": "NT$ 9,800 起/晚",
+        "search_query": "The Prince Park Tower Tokyo"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-roppongi-hills",
+        "title": "六本木之丘展望台 Tokyo City View 門票",
+        "tag": "高空拍東京鐵塔＋聖誕燈海首選",
+        "price": "NT$ 390 起",
+        "rating": "4.8 (2.1萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/10435-roppongi-hills-observatory-ticket-tokyo/"
+      },
+      {
+        "id": "klook-tokyo-tower",
+        "title": "東京鐵塔瞭望台門票 (Main Deck / Top Deck)",
+        "tag": "距離 1.3km・經典地標",
+        "price": "NT$ 260 起",
+        "rating": "4.8 (6.3萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/4964-tokyo-tower-observatory-ticket/"
+      }
+    ]
+  },
+  {
+    "id": "tokyo-harry-potter-attraction",
+    "city": "tokyo",
+    "area_zh": "練馬・豐島園",
+    "name_zh": "東京華納兄弟哈利波特影城",
+    "name_ja": "ワーナー ブラザース スタジオツアー東京",
+    "type": "attraction",
+    "sub_type": "theme_park",
+    "lat": 35.7453,
+    "lng": 139.6461,
+    "station_zh": "西武豐島線・都營大江戶線「豐島園站」步行 2 分鐘",
+    "status_badge": "🎟️ Klook 獨家套票熱銷中",
+    "status_level": "hot",
+    "season_period": "全年開放（完全預約制・現場不售票）",
+    "updated_at": "Klook 即時票況同步",
+    "summary_zh": "亞洲唯一、全球最大哈利波特室內影城！親身走進霍格華茲大禮堂、斜角巷、9¾月台霍格華茲特快車，品嚐奶油啤酒。",
+    "tips_zh": "館內逛完約需 4～5 小時，現場完全不賣當日票，務必事先在 Klook 預訂指定入場時段（推薦搭配西武一日券或東京地鐵券套票）！",
+    "source_url": "https://www.klook.com/zh-TW/activity/84374-warner-bros-studio-tour-tokyo-making-harry-potter/",
+    "hotel_area_keyword": "Ikebukuro Shinjuku Tokyo",
+    "nearby_hotels": [
+      {
+        "name": "池袋太陽城王子大飯店 (Sunshine City Prince Hotel)",
+        "distance": "西武線 14 分鐘直達池袋",
+        "tag": "利木津巴士直達機場・樓下即寶可夢中心",
+        "price_hint": "NT$ 3,900 起/晚",
+        "search_query": "Sunshine City Prince Hotel Ikebukuro"
+      },
+      {
+        "name": "池袋大都會大飯店 (Hotel Metropolitan Tokyo Ikebukuro)",
+        "distance": "池袋站西口步行 3 分鐘",
+        "tag": "交通極度方便・房間寬敞安靜",
+        "price_hint": "NT$ 4,600 起/晚",
+        "search_query": "Hotel Metropolitan Tokyo Ikebukuro"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-harry-potter",
+        "title": "東京華納兄弟哈利波特影城門票 (官方授權即買即出票)",
+        "tag": "🔥 台灣旅客東京必買 Top 1",
+        "price": "NT$ 1,450 起",
+        "rating": "4.9 (4.9萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/84374-warner-bros-studio-tour-tokyo-making-harry-potter/"
+      }
+    ]
+  },
+  {
+    "id": "osaka-castle-koyo-sakura",
+    "city": "osaka",
+    "area_zh": "大阪城・森之宮",
+    "name_zh": "大阪城公園 黃金銀杏大道＆西之丸庭園",
+    "name_ja": "大阪城公園 紅葉・桜",
+    "type": "flower",
+    "sub_type": "koyo",
+    "lat": 34.6873,
+    "lng": 135.5262,
+    "station_zh": "JR 環狀線「大阪城公園站」或 Metro「谷町四丁目站」步行 5 分鐘",
+    "status_badge": "🍁 滿開見頃 (90%)・天守閣同框",
+    "status_level": "peak",
+    "progress_pct": 90,
+    "season_period": "紅葉銀杏：11月中旬～12月上旬｜櫻花：3月下旬～4月上旬",
+    "updated_at": "今日 06:00 自動更新 (tenki.jp 關西)",
+    "summary_zh": "長達 1 公里的東外堀銀杏大道與天守閣前的 300 年大銀杏樹正值金黃全盛期！春季更有西之丸庭園 3,000 棵櫻花夜櫻。",
+    "tips_zh": "天守閣現場排隊買票常需 40 分鐘以上，使用下方 Klook 電子門票或大阪周遊卡可直接掃碼快速入場！",
+    "source_url": "https://koyo.walkerplus.com/detail/ar0727e12977/",
+    "hotel_area_keyword": "Osaka Castle Kyobashi Osaka",
+    "nearby_hotels": [
+      {
+        "name": "大阪城雙樹希爾頓飯店 (DoubleTree by Hilton Osaka Castle)",
+        "distance": "大阪城公園對面 (步行 5 分鐘)",
+        "tag": "2024全新開幕・房內直接俯瞰大阪城天守閣",
+        "price_hint": "NT$ 5,200 起/晚",
+        "search_query": "DoubleTree by Hilton Osaka Castle"
+      },
+      {
+        "name": "大阪新大谷飯店 (Hotel New Otani Osaka)",
+        "distance": "大阪城公園站步行 3 分鐘",
+        "tag": "大阪城景第一排五星老字號",
+        "price_hint": "NT$ 4,800 起/晚",
+        "search_query": "Hotel New Otani Osaka"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-osaka-castle",
+        "title": "大阪城天守閣電子門票 (免排隊直入)",
+        "tag": "免排售票窗口・即買即用",
+        "price": "NT$ 130 起",
+        "rating": "4.9 (3.8萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/10700-osaka-castle-ticket/"
+      },
+      {
+        "id": "klook-osaka-amazing-pass",
+        "title": "大阪周遊卡 1日券 / 2日券 (免費進大阪城＋御座船＋梅田展望台)",
+        "tag": "🔥 玩大阪省錢必備神卡",
+        "price": "NT$ 660 起",
+        "rating": "4.9 (11萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/1323-amazing-pass-osaka/"
+      }
+    ]
+  },
+  {
+    "id": "osaka-minoh-koyo",
+    "city": "osaka",
+    "area_zh": "箕面・北攝",
+    "name_zh": "明治之森箕面國定公園 紅葉大瀑布",
+    "name_ja": "明治の森箕面国定公園（箕面大滝）",
+    "type": "flower",
+    "sub_type": "koyo",
+    "lat": 34.8537,
+    "lng": 135.4721,
+    "station_zh": "阪急箕面線「箕面站」出站即步道入口",
+    "status_badge": "🍁 絕景見頃 (80%)・炸楓葉名物",
+    "status_level": "peak",
+    "progress_pct": 80,
+    "season_period": "11月中旬 ～ 12月上旬",
+    "updated_at": "今日 06:00 自動更新 (Weathernews)",
+    "summary_zh": "日本瀑布百選「箕面大瀑布」高達 33 公尺，飛瀑與滿山火紅楓葉交織！沿途必吃百年傳統點心「炸楓葉天婦羅（もみじの天ぷら）」。",
+    "tips_zh": "可順遊距離不遠的「勝尾寺（滿滿不倒翁達摩與紅葉）」與「萬博紀念公園」，組成最完美的北大阪賞楓一日遊。",
+    "source_url": "https://koyo.walkerplus.com/detail/ar0727e12976/",
+    "hotel_area_keyword": "Umeda Osaka",
+    "nearby_hotels": [
+      {
+        "name": "大阪阪急呼吸飯店 (Hotel Hankyu RESPIRE OSAKA)",
+        "distance": "阪急梅田站直達箕面・樓下即 Yodobashi",
+        "tag": "台灣人住梅田首選・機場巴士直達",
+        "price_hint": "NT$ 4,300 起/晚",
+        "search_query": "Hotel Hankyu RESPIRE OSAKA"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-hankyu-pass",
+        "title": "阪急全線乘車券 (大阪梅田 ⇄ 箕面・京都・神戶無限搭)",
+        "tag": "去箕面瀑布必買交通券",
+        "price": "NT$ 160 起",
+        "rating": "4.8 (2.9萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/1332-hankyu-tourist-pass-osaka/"
+      }
+    ]
+  },
+  {
+    "id": "osaka-yodogawa-hanabi",
+    "city": "osaka",
+    "area_zh": "梅田・十三・淀川",
+    "name_zh": "浪速淀川花火大會 ＆ 萬博公園藝術花火",
+    "name_ja": "なにわ淀川花火大会 / 万博夜空がアートになる日",
+    "type": "fireworks",
+    "sub_type": "hanabi",
+    "lat": 34.7131,
+    "lng": 135.4795,
+    "station_zh": "阪急「十三站」或 JR「塚本站」・大阪梅田站步行 15 分鐘",
+    "status_badge": "🎆 萬博秋季花火倒數中・水上扇形煙火",
+    "status_level": "countdown",
+    "event_date_iso": "2026-11-28T18:30:00+09:00",
+    "fireworks_count": "約 15,000 ～ 20,000 發",
+    "season_period": "萬博藝術花火：11月下旬｜淀川花火：8月上旬",
+    "updated_at": "同步自 Walkerplus 大阪花火 (ar0727)",
+    "summary_zh": "關西規模最盛大的高空煙火秀！結合梅田摩天大樓群天際線（淀川）與太陽之塔音樂同步煙火（萬博），震撼力滿分。",
+    "tips_zh": "不想人擠人，強烈建議購買「梅田藍天大廈空中庭園」展望台門票，或入住梅田河景高樓飯店直接俯瞰！",
+    "source_url": "https://hanabi.walkerplus.com/list/ar0727/",
+    "hotel_area_keyword": "Umeda Juso Osaka",
+    "nearby_hotels": [
+      {
+        "name": "大阪威斯汀飯店 (The Westin Osaka)",
+        "distance": "梅田空中庭園旁 (距離淀川 1.2km)",
+        "tag": "高樓層正對淀川河岸與煙火視角",
+        "price_hint": "NT$ 6,500 起/晚",
+        "search_query": "The Westin Osaka"
+      },
+      {
+        "name": "大阪格蘭比亞大酒店 (Hotel Granvia Osaka)",
+        "distance": "JR 大阪站直結",
+        "tag": "下樓即車站與百貨・位置滿分",
+        "price_hint": "NT$ 4,200 起/晚",
+        "search_query": "Hotel Granvia Osaka"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-umeda-sky",
+        "title": "梅田藍天大廈 空中庭園展望台門票",
+        "tag": "距離 950m・360度高空俯瞰淀川與大阪夜景",
+        "price": "NT$ 340 起",
+        "rating": "4.8 (4.6萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/13075-umeda-sky-building-osaka/"
+      }
+    ]
+  },
+  {
+    "id": "osaka-midosuji-illumination-event",
+    "city": "osaka",
+    "area_zh": "難波・心齋橋・梅田",
+    "name_zh": "大阪・光之饗宴：御堂筋燈飾 ＆ 中之島光雕市集",
+    "name_ja": "大阪・光の饗宴（御堂筋イルミネーション & OSAKA光のルネサンス）",
+    "type": "event",
+    "sub_type": "illumination",
+    "lat": 34.6766,
+    "lng": 135.5003,
+    "station_zh": "Metro 御堂筋線「心齋橋站」・「難波站」・「淀屋橋站」出站即達",
+    "status_badge": "🎪 金氏世界紀錄・每晚點燈中",
+    "status_level": "active",
+    "season_period": "11月3日 ～ 12月31日 17:00–23:00",
+    "updated_at": "今日同步自 大阪市 Open Data / 官方活動庫",
+    "summary_zh": "從梅田一路延伸到難波全長 4 公里的「御堂筋星光銀杏大道」，加上中之島公會堂 3D 光雕投影與台灣燈區美食屋台市集！",
+    "tips_zh": "逛完心齋橋與道頓堀藥妝後，推薦搭乘「道頓堀觀光遊船」從水面欣賞兩岸霓虹與燈飾。",
+    "source_url": "https://www.hikari-kyoen.com/",
+    "hotel_area_keyword": "Namba Shinsaibashi Osaka",
+    "nearby_hotels": [
+      {
+        "name": "大阪瑞士南海飯店 (Swissotel Nankai Osaka)",
+        "distance": "南海難波站正上方 (直通關西機場)",
+        "tag": "御堂筋起點・拉車去機場免淋雨",
+        "price_hint": "NT$ 5,800 起/晚",
+        "search_query": "Swissotel Nankai Osaka"
+      },
+      {
+        "name": "Cross Hotel Osaka (大阪十字飯店)",
+        "distance": "御堂筋大道正旁邊・固力果跑跑人步行 1 分鐘",
+        "tag": "心齋橋道頓堀核心位置王",
+        "price_hint": "NT$ 4,700 起/晚",
+        "search_query": "Cross Hotel Osaka"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-nankai-rapit",
+        "title": "南海電鐵 Rapi:t 機場特急車票 (關西機場 ⇄ 難波 34分鐘)",
+        "tag": "住難波心齋橋必買・比現場便宜",
+        "price": "NT$ 285 起",
+        "rating": "4.9 (18萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/599-nankai-line-airport-express-osaka/"
+      },
+      {
+        "id": "klook-abeno-harukas",
+        "title": "阿倍野 HARUKAS 300 展望台門票",
+        "tag": "御堂筋線直達天王寺・關西第一高樓夜景",
+        "price": "NT$ 380 起",
+        "rating": "4.9 (7.2萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/1521-harukas-300-observatory-ticket-osaka/"
+      }
+    ]
+  },
+  {
+    "id": "osaka-usj-attraction",
+    "city": "osaka",
+    "area_zh": "櫻島・大阪灣",
+    "name_zh": "日本環球影城 (USJ) 超級任天堂世界＆咚奇剛國度",
+    "name_ja": "ユニバーサル・スタジオ・ジャパン (USJ)",
+    "type": "attraction",
+    "sub_type": "theme_park",
+    "lat": 34.6654,
+    "lng": 135.4323,
+    "station_zh": "JR 夢咲線「環球城站 (Universal City)」步行 3 分鐘",
+    "status_badge": "🎟️ 咚奇剛新園區＋聖誕派對熱銷中",
+    "status_level": "hot",
+    "season_period": "全年開放（冬季 NO LIMIT! 聖誕樹與霍格華茲燈光秀）",
+    "updated_at": "Klook 即時門票＋快通庫存同步",
+    "summary_zh": "最新開幕「咚奇剛國度（Donkey Kong Country）」瘋狂礦車＋超級瑪利歐世界＋哈利波特魔法世界，關西旅遊必去第一名！",
+    "tips_zh": "想保證進入「超級任天堂世界」免搶整理券，務必提早在 Klook 加購含瑪利歐保證入場的「快速通關券 (Express Pass)」！",
+    "source_url": "https://www.klook.com/zh-TW/activity/46604-universal-studios-japan-e-ticket-osaka-official-partner/",
+    "hotel_area_keyword": "Universal Studios Japan Osaka",
+    "nearby_hotels": [
+      {
+        "name": "日本環球影城園前飯店 (The Park Front Hotel at USJ)",
+        "distance": "USJ 大門正對面 (步行 1 分鐘)",
+        "tag": "距離園區最近No.1・一早排隊無敵",
+        "price_hint": "NT$ 6,200 起/晚",
+        "search_query": "The Park Front Hotel at Universal Studios Japan"
+      },
+      {
+        "name": "大阪環球影城東方飯店 (Oriental Hotel Universal City)",
+        "distance": "環球城站步行 1 分鐘",
+        "tag": "早餐現榨柳橙汁與漢堡超強・高CP值",
+        "price_hint": "NT$ 4,100 起/晚",
+        "search_query": "Oriental Hotel Universal City"
+      }
+    ],
+    "klook_tickets": [
+      {
+        "id": "klook-usj-ticket",
+        "title": "日本環球影城門票 (官方授權・掃 QR Code 直接入園)",
+        "tag": "🔥 關西銷量冠軍・超過 45 萬人預訂",
+        "price": "NT$ 1,850 起",
+        "rating": "4.9 (45萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/46604-universal-studios-japan-e-ticket-osaka-official-partner/"
+      },
+      {
+        "id": "klook-usj-express",
+        "title": "日本環球影城 Express Pass 快速通關券 4 / 7 (保證進任天堂世界)",
+        "tag": "免排隊玩瑪利歐＆咚奇剛必買",
+        "price": "NT$ 2,680 起",
+        "rating": "4.8 (16萬則評價)",
+        "url": "https://www.klook.com/zh-TW/activity/3407-universal-studios-japan-express-pass-osaka/"
+      }
+    ]
+  }
+]

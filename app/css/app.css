@@ -1,0 +1,399 @@
+/* 日本旅遊報報 - 四季變色龍高變現主題樣式表 */
+:root {
+  --theme-bg: #f0f9ff;
+  --theme-card-soft: #e0f2fe;
+  --theme-border: #93c5fd;
+  --theme-primary: #0284c7;
+  --theme-badge-text: #0369a1;
+  --ink-main: #1e293b;
+  --ink-muted: #64748b;
+  --coach-green-start: #059669;
+  --coach-green-end: #10b981;
+  --klook-orange: #ff5b00;
+}
+
+/* 春櫻花季：櫻花粉色主題 */
+body.theme-sakura {
+  --theme-bg: #fff5f8;
+  --theme-card-soft: #ffe4ec;
+  --theme-border: #f8bbd0;
+  --theme-primary: #e04f5f;
+  --theme-badge-text: #be123c;
+  background: linear-gradient(145deg, #fff5f8 0%, #fff9fb 50%, #fce4ec 100%);
+}
+
+/* 黃金銀杏：土黃金色主題 */
+body.theme-ginkgo {
+  --theme-bg: #fffbeb;
+  --theme-card-soft: #fef3c7;
+  --theme-border: #fcd34d;
+  --theme-primary: #ca8a04;
+  --theme-badge-text: #92400e;
+  background: linear-gradient(145deg, #fffbeb 0%, #fef9c3 55%, #fde68a 100%);
+}
+
+/* 秋楓紅葉：楓葉丹紅主題 */
+body.theme-maple {
+  --theme-bg: #fef2f2;
+  --theme-card-soft: #fee2e2;
+  --theme-border: #fca5a5;
+  --theme-primary: #dc2626;
+  --theme-badge-text: #991b1b;
+  background: linear-gradient(145deg, #fef2f2 0%, #fff7ed 55%, #ffedd5 100%);
+}
+
+/* 冬雪滑雪：粉雪冰晶藍主題 */
+body.theme-ski {
+  --theme-bg: #f0f9ff;
+  --theme-card-soft: #e0f2fe;
+  --theme-border: #93c5fd;
+  --theme-primary: #0284c7;
+  --theme-badge-text: #0369a1;
+  background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 55%, #dbeafe 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Hiragino Maru Gothic ProN", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  color: var(--ink-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-bottom: 82px;
+  transition: background 0.35s ease;
+}
+
+/* 四季飄落特效 (櫻花瓣 / 銀杏葉 / 楓葉 / 雪花) */
+@keyframes jp-fall {
+  0% { transform: translateY(-30px) translateX(0) rotate(0deg); opacity: 0; }
+  15% { opacity: 0.85; }
+  85% { opacity: 0.85; }
+  100% { transform: translateY(92vh) translateX(55px) rotate(320deg); opacity: 0; }
+}
+
+.jp-particles-rain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  overflow: hidden;
+}
+
+.jp-falling-particle {
+  position: absolute;
+  top: -28px;
+  font-size: 16px;
+  animation: jp-fall linear infinite;
+}
+
+/* WebView App 手機框觀賞模式 */
+.jp-app-stage.webview-frame {
+  max-width: 420px;
+  margin: 14px auto 28px;
+  border: 10px solid #1e293b;
+  border-radius: 42px;
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.28);
+  background: var(--theme-bg);
+  overflow: hidden;
+}
+
+.jp-webview-statusbar {
+  display: none;
+  background: #1e293b;
+  color: #fff;
+  padding: 7px 20px;
+  font-size: 11.5px;
+  font-weight: 800;
+  justify-content: space-between;
+}
+
+.jp-app-stage.webview-frame .jp-webview-statusbar {
+  display: flex;
+}
+
+.jp-app-stage.webview-frame .jp-main-layout,
+.jp-app-stage.webview-frame .jp-cards-grid {
+  grid-template-columns: 1fr !important;
+}
+
+.jp-app-stage.webview-frame .jp-map-panel {
+  position: relative !important;
+  top: 0 !important;
+}
+
+/* 頂部緊湊導覽列 */
+.jp-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 2px solid var(--theme-border);
+  padding: 10px 16px;
+}
+
+.jp-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.jp-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jp-logo-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--theme-card-soft);
+  border: 1.5px solid var(--theme-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jp-brand-title {
+  font-size: 17px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jp-aid-pill {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.jp-row-bar {
+  max-width: 1200px;
+  margin: 8px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.jp-pill-btn {
+  border: 1.5px solid var(--theme-border);
+  background: #fff;
+  color: var(--ink-main);
+  padding: 6px 13px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.jp-pill-btn.active {
+  background: var(--theme-primary);
+  color: #fff;
+  border-color: var(--theme-primary);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* 動態子篩選列 (滑雪分級避雷 / WNI花開時間點) */
+.jp-subfilter-box {
+  max-width: 1200px;
+  margin: 8px auto 0;
+  background: var(--theme-bg);
+  border: 1.5px solid var(--theme-border);
+  border-radius: 14px;
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* 主內容雙欄佈局 */
+.jp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 16px;
+}
+
+.jp-main-layout {
+  display: grid;
+  grid-template-columns: 390px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.jp-map-panel {
+  position: sticky;
+  top: 175px;
+  background: #fff;
+  border-radius: 22px;
+  padding: 12px;
+  border: 2px solid var(--theme-border);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+#jp-leaflet-map {
+  width: 100%;
+  height: 340px;
+  border-radius: 16px;
+  border: 1.5px solid var(--theme-border);
+  z-index: 1;
+}
+
+.jp-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+.jp-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 15px;
+  border: 2px solid var(--theme-border);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.jp-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--theme-primary);
+}
+
+/* 🔥 卡片置頂高對比翠綠漸層「預約中文滑雪教練」按鈕 */
+.jp-coach-banner-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 9px 12px;
+  margin-bottom: 10px;
+  border-radius: 13px;
+  background: linear-gradient(90deg, #059669 0%, #0d9488 50%, #16a34a 100%);
+  color: #fff !important;
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.28);
+}
+
+/* 花季置頂「包車/一日遊」高分潤按鈕 */
+.jp-charter-banner-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 9px 12px;
+  margin-bottom: 10px;
+  border-radius: 13px;
+  background: linear-gradient(90deg, #ff5b00 0%, #e11d48 100%);
+  color: #fff !important;
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(225, 29, 72, 0.24);
+}
+
+/* SURF&SNOW 同步雪況三欄儀表板 */
+.jp-ski-sync-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 13px;
+  padding: 8px;
+  margin: 8px 0;
+  text-align: center;
+}
+
+.jp-ski-sync-cell {
+  background: #fff;
+  border-radius: 9px;
+  padding: 5px 4px;
+  border: 1px solid #e0f2fe;
+}
+
+.jp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 抽屜 Modal */
+.jp-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 900;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.jp-drawer-backdrop.open {
+  display: flex;
+}
+
+.jp-drawer {
+  background: #fff;
+  border-top: 3px solid var(--theme-primary);
+  width: min(720px, 100%);
+  max-height: 86vh;
+  border-radius: 26px 26px 0 0;
+  overflow-y: auto;
+  padding: 22px;
+}
+
+.jp-map-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2.5px solid var(--theme-primary);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
+  font-size: 18px;
+}
+
+@media (max-width: 920px) {
+  .jp-main-layout {
+    grid-template-columns: 1fr;
+  }
+  .jp-map-panel {
+    position: relative;
+    top: 0;
+  }
+}

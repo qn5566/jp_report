@@ -1,0 +1,10 @@
+{
+  "name": "日本旅遊報報｜東京・大阪即時花季、煙火、雪場與景點 App",
+  "short_name": "日本旅遊報報",
+  "description": "專為台灣旅客打造的日本各地區即時花季(WNI)、煙火大會、雪季滑雪場、溫泉與 Klook 門票・周邊飯店一鍵導購 App",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff9f6",
+  "theme_color": "#e04f5f",
+  "lang": "zh-TW"
+}
