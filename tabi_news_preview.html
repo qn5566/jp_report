@@ -262,95 +262,147 @@
       transition: all 0.25s ease;
       letter-spacing: 0.2px;
     }
+        .footer-social-link {
+      color: #94A3B8; display: inline-flex; align-items: center; justify-content: center;
+      transition: all 0.2s ease; text-decoration: none;
+    }
+    .footer-social-link:hover {
+      color: #1E293B; transform: translateY(-1.5px);
+    }
+    body.mode-hanabi .footer-social-link { color: #64748B; }
+    body.mode-hanabi .footer-social-link:hover { color: #F8FAFC; }
     .btn-trip-pill:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45);
       filter: brightness(1.05);
     }
 
-    /* 歐美極簡現代風格整體底色選單 (European Segmented Modern Nav) */
-    .season-hanko-bar {
-      margin-top: 24px;
-      display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;
-      padding: 6px;
-      background: #F1EFEA;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      border-radius: 18px;
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04), 0 2px 10px rgba(0, 0, 0, 0.02);
-      backdrop-filter: blur(10px);
+    /* 全寬覆蓋頂部極簡一體化導航欄 (Full-Bleed Modern Seamless Strip) */
+    .full-bleed-nav-strip {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1.5px solid var(--border-morandi);
+      padding: 0;
+      margin-top: 18px;
+      margin-bottom: 22px;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.025);
+      overflow: hidden;
+      transition: all 0.3s ease;
     }
-    .season-hanko-bar::-webkit-scrollbar { display: none; }
-
-    /* 花火模式下的歐美暗黑黑金質感導航槽 */
-    body.mode-hanabi .season-hanko-bar {
+    body.mode-hanabi .full-bleed-nav-strip {
       background: rgba(22, 27, 39, 0.95);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.35);
+      border-bottom-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
-    
-    .anime-tab-btn {
-      flex: 1 1 0;
-      min-width: 140px;
+
+    .nav-strip-scroll-wrap {
+      display: flex;
+      align-items: stretch;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 8px;
+    }
+    .nav-strip-scroll-wrap::-webkit-scrollbar { display: none; }
+
+    .nav-strip-item {
+      flex: 1 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 13px 18px;
       background: transparent;
       border: none;
-      padding: 10px 16px;
-      border-radius: 13px;
-      font-size: 0.84rem;
-      font-weight: 800;
+      border-bottom: 3px solid transparent;
       color: #64748B;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 800;
       cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       white-space: nowrap;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
     }
-    body.mode-hanabi .anime-tab-btn { color: #94A3B8; }
+    body.mode-hanabi .nav-strip-item { color: #94A3B8; }
 
-    .anime-tab-btn:hover {
-      color: #1E293B;
-      background: rgba(255, 255, 255, 0.55);
-      transform: translateY(-1px);
+    .nav-strip-item:hover {
+      color: #0F172A;
+      background: rgba(0, 0, 0, 0.02);
     }
-    body.mode-hanabi .anime-tab-btn:hover {
+    body.mode-hanabi .nav-strip-item:hover {
       color: #F8FAFC;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.05);
     }
 
-    /* 各季節選中時保留專屬色彩美學，兼具歐美浮雕質感卡牌效果 */
-    .anime-tab-btn.tab-spots.active-spots {
-      background: #1E293B !important;
-      color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(30, 41, 59, 0.3) !important;
+    .nav-strip-icon {
+      font-size: 1.05rem;
+      transition: transform 0.2s ease;
     }
-    .anime-tab-btn.tab-sakura.active-sakura {
-      background: linear-gradient(135deg, #E695A8 0%, #C87489 100%) !important;
-      color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(200, 116, 137, 0.35) !important;
+    .nav-strip-item:hover .nav-strip-icon {
+      transform: scale(1.15);
     }
-    .anime-tab-btn.tab-hanabi.active-hanabi {
-      background: linear-gradient(135deg, #7C3AED 0%, #4338CA 100%) !important;
-      color: #FFFFFF !important;
-      box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4) !important;
+
+    /* 各季節/主題選中時：全寬下標線 ＋ 純淨字體高亮 (歐美頂級簡約美學) */
+    .nav-strip-item.tab-spots.active-spots {
+      color: #0F172A !important;
+      font-weight: 900 !important;
+      border-bottom-color: #0F172A !important;
     }
-    body.mode-hanabi .anime-tab-btn.tab-hanabi.active-hanabi {
-      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
-      color: #FFFFFF !important;
-      box-shadow: 0 4px 18px rgba(245, 158, 11, 0.45) !important;
+    body.mode-hanabi .nav-strip-item.tab-spots.active-spots {
+      color: #F8FAFC !important;
+      border-bottom-color: #F8FAFC !important;
     }
-    .anime-tab-btn.tab-snow.active-snow {
-      background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%) !important;
-      color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+
+    .nav-strip-item.tab-sakura.active-sakura {
+      color: #E11D48 !important;
+      font-weight: 900 !important;
+      border-bottom-color: #E11D48 !important;
     }
-    .anime-tab-btn.tab-momiji.active-momiji {
-      background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%) !important;
-      color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35) !important;
+    .nav-strip-item.tab-hanabi.active-hanabi {
+      color: #D97706 !important;
+      font-weight: 900 !important;
+      border-bottom-color: #F59E0B !important;
     }
-    .anime-tab-btn.tab-ginkgo.active-ginkgo {
-      background: linear-gradient(135deg, #EAB308 0%, #CA8A04 100%) !important;
-      color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(202, 138, 4, 0.35) !important;
+    body.mode-hanabi .nav-strip-item.tab-hanabi.active-hanabi {
+      color: #FDE68A !important;
+      border-bottom-color: #FDE68A !important;
+    }
+    .nav-strip-item.tab-snow.active-snow {
+      color: #0284C7 !important;
+      font-weight: 900 !important;
+      border-bottom-color: #0284C7 !important;
+    }
+    .nav-strip-item.tab-momiji.active-momiji {
+      color: #EA580C !important;
+      font-weight: 900 !important;
+      border-bottom-color: #EA580C !important;
+    }
+    .nav-strip-item.tab-ginkgo.active-ginkgo {
+      color: #CA8A04 !important;
+      font-weight: 900 !important;
+      border-bottom-color: #CA8A04 !important;
+    }
+    .nav-strip-item.tab-train.active-train {
+      color: #059669 !important;
+      font-weight: 900 !important;
+      border-bottom-color: #059669 !important;
+    }
+    .nav-strip-item.tab-camp.active-camp {
+      color: #0284C7 !important;
+      font-weight: 900 !important;
+      border-bottom-color: #0284C7 !important;
+    }
+    .nav-strip-item.tab-acg.active-acg {
+      color: #DB2777 !important;
+      font-weight: 900 !important;
+      border-bottom-color: #DB2777 !important;
+    }
+    .nav-strip-item.tab-sports.active-sports-theme {
+      color: #EA580C !important;
+      font-weight: 900 !important;
+      border-bottom-color: #EA580C !important;
     }
 
     /* 旅人即時花況投稿實況牆 (只顯示一週內最新照片) */
@@ -941,27 +993,41 @@
 
   <div class="web-container">
     
-    <!-- 第一區塊：莫蘭迪柔和時令膠囊列 -->
-    <div class="season-hanko-bar">
-      <div class="anime-tab-btn tab-spots active-spots" onclick="switchSeason('spots', this)">
-        <span>⛩️</span><span class="i18n-btn" data-key="tab_spots">全部景點 (和風)</span>
-      </div>
-      <div class="anime-tab-btn tab-sakura" onclick="switchSeason('sakura', this)">
-        <span>🌸</span><span class="i18n-btn" data-key="tab_sakura">櫻花盛典 (3-4月)</span>
-      </div>
-      <div class="anime-tab-btn tab-hanabi" onclick="switchSeason('hanabi', this)">
-        <span>🎆</span><span class="i18n-btn" data-key="tab_hanabi">夏季花火大會 (7-8月)</span>
-      </div>
-      <div class="anime-tab-btn tab-snow" onclick="switchSeason('snow', this)">
-        <span>❄️</span><span class="i18n-btn" data-key="tab_snow">極上粉雪 (12-3月)</span>
-      </div>
-      <div class="anime-tab-btn tab-momiji" onclick="switchSeason('momiji', this)">
-        <span>🍁</span><span class="i18n-btn" data-key="tab_momiji">秋楓見頃 (10-11月)</span>
-      </div>
-      <div class="anime-tab-btn tab-ginkgo" onclick="switchSeason('ginkgo', this)">
-        <span>🍂</span><span class="i18n-btn" data-key="tab_ginkgo">金黃銀杏 (11-12月)</span>
-      </div>
+  <!-- 全寬覆蓋頂部極簡時令導航欄 (Full-Bleed Seamless Category Strip) -->
+  <nav class="full-bleed-nav-strip">
+    <div class="nav-strip-scroll-wrap">
+      <button class="nav-strip-item tab-spots active-spots" onclick="switchSeason('spots', this)">
+        <span class="nav-strip-icon">⛩️</span><span class="i18n-btn" data-key="tab_spots">全部名所</span>
+      </button>
+      <button class="nav-strip-item tab-sakura" onclick="switchSeason('sakura', this)">
+        <span class="nav-strip-icon">🌸</span><span class="i18n-btn" data-key="tab_sakura">櫻花前線</span>
+      </button>
+      <button class="nav-strip-item tab-hanabi" onclick="switchSeason('hanabi', this)">
+        <span class="nav-strip-icon">🎆</span><span class="i18n-btn" data-key="tab_hanabi">夏夜花火</span>
+      </button>
+      <button class="nav-strip-item tab-snow" onclick="switchSeason('snow', this)">
+        <span class="nav-strip-icon">❄️</span><span class="i18n-btn" data-key="tab_snow">極上滑雪</span>
+      </button>
+      <button class="nav-strip-item tab-momiji" onclick="switchSeason('momiji', this)">
+        <span class="nav-strip-icon">🍁</span><span class="i18n-btn" data-key="tab_momiji">秋季賞楓</span>
+      </button>
+      <button class="nav-strip-item tab-ginkgo" onclick="switchSeason('ginkgo', this)">
+        <span class="nav-strip-icon">🍂</span><span class="i18n-btn" data-key="tab_ginkgo">金黃銀杏</span>
+      </button>
+      <button class="nav-strip-item tab-train" onclick="switchSeason('train', this)">
+        <span class="nav-strip-icon">🚂</span><span class="i18n-btn" data-key="tab_train">鐵道列車</span>
+      </button>
+      <button class="nav-strip-item tab-camp" onclick="switchSeason('camp', this)">
+        <span class="nav-strip-icon">⛺</span><span class="i18n-btn" data-key="tab_camp">富士露營</span>
+      </button>
+      <button class="nav-strip-item tab-acg" onclick="switchSeason('acg', this)">
+        <span class="nav-strip-icon">🎪</span><span class="i18n-btn" data-key="tab_acg">動漫快閃</span>
+      </button>
+      <button class="nav-strip-item tab-sports" onclick="switchSeason('sports', this)">
+        <span class="nav-strip-icon">⚾</span><span class="i18n-btn" data-key="tab_sports">日職馬拉松</span>
+      </button>
     </div>
+  </nav>
 
     <!-- 即時花況投稿看板 (一週內實況) -->
     <div class="community-feed-section">
@@ -1174,17 +1240,19 @@
       <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
         <span style="font-weight:700;">© 2026 日旅報報 JAPAN TABI NEWS ｜ 全日本觀光情報局</span>
         
-        <!-- IG & Threads 社群分享官方入口 -->
-        <div style="display:flex; align-items:center; gap:8px;">
-          <!-- Instagram -->
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》官方 Instagram" style="display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; background:linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color:#FFF; text-decoration:none; box-shadow:0 2px 6px rgba(220,39,67,0.25); transition:transform 0.2s;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        <!-- IG & Threads 素雅簡約社群 ICON (無刺眼底色，高級灰階 hover 顯色) -->
+        <div style="display:flex; align-items:center; gap:12px; margin-left:8px;">
+          <!-- Instagram Minimal -->
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》官方 Instagram" class="footer-social-link">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </a>
-          <!-- Threads -->
-          <a href="https://www.threads.net" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》Threads 即時動態" style="display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; background:#101010; color:#FFF; text-decoration:none; box-shadow:0 2px 6px rgba(0,0,0,0.25); transition:transform 0.2s;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <!-- Threads Minimal -->
+          <a href="https://www.threads.net" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》Threads 即時動態" class="footer-social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 3.328 0 6.273-1.624 8.077-4.116-.367-.375-.72-.764-1.057-1.168-1.47 2.05-3.9 3.384-6.65 3.384-4.524 0-8.2-3.676-8.2-8.2s3.676-8.2 8.2-8.2 8.2 3.676 8.2 8.2c0 2.39-.77 4.542-2.316 5.867-1.18.995-2.766 1.433-4.534 1.258-2.678-.266-4.59-2.368-4.59-5.045 0-2.88 2.21-5.18 5.14-5.18 1.94 0 3.518.95 4.19 2.52.17.41.31.85.4 1.3h-1.85c-.08-.3-.21-.58-.38-.83-.45-.66-1.3-1.09-2.36-1.09-1.85 0-3.24 1.45-3.24 3.28 0 1.74 1.25 3.14 3.01 3.31 1.28.13 2.37-.18 3.12-.81.98-.83 1.5-2.22 1.5-3.96 0-5.4-4.32-9.8-9.67-9.8z"/>
             </svg>
           </a>
@@ -1205,12 +1273,16 @@
         brandTag: '日本觀光情報',
         brandSub: '全日本時令觀光情報局 ｜ 花期前線・夏夜花火・雪況觀測・名所官方特約指南',
         tripBtn: 'Trip.com 機票比價',
-        tab_spots: '全部景點 (和風)',
-        tab_sakura: '櫻花盛典 (3-4月)',
-        tab_hanabi: '夏季花火大會 (7-8月)',
-        tab_snow: '極上粉雪 (12-3月)',
-        tab_momiji: '秋楓見頃 (10-11月)',
-        tab_ginkgo: '金黃銀杏 (11-12月)',
+        tab_spots: '全部名所',
+        tab_sakura: '櫻花前線',
+        tab_hanabi: '夏夜花火',
+        tab_snow: '極上滑雪',
+        tab_momiji: '秋季賞楓',
+        tab_ginkgo: '金黃銀杏',
+        tab_train: '鐵道列車',
+        tab_camp: '富士露營',
+        tab_acg: '動漫快閃',
+        tab_sports: '日職馬拉松',
         feedTitle: '即時花況投稿',
         uploadBtn: '我要上傳最新照片 ➔',
         reporterBadge: '特派員報導',
@@ -1240,19 +1312,40 @@
         feed_spots_title: '全日本四季時令旅人即時實況牆',
         feed_spots_icon: '⛩️',
         feed_spots_hint: '（只顯示一週內現場情報・特派員與旅人第一手連線）',
-        feed_spots_btn: '我要上傳最新照片 ➔'
+        feed_spots_btn: '我要上傳最新照片 ➔',
+        // 深度探索新主題
+        feed_train_title: '日本觀光列車・蒸汽火車(SL)劃位與現場實況',
+        feed_train_icon: '🚂',
+        feed_train_hint: '（只顯示一週內乘車情報・全車指定席放票、景觀展望席避雷與沿線拍攝點）',
+        feed_train_btn: '上傳觀光列車照片 ➔',
+        feed_camp_title: '富士五湖露營・自駕租車最新現場實況',
+        feed_camp_icon: '⛺',
+        feed_camp_hint: '（只顯示一週內營位現場・逆富士能見度、低溫禦寒裝備與租車雪胎情報）',
+        feed_camp_btn: '上傳露營現場照片 ➔',
+        feed_acg_title: '秋葉原/澀谷動漫特展・聯名咖啡快閃店情報',
+        feed_acg_icon: '🎪',
+        feed_acg_hint: '（只顯示一週內快閃現場・整理券排隊時間、限量周邊售罄狀況）',
+        feed_acg_btn: '上傳動漫展現場照片 ➔',
+        feed_sports_title: '日職賽事現場觀戰・日本地方馬拉松實況',
+        feed_sports_icon: '⚾',
+        feed_sports_hint: '（只顯示一週內賽事現況・球場限定便當、外野應援席與馬拉松配速心得）',
+        feed_sports_btn: '上傳賽事現場照片 ➔'
       },
       'en': {
         brandTitle: 'JAPAN TABI NEWS',
         brandTag: 'Official Seasonal Guide',
         brandSub: 'Japan Seasonal Tourism Bureau | Official Guide to Bloom, Fireworks & Powder Snow',
         tripBtn: 'Trip.com Flights',
-        tab_spots: 'All Highlights',
-        tab_sakura: 'Cherry Blossoms (Mar-Apr)',
-        tab_hanabi: 'Hanabi Fireworks (Jul-Aug)',
-        tab_snow: 'Powder Snow Ski (Dec-Mar)',
-        tab_momiji: 'Autumn Foliage (Oct-Nov)',
-        tab_ginkgo: 'Golden Ginkgo (Nov-Dec)',
+        tab_spots: 'All Spots',
+        tab_sakura: 'Sakura Bloom',
+        tab_hanabi: 'Fireworks',
+        tab_snow: 'Ski & Snow',
+        tab_momiji: 'Autumn Leaves',
+        tab_ginkgo: 'Golden Ginkgo',
+        tab_train: 'Scenic Trains',
+        tab_camp: 'Fuji Camping',
+        tab_acg: 'Anime & Events',
+        tab_sports: 'Baseball & Sports',
         feedTitle: 'Live Bloom Submissions',
         uploadBtn: 'Upload Latest Photo ➔',
         reporterBadge: "Editor's Report",
@@ -1445,12 +1538,268 @@
         bloom: '🍂 200m 運河銀杏並木金黃',
         comment: '立川站出站直達，運河倒影純金銀杏太迷人！租台腳踏車繞園區騎行最舒服，推薦自備野餐墊。',
         img: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=400&q=80'
+      },
+
+      // 🚂 鐵道・SL觀光列車實況
+      {
+        id: 'f_train_1',
+        season: 'train',
+        user: '🚂 蒸機狂熱・Kenji',
+        spot: 'SL 磐越物語 (JR東日本)',
+        time: '昨天出發實拍',
+        bloom: '🚂 黑鐵貴婦人鳴笛滿載',
+        comment: '阿賀野川綠意山峽超夢幻！4號車全景展望室拍照順光，車上限定地酒便當在5號車務必一開車就去買！',
+        img: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 'f_train_2',
+        season: 'train',
+        user: '🍵 九州散策・May',
+        spot: '特急 由布院之森 (JR九州)',
+        time: '2 天前乘車回報',
+        bloom: '🌲 高地森綠景觀車廂',
+        comment: '木質地板配大面綠意景觀窗極度治癒！由布院大豆冰淇淋與特製便當口感驚艷，持JR九州Pass劃位超方便！',
+        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80'
+      },
+
+      // ⛺ 富士露營・自駕租車實況
+      {
+        id: 'f_camp_1',
+        season: 'camp',
+        user: '⛺ 湖畔野營・Ray',
+        spot: '本栖湖浩庵露營場',
+        time: '昨天清晨實拍',
+        bloom: '🗻 千圓紙鈔逆富士 100% 能見',
+        comment: '早上 5:40 走出帳篷看見無風湖面的逆富士，感動到起雞皮疙瘩！自駕租 SUV 載四人裝備直達湖畔超輕鬆！',
+        img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80'
+      },
+
+      // 🎪 動漫展・快閃聯名實況
+      {
+        id: 'f_acg_1',
+        season: 'acg',
+        user: '🎪 原畫朝聖・小林',
+        spot: 'AnimeJapan / 澀谷快閃',
+        time: '昨天現場實拍',
+        bloom: '🎪 等身立牌原畫特展公開',
+        comment: '現場人潮比想像中有秩序！9點前排隊順利拿到11點咖啡廳整理券，特典壓克力立牌質感滿分！',
+        img: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=400&q=80'
+      },
+
+      // ⚾ 運動賽事・馬拉松實況
+      {
+        id: 'f_sports_1',
+        season: 'sports',
+        user: '⚾ 虎迷魂・阿豪',
+        spot: '阪神甲子園球場',
+        time: '昨晚賽事实拍',
+        bloom: '⚾ 4萬人黃金氣球燃爆夜空',
+        comment: '七局下半全場齊唱隊歌放氣球的震撼力一生必體驗一次！外野席氣氛超棒，球場甲子園咖哩飯必吃！',
+        img: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=400&q=80'
       }
     ];
 
     // 22+ 景點資料庫
     // 24+ 全日本四季名所・官方觀測與特派員資料庫
     const SPOTS_DATABASE = [
+      // 🚂 精彩鐵道・觀光列車與蒸汽火車 (SL)
+      {
+        id: 'sl_banetsu',
+        theme: 'train',
+        category: 'steam_train',
+        region: 'tohoku',
+        title: 'SL 磐越物語 (SLばんえつ物語)',
+        subtitle: '經典黑鐵蒸汽煙柱・穿梭阿賀野川森綠峽谷',
+        tag: '🚂 新潟 ➔ 福島・JR東日本',
+        species: 'C57形 180號機 (貴婦人蒸機)',
+        locationDetail: '新津站 ➔ 會津若松站（磐越西線全線約 3.5 小時）',
+        dataSource: 'JR東日本 Joyful Trains 2026 年度運行排程',
+        img: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=700&q=80',
+        desc: '鐵道迷心中一輩子必搭一次的傳奇蒸汽火車！車尾設有 180 度全景景觀展望車廂，能將阿賀野川水色與秋楓金黃盡收眼底。',
+        activityText: '🎫 預約 JR 鐵路周遊券',
+        activityTextEn: '🎫 Book JR East Pass',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=JR%20Pass%20%E6%9D%B1%E6%97%A5%E6%9C%AC',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9C%83%E6%B4%A5%E8%8B%A5%E6%9D%BE',
+        cafe: {
+          tag: '🍱 列車專屬便當推薦',
+          name: 'SL 磐越物語特製栗飯便當 & 車上地酒',
+          feature: '5 號車販賣部直購・新津老字號料亭「新瀉美味」直送',
+          img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=200&q=80'
+        },
+        report: {
+          hasReport: true,
+          stampDate: '2026/04 親訪',
+          headline: '【SL 磐越物語特派員實乘】4 號車展望室搶位、沿途阿賀野川順光拍攝點全攻略',
+          author: '站長・鐵道特派員',
+          date: '2026 年 4 月 12 日實測',
+          weather: '微風晴朗 18°C',
+          camera: 'Sony A7C II + 70-200mm GM OSS',
+          pitfalls: [
+            '全車指定席一位難求，請務必於「乘車日前 30 天上午 10:00」準時在 JR 官網搶票。',
+            '4 號車頂部全景玻璃展望室為公共空間，開車後 10 分鐘內請先去蓋乘車紀念印章。',
+            '抵達津川站時有 15 分鐘加水保養時間，此時走下月台跟火車頭合照是最佳時機！'
+          ],
+          lead: '當汽笛聲在阿賀野川峽谷回盪，黑色煤煙升騰的瞬間，整座車廂的旅人都感動得起立鼓掌。'
+        }
+      },
+      {
+        id: 'yufuin_no_mori',
+        theme: 'train',
+        category: 'scenic_train',
+        region: 'kyushu',
+        title: '特急 由布院之森 (ゆふいんの森)',
+        subtitle: '九州綠意名湯列車・穿梭杉木林海與田園的移動別墅',
+        tag: '🌲 福岡 ➔ 由布院・JR九州',
+        species: 'KiHa 71/72系 森林高地景觀特急',
+        locationDetail: '博多站 ➔ 由布院站 / 別府站（久大本線約 2 小時 15 分）',
+        dataSource: 'JR九州 觀光列車時刻與指定席排程',
+        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80',
+        desc: '古典墨綠優雅車身與溫潤木質內裝，宛如一座穿梭森林間的和風渡假木屋，是九州自由行最夢幻的移動體驗。',
+        activityText: '🎫 預約 JR 九州周遊券',
+        activityTextEn: '🎫 Book JR Kyushu Pass',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=JR%20Pass%20%E4%B9%9D%E5%B7%9E',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E7%94%B1%E5%B8%83%E9%99%A2',
+        cafe: {
+          tag: '🍨 列車人氣甜點推薦',
+          name: '由布院之森特製大豆冰淇淋 & B-Speak 蛋糕捲',
+          feature: '2 號車吧檯限定販售・特產蜜香紅茶套餐',
+          img: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=200&q=80'
+        },
+        report: {
+          hasReport: true,
+          stampDate: '2026/03 親訪',
+          headline: '【由布院之森特派員親測】車廂選位避雷與慈恩瀑布慢速放行拍照技巧',
+          author: '站長・九州特派員',
+          date: '2026 年 3 月 15 日實測',
+          weather: '晴時多雲 15°C',
+          camera: 'Sony A7C II + 24-70mm GM II',
+          pitfalls: [
+            '訂位請優先指定「1 號車或 5 號車的第 1 排」，正前方有直面駕駛座的落地玻璃展望大景！',
+            '經過慈恩瀑布時列車會放慢車速廣播介紹，坐在前進方向右側才能正對瀑布！'
+          ],
+          lead: '聞著車廂內淡雅的木質香氣，啜飲一口特產地酒，抵達由布院溫泉街前的每分每秒都是頂級享受。'
+        }
+      },
+
+      // ⛺ 富士山・野外露營與租車自駕
+      {
+        id: 'kouan_camp',
+        theme: 'camp',
+        category: 'outdoor_camp',
+        region: 'kanto',
+        title: '本栖湖 浩庵露營場',
+        subtitle: '日幣千圓鈔背後「逆富士」絕景聖地・湖畔第一排',
+        tag: '🗻 山梨・本栖湖畔',
+        species: '直面富士山湖景自由搭帳營位',
+        locationDetail: '山梨縣南巨摩郡身延町中之倉 2926（河口湖自駕約 35 分）',
+        dataSource: '山梨縣觀光推進課 & 浩庵官方即時營況',
+        img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80',
+        desc: '《搖曳露營△》第一集朝聖名所！無死角正面迎向富士山，破曉時刻湖面如鏡，倒映出夢幻璀璨的雙富士。',
+        activityText: '🚗 預約東京自駕租車',
+        activityTextEn: '🚗 Rent a Car in Tokyo',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%20%E7%A7%9F%E8%BB%8A',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96',
+        cafe: {
+          tag: '☕ 露營咖啡推薦',
+          name: '浩庵本館展望食堂・咖哩飯與現煮咖啡',
+          feature: '2F 大面景觀落地窗直面本栖湖與富士山頂',
+          img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=200&q=80'
+        },
+        report: {
+          hasReport: true,
+          stampDate: '2026/04 親訪',
+          headline: '【浩庵露營特派員開箱】湖畔斜坡搭帳抗風秘訣與租車進場時機',
+          author: '站長・露營特派員',
+          date: '2026 年 4 月 5 日親測',
+          weather: '晴天晨霜 4°C',
+          camera: 'Sony A7C II + 16-35mm GM II',
+          pitfalls: [
+            '湖畔營位地面為細沙礫斜坡，必須攜帶 30cm 以上的長鍛造營釘方可抵抗夜間山風。',
+            '週六熱門時段需提早於上午 07:30 抵達領取進場號碼牌，自駕 SUV 進入後車廂可直接當置物平台。'
+          ],
+          lead: '夜裡在零下低溫中生起焚火，清晨看著金黃晨光劃破富士山天際，這是一生難忘的露營回憶。'
+        }
+      },
+
+      // 🎪 動漫展・快閃店與 ACG 活動
+      {
+        id: 'animejapan_tokyo',
+        theme: 'acg',
+        category: 'anime_event',
+        region: 'tokyo',
+        title: 'AnimeJapan 世界最大動漫展',
+        subtitle: '最新動畫特報・聲優舞台與官方限量周邊首發會場',
+        tag: '🎪 東京・國際展示場 Big Sight',
+        species: '全日本動畫官方特展與 RED/GREEN 舞台',
+        locationDetail: '東京都江東區有明 3-11-1（臨海線國際展示場站步行 7 分）',
+        dataSource: 'AnimeJapan 執行委員會官方公報',
+        img: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=700&q=80',
+        desc: '全球動漫迷年度最大盛典！集合東寶、Aniplex、萬代等百家大廠，搶先目睹人氣新番最新 PV 與特裝原畫。',
+        activityText: '🎟️ 預定東京地鐵一日券',
+        activityTextEn: '🎟️ Tokyo Subway Pass',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%9C%B0%E9%90%B5%E5%85%85%E5%80%BC',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC+%E5%8F%B0%E5%A0%B4',
+        cafe: {
+          tag: '☕ 秋葉原聯名咖啡推薦',
+          name: 'Animate Cafe 官方聯名快閃店 (秋葉原)',
+          feature: '限定作品角色造型甜點・贈送隨機限量杯墊',
+          img: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=200&q=80'
+        },
+        report: {
+          hasReport: true,
+          stampDate: '2026/03 親訪',
+          headline: '【AnimeJapan 特派員攻略】快速通關整理券抽取、避開開場人流順遊路線',
+          author: '站長・ACG特派員',
+          date: '2026 年 3 月 22 日實測',
+          weather: '晴 16°C',
+          camera: 'Sony A7C II + 24-70mm GM II',
+          pitfalls: [
+            '熱門大廠攤位限量商品通常在中午前完售，建議購買 Early Ticket 提早 9:00 入場。',
+            '散場時國際展示場站會進行人流管制，推薦往後走 10 分鐘搭百合海鷗線有明站較為順暢。'
+          ],
+          lead: '親臨現場看到高達數公尺的等身大巨型立體雕像與聲優親臨，每個動畫愛好者都會熱血沸騰！'
+        }
+      },
+
+      // ⚾ 運動賽事與日本職棒
+      {
+        id: 'koshien_stadium',
+        theme: 'sports',
+        category: 'baseball_match',
+        region: 'kansai',
+        title: '阪神甲子園球場 日職熱血觀戰',
+        subtitle: '百年棒球聖地・四萬虎迷齊放黃金氣球的狂熱夜',
+        tag: '⚾ 兵庫 / 大阪・西宮市',
+        species: '阪神虎主場賽事・天然草皮與常春藤外壁',
+        locationDetail: '兵庫縣西宮市甲子園町 1-82（阪神電車甲子園站出站直達）',
+        dataSource: '日本職棒 NPB 2026 官方賽程表',
+        img: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=700&q=80',
+        desc: '日本高中棒球頂點與阪神虎隊傳奇主場！七局下半全場唱響「六甲颪」釋放七彩火箭氣球，是無可取代的體育文化震撼。',
+        activityText: '🎟️ 預定日職球賽門票',
+        activityTextEn: '🎟️ Book NPB Tickets',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%98%AA%E7%A5%9E%E7%94%B2%E5%AD%90%E5%9C%92%20%E9%96%80%E7%A5%A8',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A4%A7%E9%98%AA+%E6%A2%85%E7%94%B0',
+        cafe: {
+          tag: '🍱 球場經典美食推薦',
+          name: '甲子園名物 咖哩飯 & 球員便當專賣店',
+          feature: '內野走廊現場大鍋現煮・濃郁日式甜辣咖哩',
+          img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=200&q=80'
+        },
+        report: {
+          hasReport: true,
+          stampDate: '2026/04 親訪',
+          headline: '【甲子園特派員直擊】外野應援席購票避雷、放氣球手打專用幫浦購買位置',
+          author: '站長・體育特派員',
+          date: '2026 年 4 月 10 日親測',
+          weather: '微風晴朗 19°C',
+          camera: 'Sony A7C II + 70-200mm GM OSS',
+          pitfalls: [
+            '甲子園外野席全為阪神虎死忠球迷，若想輕鬆看球推薦購買三壘側內野銀傘席（SMBC席），有屋頂遮陽防雨。',
+            '氣球目前官方規定必須使用專用打氣筒充氣，球場周邊官方販賣部均有販售。'
+          ],
+          lead: '置身在四萬人震耳欲聾的吶喊聲中，那種心臟跟著棒球落地一同跳動的現場張力，絕對是自由行的一大高潮！'
+        }
+      },
       {
         id: 'meguro_sakura',
         theme: 'sakura',
@@ -2501,6 +2850,75 @@
         defaultComment: '現場實測完全符合期待，空氣清新視野開闊，推薦自由行旅人順遊！',
         img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=400&q=80',
         userPrefix: '⛩️ 自由行旅人'
+      },
+      'train': {
+        modalTitle: '🚂 上傳觀光列車・SL蒸汽火車現場照片',
+        spots: [
+          { val: 'SL 磐越物語 (新潟-會津若松)', label: 'SL 磐越物語 (JR東日本)' },
+          { val: '由布院之森 (博多-由布院)', label: '特急由布院之森 (JR九州)' },
+          { val: 'SL 冬之濕原號 (釧路-標茶)', label: 'SL 冬之濕原號 (JR北海道)' },
+          { val: '嵯峨野觀光小火車 (京都嵐山)', label: '嵯峨野觀光小火車 (保津川峽谷)' }
+        ],
+        statuses: [
+          '🚂 蒸汽火車鳴笛出發・阿賀野川綠意絕景',
+          '🎫 全車指定席順利劃到位・展望車廂極美',
+          '🍱 5號車限定鐵道便當與地酒順利買到',
+          '📸 沿線著名鐵橋順光拍攝成功'
+        ],
+        defaultComment: '昨天剛搭完全程，蒸汽鳴笛升起黑煙超級壯觀！推薦開車前 15 分鐘去跟車頭合照！',
+        img: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=400&q=80',
+        userPrefix: '🚂 鐵道迷旅人'
+      },
+      'camp': {
+        modalTitle: '⛺ 上傳富士山露營・自駕租車最新照片',
+        spots: [
+          { val: '本栖湖浩庵露營場', label: '本栖湖浩庵營地 (千圓鈔逆富士)' },
+          { val: '田貫湖露營場', label: '田貫湖營地 (鑽石富士名所)' },
+          { val: 'Fumotoppara 營地', label: '朝霧高原 Fumotoppara (大草原直面)' }
+        ],
+        statuses: [
+          '🗻 晨光逆富士能見度 100% 絕景無遮蔽',
+          '⛺ 湖畔第一排順利搭設帳篷',
+          '🚗 租車四驅SUV後車廂空間充足・自駕順暢',
+          '🔥 晚間氣溫 5°C・焚火台防風禦寒良好'
+        ],
+        defaultComment: '清晨 5:40 走出帳篷看見粉紅朝霞倒映在湖面，美到起雞皮疙瘩！推薦提早預約租車直達！',
+        img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
+        userPrefix: '⛺ 野營自駕玩家'
+      },
+      'acg': {
+        modalTitle: '🎪 上傳動漫特展・聯名快閃店現場情報',
+        spots: [
+          { val: 'AnimeJapan 東京Big Sight', label: 'AnimeJapan 官方國際展' },
+          { val: '秋葉原 Animate 聯名咖啡', label: '秋葉原聯名快閃咖啡廳' },
+          { val: '吉卜力公園 (愛知)', label: '愛知吉卜力公園・大倉庫' }
+        ],
+        statuses: [
+          '🎪 早上 9:00 順利抽取整理券入場',
+          '☕ 聯名特餐與杯墊特典收藏成功',
+          '🛍️ 限量會場限定周邊尚有現貨',
+          '📸 角色等身大立牌與原畫展區超好拍'
+        ],
+        defaultComment: '現場原畫展出超級震撼，特典杯墊抽到本命角色！推薦平日早點去避開人龍！',
+        img: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=400&q=80',
+        userPrefix: '🎪 ACG 同好旅人'
+      },
+      'sports': {
+        modalTitle: '⚾ 上傳日職現場觀戰・日本馬拉松實況',
+        spots: [
+          { val: '阪神甲子園球場', label: '阪神甲子園球場 (兵荒/大阪)' },
+          { val: '東京巨蛋 (讀賣巨人)', label: '東京巨蛋 (文京區)' },
+          { val: '東京馬拉松', label: '東京馬拉松 (東京都心路線)' }
+        ],
+        statuses: [
+          '⚾ 滿場 4 萬球迷放氣球・甲子園氣氛燃爆',
+          '🍱 球場限定球員便當順利買到',
+          '🏃 馬拉松沿途市民加油補給極度熱情',
+          '🎫 電子票券感應出入閘門順暢'
+        ],
+        defaultComment: '在現場跟著唱隊歌放氣球的震撼力是電視完全比不上的！自由行非常推薦排一場日職！',
+        img: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=400&q=80',
+        userPrefix: '⚾ 運動應援團'
       }
     };
 
@@ -2624,18 +3042,23 @@
       closeUploadModal();
     }
 
+    // 極簡全寬選單切換 (一目瞭然，直覺切換)
     function switchSeason(season, el) {
       currentSeason = season;
       document.body.className = `mode-${season}`;
       
-      document.querySelectorAll('.anime-tab-btn').forEach(t => {
-        t.className = t.className.replace(/active-\w+/g, '').trim();
+      document.querySelectorAll('.nav-strip-item').forEach(t => {
+        t.className = t.className.replace(/active-[\w-]+/g, '').trim();
       });
       if (el) {
-        el.classList.add(`active-${season}`);
+        const activeClass = season === 'sports' ? 'active-sports-theme' : `active-${season}`;
+        el.classList.add(activeClass);
       } else {
-        const found = document.querySelector(`.anime-tab-btn.tab-${season}`);
-        if (found) found.classList.add(`active-${season}`);
+        const found = document.querySelector(`.nav-strip-item.tab-${season}`);
+        if (found) {
+          const activeClass = season === 'sports' ? 'active-sports-theme' : `active-${season}`;
+          found.classList.add(activeClass);
+        }
       }
 
       renderCards();
