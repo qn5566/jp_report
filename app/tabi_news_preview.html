@@ -102,14 +102,83 @@
     body.mode-hanabi .flower-species-tag { background: #2A3347; border-color: #3C475E; color: #CBD5E1; }
     body.mode-hanabi .metrics-trio-box { background: rgba(15, 18, 25, 0.6); border-color: #374151; }
 
+    /* 🌸 櫻花季看板配色：櫻花粉雪柔美 */
+    body.mode-sakura .community-feed-section {
+      background: linear-gradient(135deg, #FFF5F7 0%, #FEECF1 50%, #FDF4F7 100%) !important;
+      border: 2px solid #F0B8C8 !important;
+      box-shadow: 0 6px 24px rgba(240, 184, 200, 0.22) !important;
+    }
+    body.mode-sakura .btn-upload-banner {
+      background: linear-gradient(135deg, #FB7185 0%, #E11D48 100%) !important;
+      box-shadow: 0 3px 12px rgba(225, 29, 72, 0.28) !important;
+    }
+
+    /* 🎆 花火季看板配色：夏夜深邃黑曜 ＋ 香檳金流光 */
+    body.mode-hanabi .community-feed-section {
+      background: linear-gradient(145deg, #1C2333 0%, #111520 100%) !important;
+      border: 1.5px solid rgba(251, 191, 36, 0.45) !important;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(251, 191, 36, 0.15) !important;
+    }
+    body.mode-hanabi .feed-title { color: #FDE68A !important; text-shadow: 0 0 12px rgba(253, 230, 138, 0.35); }
+    body.mode-hanabi .feed-sub-hint { color: #CBD5E1 !important; }
+    body.mode-hanabi .btn-upload-banner {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4) !important;
+      color: #FFF !important;
+    }
+
+    /* ❄️ 極上粉雪看板配色：極光冰川天青 ＋ 霜雪白 */
     body.mode-snow {
-      background: linear-gradient(165deg, #F8FAFC 0%, #EBF1F6 45%, #DEE8F0 85%, #F8FAFC 100%);
+      background: linear-gradient(165deg, #F0F6FB 0%, #E2EDF7 45%, #D4E4F2 85%, #F0F6FB 100%);
     }
+    body.mode-snow .community-feed-section {
+      background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #EBF6FD 100%) !important;
+      border: 2px solid #7DD3FC !important;
+      box-shadow: 0 6px 24px rgba(56, 189, 248, 0.22) !important;
+    }
+    body.mode-snow .feed-title { color: #0369A1 !important; }
+    body.mode-snow .btn-upload-banner {
+      background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%) !important;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.32) !important;
+    }
+    body.mode-snow .feed-bloom-level {
+      background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%) !important;
+    }
+
+    /* 🍁 秋楓見頃看板配色：京都丹楓紅 ＋ 暖栗金 */
     body.mode-momiji {
-      background: linear-gradient(165deg, #FAF7F2 0%, #F4ECE1 45%, #EDE0D0 85%, #FAF7F2 100%);
+      background: linear-gradient(165deg, #FAF7F2 0%, #F5ECE1 45%, #EDE0D0 85%, #FAF7F2 100%);
     }
+    body.mode-momiji .community-feed-section {
+      background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 50%, #FDF4EB 100%) !important;
+      border: 2px solid #FDBA74 !important;
+      box-shadow: 0 6px 24px rgba(251, 146, 60, 0.22) !important;
+    }
+    body.mode-momiji .feed-title { color: #9A3412 !important; }
+    body.mode-momiji .btn-upload-banner {
+      background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%) !important;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.32) !important;
+    }
+    body.mode-momiji .feed-bloom-level {
+      background: linear-gradient(135deg, #C2410C 0%, #9A3412 100%) !important;
+    }
+
+    /* 🍂 金黃銀杏看板配色：金箔澄黃 ＋ 琥珀焙茶 */
     body.mode-ginkgo {
-      background: linear-gradient(165deg, #FAF8EE 0%, #F5F0DB 45%, #EEE6C5 85%, #FAF8EE 100%);
+      background: linear-gradient(165deg, #FAF8EE 0%, #F6F1DA 45%, #EFE8C4 85%, #FAF8EE 100%);
+    }
+    body.mode-ginkgo .community-feed-section {
+      background: linear-gradient(135deg, #FEFCE8 0%, #FEF9C3 50%, #FCF5DC 100%) !important;
+      border: 2px solid #FDE047 !important;
+      box-shadow: 0 6px 24px rgba(234, 179, 8, 0.22) !important;
+    }
+    body.mode-ginkgo .feed-title { color: #854D0E !important; }
+    body.mode-ginkgo .btn-upload-banner {
+      background: linear-gradient(135deg, #EAB308 0%, #CA8A04 100%) !important;
+      box-shadow: 0 4px 14px rgba(202, 138, 4, 0.32) !important;
+    }
+    body.mode-ginkgo .feed-bloom-level {
+      background: linear-gradient(135deg, #CA8A04 0%, #A16207 100%) !important;
     }
 
     .bg-wave-layer {
@@ -199,46 +268,89 @@
       filter: brightness(1.05);
     }
 
-    /* 莫蘭迪柔美膠囊時令列 */
+    /* 歐美極簡現代風格整體底色選單 (European Segmented Modern Nav) */
     .season-hanko-bar {
-      margin-top: 20px;
-      display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none;
-      padding: 4px 2px 8px;
+      margin-top: 24px;
+      display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;
+      padding: 6px;
+      background: #F1EFEA;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 18px;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04), 0 2px 10px rgba(0, 0, 0, 0.02);
+      backdrop-filter: blur(10px);
     }
     .season-hanko-bar::-webkit-scrollbar { display: none; }
+
+    /* 花火模式下的歐美暗黑黑金質感導航槽 */
+    body.mode-hanabi .season-hanko-bar {
+      background: rgba(22, 27, 39, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.35);
+    }
     
     .anime-tab-btn {
-      flex-shrink: 0;
-      background: #FFFFFF;
-      border: 1px solid var(--border-morandi);
-      padding: 9px 18px; border-radius: 24px;
-      font-size: 0.86rem; font-weight: 900;
-      color: #4A5568;
-      display: flex; align-items: center; gap: 7px;
+      flex: 1 1 0;
+      min-width: 140px;
+      background: transparent;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 13px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: #64748B;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      position: relative;
     }
+    body.mode-hanabi .anime-tab-btn { color: #94A3B8; }
+
     .anime-tab-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      color: #1E293B;
+      background: rgba(255, 255, 255, 0.55);
+      transform: translateY(-1px);
+    }
+    body.mode-hanabi .anime-tab-btn:hover {
+      color: #F8FAFC;
+      background: rgba(255, 255, 255, 0.08);
     }
 
-    .anime-tab-btn.tab-spots.active-spots { background: #374151; color: #FFF; border-color: #374151; }
-    .anime-tab-btn.tab-sakura:hover, .anime-tab-btn.active-sakura {
-      background: #C48B9F; color: #FFF; border-color: #C48B9F;
+    /* 各季節選中時保留專屬色彩美學，兼具歐美浮雕質感卡牌效果 */
+    .anime-tab-btn.tab-spots.active-spots {
+      background: #1E293B !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(30, 41, 59, 0.3) !important;
     }
-    .anime-tab-btn.tab-hanabi:hover, .anime-tab-btn.active-hanabi {
-      background: #8E8299; color: #FFF; border-color: #8E8299;
+    .anime-tab-btn.tab-sakura.active-sakura {
+      background: linear-gradient(135deg, #E695A8 0%, #C87489 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(200, 116, 137, 0.35) !important;
     }
-    .anime-tab-btn.tab-snow:hover, .anime-tab-btn.active-snow {
-      background: #6B8CA8; color: #FFF; border-color: #6B8CA8;
+    .anime-tab-btn.tab-hanabi.active-hanabi {
+      background: linear-gradient(135deg, #7C3AED 0%, #4338CA 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4) !important;
     }
-    .anime-tab-btn.tab-momiji:hover, .anime-tab-btn.active-momiji {
-      background: #BD8C6B; color: #FFF; border-color: #BD8C6B;
+    body.mode-hanabi .anime-tab-btn.tab-hanabi.active-hanabi {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 18px rgba(245, 158, 11, 0.45) !important;
     }
-    .anime-tab-btn.tab-ginkgo:hover, .anime-tab-btn.active-ginkgo {
-      background: #C9A24D; color: #FFF; border-color: #C9A24D;
+    .anime-tab-btn.tab-snow.active-snow {
+      background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+    }
+    .anime-tab-btn.tab-momiji.active-momiji {
+      background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35) !important;
+    }
+    .anime-tab-btn.tab-ginkgo.active-ginkgo {
+      background: linear-gradient(135deg, #EAB308 0%, #CA8A04 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(202, 138, 4, 0.35) !important;
     }
 
     /* 旅人即時花況投稿實況牆 (只顯示一週內最新照片) */
@@ -855,9 +967,9 @@
     <div class="community-feed-section">
       <div class="feed-header">
         <div class="feed-title">
-          <span>📷</span>
+          <span id="feedTitleIcon">🌸</span>
           <span id="feedTitleText">即時花況投稿</span>
-          <span style="font-size:0.75rem; color:#718096; font-weight:700;">（只顯示一週內現場實況・看昨天照片精準追花追雪）</span>
+          <span class="feed-sub-hint" id="feedSubHint" style="font-size:0.75rem; color:#718096; font-weight:700;">（只顯示一週內現場實況・看昨天照片精準追花追雪）</span>
         </div>
         <button class="btn-upload-banner" onclick="openUploadModal()">
           <span>📸</span>
@@ -910,7 +1022,7 @@
   <div class="upload-modal" id="uploadModal">
     <div class="upload-card">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
-        <h3 style="font-size:1.15rem; font-weight:900; color:#2D3748;">📸 上傳一週內現場實況照片</h3>
+        <h3 id="uploadModalTitle" style="font-size:1.15rem; font-weight:900; color:#2D3748;">📸 上傳一週內現場實況照片</h3>
         <button onclick="closeUploadModal()" style="border:none; background:none; font-size:20px; cursor:pointer; color:#A0AEC0;">✕</button>
       </div>
       <p style="font-size:0.8rem; color:#718096; margin-bottom:14px; line-height:1.5;">
@@ -1058,9 +1170,28 @@
       </div>
     </div>
 
-    <div style="max-width:1440px; margin:30px auto 0; padding-top:18px; border-top:1px dashed #DDD8CE; display:flex; justify-content:space-between; align-items:center; font-size:0.72rem; color:#A0AEC0;">
-      <span>© 2026 日旅報報 JAPAN TABI NEWS ｜ 全日本時令觀光情報局・官方特約旅行指南</span>
-      <button onclick="window.scrollTo({top:0, behavior:'smooth'})" style="background:#FFF; border:1px solid #D5D1C8; border-radius:16px; padding:5px 12px; font-weight:800; cursor:pointer;">
+    <div style="max-width:1440px; margin:30px auto 0; padding-top:18px; border-top:1px dashed #DDD8CE; display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:#A0AEC0; flex-wrap:wrap; gap:12px;">
+      <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+        <span style="font-weight:700;">© 2026 日旅報報 JAPAN TABI NEWS ｜ 全日本觀光情報局</span>
+        
+        <!-- IG & Threads 社群分享官方入口 -->
+        <div style="display:flex; align-items:center; gap:8px;">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》官方 Instagram" style="display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; background:linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color:#FFF; text-decoration:none; box-shadow:0 2px 6px rgba(220,39,67,0.25); transition:transform 0.2s;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <!-- Threads -->
+          <a href="https://www.threads.net" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》Threads 即時動態" style="display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; background:#101010; color:#FFF; text-decoration:none; box-shadow:0 2px 6px rgba(0,0,0,0.25); transition:transform 0.2s;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 3.328 0 6.273-1.624 8.077-4.116-.367-.375-.72-.764-1.057-1.168-1.47 2.05-3.9 3.384-6.65 3.384-4.524 0-8.2-3.676-8.2-8.2s3.676-8.2 8.2-8.2 8.2 3.676 8.2 8.2c0 2.39-.77 4.542-2.316 5.867-1.18.995-2.766 1.433-4.534 1.258-2.678-.266-4.59-2.368-4.59-5.045 0-2.88 2.21-5.18 5.14-5.18 1.94 0 3.518.95 4.19 2.52.17.41.31.85.4 1.3h-1.85c-.08-.3-.21-.58-.38-.83-.45-.66-1.3-1.09-2.36-1.09-1.85 0-3.24 1.45-3.24 3.28 0 1.74 1.25 3.14 3.01 3.31 1.28.13 2.37-.18 3.12-.81.98-.83 1.5-2.22 1.5-3.96 0-5.4-4.32-9.8-9.67-9.8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <button onclick="window.scrollTo({top:0, behavior:'smooth'})" style="background:#FFF; border:1px solid #D5D1C8; border-radius:16px; padding:6px 14px; font-weight:800; cursor:pointer; color:#4A5568; transition:all 0.2s;">
         ▲ 回到頂部
       </button>
     </div>
@@ -1084,7 +1215,32 @@
         uploadBtn: '我要上傳最新照片 ➔',
         reporterBadge: '特派員報導',
         btnDefaultActivity: '🎟️ 預定行程',
-        btnBooking: '🏨 訂房去'
+        btnBooking: '🏨 訂房去',
+        // 各季專屬實況標題
+        feed_sakura_title: '即時花況投稿',
+        feed_sakura_icon: '🌸',
+        feed_sakura_hint: '（只顯示一週內現場實況・看昨天照片精準追花追雪）',
+        feed_sakura_btn: '上傳最新櫻花實況 ➔',
+        feed_hanabi_title: '夏夜花火大會即時情報與觀賞席投稿',
+        feed_hanabi_icon: '🎆',
+        feed_hanabi_hint: '（只顯示一週內煙火施放現場・機位視野避雷與無人機空拍回報）',
+        feed_hanabi_btn: '上傳花火現場照片 ➔',
+        feed_snow_title: '即時雪場雪況・粉雪厚度與纜車實況',
+        feed_snow_icon: '⛷️',
+        feed_snow_hint: '（只顯示一週內雪場現況・看昨天粉雪深與道面回報再出發）',
+        feed_snow_btn: '上傳雪場最新照片 ➔',
+        feed_momiji_title: '秋楓紅葉即時見頃實況投稿',
+        feed_momiji_icon: '🍁',
+        feed_momiji_hint: '（只顯示一週內寺院庭園實況・紅葉變色指數精準追楓）',
+        feed_momiji_btn: '上傳最新楓葉實況 ➔',
+        feed_ginkgo_title: '金黃銀杏大道黃葉落葉實況投稿',
+        feed_ginkgo_icon: '🍂',
+        feed_ginkgo_hint: '（只顯示一週內大道現場・金黃地毯覆蓋率最新回報）',
+        feed_ginkgo_btn: '上傳銀杏最新照片 ➔',
+        feed_spots_title: '全日本四季時令旅人即時實況牆',
+        feed_spots_icon: '⛩️',
+        feed_spots_hint: '（只顯示一週內現場情報・特派員與旅人第一手連線）',
+        feed_spots_btn: '我要上傳最新照片 ➔'
       },
       'en': {
         brandTitle: 'JAPAN TABI NEWS',
@@ -1101,7 +1257,31 @@
         uploadBtn: 'Upload Latest Photo ➔',
         reporterBadge: "Editor's Report",
         btnDefaultActivity: '🎟️ Book Tour',
-        btnBooking: '🏨 Book Hotel'
+        btnBooking: '🏨 Book Hotel',
+        feed_sakura_title: 'Live Cherry Blossom Bloom Submissions',
+        feed_sakura_icon: '🌸',
+        feed_sakura_hint: '(Live photos within 7 days • Track bloom and snow conditions with yesterday\'s reports)',
+        feed_sakura_btn: 'Upload Latest Blossom Photo ➔',
+        feed_hanabi_title: 'Summer Fireworks & Viewing Seats Live Intel',
+        feed_hanabi_icon: '🎆',
+        feed_hanabi_hint: '(Live photos within 7 days • Crowd avoidance & photo spot reports)',
+        feed_hanabi_btn: 'Upload Fireworks Photo ➔',
+        feed_snow_title: 'Live Ski Resort Snow Depth & JAPOW Intel',
+        feed_snow_icon: '⛷️',
+        feed_snow_hint: '(Live updates within 7 days • Powder thickness & slope conditions)',
+        feed_snow_btn: 'Upload Snow Conditions ➔',
+        feed_momiji_title: 'Live Autumn Foliage Coloration Reports',
+        feed_momiji_icon: '🍁',
+        feed_momiji_hint: '(Live updates within 7 days • Garden & temple foliage colors)',
+        feed_momiji_btn: 'Upload Foliage Photo ➔',
+        feed_ginkgo_title: 'Golden Ginkgo Tree Avenue Live Reports',
+        feed_ginkgo_icon: '🍂',
+        feed_ginkgo_hint: '(Live updates within 7 days • Golden carpet coverage)',
+        feed_ginkgo_btn: 'Upload Ginkgo Photo ➔',
+        feed_spots_title: 'All Highlights Live Seasonal Intel Wall',
+        feed_spots_icon: '⛩️',
+        feed_spots_hint: '(Live updates within 7 days • Verified on-site traveler intel)',
+        feed_spots_btn: 'Upload Latest Photo ➔'
       }
     };
 
@@ -1125,10 +1305,12 @@
       renderCards();
     }
 
-    // 旅人即時花況投稿 (一週內實況)
+    // 旅人即時四季現場情報投稿 (一週內實況)
     let COMMUNITY_FEEDS = [
+      // 🌸 櫻花季實況
       {
         id: 'f1',
+        season: 'sakura',
         user: '🌸 昨天下午剛去・小南',
         spot: '目黑川櫻並木',
         time: '昨天 15:30 實拍',
@@ -1137,31 +1319,132 @@
         img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=400&q=80'
       },
       {
-        id: 'f2',
-        user: '🎆 花火攝影迷・Ken',
-        spot: '隅田川花火大會 (預演觀覽)',
-        time: '2 天前回報',
-        bloom: '🎆 20,000發花火前線',
-        comment: '今年隅田川花火恢復全規模！推薦淺草河岸側景觀咖啡廳，提早預訂 2F 露台位可以完美避開百萬人潮。',
-        img: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=400&q=80'
-      },
-      {
-        id: 'f3',
+        id: 'f_sakura_2',
+        season: 'sakura',
         user: '🍵 晚櫻避雷・大雄',
         spot: '新宿御苑 (晚櫻救援名所)',
-        time: '3 天前回報',
+        time: '昨天上午實拍',
         bloom: '🌸 一葉八重櫻滿開中',
         comment: '吉野櫻落光了別擔心！新宿御苑八重櫻花團錦簇像繡球花一樣大顆，草地野餐超級舒服！',
         img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80'
       },
       {
+        id: 'f_sakura_3',
+        season: 'sakura',
+        user: '📷 晨光攝影師・Eason',
+        spot: '千鳥之淵綠道',
+        time: '2 天前清晨實拍',
+        bloom: '🌸 滿開護城河絕景',
+        comment: '清晨 6:30 抵達完全免排隊，水面無風倒影如鏡，划船請於 9:00 前取號！',
+        img: 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=400&q=80'
+      },
+
+      // 🎆 夏夜花火大會現場情報
+      {
+        id: 'f2',
+        season: 'hanabi',
+        user: '🎆 花火攝影迷・Ken',
+        spot: '隅田川花火大會 (第一會場側)',
+        time: '昨天現場探勘回報',
+        bloom: '🎆 20,000發花火前線',
+        comment: '今年隅田川花火恢復全規模！推薦淺草河岸側景觀咖啡廳，提早預訂 2F 露台位可以完美避開百萬人潮。',
+        img: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 'f_hanabi_2',
+        season: 'hanabi',
+        user: '🎇 祭典達人・Aoi',
+        spot: '長岡祭大花火大會',
+        time: '2 天前席位劃位情報',
+        bloom: '🎇 復興祈願鳳凰連發',
+        comment: '右岸贊助席視野毫無遮蔽！信濃川夜風稍涼，記得帶薄外套與折疊野餐墊。',
+        img: 'https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 'f_hanabi_3',
+        season: 'hanabi',
+        user: '🌊 湘南追風・Ren',
+        spot: '鎌倉海岸花火大會',
+        time: '3 天前實拍回報',
+        bloom: '🎆 水中花火水面開花',
+        comment: '由比濱海灘坐沙灘看煙火超舒服！出由比濱站步行 5 分鐘即達，散場建議徒步至長谷站分流。',
+        img: 'https://images.unsplash.com/photo-1533230807904-61ad1dd3f061?auto=format&fit=crop&w=400&q=80'
+      },
+
+      // ⛷️ 極上粉雪雪場情報
+      {
         id: 'f4',
+        season: 'snow',
         user: '⛷️ 追雪族・Yuki',
         spot: 'GALA湯澤滑雪度假村',
-        time: '4 天前回報',
-        bloom: '❄️ 285cm 鬆軟粉雪',
-        comment: '初級愛之鐘雪道非常厚實，下山泡溫泉街的町家足湯超棒！',
+        time: '昨天下午 14:00 實測',
+        bloom: '❄️ 積雪 285cm 鬆軟乾粉',
+        comment: '初級愛之鐘雪道非常厚實，下山泡溫泉街的町家足湯超棒！新幹線出閘 2 分鐘直衝纜車！',
         img: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 'f_snow_2',
+        season: 'snow',
+        user: '🏂 單板狂熱・Leo',
+        spot: '北海道・二世谷比羅夫 (Grand Hirafu)',
+        time: '昨天剛滑完回報',
+        bloom: '❄️ 極上 JAPOW 粉雪 340cm',
+        comment: '山頂大雪後粉雪深及膝蓋，滑樹林完全不板底震動！夜滑燈光超美，比羅夫主街居酒屋需提早訂。',
+        img: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 'f_snow_3',
+        season: 'snow',
+        user: '🎿 白馬老手・Mark',
+        spot: '長野・白馬八方尾根滑雪場',
+        time: '2 天前回報',
+        bloom: '❄️ 標高差 1,071m 鬆雪道全開',
+        comment: '奧林匹克名道兔平雪道硬度適中！推薦山頂 HARBOR 景觀露台喝熱可可看北阿爾卑斯連峰！',
+        img: 'https://images.unsplash.com/photo-1565992441121-4367c2967103?auto=format&fit=crop&w=400&q=80'
+      },
+
+      // 🍁 秋楓見頃實況
+      {
+        id: 'f_momiji_1',
+        season: 'momiji',
+        user: '🍁 京都散策・美智子',
+        spot: '京都嵐山・天龍寺曹源池',
+        time: '昨天清晨實拍',
+        bloom: '🍁 滿開見頃 (紅葉指數 100%)',
+        comment: '曹源池借景嵐山紅葉倒影太夢幻了！清晨 8:30 開門第一批入場完全無人，竹林小徑也很順光。',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 'f_momiji_2',
+        season: 'momiji',
+        user: '📷 富士追光・Taka',
+        spot: '富士河口湖紅葉迴廊',
+        time: '2 天前夜楓回報',
+        bloom: '🍁 60株百年巨木夜楓點燈',
+        comment: '紅葉迴廊落葉地毯厚達 5 公分！下午 16:30 點燈與富士山剪影同框絕景，推薦湖畔茶屋喝烤糰子。',
+        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80'
+      },
+
+      // 🍂 金黃銀杏實況
+      {
+        id: 'f_ginkgo_1',
+        season: 'ginkgo',
+        user: '🍂 銀杏大道・Sora',
+        spot: '明治神宮外苑銀杏大道',
+        time: '昨天下午 15:00 實拍',
+        bloom: '🍂 純金地毯滿地覆蓋 (100%)',
+        comment: '青山通往聖德紀念繪畫館的 146 株銀杏已達純金高峰！陽光穿透樹梢超閃耀，Shake Shack 露台位超讚！',
+        img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 'f_ginkgo_2',
+        season: 'ginkgo',
+        user: '☕ 昭和野餐・Nana',
+        spot: '國立昭和記念公園',
+        time: '2 天前實拍回報',
+        bloom: '🍂 200m 運河銀杏並木金黃',
+        comment: '立川站出站直達，運河倒影純金銀杏太迷人！租台腳踏車繞園區騎行最舒服，推薦自備野餐墊。',
+        img: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=400&q=80'
       }
     ];
 
@@ -1940,8 +2223,33 @@
 
     function renderCommunityFeeds() {
       const container = document.getElementById('communityFeedContainer');
+      if (!container) return;
       container.innerHTML = '';
-      COMMUNITY_FEEDS.forEach(item => {
+
+      // 更新實況看板標題、圖示與提示字樣，與當前季節精準連動
+      const t = I18N[currentLang] || I18N['zh-TW'];
+      const iconEl = document.getElementById('feedTitleIcon');
+      const titleEl = document.getElementById('feedTitleText');
+      const hintEl = document.getElementById('feedSubHint');
+      const btnEl = document.getElementById('uploadBtnText');
+
+      const titleKey = `feed_${currentSeason}_title`;
+      const iconKey = `feed_${currentSeason}_icon`;
+      const hintKey = `feed_${currentSeason}_hint`;
+      const btnKey = `feed_${currentSeason}_btn`;
+
+      if (iconEl && t[iconKey]) iconEl.innerText = t[iconKey];
+      if (titleEl && t[titleKey]) titleEl.innerText = t[titleKey];
+      if (hintEl && t[hintKey]) hintEl.innerText = t[hintKey];
+      if (btnEl && t[btnKey]) btnEl.innerText = t[btnKey];
+
+      // 依據當前季節過濾回報，全部景點顯示綜合推薦
+      const filteredFeeds = COMMUNITY_FEEDS.filter(item => {
+        if (currentSeason === 'spots') return true;
+        return item.season === currentSeason;
+      });
+
+      filteredFeeds.forEach(item => {
         const card = document.createElement('div');
         card.className = 'feed-snap-card';
         card.innerHTML = `
@@ -2077,33 +2385,177 @@
       });
     }
 
+    // 動態依季節配置上傳 Modal 景點與現況選項
+    const SEASON_UPLOAD_CONFIG = {
+      'sakura': {
+        modalTitle: '🌸 上傳最新櫻花實況照片（一週內實拍）',
+        spots: [
+          { val: '目黑川櫻並木', label: '目黑川櫻並木 (東京中目黑)' },
+          { val: '千鳥之淵綠道', label: '千鳥之淵綠道 (東京皇居)' },
+          { val: '新宿御苑 (晚櫻名所)', label: '新宿御苑 (晚櫻八重櫻)' },
+          { val: '上野恩賜公園', label: '上野恩賜公園 (東京台東區)' },
+          { val: '弘前公園櫻花護城河', label: '弘前公園 (青森弘前市)' },
+          { val: '兼六園櫻花盛典', label: '石川金澤兼六園' },
+          { val: '元離宮二條城夜櫻', label: '京都元離宮二條城' }
+        ],
+        statuses: [
+          '🌸 滿開中 (100%絕景無死角)',
+          '🌸 櫻吹雪 (落花成粉紅地毯)',
+          '🌸 五分至七分開 (即將滿開)',
+          '🌸 初開 (枝頭花苞綻放)',
+          '🍃 葉櫻萌芽 (花期尾聲)'
+        ],
+        defaultComment: '昨天下午剛去現場，粉櫻滿開極美！推薦清晨光線最柔和，避開人潮順順拍！',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=400&q=80',
+        userPrefix: '🌸 追花旅人'
+      },
+      'hanabi': {
+        modalTitle: '🎆 上傳花火大會現場施放與觀賞席實況',
+        spots: [
+          { val: '隅田川花火大會', label: '隅田川花火大會 (東京台東/墨田)' },
+          { val: '長岡祭大花火大會', label: '長岡祭大花火大會 (新潟信濃川)' },
+          { val: 'びわ湖大花火大會', label: 'びわ湖大花火大會 (滋賀大津港)' },
+          { val: '鎌倉海岸花火大會', label: '鎌倉海岸花火大會 (神奈川由比濱)' }
+        ],
+        statuses: [
+          '🎆 花火大會觀賞席視野毫無遮蔽',
+          '🎆 20,000發花火前線已佔位完畢',
+          '🎇 鳳凰大連發超震撼',
+          '🎆 水中花火水面開花絕景',
+          '⚠️ 會場周邊管制，建議搭私鐵分流'
+        ],
+        defaultComment: '昨夜現場兩萬發花火超級壯觀！推薦河岸側景觀咖啡廳，提早進場完全不擠！',
+        img: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=400&q=80',
+        userPrefix: '🎆 花火攝影迷'
+      },
+      'snow': {
+        modalTitle: '⛷️ 上傳雪場最新雪況・粉雪厚度照片',
+        spots: [
+          { val: 'GALA湯澤滑雪度假村', label: 'GALA湯澤滑雪度假村 (新潟)' },
+          { val: '北海道・二世谷比羅夫', label: '北海道二世谷比羅夫 (Grand Hirafu)' },
+          { val: '長野・白馬八方尾根', label: '長野白馬八方尾根滑雪場' },
+          { val: '岐阜・白川鄉合掌村', label: '岐阜白川鄉合掌村 (雪夜點燈)' },
+          { val: '山形・藏王溫泉樹冰', label: '山形藏王溫泉樹冰雪場' }
+        ],
+        statuses: [
+          '❄️ 鬆軟乾粉雪 (JAPOW 極上雪況)',
+          '❄️ 標高差千米全雪道暢滑全開',
+          '❄️ 積雪破 300cm 新雪厚實',
+          '🎿 道面平整壓雪良好，初學者友善',
+          '⛅ 晴空頂峰視線極佳・可俯瞰群峰'
+        ],
+        defaultComment: '昨天剛滑完，新雪厚達 25cm 非常鬆軟！樹林線超好玩，下山泡溫泉街超享受！',
+        img: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=400&q=80',
+        userPrefix: '⛷️ 追雪滑手'
+      },
+      'momiji': {
+        modalTitle: '🍁 上傳秋楓見頃・庭園紅葉即時照片',
+        spots: [
+          { val: '京都嵐山・天龍寺曹源池', label: '京都嵐山天龍寺曹源池' },
+          { val: '富士河口湖紅葉迴廊', label: '富士河口湖紅葉迴廊' },
+          { val: '大阪・箕面大瀑布', label: '大阪箕面大瀑布秋楓散策' }
+        ],
+        statuses: [
+          '🍁 滿開見頃 (紅葉指數 100%)',
+          '🍁 湖畔迴廊落葉地毯已鋪滿',
+          '🍁 庭園借景山巒漸層染紅 (7-8成)',
+          '🍁 夜楓夜間點燈夢幻倒影',
+          '🍂 紅葉末期・落葉如火'
+        ],
+        defaultComment: '昨天清晨開門第一批入場，池水倒映滿山丹楓美到屏息！推薦自備廣角鏡頭！',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80',
+        userPrefix: '🍁 追楓散策者'
+      },
+      'ginkgo': {
+        modalTitle: '🍂 上傳金黃銀杏大道實況照片',
+        spots: [
+          { val: '明治神宮外苑銀杏大道', label: '明治神宮外苑銀杏大道 (東京青山)' },
+          { val: '東京・國立昭和記念公園', label: '國立昭和記念公園 (東京立川)' }
+        ],
+        statuses: [
+          '🍂 純金地毯滿地覆蓋 (100%見頃)',
+          '🍂 兩側樹冠茂密純金耀眼',
+          '🍂 運河水道銀杏倒影金黃如畫',
+          '🍂 開始落葉・漫步金色隧道',
+          '🍃 綠轉金黃交織階段'
+        ],
+        defaultComment: '昨天下午陽光穿過樹稍，一整排純金銀杏像金箔隧道！推薦外帶咖啡坐在長椅野餐！',
+        img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80',
+        userPrefix: '🍂 銀杏步道旅人'
+      },
+      'spots': {
+        modalTitle: '⛩️ 上傳日本四季名所最新現場照片',
+        spots: [
+          { val: '目黑川櫻並木', label: '目黑川櫻並木 (東京)' },
+          { val: '隅田川花火大會', label: '隅田川花火大會 (東京)' },
+          { val: 'GALA湯澤滑雪度假村', label: 'GALA湯澤滑雪度假村 (新潟)' },
+          { val: '京都嵐山・天龍寺', label: '京都嵐山天龍寺 (京都)' },
+          { val: '明治神宮外苑銀杏大道', label: '明治神宮外苑銀杏大道 (東京)' }
+        ],
+        statuses: [
+          '🌸 四季名所現場景緻極佳',
+          '📸 避開人潮私房機位推薦',
+          '☕ 推薦周邊景觀咖啡與町家茶房',
+          '🗺️ 交通動線順暢不擁擠'
+        ],
+        defaultComment: '現場實測完全符合期待，空氣清新視野開闊，推薦自由行旅人順遊！',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=400&q=80',
+        userPrefix: '⛩️ 自由行旅人'
+      }
+    };
+
     function openUploadModal() {
+      const cfg = SEASON_UPLOAD_CONFIG[currentSeason] || SEASON_UPLOAD_CONFIG['sakura'];
+      
+      const modalTitleEl = document.getElementById('uploadModalTitle');
+      if (modalTitleEl) modalTitleEl.innerText = cfg.modalTitle;
+
+      const spotSelect = document.getElementById('uploadSpot');
+      if (spotSelect) {
+        spotSelect.innerHTML = cfg.spots.map(s => `<option value="${s.val}">${s.label}</option>`).join('');
+      }
+
+      const bloomSelect = document.getElementById('uploadBloom');
+      if (bloomSelect) {
+        bloomSelect.innerHTML = cfg.statuses.map(st => `<option value="${st}">${st}</option>`).join('');
+      }
+
+      const commentEl = document.getElementById('uploadComment');
+      if (commentEl) {
+        commentEl.placeholder = cfg.defaultComment;
+      }
+
       document.getElementById('mainScrim').classList.add('show');
       document.getElementById('uploadModal').classList.add('show');
     }
+
     function closeUploadModal() {
       document.getElementById('uploadModal').classList.remove('show');
       document.getElementById('mainScrim').classList.remove('show');
     }
+
     function submitUserReport() {
+      const cfg = SEASON_UPLOAD_CONFIG[currentSeason] || SEASON_UPLOAD_CONFIG['sakura'];
       const spot = document.getElementById('uploadSpot').value;
       const bloom = document.getElementById('uploadBloom').value;
-      const comment = document.getElementById('uploadComment').value || '昨天下午剛去過，現場景色完全如報導般震撼！推薦大家儘早出發！';
+      const commentInput = document.getElementById('uploadComment').value.trim();
+      const comment = commentInput || cfg.defaultComment;
       
       const newFeed = {
         id: 'user_' + Date.now(),
-        user: '🌸 昨天下午剛去・旅人',
+        season: currentSeason === 'spots' ? 'sakura' : currentSeason,
+        user: `${cfg.userPrefix}・現場連線`,
         spot: spot,
         time: '昨天剛剛實拍',
         bloom: bloom,
         comment: comment,
-        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=400&q=80'
+        img: cfg.img
       };
 
       COMMUNITY_FEEDS.unshift(newFeed);
       renderCommunityFeeds();
       closeUploadModal();
-      alert('感謝你的熱心回報！已即刻發佈至一週實況牆，幫助更多追櫻追花火的旅人！');
+      alert(`感謝你的熱心回報！已即刻發佈至【${I18N[currentLang][`feed_${currentSeason}_title`] || '現場實況看板'}】，幫助更多旅人掌握最新情報！`);
     }
 
     function openReadingSheet(id) {
@@ -2187,6 +2639,7 @@
       }
 
       renderCards();
+      renderCommunityFeeds();
       initCanvasFX();
     }
 
@@ -2216,27 +2669,33 @@
 
       let count = 24;
       if (currentSeason === 'sakura') count = 65;
-      else if (currentSeason === 'snow') count = 36;
+      else if (currentSeason === 'snow') count = 38;
+      else if (currentSeason === 'momiji') count = 46; // 🍁 楓葉漫天曼妙飄舞
+      else if (currentSeason === 'ginkgo') count = 38; // 🍂 銀杏飄落
       else if (currentSeason === 'spots') count = 0;
 
       const sakuraColors = ['#F472B6', '#FB7185', '#FDA4AF', '#F43F5E', '#FFB7C5', '#F9A8D4'];
+      const momijiColors = ['#DC2626', '#EA580C', '#B91C1C', '#C2410C', '#991B1B', '#E11D48']; // 丹楓真紅・朱紅・琥珀
 
       for (let i = 0; i < count; i++) {
         const isSakura = currentSeason === 'sakura';
-        const isSnowFlurry = isSakura && (i % 3 === 0); // 每 3 顆有 1 顆是晶瑩柔和白雪微粒
+        const isSnowFlurry = isSakura && (i % 3 === 0);
+        const isMomiji = currentSeason === 'momiji';
+
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           isSnowFlurry: isSnowFlurry,
-          size: isSnowFlurry ? (Math.random() * 2.5 + 1.2) : (Math.random() * 5 + 3),
-          speedY: isSnowFlurry ? (Math.random() * 0.9 + 0.35) : (Math.random() * 1.1 + 0.45),
-          speedX: Math.random() * 0.7 - 0.35,
+          size: isMomiji ? (Math.random() * 6 + 9) : (isSnowFlurry ? (Math.random() * 2.5 + 1.2) : (Math.random() * 5 + 3)),
+          // 🍁 楓葉在風中翻轉飄落：垂直帶微浮力、水平隨風擺盪
+          speedY: isMomiji ? (Math.random() * 0.9 + 0.55) : (isSnowFlurry ? (Math.random() * 0.9 + 0.35) : (Math.random() * 1.1 + 0.45)),
+          speedX: isMomiji ? (Math.random() * 1.4 - 0.7) : (Math.random() * 0.7 - 0.35),
           rot: Math.random() * Math.PI * 2,
-          rotSpeed: Math.random() * 0.02 - 0.01,
-          wobble: Math.random() * Math.PI,
-          wobbleSpeed: Math.random() * 0.025 + 0.01,
-          alpha: Math.random() * 0.45 + 0.35,
-          color: isSnowFlurry ? 'rgba(255, 255, 255, 0.92)' : sakuraColors[i % sakuraColors.length]
+          rotSpeed: isMomiji ? (Math.random() * 0.04 - 0.02) : (Math.random() * 0.02 - 0.01),
+          wobble: Math.random() * Math.PI * 2,
+          wobbleSpeed: isMomiji ? (Math.random() * 0.04 + 0.02) : (Math.random() * 0.025 + 0.01),
+          alpha: Math.random() * 0.35 + 0.65,
+          color: isMomiji ? momijiColors[i % momijiColors.length] : (isSnowFlurry ? 'rgba(255, 255, 255, 0.92)' : sakuraColors[i % sakuraColors.length])
         });
       }
     }
@@ -2319,10 +2778,51 @@
             ctx.arc(0, 0, p.size * 0.75, 0, Math.PI * 2);
             ctx.fill();
           } else if (currentSeason === 'momiji') {
-            ctx.fillStyle = `rgba(189, 140, 107, ${p.alpha})`;
+            // 🍁 逼真五角日系丹楓紅葉 (Japanese Momiji 5-lobed Maple Leaf)
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.alpha;
+            const s = p.size;
+            
+            // 隨風翻轉葉片 3D 透視感
+            const flipY = Math.cos(p.wobble * 1.5);
+            ctx.scale(1, flipY);
+
             ctx.beginPath();
-            ctx.arc(0, 0, p.size * 0.9, 0, Math.PI * 2);
+            // 頂部主葉裂
+            ctx.moveTo(0, -s);
+            ctx.bezierCurveTo(s * 0.2, -s * 0.6, s * 0.35, -s * 0.3, 0, 0);
+            ctx.bezierCurveTo(-s * 0.35, -s * 0.3, -s * 0.2, -s * 0.6, 0, -s);
+
+            // 右側上方葉裂
+            ctx.moveTo(0, 0);
+            ctx.bezierCurveTo(s * 0.4, -s * 0.6, s * 0.85, -s * 0.4, s * 0.9, -s * 0.25);
+            ctx.bezierCurveTo(s * 0.65, -s * 0.05, s * 0.3, -s * 0.05, 0, 0);
+
+            // 左側上方葉裂
+            ctx.moveTo(0, 0);
+            ctx.bezierCurveTo(-s * 0.4, -s * 0.6, -s * 0.85, -s * 0.4, -s * 0.9, -s * 0.25);
+            ctx.bezierCurveTo(-s * 0.65, -s * 0.05, -s * 0.3, -s * 0.05, 0, 0);
+
+            // 右側下方葉裂
+            ctx.moveTo(0, 0);
+            ctx.bezierCurveTo(s * 0.4, 0, s * 0.75, s * 0.2, s * 0.7, s * 0.45);
+            ctx.bezierCurveTo(s * 0.4, s * 0.35, s * 0.2, s * 0.2, 0, 0);
+
+            // 左側下方葉裂
+            ctx.moveTo(0, 0);
+            ctx.bezierCurveTo(-s * 0.4, 0, -s * 0.75, s * 0.2, -s * 0.7, s * 0.45);
+            ctx.bezierCurveTo(-s * 0.4, s * 0.35, -s * 0.2, s * 0.2, 0, 0);
+
             ctx.fill();
+
+            // 葉柄葉脈細緻繪製
+            ctx.strokeStyle = 'rgba(120, 20, 20, 0.6)';
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(0, s * 0.45); // 葉柄延伸
+            ctx.stroke();
+
           } else if (currentSeason === 'ginkgo') {
             ctx.fillStyle = `rgba(201, 162, 77, ${p.alpha})`;
             ctx.beginPath();
