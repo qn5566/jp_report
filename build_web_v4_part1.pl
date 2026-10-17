@@ -3,8 +3,9 @@ use strict;
 use warnings;
 use utf8;
 binmode(STDOUT, ":utf8");
+use FindBin qw($Bin);
 
-my $target = "/Users/nanaminanami/Documents/HiMyDream/日本旅遊報報/app/index.html";
+my $target = "$Bin/app/index.html";
 
 open my $fh, '>:utf8', $target or die "Cannot open $target: $!\n";
 

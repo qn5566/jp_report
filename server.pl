@@ -3,9 +3,10 @@ use strict;
 use warnings;
 use IO::Socket::INET;
 use File::Basename;
+use FindBin qw($Bin);
 
 my $port = 8080;
-my $root = "/Users/nanaminanami/Documents/HiMyDream/日本旅遊報報/app";
+my $root = "$Bin/app";
 
 my $server = IO::Socket::INET->new(
     LocalAddr => '127.0.0.1',

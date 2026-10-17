@@ -4,10 +4,12 @@ use warnings;
 use utf8;
 binmode(STDOUT, ":utf8");
 use File::Copy qw(copy);
+use File::Basename qw(dirname);
+use FindBin qw($Bin);
 
-my $target = "/Users/nanaminanami/Documents/HiMyDream/日本旅遊報報/app/index.html";
-my $copy1 = "/Users/nanaminanami/Documents/HiMyDream/japan-go-app/app/index.html";
-my $copy2 = "/Users/nanaminanami/.gemini/antigravity/brain/d9fa592d-79c7-41f5-b9c8-fbe17bf3a8fa/japan_sakura_app_design_preview.html";
+my $target = "$Bin/app/index.html";
+my $copy1 = "$Bin/../japan-go-app/app/index.html";
+my $copy2 = "$Bin/japan_sakura_app_design_preview.html";
 
 open my $fh, '>:utf8', $target or die "Cannot open $target: $!\n";
 

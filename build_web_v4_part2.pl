@@ -4,11 +4,13 @@ use warnings;
 use utf8;
 binmode(STDOUT, ":utf8");
 use File::Copy qw(copy);
+use File::Basename qw(dirname);
+use FindBin qw($Bin);
 
-my $source_part2 = "/Users/nanaminanami/Documents/HiMyDream/日本旅遊報報/generate_v3_part2.pl";
-my $target = "/Users/nanaminanami/Documents/HiMyDream/日本旅遊報報/app/index.html";
-my $copy1 = "/Users/nanaminanami/Documents/HiMyDream/japan-go-app/app/index.html";
-my $copy2 = "/Users/nanaminanami/.gemini/antigravity/brain/d9fa592d-79c7-41f5-b9c8-fbe17bf3a8fa/japan_sakura_app_design_preview.html";
+my $source_part2 = "$Bin/generate_v3_part2.pl";
+my $target = "$Bin/app/index.html";
+my $copy1 = "$Bin/../japan-go-app/app/index.html";
+my $copy2 = "$Bin/japan_sakura_app_design_preview.html";
 
 open my $in, '<:utf8', $source_part2 or die "Cannot open $source_part2: $!\n";
 my $content = do { local $/; <$in> };
@@ -56,13 +58,17 @@ if ($content =~ /print \$fh <<'JS_CODE_SECTION';\n([\s\S]+?)\nJS_CODE_SECTION/) 
     print $out $js_section;
     close $out;
 
-    copy($target, $copy1) or warn "Copy to $copy1 failed: $!\n";
-    copy($target, $copy2) or warn "Copy to $copy2 failed: $!\n";
+    if (-d dirname($copy1)) {
+        copy($target, $copy1) or warn "Copy to $copy1 failed: $!\n";
+        print "Copy 1: $copy1 (" . (-s $copy1) . " bytes)\n";
+    }
+    if (-d dirname($copy2)) {
+        copy($target, $copy2) or warn "Copy to $copy2 failed: $!\n";
+        print "Copy 2: $copy2 (" . (-s $copy2) . " bytes)\n";
+    }
 
     print "Web V4 built successfully!\n";
     print "Target file: $target (" . (-s $target) . " bytes)\n";
-    print "Copy 1: $copy1 (" . (-s $copy1) . " bytes)\n";
-    print "Copy 2: $copy2 (" . (-s $copy2) . " bytes)\n";
 } else {
     die "Could not find JS_CODE_SECTION in $source_part2\n";
 }
