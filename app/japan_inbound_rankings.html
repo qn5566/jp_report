@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>日旅報報 JAPAN TABI ｜ 外國旅客最著迷的 7 大排行榜維度與深度項目盤點</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+TC:wght@400;500;700;900&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #094F8D;
+      --color-coral: #F97940;
+      --color-coral-light: #FFB76D;
+      --color-bg-ivory: #FDFBF7;
+      --color-card-bg: #FFFFFF;
+      --color-border: #E8E4DC;
+      --color-text-main: #1E293B;
+      --color-text-sub: #64748B;
+      --color-mint: #77C9C5;
+      --color-lime: #B9D672;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--color-bg-ivory);
+      color: var(--color-text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 頂部 Glassmorphism 導航列 */
+    .inbound-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253, 251, 247, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand-logo-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(9, 79, 141, 0.15);
+    }
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+    .brand-sub {
+      font-size: 0.72rem;
+      color: #64748B;
+      letter-spacing: 1.2px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #334155;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-back-home:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Hero Banner */
+    .inbound-hero {
+      position: relative;
+      background: linear-gradient(135deg, #094F8D 0%, #1E3A8A 50%, #0F172A 100%);
+      color: #FFFFFF;
+      padding: 64px 24px 56px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .inbound-hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
+      opacity: 0.6;
+    }
+    .hero-container {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #FFEDD5;
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-family: "Shippori Mincho", "Noto Sans TC", serif;
+      font-size: 2.35rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: #E2E8F0;
+      max-width: 780px;
+      margin: 0 auto 28px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+    .hero-meta-stats {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-num {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #FFB76D;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: #CBD5E1;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    /* 快選錨點導航膠囊列 */
+    .category-quick-nav {
+      position: sticky;
+      top: 67px;
+      z-index: 90;
+      background: #FFFFFF;
+      border-bottom: 1px solid #E2E8F0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      padding: 10px 16px;
+    }
+    .quick-nav-scroll {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .quick-nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 24px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #475569;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .quick-nav-pill:hover, .quick-nav-pill.active {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border-color: var(--color-primary);
+    }
+
+    /* 主要內容容器 */
+    .inbound-main-container {
+      max-width: 1200px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+
+    /* 單個排行榜維度專區 */
+    .ranking-dimension-section {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin-bottom: 48px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+    .ranking-dimension-section:hover {
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+    }
+
+    .dimension-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .dim-num-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .dim-badge-num {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--color-coral), #EA580C);
+      color: #FFFFFF;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(249, 121, 64, 0.3);
+    }
+    .dim-title-text {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #0F172A;
+    }
+    .dim-subtitle-text {
+      font-size: 0.85rem;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* 痛點與商業變現雙欄解析卡 */
+    .dimension-insights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 768px) {
+      .dimension-insights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .insight-card {
+      padding: 20px 22px;
+      border-radius: 14px;
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+    .insight-pain {
+      background: #FFF7ED;
+      border: 1px solid #FFEDD5;
+      color: #9A3412;
+    }
+    .insight-pain b {
+      color: #C2410C;
+      display: block;
+      font-size: 0.96rem;
+      margin-bottom: 6px;
+    }
+    .insight-monetize {
+      background: #F0FDF4;
+      border: 1px solid #DCFCE7;
+      color: #166534;
+    }
+    .insight-monetize b {
+      color: #15803D;
+      display: block;
+      font-size: 0.96rem;
+      margin-bottom: 6px;
+    }
+
+    /* 代表景點 / 體驗卡片網格 */
+    .experience-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    .exp-item-card {
+      background: #FAF8F5;
+      border: 1px solid #E8E4DC;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+    .exp-item-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+      background: #FFFFFF;
+    }
+    .exp-card-thumb-wrap {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+    }
+    .exp-card-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .exp-item-card:hover .exp-card-thumb {
+      transform: scale(1.05);
+    }
+    .exp-card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .exp-card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .exp-card-title {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .exp-card-desc {
+      font-size: 0.82rem;
+      color: #64748B;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    /* 實用功能操作按鈕 */
+    .exp-actions-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .btn-exp-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-exp-primary {
+      background: linear-gradient(135deg, #F97940, #FFB76D);
+      color: #FFFFFF;
+      border: none;
+      box-shadow: 0 2px 6px rgba(249, 121, 64, 0.25);
+    }
+    .btn-exp-primary:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+    .btn-exp-secondary {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #334155;
+    }
+    .btn-exp-secondary:hover {
+      border-color: #094F8D;
+      color: #094F8D;
+    }
+
+    /* 頁尾精簡版權 */
+    .inbound-footer {
+      background: #F8FAFC;
+      border-top: 1px solid #E2E8F0;
+      padding: 36px 20px;
+      text-align: center;
+      color: #64748B;
+      font-size: 0.82rem;
+    }
+    .footer-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導航 -->
+  <header class="inbound-header">
+    <a href="tabi_news_preview.html" class="brand-lockup">
+      <img src="./images/japan_tabi_logo.png" alt="日旅報報 LOGO" class="brand-logo-img">
+      <div>
+        <div class="brand-title">日旅報報 JAPAN TABI</div>
+        <div class="brand-sub">全日本觀光情報局 ｜ 旗艦特輯</div>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <a href="tabi_news_preview.html" class="btn-back-home">
+        <span>⛩️</span> <span>返回首頁</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero 旗艦前言 -->
+  <section class="inbound-hero">
+    <div class="hero-container">
+      <div class="hero-badge">🇯🇵 2026 GLOBAL INBOUND TRENDS</div>
+      <h1 class="hero-title">外國旅客最著迷的 7 大排行榜維度與延伸項目盤點</h1>
+      <p class="hero-desc">
+        針對歐美與全球高客單自由行旅人量身企劃。直擊「願付高額費用、搜尋量極大、最具文化深度」的核心體驗，全面揭秘痛點需求與尊榮保證席位管道。
+      </p>
+
+      <div class="hero-meta-stats">
+        <div class="stat-item">
+          <div class="stat-num">7</div>
+          <div class="stat-label">旗艦體驗維度</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">21+</div>
+          <div class="stat-label">殿堂級精選項目</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">外國人夢想清單覆蓋率</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">中文專人席位代訂直通</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 快速導航膠囊列 -->
+  <nav class="category-quick-nav">
+    <div class="quick-nav-scroll">
+      <a href="#dim1" class="quick-nav-pill active"><span>🍣</span> <span>1. 美食與名店</span></a>
+      <a href="#dim2" class="quick-nav-pill"><span>🍵</span> <span>2. 傳統文化儀式</span></a>
+      <a href="#dim3" class="quick-nav-pill"><span>⚔️</span> <span>3. 武道與靈性修驗</span></a>
+      <a href="#dim4" class="quick-nav-pill"><span>🗻</span> <span>4. 富士山與自然探險</span></a>
+      <a href="#dim5" class="quick-nav-pill"><span>⚾</span> <span>5. 熱血運動與賽事</span></a>
+      <a href="#dim6" class="quick-nav-pill"><span>❄️</span> <span>6. 冬季粉雪與溫泉</span></a>
+      <a href="#dim7" class="quick-nav-pill"><span>🎆</span> <span>7. 藝術展覽與夜景</span></a>
+    </div>
+  </nav>
+
+  <!-- 主容器 -->
+  <main class="inbound-main-container">
+
+    <!-- 1. 美食與名店 -->
+    <section class="ranking-dimension-section" id="dim1">
+      <div class="dimension-header">
+        <div class="dim-num-title">
+          <div class="dim-badge-num">1</div>
+          <div>
+            <h2 class="dim-title-text">美食與名店 (Gourmet & Dining)</h2>
+            <p class="dim-subtitle-text">米其林頂級板前割烹、炭火黑毛和牛、櫻景水岸景觀咖啡館</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dimension-insights-grid">
+        <div class="insight-card insight-pain">
+          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
+          米其林板前壽司、百年和牛料亭普遍不接外國電話、沒有日本信用卡通常無法完成身分認證。排行榜直接提供「保證席位代訂」即是不可或缺的剛需。
+        </div>
+        <div class="insight-card insight-monetize">
+          <b>💎 商業預約與代訂管道</b>
+          提供全中文介面預約、直連名店特約代訂入口，每位客單價達 NT $4,000～$15,000 元，深受家庭客與商務客信賴。
+        </div>
+      </div>
+
+      <div class="experience-cards-grid">
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80" alt="頂級江戶前壽司" class="exp-card-thumb">
+            <span class="exp-card-badge">🍣 殿堂板前壽司</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">米其林三星 銀座板前壽司</h3>
+              <p class="exp-card-desc">清晨豐洲市場嚴選野生鮪魚大腹、羽立紫海膽，由傳奇名匠現場握製，享受極致醋飯溫度與魚料完美交融。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%B1%B3%E5%85%B6%E6%9E%97%20%E5%A3%BD%E5%8F%B8&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 保證席位預約代訂 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E9%8A%80%E5%BA%A7&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢周邊頂級住宿 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="黑毛和牛壽喜燒" class="exp-card-thumb">
+            <span class="exp-card-badge">🥩 特選和牛割烹</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">百年老鋪 淺草今半 黑毛和牛壽喜燒</h3>
+              <p class="exp-card-desc">油花如雪花般細緻的A5特選黑毛和牛，搭配秘傳百年甘甜醬汁與鮮打朝生土雞蛋，入口即化令人難忘。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%B7%BA%E8%8D%89%E4%BB%8A%E5%8D%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 和牛料理免排隊預約 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B7%BA%E8%8D%89&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢淺草周邊景觀飯店 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="景觀咖啡" class="exp-card-thumb">
+            <span class="exp-card-badge">☕ 水岸櫻景露台</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">中目黑星巴克工坊 ＆ 飯田橋 Canal Cafe</h3>
+              <p class="exp-card-desc">隈研吾建築巨匠四層樓烘豆工坊、或外濠水上甲板露天座。坐在戶外第一排品嚐手沖精品咖啡，看著落櫻隨風飄落水面。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E4%B8%AD%E7%9B%AE%E9%BB%91&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預約中目黑周邊漫步行程 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%BE%81%E8%B0%B7&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢鄰近質感設計旅宿 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 傳統文化儀式 -->
+    <section class="ranking-dimension-section" id="dim2">
+      <div class="dimension-header">
+        <div class="dim-num-title">
+          <div class="dim-badge-num">2</div>
+          <div>
+            <h2 class="dim-title-text">傳統文化儀式 (Traditional Heritage & Rituals)</h2>
+            <p class="dim-subtitle-text">古都正統茶道研習、百年宇治抹茶名店評比、京都町家和服浴衣漫步</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dimension-insights-grid">
+        <div class="insight-card insight-pain">
+          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
+          穿正統和服在伏見稻荷千本鳥居或清水寺木造舞台拍照是全球旅客的一生必訪清單；歐美旅客更渴望親手「點茶」、體驗茶道「和敬清寂」的禪宗冥想意境。
+        </div>
+        <div class="insight-card insight-monetize">
+          <b>💎 商業預約與體驗管道</b>
+          和服租借（包辦髮型與外拍攝影）、正統茶道體驗課程、宇治百年茶寮特約禮盒。長年位居全日本體驗排行榜冠軍。
+        </div>
+      </div>
+
+      <div class="experience-cards-grid">
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=600&q=80" alt="京都和服體驗" class="exp-card-thumb">
+            <span class="exp-card-badge">👘 京都町家和服</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">清水寺・祇園 正統正絹和服散策</h3>
+              <p class="exp-card-desc">提供純手工刺繡正絹和服、專業髮型設計師盤髮與木屐配件。漫步於二年坂、三年坂古風石階，留下永生難忘的絕美寫真。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E5%92%8C%E6%9C%8D&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預訂正統和服與妝髮方案 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD+%E7%A5%87%E5%9C%92&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢祇園傳統町家旅館 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" alt="正統茶道體驗" class="exp-card-thumb">
+            <span class="exp-card-badge">🍵 正統茶道研習</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">京都百年古寺 私人茶道入門研習</h3>
+              <p class="exp-card-desc">由茶道裏千家專業茶道師親自示範。在靜謐榻榻米茶室內親手使用茶筅點泡濃郁抹茶，搭配季節限定手工和菓子。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E8%8C%B6%E9%81%93&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預約名師茶道研習門票 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢京都庭園溫泉旅宿 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80" alt="宇治抹茶評比" class="exp-card-thumb">
+            <span class="exp-card-badge">🍃 宇治百年茶寮</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">宇治 中村藤吉 ＆ 伊藤久右衛門 旗艦評比</h3>
+              <p class="exp-card-desc">坐落在宇治川旁的安政年間古茶寮。招牌生茶凍竹筒甜點、手打宇治抹茶蕎麥麵，品味全日本最正宗的回甘茶香。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%AE%87%E6%B2%BB%20%E4%B8%80%E6%97%A5%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預訂宇治平等院包車一日遊 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%87%E6%B2%BB&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢宇治川畔景觀飯店 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 武道與靈性修驗 -->
+    <section class="ranking-dimension-section" id="dim3">
+      <div class="dimension-header">
+        <div class="dim-num-title">
+          <div class="dim-badge-num">3</div>
+          <div>
+            <h2 class="dim-title-text">武道與靈性修驗 (Martial Arts & Zen Spirituality)</h2>
+            <p class="dim-subtitle-text">大相撲觀戰與相撲部屋晨練、真劍居合斬道場體驗、高野山宿坊過夜</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dimension-insights-grid">
+        <div class="insight-card insight-pain">
+          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
+          歐美旅客對「Samurai（武士精神）」與「Zen（禪宗定力）」抱有崇高敬意；大相撲力士重達數百公斤的近距離肉搏撞擊震撼非凡，相撲部屋晨練更需特殊特約渠道。
+        </div>
+        <div class="insight-card insight-monetize">
+          <b>💎 商業預約與體驗管道</b>
+          大相撲官方本場所賽事座席、武士真劍試斬研習、世界遺產高野山寺院宿坊（一泊二食精進料理，每晚高額訂房）。
+        </div>
+      </div>
+
+      <div class="experience-cards-grid">
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=600&q=80" alt="大相撲觀戰" class="exp-card-thumb">
+            <span class="exp-card-badge">🤼 大相撲國技館</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">東京兩國國技館 大相撲本場所觀戰</h3>
+              <p class="exp-card-desc">每年1、5、9月東京大相撲季！近距離感受橫綱入場儀式、力士撒鹽屏息對峙，現場品嚐道地相撲力士火鍋（Chanko Nabe）。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%9B%B8%E6%92%B2%20%E9%96%80%E7%A5%A8&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預約大相撲賽事門票 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%A9%E5%9C%8B&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢兩國國技館旁飯店 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=600&q=80" alt="武士刀真劍體驗" class="exp-card-thumb">
+            <span class="exp-card-badge">⚔️ 武士刀道場</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">東京正統道場 真劍居合斬試切體驗</h3>
+              <p class="exp-card-desc">換上傳統黑色武士服，由現役劍道居合道師範一對一傳授拔刀術與禮法，親手揮舞鋒利真劍劈斷草蓆靶心，考驗專注與定力。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%AD%A6%E5%A3%AB%E9%AB%94%E9%A9%97&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預約武士刀體驗課程 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢市區質感設計飯店 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="高野山宿坊" class="exp-card-thumb">
+            <span class="exp-card-badge">🧘 聖地宿坊體驗</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">世界遺產 高野山 1200年寺院宿坊</h3>
+              <p class="exp-card-desc">弘法大師空海開創的真言密教聖地。入住千年古寺客房，晨起參加早課誦經與護摩祈福，品嚐極致細膩的素食精進料理與冥想。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E9%87%8E%E5%B1%B1&aid=2422002" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🏨 預訂高野山宿坊一泊二食 ↗</span>
+              </a>
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E9%AB%98%E9%87%8E%E5%B1%B1&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🎟️ 預約南海電鐵高野山通票 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 富士山與自然探險 -->
+    <section class="ranking-dimension-section" id="dim4">
+      <div class="dimension-header">
+        <div class="dim-num-title">
+          <div class="dim-badge-num">4</div>
+          <div>
+            <h2 class="dim-title-text">富士山與自然探險 (Mount Fuji & Grand Nature)</h2>
+            <p class="dim-subtitle-text">富士山登頂挑戰與山屋預約、富士五湖直面逆富士奢華露營、秘境健行</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dimension-insights-grid">
+        <div class="insight-card insight-pain">
+          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
+          富士山是日本靈魂精神圖騰；外國人最怕「搶不到管制嚴格的山屋預約」、「不熟悉通行費預約手續」、「不會租登山裝備」。
+        </div>
+        <div class="insight-card insight-monetize">
+          <b>💎 商業預約與體驗管道</b>
+          專業嚮導登頂健行團（含山屋、裝備租借）、Glamping 星級豪華露營帳篷訂房（每晚 NT $12,000～$30,000，佣金最高）。
+        </div>
+      </div>
+
+      <div class="experience-cards-grid">
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="富士山登頂" class="exp-card-thumb">
+            <span class="exp-card-badge">🗻 富士山登頂挑戰</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">富士山 吉田路線 2天1夜專業嚮導團</h3>
+              <p class="exp-card-desc">7月～9月限定開放！含8合目山屋預約、專業雙語登山嚮導帶隊、高山裝備租借，在海拔3776公尺劍峰迎接震撼「御來光」日出。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E7%99%BB%E5%B1%B1&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預訂富士山登山健行團 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢河口湖溫泉飯店 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="星野富士" class="exp-card-thumb">
+            <span class="exp-card-badge">⛺ 星野豪華露營</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">星野集團 HOSHINOYA Fuji (星野富士)</h3>
+              <p class="exp-card-desc">全日本首座頂級 Glamping 奢華露營度假村！客房露台直面河口湖與雄偉富士山，夜晚在松林焚火台旁烤棉花糖、品嚐和牛野味炭烤。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%98%9F%E9%87%8E%E5%AF%8C%E5%A3%AB&aid=2422002" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🏨 預訂星野富士露台客房 ↗</span>
+              </a>
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🚐 預約東京直達河口湖包車 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" alt="上高地健行" class="exp-card-thumb">
+            <span class="exp-card-badge">🌲 北阿爾卑斯秘境</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">長野 上高地 ＆ 屋久島 魔法森林健行</h3>
+              <p class="exp-card-desc">神明降臨之所「上高地」大正池倒影與河童橋；或是世界自然遺產屋久島白谷雲水峽，漫步於宮崎駿魔法公主取景的青苔千年巨杉林。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E4%B8%8A%E9%AB%98%E5%9C%B0&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預訂上高地接駁一日遊 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E4%B8%8A%E9%AB%98%E5%9C%B0&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢白樺莊景觀旅宿 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 熱血運動與賽事 -->
+    <section class="ranking-dimension-section" id="dim5">
+      <div class="dimension-header">
+        <div class="dim-num-title">
+          <div class="dim-badge-num">5</div>
+          <div>
+            <h2 class="dim-title-text">熱血運動與賽事 (Sports & Iconic Tournaments)</h2>
+            <p class="dim-subtitle-text">日本職棒 NPB 巨蛋觀賽 (甲子園/東京巨蛋)、世界六大馬拉松、F1 日本大獎賽</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dimension-insights-grid">
+        <div class="insight-card insight-pain">
+          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
+          日本球場應援團口號、球場生啤酒妹（Beer Girls）與限定選手便當是全世界獨一無二的運動文化體驗。外國旅客極度渴望親臨聖地「甲子園」或東京巨蛋。
+        </div>
+        <div class="insight-card insight-monetize">
+          <b>💎 商業預約與體驗管道</b>
+          熱門比賽入場門票（免實名電話代訂）、球場周邊五星級飯店訂房、鈴鹿賽道 VIP 套裝行程。
+        </div>
+      </div>
+
+      <div class="experience-cards-grid">
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80" alt="日本職棒觀賽" class="exp-card-thumb">
+            <span class="exp-card-badge">⚾ 職棒傳奇球場</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">東京巨蛋 讀賣巨人軍主場觀賽體驗</h3>
+              <p class="exp-card-desc">全日本歷史最悠久常勝軍團！體驗5萬人全場敲擊加油棒、齊唱隊歌的澎湃氣勢，球場內多達數十種聯名便當與新鮮生啤暢飲。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%B7%A8%E8%9B%8B%20%E6%A3%92%E7%90%83&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預約日職球賽門票 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC%E5%B7%A8%E8%9B%8B&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢東京巨蛋城飯店 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=600&q=80" alt="東京馬拉松" class="exp-card-thumb">
+            <span class="exp-card-badge">🏃 世界六大馬拉松</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">東京馬拉松 ＆ 大阪馬拉松 跑旅巡禮</h3>
+              <p class="exp-card-desc">世界馬拉松大滿貫亞洲唯一一站！路線橫跨東京都廳、淺草雷門、銀座大道至東京車站，沿途數十萬市民熱情應援補給。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC%E8%BB%8A%E7%AB%99&aid=2422002" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🏨 預訂終點東京車站周邊住宿 ↗</span>
+              </a>
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E9%81%8B%E5%8B%95&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🎟️ 預約跑者放鬆按摩水療 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" alt="F1日本大獎賽" class="exp-card-thumb">
+            <span class="exp-card-badge">🏎️ F1 傳奇賽道</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">F1 日本大獎賽 (三重 鈴鹿賽道 Suzuka)</h3>
+              <p class="exp-card-desc">全世界車手公認最具挑戰性的傳奇「8字型賽道」！近距離聆聽千萬轉速引擎咆哮轟鳴，感受世界級極速巔峰對決。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=F1%20%E9%88%B4%E9%B9%BF&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預訂鈴鹿賽道入場套票 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E5%90%8D%E5%8F%A4%E5%B1%8B&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢名古屋轉乘樞紐飯店 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 冬季粉雪與溫泉療癒 -->
+    <section class="ranking-dimension-section" id="dim6">
+      <div class="dimension-header">
+        <div class="dim-num-title">
+          <div class="dim-badge-num">6</div>
+          <div>
+            <h2 class="dim-title-text">冬季粉雪與溫泉療癒 (JAPOW Skiing & Onsen)</h2>
+            <p class="dim-subtitle-text">北海道/長野 JAPOW 頂級滑雪場 Top 10、雪見露天溫泉、大正浪漫木造旅館</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dimension-insights-grid">
+        <div class="insight-card insight-pain">
+          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
+          日本北海道與長野的天然乾粉雪（JAPOW）含水量極低，享譽全球；在零下飄雪中泡進熱氣蒸騰的天然硫磺泉，是外國人眼中無可比擬的終極浪漫。
+        </div>
+        <div class="insight-card insight-monetize">
+          <b>💎 商業預約與體驗管道</b>
+          中文/英文認證滑雪教練預約、Ski-in / Ski-out 度假村雪票、銀山溫泉與草津名湯一泊二食（客單價達數萬元）。
+        </div>
+      </div>
+
+      <div class="experience-cards-grid">
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="二世谷滑雪" class="exp-card-thumb">
+            <span class="exp-card-badge">⛷️ 全球粉雪之王</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">北海道 二世谷度假村 (Niseko United)</h3>
+              <p class="exp-card-desc">全世界滑雪愛好者朝聖殿堂！四座雪場聯通，羊蹄山絕美逆富士景觀，厚度驚人的香檳乾粉雪與頂級 Michelin 餐廳林立。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E4%BA%8C%E4%B8%96%E8%B0%B7%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>👨‍🏫 預約認證中文滑雪教練 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%8C%E4%B8%96%E8%B0%B7&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 預訂Ski-in/Ski-out豪華飯店 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="銀山溫泉" class="exp-card-thumb">
+            <span class="exp-card-badge">♨️ 大正浪漫秘湯</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">山形 銀山溫泉 (大正木造多層閣樓)</h3>
+              <p class="exp-card-desc">神隱少女經典湯屋場景！銀山川兩側林立百年三層木造溫泉旅館，黃昏瓦斯燈點亮、大雪紛飛，宛如走入時光倒流的童話世界。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E9%8A%80%E5%B1%B1%E6%BA%AB%E6%B3%89&aid=2422002" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🏨 查詢銀山溫泉一泊二食 ↗</span>
+              </a>
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E9%8A%80%E5%B1%B1%E6%BA%AB%E6%B3%89%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🚐 預約東北雪地私人包車 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="越後湯澤GALA" class="exp-card-thumb">
+            <span class="exp-card-badge">🎿 新幹線出閘即雪場</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">新潟 越後湯澤 GALA ＆ 苗場滑雪場</h3>
+              <p class="exp-card-desc">東京搭上越新幹線74分鐘直通出閘口！從早雪滑到傍晚，隨後至越後湯澤溫泉街品嚐地酒試飲機「ぽんしゅ館」與越光米清酒。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=GALA%E6%B9%AF%E6%BE%A4&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預訂GALA纜車雪票與裝備 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%BE%A4&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢越後湯澤溫泉飯店 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. 藝術展覽與夜景 -->
+    <section class="ranking-dimension-section" id="dim7">
+      <div class="dimension-header">
+        <div class="dim-num-title">
+          <div class="dim-badge-num">7</div>
+          <div>
+            <h2 class="dim-title-text">藝術展覽與夜景 (Art, Skylines & Fireworks)</h2>
+            <p class="dim-subtitle-text">teamLab 沉浸式無邊界光影展、SHIBUYA SKY 360度天際線、夏夜花火大會</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dimension-insights-grid">
+        <div class="insight-card insight-pain">
+          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
+          teamLab 與 SHIBUYA SKY 在 Instagram 與 TikTok 席捲全球數十億次播放；夏夜花火大會正三尺玉的巨響震撼更是外國人感受日本夏日靈魂的頂點。
+        </div>
+        <div class="insight-card insight-monetize">
+          <b>💎 商業預約與體驗管道</b>
+          熱門展覽預售門票、花火大會特約觀覽席（贊助商有料席位代訂，客單價高）、屋形船包船套餐。
+        </div>
+      </div>
+
+      <div class="experience-cards-grid">
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80" alt="teamLab" class="exp-card-thumb">
+            <span class="exp-card-badge">✨ 沉浸光影殿堂</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">teamLab Borderless (麻布台之丘旗艦展)</h3>
+              <p class="exp-card-desc">無界限的數位藝術魔幻世界！作品跨越展廳自由流動融合。光影如瀑布傾瀉、水晶宇宙鏡面無限延伸，全球網紅朝聖地標。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=teamLab%20%E9%BA%BB%E5%B8%83%E5%8F%B0&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預訂teamLab入場指定席 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%AD%E6%9C%AC%E6%9C%A8&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢麻布台周邊星級酒店 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=600&q=80" alt="SHIBUYA SKY" class="exp-card-thumb">
+            <span class="exp-card-badge">🌆 360度露天展望</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">SHIBUYA SKY 澀谷十字路口日落天際線</h3>
+              <p class="exp-card-desc">高達229公尺無遮蔽玻璃空中露台！站在「SKY EDGE」角落鳥瞰全球最繁忙的澀谷十字路口，遠眺富士山火紅夕陽與東京鐵塔。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=SHIBUYA%20SKY&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🎟️ 預約SHIBUYA SKY日落門票 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%BE%81%E8%B0%B7&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢澀谷站直通飯店 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item-card">
+          <div class="exp-card-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1533230807904-61cb19251c6a?auto=format&fit=crop&w=600&q=80" alt="花火大會" class="exp-card-thumb">
+            <span class="exp-card-badge">🎆 S級夏夜花火</span>
+          </div>
+          <div class="exp-card-body">
+            <div>
+              <h3 class="exp-card-title">長岡祭大花火大會 ＆ 隅田川花火觀覽席</h3>
+              <p class="exp-card-desc">信濃川畔震撼正三尺玉與長達兩公里的「鳳凰祈願花火」！預約專屬有料觀覽席或包船屋形船，在最佳視角直擊萬發花火照亮夜空。</p>
+            </div>
+            <div class="exp-actions-group">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E8%8A%B1%E7%81%AB%E5%A4%A7%E6%9C%83%20%E8%A7%80%E8%A6%BD%E5%B8%AD&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
+                <span>🛶 預約花火觀覽席 / 屋形船 ↗</span>
+              </a>
+              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
+                <span>🏨 查詢花火大會周邊住宿 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 頁尾 -->
+  <footer class="inbound-footer">
+    <div class="footer-logo-wrap">
+      <img src="./images/japan_tabi_logo.png" alt="Logo" style="width:28px; height:28px; border-radius:50%;">
+      <span style="font-weight:900; color:#1E293B;">日旅報報 JAPAN TABI</span>
+    </div>
+    <p>© 2026 日旅報報 JAPAN TABI ｜ 全日本觀光情報局 官方特輯</p>
+    <p style="font-size:0.75rem; color:#94A3B8; margin-top:4px;">本文與觀光景點情報受著作權法保護，未經授權禁止爬蟲搬運與商業轉載。</p>
+  </footer>
+
+</body>
+</html>

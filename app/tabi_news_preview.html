@@ -2986,65 +2986,72 @@
 
     .sub-context-pill {
       flex: 0 0 auto;
-      background: #FFFFFF;
-      border: 1.5px solid #E2E8F0;
+      background: #FAF8F5;
+      border: 1.5px solid #E5E0D8;
       border-radius: 999px;
-      padding: 7px 16px;
+      padding: 6px 18px;
       font-size: 0.82rem;
-      font-weight: 800;
-      color: #475569;
+      font-weight: 700;
+      color: #4A4A4A;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      letter-spacing: 0.8px;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
       white-space: nowrap;
     }
     .sub-context-pill:hover {
-      border-color: #CBD5E1;
-      transform: translateY(-1.5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      background: #F2EFE9;
+      border-color: #D5CEBF;
+      color: #1E293B;
+      transform: translateY(-1px);
     }
     .sub-context-pill.active {
-      background: #0F172A !important;
-      border-color: #0F172A !important;
+      background: linear-gradient(135deg, #F97940 0%, #FFA466 100%) !important;
+      border-color: #F97940 !important;
       color: #FFFFFF !important;
-      font-weight: 900 !important;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25) !important;
+      font-weight: 800 !important;
+      box-shadow: 0 2px 8px rgba(249, 121, 64, 0.25) !important;
     }
 
     body.mode-sakura .sub-context-pill.active {
-      background: linear-gradient(135deg, #F97940 0%, #FFB76D 100%) !important;
+      background: linear-gradient(135deg, #F97940 0%, #FFA466 100%) !important;
       border-color: #F97940 !important;
       color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(249, 121, 64, 0.35) !important;
+      box-shadow: 0 2px 8px rgba(249, 121, 64, 0.25) !important;
     }
     body.mode-snow .sub-context-pill.active {
-      background: linear-gradient(135deg, #2D6A75 0%, #ADCCD1 100%) !important;
-      border-color: #2D6A75 !important;
+      background: linear-gradient(135deg, #094F8D 0%, #38BDF8 100%) !important;
+      border-color: #094F8D !important;
       color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(45, 106, 117, 0.35) !important;
+      box-shadow: 0 2px 8px rgba(9, 79, 141, 0.25) !important;
     }
     body.mode-camp .sub-context-pill.active {
-      background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
-      border-color: #059669 !important;
+      background: linear-gradient(135deg, #2D6A4F 0%, #52B788 100%) !important;
+      border-color: #2D6A4F !important;
       color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35) !important;
+      box-shadow: 0 2px 8px rgba(45, 106, 79, 0.25) !important;
     }
     body.mode-momiji .sub-context-pill.active {
-      background: linear-gradient(135deg, #C2410C 0%, #FF9969 100%) !important;
+      background: linear-gradient(135deg, #C2410C 0%, #EA580C 100%) !important;
       border-color: #C2410C !important;
       color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(194, 65, 12, 0.35) !important;
+      box-shadow: 0 2px 8px rgba(194, 65, 12, 0.25) !important;
     }
     body.mode-ginkgo .sub-context-pill.active {
-      background: linear-gradient(135deg, #9FAF64 0%, #FFD283 100%) !important;
-      border-color: #9FAF64 !important;
+      background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%) !important;
+      border-color: #D97706 !important;
       color: #FFFFFF !important;
-      box-shadow: 0 4px 14px rgba(159, 175, 100, 0.35) !important;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25) !important;
     }
-    body.mode-hanabi .sub-context-pill.active {
+    body.mode-train .sub-context-pill.active {
+      background: linear-gradient(135deg, #1E293B 0%, #475569 100%) !important;
+      border-color: #1E293B !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 8px rgba(30, 41, 59, 0.25) !important;
+    }
       background: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%) !important;
       border-color: #4F46E5 !important;
       color: #FFFFFF !important;
@@ -6271,31 +6278,55 @@
     .btn-act-clean:hover {
       transform: translateY(-2px);
     }
-    /* 主行動按鈕 (🎟️ 預定行程)：規範 Group 1 溫暖蜜桃橘粉 (#F97940 ➔ #FFB76D) */
+    /* 主行動按鈕：和風溫潤山茶珊瑚 (日本文化雅致感，字數簡潔無圖案) */
     .btn-act-primary {
-      background: linear-gradient(135deg, #F97940 0%, #FFB76D 100%) !important;
+      background: linear-gradient(135deg, #F97940 0%, #FFA466 100%) !important;
       color: #FFFFFF !important;
-      border: none !important;
-      box-shadow: 0 3px 12px rgba(249, 121, 64, 0.32) !important;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) !important;
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      border-radius: 999px !important;
+      box-shadow: 0 2px 8px rgba(249, 121, 64, 0.22) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.8px !important;
+      text-shadow: none !important;
     }
     .btn-act-primary:hover {
-      background: linear-gradient(135deg, #EA6D35 0%, #FFA852 100%) !important;
-      box-shadow: 0 6px 18px rgba(249, 121, 64, 0.45) !important;
+      background: linear-gradient(135deg, #EA6D35 0%, #FF9B54 100%) !important;
+      box-shadow: 0 4px 12px rgba(249, 121, 64, 0.35) !important;
+      transform: translateY(-1px);
     }
-    /* 次行動按鈕 (🏨 訂房去)：規範 Group 2/4 極上晨雪冰川藍 (#ADCCD1 邊框 ＋ #F0F8FA 柔光底) */
+    /* 次行動按鈕：和風淺蔥晨霜白底 (精緻高雅，捨棄沉重生硬暗綠) */
     .btn-act-secondary {
-      background: linear-gradient(135deg, #F0F8FA 0%, #E2F1F4 100%) !important;
-      color: #2D6A75 !important;
-      border: 1.5px solid #ADCCD1 !important;
-      box-shadow: 0 2px 8px rgba(173, 204, 209, 0.22) !important;
+      background: #F0F8FA !important;
+      color: #1A535C !important;
+      border: 1.5px solid #AECDD2 !important;
+      border-radius: 999px !important;
+      box-shadow: 0 1px 4px rgba(174, 205, 210, 0.18) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.8px !important;
       text-shadow: none !important;
     }
     .btn-act-secondary:hover {
-      background: linear-gradient(135deg, #2D6A75 0%, #3B7A87 100%) !important;
-      border-color: #2D6A75 !important;
-      color: #FFFFFF !important;
-      box-shadow: 0 5px 14px rgba(45, 106, 117, 0.35) !important;
+      background: #E2F2F6 !important;
+      border-color: #78C8C7 !important;
+      color: #0E3B42 !important;
+      box-shadow: 0 3px 8px rgba(120, 200, 199, 0.28) !important;
+      transform: translateY(-1px);
+    }
+    /* 輔助按鈕：若草嫩綠 (精緻自然) */
+    .btn-act-mint {
+      background: #F4FAF4 !important;
+      color: #2D6A4F !important;
+      border: 1.5px solid #B3D0B4 !important;
+      border-radius: 999px !important;
+      box-shadow: 0 1px 4px rgba(179, 208, 180, 0.18) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.8px !important;
+    }
+    .btn-act-mint:hover {
+      background: #E8F5E9 !important;
+      border-color: #78C8C7 !important;
+      color: #1B4332 !important;
+      transform: translateY(-1px);
     }
 
     /* Hero Banner 探索按鈕：規範 Group 1 */
@@ -6623,6 +6654,12 @@
         <span>包車 / 租車</span>
       </button>
 
+      <!-- 3. 🏆 7大排行特輯 專屬旗艦入口 -->
+      <a href="japan_inbound_rankings.html" target="_blank" class="header-util-btn" style="text-decoration:none; color:inherit;" title="外國旅客最著迷的 7 大排行榜維度與延伸項目盤點">
+        <span class="util-btn-icon">🏆</span>
+        <span>7大排行特輯</span>
+      </a>
+
       <!-- 3. 前台語言切換器 (🌐 Language) -->
       <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
         <button class="header-util-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)" title="切換語言">
@@ -6823,31 +6860,31 @@
   <div class="sakura-region-bar" id="sakuraRegionBar" style="margin: 12px 0 18px 0;">
     <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
       <button class="region-pill active" data-region="all" onclick="selectSakuraRegion('all', this)">
-        <span>🌸</span> <span>全日本名所 (140)</span>
+        <span>全日本 (140)</span>
       </button>
       <button class="region-pill" data-region="kanto" onclick="selectSakuraRegion('kanto', this)">
-        <span>🗼</span> <span>關東・東京 (40)</span>
+        <span>東京 (40)</span>
       </button>
       <button class="region-pill" data-region="kansai" onclick="selectSakuraRegion('kansai', this)">
-        <span>⛩️</span> <span>關西・京都大阪 (40)</span>
+        <span>京都大阪 (40)</span>
       </button>
       <button class="region-pill" data-region="tohoku" onclick="selectSakuraRegion('tohoku', this)">
-        <span>🏯</span> <span>東北 (10)</span>
+        <span>東北 (10)</span>
       </button>
       <button class="region-pill" data-region="chubu" onclick="selectSakuraRegion('chubu', this)">
-        <span>🗻</span> <span>中部・甲信越 (10)</span>
+        <span>中部 (10)</span>
       </button>
       <button class="region-pill" data-region="hokkaido" onclick="selectSakuraRegion('hokkaido', this)">
-        <span>❄️</span> <span>北海道 (10)</span>
+        <span>北海道 (10)</span>
       </button>
       <button class="region-pill" data-region="chugoku" onclick="selectSakuraRegion('chugoku', this)">
-        <span>🌊</span> <span>中國・山陽山陰 (10)</span>
+        <span>中國 (10)</span>
       </button>
       <button class="region-pill" data-region="shikoku" onclick="selectSakuraRegion('shikoku', this)">
-        <span>🛶</span> <span>四國 (10)</span>
+        <span>四國 (10)</span>
       </button>
       <button class="region-pill" data-region="kyushu" onclick="selectSakuraRegion('kyushu', this)">
-        <span>🌴</span> <span>九州・沖繩 (10)</span>
+        <span>九州 (10)</span>
       </button>
     </div>
   </div>
@@ -12027,33 +12064,6 @@
       </div>
     </div>
 
-    <!-- 旅人信賴服務三大專屬入口：Trip / Klook / Booking -->
-    <div class="services-trio-grid">
-      <a href="javascript:void(0)" onclick="goTripDeepLink('/flights/taipei-to-tokyo')" class="service-entry-card service-card-trip">
-        <div class="service-entry-icon">✈️</div>
-        <div>
-          <div class="service-entry-title">Trip.com 機票即時比價搜尋</div>
-          <div class="service-entry-sub">台北 / 高雄直飛東京、大阪即時低價月曆</div>
-        </div>
-      </a>
-
-      <a href="https://www.klook.com" target="_blank" class="service-entry-card service-card-klook">
-        <div class="service-entry-icon">🎟️</div>
-        <div>
-          <div class="service-entry-title">Klook 精選行程・快速通關</div>
-          <div class="service-entry-sub">花火大會觀賞席・滑雪教練・交通周遊券早鳥優惠</div>
-        </div>
-      </a>
-
-      <a href="https://www.booking.com" target="_blank" class="service-entry-card service-card-booking">
-        <div class="service-entry-icon">🏨</div>
-        <div>
-          <div class="service-entry-title">Booking.com 精選訂房搜尋</div>
-          <div class="service-entry-sub">特約分潤合作入口・景觀露台房享免費取消</div>
-        </div>
-      </a>
-    </div>
-
     <div class="footer-grid-4">
       <div class="footer-col">
         <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
@@ -15489,6 +15499,7 @@
 ,
 
       // 🌸 擴充：東京 40 大櫻花名所 ＆ 關西（京都・大阪）40 大櫻花名所 深度完整收錄
+      {
         "id": "yoyogi_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15516,6 +15527,7 @@
             "feature": "宮下公園高空綠洲・澀谷站步行5分直達"
       }
 },
+      {
         "id": "hamarikyu_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15543,6 +15555,7 @@
             "feature": "俯瞰濱離宮庭園全景・汐留站直通五星奢華"
       }
 },
+      {
         "id": "shiba_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15570,6 +15583,7 @@
             "feature": "客房窗景正對東京鐵塔頂部・芝公園綠地環抱"
       }
 },
+      {
         "id": "asuka_yama_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15597,6 +15611,7 @@
             "feature": "轉乘直達王子站・JR池袋站西口步行1分鐘"
       }
 },
+      {
         "id": "yasukuni_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15624,6 +15639,7 @@
             "feature": "鄰近千鳥之淵與靖國神社・步行即達雙賞櫻名所"
       }
 },
+      {
         "id": "hibiya_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15651,6 +15667,7 @@
             "feature": "日本迎賓館傳奇名門・直面日比谷公園櫻木綠意"
       }
 },
+      {
         "id": "aoyama_reien_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15678,6 +15695,7 @@
             "feature": "隈研吾大師和風設計・赤坂見附地鐵四線直通"
       }
 },
+      {
         "id": "mohrigarden_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15705,6 +15723,7 @@
             "feature": "六本木之丘直通・下樓即達毛利庭園與森美術館"
       }
 },
+      {
         "id": "tokyo_midtown_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15732,6 +15751,7 @@
             "feature": "坐落中城塔頂53樓・俯瞰東京鐵塔與滿城櫻海"
       }
 },
+      {
         "id": "harimazaka_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15759,6 +15779,7 @@
             "feature": "百年悠久森林庭園・春季早晨薄霧雲海與古塔春櫻"
       }
 },
+      {
         "id": "otonashi_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15786,6 +15807,7 @@
             "feature": "平價舒適連鎖設計旅店・鄰近池袋商圈生活機能齊全"
       }
 },
+      {
         "id": "kandagawa_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15813,6 +15835,7 @@
             "feature": "正對大隈庭園・歐式宮廷古典風格大廳"
       }
 },
+      {
         "id": "zenpukuji_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15840,6 +15863,7 @@
             "feature": "直通東京車站・轉乘JR中央線暢遊杉並吉祥寺"
       }
 },
+      {
         "id": "koganei_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15867,6 +15891,7 @@
             "feature": "吉祥寺生活圈核心・購物美食便利・直達公園"
       }
 },
+      {
         "id": "showa_kinen_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15894,6 +15919,7 @@
             "feature": "頂樓無邊際溫水泳池眺望富士山・北歐極簡木質"
       }
 },
+      {
         "id": "mizumoto_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15921,6 +15947,7 @@
             "feature": "客房正對東京晴空塔與淺草寺・直通筑波快線"
       }
 },
+      {
         "id": "shakujii_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15948,6 +15975,7 @@
             "feature": "直通太陽城水族館與購物商場・西武池袋線樞紐"
       }
 },
+      {
         "id": "kinuta_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -15975,6 +16003,7 @@
             "feature": "二子玉川Rise頂樓・俯瞰多摩川與富士山夕景"
       }
 },
+      {
         "id": "gotenyama_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16002,6 +16031,7 @@
             "feature": "座落御殿山花園旁・新幹線與羽田機場直達樞紐"
       }
 },
+      {
         "id": "sakurazaka_ohta",
       "theme": "sakura",
       "category": "flower",
@@ -16029,6 +16059,7 @@
             "feature": "直通羽田機場登機門・頂樓富士山展望露天溫泉"
       }
 },
+      {
         "id": "ikegami_honmonji_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16056,6 +16087,7 @@
             "feature": "鄰近JR蒲田站・羽田機場與品川商圈交通極速連接"
       }
 },
+      {
         "id": "kasai_rinkai_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16083,6 +16115,7 @@
             "feature": "坐落葛西臨海公園內部・出門即是摩天輪與櫻花林"
       }
 },
+      {
         "id": "ukima_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16110,6 +16143,7 @@
             "feature": "JR埼京線與京濱東北線交會・交通便捷商務首選"
       }
 },
+      {
         "id": "kyu_furukawa_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16137,6 +16171,7 @@
             "feature": "六義園與舊古河庭園雙名園樞紐・JR駒込站南口直達"
       }
 },
+      {
         "id": "kunitachi_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16164,6 +16199,7 @@
             "feature": "JR中央線直達特快・周邊百貨商場購物機能完備"
       }
 },
+      {
         "id": "takao_itoyodaira_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16191,6 +16227,7 @@
             "feature": "高尾山口站旁直達・登山健行後享受檜木露天風呂"
       }
 },
+      {
         "id": "okutama_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16218,6 +16255,7 @@
             "feature": "鶴之湯源泉名湯・爐端燒香魚・百年和風木造榻榻米"
       }
 },
+      {
         "id": "tamagawadai_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16245,6 +16283,7 @@
             "feature": "東橫線直通田園調布・羽田機場與橫濱樞紐"
       }
 },
+      {
         "id": "hamura_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16272,6 +16311,7 @@
             "feature": "青梅線直達羽村與奧多摩・免費和式早餐"
       }
 },
+      {
         "id": "gajoen_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16299,6 +16339,7 @@
             "feature": "全套房配備檜木水療按摩浴缸・Small Luxury Hotels"
       }
 },
+      {
         "id": "arashiyama_togetsukyo",
       "theme": "sakura",
       "category": "flower",
@@ -16326,6 +16367,7 @@
             "feature": "保津川首排私人露天溫泉客房・歷史和風宅邸奢華"
       }
 },
+      {
         "id": "hirano_shrine_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16353,6 +16395,7 @@
             "feature": "坐落鴨川水岸・遠眺東山三十六峰櫻花稜線"
       }
 },
+      {
         "id": "maruyama_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16380,6 +16423,7 @@
             "feature": "出門即是鴨川與先斗町・大浴場洗去漫步疲憊"
       }
 },
+      {
         "id": "heian_jingu_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16407,6 +16451,7 @@
             "feature": "京都市役所直通・百年優雅管家服務・交通極便"
       }
 },
+      {
         "id": "kyoto_gyoen_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16434,6 +16479,7 @@
             "feature": "三十三間堂旁・日式杉木極簡美學名邸"
       }
 },
+      {
         "id": "nakaragi_no_michi",
       "theme": "sakura",
       "category": "flower",
@@ -16461,6 +16507,7 @@
             "feature": "六層挑高中庭美侖美奐・御所西側清幽頂級住所"
       }
 },
+      {
         "id": "takasegawa_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16488,6 +16535,7 @@
             "feature": "八坂通閑靜高雅和風酒店・大浴場與祇園傳統藝妓街近在咫尺"
       }
 },
+      {
         "id": "toji_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16515,6 +16563,7 @@
             "feature": "JR京都站新幹線八條口對面・步行可達東寺夜櫻"
       }
 },
+      {
         "id": "gion_shirakawa_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16542,6 +16591,7 @@
             "feature": "搭乘專屬木舟溯流而上・保津川隱密水岸私人庭院"
       }
 },
+      {
         "id": "sewaritei_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16569,6 +16619,7 @@
             "feature": "京都車站直結地下通道・快速搭乘京阪前往背割堤"
       }
 },
+      {
         "id": "kema_sakuranomiya",
       "theme": "sakura",
       "category": "flower",
@@ -16596,6 +16647,7 @@
             "feature": "正對毛利櫻之宮公園・客房落地窗俯瞰整條大川櫻花並木"
       }
 },
+      {
         "id": "expo70_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16623,6 +16675,7 @@
             "feature": "大阪梅田交通核心・高空景觀客房俯瞰繁華夜景"
       }
 },
+      {
         "id": "satsukiyama_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16650,6 +16703,7 @@
             "feature": "大阪市區近郊天然溫泉秘境・露天天然碳酸泉風呂"
       }
 },
+      {
         "id": "daisen_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16677,6 +16731,7 @@
             "feature": "南海本線堺站直通・關西機場與難波商圈交通樞紐"
       }
 },
+      {
         "id": "shitennoji_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16704,6 +16759,7 @@
             "feature": "阿倍野Harukas 300頂樓・俯瞰四天王寺與全大阪櫻景"
       }
 },
+      {
         "id": "sumiyoshi_taisha_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16731,6 +16787,7 @@
             "feature": "難波車站上方直通・搭乘南海電鐵直達住吉大社"
       }
 },
+      {
         "id": "yamanakadani_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16758,6 +16815,7 @@
             "feature": "第一航廈聯通直達・關西進出追櫻首日最佳落腳處"
       }
 },
+      {
         "id": "kishiwada_castle_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16785,6 +16843,7 @@
             "feature": "臨空城高空景觀飯店・摩天輪夜景與櫻花眺望"
       }
 },
+      {
         "id": "nara_park_ukimidou",
       "theme": "sakura",
       "category": "flower",
@@ -16812,6 +16871,7 @@
             "feature": "隈研吾設計隈和風別邸・古都名園私人露天溫泉客房"
       }
 },
+      {
         "id": "sahogawa_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16839,6 +16899,7 @@
             "feature": "奈良市役所旁・全日本首座JW萬豪酒店・尊貴體驗"
       }
 },
+      {
         "id": "koriyama_castle_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16866,6 +16927,7 @@
             "feature": "JR奈良站西口直通・轉乘大和路線極其便利"
       }
 },
+      {
         "id": "hasedera_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16893,6 +16955,7 @@
             "feature": "1861年文久年間創業・長谷寺參道第一名古老溫泉旅館"
       }
 },
+      {
         "id": "shukugawa_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16920,6 +16983,7 @@
             "feature": "六甲島源泉露天溫泉・快速連接阪神電車賞櫻"
       }
 },
+      {
         "id": "akashi_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16947,6 +17011,7 @@
             "feature": "神戶港270度海景波浪型地標・港灣夜景第一排"
       }
 },
+      {
         "id": "sumaura_park_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -16974,6 +17039,7 @@
             "feature": "神戶港塔旁・傳統日式款待美學名門"
       }
 },
+      {
         "id": "kitano_tenman_sakura",
       "theme": "sakura",
       "category": "flower",
@@ -17004,6 +17070,7 @@
 ,
 
       // ❄️ 2026 全日本滑雪場旗艦資料庫 (北海道・長野・新潟・東北・富士近郊 全境收錄)
+      {
         "id": "ski_niseko_united",
       "theme": "snow",
       "category": "ski",
@@ -17034,6 +17101,7 @@
             "feature": "直面雪道Ski-in/Ski-out・全套房私人溫泉湯屋"
       }
 },
+      {
         "id": "ski_rusutsu_resort",
       "theme": "snow",
       "category": "ski",
@@ -17063,6 +17131,7 @@
             "feature": "連續榮獲日本最佳滑雪飯店・全雙層樓中樓套房"
       }
 },
+      {
         "id": "ski_kiroro_snow",
       "theme": "snow",
       "category": "ski",
@@ -17092,6 +17161,7 @@
             "feature": "兒童滑雪學校直通・出門即滑雪場・露天天然溫泉"
       }
 },
+      {
         "id": "ski_tomamu_hoshino",
       "theme": "snow",
       "category": "ski",
@@ -17121,6 +17191,7 @@
             "feature": "全客房配備超大景觀按摩浴缸與私人三溫暖桑拿"
       }
 },
+      {
         "id": "ski_furano_resort",
       "theme": "snow",
       "category": "ski",
@@ -17150,6 +17221,7 @@
             "feature": "雪道直接滑進大廳・紫彩之湯天然露天溫泉"
       }
 },
+      {
         "id": "ski_sapporo_kokusai",
       "theme": "snow",
       "category": "ski",
@@ -17179,6 +17251,7 @@
             "feature": "頂樓溪谷景觀露天風呂・三溫暖桑拿與日式自助饗宴"
       }
 },
+      {
         "id": "ski_sapporo_teine",
       "theme": "snow",
       "category": "ski",
@@ -17208,6 +17281,7 @@
             "feature": "JR札幌站北口步行2分・出發滑雪極速便捷"
       }
 },
+      {
         "id": "ski_hakuba_happo",
       "theme": "snow",
       "category": "ski",
@@ -17237,6 +17311,7 @@
             "feature": "萬坪森林庭園・四大獨立私人景觀露天溫泉湯屋"
       }
 },
+      {
         "id": "ski_hakuba_goryu47",
       "theme": "snow",
       "category": "ski",
@@ -17266,6 +17341,7 @@
             "feature": "五龍雪道直通步行3分・英式歐風溫馨木造溫泉"
       }
 },
+      {
         "id": "ski_nozawa_onsen",
       "theme": "snow",
       "category": "ski",
@@ -17295,6 +17371,7 @@
             "feature": "百年傳統純和風溫泉旅館・麻釜源泉自流名湯"
       }
 },
+      {
         "id": "ski_shiga_kogen",
       "theme": "snow",
       "category": "ski",
@@ -17324,6 +17401,7 @@
             "feature": "纜車出門即滑・全日本滑雪客一生必住傳奇度假飯店"
       }
 },
+      {
         "id": "ski_madarao_kogen",
       "theme": "snow",
       "category": "ski",
@@ -17353,6 +17431,7 @@
             "feature": "天然自涌溫泉大浴場・Ski-in/Ski-out滑進大廳"
       }
 },
+      {
         "id": "ski_karuizawa_prince",
       "theme": "snow",
       "category": "ski",
@@ -17382,6 +17461,7 @@
             "feature": "小木屋別墅區・溫泉棟「MOMIJI」露天溫泉享受"
       }
 },
+      {
         "id": "ski_gala_yuzawa",
       "theme": "snow",
       "category": "ski",
@@ -17411,6 +17491,7 @@
             "feature": "車站西口步行2分・庭園風露天溫泉岩風呂"
       }
 },
+      {
         "id": "ski_naeba_resort",
       "theme": "snow",
       "category": "ski",
@@ -17440,6 +17521,7 @@
             "feature": "雪道第一排・出房門即是滑雪場・火泉天然溫泉"
       }
 },
+      {
         "id": "ski_kagura_resort",
       "theme": "snow",
       "category": "ski",
@@ -17469,6 +17551,7 @@
             "feature": "二十八種不同天然風呂・眺望谷川連峰頂級名門宿"
       }
 },
+      {
         "id": "ski_yuzawa_kogen",
       "theme": "snow",
       "category": "ski",
@@ -17498,6 +17581,7 @@
             "feature": "私人樓中樓套房・室內獨立源泉溫泉浴槽奢華首選"
       }
 },
+      {
         "id": "ski_myoko_suginohara",
       "theme": "snow",
       "category": "ski",
@@ -17527,6 +17611,7 @@
             "feature": "1937年創業高原古典奢華名門・天際無邊際溫泉雲海"
       }
 },
+      {
         "id": "ski_akakura_onsen",
       "theme": "snow",
       "category": "ski",
@@ -17556,6 +17641,7 @@
             "feature": "妙高山天然源泉掛流・純和風木造百年旅館"
       }
 },
+      {
         "id": "ski_zao_onsen",
       "theme": "snow",
       "category": "ski",
@@ -17585,6 +17671,7 @@
             "feature": "八右衛門之湯100%全木造乳白色硫磺溫泉・雪道出門即滑"
       }
 },
+      {
         "id": "ski_appi_kogen",
       "theme": "snow",
       "category": "ski",
@@ -17614,6 +17701,7 @@
             "feature": "獲選世界奢華酒店大獎・頂級溫泉水療與管家服務"
       }
 },
+      {
         "id": "ski_geto_kogen",
       "theme": "snow",
       "category": "ski",
@@ -17643,6 +17731,7 @@
             "feature": "基地直通・提供滑雪客最高性價比背包與家庭住宿"
       }
 },
+      {
         "id": "ski_nekoma_bandai",
       "theme": "snow",
       "category": "ski",
@@ -17672,6 +17761,7 @@
             "feature": "直接滑進滑出・會津酒藏清酒品飲與檜木溫泉大浴場"
       }
 },
+      {
         "id": "ski_snowtown_yeti",
       "theme": "snow",
       "category": "ski",
@@ -17701,6 +17791,7 @@
             "feature": "頂樓「木之花之湯」直面富士山雄姿超絕景溫泉"
       }
 },
+      {
         "id": "ski_kusatsu_onsen",
       "theme": "snow",
       "category": "ski",
@@ -17730,6 +17821,7 @@
             "feature": "十返舍一九等文人喜愛的古雅名宿・六大源泉掛流露天湯"
       }
 },
+      {
         "id": "ski_marunuma_kogen",
       "theme": "snow",
       "category": "ski",
@@ -17759,6 +17851,7 @@
             "feature": "雪道山麓直通・溫暖天然弱鹼性溫泉洗淨筋骨"
       }
 },
+      {
         "id": "ski_biwako_valley",
       "theme": "snow",
       "category": "ski",
@@ -17791,6 +17884,7 @@
 ,
 
       // ⛺ 2026 全日本露營與自駕前線資料庫 (絕景營地・免裝備奢華Glamping・露營車Vanlife全境收錄)
+      {
         "id": "camp_kouan",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -17813,6 +17907,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "camp_fumotoppara",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -17835,6 +17930,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "camp_tanukiko",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -17857,6 +17953,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%9D%9C%E5%B2%A1%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "camp_shojiko",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -17879,6 +17976,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "camp_toyako_mizube",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -17901,6 +17999,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%96%B0%E5%8D%83%E6%AD%B2%E6%A9%9F%E5%A0%B4%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "glamp_hoshinoya_fuji",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -17923,6 +18022,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "glamp_pica_saiko",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -17945,6 +18045,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "glamp_element_biwako",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -17967,6 +18068,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E7%90%B5%E7%90%B6%E6%B9%96%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "glamp_kanade_no_mori",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -17989,6 +18091,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BC%8A%E8%B1%86%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "glamp_snowpeak_hakuba",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -18011,6 +18114,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E7%99%BD%E9%A6%AC%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "vanlife_fuji_route",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -18033,6 +18137,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "vanlife_doto_hokkaido",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -18055,6 +18160,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "vanlife_nagano_alps",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -18077,6 +18183,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "vanlife_izu_coast",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -18099,6 +18206,7 @@
       "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
       "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BC%8A%E8%B1%86%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
 },
+      {
         "id": "vanlife_biwako_loop",
       "theme": "camp",
       "category": "outdoor_camp",
@@ -18215,52 +18323,52 @@
     const MASTER_HUBS_CONFIG = {
       'flower': {
         themeMode: 'sakura',
-        title: '🌸 賞花前線',
+        title: '賞花前線',
         feedSeason: 'sakura',
         subItems: [
-          { id: 'sakura_bloom', icon: '🌸', name: '春櫻盛典（即時花況看板）', type: 'season', val: 'sakura' },
-          { id: 'fuji_wisteria', icon: '💜', name: '紫藤瀑布（足利／河內藤園）', type: 'spot_id', val: 'ashikaga_fuji' },
-          { id: 'nemophila_sea', icon: '💙', name: '粉蝶花海（常陸海濱公園）', type: 'spot_id', val: 'hitachi_flower' },
-          { id: 'hydrangea_season', icon: '💙', name: '繡球花季（鎌倉／京都名寺）', type: 'spot_id', val: 'hydrangea_flower' },
-          { id: 'momiji_view', icon: '🍁', name: '秋楓見頃（紅葉情報速報）', type: 'season', val: 'momiji' },
-          { id: 'ginkgo_gold', icon: '🍂', name: '金黃銀杏（街道並木黃金毯）', type: 'season', val: 'ginkgo' }
+          { id: 'sakura_bloom', icon: '', name: '櫻花', type: 'season', val: 'sakura' },
+          { id: 'fuji_wisteria', icon: '', name: '紫藤花', type: 'spot_id', val: 'ashikaga_fuji' },
+          { id: 'nemophila_sea', icon: '', name: '粉蝶花', type: 'spot_id', val: 'hitachi_flower' },
+          { id: 'hydrangea_season', icon: '', name: '繡球花', type: 'spot_id', val: 'hydrangea_flower' },
+          { id: 'momiji_view', icon: '', name: '秋楓', type: 'season', val: 'momiji' },
+          { id: 'ginkgo_gold', icon: '', name: '銀杏', type: 'season', val: 'ginkgo' }
         ]
       },
       'snow': {
         themeMode: 'snow',
-        title: '❄️ 極上粉雪',
+        title: '極上粉雪',
         feedSeason: 'snow',
         subItems: [
-          { id: 'snow_level_all', icon: '🎿', name: '全部難度', type: 'snow_level', val: 'all' },
-          { id: 'snow_level_beginner', icon: '🟢', name: '初級新手（魔毯／寬緩道／綠線）', type: 'snow_level', val: 'beginner' },
-          { id: 'snow_level_intermediate', icon: '🟡', name: '中級進階（景觀巡航／紅線）', type: 'snow_level', val: 'intermediate' },
-          { id: 'snow_level_advanced', icon: '🔴', name: '高階野雪（JAPOW天然乾粉／樹林道）', type: 'snow_level', val: 'advanced' },
-          { id: 'snow_coach_portal', icon: '👨‍🏫', name: '全日本認證中文教練名冊 ↗', type: 'portal', val: 'openCoachBooking' }
+          { id: 'snow_level_all', icon: '', name: '全部難度', type: 'snow_level', val: 'all' },
+          { id: 'snow_level_beginner', icon: '', name: '初級新手', type: 'snow_level', val: 'beginner' },
+          { id: 'snow_level_intermediate', icon: '', name: '中級進階', type: 'snow_level', val: 'intermediate' },
+          { id: 'snow_level_advanced', icon: '', name: '高階野雪', type: 'snow_level', val: 'advanced' },
+          { id: 'snow_coach_portal', icon: '', name: '教練名冊', type: 'portal', val: 'openCoachBooking' }
         ]
       },
       'camp_charter': {
         themeMode: 'camp',
-        title: '⛺ 露營與自駕',
+        title: '露營自駕',
         feedSeason: 'spots',
         subItems: [
-          { id: 'camp_type_all', icon: '⛺', name: '全部情境 (15)', type: 'camp_type', val: 'all' },
-          { id: 'camp_autocamp', icon: '⛺', name: '絕景露營場地 (Auto Camp)', type: 'camp_type', val: 'autocamp' },
-          { id: 'camp_glamping', icon: '🏕️', name: '免裝備豪華露營 (Glamping)', type: 'camp_type', val: 'glamping' },
-          { id: 'camp_vanlife', icon: '🚐', name: '露營車漫遊路線 (Vanlife)', type: 'camp_type', val: 'vanlife' },
-          { id: 'camp_charter_portal', icon: '🚗', name: '全日本租車包車攻略 ↗', type: 'portal', val: 'openCharterRentalPortal' }
+          { id: 'camp_type_all', icon: '', name: '全部情境', type: 'camp_type', val: 'all' },
+          { id: 'camp_autocamp', icon: '', name: '絕景營地', type: 'camp_type', val: 'autocamp' },
+          { id: 'camp_glamping', icon: '', name: '豪華露營', type: 'camp_type', val: 'glamping' },
+          { id: 'camp_vanlife', icon: '', name: '露營車漫遊', type: 'camp_type', val: 'vanlife' },
+          { id: 'camp_charter_portal', icon: '', name: '租車包車攻略', type: 'portal', val: 'openCharterRentalPortal' }
         ]
       },
       'topics': {
         themeMode: 'train',
-        title: '🚂 鐵道之旅',
+        title: '鐵道之旅',
         feedSeason: 'train',
         subItems: [
-          { id: 'train_season_front', icon: '🗓️', name: '季節行駛前線（春夏秋冬開行月曆）', type: 'season_front', val: 'train_season_front' },
-          { id: 'train_winter', icon: '❄️', name: '冬雪前線（SL冬之濕原／流冰物語）', type: 'season_front', val: 'winter' },
-          { id: 'train_spring', icon: '🌸', name: '春花前線（夷隅油菜花／嵐山小火車）', type: 'season_front', val: 'spring' },
-          { id: 'train_summer', icon: '🌾', name: '夏綠前線（薰衣草慢車／皮卡丘列車）', type: 'season_front', val: 'summer' },
-          { id: 'train_autumn', icon: '🍁', name: '秋楓前線（叡山紅葉隧道／磐越物語）', type: 'season_front', val: 'autumn' },
-          { id: 'topic_train', icon: '🚂', name: '全日本30大觀光特急圖鑑 ↗', type: 'portal', val: 'openTrainPortal' }
+          { id: 'train_season_front', icon: '', name: '四季前線', type: 'season_front', val: 'train_season_front' },
+          { id: 'train_winter', icon: '', name: '冬雪列車', type: 'season_front', val: 'winter' },
+          { id: 'train_spring', icon: '', name: '春花列車', type: 'season_front', val: 'spring' },
+          { id: 'train_summer', icon: '', name: '夏綠列車', type: 'season_front', val: 'summer' },
+          { id: 'train_autumn', icon: '', name: '秋楓列車', type: 'season_front', val: 'autumn' },
+          { id: 'topic_train', icon: '', name: '特急圖鑑', type: 'portal', val: 'openTrainPortal' }
         ]
       }
     };
@@ -18301,7 +18409,7 @@
       const isShow = panel.classList.contains('show');
       panel.classList.toggle('show', !isShow);
       btn.innerHTML = isShow 
-        ? '<span>📖 查看自駕攻略 ＆ 外國人露營須知 ▾</span>' 
+        ? '<span>自駕須知 ▾</span>' 
         : '<span>收起自駕須知 ▴</span>';
     }
 
@@ -18314,47 +18422,43 @@
         bar.innerHTML = `
           <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
             <button class="region-pill ${currentCampRegion === 'all' ? 'active' : ''}" onclick="selectCampRegion('all', this)">
-              <span>🗾</span> <span>全日本精選 (15)</span>
+              <span>全日本 (15)</span>
             </button>
             <button class="region-pill ${currentCampRegion === 'fuji' ? 'active' : ''}" onclick="selectCampRegion('fuji', this)">
-              <span>🗻</span> <span>富士五湖・靜岡 (5)</span>
+              <span>富士五湖 (5)</span>
             </button>
             <button class="region-pill ${currentCampRegion === 'hokkaido' ? 'active' : ''}" onclick="selectCampRegion('hokkaido', this)">
-              <span>❄️</span> <span>北海道曠野 (3)</span>
+              <span>北海道 (3)</span>
             </button>
             <button class="region-pill ${currentCampRegion === 'nagano' ? 'active' : ''}" onclick="selectCampRegion('nagano', this)">
-              <span>🏔️</span> <span>長野・北阿爾卑斯 (3)</span>
+              <span>長野 (3)</span>
             </button>
             <button class="region-pill ${currentCampRegion === 'kansai_izu' ? 'active' : ''}" onclick="selectCampRegion('kansai_izu', this)">
-              <span>🌊</span> <span>關西琵琶湖・伊豆 (4)</span>
+              <span>關西伊豆 (4)</span>
             </button>
           </div>
         `;
-      } else
-      const bar = document.getElementById('sakuraRegionBar');
-      if (!bar) return;
-
-      if (currentMasterHub === 'snow') {
+      } else if (currentMasterHub === 'snow') {
         bar.style.display = 'block';
         bar.innerHTML = `
           <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
             <button class="region-pill ${currentSnowRegion === 'all' ? 'active' : ''}" onclick="selectSnowRegion('all', this)">
-              <span>🗾</span> <span>全日本雪場 (27)</span>
+              <span>全日本 (27)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'hokkaido' ? 'active' : ''}" onclick="selectSnowRegion('hokkaido', this)">
-              <span>❄️</span> <span>北海道 (7)</span>
+              <span>北海道 (7)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'nagano' ? 'active' : ''}" onclick="selectSnowRegion('nagano', this)">
-              <span>🏔️</span> <span>長野・白馬 (6)</span>
+              <span>長野白馬 (6)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'niigata' ? 'active' : ''}" onclick="selectSnowRegion('niigata', this)">
-              <span>🎿</span> <span>新潟・越後湯澤 (6)</span>
+              <span>新潟越後 (6)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'tohoku' ? 'active' : ''}" onclick="selectSnowRegion('tohoku', this)">
-              <span>🏯</span> <span>東北・藏王 (4)</span>
+              <span>東北藏王 (4)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'kanto_fuji' ? 'active' : ''}" onclick="selectSnowRegion('kanto_fuji', this)">
-              <span>🗻</span> <span>關東・近郊 (4)</span>
+              <span>關東近郊 (4)</span>
             </button>
           </div>
         `;
@@ -18363,31 +18467,31 @@
         bar.innerHTML = `
           <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
             <button class="region-pill ${currentSakuraRegion === 'all' ? 'active' : ''}" data-region="all" onclick="selectSakuraRegion('all', this)">
-              <span>🌸</span> <span>全日本名所 (140)</span>
+              <span>全日本 (140)</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'kanto' ? 'active' : ''}" data-region="kanto" onclick="selectSakuraRegion('kanto', this)">
-              <span>🗼</span> <span>關東・東京 (40)</span>
+              <span>東京 (40)</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'kansai' ? 'active' : ''}" data-region="kansai" onclick="selectSakuraRegion('kansai', this)">
-              <span>⛩️</span> <span>關西・京都大阪 (40)</span>
+              <span>京都大阪 (40)</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'tohoku' ? 'active' : ''}" data-region="tohoku" onclick="selectSakuraRegion('tohoku', this)">
-              <span>🏯</span> <span>東北 (10)</span>
+              <span>東北 (10)</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'chubu' ? 'active' : ''}" data-region="chubu" onclick="selectSakuraRegion('chubu', this)">
-              <span>🗻</span> <span>中部・甲信越 (10)</span>
+              <span>中部 (10)</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'hokkaido' ? 'active' : ''}" data-region="hokkaido" onclick="selectSakuraRegion('hokkaido', this)">
-              <span>❄️</span> <span>北海道 (10)</span>
+              <span>北海道 (10)</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'chugoku' ? 'active' : ''}" data-region="chugoku" onclick="selectSakuraRegion('chugoku', this)">
-              <span>🌊</span> <span>中國・山陽山陰 (10)</span>
+              <span>中國 (10)</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'shikoku' ? 'active' : ''}" data-region="shikoku" onclick="selectSakuraRegion('shikoku', this)">
-              <span>🛶</span> <span>四國 (10)</span>
+              <span>四國 (10)</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'kyushu' ? 'active' : ''}" data-region="kyushu" onclick="selectSakuraRegion('kyushu', this)">
-              <span>🌴</span> <span>九州・沖繩 (10)</span>
+              <span>九州 (10)</span>
             </button>
           </div>
         `;
@@ -18439,7 +18543,7 @@
         const btn = document.createElement('button');
         const isAct = currentSubItemId === item.id;
         btn.className = `sub-context-pill ${isAct ? 'active' : ''}`;
-        btn.innerHTML = `<span>${item.icon}</span> <span>${item.name}</span>`;
+        btn.innerHTML = `<span>${item.name}</span>`;
         btn.onclick = () => handleSubItemSelection(item, true);
         container.appendChild(btn);
       });
@@ -18836,17 +18940,17 @@
               <div class="camp-actions-group">
                 <div class="camp-actions-row-top">
                   <a href="${item.bookingUrl || 'https://www.booking.com/'}" target="_blank" class="btn-camp-primary" onclick="event.stopPropagation();" title="預約營位或豪華露營住宿">
-                    <span>⛺ 預約營位 / Glamping 訂房 ↗</span>
+                    <span>預約營位</span>
                   </a>
                   <a href="${item.rentalUrl || 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" class="btn-camp-rental" onclick="event.stopPropagation();" title="全日本自駕租車比價・中文GPS・含免責補償">
-                    <span>🚗 自駕租車比價 (中文GPS) ↗</span>
+                    <span>租車比價</span>
                   </a>
                 </div>
                 <a href="${item.charterUrl || 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" class="btn-camp-charter" onclick="event.stopPropagation();" title="私人專屬中文司機包車一日遊">
-                  <span>🚐 私人包車接駁 (家庭一日遊) ↗</span>
+                  <span>包車接駁</span>
                 </a>
                 <button type="button" class="btn-camp-qa-toggle" onclick="toggleCampQa('${item.id}', this); event.stopPropagation();">
-                  <span>📖 查看自駕攻略 ＆ 外國人露營須知 ▾</span>
+                  <span>自駕須知 ▾</span>
                 </button>
                 <div class="camp-qa-accordion-panel" id="campQa_${item.id}">
                   <b>【外國人自駕露營防踩雷須知】</b><br>
@@ -18893,34 +18997,34 @@
             ${(item.theme === 'snow') ? `
               <div class="card-action-bar ski-action-bar">
                 <a href="${item.coachUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent(item.title + ' 滑雪教練') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="btn-act-clean btn-act-primary" title="預約該雪場認證專業中文教練與裝備雪票" onclick="event.stopPropagation();">
-                  <span>👨‍🏫 預約教練</span>
+                  <span>預約教練</span>
                 </a>
                 <a href="${item.hotelUrl || ('https://www.booking.com/searchresults.zh-tw.html?ss=' + encodeURIComponent(item.title) + '&aid=2422002')}" target="_blank" class="btn-act-clean btn-act-secondary" title="預訂雪場周邊Ski-in/Ski-out飯店與溫泉旅館" onclick="event.stopPropagation();">
-                  <span>🏨 預訂飯店</span>
+                  <span>預訂飯店</span>
                 </a>
                 <a href="${item.charterUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent((item.regionName || item.tag || '日本') + ' 滑雪包車') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="btn-act-clean btn-act-mint" title="預約機場/市區直達雪場私人中文包車" onclick="event.stopPropagation();">
-                  <span>🚐 包車服務</span>
+                  <span>包車服務</span>
                 </a>
               </div>
             ` : (item.category === 'hanabi' || item.theme === 'hanabi') ? `
               <div class="card-action-bar hanabi-action-bar">
                 <a href="${item.yukataUrl || 'https://www.klook.com/zh-TW/search/result/?query=%E6%B5%B4%E8%A1%A3%E9%AB%94%E9%A9%97&aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" class="btn-act-clean btn-act-secondary" title="預約花火祭典浴衣方案" onclick="event.stopPropagation();">
-                  <span>👘 浴衣預約</span>
+                  <span>浴衣預約</span>
                 </a>
                 <a href="${item.houseboatUrl || klookFinalUrl}" target="_blank" class="btn-act-clean btn-act-primary" title="預約觀覽席或屋形船" onclick="event.stopPropagation();">
-                  <span>🛶 預約觀覽席</span>
+                  <span>預約觀覽席</span>
                 </a>
                 <a href="${bookingFinalUrl}" target="_blank" class="btn-act-clean btn-act-secondary" title="預約周邊住宿免深夜趕車" onclick="event.stopPropagation();">
-                  <span>🏨 查訂房</span>
+                  <span>查看訂房</span>
                 </a>
               </div>
             ` : `
               <div class="card-action-bar">
                 <a href="${klookFinalUrl}" target="_blank" class="btn-act-clean btn-act-primary" onclick="event.stopPropagation();">
-                  <span>🎟️ 預定行程</span>
+                  <span>預定行程</span>
                 </a>
                 <a href="${bookingFinalUrl}" target="_blank" class="btn-act-clean btn-act-secondary" onclick="event.stopPropagation();">
-                  <span>🏨 訂房去</span>
+                  <span>查看訂房</span>
                 </a>
               </div>
             `}
