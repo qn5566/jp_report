@@ -2328,7 +2328,8 @@
     .hero-overlay-gradient {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.78) 0%, rgba(30, 41, 59, 0.65) 50%, rgba(15, 23, 42, 0.85) 100%);
+      /* 🌟 提亮透光遮罩：左側文字區保有閱讀對比度，中右側東京鐵塔與夜櫻完全通透明亮 */
+      background: linear-gradient(90deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.3) 40%, rgba(15, 23, 42, 0.05) 70%, transparent 100%);
       pointer-events: none;
       z-index: 1;
     }
@@ -6236,18 +6237,10 @@
       </div>
     </div>
 
-  <!-- 檢視模式切換列 (雙軌最佳化：圖文卡片 ⇄ 精簡條列) -->
-  <div class="view-mode-bar">
-    <div style="font-size:0.8rem; font-weight:800; color:#64748B; display:flex; align-items:center; gap:6px;">
+  <!-- 名所看板資訊列 (已移除精簡條列切換，全面採用圖文卡片呈現) -->
+  <div class="view-mode-bar" style="margin-bottom: 8px;">
+    <div style="font-size:0.88rem; font-weight:800; color:#334155; display:flex; align-items:center; gap:6px;">
       <span>⛩️</span> <span id="spotsCountHint">即時精選名所</span>
-    </div>
-    <div class="view-mode-toggles">
-      <button class="btn-view-toggle active" id="btnViewGrid" onclick="setViewMode('grid')">
-        <span>🗂️</span> <span>圖文卡片</span>
-      </button>
-      <button class="btn-view-toggle" id="btnViewList" onclick="setViewMode('list')">
-        <span>📑</span> <span>精簡條列</span>
-      </button>
     </div>
   </div>
 
