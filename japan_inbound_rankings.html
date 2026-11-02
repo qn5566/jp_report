@@ -3,27 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>日旅報報 JAPAN TABI ｜ 外國旅客最著迷的 7 大排行榜維度與深度項目盤點</title>
+  <title>日旅報報 JAPAN TABI ｜ 日本排行榜</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+TC:wght@400;500;700;900&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --color-primary: #094F8D;
       --color-coral: #F97940;
       --color-coral-light: #FFB76D;
-      --color-bg-ivory: #FDFBF7;
+      --color-bg-ivory: #FAF8F5;
       --color-card-bg: #FFFFFF;
-      --color-border: #E8E4DC;
+      --color-border: #E8E5DF;
       --color-text-main: #1E293B;
       --color-text-sub: #64748B;
-      --color-mint: #77C9C5;
-      --color-lime: #B9D672;
-      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
-      --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
+      --border-morandi: #E8E5DF;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,1106 +31,516 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* 頂部 Glassmorphism 導航列 */
-    .inbound-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(253, 251, 247, 0.94);
+    /* 頂部導航列 (與首頁完全一致，中央品牌點擊直接回首頁) */
+    .app-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250, 248, 245, 0.96);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-      padding: 12px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      border-bottom: 1px solid var(--border-morandi);
+      padding: 13px 36px;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.015);
+    }
+    .header-left {
+      flex: 1; display: flex; align-items: center;
+    }
+    .header-center {
+      flex: 2; display: flex; justify-content: center; align-items: center;
+    }
+    .header-right {
+      flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 10px;
     }
 
-    .brand-lockup {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: inherit;
-    }
-    .brand-logo-img {
-      width: 42px;
-      height: 42px;
+    .brand-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; cursor: pointer; }
+    .fuji-logo-box {
+      width: 44px; height: 44px;
       border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 2px 8px rgba(9, 79, 141, 0.15);
-    }
-    .brand-title {
-      font-size: 1.15rem;
-      font-weight: 900;
-      color: var(--color-primary);
-      line-height: 1.2;
-    }
-    .brand-sub {
-      font-size: 0.72rem;
-      color: #64748B;
-      letter-spacing: 1.2px;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .btn-back-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
+      display: flex; align-items: center; justify-content: center;
       background: #FFFFFF;
-      border: 1px solid #CBD5E1;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: #334155;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .btn-back-home:hover {
-      border-color: var(--color-primary);
-      color: var(--color-primary);
-      box-shadow: var(--shadow-sm);
-    }
-
-    /* Hero Banner */
-    .inbound-hero {
-      position: relative;
-      background: linear-gradient(135deg, #094F8D 0%, #1E3A8A 50%, #0F172A 100%);
-      color: #FFFFFF;
-      padding: 64px 24px 56px;
-      text-align: center;
+      border: 2px solid #ED1A21;
+      box-shadow: 0 2px 8px rgba(237, 26, 33, 0.12);
       overflow: hidden;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .inbound-hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
-      background-size: 24px 24px;
-      opacity: 0.6;
+    .brand-wrap:hover .fuji-logo-box {
+      transform: scale(1.05);
+      box-shadow: 0 4px 14px rgba(237, 26, 33, 0.22);
     }
-    .hero-container {
-      position: relative;
-      max-width: 960px;
-      margin: 0 auto;
-      z-index: 2;
+    .fuji-logo-box img {
+      width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%;
     }
-    .hero-badge {
-      display: inline-block;
-      padding: 6px 16px;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 30px;
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      color: #FFEDD5;
-      margin-bottom: 18px;
+    .brand-text h1 {
+      font-size: 1.24rem; font-weight: 900; letter-spacing: -0.3px;
+      display: flex; align-items: center; gap: 7px; margin: 0; line-height: 1.2; color: #1E293B;
     }
-    .hero-title {
+    .brand-title-zh {
       font-family: "Shippori Mincho", "Noto Sans TC", serif;
-      font-size: 2.35rem;
       font-weight: 800;
-      line-height: 1.35;
-      margin-bottom: 16px;
-      letter-spacing: 1px;
     }
-    .hero-desc {
-      font-size: 1.05rem;
-      color: #E2E8F0;
-      max-width: 780px;
-      margin: 0 auto 28px;
-      line-height: 1.8;
-      font-weight: 400;
+    .brand-sub-official-wrap {
+      display: flex; align-items: center; gap: 6px; margin-top: 3px;
     }
-    .hero-meta-stats {
-      display: flex;
-      justify-content: center;
-      gap: 36px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    .brand-title-en {
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 1.2px; color: #64748B;
     }
-    .stat-item {
-      text-align: center;
-    }
-    .stat-num {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #FFB76D;
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.78rem;
-      color: #CBD5E1;
-      margin-top: 4px;
-      letter-spacing: 0.5px;
+    .brand-tag-official {
+      background: #ED1A21; color: #FFFFFF; font-size: 0.6rem; font-weight: 800;
+      padding: 1px 6px; border-radius: 4px; letter-spacing: 0.5px;
     }
 
-    /* 快選錨點導航膠囊列 */
-    .category-quick-nav {
-      position: sticky;
-      top: 67px;
-      z-index: 90;
+    /* 頂部按鈕 (純文字風格，非圓弧型) */
+    .header-util-btn {
+      height: 34px;
+      padding: 0 12px;
+      border-radius: 6px;
       background: #FFFFFF;
-      border-bottom: 1px solid #E2E8F0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-      padding: 10px 16px;
-    }
-    .quick-nav-scroll {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-    }
-    .quick-nav-pill {
+      border: 1px solid #D5CEBF;
+      color: #334155;
+      font-size: 0.8rem;
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 8px 16px;
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 24px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #475569;
+      cursor: pointer;
       text-decoration: none;
       white-space: nowrap;
       transition: all 0.2s ease;
     }
-    .quick-nav-pill:hover, .quick-nav-pill.active {
-      background: var(--color-primary);
-      color: #FFFFFF;
-      border-color: var(--color-primary);
+    .header-util-btn:hover {
+      border-color: #F97940;
+      color: #F97940;
+      background: #FFFBF9;
+      transform: translateY(-1px);
+    }
+    .header-util-btn.active {
+      background: linear-gradient(135deg, #F97940 0%, #FFA466 100%);
+      color: #FFFFFF !important;
+      border-color: #F97940;
+      font-weight: 800;
+    }
+    .header-util-btn.lang-btn {
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
     }
 
-    /* 主要內容容器 */
-    .inbound-main-container {
-      max-width: 1200px;
-      margin: 40px auto 80px;
-      padding: 0 20px;
+    /* 頁面主體 */
+    .main-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 32px 80px 32px;
     }
 
-    /* 單個排行榜維度專區 */
-    .ranking-dimension-section {
+    /* 英雄橫幅 */
+    .hero-banner {
+      text-align: center;
+      padding: 36px 20px 24px 20px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+      border: 1px solid var(--border-morandi);
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+    }
+    .hero-pretitle {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #ED1A21;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .hero-title {
+      font-family: "Shippori Mincho", "Noto Sans TC", serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #1E293B;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: #64748B;
+      max-width: 780px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* 七大排行榜二級切換列 (選項簡短文字、日系和風淡雅) */
+    .rank-tabs-bar {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 6px 2px 14px 2px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-morandi);
+    }
+    .rank-tabs-bar::-webkit-scrollbar { display: none; }
+
+    .rank-tab-btn {
+      flex: 0 0 auto;
       background: #FFFFFF;
-      border: 1px solid var(--color-border);
-      border-radius: 20px;
-      padding: 36px 32px;
-      margin-bottom: 48px;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.25s ease;
+      border: 1px solid #D5CEBF;
+      border-radius: 8px;
+      padding: 9px 20px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #4A4A4A;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
     }
-    .ranking-dimension-section:hover {
-      box-shadow: var(--shadow-md);
-      border-color: #CBD5E1;
+    .rank-tab-btn:hover {
+      background: #FFFDFB;
+      border-color: #F97940;
+      color: #F97940;
+      transform: translateY(-1px);
+    }
+    .rank-tab-btn.active {
+      background: linear-gradient(135deg, #F97940 0%, #FFA466 100%) !important;
+      border-color: #F97940 !important;
+      color: #FFFFFF !important;
+      font-weight: 800 !important;
+      box-shadow: 0 3px 10px rgba(249, 121, 64, 0.25) !important;
     }
 
-    .dimension-header {
+    /* 當前類別說明與計數條 */
+    .category-info-bar {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      border-bottom: 2px solid #F1F5F9;
-      padding-bottom: 20px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .dim-num-title {
-      display: flex;
       align-items: center;
-      gap: 12px;
+      margin-bottom: 20px;
+      padding: 12px 18px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-morandi);
+      border-radius: 10px;
     }
-    .dim-badge-num {
-      width: 44px;
-      height: 44px;
-      background: linear-gradient(135deg, var(--color-coral), #EA580C);
-      color: #FFFFFF;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(249, 121, 64, 0.3);
-    }
-    .dim-title-text {
-      font-size: 1.45rem;
+    .cat-title-text {
+      font-size: 1.15rem;
       font-weight: 900;
-      color: #0F172A;
+      color: #1E293B;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .dim-subtitle-text {
+    .cat-desc-text {
       font-size: 0.85rem;
       color: #64748B;
-      margin-top: 2px;
+      font-weight: 500;
+    }
+    .cat-count-badge {
+      background: #FFF5F1;
+      color: #F97940;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 6px;
+      border: 1px solid #FED7C7;
     }
 
-    /* 痛點與商業變現雙欄解析卡 */
-    .dimension-insights-grid {
+    /* 四個一排介紹 Grid 排版 (4 Columns) */
+    .rankings-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-      margin-bottom: 28px;
     }
-    @media (max-width: 768px) {
-      .dimension-insights-grid {
+    @media (max-width: 1200px) {
+      .rankings-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 860px) {
+      .rankings-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .app-header {
+        padding: 10px 16px;
+      }
+      .header-right {
+        gap: 6px;
+      }
+      .header-util-btn span:not(.util-btn-icon) {
+        display: none;
+      }
+      .header-util-btn.active span:not(.util-btn-icon) {
+        display: inline;
+      }
+    }
+    @media (max-width: 540px) {
+      .rankings-grid {
         grid-template-columns: 1fr;
       }
     }
-    .insight-card {
-      padding: 20px 22px;
-      border-radius: 14px;
-      font-size: 0.88rem;
-      line-height: 1.7;
-    }
-    .insight-pain {
-      background: #FFF7ED;
-      border: 1px solid #FFEDD5;
-      color: #9A3412;
-    }
-    .insight-pain b {
-      color: #C2410C;
-      display: block;
-      font-size: 0.96rem;
-      margin-bottom: 6px;
-    }
-    .insight-monetize {
-      background: #F0FDF4;
-      border: 1px solid #DCFCE7;
-      color: #166534;
-    }
-    .insight-monetize b {
-      color: #15803D;
-      display: block;
-      font-size: 0.96rem;
-      margin-bottom: 6px;
-    }
 
-    /* 代表景點 / 體驗卡片網格 */
-    .experience-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 22px;
-      margin-top: 20px;
-    }
-
-    .exp-item-card {
-      background: #FAF8F5;
-      border: 1px solid #E8E4DC;
-      border-radius: 16px;
+    /* 卡片設計 (日系和風精緻) */
+    .rank-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-morandi);
+      border-radius: 12px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
       transition: all 0.25s ease;
+      position: relative;
     }
-    .exp-item-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: #CBD5E1;
-      background: #FFFFFF;
+    .rank-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.07);
+      border-color: #D5CEBF;
     }
-    .exp-card-thumb-wrap {
+
+    .rank-card-thumb-wrap {
       position: relative;
       width: 100%;
-      height: 180px;
+      height: 185px;
+      background: #F1EFEA;
       overflow: hidden;
     }
-    .exp-card-thumb {
+    .rank-card-thumb {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: transform 0.35s ease;
     }
-    .exp-item-card:hover .exp-card-thumb {
-      transform: scale(1.05);
+    .rank-card:hover .rank-card-thumb {
+      transform: scale(1.04);
     }
-    .exp-card-badge {
+
+    .rank-num-badge {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(8px);
+      top: 10px;
+      left: 10px;
+      background: rgba(30, 41, 59, 0.9);
       color: #FFFFFF;
       font-size: 0.72rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(4px);
+    }
+    .rank-num-badge.top3 {
+      background: linear-gradient(135deg, #F97940 0%, #FFA466 100%);
+      color: #FFFFFF;
     }
 
-    .exp-card-body {
-      padding: 20px;
-      flex: 1;
+    .rank-location-badge {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.94);
+      color: #1E293B;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .rank-card-body {
+      padding: 14px 14px 12px 14px;
       display: flex;
       flex-direction: column;
+      flex: 1;
       justify-content: space-between;
     }
-    .exp-card-title {
-      font-size: 1.12rem;
-      font-weight: 800;
-      color: #0F172A;
-      margin-bottom: 6px;
-      line-height: 1.4;
+    .rank-card-title {
+      font-size: 0.96rem;
+      font-weight: 900;
+      color: #1E293B;
+      line-height: 1.35;
+      margin-bottom: 4px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
-    .exp-card-desc {
-      font-size: 0.82rem;
+    .rank-card-sub {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #F97940;
+      margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .rank-card-desc {
+      font-size: 0.8rem;
       color: #64748B;
-      line-height: 1.65;
-      margin-bottom: 16px;
+      line-height: 1.45;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
-    /* 實用功能操作按鈕 */
-    .exp-actions-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    .rank-card-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
       margin-top: auto;
     }
-    .btn-exp-action {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 0.82rem;
+    .btn-rank-action {
+      padding: 6px 4px;
+      border-radius: 6px;
+      font-size: 0.74rem;
       font-weight: 800;
+      text-align: center;
       text-decoration: none;
+      cursor: pointer;
       transition: all 0.2s ease;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .btn-exp-primary {
-      background: linear-gradient(135deg, #F97940, #FFB76D);
+    .btn-rank-primary {
+      background: linear-gradient(135deg, #F97940 0%, #FFA466 100%);
       color: #FFFFFF;
-      border: none;
-      box-shadow: 0 2px 6px rgba(249, 121, 64, 0.25);
+      border: 1px solid #F97940;
     }
-    .btn-exp-primary:hover {
-      filter: brightness(1.06);
+    .btn-rank-primary:hover {
+      opacity: 0.95;
       transform: translateY(-1px);
     }
-    .btn-exp-secondary {
-      background: #FFFFFF;
-      border: 1px solid #CBD5E1;
-      color: #334155;
+    .btn-rank-secondary {
+      background: #F0F8FA;
+      color: #1A535C;
+      border: 1px solid #AECDD2;
     }
-    .btn-exp-secondary:hover {
-      border-color: #094F8D;
-      color: #094F8D;
+    .btn-rank-secondary:hover {
+      background: #E5F3F6;
+      border-color: #92BDC4;
+      transform: translateY(-1px);
     }
 
-    /* 頁尾精簡版權 */
+    /* 頁尾 */
     .inbound-footer {
-      background: #F8FAFC;
-      border-top: 1px solid #E2E8F0;
+      border-top: 1px solid var(--border-morandi);
+      background: #FFFFFF;
       padding: 36px 20px;
       text-align: center;
+      font-size: 0.85rem;
       color: #64748B;
-      font-size: 0.82rem;
     }
     .footer-logo-wrap {
-      display: inline-flex;
+      display: flex;
+      justify-content: center;
       align-items: center;
       gap: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
 
-  <!-- 頂部導航 -->
-  <header class="inbound-header">
-    <a href="tabi_news_preview.html" class="brand-lockup">
-      <img src="./images/japan_tabi_logo.png" alt="日旅報報 LOGO" class="brand-logo-img">
-      <div>
-        <div class="brand-title">日旅報報 JAPAN TABI</div>
-        <div class="brand-sub">全日本觀光情報局 ｜ 旗艦特輯</div>
-      </div>
-    </a>
-    <div class="nav-actions">
-      <a href="tabi_news_preview.html" class="btn-back-home">
-        <span>⛩️</span> <span>返回首頁</span>
+  <!-- 頂部與首頁一致的 Header (中央 LOGO 點選即回首頁) -->
+  <header class="app-header">
+    <div class="header-left">
+      <a href="tabi_news_preview.html" class="header-util-btn" title="返回首頁">
+        <span class="util-btn-icon">🏠</span>
+        <span>返回首頁</span>
       </a>
+    </div>
+
+    <!-- 🌟 正中間品牌標誌與文字 (點擊直達首頁) -->
+    <div class="header-center">
+      <a href="tabi_news_preview.html" class="brand-wrap brand-centered" title="點擊返回首頁">
+        <div class="fuji-logo-box">
+          <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" class="brand-tabi-logo">
+        </div>
+        <div class="brand-text">
+          <h1 id="brandTitle">
+            <span class="brand-title-zh">日旅報報</span>
+          </h1>
+          <div class="brand-sub-official-wrap">
+            <span class="brand-title-en">JAPAN TABI</span>
+            <span class="brand-tag-official">日本觀光情報</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="header-right">
+      <a href="https://www.trip.com/flights/" target="_blank" class="header-util-btn" title="Trip.com 機票比價">
+        <span class="util-btn-icon">✈️</span>
+        <span>Trip 查機票</span>
+      </a>
+      <a href="tabi_news_preview.html" class="header-util-btn" title="包車 / 租車攻略">
+        <span class="util-btn-icon">🚗</span>
+        <span>包車 / 租車</span>
+      </a>
+      <a href="japan_inbound_rankings.html" class="header-util-btn active" title="日本排行榜">
+        <span class="util-btn-icon">🏆</span>
+        <span>日本排行榜</span>
+      </a>
+      <button class="header-util-btn lang-btn" title="切換語言">
+        <span>繁體中文 ▾</span>
+      </button>
     </div>
   </header>
 
-  <!-- Hero 旗艦前言 -->
-  <section class="inbound-hero">
-    <div class="hero-container">
-      <div class="hero-badge">🇯🇵 2026 GLOBAL INBOUND TRENDS</div>
-      <h1 class="hero-title">外國旅客最著迷的 7 大排行榜維度與延伸項目盤點</h1>
-      <p class="hero-desc">
-        針對歐美與全球高客單自由行旅人量身企劃。直擊「願付高額費用、搜尋量極大、最具文化深度」的核心體驗，全面揭秘痛點需求與尊榮保證席位管道。
+  <main class="main-container">
+    
+    <!-- 英雄視覺橫幅 -->
+    <div class="hero-banner">
+      <div class="hero-pretitle">JAPAN TOURISM RANKINGS</div>
+      <h2 class="hero-title">日本排行榜</h2>
+      <p class="hero-subtitle">
+        收錄全球旅客著迷的 7 大維度 ｜ 每項嚴選 24 處頂尖名所與深度體驗 ｜ 點選分類即刻展開 4 欄精緻清單
       </p>
-
-      <div class="hero-meta-stats">
-        <div class="stat-item">
-          <div class="stat-num">7</div>
-          <div class="stat-label">旗艦體驗維度</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">21+</div>
-          <div class="stat-label">殿堂級精選項目</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">98%</div>
-          <div class="stat-label">外國人夢想清單覆蓋率</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">中文專人席位代訂直通</div>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- 快速導航膠囊列 -->
-  <nav class="category-quick-nav">
-    <div class="quick-nav-scroll">
-      <a href="#dim1" class="quick-nav-pill active"><span>🍣</span> <span>1. 美食與名店</span></a>
-      <a href="#dim2" class="quick-nav-pill"><span>🍵</span> <span>2. 傳統文化儀式</span></a>
-      <a href="#dim3" class="quick-nav-pill"><span>⚔️</span> <span>3. 武道與靈性修驗</span></a>
-      <a href="#dim4" class="quick-nav-pill"><span>🗻</span> <span>4. 富士山與自然探險</span></a>
-      <a href="#dim5" class="quick-nav-pill"><span>⚾</span> <span>5. 熱血運動與賽事</span></a>
-      <a href="#dim6" class="quick-nav-pill"><span>❄️</span> <span>6. 冬季粉雪與溫泉</span></a>
-      <a href="#dim7" class="quick-nav-pill"><span>🎆</span> <span>7. 藝術展覽與夜景</span></a>
+    <!-- 七大排行榜分類切換列 (簡短文字、日系淡雅) -->
+    <div class="rank-tabs-bar" id="rankTabsBar">
+      <button class="rank-tab-btn active" data-cat="gourmet" onclick="switchCategory('gourmet', this)">
+        <span>美食名店 (24)</span>
+      </button>
+      <button class="rank-tab-btn" data-cat="culture" onclick="switchCategory('culture', this)">
+        <span>傳統文化 (24)</span>
+      </button>
+      <button class="rank-tab-btn" data-cat="budo" onclick="switchCategory('budo', this)">
+        <span>武道靈性 (24)</span>
+      </button>
+      <button class="rank-tab-btn" data-cat="fuji" onclick="switchCategory('fuji', this)">
+        <span>富士自然 (24)</span>
+      </button>
+      <button class="rank-tab-btn" data-cat="sports" onclick="switchCategory('sports', this)">
+        <span>運動賽事 (24)</span>
+      </button>
+      <button class="rank-tab-btn" data-cat="snow" onclick="switchCategory('snow', this)">
+        <span>粉雪溫泉 (24)</span>
+      </button>
+      <button class="rank-tab-btn" data-cat="art" onclick="switchCategory('art', this)">
+        <span>藝術夜景 (24)</span>
+      </button>
     </div>
-  </nav>
 
-  <!-- 主容器 -->
-  <main class="inbound-main-container">
-
-    <!-- 1. 美食與名店 -->
-    <section class="ranking-dimension-section" id="dim1">
-      <div class="dimension-header">
-        <div class="dim-num-title">
-          <div class="dim-badge-num">1</div>
-          <div>
-            <h2 class="dim-title-text">美食與名店 (Gourmet & Dining)</h2>
-            <p class="dim-subtitle-text">米其林頂級板前割烹、炭火黑毛和牛、櫻景水岸景觀咖啡館</p>
-          </div>
-        </div>
+    <!-- 當前分類說明與計數條 -->
+    <div class="category-info-bar">
+      <div>
+        <div class="cat-title-text" id="catTitleText">🍽️ 美食名店</div>
+        <div class="cat-desc-text" id="catDescText">米其林三星、板前頂級壽司、黑毛和牛壽喜燒與景觀名店</div>
       </div>
+      <div class="cat-count-badge" id="catCountBadge">收錄 24 處指標推薦</div>
+    </div>
 
-      <div class="dimension-insights-grid">
-        <div class="insight-card insight-pain">
-          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
-          米其林板前壽司、百年和牛料亭普遍不接外國電話、沒有日本信用卡通常無法完成身分認證。排行榜直接提供「保證席位代訂」即是不可或缺的剛需。
-        </div>
-        <div class="insight-card insight-monetize">
-          <b>💎 商業預約與代訂管道</b>
-          提供全中文介面預約、直連名店特約代訂入口，每位客單價達 NT $4,000～$15,000 元，深受家庭客與商務客信賴。
-        </div>
-      </div>
-
-      <div class="experience-cards-grid">
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80" alt="頂級江戶前壽司" class="exp-card-thumb">
-            <span class="exp-card-badge">🍣 殿堂板前壽司</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">米其林三星 銀座板前壽司</h3>
-              <p class="exp-card-desc">清晨豐洲市場嚴選野生鮪魚大腹、羽立紫海膽，由傳奇名匠現場握製，享受極致醋飯溫度與魚料完美交融。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%B1%B3%E5%85%B6%E6%9E%97%20%E5%A3%BD%E5%8F%B8&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 保證席位預約代訂 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E9%8A%80%E5%BA%A7&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢周邊頂級住宿 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="黑毛和牛壽喜燒" class="exp-card-thumb">
-            <span class="exp-card-badge">🥩 特選和牛割烹</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">百年老鋪 淺草今半 黑毛和牛壽喜燒</h3>
-              <p class="exp-card-desc">油花如雪花般細緻的A5特選黑毛和牛，搭配秘傳百年甘甜醬汁與鮮打朝生土雞蛋，入口即化令人難忘。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%B7%BA%E8%8D%89%E4%BB%8A%E5%8D%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 和牛料理免排隊預約 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B7%BA%E8%8D%89&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢淺草周邊景觀飯店 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="景觀咖啡" class="exp-card-thumb">
-            <span class="exp-card-badge">☕ 水岸櫻景露台</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">中目黑星巴克工坊 ＆ 飯田橋 Canal Cafe</h3>
-              <p class="exp-card-desc">隈研吾建築巨匠四層樓烘豆工坊、或外濠水上甲板露天座。坐在戶外第一排品嚐手沖精品咖啡，看著落櫻隨風飄落水面。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E4%B8%AD%E7%9B%AE%E9%BB%91&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預約中目黑周邊漫步行程 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%BE%81%E8%B0%B7&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢鄰近質感設計旅宿 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. 傳統文化儀式 -->
-    <section class="ranking-dimension-section" id="dim2">
-      <div class="dimension-header">
-        <div class="dim-num-title">
-          <div class="dim-badge-num">2</div>
-          <div>
-            <h2 class="dim-title-text">傳統文化儀式 (Traditional Heritage & Rituals)</h2>
-            <p class="dim-subtitle-text">古都正統茶道研習、百年宇治抹茶名店評比、京都町家和服浴衣漫步</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dimension-insights-grid">
-        <div class="insight-card insight-pain">
-          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
-          穿正統和服在伏見稻荷千本鳥居或清水寺木造舞台拍照是全球旅客的一生必訪清單；歐美旅客更渴望親手「點茶」、體驗茶道「和敬清寂」的禪宗冥想意境。
-        </div>
-        <div class="insight-card insight-monetize">
-          <b>💎 商業預約與體驗管道</b>
-          和服租借（包辦髮型與外拍攝影）、正統茶道體驗課程、宇治百年茶寮特約禮盒。長年位居全日本體驗排行榜冠軍。
-        </div>
-      </div>
-
-      <div class="experience-cards-grid">
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=600&q=80" alt="京都和服體驗" class="exp-card-thumb">
-            <span class="exp-card-badge">👘 京都町家和服</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">清水寺・祇園 正統正絹和服散策</h3>
-              <p class="exp-card-desc">提供純手工刺繡正絹和服、專業髮型設計師盤髮與木屐配件。漫步於二年坂、三年坂古風石階，留下永生難忘的絕美寫真。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E5%92%8C%E6%9C%8D&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預訂正統和服與妝髮方案 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD+%E7%A5%87%E5%9C%92&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢祇園傳統町家旅館 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" alt="正統茶道體驗" class="exp-card-thumb">
-            <span class="exp-card-badge">🍵 正統茶道研習</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">京都百年古寺 私人茶道入門研習</h3>
-              <p class="exp-card-desc">由茶道裏千家專業茶道師親自示範。在靜謐榻榻米茶室內親手使用茶筅點泡濃郁抹茶，搭配季節限定手工和菓子。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E8%8C%B6%E9%81%93&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預約名師茶道研習門票 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢京都庭園溫泉旅宿 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80" alt="宇治抹茶評比" class="exp-card-thumb">
-            <span class="exp-card-badge">🍃 宇治百年茶寮</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">宇治 中村藤吉 ＆ 伊藤久右衛門 旗艦評比</h3>
-              <p class="exp-card-desc">坐落在宇治川旁的安政年間古茶寮。招牌生茶凍竹筒甜點、手打宇治抹茶蕎麥麵，品味全日本最正宗的回甘茶香。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%AE%87%E6%B2%BB%20%E4%B8%80%E6%97%A5%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預訂宇治平等院包車一日遊 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%87%E6%B2%BB&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢宇治川畔景觀飯店 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. 武道與靈性修驗 -->
-    <section class="ranking-dimension-section" id="dim3">
-      <div class="dimension-header">
-        <div class="dim-num-title">
-          <div class="dim-badge-num">3</div>
-          <div>
-            <h2 class="dim-title-text">武道與靈性修驗 (Martial Arts & Zen Spirituality)</h2>
-            <p class="dim-subtitle-text">大相撲觀戰與相撲部屋晨練、真劍居合斬道場體驗、高野山宿坊過夜</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dimension-insights-grid">
-        <div class="insight-card insight-pain">
-          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
-          歐美旅客對「Samurai（武士精神）」與「Zen（禪宗定力）」抱有崇高敬意；大相撲力士重達數百公斤的近距離肉搏撞擊震撼非凡，相撲部屋晨練更需特殊特約渠道。
-        </div>
-        <div class="insight-card insight-monetize">
-          <b>💎 商業預約與體驗管道</b>
-          大相撲官方本場所賽事座席、武士真劍試斬研習、世界遺產高野山寺院宿坊（一泊二食精進料理，每晚高額訂房）。
-        </div>
-      </div>
-
-      <div class="experience-cards-grid">
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=600&q=80" alt="大相撲觀戰" class="exp-card-thumb">
-            <span class="exp-card-badge">🤼 大相撲國技館</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">東京兩國國技館 大相撲本場所觀戰</h3>
-              <p class="exp-card-desc">每年1、5、9月東京大相撲季！近距離感受橫綱入場儀式、力士撒鹽屏息對峙，現場品嚐道地相撲力士火鍋（Chanko Nabe）。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%9B%B8%E6%92%B2%20%E9%96%80%E7%A5%A8&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預約大相撲賽事門票 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%A9%E5%9C%8B&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢兩國國技館旁飯店 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=600&q=80" alt="武士刀真劍體驗" class="exp-card-thumb">
-            <span class="exp-card-badge">⚔️ 武士刀道場</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">東京正統道場 真劍居合斬試切體驗</h3>
-              <p class="exp-card-desc">換上傳統黑色武士服，由現役劍道居合道師範一對一傳授拔刀術與禮法，親手揮舞鋒利真劍劈斷草蓆靶心，考驗專注與定力。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%AD%A6%E5%A3%AB%E9%AB%94%E9%A9%97&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預約武士刀體驗課程 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢市區質感設計飯店 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="高野山宿坊" class="exp-card-thumb">
-            <span class="exp-card-badge">🧘 聖地宿坊體驗</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">世界遺產 高野山 1200年寺院宿坊</h3>
-              <p class="exp-card-desc">弘法大師空海開創的真言密教聖地。入住千年古寺客房，晨起參加早課誦經與護摩祈福，品嚐極致細膩的素食精進料理與冥想。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E9%87%8E%E5%B1%B1&aid=2422002" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🏨 預訂高野山宿坊一泊二食 ↗</span>
-              </a>
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E9%AB%98%E9%87%8E%E5%B1%B1&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🎟️ 預約南海電鐵高野山通票 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. 富士山與自然探險 -->
-    <section class="ranking-dimension-section" id="dim4">
-      <div class="dimension-header">
-        <div class="dim-num-title">
-          <div class="dim-badge-num">4</div>
-          <div>
-            <h2 class="dim-title-text">富士山與自然探險 (Mount Fuji & Grand Nature)</h2>
-            <p class="dim-subtitle-text">富士山登頂挑戰與山屋預約、富士五湖直面逆富士奢華露營、秘境健行</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dimension-insights-grid">
-        <div class="insight-card insight-pain">
-          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
-          富士山是日本靈魂精神圖騰；外國人最怕「搶不到管制嚴格的山屋預約」、「不熟悉通行費預約手續」、「不會租登山裝備」。
-        </div>
-        <div class="insight-card insight-monetize">
-          <b>💎 商業預約與體驗管道</b>
-          專業嚮導登頂健行團（含山屋、裝備租借）、Glamping 星級豪華露營帳篷訂房（每晚 NT $12,000～$30,000，佣金最高）。
-        </div>
-      </div>
-
-      <div class="experience-cards-grid">
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="富士山登頂" class="exp-card-thumb">
-            <span class="exp-card-badge">🗻 富士山登頂挑戰</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">富士山 吉田路線 2天1夜專業嚮導團</h3>
-              <p class="exp-card-desc">7月～9月限定開放！含8合目山屋預約、專業雙語登山嚮導帶隊、高山裝備租借，在海拔3776公尺劍峰迎接震撼「御來光」日出。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E7%99%BB%E5%B1%B1&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預訂富士山登山健行團 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢河口湖溫泉飯店 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="星野富士" class="exp-card-thumb">
-            <span class="exp-card-badge">⛺ 星野豪華露營</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">星野集團 HOSHINOYA Fuji (星野富士)</h3>
-              <p class="exp-card-desc">全日本首座頂級 Glamping 奢華露營度假村！客房露台直面河口湖與雄偉富士山，夜晚在松林焚火台旁烤棉花糖、品嚐和牛野味炭烤。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%98%9F%E9%87%8E%E5%AF%8C%E5%A3%AB&aid=2422002" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🏨 預訂星野富士露台客房 ↗</span>
-              </a>
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🚐 預約東京直達河口湖包車 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" alt="上高地健行" class="exp-card-thumb">
-            <span class="exp-card-badge">🌲 北阿爾卑斯秘境</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">長野 上高地 ＆ 屋久島 魔法森林健行</h3>
-              <p class="exp-card-desc">神明降臨之所「上高地」大正池倒影與河童橋；或是世界自然遺產屋久島白谷雲水峽，漫步於宮崎駿魔法公主取景的青苔千年巨杉林。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E4%B8%8A%E9%AB%98%E5%9C%B0&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預訂上高地接駁一日遊 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E4%B8%8A%E9%AB%98%E5%9C%B0&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢白樺莊景觀旅宿 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. 熱血運動與賽事 -->
-    <section class="ranking-dimension-section" id="dim5">
-      <div class="dimension-header">
-        <div class="dim-num-title">
-          <div class="dim-badge-num">5</div>
-          <div>
-            <h2 class="dim-title-text">熱血運動與賽事 (Sports & Iconic Tournaments)</h2>
-            <p class="dim-subtitle-text">日本職棒 NPB 巨蛋觀賽 (甲子園/東京巨蛋)、世界六大馬拉松、F1 日本大獎賽</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dimension-insights-grid">
-        <div class="insight-card insight-pain">
-          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
-          日本球場應援團口號、球場生啤酒妹（Beer Girls）與限定選手便當是全世界獨一無二的運動文化體驗。外國旅客極度渴望親臨聖地「甲子園」或東京巨蛋。
-        </div>
-        <div class="insight-card insight-monetize">
-          <b>💎 商業預約與體驗管道</b>
-          熱門比賽入場門票（免實名電話代訂）、球場周邊五星級飯店訂房、鈴鹿賽道 VIP 套裝行程。
-        </div>
-      </div>
-
-      <div class="experience-cards-grid">
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80" alt="日本職棒觀賽" class="exp-card-thumb">
-            <span class="exp-card-badge">⚾ 職棒傳奇球場</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">東京巨蛋 讀賣巨人軍主場觀賽體驗</h3>
-              <p class="exp-card-desc">全日本歷史最悠久常勝軍團！體驗5萬人全場敲擊加油棒、齊唱隊歌的澎湃氣勢，球場內多達數十種聯名便當與新鮮生啤暢飲。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%B7%A8%E8%9B%8B%20%E6%A3%92%E7%90%83&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預約日職球賽門票 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC%E5%B7%A8%E8%9B%8B&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢東京巨蛋城飯店 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=600&q=80" alt="東京馬拉松" class="exp-card-thumb">
-            <span class="exp-card-badge">🏃 世界六大馬拉松</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">東京馬拉松 ＆ 大阪馬拉松 跑旅巡禮</h3>
-              <p class="exp-card-desc">世界馬拉松大滿貫亞洲唯一一站！路線橫跨東京都廳、淺草雷門、銀座大道至東京車站，沿途數十萬市民熱情應援補給。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC%E8%BB%8A%E7%AB%99&aid=2422002" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🏨 預訂終點東京車站周邊住宿 ↗</span>
-              </a>
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E9%81%8B%E5%8B%95&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🎟️ 預約跑者放鬆按摩水療 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" alt="F1日本大獎賽" class="exp-card-thumb">
-            <span class="exp-card-badge">🏎️ F1 傳奇賽道</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">F1 日本大獎賽 (三重 鈴鹿賽道 Suzuka)</h3>
-              <p class="exp-card-desc">全世界車手公認最具挑戰性的傳奇「8字型賽道」！近距離聆聽千萬轉速引擎咆哮轟鳴，感受世界級極速巔峰對決。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=F1%20%E9%88%B4%E9%B9%BF&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預訂鈴鹿賽道入場套票 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E5%90%8D%E5%8F%A4%E5%B1%8B&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢名古屋轉乘樞紐飯店 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. 冬季粉雪與溫泉療癒 -->
-    <section class="ranking-dimension-section" id="dim6">
-      <div class="dimension-header">
-        <div class="dim-num-title">
-          <div class="dim-badge-num">6</div>
-          <div>
-            <h2 class="dim-title-text">冬季粉雪與溫泉療癒 (JAPOW Skiing & Onsen)</h2>
-            <p class="dim-subtitle-text">北海道/長野 JAPOW 頂級滑雪場 Top 10、雪見露天溫泉、大正浪漫木造旅館</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dimension-insights-grid">
-        <div class="insight-card insight-pain">
-          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
-          日本北海道與長野的天然乾粉雪（JAPOW）含水量極低，享譽全球；在零下飄雪中泡進熱氣蒸騰的天然硫磺泉，是外國人眼中無可比擬的終極浪漫。
-        </div>
-        <div class="insight-card insight-monetize">
-          <b>💎 商業預約與體驗管道</b>
-          中文/英文認證滑雪教練預約、Ski-in / Ski-out 度假村雪票、銀山溫泉與草津名湯一泊二食（客單價達數萬元）。
-        </div>
-      </div>
-
-      <div class="experience-cards-grid">
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="二世谷滑雪" class="exp-card-thumb">
-            <span class="exp-card-badge">⛷️ 全球粉雪之王</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">北海道 二世谷度假村 (Niseko United)</h3>
-              <p class="exp-card-desc">全世界滑雪愛好者朝聖殿堂！四座雪場聯通，羊蹄山絕美逆富士景觀，厚度驚人的香檳乾粉雪與頂級 Michelin 餐廳林立。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E4%BA%8C%E4%B8%96%E8%B0%B7%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>👨‍🏫 預約認證中文滑雪教練 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%8C%E4%B8%96%E8%B0%B7&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 預訂Ski-in/Ski-out豪華飯店 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="銀山溫泉" class="exp-card-thumb">
-            <span class="exp-card-badge">♨️ 大正浪漫秘湯</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">山形 銀山溫泉 (大正木造多層閣樓)</h3>
-              <p class="exp-card-desc">神隱少女經典湯屋場景！銀山川兩側林立百年三層木造溫泉旅館，黃昏瓦斯燈點亮、大雪紛飛，宛如走入時光倒流的童話世界。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E9%8A%80%E5%B1%B1%E6%BA%AB%E6%B3%89&aid=2422002" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🏨 查詢銀山溫泉一泊二食 ↗</span>
-              </a>
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E9%8A%80%E5%B1%B1%E6%BA%AB%E6%B3%89%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🚐 預約東北雪地私人包車 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="越後湯澤GALA" class="exp-card-thumb">
-            <span class="exp-card-badge">🎿 新幹線出閘即雪場</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">新潟 越後湯澤 GALA ＆ 苗場滑雪場</h3>
-              <p class="exp-card-desc">東京搭上越新幹線74分鐘直通出閘口！從早雪滑到傍晚，隨後至越後湯澤溫泉街品嚐地酒試飲機「ぽんしゅ館」與越光米清酒。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=GALA%E6%B9%AF%E6%BE%A4&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預訂GALA纜車雪票與裝備 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%BE%A4&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢越後湯澤溫泉飯店 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. 藝術展覽與夜景 -->
-    <section class="ranking-dimension-section" id="dim7">
-      <div class="dimension-header">
-        <div class="dim-num-title">
-          <div class="dim-badge-num">7</div>
-          <div>
-            <h2 class="dim-title-text">藝術展覽與夜景 (Art, Skylines & Fireworks)</h2>
-            <p class="dim-subtitle-text">teamLab 沉浸式無邊界光影展、SHIBUYA SKY 360度天際線、夏夜花火大會</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dimension-insights-grid">
-        <div class="insight-card insight-pain">
-          <b>💡 為什麼外國人超想看？（心理痛點與賣點）</b>
-          teamLab 與 SHIBUYA SKY 在 Instagram 與 TikTok 席捲全球數十億次播放；夏夜花火大會正三尺玉的巨響震撼更是外國人感受日本夏日靈魂的頂點。
-        </div>
-        <div class="insight-card insight-monetize">
-          <b>💎 商業預約與體驗管道</b>
-          熱門展覽預售門票、花火大會特約觀覽席（贊助商有料席位代訂，客單價高）、屋形船包船套餐。
-        </div>
-      </div>
-
-      <div class="experience-cards-grid">
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80" alt="teamLab" class="exp-card-thumb">
-            <span class="exp-card-badge">✨ 沉浸光影殿堂</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">teamLab Borderless (麻布台之丘旗艦展)</h3>
-              <p class="exp-card-desc">無界限的數位藝術魔幻世界！作品跨越展廳自由流動融合。光影如瀑布傾瀉、水晶宇宙鏡面無限延伸，全球網紅朝聖地標。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=teamLab%20%E9%BA%BB%E5%B8%83%E5%8F%B0&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預訂teamLab入場指定席 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%AD%E6%9C%AC%E6%9C%A8&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢麻布台周邊星級酒店 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=600&q=80" alt="SHIBUYA SKY" class="exp-card-thumb">
-            <span class="exp-card-badge">🌆 360度露天展望</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">SHIBUYA SKY 澀谷十字路口日落天際線</h3>
-              <p class="exp-card-desc">高達229公尺無遮蔽玻璃空中露台！站在「SKY EDGE」角落鳥瞰全球最繁忙的澀谷十字路口，遠眺富士山火紅夕陽與東京鐵塔。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=SHIBUYA%20SKY&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🎟️ 預約SHIBUYA SKY日落門票 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%BE%81%E8%B0%B7&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢澀谷站直通飯店 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-item-card">
-          <div class="exp-card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1533230807904-61cb19251c6a?auto=format&fit=crop&w=600&q=80" alt="花火大會" class="exp-card-thumb">
-            <span class="exp-card-badge">🎆 S級夏夜花火</span>
-          </div>
-          <div class="exp-card-body">
-            <div>
-              <h3 class="exp-card-title">長岡祭大花火大會 ＆ 隅田川花火觀覽席</h3>
-              <p class="exp-card-desc">信濃川畔震撼正三尺玉與長達兩公里的「鳳凰祈願花火」！預約專屬有料觀覽席或包船屋形船，在最佳視角直擊萬發花火照亮夜空。</p>
-            </div>
-            <div class="exp-actions-group">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E8%8A%B1%E7%81%AB%E5%A4%A7%E6%9C%83%20%E8%A7%80%E8%A6%BD%E5%B8%AD&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-exp-action btn-exp-primary">
-                <span>🛶 預約花火觀覽席 / 屋形船 ↗</span>
-              </a>
-              <a href="https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC&aid=2422002" target="_blank" class="btn-exp-action btn-exp-secondary">
-                <span>🏨 查詢花火大會周邊住宿 ↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- 四個一排介紹 卡片 Grid 排版 -->
+    <div class="rankings-grid" id="rankingsGrid">
+      <!-- JS 動態渲染 24 張卡片 -->
+    </div>
 
   </main>
 
@@ -1144,9 +550,81 @@
       <img src="./images/japan_tabi_logo.png" alt="Logo" style="width:28px; height:28px; border-radius:50%;">
       <span style="font-weight:900; color:#1E293B;">日旅報報 JAPAN TABI</span>
     </div>
-    <p>© 2026 日旅報報 JAPAN TABI ｜ 全日本觀光情報局 官方特輯</p>
-    <p style="font-size:0.75rem; color:#94A3B8; margin-top:4px;">本文與觀光景點情報受著作權法保護，未經授權禁止爬蟲搬運與商業轉載。</p>
+    <p>© 2026 日旅報報 JAPAN TABI ｜ 日本排行榜 全國觀光情報</p>
   </footer>
+
+  <script>
+    const RANKINGS_DATA = {"gourmet": {"title": "美食名店", "icon": "🍽️", "desc": "米其林三星、板前頂級壽司、黑毛和牛壽喜燒與景觀名店", "items": [{"rank": "01", "name": "數寄屋橋次郎 (Sukiyabashi Jiro)", "sub": "銀座・壽司之神握壽司", "tag": "東京・銀座", "img": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80", "desc": "米其林三星傳奇，極致江戶前醋飯溫度與熟成魚料的完美平衡。", "action1": "席位預約指引", "url1": "https://www.tableall.com", "action2": "周邊銀座飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%8A%80%E5%BA%A7"}, {"rank": "02", "name": "壽司 齋藤 (Sushi Saito)", "sub": "六本木・米其林三星板前之巔", "tag": "東京・六本木", "img": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=600&q=80", "desc": "全日本公認最難預訂頂級壽司，煮切醬油與赤身鮪魚絕品調和。", "action1": "代訂席位諮詢", "url1": "https://www.tableall.com", "action2": "六本木住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%AD%E6%9C%AC%E6%9C%A8"}, {"rank": "03", "name": "日本料理 龍吟 (Nihonryori RyuGin)", "sub": "日比谷・分子料理結合傳統懷石", "tag": "東京・日比谷", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "desc": "主廚山本征央將日本四季七十二候風土以現代手法展現極致風味。", "action1": "預約官方席位", "url1": "https://www.nihonryori-ryugin.com", "action2": "日比谷住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%97%A5%E6%AF%94%E8%B0%B7"}, {"rank": "04", "name": "麻布十番 幸村 (Yukimura)", "sub": "港區・極上四季花山椒與間人蟹", "tag": "東京・麻布十番", "img": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80", "desc": "春季花山椒牛肉鍋、冬季京都間人松葉蟹炭火烤，名饕朝聖割烹。", "action1": "預約割烹席", "url1": "https://omakase.in", "action2": "麻布十番飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%BA%BB%E5%B8%83%E5%8D%81%E7%95%AA"}, {"rank": "05", "name": "菊乃井 本店 (Kikunoi Honten)", "sub": "京都東山・米其林三星懷石之巔", "tag": "京都・東山", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "八坂神社後方數寄屋造名店，村田吉弘大師呈現如畫作般高雅京料理。", "action1": "預約懷石套餐", "url1": "https://kikunoi.jp", "action2": "京都祇園住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A5%87%E5%9C%92"}, {"rank": "06", "name": "吉兆 嵐山總店 (Kyoto Kitcho Arashiyama)", "sub": "嵐山・桂川畔大名庭園茶懷石", "tag": "京都・嵐山", "img": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80", "desc": "創始人湯木貞一茶道精神發揚，四季自然庭園窗景中品味純粹旬之味。", "action1": "預訂包廂茶席", "url1": "https://kyoto-kitcho.com", "action2": "嵐山溫泉旅館", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B5%90%E5%B1%B1"}, {"rank": "07", "name": "瓢亭 本店 (Hyotei)", "sub": "京都南禪寺・四百年名物朝粥與溫泉蛋", "tag": "京都・左京", "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80", "desc": "南禪寺參道茶亭起家，四百年秘傳「瓢亭蛋」與朝粥名聞全球。", "action1": "預約朝粥茶席", "url1": "https://hyotei.co.jp", "action2": "南禪寺住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "08", "name": "人形町今半 本店 (Ningyocho Imahan)", "sub": "日本橋・特選黑毛和牛壽喜燒", "tag": "東京・中央區", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "desc": "明治28年創業，專業女將桌邊服務，頂級霜降A5和牛裹蛋液入口即化。", "action1": "預訂壽喜燒", "url1": "https://www.imahan.com", "action2": "日本橋飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%97%A5%E6%9C%AC%E6%A9%8B"}, {"rank": "09", "name": "三嶋亭 本店 (Mishima-tei)", "sub": "京都三條・明治創業頂級和牛壽喜燒", "tag": "京都・中京", "img": "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80", "desc": "五代傳承古木造町家建築，精選熟成黑毛和牛搭配特製砂糖醬油翻烤。", "action1": "席位代訂", "url1": "https://www.mishima-tei.co.jp", "action2": "京都河原町住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8E%9F%E7%94%BA"}, {"rank": "10", "name": "敘敘苑 游玄亭 (Jojoen Yugentei)", "sub": "銀座・極上黑毛和牛炭火燒肉", "tag": "東京・銀座", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "desc": "日本頂級燒肉旗艦品牌，特選牛舌、厚切牛五花配特製沙拉醬汁絕品。", "action1": "預約高級包廂", "url1": "https://www.jojoen.co.jp", "action2": "銀座住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%8A%80%E5%BA%A7"}, {"rank": "11", "name": "炭火燒肉 中原 (Sumibi Yakiniku Nakahara)", "sub": "市谷・傳奇隱密黑毛和牛燒肉", "tag": "東京・千代田", "img": "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80", "desc": "肉品宗師中原健太郎操刀，精準刀工切割不同部位和牛，極致炭烤饗宴。", "action1": "專屬席位預訂", "url1": "https://omakase.in", "action2": "市谷周邊飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B8%82%E8%B0%B7"}, {"rank": "12", "name": "銀座 篝 (Ginza Kagari)", "sub": "銀座・濃郁黑松露松阪豚雞白湯拉麵", "tag": "東京・銀座", "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80", "desc": "米其林必比登推薦，如同法式濃湯般絲滑濃郁的雞白湯底配旬彩時蔬。", "action1": "查看排隊攻略", "url1": "https://tabelog.com/tokyo/A1301/A130101/13230022/", "action2": "銀座住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%8A%80%E5%BA%A7"}, {"rank": "13", "name": "近藤天婦羅 (Tempura Kondo)", "sub": "銀座・米其林二星薄衣胡麻油炸", "tag": "東京・銀座", "img": "https://images.unsplash.com/photo-1615361200141-f45040f367be?auto=format&fit=crop&w=600&q=80", "desc": "將蔬菜天婦羅提升為藝術品，招牌巨大炸蕃薯圓柱與幼薑薄衣清爽不膩。", "action1": "代訂預約", "url1": "https://www.tableall.com", "action2": "銀座住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%8A%80%E5%BA%A7"}, {"rank": "14", "name": "天婦羅 深町 (Fukamachi)", "sub": "京橋・極上山形旬味天婦羅", "tag": "東京・京橋", "img": "https://images.unsplash.com/photo-1615361200141-f45040f367be?auto=format&fit=crop&w=600&q=80", "desc": "前山之上飯店料理長坐鎮，海膽紫蘇葉天婦羅外酥內嫩鮮甜流心。", "action1": "板前席位代訂", "url1": "https://omakase.in", "action2": "東京站住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC%E7%AB%99"}, {"rank": "15", "name": "日本料理 晴山 (Seizan)", "sub": "三田・新世代米其林二星日本料理", "tag": "東京・港區", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "desc": "岐阜名店背景，出汁高湯純淨清透，將飛驒牛與瀨戶內海海鮮發揮淋漓。", "action1": "官方預約", "url1": "https://omakase.in", "action2": "三田田町住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B8%AF%E5%8D%80"}, {"rank": "16", "name": "茶禪華 (Sazenka)", "sub": "南麻布・米其林三星茶藝和魂中華", "tag": "東京・南麻布", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "desc": "融合日本茶道哲學與四川中華料理，炭烤乳鴿與茶餐搭配驚艷世界。", "action1": "預約特別席", "url1": "https://omakase.in", "action2": "廣尾麻布住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BA%83%E5%B0%BE"}, {"rank": "17", "name": "壽司 杉田 (Sushi Sugita)", "sub": "日本橋・江戶前赤醋握壽司巔峰", "tag": "東京・中央區", "img": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80", "desc": "杉田孝明親切風範與無懈可擊的小肌魚握壽司，江戶前傳統魂之最高峰。", "action1": "排隊預訂", "url1": "https://omakase.in", "action2": "日本橋住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%97%A5%E6%9C%AC%E6%A9%8B"}, {"rank": "18", "name": "尾花 (Obana)", "sub": "南千住・米其林一星百年炭火烤鰻魚", "tag": "東京・荒川區", "img": "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80", "desc": "現點現蒸現烤，關東派鬆軟如蒸蛋的極致鰻魚飯，炭香醬香撲鼻。", "action1": "店家探訪指引", "url1": "https://tabelog.com/tokyo/A1324/A132401/13003509/", "action2": "上野日暮里住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%B8%8A%E9%87%8E"}, {"rank": "19", "name": "廣川 鰻魚料理 (Hirokawa)", "sub": "京都嵐山・米其林一星天龍寺旁名店", "tag": "京都・嵐山", "img": "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80", "desc": "嚴選國產優質天然活鰻，以紀州備長炭炭火細烤，庭園窗景雅緻。", "action1": "線上預約", "url1": "https://unagi-hirokawa.jp", "action2": "嵐山住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B5%90%E5%B1%B1"}, {"rank": "20", "name": "中目黑星巴克臻選工坊", "sub": "中目黑・建築大師隈研吾設計水岸咖啡", "tag": "東京・目黑區", "img": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80", "desc": "樓高四層全日本最大旗艦店，巨大紅銅櫻花烘焙桶，露台直面目黑川櫻景。", "action1": "直達店鋪攻略", "url1": "https://store.starbucks.co.jp/detail-1785/", "action2": "中目黑住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%B8%AD%E7%9B%AE%E9%BB%91"}, {"rank": "21", "name": "Canal Cafe 神樂坂", "sub": "飯田橋・神樂坂水岸外壕甲板露台咖啡", "tag": "東京・新宿區", "img": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80", "desc": "百年水上俱樂部轉型，坐在木質水岸甲板上喝咖啡看中央線電車駛過。", "action1": "露台預訂資訊", "url1": "https://canalcafe.jp", "action2": "飯田橋住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%A3%AF%E7%94%B0%E6%A9%8B"}, {"rank": "22", "name": "% ARABICA 京都嵐山", "sub": "嵐山・桂川渡月橋畔純白極簡拉花咖啡", "tag": "京都・嵐山", "img": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80", "desc": "世界拉花冠軍團隊打造，透明玻璃屋面迎桂川青翠山水，咖啡香濃郁。", "action1": "官方菜單資訊", "url1": "https://arabica.coffee", "action2": "嵐山溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B5%90%E5%B1%B1"}, {"rank": "23", "name": "虎屋菓寮 赤坂店 (Toraya Akasaka)", "sub": "赤坂・五百年皇室御用和菓子殿堂", "tag": "東京・港區", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "desc": "內藤廣現代幾何木造建築，品嚐現點羊羹、季節生菓子與特選綠茶。", "action1": "菓寮體驗預約", "url1": "https://www.toraya-group.co.jp", "action2": "赤坂飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%B5%A4%E5%9D%82"}, {"rank": "24", "name": "L'Effervescence", "sub": "西麻布・米其林三星法式和風哲學料理", "tag": "東京・港區", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "desc": "生江史伸主廚將日本風土食材注入法式靈魂，蕪菁定點加熱低溫慢烤為招牌。", "action1": "官網席位預訂", "url1": "https://www.leffervescence.jp", "action2": "西麻布飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%AD%E6%9C%AC%E6%9C%A8"}]}, "culture": {"title": "傳統文化", "icon": "🍵", "desc": "百年宇治抹茶名店、古都正統茶道、町家和服外拍與文化工坊", "items": [{"rank": "01", "name": "一保堂茶鋪 京都本店", "sub": "京都寺町通・三百餘年正統濃茶體驗", "tag": "京都・中京", "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80", "desc": "走進歷史茶鋪喫茶室「嘉木」，親自以茶筅點茶，品嚐濃茶「雲門之昔」。", "action1": "點茶研習預約", "url1": "https://www.ippodo-tea.co.jp", "action2": "京都住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "02", "name": "通圓茶屋 (Tsuen Tea)", "sub": "宇治橋畔・平安時代創立日本最古老茶屋", "tag": "京都・宇治", "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80", "desc": "創業於西元1160年，宮本武藏亦曾造訪，俯瞰宇治川波光品嚐抹茶糰子。", "action1": "茶屋參訪指南", "url1": "https://www.tsuentea.com", "action2": "宇治住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%87%E6%B2%BB"}, {"rank": "03", "name": "中村藤吉 本店 (Nakamura Tokichi)", "sub": "宇治・百年老鋪生抹茶果凍", "tag": "京都・宇治", "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80", "desc": "在古色古香的町家露天中庭，品嚐裝入竹筒的濃郁抹茶冰淇淋與手作白玉。", "action1": "官方預約資訊", "url1": "https://tokichi.jp", "action2": "宇治周邊飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%87%E6%B2%BB"}, {"rank": "04", "name": "伊藤久右衛門 宇治總店", "sub": "宇治・四季季節限定花卉抹茶芭菲", "tag": "京都・宇治", "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80", "desc": "天保年間創業，春櫻、紫藤、秋楓等限定芭菲視覺震撼，宇治茶香撲鼻。", "action1": "查看限定甜點", "url1": "https://www.itohkyuemon.co.jp", "action2": "京都住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "05", "name": "表千家 不審庵 茶席體驗", "sub": "京都上京・千利休正統茶道道統", "tag": "京都・上京", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "體驗草庵茶室一期一會侘寂精神，深刻理解茶道禮法與心靈淨化步調。", "action1": "茶道體驗預約", "url1": "https://www.omotesenke.jp", "action2": "京都御苑住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "06", "name": "裏千家 今日庵 點茶研習", "sub": "京都上京・和敬清寂正統茶道", "tag": "京都・上京", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "千宗室宗家傳統，深入研習帛紗折法、茶入擦拭與賓主應答優美儀態。", "action1": "預訂正統研習", "url1": "https://www.urasenke.or.jp", "action2": "京都住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "07", "name": "祇園辻利 祇園總店", "sub": "京都祇園・特選宇治玉露與抹茶點心", "tag": "京都・東山", "img": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80", "desc": "祇園四條繁華街象徵，二樓「茶寮都路里」抹茶特選聖代排隊朝聖名物。", "action1": "門市指南", "url1": "https://www.giontsujiri.co.jp", "action2": "祇園住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A5%87%E5%9C%92"}, {"rank": "08", "name": "岡本和服 祇園店", "sub": "京都祇園・百年傳統大正和服漫步", "tag": "京都・東山", "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80", "desc": "擁有千套正統純絹和服，專業髮型師編髮，漫步石塀小路與花見小路。", "action1": "預約和服方案", "url1": "https://www.okamoto-kimono.com", "action2": "八坂神社住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A5%87%E5%9C%92"}, {"rank": "09", "name": "夢館 (Yumeyakata)", "sub": "京都五條・傳統町家和服與外拍攝影", "tag": "京都・下京", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "提供振袖、紋付袴及隨行外拍攝影師服務，捕捉伏見稻荷與鴨川絕美瞬間。", "action1": "預約隨行外拍", "url1": "https://www.yumeyakata.com", "action2": "五條京都住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD%E7%AB%99"}, {"rank": "10", "name": "淺草愛和服 (Aiwafuku)", "sub": "東京淺草・雷門復古蕾絲和服租借", "tag": "東京・台東區", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "年輕外國女孩最愛！復古蕾絲和服、珍珠提包搭配淺草寺雷門拍照打卡。", "action1": "線上預約和服", "url1": "http://aiwafuku.com", "action2": "淺草飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B7%BA%E8%8D%89"}, {"rank": "11", "name": "梨花和服 淺草店 (Rika Kimono)", "sub": "東京淺草・隈研吾式精緻和服穿搭", "tag": "東京・台東區", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "鄰近雷門步行1分鐘，款式高雅簡約，提供專業男士紋付袴與情侶套裝。", "action1": "預約穿搭體驗", "url1": "https://ewha-yifu.com", "action2": "淺草住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B7%BA%E8%8D%89"}, {"rank": "12", "name": "金澤兼六園 時雨亭茶席", "sub": "石川金澤・大名庭園加賀百萬石茶道", "tag": "石川・金澤", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "日本三大名園之一，在歷代加賀藩主私房茶室品嚐金箔生和菓子與抹茶。", "action1": "時雨亭預約", "url1": "http://www.pref.ishikawa.jp/siro-niwa/kenrokuen/shigure.html", "action2": "金澤住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%87%91%E6%BE%A4"}, {"rank": "13", "name": "伏見稻荷 千本鳥居漫步", "sub": "京都伏見・穿和服穿梭鮮紅鳥居隧道", "tag": "京都・伏見", "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80", "desc": "全球旅客票選第一名日本地標！一萬座朱紅鳥居盤旋稻荷山，晨光最美。", "action1": "交通導覽指引", "url1": "http://inari.jp", "action2": "京都住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "14", "name": "嵐山竹林小徑 人力車巡遊", "sub": "京都嵐山・傳統俥夫帶路私房嵯峨野", "tag": "京都・嵐山", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "由「惠比壽屋」俥夫以流利英文導覽，穿梭幽靜竹林小徑與野宮神社。", "action1": "預約人力車巡禮", "url1": "https://ebisuya.com", "action2": "嵐山住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B5%90%E5%B1%B1"}, {"rank": "15", "name": "西陣織會館 (Nishijin Textile)", "sub": "京都上京・十二單貴族衣飾與機織工藝", "tag": "京都・上京", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "千年古都頂級絹織物發源地，親手體驗手工織布機，觀賞和服動態展演。", "action1": "織布工坊預訂", "url1": "https://nishijin.or.jp/eng/", "action2": "京都飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "16", "name": "京都染匠 京友禪手繪工坊", "sub": "京都東山・正統手繪京友禪絲巾製作", "tag": "京都・東山", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "跟隨國寶級工匠學習防染技法，在真絲面料上手繪出細膩日本四季花卉。", "action1": "手作課程預約", "url1": "https://www.sensho-kitamura.com", "action2": "京都住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "17", "name": "淺草今戶神社 招財貓緣結", "sub": "東京台東・招財貓發祥地與神前祈願", "tag": "東京・台東區", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "奉祀伊奘諾尊與伊奘冉尊，招財貓發祥靈驗之地，圓形繪馬祈求良緣。", "action1": "參拜指南", "url1": "http://imadojinja1063.crayonsite.net", "action2": "淺草住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B7%BA%E8%8D%89"}, {"rank": "18", "name": "春日大社 萬葉茶道席", "sub": "奈良・清幽巫女神樂與神道茶禮", "tag": "奈良・奈良市", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "世界遺產春日大社神苑內，聆聽巫女祈福神樂，品味神道正統清心茶席。", "action1": "茶席預約指引", "url1": "https://www.kasugataisha.or.jp", "action2": "奈良住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A5%88%E8%89%AF"}, {"rank": "19", "name": "飛驒高山陣屋 朝市文化巡禮", "sub": "岐阜高山・江戶官府歷史與傳統朴葉味噌", "tag": "岐阜・高山", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "全日本唯一現存江戶代官所，逛陣屋前朝市品嚐當地阿婆自製米果與醬菜。", "action1": "參訪指引", "url1": "https://www.pref.gifu.lg.jp/site/takayama-jinya/", "action2": "高山溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E5%B1%B1"}, {"rank": "20", "name": "倉敷美觀地區 舟券茶屋", "sub": "岡山倉敷・白壁土藏水鄉江戶黑瓦漫步", "tag": "岡山・倉敷", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "搭乘傳統川舟搖櫓穿行於柳樹水渠，在江戶米倉改建的茶屋享用吉備糰子。", "action1": "川舟乘車券資訊", "url1": "https://www.kurashiki-tabi.jp", "action2": "倉敷住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%80%89%E6%95%B7"}, {"rank": "21", "name": "鎌倉報國寺 竹之庭 (休耕庵)", "sub": "神奈川鎌倉・幽靜竹林古剎抹茶席", "tag": "神奈川・鎌倉", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "兩千株孟宗竹青翠幽深，坐在「休耕庵」聽風吹竹葉沙沙聲品嚐薄茶。", "action1": "竹庭入園資訊", "url1": "https://houkokuji.or.jp", "action2": "鎌倉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%8E%8Iowa"}, {"rank": "22", "name": "彥根城 玄宮園茶席", "sub": "滋賀彥根・國寶天守閣大名池泉庭園", "tag": "滋賀・彥根", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "以國寶彥根城為借景的大名庭園，在鳳翔台品嚐井伊直弼大師茶道菓子。", "action1": "茶席指南", "url1": "https://hikonecastle.com", "action2": "彥根琵琶湖住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BD%A5%E6%A0%B9"}, {"rank": "23", "name": "水戶偕樂園 好文亭茶室", "sub": "茨城水戶・水戶藩主德川齊昭御殿漫步", "tag": "茨城・水戶", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "日本三大名園之一，登上好文亭三階眺望千波湖，四季梅花竹林環繞。", "action1": "好文亭預約", "url1": "https://www.ibaraki-kankou.or.jp/kairakuen/", "action2": "水戶住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B0%B4%E6%88%B6"}, {"rank": "24", "name": "松江城 明々庵 (Meimei-an)", "sub": "島根松江・茶人藩主松平不昧古庵茶道", "tag": "島根・松江", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "江戶著名茶道家大名松平治鄉所建草庵，遠眺國寶松江城天守閣品嚐不昧公茶。", "action1": "茶室參拜指南", "url1": "http://www.matsue-tourism.or.jp/meimeian/", "action2": "松江宍道湖住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%BE%E6%B1%9F"}]}, "budo": {"title": "武道靈性", "icon": "⚔️", "desc": "大相撲晨練、真劍居合斬、武士道道場、高野山宿坊與靈場坐禪", "items": [{"rank": "01", "name": "兩國國技館 大相撲本場所", "sub": "東京墨田・日本國技相撲最高殿堂", "tag": "東京・墨田區", "img": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80", "desc": "每年1、5、9月東京場所，感受力士肉身激烈撞擊震撼聲響與座墊齊飛盛況。", "action1": "相撲特等席預訂", "url1": "https://www.sumo.or.jp", "action2": "兩國錦糸町住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%A9%E5%9C%8B"}, {"rank": "02", "name": "荒汐部屋 相撲晨練觀覽", "sub": "東京日本橋・近距離窗邊看力士晨練撞擊", "tag": "東京・中央區", "img": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80", "desc": "大片落地玻璃窗直面土俵，早上7點觀賞若隆景等力士汗水四濺的死鬥修練。", "action1": "晨練預約指引", "url1": "https://arashio.net", "action2": "日本橋住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%97%A5%E6%9C%AC%E6%A9%8B"}, {"rank": "03", "name": "春日野部屋 晨練修驗", "sub": "東京墨田・傳統老鋪相撲部屋深層文化", "tag": "東京・墨田區", "img": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80", "desc": "歷史悠久的部屋，了解力士生活起居、四股踏步訓練及傳統相撲相撲鍋料理。", "action1": "部屋巡訪預約", "url1": "https://www.sumo.or.jp", "action2": "墨田住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A2%A8%E7%94%B0"}, {"rank": "04", "name": "真劍居合斬 東京道場", "sub": "東京・真劍試斬竹捲與武士道體驗", "tag": "東京・新宿區", "img": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80", "desc": "換上正統黑紋付羽織袴，在八段範士指導下親持真刃武士刀俐落切斷草蓆。", "action1": "真劍體驗預約", "url1": "https://samurai-theater-tokyo.com", "action2": "新宿住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%96%B0%E5%AE%BF"}, {"rank": "05", "name": "京都武士道劍術工坊 (Samurai)", "sub": "京都・戰國甲冑試穿與居合拔刀術", "tag": "京都・中京", "img": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80", "desc": "穿著重達20公斤的戰國名將甲冑，學習無雙直傳英信流拔刀術與精神意念。", "action1": "武士工坊預約", "url1": "https://kyoto-samurai.com", "action2": "京都住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "06", "name": "高野山 一乘院 (Ichijoin)", "sub": "和歌山高野山・精進料理頂級宿坊", "tag": "和歌山・高野町", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "弘法大師開創靈場，品味米其林水準精進料理，參加清晨僧侶本堂勤行與誦經。", "action1": "預約寺院宿坊", "url1": "https://www.itijyoin.or.jp", "action2": "高野山住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E9%87%8E%E5%B1%B1"}, {"rank": "07", "name": "高野山 福智院 (Fukuchi-in)", "sub": "和歌山・唯一擁有天然溫泉的千年宿坊", "tag": "和歌山・高野町", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "重森三玲設計三座名庭園，享受天然露天溫泉，晨間參加密教阿字觀冥想。", "action1": "預約溫泉宿坊", "url1": "https://fukuchiin.com", "action2": "高野山住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E9%87%8E%E5%B1%B1"}, {"rank": "08", "name": "比叡山延曆寺 居士林修驗", "sub": "滋賀大津・天台宗總本山坐禪斷食修道", "tag": "滋賀・大津", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "日本佛教母山，在根本中堂不滅法燈前參加一泊二日止觀坐禪與法話研修。", "action1": "居士林修驗預訂", "url1": "https://www.hieizan.or.jp", "action2": "比叡山住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%AF%94%E5%8F%A1%E5%B1%B1"}, {"rank": "09", "name": "永平寺 靈性修行體驗", "sub": "福井・曹洞宗大本山雲水坐禪朝課", "tag": "福井・永平寺町", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "道元禪師開山，古杉參天巨剎，體驗「只管打坐」的純粹心靈沈靜力量。", "action1": "參禪體驗指引", "url1": "https://eiheiji.jp", "action2": "永平寺住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A6%8F%E4%BA%95"}, {"rank": "10", "name": "鎌倉圓覺寺 居士林坐禪", "sub": "神奈川鎌倉・臨濟宗武士禪風冥想", "tag": "神奈川・鎌倉", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "北條時宗為悼念蒙古合戰陣亡者而建，週末對外開放清晨坐禪會，靜心聆聽山鳥。", "action1": "坐禪會資訊", "url1": "https://www.engakuji.or.jp", "action2": "鎌倉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%8E%8Iowa"}, {"rank": "11", "name": "天龍寺 曹源池坐禪會", "sub": "京都嵐山・世界遺產池泉晨間坐禪", "tag": "京都・右京", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "夢窗疏石國師設計曹源池庭園，清晨對著如鏡湖面與嵐山倒影調息入定。", "action1": "晨間參禪資訊", "url1": "https://www.tenryuji.com", "action2": "嵐山溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B5%90%E5%B1%B1"}, {"rank": "12", "name": "奈良長谷寺 晨鐘朝之勤行", "sub": "奈良櫻井・十一面觀音本堂朝課與登廊", "tag": "奈良・櫻井", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "登上399段石階登廊，清晨與數十位僧侶一同在國寶大殿前唱誦梵唄，震撼心靈。", "action1": "朝勤行參加指引", "url1": "https://www.hasedera.or.jp", "action2": "奈良住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A5%88%E8%89%AF"}, {"rank": "13", "name": "戶隱神社 奧社杉並木修驗", "sub": "長野戶隱・樹齡400年神明雪道巡禮", "tag": "長野・長野市", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "天手力雄命神話古道，兩側200株參天巨杉高聳入雲，充滿強烈神道靈氣能量場。", "action1": "參拜指南", "url1": "https://www.togakushi-jinja.jp", "action2": "戶隱長野住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%88%B6%E9%9A%A0"}, {"rank": "14", "name": "出羽三山 羽黑山山伏修驗", "sub": "山形鶴岡・2446石階與五重塔修行", "tag": "山形・鶴岡", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "白衣山伏帶路，穿越國寶羽黑山五重塔與千本巨杉，體驗象徵「死亡與重生」的修驗。", "action1": "山伏修驗預約", "url1": "http://www.dewasanzan.jp", "action2": "鶴岡溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%B6%B4%E5%B2%A1"}, {"rank": "15", "name": "熊野古道 中邊路參詣道", "sub": "和歌山田邊・世界唯二世界遺產朝聖道", "tag": "和歌山・田邊", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "穿過古老石疊小徑與青苔古杉，參拜熊野本宮大社，感受千年生死靈場。", "action1": "朝聖嚮導預約", "url1": "https://www.tb-kumano.jp", "action2": "本宮溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%99%BD%E6%B5%9C"}, {"rank": "16", "name": "鞍馬寺 靈氣尊天山行", "sub": "京都洛北・天狗傳說與靈氣Reiki發源地", "tag": "京都・左京", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "源義經與天狗習劍之所，本殿金堂前「六芒星」地標匯聚宇宙尊天強大能量。", "action1": "登山參拜指南", "url1": "https://www.kuramadera.or.jp", "action2": "貴船鞍馬住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "17", "name": "箱根神社 九頭龍水上鳥居", "sub": "神奈川箱根・蘆之湖湖中鳥居淨化儀式", "tag": "神奈川・箱根", "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80", "desc": "屹立於平靜蘆之湖面的鮮紅「平和鳥居」，清晨雲霧繚繞，洗滌塵世浮躁雜念。", "action1": "水上參拜指引", "url1": "http://hakonejinja.or.jp", "action2": "蘆之湖溫泉飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%AE%B1%E6%A0%B9"}, {"rank": "18", "name": "宮島彌山 靈火堂消えずの火", "sub": "廣島廿日市・弘法大師不滅之火1200年", "tag": "廣島・廿日市", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "弘法大師修法點燃的靈火燃燒逾1200年，平和記念公園和平之火即取自於此。", "action1": "彌山登山纜車", "url1": "http://miyajima-ropeway.info", "action2": "宮島住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%AE%E5%B3%B6"}, {"rank": "19", "name": "身延山久遠寺 菩提梯修道", "sub": "山梨南巨摩・日蓮宗總本山287級石階", "tag": "山梨・身延町", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "攀登傾斜度驚人的287段陡峭「菩提梯」，登上本堂參加晚鐘祈福，身心昇華。", "action1": "本山參拜指南", "url1": "https://www.kuonji.jp", "action2": "下部溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%94%B2%E5%BA%9C"}, {"rank": "20", "name": "信州善光寺 戒壇巡禮", "sub": "長野・漆黑迴廊摸索極樂之鎖秘儀", "tag": "長野・長野市", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "進入完全無光的地下秘密迴廊，觸摸本尊下方的鐵鎖，傳說能與佛結下極樂善緣。", "action1": "戒壇巡禮指南", "url1": "https://www.zenkoji.jp", "action2": "長野住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%95%B7%E9%87%8E"}, {"rank": "21", "name": "青森恐山 菩提寺靈場", "sub": "青森陸奧・日本三大靈場硫磺火山口", "tag": "青森・陸奧市", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "白濁宇曾利山湖與硫磺荒涼地貌，自古被視為亡靈聚集靈場，設有境內四座天然溫泉。", "action1": "靈場參訪指南", "url1": "https://osorezan.or.jp", "action2": "青森住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%9D%92%E6%A3%AE"}, {"rank": "22", "name": "嚴島神社 清晨昇殿參拜", "sub": "廣島宮島・退潮水上迴廊神樂奉納", "tag": "廣島・廿日市", "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80", "desc": "在漲潮海水漫過朱紅迴廊的清晨昇殿參拜，避開人潮，感受海上神殿的神聖威嚴。", "action1": "官方潮汐查詢", "url1": "http://www.itsukushimajinja.jp", "action2": "宮島住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%AE%E5%B3%B6"}, {"rank": "23", "name": "青岸渡寺 那智原始瀑布", "sub": "和歌山那智勝浦・三重塔與神瀑神佛習合", "tag": "和歌山・那智", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "落差133米日本第一名瀑「那智之瀧」與朱紅三重塔同框，神道與佛教和諧共生。", "action1": "朝聖步道指引", "url1": "https://kumanosanzen.info", "action2": "勝浦溫泉飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%8B%9D%E6%B5%A6"}, {"rank": "24", "name": "大山阿夫利神社 瀑布禊行", "sub": "神奈川伊勢原・雨降山靈水拔除穢氣", "tag": "神奈川・伊勢原", "img": "https://images.unsplash.com/photo-1545641203-7d072a14e3b2?auto=format&fit=crop&w=600&q=80", "desc": "搭乘大山纜車抵達下社，參加冰涼山泉瀑布下的神道「禊行」洗滌儀式，俯瞰湘南海岸。", "action1": "禊行預約指南", "url1": "http://www.afuri.or.jp", "action2": "伊勢原住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%AE%B1%E6%A0%B9"}]}, "fuji": {"title": "富士自然", "icon": "🗻", "desc": "富士山登頂挑戰、山屋安心預約、逆富士豪華露營與上高地山林秘境", "items": [{"rank": "01", "name": "富士山 吉田路線登頂", "sub": "山梨・五合目出發御來光日出挑戰", "tag": "山梨・富士吉田", "img": "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=600&q=80", "desc": "外國登山客首選！設施完善山屋密集，拂曉登上3,776公尺最高峰仰望雲海日出。", "action1": "登山嚮導團預約", "url1": "http://www.fujisan-climb.jp", "action2": "河口湖溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96"}, {"rank": "02", "name": "富士宮路線 直攻劍峰", "sub": "靜岡・最短距離攀登日本最高點劍峰", "tag": "靜岡・富士宮", "img": "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=600&q=80", "desc": "標高差最小的直上路線，直面駿河灣海景，直達最高點3,776公尺劍峰石碑。", "action1": "登山證預約手續", "url1": "http://www.fujisan-climb.jp", "action2": "富士宮住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AF%8C%E5%A3%AB%E5%AE%AE"}, {"rank": "03", "name": "御殿場路線 大砂走健行", "sub": "靜岡・赤色火山砂急速滑行下切", "tag": "靜岡・御殿場", "img": "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=600&q=80", "desc": "老手玩家專屬！一條下山可在大砂走火山礫石上如滑雪般大步飛躍奔馳的刺激路線。", "action1": "路線規劃諮詢", "url1": "http://www.fujisan-climb.jp", "action2": "御殿場Outlet住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BE%A1%E6%AE%BF%E5%A0%B4"}, {"rank": "04", "name": "須走路線 高山植物原生林", "sub": "靜岡・綠意山毛櫸林與火口分界", "tag": "靜岡・小山町", "img": "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=600&q=80", "desc": "從鬱鬱蔥蔥的原始森林逐漸步入荒涼熔岩斜坡，生態過渡景觀極為迷人。", "action1": "嚮導預約指南", "url1": "http://www.fujisan-climb.jp", "action2": "御殿場住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BE%A1%E6%AE%BF%E5%A0%B4"}, {"rank": "05", "name": "富士山頂 御來光館山屋", "sub": "山梨・標高3,450公尺最高山屋安心過夜", "tag": "山梨・富士吉田", "img": "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=600&q=80", "desc": "距離山頂僅一步之遙，提供溫熱漢堡排咖哩晚餐，清晨走出山屋即看御來光。", "action1": "山屋席位預訂", "url1": "https://www.goraikoukan.jp", "action2": "山腳河口湖住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96"}, {"rank": "06", "name": "星野富士 (HOSHINOYA Fuji)", "sub": "山梨・紅松林露台直面富士山頂級豪華露營", "tag": "山梨・富士河口湖", "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", "desc": "客房全數配備無死角直面河口湖與富士山的大景觀露台，夜間在雲上露台烤棉花糖。", "action1": "預約星野富士", "url1": "https://hoshinoya.com/fuji/", "action2": "河口湖飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96"}, {"rank": "07", "name": "本栖湖 浩庵露營場", "sub": "山梨・日幣千圓紙鈔取景秘境野營", "tag": "山梨・身延町", "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", "desc": "日幣千圓紙鈔背面「湖畔之春」逆富士真實取景地，清晨走出帳篷看見水面倒影。", "action1": "露營營位預約", "url1": "https://kouan-motosuko.com", "action2": "富士五湖住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96"}, {"rank": "08", "name": "PICA 富士西湖", "sub": "山梨・湖畔木屋與獨木舟探險營地", "tag": "山梨・富士河口湖", "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", "desc": "西湖清澈水質旁，入住溫馨歐式木屋，早晨划著獨木舟探索西湖神秘寧靜水域。", "action1": "預約木屋露營", "url1": "https://www.pica-resort.jp/saiko/", "action2": "西湖飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%A5%BF%E6%B9%96"}, {"rank": "09", "name": "上高地 大正池至河童橋", "sub": "長野・北阿爾卑斯純淨雪水白樺林健行", "tag": "長野・松本", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "神之故鄉！漫步在梓川清澈見底的溪流旁，遙望穗高連峰白雪冠頂，歐洲風情滿溢。", "action1": "上高地專車預約", "url1": "https://www.kamikochi.org", "action2": "上高地帝國飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%B8%8A%E9%AB%98%E5%9C%B0"}, {"rank": "10", "name": "屋久島 白谷雲水峽", "sub": "鹿兒島・吉卜力《幽靈公主》青苔幽森", "tag": "鹿兒島・屋久島", "img": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80", "desc": "覆蓋數百年厚重翠綠青苔的原始幽暗森林，水滴凝結於樹鬚，宮崎駿靈感發源地。", "action1": "森林嚮導團預約", "url1": "https://yakukan.jp", "action2": "屋久島渡假住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B1%8B%E4%B9%85%E5%B3%B6"}, {"rank": "11", "name": "屋久島 繩文杉千年健行", "sub": "鹿兒島・樹齡7200年傳奇神木荒川鐵道", "tag": "鹿兒島・屋久島", "img": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80", "desc": "單程11公里荒川安房森林鐵道健行，親眼目睹矗立千年的島上靈魂「繩文杉」。", "action1": "繩文杉一日團", "url1": "https://yakukan.jp", "action2": "屋久島住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B1%8B%E4%B9%85%E5%B3%B6"}, {"rank": "12", "name": "白馬八方池 倒影連峰", "sub": "長野・標高2,060m北阿爾卑斯倒影池", "tag": "長野・白馬", "img": "https://images.unsplash.com/photo-1565992441121-4367c2967103?auto=format&fit=crop&w=600&q=80", "desc": "搭乘八方尾根纜車後輕鬆健行1.5小時，無風時白馬三山完美倒映在清澈高山池面。", "action1": "纜車套票預訂", "url1": "https://www.happo-one.jp", "action2": "白馬溫泉飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%99%BD%E9%A6%AC"}, {"rank": "13", "name": "乘鞍岳 疊平雲海健行", "sub": "長野/岐阜・日本最高巴士站標高2,702m", "tag": "長野・松本", "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", "desc": "搭環保巴士輕鬆直達標高2,702公尺疊平，僅需90分鐘即可登上劍峰俯瞰澎湃雲海。", "action1": "乘鞍巴士票預訂", "url1": "https://norikura.gr.jp", "action2": "乘鞍高原溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%B9%98%E9%9E%8D"}, {"rank": "14", "name": "尾瀨國立公園 尾瀨原木道", "sub": "群馬/福島・日本最大高層濕原健行", "tag": "群馬・片品村", "img": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80", "desc": "行走在無邊無際的平坦木棧道上，初夏水芭蕉盛開，秋季金黃草紅葉如金色地毯。", "action1": "入山接駁車預訂", "url1": "https://www.oze-fnd.or.jp", "action2": "尾瀨戶倉溫泉", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%89%87%E5%93%81"}, {"rank": "15", "name": "奧入瀨溪流 銚子大瀑布", "sub": "青森・14公里湍急清流木蔭森林浴", "tag": "青森・十和田", "img": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80", "desc": "被譽為全日本最美溪流，沿著清涼水霧木道慢跑或散步，負離子充沛身心舒暢。", "action1": "溪流自行車租借", "url1": "https://www.oirase.or.jp", "action2": "星野奧入瀨溪流飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%8D%81%E5%92%8C%E7%94%B0"}, {"rank": "16", "name": "知床半島 宇登呂巡航觀熊", "sub": "北海道・世界自然遺產最後秘境野性探險", "tag": "北海道・斜里町", "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", "desc": "搭乘觀光巡航小艇直面斷崖峭壁，遠眺海鳥繁殖懸崖與海岸邊覓食野生棕熊。", "action1": "觀光巡航船票預訂", "url1": "https://www.shiretoko-kankosen.com", "action2": "宇登呂溫泉飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%9F%A5%E5%BA%8A"}, {"rank": "17", "name": "摩周湖 霧之摩周藍", "sub": "北海道弟子屈・全球第二高透明度神之湖", "tag": "北海道・弟子屈", "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", "desc": "無河流流入流出的封閉火山湖，深達41.6米極致透亮深藍，雲霧散去宛若藍寶石。", "action1": "摩周湖展望台資訊", "url1": "https://masyuko.or.jp", "action2": "阿寒摩周住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BC%9F%E5%AD%90%E5%B1%88"}, {"rank": "18", "name": "美瑛白金青池 白鬚瀑布", "sub": "北海道美瑛・夢幻蒂芬妮藍白樺枯木", "tag": "北海道・美瑛", "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", "desc": "十勝岳火山含鋁地下水與美瑛川交融散射藍光，池中枯落葉松形成空靈夢幻構圖。", "action1": "美瑛包車一日遊", "url1": "https://www.biei-hokkaido.jp", "action2": "白金溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%BE%8E%E7%91%9B"}, {"rank": "19", "name": "霧島連峰 高千穗峰健行", "sub": "鹿兒島・天孫降臨神話天之逆鉾靈峰", "tag": "鹿兒島・霧島", "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", "desc": "踏著赤褐色火山砂石登上標高1,574公尺峰頂，親見插在火山口神祕的「天之逆鉾」。", "action1": "霧島登山指引", "url1": "https://kirishimakankou.com", "action2": "霧島溫泉旅館", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%9C%A7%E5%B3%B6"}, {"rank": "20", "name": "黑部峽谷 宇奈月溫泉觀光鐵道", "sub": "富山・日本最深V字大峽谷小火車", "tag": "富山・黑部", "img": "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=600&q=80", "desc": "搭乘無窗開放式復古小火車穿行於紅色山彥橋與斷崖峭壁間，森林水氣沁人心脾。", "action1": "黑部峽谷火車預約", "url1": "https://www.kurotetu.co.jp", "action2": "宇奈月溫泉飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%BB%91%E9%83%A8"}, {"rank": "21", "name": "祖谷溪 大步危小步危泛舟", "sub": "德島・日本三大秘境藤蔓橋與激流", "tag": "德島・三好", "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", "desc": "吉野川兩岸片岩經兩億年沖刷成險峻峽谷，勇渡軟藤編織的祖谷藤蔓橋心跳加速。", "action1": "大步危泛舟預訂", "url1": "https://miyoshi-tourism.jp", "action2": "祖谷秘境溫泉", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%B8%89%E5%A5%BD"}, {"rank": "22", "name": "青木原樹海 富岳風穴與鳴澤冰穴", "sub": "山梨・富士熔岩洞穴天然零度冰柱", "tag": "山梨・富士河口湖", "img": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80", "desc": "千年前富士山噴發形成的熔岩洞穴，即便盛夏內部亦維持0°C，晶瑩冰柱聳立。", "action1": "洞穴探險套票", "url1": "https://www.mtfuji-cave.com", "action2": "河口湖住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96"}, {"rank": "23", "name": "富士見台高原 萬里山脊", "sub": "長野・木曾山脈與御岳山全景展望", "tag": "長野・阿智村", "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", "desc": "搭纜車登上天惠高原，沿著笹草平緩山脊漫步，夜晚遠眺日本第一美麗星空。", "action1": "星空纜車票預訂", "url1": "https://hirugamionsen.jp", "action2": "晝神溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%98%BF%E6%99%BA%E6%9D%91"}, {"rank": "24", "name": "宮古島 與那霸前濱海灘", "sub": "沖繩・東洋第一純白細砂珊瑚湛藍海岸", "tag": "沖繩・宮古島", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "desc": "長達7公里的純白細柔砂灘，海水呈現透明純淨翡翠宮古藍，落日餘暉染紅海面。", "action1": "水上活動預約", "url1": "https://miyako-guide.net", "action2": "宮古島海景飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%AE%E5%8F%A4%E5%B3%B6"}]}, "sports": {"title": "運動賽事", "icon": "⚾", "desc": "日本職棒NPB巨蛋觀戰、甲子園熱血、F1日本大獎賽與六大馬拉松", "items": [{"rank": "01", "name": "東京巨蛋 讀賣巨人主場戰", "sub": "東京文京・日本職棒百年豪門應援席", "tag": "東京・文京區", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "desc": "享受球場特製便當、背著生啤酒桶的可愛啤酒妹與橘色毛巾旋風應援歌。", "action1": "職棒門票代訂", "url1": "https://www.giants.jp", "action2": "東京巨蛋飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%96%87%E4%BA%AC%E5%8D%80"}, {"rank": "02", "name": "阪神甲子園球場 (Hanshin Tigers)", "sub": "兵庫西宮・棒球聖地黃色氣球海狂熱", "tag": "兵庫・西宮", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "desc": "百年常春藤球場，第七局萬人齊放黃色火箭氣球，親嚐傳奇甲子園咖哩飯。", "action1": "甲子園內野席預約", "url1": "https://koshien.hanshin.co.jp", "action2": "神戶大阪住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A4%A7%E9%98%AA"}, {"rank": "03", "name": "ES CON FIELD HOKKAIDO", "sub": "北海道北廣島・最新開頂天然草皮球場", "tag": "北海道・北廣島", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "desc": "世界首創球場內天然溫泉與三溫暖邊看球賽，精釀啤酒廠與戶外露營區一體化。", "action1": "溫泉看台票預約", "url1": "https://www.hkdballpark.com", "action2": "札幌住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9C%AD%E5%B9%8C"}, {"rank": "04", "name": "明治神宮棒球場 養樂多燕子", "sub": "東京新宿・露天綠茵雨傘花火應援舞", "tag": "東京・新宿區", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "desc": "村上宗隆主場！得分時萬人撐開彩色小雨傘跳「東京音頭」，夏夜伴隨球場煙火。", "action1": "外野應援席預約", "url1": "https://www.yakult-swallows.co.jp", "action2": "新宿住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%96%B0%E5%AE%BF"}, {"rank": "05", "name": "橫濱球場 (Yokohama DeNA)", "sub": "神奈川橫濱・港灣微風特製精釀啤酒", "tag": "神奈川・橫濱", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "desc": "橫濱公園內的露天球場，享受球隊自家釀造「BAYSTARS LAGER」與球員限定炸雞。", "action1": "門票預約指引", "url1": "https://www.baystars.co.jp", "action2": "橫濱住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%A9%AB%E6%BF%B1"}, {"rank": "06", "name": "埼玉超級競技場 世界拳王爭霸", "sub": "埼玉・全球頂級格鬥拳王腰帶防衛戰", "tag": "埼玉・中央區", "img": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80", "desc": "井上尚彌等世界無爭議拳王出戰主場，容納三萬人震撼聲光效果令人血脈賁張。", "action1": "賽事門票查詢", "url1": "https://www.saitama-arena.co.jp", "action2": "埼玉新都心住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%9F%BC%E7%8E%89"}, {"rank": "07", "name": "鈴鹿賽道 F1日本大獎賽", "sub": "三重鈴鹿・傳奇8字形立體交叉高速S彎", "tag": "三重・鈴鹿", "img": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80", "desc": "世界所有F1車手一致推崇的技術賽道，看紅牛與法拉利以時速300公里撕裂空氣。", "action1": "看台指定席預約", "url1": "https://www.suzukacircuit.jp/f1/", "action2": "名古屋住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%90%8D%E5%8F%A4%E5%B1%8B"}, {"rank": "08", "name": "富士國際賽車場 WEC耐久賽", "sub": "靜岡・直面富士山1.5km超長直道衝刺", "tag": "靜岡・小山町", "img": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80", "desc": "世界耐力錦標賽與SUPER GT主場，在富士山壯麗背景下享受頂級賽車轟鳴狂歡。", "action1": "圍場通票預約", "url1": "https://www.fsw.tv", "action2": "御殿場飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BE%A1%E6%AE%BF%E5%A0%B4"}, {"rank": "09", "name": "茂木雙環賽道 MotoGP日本站", "sub": "櫪木茂木・世界摩托車大獎賽極限傾角", "tag": "櫪木・茂木町", "img": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80", "desc": "頂尖騎士以60度極限傾角貼地過彎，轟鳴排氣聲浪迴盪於森林賽道之中。", "action1": "大獎賽門票預約", "url1": "https://www.mr-motegi.jp/motogp/", "action2": "宇都宮住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%87%E9%83%BD%E5%AE%AE"}, {"rank": "10", "name": "東京馬拉松 (Tokyo Marathon)", "sub": "東京・世界六大馬拉松WMM大滿貫賽道", "tag": "東京・新宿/銀座", "img": "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=600&q=80", "desc": "38,000名跑者穿梭新宿、雷門、銀座與東京車站，全日本最熱情志工與加油聲。", "action1": "慈善參賽席位代辦", "url1": "https://www.marathon.tokyo", "action2": "東京站周邊住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC%E7%AB%99"}, {"rank": "11", "name": "大阪馬拉松 (Osaka Marathon)", "sub": "大阪・御堂筋銀杏與大阪城萬人熱情", "tag": "大阪・中央區", "img": "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=600&q=80", "desc": "充滿大阪熱情搞笑加油看板，補給站提供章魚燒、炸串，終點設於大阪城公園。", "action1": "海外報名資訊", "url1": "https://www.osaka-marathon.com", "action2": "大阪住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A4%A7%E9%98%AA"}, {"rank": "12", "name": "京都馬拉松 (Kyoto Marathon)", "sub": "京都・穿梭七大世界遺產清幽千年賽道", "tag": "京都・右京/左京", "img": "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=600&q=80", "desc": "奔馳過渡月橋、仁和寺、鴨川沿岸與平安神宮大鳥居，沿途藝妓舞妓溫柔應援。", "action1": "參賽名額指南", "url1": "https://kyoto-marathon.com", "action2": "京都住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "13", "name": "神戶馬拉松 (Kobe Marathon)", "sub": "兵庫神戶・明石海峽大橋蔚藍港灣賽道", "tag": "兵庫・神戶", "img": "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=600&q=80", "desc": "直面瀨戶內海與明石海峽跨海大橋，象徵1995阪神大地震復興的感恩奔跑。", "action1": "海外選手報名", "url1": "https://kobe-marathon.net", "action2": "神戶三宮住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A5%9E%E6%88%B6"}, {"rank": "14", "name": "埼玉體育場2002 (浦和紅鑽)", "sub": "埼玉綠區・亞洲最震撼紅色死忠魔鬼主場", "tag": "埼玉・綠區", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "desc": "63,700人座純足球專用球場，北看台死忠紅軍整場90分鐘不間斷跳躍怒吼歌唱。", "action1": "J聯盟門票預約", "url1": "https://www.urawa-reds.co.jp", "action2": "浦和住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%9F%BC%E7%8E%89"}, {"rank": "15", "name": "國立競技場 J聯盟特別賽", "sub": "東京新宿・隈研吾綠意木造建築聖地", "tag": "東京・新宿區", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "desc": "2020東京奧運主場館，結合全日本47都道府縣木材，在此觀看國家隊與明星賽。", "action1": "賽事特等席預訂", "url1": "https://www.jpnsport.go.jp/kokuritu/", "action2": "新宿住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%96%B0%E5%AE%BF"}, {"rank": "16", "name": "吹田Panasonic足球場 (Gamba)", "sub": "大阪吹田・距離草皮僅7米極致壓迫看台", "tag": "大阪・吹田", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "desc": "日本少見歐式陡峭專業足球場，球員碰撞聲與鏟球草皮飛濺近在咫尺。", "action1": "門票預約指引", "url1": "https://www.gamba-osaka.net", "action2": "大阪吹田住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A4%A7%E9%98%AA"}, {"rank": "17", "name": "日產體育場 橫濱水手", "sub": "神奈川橫濱・2002韓日世界盃決賽歷史球場", "tag": "神奈川・橫濱", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "desc": "羅納度一戰封神的72,000人巨大球場，三色旗水手隊展現快速進攻足球哲學。", "action1": "VIP席位預約", "url1": "https://www.f-marinos.com", "action2": "新橫濱住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%96%B0%E6%A9%AB%E6%BF%B1"}, {"rank": "18", "name": "有明體育館 B聯盟職籃大賽", "sub": "東京江東・全日本最高水準雷射燈光籃球", "tag": "東京・江東區", "img": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80", "desc": "東京United主場，NBA等級中央巨型吊頂螢幕與DJ嘻哈節奏，球星灌籃熱力四射。", "action1": "B聯盟球票預約", "url1": "https://www.bleague.jp", "action2": "台場豐洲住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9C%89%E6%98%8E"}, {"rank": "19", "name": "兩國國技館 新日本職業摔角", "sub": "東京墨田・1.4東京巨蛋前哨戰熱血狂歡", "tag": "東京・墨田區", "img": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80", "desc": "IWGP世界重量級冠軍爭霸戰，擂台邊近距離感受飛撲與金臂勾的震撼肉體搏擊。", "action1": "擂台席門票預約", "url1": "https://www.njpw.co.jp", "action2": "兩國住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%A9%E5%9C%8B"}, {"rank": "20", "name": "花園橄欖球場 日本代表戰", "sub": "大阪東大阪・日本橄欖球聖地櫻花戰士", "tag": "大阪・東大阪", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "desc": "日本歷史最悠久專用橄欖球場，觀賞勇敢櫻花戰士「Brave Blossoms」強悍對撞。", "action1": "橄欖球門票預約", "url1": "https://www.rugby-japan.jp", "action2": "大阪難波住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%9B%A3%E6%B3%A2"}, {"rank": "21", "name": "中山競馬場 有馬記念 (G1)", "sub": "千葉船橋・年末全日本票選夢幻馬王對決", "tag": "千葉・船橋", "img": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80", "desc": "十萬名馬迷湧入現場，直道最後兩百公尺陡坡廝殺，投注馬券體驗熱血心跳。", "action1": "指定席抽籤指引", "url1": "https://www.jra.go.jp", "action2": "西船橋住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%88%B9%E6%A9%8B"}, {"rank": "22", "name": "東京競馬場 日本杯 (Japan Cup)", "sub": "東京府中・世界頂級國際一級一等賽事", "tag": "東京・府中", "img": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80", "desc": "世界各國頂尖純種馬來日決戰2400公尺草地，巨大看台直面富士山夕陽。", "action1": "國際觀摩席資訊", "url1": "https://japanracing.jp", "action2": "府中新宿住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%96%B0%E5%AE%BF"}, {"rank": "23", "name": "京都競馬場 菊花賞", "sub": "京都淀・全新改建看台天鵝池畔三冠終章", "tag": "京都・伏見", "img": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80", "desc": "三歲經典三冠最後一關3,000公尺耐力賽，站在全新落成看台俯瞰淀川夕陽。", "action1": "預約特別席位", "url1": "https://www.jra.go.jp", "action2": "京都住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD"}, {"rank": "24", "name": "富士五湖 超級馬拉松 (118K)", "sub": "山梨・環繞富士五湖118km極限耐力挑戰", "tag": "山梨・富士吉田", "img": "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=600&q=80", "desc": "在富士山守護下一口氣跑完山中湖、河口湖、西湖、精進湖、本栖湖的傳奇壯舉。", "action1": "超馬報名手續", "url1": "https://www.r-wellness.com/fuji5/", "action2": "富士吉田住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96"}]}, "snow": {"title": "粉雪溫泉", "icon": "❄️", "desc": "北海道二世谷JAPOW極上粉雪、大正浪漫銀山溫泉與草津古湯巡禮", "items": [{"rank": "01", "name": "二世谷比羅夫 Grand Hirafu", "sub": "北海道・全球粉雪之都與熱鬧歐美小鎮", "tag": "北海道・俱知安", "img": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80", "desc": "全球滑雪者心目中的聖地，夜晚在比羅夫小鎮吃米其林拉麵喝清酒泡溫泉。", "action1": "纜車票與教練預訂", "url1": "https://www.grand-hirafu.jp", "action2": "比羅夫滑雪飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%8C%E4%B8%96%E8%B0%B7"}, {"rank": "02", "name": "留壽都度假村 (Rusutsu Resort)", "sub": "北海道・連續評選日本最佳滑雪場三座大山", "tag": "北海道・留壽都", "img": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=80", "desc": "三座大山37條雪道，直面羊蹄山無敵雪景，林間野雪道不用人擠人。", "action1": "全通纜車票預約", "url1": "https://rusutsu.com", "action2": "威斯汀留壽都渡假村", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%95%99%E5%A3%BD%E9%83%BD"}, {"rank": "03", "name": "喜樂樂 Kiroro Resort", "sub": "北海道余市・降雪量全日本第一極上乾粉", "tag": "北海道・赤井川", "img": "https://images.unsplash.com/photo-1565992441121-4367c2967103?auto=format&fit=crop&w=600&q=80", "desc": "年降雪量突破21公尺，雪季一路持續至五月，Club Med奢華全包式滑雪度假村。", "action1": "度假套裝預訂", "url1": "https://www.kiroro.co.jp", "action2": "Club Med Kiroro住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%96%9C%E6%A8%82%E6%A8%82"}, {"rank": "04", "name": "白馬八方尾根滑雪場", "sub": "長野白馬・長野冬奧男子速降傳奇雪道", "tag": "長野・白馬村", "img": "https://images.unsplash.com/photo-1565992441121-4367c2967103?auto=format&fit=crop&w=600&q=80", "desc": "標高差達1,071公尺，奧林匹克名道兔平硬度適中，山頂露台俯瞰北阿爾卑斯連峰。", "action1": "雪票裝備線上約", "url1": "https://www.happo-one.jp", "action2": "白馬溫泉木屋住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%99%BD%E9%A6%AC"}, {"rank": "05", "name": "野澤溫泉村 外湯巡禮", "sub": "長野・十三處傳統木造免費天然名湯與雪場", "tag": "長野・野澤溫泉", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "desc": "穿浴衣踩木屐走在百年石疊老街，滑完極上粉雪後跳進滾燙硫磺大湯消除疲勞。", "action1": "外湯地圖與雪票", "url1": "https://nozawakanko.jp", "action2": "野澤百年溫泉旅館", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%87%8E%E6%BE%A4%E6%BA%AB%E6%B3%89"}, {"rank": "06", "name": "志賀高原 燒額山滑雪場", "sub": "長野・王子大飯店直通日本最大聯合雪區", "tag": "長野・山之內", "img": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=80", "desc": "18座雪場聯通共通雪票，針葉林林間雪道美不勝收，直達志賀高原王子大飯店大廳。", "action1": "共通纜車票預約", "url1": "https://www.princehotels.co.jp/ski/shiga/", "action2": "志賀高原王子飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BF%97%E8%B3%80%E9%AB%98%E5%8E%9F"}, {"rank": "07", "name": "GALA 湯澤滑雪度假村", "sub": "新潟・新幹線出閘即雪場租借超便利", "tag": "新潟・越後湯澤", "img": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=80", "desc": "東京出發74分鐘直達！出車站檢票口直接領取雪具登上吊椅，最適合當日來回。", "action1": "早鳥新幹線雪票", "url1": "https://gala.co.jp", "action2": "越後湯澤溫泉街住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%BE%A4"}, {"rank": "08", "name": "苗場滑雪場 (Naeba)", "sub": "新潟越後・王子大飯店頂級Ski-in/Ski-out", "tag": "新潟・湯澤町", "img": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=80", "desc": "Dragondola龍纜車長達5.4公里連接田代雪場，夜間滑雪開放至晚上八點半。", "action1": "雪票與租借預約", "url1": "https://www.princehotels.co.jp/ski/naeba/", "action2": "苗場王子大飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%8B%97%E5%A0%B4"}, {"rank": "09", "name": "かぐら滑雪場 (Kagura)", "sub": "新潟・標高最高超長雪期至五月下旬", "tag": "新潟・湯澤町", "img": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=80", "desc": "越後湯澤地區標高最高，降雪質地媲美北海道，提供開放式樹林道野雪區域。", "action1": "神樂雪票預訂", "url1": "https://www.princehotels.co.jp/ski/kagura/", "action2": "三俁神樂住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%BE%A4"}, {"rank": "10", "name": "山形藏王溫泉 樹冰原", "sub": "山形・百萬雪怪奇景與強酸硫磺美肌湯", "tag": "山形・山形市", "img": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80", "desc": "針葉樹被暴風雪覆蓋形成的巨型「雪怪 (Snow Monsters)」，夜間七彩點燈如夢境。", "action1": "樹冰夜間點燈票", "url1": "http://zaoropeway.co.jp", "action2": "藏王溫泉街旅館", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%97%8F%E7%8E%8B%E6%BA%AB%E6%B3%89"}, {"rank": "11", "name": "安比高原滑雪度假村", "sub": "岩手・長距離金色粉雪與ANA洲際飯店", "tag": "岩手・八幡平", "img": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=80", "desc": "前森山北面坡道乾爽金色細雪，21條長滑道巡航，洲際酒店奢華法餐與雪景溫泉。", "action1": "纜車票套裝預訂", "url1": "https://www.appi.co.jp", "action2": "安比高原ANA洲際", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%89%E6%AF%94%E9%AB%98%E5%8E%9F"}, {"rank": "12", "name": "夏油高原滑雪場 (Geto Kogen)", "sub": "岩手北上・日本第一豪雪Tree Run野雪天堂", "tag": "岩手・北上市", "img": "https://images.unsplash.com/photo-1565992441121-4367c2967103?auto=format&fit=crop&w=600&q=80", "desc": "14座專用開放樹林道，積雪常年突破5公尺，喜愛深雪衝浪與樹林穿梭者的終極密境。", "action1": "野雪區域通行證", "url1": "https://www.getokogen.com", "action2": "夏油溫泉木屋住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%8C%97%E4%B8%8A"}, {"rank": "13", "name": "銀山溫泉 大正浪漫街", "sub": "山形尾花澤・能登屋木造多層旅館雪夜燃燈", "tag": "山形・尾花澤", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "《神隱少女》油屋靈感來源！銀山川兩側大正時代三層木造溫泉旅館，瓦斯燈照映白雪。", "action1": "一日遊專車預約", "url1": "https://ginzanonsen.jp", "action2": "銀山溫泉旅館預訂", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%8A%80%E5%B1%B1%E6%BA%AB%E6%B3%89"}, {"rank": "14", "name": "草津溫泉 湯畑與熱乃湯", "sub": "群馬・連續20年日本第一名湯揉湯表演", "tag": "群馬・草津町", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "desc": "每分鐘湧出4,000公升滾燙強酸泉，夜晚湯畑打上魔幻綠光，觀賞傳統「湯揉」民謠。", "action1": "熱乃湯揉湯門票", "url1": "https://www.kusatsu-onsen.ne.jp", "action2": "草津溫泉一泊二食", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%8D%89%E6%B4%A5%E6%BA%AB%E6%B3%89"}, {"rank": "15", "name": "萬座溫泉 日進館", "sub": "群馬嬬戀・標高1800m極上乳白硫磺高山雪見露天", "tag": "群馬・嬬戀村", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "desc": "日本硫磺濃度最高的乳白色高山溫泉，浸泡在熱騰騰露天池中凝視萬座雪山銀白連峰。", "action1": "日歸溫泉指南", "url1": "https://www.manza.co.jp", "action2": "萬座溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%90%AC%E5%BA%A7%E6%BA%AB%E6%B3%89"}, {"rank": "16", "name": "登別溫泉 地獄谷露天", "sub": "北海道・九種不同泉質溫泉湧泉百貨公司", "tag": "北海道・登別", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "desc": "地獄谷寸草不生白煙滾滾，享受食鹽泉、硫磺泉等多元天然泉質，冬季雪景壯闊。", "action1": "地獄谷導覽資訊", "url1": "http://noboribetsu-spa.jp", "action2": "第一瀧本館溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%99%BB%E5%88%A5"}, {"rank": "17", "name": "定山溪溫泉 廚翠山", "sub": "北海道札幌・雪見溫泉溪谷料理頂級旅館", "tag": "北海道・札幌", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "札幌出發僅1小時的溫泉秘境，在客房私人檜木風呂中品嚐主廚第一線料理。", "action1": "預約精緻旅館", "url1": "http://www.jyozankei-suizan.com", "action2": "定山溪住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%9A%E5%B1%B1%E6%BA%AA"}, {"rank": "18", "name": "奧飛驒溫泉鄉 槍見館", "sub": "岐阜高山・槍岳深山秘湯溪畔雪中露天", "tag": "岐阜・高山", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "desc": "蒲田川急流旁的大型混浴露天溫泉，抬頭直面北阿爾卑斯槍岳尖銳雪峰，古意盎然。", "action1": "露天秘湯預訂", "url1": "https://www.yarimikan.com", "action2": "奧飛驒溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E5%B1%B1"}, {"rank": "19", "name": "黑川溫泉 湯巡手形", "sub": "熊本阿蘇・深山溪谷幽靜茅草屋聚落", "tag": "熊本・南小國", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "desc": "手持一塊杉木「湯巡手形」自由挑選三處風格各異的露天溫泉，竹林燈籠冬夜迷人。", "action1": "湯巡手形購買", "url1": "https://www.kurokawaonsen.or.jp", "action2": "黑川溫泉旅館", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%BB%91%E5%B7%9D%E6%BA%AB%E6%B3%89"}, {"rank": "20", "name": "乳頭溫泉鄉 鶴之湯", "sub": "秋田仙北・三百年前秋田藩主黑木造秘湯", "tag": "秋田・仙北", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "desc": "茅草屋頂本陣建築，乳白色不透明硫磺泉底冒出天然泉水，大雪紛飛中如回到江戶時代。", "action1": "鶴之湯預訂指引", "url1": "http://www.tsurunoyu.com", "action2": "乳頭溫泉鄉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A7%8B%E7%94%B0"}, {"rank": "21", "name": "城崎溫泉 七大外湯巡禮", "sub": "兵庫豐岡・浴衣木屐石橋垂柳浪漫散策", "tag": "兵庫・豐岡", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "穿著漂亮浴衣踩著木屐漫步大谿川，一晚浸泡「鴻之湯」「御所之湯」品嚐松葉蟹。", "action1": "外湯一日通票", "url1": "https://kinosaki-spa.gr.jp", "action2": "城崎溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%9F%8E%E5%B4%8崎%E6%BA%AB%E6%B3%89"}, {"rank": "22", "name": "越後湯澤 駒子之湯", "sub": "新潟・川端康成《雪國》發想地古老溫泉", "tag": "新潟・湯澤町", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "desc": "「穿過縣界長長的隧道，便是雪國。」在川端康成名作舞台品味質樸清澈的純弱鹼性名湯。", "action1": "共同浴場導覽", "url1": "https://www.yuzawaonsen.gr.jp", "action2": "越後湯澤住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%BE%A4"}, {"rank": "23", "name": "水上溫泉 汪泉閣巨石露天", "sub": "群馬水上・日本最大巨石露天雪見溫泉", "tag": "群馬・水上町", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "desc": "寶川溪流沿岸廣達200帖的四座天然大露天風呂，溪流冰柱與溫泉蒸氣相映成趣。", "action1": "汪泉閣預約", "url1": "https://www.takaragawa.com", "action2": "水上溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B0%B4%E4%B8%8A"}, {"rank": "24", "name": "十勝岳溫泉 凌雲閣", "sub": "北海道上富良野・標高1280m直面十勝活火山雪景", "tag": "北海道・上富良野", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "desc": "北海道海拔最高溫泉旅館！含鐵質紅褐色天然泥湯，俯瞰大雪山富良野盆地茫茫雪原。", "action1": "日歸雪見預約", "url1": "https://ryounkaku.jp", "action2": "富良野渡假飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AF%8C%E8%89%AF%E9%87%8E"}]}, "art": {"title": "藝術夜景", "icon": "🎆", "desc": "teamLab沉浸式光影、SHIBUYA SKY日落天際線與日本S級夏季花火大會", "items": [{"rank": "01", "name": "teamLab Planets 豐洲", "sub": "東京豐洲・赤腳走入清涼水中花園藝術", "tag": "東京・江東區", "img": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80", "desc": "涉水穿過錦鯉暢游的光影水池、漂浮在萬株真實蘭花溫室，全球社群打卡之冠。", "action1": "官方優先門票", "url1": "https://planets.teamlab.art/tokyo/zh-tw/", "action2": "豐洲銀座住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%B1%8A%E6%B4%B2"}, {"rank": "02", "name": "teamLab Borderless 麻布台之丘", "sub": "東京港區・無界光影神殿全新進化", "tag": "東京・港區", "img": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80", "desc": "進駐全日本最高摩天樓麻布台之丘，無數展品互相穿梭交融，沉浸感震撼無比。", "action1": "麻布台門票預約", "url1": "https://www.teamlab.art/zh-hant/e/borderless-azabudai/", "action2": "六本木麻布住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%BA%BB%E5%B8%83%E5%8F%B0"}, {"rank": "03", "name": "SHIBUYA SKY 360空中展望台", "sub": "東京澀谷・229m無遮蔽日落與十字路口", "tag": "東京・澀谷區", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "站在頂樓「SKY EDGE」角落直面富士山火紅夕陽，腳下是全球最繁忙的澀谷十字路口。", "action1": "日落門票預約", "url1": "https://www.shibuya-scramble-square.com/sky/", "action2": "澀谷站直通飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%BE%81%E8%B0%B7"}, {"rank": "04", "name": "六本木之丘 森美術館與展望台", "sub": "東京港區・俯瞰東京鐵塔紅白經典夜景", "tag": "東京・港區", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "52樓「Tokyo City View」正對閃耀金光的東京鐵塔，結合世界當代藝術尖端大展。", "action1": "展望台套票預約", "url1": "https://tcv.roppongihills.com", "action2": "六本木君悅飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%AD%E6%9C%AC%E6%9C%A8"}, {"rank": "05", "name": "東京晴空塔 天望迴廊 (634m)", "sub": "東京墨田・世界第一高塔俯瞰關東平原夜景", "tag": "東京・墨田區", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "穿梭於450公尺斜坡玻璃天望迴廊，遠眺東京都心璀璨光海與地平線富士山剪影。", "action1": "快速入場券預訂", "url1": "https://www.tokyo-skytree.jp", "action2": "押上淺草住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%8A%BC%E4%B8%8A"}, {"rank": "06", "name": "長岡祭大花火大會", "sub": "新潟長岡・兩公里長「鳳凰祈願花火」齊發", "tag": "新潟・長岡市", "img": "https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=600&q=80", "desc": "全日本三大花火之首！直徑650米正三尺玉震動大地，全排金色煙火傾瀉河川敷。", "action1": "有料觀覽席預約", "url1": "https://nagaokamatsuri.com", "action2": "新潟長岡飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%95%B7%E5%B2%A1"}, {"rank": "07", "name": "隅田川花火大會", "sub": "東京台東・江戶八百萬人夏夜第一祭典", "tag": "東京・台東區", "img": "https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=600&q=80", "desc": "歷史最悠久的傳統花火，兩萬發煙火在晴空塔背景下綻放，搭乘屋形船在河上觀賞最奢華。", "action1": "屋形船席位代訂", "url1": "https://www.sumidagawa-hanabi.com", "action2": "淺草觀音寺住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B7%BA%E8%8D%89"}, {"rank": "08", "name": "大曲之花火 全國競技大賽", "sub": "秋田大仙・內閣總理大臣獎頂尖花火師對決", "tag": "秋田・大仙市", "img": "https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=600&q=80", "desc": "日本花火師最高榮譽舞台，包括獨一無二的「白天花火」與音樂連發速射創造花火。", "action1": "特等席專車套裝", "url1": "https://www.oomagari-hanabi.com", "action2": "秋田大仙住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A7%8B%E7%94%B0"}, {"rank": "09", "name": "土浦全國花火競技大會", "sub": "茨城土浦・秋季三大花火壓軸連發巨彈", "tag": "茨城・土浦市", "img": "https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=600&q=80", "desc": "秋高氣爽11月舉辦，櫻川畔兩萬發速射連發Star Mine，節奏緊湊震撼人心。", "action1": "觀覽席預約指南", "url1": "https://www.tsuchiura-hanabi.jp", "action2": "筑波土浦住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%9C%9F%E6%B5%A6"}, {"rank": "10", "name": "函館山 百萬夜景", "sub": "北海道函館・世界三大夜景對稱雙弧形光海", "tag": "北海道・函館", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "夾在函館灣與津輕海峽間的對稱扇形璀璨夜景，搭乘大型纜車登上山頂令人屏息。", "action1": "登山纜車票預訂", "url1": "https://334.co.jp", "action2": "函館灣景飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%87%BD%E9%A4%A8"}, {"rank": "11", "name": "長崎稻佐山 千萬美金夜景", "sub": "長崎・世界新三大夜景立體山海港灣", "tag": "長崎・長崎市", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "333米標高展望台，360度俯瞰長崎港宛如滿地散落的珠寶盒，光影錯落層次豐富。", "action1": "斜坡索道預約", "url1": "https://inasayama.com", "action2": "長崎夜景飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%95%B7%E5%B4%8E"}, {"rank": "12", "name": "摩耶山 掬星台夜景", "sub": "兵庫神戶・手可掬星俯瞰阪神關西千萬燈火", "tag": "兵庫・神戶", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "日本三大夜景之一，視野跨越神戶港、大阪灣乃至關西國際機場，銀河般無邊光芒。", "action1": "摩耶空中纜車票", "url1": "https://koberope.jp", "action2": "神戶港灣住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A5%9E%E6%88%B6"}, {"rank": "13", "name": "金澤21世紀美術館", "sub": "石川金澤・妹島和世圓形玻璃建築與泳池錯視", "tag": "石川・金澤", "img": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80", "desc": "林德羅·厄利什名作《泳池》，走入水底如同漫步在水波之中，建築通透輕盈。", "action1": "泳池地下票預約", "url1": "https://www.kanazawa21.jp", "action2": "金澤兼六園住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%87%91%E6%BE%A4"}, {"rank": "14", "name": "直島 地中美術館 (Chichu)", "sub": "香川直島・安藤忠雄全地底建築光影莫內睡蓮", "tag": "香川・直島", "img": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80", "desc": "為了不破壞瀨戶內海自然景觀而完全建於地底，僅靠頂部天光照射莫內晚年巨幅睡蓮。", "action1": "指定時間預約票", "url1": "https://benesse-artsite.jp/art/chichu.html", "action2": "直島貝尼斯飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%9B%B4%E5%B3%B6"}, {"rank": "15", "name": "直島 草間彌生黃南瓜與紅南瓜", "sub": "香川直島・突堤盡頭面迎波浪的圓點精神象徵", "tag": "香川・直島", "img": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80", "desc": "站在突出於蔚藍瀨戶內海的舊碼頭邊，圓點黃南瓜與海天一色融為一體，打卡聖地。", "action1": "直島渡輪時刻表", "url1": "https://benesse-artsite.jp", "action2": "高松市區住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E6%9D%BE"}, {"rank": "16", "name": "豐島美術館 (Teshima)", "sub": "香川豐島・西澤立衛水滴水珠天然共鳴空間", "tag": "香川・豐島", "img": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80", "desc": "梯田環抱中的無柱混凝土空心蛋殼，地面隨機冒出微小水珠緩緩凝聚流動，神聖沉靜。", "action1": "門票預約指引", "url1": "https://benesse-artsite.jp/art/teshima-artmuseum.html", "action2": "豐島高松住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E6%9D%BE"}, {"rank": "17", "name": "越後妻有 大地藝術祭", "sub": "新潟十日町・全球最大級里山梯田現代藝術季", "tag": "新潟・十日町", "img": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80", "desc": "在清津峽溪谷隧道「光之洞」看水面鏡像倒影，藝術家將廢棄小學與田野化為藝術館。", "action1": "清津峽通票預訂", "url1": "https://www.echigo-tsumari.jp", "action2": "十日町越後住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%8D%81%E6%97%A5%E7%94%BA"}, {"rank": "18", "name": "十和田市現代美術館", "sub": "青森・草間彌生、奈良美智戶外幽默巨型雕塑", "tag": "青森・十和田", "img": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80", "desc": "整座街道就是展廳！ロン・ミュエク近4米高的巨大老婦人雕塑逼真震撼，戶外純白明亮。", "action1": "官方參觀預約", "url1": "https://towadaartcenter.com", "action2": "十和田奧入瀨住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%8D%81%E5%92%8C%E7%94%B0"}, {"rank": "19", "name": "國立新美術館 (NACT)", "sub": "東京六本木・黑川紀章波浪玻璃帷幕建築", "tag": "東京・港區", "img": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80", "desc": "全日本展示面積最大美術館，內部巨大的倒錐形混凝土圓柱上設有法式沙龍咖啡館。", "action1": "特展門票查詢", "url1": "https://www.nact.jp", "action2": "六本木住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%AD%E6%9C%AC%E6%9C%A8"}, {"rank": "20", "name": "梅田藍天大廈 空中庭園展望台", "sub": "大阪梅田・星光螢光步道與360度環形露台", "tag": "大阪・北區", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "兩棟40層大樓在頂部相連的未來感拱門建築，走在「Lumi Sky Walk」發光地面俯瞰大阪城。", "action1": "展望台門票預約", "url1": "https://www.skybldg.co.jp", "action2": "梅田站直通飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%A2%85%E7%94%B0"}, {"rank": "21", "name": "阿倍野 HARUKAS 300", "sub": "大阪阿倍野・全日本最高摩天大樓展望台露台", "tag": "大阪・阿倍野區", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "標高300公尺，三層挑高中庭玻璃幕牆，遠眺明石海峽大橋夕陽與生駒山夜景。", "action1": "快速入場券預訂", "url1": "https://www.abenoharukas-300.jp/observatory/", "action2": "萬豪阿倍野飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A4%A9%E7%8E%8B%E5%AF%BA"}, {"rank": "22", "name": "皿倉山夜景 (Sarakurayama)", "sub": "福岡北九州・新日本三大夜景北九州工業光海", "tag": "福岡・北九州", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "標高622米山頂，搭乘透明纜車與爬坡車直達，被譽為「百億美金」的璀璨工業地帶夜景。", "action1": "纜車套票資訊", "url1": "http://www.sarakurayama-cablecar.co.jp", "action2": "小倉門司港住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B0%8F%E5%80%89"}, {"rank": "23", "name": "箱根 雕刻之森美術館", "sub": "神奈川箱根・大自然群山環抱彩繪玻璃鴻運交響", "tag": "神奈川・箱根", "img": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80", "desc": "7萬平方米戶外雕刻公園，登上「鴻運交響雕塑」五彩斑斕的彩繪玻璃旋轉樓梯如入夢境。", "action1": "雕刻之森門票", "url1": "https://www.hakone-oam.or.jp", "action2": "強羅溫泉住宿", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%AE%B1%E6%A0%B9"}, {"rank": "24", "name": "橫濱地標大廈 空中花園 (69F)", "sub": "神奈川橫濱・港灣未來21摩天輪旋轉夜景", "tag": "神奈川・橫濱", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "desc": "搭乘日本最高速電梯（分速750m），273米高空俯瞰橫濱港大棧橋與彩虹摩天輪旋轉。", "action1": "空中花園門票預約", "url1": "https://www.yokohama-landmark.jp/skygarden/", "action2": "橫濱港灣大飯店", "url2": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%A9%AB%E6%BF%B1"}]}};
+
+    let currentCategory = 'gourmet';
+
+    function switchCategory(catKey, btn) {
+      currentCategory = catKey;
+
+      // 更新按鈕 active 樣式
+      const tabs = document.querySelectorAll('.rank-tab-btn');
+      tabs.forEach(t => t.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const data = RANKINGS_DATA[catKey];
+      if (!data) return;
+
+      // 更新說明列
+      const titleEl = document.getElementById('catTitleText');
+      const descEl = document.getElementById('catDescText');
+      const countEl = document.getElementById('catCountBadge');
+      if (titleEl) titleEl.innerHTML = `${data.icon} ${data.title}`;
+      if (descEl) descEl.textContent = data.desc;
+      if (countEl) countEl.textContent = `收錄 ${data.items.length} 處指標推薦`;
+
+      // 渲染 24 張卡片
+      renderRankCards(data.items);
+    }
+
+    function renderRankCards(items) {
+      const grid = document.getElementById('rankingsGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      items.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'rank-card';
+
+        const isTop3 = idx < 3;
+        const badgeClass = isTop3 ? 'rank-num-badge top3' : 'rank-num-badge';
+
+        card.innerHTML = `
+          <div class="rank-card-thumb-wrap">
+            <img class="rank-card-thumb" src="${item.img}" alt="${item.name}" loading="lazy">
+            <span class="${badgeClass}">TOP ${item.rank}</span>
+            <span class="rank-location-badge">${item.tag}</span>
+          </div>
+          <div class="rank-card-body">
+            <div>
+              <div class="rank-card-title" title="${item.name}">${item.name}</div>
+              <div class="rank-card-sub">${item.sub}</div>
+              <div class="rank-card-desc">${item.desc}</div>
+            </div>
+            <div class="rank-card-actions">
+              <a href="${item.url1}" target="_blank" class="btn-rank-action btn-rank-primary">
+                <span>${item.action1} ↗</span>
+              </a>
+              <a href="${item.url2}" target="_blank" class="btn-rank-action btn-rank-secondary">
+                <span>${item.action2} ↗</span>
+              </a>
+            </div>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    // 初始化載入美食名店 24 張卡片
+    document.addEventListener('DOMContentLoaded', () => {
+      switchCategory('gourmet', document.querySelector('.rank-tab-btn[data-cat="gourmet"]'));
+    });
+  </script>
 
 </body>
 </html>
