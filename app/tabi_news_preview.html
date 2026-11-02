@@ -368,19 +368,112 @@
 
     .header-right { display: flex; align-items: center; gap: 12px; }
 
-    /* 中英文切換 */
-    .lang-switcher-btn {
-      background: #EFECE6; border: 1px solid #DDD8CE;
-      padding: 2px 5px; border-radius: 20px; display: flex; align-items: center; gap: 2px;
-      font-family: var(--font-en); font-size: 0.75rem; font-weight: 800;
+    /* 前台語言切換器 (Header Language Selector: 🌐 Language 7 國語言下拉選單) */
+    .lang-selector-dropdown-wrap {
+      position: relative;
+      display: inline-block;
     }
-    .lang-opt {
-      border: none; background: transparent; padding: 4px 10px; border-radius: 14px;
-      cursor: pointer; color: var(--sub-morandi); transition: all 0.2s; font-family: inherit; font-size: 0.75rem; font-weight: 800;
+    .lang-selector-btn {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      padding: 7px 14px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #334155;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .lang-opt.active {
-      background: #FFF; color: #2D3748; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    .lang-selector-btn:hover {
+      border-color: #CBD5E1;
+      background: #F8FAFC;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
     }
+    .lang-globe-icon {
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+    .lang-arrow {
+      font-size: 0.68rem;
+      color: #94A3B8;
+      transition: transform 0.2s ease;
+      margin-left: 2px;
+    }
+    .lang-selector-dropdown-wrap.open .lang-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* 點開後整齊列出 7 個語言選項 */
+    .lang-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 195px;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 6px;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.14), 0 3px 8px rgba(0,0,0,0.04);
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      z-index: 10005;
+      animation: langFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes langFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .lang-selector-dropdown-wrap.open .lang-dropdown-menu {
+      display: flex;
+    }
+
+    .lang-menu-opt {
+      width: 100%;
+      border: none;
+      background: transparent;
+      padding: 9px 12px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+    }
+    .lang-menu-opt:hover {
+      background: #F1F5F9;
+      color: #0F172A;
+    }
+    .lang-menu-opt.active {
+      background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+      color: #0284C7;
+      font-weight: 900;
+    }
+    .lang-flag {
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .lang-name {
+      flex: 1;
+    }
+    .lang-check {
+      font-size: 0.82rem;
+      font-weight: 900;
+      color: #0284C7;
+      margin-left: auto;
+    }
+
+    /* 兼容舊樣式 */
+    .lang-switcher-btn, .lang-opt { display: none; }
 
     .btn-trip-pill {
       background: linear-gradient(135deg, #38BDF8 0%, #0284C7 50%, #0369A1 100%);
@@ -2996,69 +3089,120 @@
       color: #2D3748;
     }
 
-    /* 浮動功能列 (固定於右下方) */
-    .floating-quick-bar {
+    /* 🛡️ 浮動正方形功能方塊 (❤️ 行程收藏本 ＆ 💴 免稅小算盤 合併正方形) */
+    .floating-square-hub {
       position: fixed;
       right: 22px;
       bottom: 26px;
       z-index: 9990;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: flex-end;
-      pointer-events: none;
-    }
-    .btn-float-action {
-      pointer-events: auto;
+      width: 66px;
+      height: 66px;
       background: #FFFFFF;
       border: 1.5px solid #E2E8F0;
-      border-radius: 999px;
-      padding: 9px 16px;
-      font-weight: 800;
-      font-size: 0.85rem;
-      color: #1E293B;
-      box-shadow: 0 10px 24px rgba(45, 55, 72, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(45, 55, 72, 0.14), 0 2px 6px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      overflow: visible;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(12px);
     }
-    .btn-float-action:hover {
-      transform: translateY(-2.5px);
-      box-shadow: 0 14px 30px rgba(45, 55, 72, 0.18);
+    .floating-square-hub:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 14px 34px rgba(45, 55, 72, 0.2);
+      border-color: #CBD5E1;
     }
-    .btn-float-fav {
-      border: 1.5px solid #FFCCCC !important;
-      background: linear-gradient(135deg, #FFF8F5 0%, #FFF1F2 100%) !important;
-      color: #C2410C !important;
-      box-shadow: 0 8px 24px rgba(249, 121, 64, 0.22) !important;
-    }
-    .btn-float-fav:hover {
-      border-color: #F97940 !important;
-      transform: translateY(-2.5px);
-    }
-    .fav-count-pill {
-      background: linear-gradient(135deg, #F97940 0%, #E11D48 100%) !important;
-      color: #FFF !important;
-      font-size: 0.72rem;
+
+    /* 右上角浮動未讀收藏計數徽章 */
+    .square-hub-badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: linear-gradient(135deg, #F97940 0%, #E11D48 100%);
+      color: #FFFFFF;
+      font-size: 0.68rem;
       font-weight: 900;
-      padding: 1px 7px;
+      padding: 0 5px;
       border-radius: 999px;
-      min-width: 18px;
-      text-align: center;
-      line-height: 1.4;
+      min-width: 19px;
+      height: 19px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 2px 8px rgba(225, 29, 72, 0.4);
+      z-index: 2;
+      pointer-events: none;
+      line-height: 1;
     }
-    .btn-float-fx {
-      border: 1.5px solid #B9D672 !important;
-      background: linear-gradient(135deg, #FFFFFF 0%, #F5FBF7 100%) !important;
-      color: #166534 !important;
-      box-shadow: 0 8px 24px rgba(159, 175, 100, 0.25) !important;
+
+    /* 正方形方塊內部：上半部與下半部各 50% */
+    .square-hub-item {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 0;
+      transition: all 0.2s ease;
+      color: #475569;
     }
-    .btn-float-fx:hover {
-      border-color: #9FAF64 !important;
-      transform: translateY(-2.5px);
+    .square-hub-item .hub-icon {
+      font-size: 15px;
+      line-height: 1;
+      transition: transform 0.2s ease;
     }
+    .square-hub-item .hub-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      line-height: 1;
+    }
+    .square-hub-item:hover .hub-icon {
+      transform: scale(1.15);
+    }
+    .square-hub-item:active {
+      transform: scale(0.96);
+    }
+
+    /* 上半部：行程收藏本 */
+    .hub-item-fav {
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      color: #C2410C;
+    }
+    .hub-item-fav:hover {
+      background: linear-gradient(135deg, #FFF8F5 0%, #FFF1F2 100%);
+      color: #BE123C;
+    }
+
+    /* 中間細分隔線 */
+    .square-hub-divider {
+      height: 1px;
+      background: #F1F5F9;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    /* 下半部：日幣免稅試算 */
+    .hub-item-fx {
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      color: #166534;
+    }
+    .hub-item-fx:hover {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F5FBF7 100%);
+      color: #15803D;
+    }
+
+    /* 支援舊樣式回退 */
+    .floating-quick-bar { pointer-events: auto; }
+    .fav-count-pill { display: inline-block; }
 
     /* 卡片上的收藏愛心小按鈕 */
     .btn-card-fav {
@@ -3896,15 +4040,56 @@
         
       </button>
 
-      <!-- 中英文切換 -->
-      <div class="lang-switcher-btn">
-        <button class="lang-opt active" id="langZh" onclick="setLanguage('zh-TW')">繁中</button>
-        <button class="lang-opt" id="langEn" onclick="setLanguage('en')">EN</button>
+      <!-- 前台語言切換器 (Header Selector: 🌐 Language 下拉 7 國語言) -->
+      <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
+        <button class="lang-selector-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)">
+          <span class="lang-globe-icon">🌐</span>
+          <span id="currentLangLabel">Language</span>
+          <span class="lang-arrow" id="langArrow">▾</span>
+        </button>
+        <div class="lang-dropdown-menu" id="langDropdownMenu">
+          <button class="lang-menu-opt active" data-lang="zh-TW" onclick="selectLanguage('zh-TW', '繁體中文 (台灣)')">
+            <span class="lang-flag">🇹🇼</span>
+            <span class="lang-name">繁體中文 (台灣)</span>
+            <span class="lang-check">✓</span>
+          </button>
+          <button class="lang-menu-opt" data-lang="zh-HK" onclick="selectLanguage('zh-HK', '繁體中文 (香港)')">
+            <span class="lang-flag">🇭🇰</span>
+            <span class="lang-name">繁體中文 (香港)</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="en" onclick="selectLanguage('en', 'English')">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-name">English</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="ko" onclick="selectLanguage('ko', '한국어')">
+            <span class="lang-flag">🇰🇷</span>
+            <span class="lang-name">한국어</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="zh-CN" onclick="selectLanguage('zh-CN', '简体中文')">
+            <span class="lang-flag">🇨🇳</span>
+            <span class="lang-name">简体中文</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="th" onclick="selectLanguage('th', 'ไทย')">
+            <span class="lang-flag">🇹🇭</span>
+            <span class="lang-name">ไทย</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="ja" onclick="selectLanguage('ja', '日本語')">
+            <span class="lang-flag">🇯🇵</span>
+            <span class="lang-name">日本語</span>
+            <span class="lang-check"></span>
+          </button>
+        </div>
       </div>
 
+      <!-- Trip 查機票按鈕 -->
       <button class="btn-trip-pill" onclick="window.open(buildTripFlightUrl('tokyo'), '_blank')">
         <span>✈️</span>
-        <span id="tripBtnText">Trip.com 機票 ＆ 訂房 30天優惠</span>
+        <span id="tripBtnText">Trip 查機票</span>
       </button>
     </div>
   </header>
@@ -9436,130 +9621,217 @@
         brandTitle: '日旅報報',
         brandTag: '日本觀光情報',
         brandSub: '花期前線・夏夜花火・雪況觀測',
-        tripBtn: 'Trip.com 機票比價',
-        tab_spots: '全部名所',
-        tab_sakura: '櫻花前線',
+        tripBtn: 'Trip 查機票',
+        tab_spots: '全部景點',
+        tab_sakura: '櫻花盛典',
         tab_hanabi: '夏夜花火',
-        tab_snow: '極上滑雪',
-        tab_momiji: '秋季賞楓',
+        tab_snow: '極上粉雪',
+        tab_momiji: '秋楓見頃',
         tab_ginkgo: '金黃銀杏',
         tab_train: '鐵道列車',
         tab_camp: '富士露營',
         tab_acg: '動漫快閃',
         tab_sports: '日職馬拉松',
-        feedTitle: '即時花況投稿',
+        feedTitle: '全日本花季即時分享，大家踴躍分享吧',
         uploadBtn: '我要上傳最新照片 ➔',
         reporterBadge: '特派員報導',
         btnDefaultActivity: '🎟️ 預定行程',
-        btnBooking: '🏨 訂房去',
-        // 各季專屬實況標題
-        feed_sakura_title: '全日本花季即時分享，大家踴躍分享吧',
-        feed_sakura_icon: '🌸',
-        feed_sakura_hint: '',
-        feed_sakura_btn: '上傳最新櫻花實況 ➔',
-        feed_hanabi_title: '夏夜花火大會即時情報與觀賞席投稿',
-        feed_hanabi_icon: '🎆',
-        feed_hanabi_hint: '（只顯示一週內煙火施放現場・機位視野避雷與無人機空拍回報）',
-        feed_hanabi_btn: '上傳花火現場照片 ➔',
-        feed_snow_title: '即時雪場雪況・粉雪厚度與纜車實況',
-        feed_snow_icon: '⛷️',
-        feed_snow_hint: '（只顯示一週內雪場現況・看昨天粉雪深與道面回報再出發）',
-        feed_snow_btn: '上傳雪場最新照片 ➔',
-        feed_momiji_title: '秋楓紅葉即時見頃實況投稿',
-        feed_momiji_icon: '🍁',
-        feed_momiji_hint: '（只顯示一週內寺院庭園實況・紅葉變色指數精準追楓）',
-        feed_momiji_btn: '上傳最新楓葉實況 ➔',
-        feed_ginkgo_title: '金黃銀杏大道黃葉落葉實況投稿',
-        feed_ginkgo_icon: '🍂',
-        feed_ginkgo_hint: '（只顯示一週內大道現場・金黃地毯覆蓋率最新回報）',
-        feed_ginkgo_btn: '上傳銀杏最新照片 ➔',
-        feed_spots_title: '全日本花季即時分享，大家踴躍分享吧',
-        feed_spots_icon: '⛩️',
-        feed_spots_hint: '',
-        feed_spots_btn: '我要上傳最新照片 ➔',
-        // 深度探索新主題
-        feed_train_title: '日本觀光列車・蒸汽火車(SL)劃位與現場實況',
-        feed_train_icon: '🚂',
-        feed_train_hint: '（只顯示一週內乘車情報・全車指定席放票、景觀展望席避雷與沿線拍攝點）',
-        feed_train_btn: '上傳觀光列車照片 ➔',
-        feed_camp_title: '富士五湖露營・自駕租車最新現場實況',
-        feed_camp_icon: '⛺',
-        feed_camp_hint: '（只顯示一週內營位現場・逆富士能見度、低溫禦寒裝備與租車雪胎情報）',
-        feed_camp_btn: '上傳露營現場照片 ➔',
-        feed_acg_title: '秋葉原/澀谷動漫特展・聯名咖啡快閃店情報',
-        feed_acg_icon: '🎪',
-        feed_acg_hint: '（只顯示一週內快閃現場・整理券排隊時間、限量周邊售罄狀況）',
-        feed_acg_btn: '上傳動漫展現場照片 ➔',
-        feed_sports_title: '日職賽事現場觀戰・日本地方馬拉松實況',
-        feed_sports_icon: '⚾',
-        feed_sports_hint: '（只顯示一週內賽事現況・球場限定便當、外野應援席與馬拉松配速心得）',
-        feed_sports_btn: '上傳賽事現場照片 ➔'
+        btnBooking: '🏨 訂房去'
+      },
+      'zh-HK': {
+        brandTitle: '日旅報報',
+        brandTag: '日本觀光情報',
+        brandSub: '花期前線・夏夜花火・雪況觀測',
+        tripBtn: 'Trip 查機票',
+        tab_spots: '全部景點',
+        tab_sakura: '櫻花盛典',
+        tab_hanabi: '夏夜花火',
+        tab_snow: '極上粉雪',
+        tab_momiji: '秋楓見頃',
+        tab_ginkgo: '金黃銀杏',
+        tab_train: '鐵道列車',
+        tab_camp: '富士露營',
+        tab_acg: '動漫快閃',
+        tab_sports: '日職馬拉松',
+        feedTitle: '全日本花季即時分享，大家踴躍分享吧',
+        uploadBtn: '我要上傳最新相片 ➔',
+        reporterBadge: '特派員專欄',
+        btnDefaultActivity: '🎟️ 預訂行程',
+        btnBooking: '🏨 預訂酒店'
       },
       'en': {
-        brandTitle: 'JAPAN TABI NEWS',
-        brandTag: 'Official Seasonal Guide',
-        brandSub: 'Japan Seasonal Tourism Bureau | Official Guide to Bloom, Fireworks & Powder Snow',
-        tripBtn: 'Trip.com Flights',
+        brandTitle: 'Tabi Report',
+        brandTag: 'Japan Travel Guide',
+        brandSub: 'Cherry Blossoms · Fireworks · Ski Conditions',
+        tripBtn: 'Trip Flights',
         tab_spots: 'All Spots',
-        tab_sakura: 'Sakura Bloom',
+        tab_sakura: 'Cherry Blossoms',
         tab_hanabi: 'Fireworks',
-        tab_snow: 'Ski & Snow',
-        tab_momiji: 'Autumn Leaves',
+        tab_snow: 'Ski & Powder',
+        tab_momiji: 'Autumn Foliage',
         tab_ginkgo: 'Golden Ginkgo',
         tab_train: 'Scenic Trains',
-        tab_camp: 'Fuji Camping',
-        tab_acg: 'Anime & Events',
-        tab_sports: 'Baseball & Sports',
-        feedTitle: 'Live Bloom Submissions',
-        uploadBtn: 'Upload Latest Photo ➔',
-        reporterBadge: "Editor's Report",
+        tab_camp: 'Mt Fuji Camp',
+        tab_acg: 'Anime & Manga',
+        tab_sports: 'NPB Baseball',
+        feedTitle: 'Live Spot Community Reports',
+        uploadBtn: 'Share Latest Photo ➔',
+        reporterBadge: 'Verified Report',
         btnDefaultActivity: '🎟️ Book Tour',
-        btnBooking: '🏨 Book Hotel',
-        feed_sakura_title: 'Live Cherry Blossom Bloom Submissions',
-        feed_sakura_icon: '🌸',
-        feed_sakura_hint: '(Live photos within 7 days • Track bloom and snow conditions with yesterday\'s reports)',
-        feed_sakura_btn: 'Upload Latest Blossom Photo ➔',
-        feed_hanabi_title: 'Summer Fireworks & Viewing Seats Live Intel',
-        feed_hanabi_icon: '🎆',
-        feed_hanabi_hint: '(Live photos within 7 days • Crowd avoidance & photo spot reports)',
-        feed_hanabi_btn: 'Upload Fireworks Photo ➔',
-        feed_snow_title: 'Live Ski Resort Snow Depth & JAPOW Intel',
-        feed_snow_icon: '⛷️',
-        feed_snow_hint: '(Live updates within 7 days • Powder thickness & slope conditions)',
-        feed_snow_btn: 'Upload Snow Conditions ➔',
-        feed_momiji_title: 'Live Autumn Foliage Coloration Reports',
-        feed_momiji_icon: '🍁',
-        feed_momiji_hint: '(Live updates within 7 days • Garden & temple foliage colors)',
-        feed_momiji_btn: 'Upload Foliage Photo ➔',
-        feed_ginkgo_title: 'Golden Ginkgo Tree Avenue Live Reports',
-        feed_ginkgo_icon: '🍂',
-        feed_ginkgo_hint: '(Live updates within 7 days • Golden carpet coverage)',
-        feed_ginkgo_btn: 'Upload Ginkgo Photo ➔',
-        feed_spots_title: 'All Highlights Live Seasonal Intel Wall',
-        feed_spots_icon: '⛩️',
-        feed_spots_hint: '(Live updates within 7 days • Verified on-site traveler intel)',
-        feed_spots_btn: 'Upload Latest Photo ➔'
+        btnBooking: '🏨 Book Hotel'
+      },
+      'ko': {
+        brandTitle: '일본여행 뉴스',
+        brandTag: '일본 공식 관광정보',
+        brandSub: '벚꽃 개화선 · 불꽃축제 · 실시간 적설량',
+        tripBtn: 'Trip 항공권',
+        tab_spots: '전체 명소',
+        tab_sakura: '벚꽃 축제',
+        tab_hanabi: '여름 불꽃놀이',
+        tab_snow: '극상 파우더스노',
+        tab_momiji: '가을 단풍',
+        tab_ginkgo: '황금 은행나무',
+        tab_train: '관광 열차',
+        tab_camp: '후지산 캠핑',
+        tab_acg: '애니메이션',
+        tab_sports: '프로야구 직관',
+        feedTitle: '실시간 여행자 현장 리포트',
+        uploadBtn: '최신 사진 업로드 ➔',
+        reporterBadge: '특파원 리포트',
+        btnDefaultActivity: '🎟️ 투어 예약',
+        btnBooking: '🏨 호텔 예약'
+      },
+      'zh-CN': {
+        brandTitle: '日旅报报',
+        brandTag: '日本观光情报',
+        brandSub: '花期前线・夏夜花火・雪况观测',
+        tripBtn: 'Trip 查机票',
+        tab_spots: '全部景点',
+        tab_sakura: '樱花盛典',
+        tab_hanabi: '夏夜花火',
+        tab_snow: '极上粉雪',
+        tab_momiji: '秋枫见顷',
+        tab_ginkgo: '金黄银杏',
+        tab_train: '铁道列车',
+        tab_camp: '富士露营',
+        tab_acg: '动漫快闪',
+        tab_sports: '日职棒巡礼',
+        feedTitle: '全日本花季实时分享，大家踊跃分享吧',
+        uploadBtn: '我要上传最新照片 ➔',
+        reporterBadge: '特派员报道',
+        btnDefaultActivity: '🎟️ 预定行程',
+        btnBooking: '🏨 订房去'
+      },
+      'th': {
+        brandTitle: 'เที่ยวญี่ปุ่นรายงาน',
+        brandTag: 'ข้อมูลท่องเที่ยวญี่ปุ่น',
+        brandSub: 'ซากุระบาน · ดอกไม้ไฟฤดูร้อน · รายงานหิมะ',
+        tripBtn: 'Trip ค้นหาเที่ยวบิน',
+        tab_spots: 'สถานที่ทั้งหมด',
+        tab_sakura: 'ซากุระบาน',
+        tab_hanabi: 'เทศกาลดอกไม้ไฟ',
+        tab_snow: 'สกีพาวเดอร์สโนว์',
+        tab_momiji: 'ใบไม้เปลี่ยนสี',
+        tab_ginkgo: 'ใบแปะก๊วยสีทอง',
+        tab_train: 'รถไฟชมวิว',
+        tab_camp: 'แคมป์ฟูจิ',
+        tab_acg: 'อนิเมะ',
+        tab_sports: 'เบสบอลญี่ปุ่น',
+        feedTitle: 'รายงานสดจากสถานที่จริง',
+        uploadBtn: 'อัปโหลดภาพล่าสุด ➔',
+        reporterBadge: 'รายงานพิเศษ',
+        btnDefaultActivity: '🎟️ จองทัวร์',
+        btnBooking: '🏨 จองโรงแรม'
+      },
+      'ja': {
+        brandTitle: '旅報報',
+        brandTag: '日本公式観光情報',
+        brandSub: '開花前線・夏夜の花火・積雪ゲレンデ観測',
+        tripBtn: 'Trip 航空券検索',
+        tab_spots: 'すべての名所',
+        tab_sakura: '桜の祭典',
+        tab_hanabi: '夏夜の花火',
+        tab_snow: '極上パウダースノー',
+        tab_momiji: '秋の紅葉見頃',
+        tab_ginkgo: '黄金イチョウ並木',
+        tab_train: '観光列車SL',
+        tab_camp: '富士山キャンプ',
+        tab_acg: 'アニメ巡礼',
+        tab_sports: 'プロ野球観戦',
+        feedTitle: '旅人のリアルタイム現場投稿',
+        uploadBtn: '最新の写真を投稿 ➔',
+        reporterBadge: '特派員レポート',
+        btnDefaultActivity: '🎟️ 体験ツアー予約',
+        btnBooking: '🏨 宿泊予約'
       }
     };
 
+    function toggleLangDropdown(e) {
+      if (e) e.stopPropagation();
+      const wrap = document.getElementById('langSelectorWrap');
+      if (wrap) wrap.classList.toggle('open');
+    }
+
+    function selectLanguage(langCode, langName) {
+      const wrap = document.getElementById('langSelectorWrap');
+      if (wrap) wrap.classList.remove('open');
+
+      const label = document.getElementById('currentLangLabel');
+      if (label) {
+        label.textContent = langName;
+      }
+
+      document.querySelectorAll('.lang-menu-opt').forEach(opt => {
+        const isThis = opt.getAttribute('data-lang') === langCode;
+        opt.classList.toggle('active', isThis);
+        const check = opt.querySelector('.lang-check');
+        if (check) check.textContent = isThis ? '✓' : '';
+      });
+
+      setLanguage(langCode);
+      showToast(`🌐 語言已切換為：${langName}`, '✨');
+    }
+
+    // 點擊空白處自動關閉語言選單
+    document.addEventListener('click', function(e) {
+      const wrap = document.getElementById('langSelectorWrap');
+      if (wrap && !wrap.contains(e.target)) {
+        wrap.classList.remove('open');
+      }
+    });
+
     function setLanguage(lang) {
       currentLang = lang;
-      document.getElementById('langZh').classList.toggle('active', lang === 'zh-TW');
-      document.getElementById('langEn').classList.toggle('active', lang === 'en');
       
-      const t = I18N[lang];
-      document.getElementById('brandTitle').innerHTML = `${t.brandTitle} <span class="brand-tag-official" id="brandTag">${t.brandTag}</span>`;
-      document.getElementById('brandSub').innerText = t.brandSub;
-      document.getElementById('tripBtnText').innerText = t.tripBtn;
-      document.getElementById('feedTitleText').innerText = t.feedTitle;
-      document.getElementById('uploadBtnText').innerText = t.uploadBtn;
+      const t = I18N[lang] || I18N['zh-TW'];
+      const brandTitle = document.getElementById('brandTitle');
+      if (brandTitle) brandTitle.innerHTML = `${t.brandTitle} <span class="brand-tag-official" id="brandTag">${t.brandTag}</span>`;
+      
+      const brandSub = document.getElementById('brandSub');
+      if (brandSub) brandSub.innerText = t.brandSub;
+      
+      const tripBtnText = document.getElementById('tripBtnText');
+      if (tripBtnText) tripBtnText.innerText = t.tripBtn;
+      
+      const feedTitleText = document.getElementById('feedTitleText');
+      if (feedTitleText) feedTitleText.innerText = t.feedTitle;
+      
+      const uploadBtnText = document.getElementById('uploadBtnText');
+      if (uploadBtnText) uploadBtnText.innerText = t.uploadBtn;
 
       document.querySelectorAll('.i18n-btn').forEach(el => {
         const key = el.getAttribute('data-key');
-        if (t[key]) el.innerText = t[key];
+        if (key && t[key]) {
+          el.innerText = t[key];
+        }
       });
 
+      try {
+        localStorage.setItem('tabi_selected_lang', lang);
+      } catch (e) {}
+
       renderCards();
+      renderCommunityFeeds();
     }
 
     // 旅人即時四季現場情報投稿 (一週內實況)
@@ -12796,16 +13068,24 @@ ${window.location.href}`;
 
   </script>
   
-  <!-- 🛡️ 浮動功能列 (❤️ 行程收藏本 ＆ 💴 免稅小算盤) -->
-  <div class="floating-quick-bar" id="floatingQuickBar">
-    <button class="btn-float-action btn-float-fx" onclick="openFxCalculator()" title="日本即時匯率 ＆ 10%免稅試算">
-      <span style="font-size:18px;">💴</span>
-      <span>日幣免稅試算</span>
+  <!-- 🛡️ 浮動正方形功能方塊 (❤️ 行程收藏本 ＆ 💴 免稅小算盤 合併正方形) -->
+  <div class="floating-square-hub" id="floatingQuickBar">
+    <!-- 右上角收藏未讀計數浮動徽章 -->
+    <span class="square-hub-badge" id="favCountBadge">0</span>
+
+    <!-- 上半部：我的日旅行程收藏本 -->
+    <button class="square-hub-item hub-item-fav" onclick="openFavoritesDrawer()" aria-label="查看我的日旅行程收藏本">
+      <span class="hub-icon">❤️</span>
+      <span class="hub-label">收藏</span>
     </button>
-    <button class="btn-float-action btn-float-fav" onclick="openFavoritesDrawer()" title="查看我的日旅行程收藏本">
-      <span style="font-size:18px;">❤️</span>
-      <span>我的收藏本</span>
-      <span class="fav-count-pill" id="favCountBadge">0</span>
+
+    <!-- 中間微細分隔線 -->
+    <div class="square-hub-divider"></div>
+
+    <!-- 下半部：日幣免稅試算 -->
+    <button class="square-hub-item hub-item-fx" onclick="openFxCalculator()" aria-label="日幣即時匯率與10%免稅試算">
+      <span class="hub-icon">💴</span>
+      <span class="hub-label">免稅</span>
     </button>
   </div>
 
