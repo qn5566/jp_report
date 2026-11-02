@@ -202,31 +202,89 @@
     .main-container {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 24px 20px 80px 20px;
+      padding: 0 20px 80px 20px;
     }
 
-    /* 英雄視覺橫幅 */
+    /* 🌄 富士山櫻花夕陽英雄視覺橫幅 (左右 100% 滿版全螢幕橫幅，明亮透彩自然光) */
     .hero-banner {
-      text-align: center;
-      padding: 26px 20px 18px 20px;
-      background: linear-gradient(180deg, #FFFFFF 0%, var(--washi-warm-bg) 100%);
-      border: 1px solid var(--border-morandi);
-      border-radius: 16px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      position: relative;
+      width: 100%;
+      height: 420px;
+      border-radius: 0; /* 滿版不留圓角，延展至全螢幕邊緣 */
+      overflow: hidden;
+      background-image: url('./images/hero_fuji_sakura_banner.jpg');
+      background-size: cover;
+      background-position: center 42%;
+      margin-bottom: 0;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.4);
+    }
+    .hero-banner-scrim {
+      position: absolute;
+      inset: 0;
+      /* 🌟 調整：大幅減輕暗度，保留夕陽金光、富士雪山與粉嫩櫻花原生明亮自然光彩 */
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.16) 55%, rgba(0, 0, 0, 0.40) 100%);
+      z-index: 1;
+    }
+    .hero-banner-content {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1240px;
+      padding: 0 24px;
+      bottom: 78px;
+      z-index: 2;
+      color: #FFFFFF;
+      text-align: left;
+    }
+    .hero-tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
     .hero-title {
       font-family: var(--font-serif);
-      font-size: 1.85rem;
+      font-size: 2.5rem;
       font-weight: 900;
-      color: #1E293B;
-      letter-spacing: 2px;
-      margin-bottom: 4px;
+      color: #FFFFFF;
+      letter-spacing: 1.5px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75), 0 1px 4px rgba(0, 0, 0, 0.9);
     }
     .hero-subtitle {
-      font-size: 0.88rem;
-      color: var(--color-warmgray-400);
+      font-size: 0.98rem;
+      color: #FFFFFF;
       font-weight: 600;
+      line-height: 1.6;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    /* 🌟 圖二 Wanderly 浮動疊加卡盒 (Overlay on Hero Bottom) */
+    .rank-floating-card-wrap {
+      position: relative;
+      z-index: 10;
+      margin-top: -55px;
+      margin-bottom: 26px;
+      padding: 0;
+    }
+    .rank-floating-card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      box-shadow: 0 16px 42px rgba(15, 23, 42, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      padding: 14px 18px;
     }
 
     /* 6 大排行榜精煉按鈕切換列 (完全不超長) */
@@ -234,47 +292,69 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 10px;
-      margin-bottom: 22px;
+      margin-bottom: 0;
     }
     @media (max-width: 960px) {
+      .hero-banner {
+        height: 310px;
+        background-position: center 35%;
+      }
+      .hero-banner-content {
+        padding: 0 16px;
+        bottom: 60px;
+      }
+      .hero-title {
+        font-size: 1.7rem;
+      }
+      .hero-subtitle {
+        font-size: 0.82rem;
+      }
+      .rank-floating-card-wrap {
+        margin-top: -42px;
+      }
+      .rank-floating-card {
+        padding: 10px 12px;
+        border-radius: 16px;
+      }
       .rank-tabs-bar {
         display: flex;
         overflow-x: auto;
-        padding-bottom: 6px;
+        padding-bottom: 4px;
         scrollbar-width: none;
+        gap: 8px;
       }
       .rank-tabs-bar::-webkit-scrollbar { display: none; }
-      .rank-tab-btn { flex-shrink: 0; min-width: 135px; }
+      .rank-tab-btn { flex-shrink: 0; min-width: 140px; }
     }
 
     .rank-tab-btn {
-      background: var(--color-warmgray-100);
-      border: 1px solid var(--color-warmgray-200);
-      border-radius: 12px;
-      padding: 10px 6px;
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 12px 8px;
       text-align: center;
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
     .rank-tab-btn:hover {
-      background: var(--color-smoky-200);
-      border-color: var(--color-smoky-300);
-      transform: translateY(-1px);
+      background: #F1F5F9;
+      border-color: #CBD5E1;
+      transform: translateY(-2px);
     }
     .rank-tab-btn .tab-main-text {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 800;
-      color: #2D3748;
+      color: #1E293B;
       white-space: nowrap;
     }
     .rank-tab-btn .tab-sub-text {
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      color: var(--color-warmgray-400);
+      color: #64748B;
       margin-top: 3px;
       letter-spacing: 0.3px;
       white-space: nowrap;
@@ -282,7 +362,8 @@
     .rank-tab-btn.active {
       background: linear-gradient(135deg, var(--color-terracotta-300) 0%, var(--color-terracotta-400) 100%);
       border-color: var(--color-terracotta-400);
-      box-shadow: 0 4px 14px rgba(180, 107, 94, 0.3);
+      box-shadow: 0 6px 18px rgba(180, 107, 94, 0.35);
+      transform: translateY(-2px);
     }
     .rank-tab-btn.active .tab-main-text {
       color: #FFFFFF;
@@ -966,7 +1047,7 @@
       <a href="japan_flight_deals.html" class="header-util-btn" title="Trip 機票比價與特惠航線">
         <span>✈️ Trip 查機票</span>
       </a>
-      <a href="tabi_news_preview.html" class="header-util-btn" title="包車 / 租車攻略">
+      <a href="japan_charter_rental.html" class="header-util-btn" title="包車 / 租車攻略">
         <span>🚗 包車 / 租車</span>
       </a>
       <a href="japan_inbound_rankings.html" class="header-util-btn active" title="日本排行榜">
@@ -975,48 +1056,49 @@
     </div>
   </header>
 
+  <!-- 🌄 富士山櫻花夕陽英雄視覺橫幅 (左右 100% 滿版全螢幕橫幅，明亮透彩自然光) -->
+  <div class="hero-banner">
+    <div class="hero-banner-scrim"></div>
+    <div class="hero-banner-content">
+      <span class="hero-tag-badge">🌸 2026 日本觀光人氣權威排行榜 ｜ 官方旗艦指南</span>
+      <h1 class="hero-title">全日本極上觀光體驗排行榜</h1>
+      <p class="hero-subtitle">頂級板前和牛割烹・宇治百年抹茶茶道・雪見名湯百選・力士相撲晨練・盛典賽事狂歡・世界遺產夜景</p>
+    </div>
+  </div>
+
   <main class="main-container">
-    
-    <!-- 英雄視覺橫幅 -->
-    <div class="hero-banner">
-      <h2 class="hero-title">日本排行榜</h2>
-      <p class="hero-subtitle">全日本指標名所與頂級體驗精選 ｜ 日系雜誌排版與情境導航</p>
-    </div>
 
-    <!-- 6 大排行榜精煉按鈕切換列 (主詞4字 + 輔助4字，完全不超長) -->
-    <div class="rank-tabs-bar" id="rankTabsBar">
-      <button class="rank-tab-btn active" data-cat="gourmet" onclick="switchCategory('gourmet', this)">
-        <span class="tab-main-text">🥩 米其林・和牛</span>
-        <span class="tab-sub-text">頂級板前割烹</span>
-      </button>
-      <button class="rank-tab-btn" data-cat="culture" onclick="switchCategory('culture', this)">
-        <span class="tab-main-text">🍵 茶道・宇治抹茶</span>
-        <span class="tab-sub-text">老舖町家點茶</span>
-      </button>
-      <button class="rank-tab-btn" data-cat="budo" onclick="switchCategory('budo', this)">
-        <span class="tab-main-text">⚔️ 武士・相撲觀戰</span>
-        <span class="tab-sub-text">力士晨練道場</span>
-      </button>
-      <button class="rank-tab-btn" data-cat="snow" onclick="switchCategory('snow', this)">
-        <span class="tab-main-text">♨️ 雪見名湯百選</span>
-        <span class="tab-sub-text">秘湯一泊二食</span>
-      </button>
-      <button class="rank-tab-btn" data-cat="sports" onclick="switchCategory('sports', this)">
-        <span class="tab-main-text">⚾ 甲子園・花火</span>
-        <span class="tab-sub-text">盛典賽事狂歡</span>
-      </button>
-      <button class="rank-tab-btn" data-cat="fuji" onclick="switchCategory('fuji', this)">
-        <span class="tab-main-text">🌌 世界遺產夜景</span>
-        <span class="tab-sub-text">必訪奇蹟絕景</span>
-      </button>
-    </div>
-
-    <!-- 分類標題與說明 -->
-    <div class="category-info-wrap">
-      <div>
-        <div class="cat-title-text" id="catTitleText">🥩 米其林・和牛</div>
-        <div class="cat-desc-text" id="catDescText">三星名店、神戶和牛燒肉、景觀咖啡</div>
+    <!-- 🌟 圖二 Wanderly 浮動疊加卡盒 (Overlay on Hero Banner Bottom) -->
+    <div class="rank-floating-card-wrap">
+      <div class="rank-floating-card">
+        <div class="rank-tabs-bar" id="rankTabsBar">
+          <button class="rank-tab-btn active" data-cat="gourmet" onclick="switchCategory('gourmet', this)">
+            <span class="tab-main-text">🥩 米其林・和牛</span>
+            <span class="tab-sub-text">頂級板前割烹</span>
+          </button>
+          <button class="rank-tab-btn" data-cat="culture" onclick="switchCategory('culture', this)">
+            <span class="tab-main-text">🍵 茶道・宇治抹茶</span>
+            <span class="tab-sub-text">老舖町家點茶</span>
+          </button>
+          <button class="rank-tab-btn" data-cat="budo" onclick="switchCategory('budo', this)">
+            <span class="tab-main-text">⚔️ 武士・相撲觀戰</span>
+            <span class="tab-sub-text">力士晨練道場</span>
+          </button>
+          <button class="rank-tab-btn" data-cat="snow" onclick="switchCategory('snow', this)">
+            <span class="tab-main-text">♨️ 雪見名湯百選</span>
+            <span class="tab-sub-text">秘湯一泊二食</span>
+          </button>
+          <button class="rank-tab-btn" data-cat="sports" onclick="switchCategory('sports', this)">
+            <span class="tab-main-text">⚾ 甲子園・花火</span>
+            <span class="tab-sub-text">盛典賽事狂歡</span>
+          </button>
+          <button class="rank-tab-btn" data-cat="fuji" onclick="switchCategory('fuji', this)">
+            <span class="tab-main-text">🌌 世界遺產夜景</span>
+            <span class="tab-sub-text">千萬美景眺望</span>
+          </button>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 微膠囊篩選列 (米其林食慾情境 / 溫泉泉質體驗微膠囊) -->

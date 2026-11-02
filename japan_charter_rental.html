@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./images/japan_tabi_logo.png">
+  <title>日本客製化包車一日遊 ＆ 日本自駕租車全攻略指南 ｜ 日旅報報 JAPAN TABI 官方旗艦指南</title>
+  
+  <!-- 字體引入 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Shippori+Mincho:wght@600;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* 🎨 四大精確莫蘭迪色號規範 (Strict 4-Palette Design System) */
+    :root {
+      --font-main: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+      --font-serif: 'Shippori Mincho', 'Noto Serif TC', serif;
+      --font-en: 'Outfit', sans-serif;
+
+      --ink-charcoal: #2D3748;
+      --sub-morandi: #718096;
+
+      /* 02 | Smoky Pink */
+      --color-smoky-100: #F2E9E7;
+      --color-smoky-200: #E4D6D6;
+      --color-smoky-300: #CBAEAE;
+      --color-smoky-400: #9A8282;
+
+      /* 03 | Greige */
+      --color-greige-100: #E9E6E0;
+      --color-greige-200: #D2CCC2;
+      --color-greige-300: #B1A89C;
+      --color-greige-400: #7F776E;
+
+      /* 06 | Warm Gray */
+      --color-warmgray-100: #EDEAE6;
+      --color-warmgray-200: #D8D2C8;
+      --color-warmgray-300: #B9B1A6;
+      --color-warmgray-400: #8A8377;
+
+      /* 07 | Terracotta (下單核心焦點色) */
+      --color-terracotta-100: #F3E6E2;
+      --color-terracotta-200: #E2C4BA;
+      --color-terracotta-300: #D19989;
+      --color-terracotta-400: #B46B5E;
+
+      --washi-warm-bg: #FAF9F6;
+      --border-morandi: #D2CCC2;
+      --charter-orange: #EA580C;
+      --charter-blue: #0284C7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--ink-charcoal);
+      min-height: 100vh;
+      background: linear-gradient(180deg, #F8FAFC 0%, #FAF9F6 100%);
+      line-height: 1.6;
+    }
+
+    /* 頂部 Header：官方規格品牌識別 (全站 100% 嚴格一致) */
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-morandi);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .header-left, .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+    .header-right {
+      justify-content: flex-end;
+    }
+
+    .header-center {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 🌟 全站統一品牌 LOGO 樣式 */
+    .brand-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .fuji-logo-box {
+      width: 52px !important;
+      height: 52px !important;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: #FFFFFF !important;
+      border: 2.5px solid #ED1A21 !important;
+      box-shadow: 0 4px 14px rgba(237, 26, 33, 0.18) !important;
+      overflow: hidden !important;
+      flex-shrink: 0 !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+    .brand-wrap:hover .fuji-logo-box {
+      transform: scale(1.05) !important;
+      box-shadow: 0 6px 18px rgba(237, 26, 33, 0.28) !important;
+    }
+    .brand-tabi-logo {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
+      border-radius: 50% !important;
+    }
+    .brand-text {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: center !important;
+      gap: 2px !important;
+    }
+    .brand-text h1 {
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.1 !important;
+      display: flex !important;
+    }
+    .brand-title-zh {
+      color: #094F8D !important;
+      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif !important;
+      font-weight: 900 !important;
+      font-size: 1.62rem !important;
+      letter-spacing: 0.5px !important;
+      line-height: 1.1 !important;
+      display: block !important;
+    }
+    .brand-sub-official-wrap {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      line-height: 1 !important;
+    }
+    .brand-title-en {
+      color: #ED1A21 !important;
+      font-family: 'Outfit', sans-serif !important;
+      font-size: 1.05rem !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.8px !important;
+      line-height: 1 !important;
+    }
+    .brand-tag-official {
+      background: #ED1A21 !important;
+      color: #FFFFFF !important;
+      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif !important;
+      font-size: 0.72rem !important;
+      font-weight: 900 !important;
+      padding: 2px 7px !important;
+      border-radius: 6px !important;
+      border: none !important;
+      line-height: 1.2 !important;
+      display: inline-block !important;
+    }
+
+    .header-util-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #475569;
+      text-decoration: none;
+      background: #FFFFFF;
+      border: 1px solid var(--border-morandi);
+      transition: all 0.2s;
+    }
+    .header-util-btn:hover {
+      background: var(--color-warmgray-100);
+      color: #1E293B;
+    }
+    .header-util-btn.active {
+      background: var(--color-terracotta-100);
+      border-color: var(--color-terracotta-200);
+      color: var(--color-terracotta-400);
+      font-weight: 800;
+    }
+
+    /* 主容器 */
+    .charter-page-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px 80px 20px;
+    }
+
+    /* 🌄 滿版全螢幕英雄視覺橫幅 (左右 100% 滿版，明亮透彩自然光) */
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      border-radius: 0;
+      overflow: hidden;
+      background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1920&q=85');
+      background-size: cover;
+      background-position: center 48%;
+      margin-bottom: 0;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.4);
+    }
+    .hero-banner-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.16) 55%, rgba(0, 0, 0, 0.45) 100%);
+      z-index: 1;
+    }
+    .hero-banner-content {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1240px;
+      padding: 0 24px;
+      bottom: 78px;
+      z-index: 2;
+      color: #FFFFFF;
+      text-align: left;
+    }
+    .hero-tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: 1.5px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75), 0 1px 4px rgba(0, 0, 0, 0.9);
+    }
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: #FFFFFF;
+      font-weight: 600;
+      line-height: 1.6;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    /* 🌟 圖二 Wanderly 浮動疊加卡盒 (Overlay on Hero Bottom) */
+    .charter-floating-card-wrap {
+      position: relative;
+      z-index: 10;
+      margin-top: -55px;
+      margin-bottom: 30px;
+      padding: 0;
+    }
+    .charter-floating-card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      box-shadow: 0 16px 42px rgba(15, 23, 42, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      padding: 14px 18px;
+    }
+
+    /* 5 大包車與自駕精煉切換列 (比照排行榜設計) */
+    .charter-tabs-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-bottom: 0;
+    }
+    @media (max-width: 960px) {
+      .hero-banner {
+        height: 310px;
+        background-position: center 40%;
+      }
+      .hero-banner-content {
+        padding: 0 16px;
+        bottom: 60px;
+      }
+      .hero-title {
+        font-size: 1.65rem;
+      }
+      .hero-subtitle {
+        font-size: 0.82rem;
+      }
+      .charter-floating-card-wrap {
+        margin-top: -42px;
+      }
+      .charter-floating-card {
+        padding: 10px 12px;
+        border-radius: 16px;
+      }
+      .charter-tabs-bar {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+        gap: 8px;
+      }
+      .charter-tabs-bar::-webkit-scrollbar { display: none; }
+      .charter-tab-btn { flex-shrink: 0; min-width: 145px; }
+    }
+
+    .charter-tab-btn {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 12px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .charter-tab-btn:hover {
+      background: #F1F5F9;
+      border-color: #CBD5E1;
+      transform: translateY(-2px);
+    }
+    .charter-tab-btn .tab-main-text {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #1E293B;
+      white-space: nowrap;
+    }
+    .charter-tab-btn .tab-sub-text {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #64748B;
+      margin-top: 3px;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+    .charter-tab-btn.active {
+      background: linear-gradient(135deg, var(--color-terracotta-300) 0%, var(--color-terracotta-400) 100%);
+      border-color: var(--color-terracotta-400);
+      box-shadow: 0 6px 18px rgba(180, 107, 94, 0.35);
+      transform: translateY(-2px);
+    }
+    .charter-tab-btn.active .tab-main-text {
+      color: #FFFFFF;
+    }
+    .charter-tab-btn.active .tab-sub-text {
+      color: var(--color-terracotta-100);
+      opacity: 0.95;
+    }
+
+    /* 區塊通用樣式 */
+    .charter-section {
+      margin-bottom: 48px;
+    }
+    .section-header-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid #E2E8F0;
+    }
+    .section-tag-pill {
+      font-size: 0.75rem;
+      font-weight: 900;
+      background: #FFEDD5;
+      color: #EA580C;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.8px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: #0F172A;
+      letter-spacing: 0.5px;
+    }
+    .section-desc {
+      font-size: 0.88rem;
+      color: #64748B;
+      margin-top: 4px;
+    }
+
+    /* 🚘 Klook 客製包車一日遊卡片網格 */
+    .charter-products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    @media (max-width: 1080px) {
+      .charter-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 680px) {
+      .charter-products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .charter-product-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .charter-product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.10);
+      border-color: #EA580C;
+    }
+    .charter-card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background: #E2E8F0;
+    }
+    .charter-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .charter-product-card:hover .charter-card-img {
+      transform: scale(1.06);
+    }
+    .charter-card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .charter-card-body {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .charter-item-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #0F172A;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .charter-item-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .charter-hi-tag {
+      background: #FFF7ED;
+      color: #C2410C;
+      border: 1px solid #FFEDD5;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .charter-item-desc {
+      font-size: 0.84rem;
+      color: #64748B;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .charter-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid #F1F5F9;
+    }
+    .charter-price-hint {
+      font-size: 0.78rem;
+      color: #94A3B8;
+      font-weight: 700;
+    }
+    .charter-book-btn {
+      background: linear-gradient(135deg, #FF5B00 0%, #E04800 100%);
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 0.82rem;
+      padding: 8px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(255, 91, 0, 0.3);
+      transition: all 0.2s ease;
+    }
+    .charter-book-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(255, 91, 0, 0.45);
+    }
+
+    /* 🛣️ 全日本 ETC PASS (周遊券) 精美資訊網格 */
+    .etc-pass-card-wrap {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 22px;
+      padding: 28px 32px;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.03);
+      margin-bottom: 48px;
+    }
+    .etc-pass-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    @media (max-width: 960px) {
+      .etc-pass-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .etc-pass-item {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .etc-pass-item:hover {
+      transform: translateY(-2px);
+      border-color: #0284C7;
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);
+    }
+    .etc-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .etc-name {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #0284C7;
+    }
+    .etc-badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      background: #E0F2FE;
+      color: #0369A1;
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid #BAE6FD;
+    }
+    .etc-region {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #64748B;
+      margin-bottom: 8px;
+    }
+    .etc-desc {
+      font-size: 0.83rem;
+      color: #334155;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .etc-link-btn {
+      background: #FFFFFF;
+      color: #0284C7;
+      border: 1.5px solid #BAE6FD;
+      font-weight: 900;
+      font-size: 0.78rem;
+      padding: 8px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .etc-link-btn:hover {
+      background: #0284C7;
+      color: #FFFFFF;
+      border-color: #0284C7;
+    }
+
+    /* 🚗 ToCoo! 租車比價專區 Banner */
+    .tocoo-promo-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: 22px;
+      padding: 32px 36px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .tocoo-promo-left h3 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+    .tocoo-promo-left p {
+      font-size: 0.9rem;
+      color: #CBD5E1;
+      max-width: 720px;
+      line-height: 1.6;
+    }
+    .tocoo-btn-action {
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+      color: #FFFFFF;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35);
+      transition: all 0.25s ease;
+    }
+    .tocoo-btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(16, 185, 129, 0.45);
+    }
+
+    /* 📘 自駕交規 4 大懶人包卡片 */
+    .driving-sop-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 960px) {
+      .driving-sop-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 580px) {
+      .driving-sop-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .sop-item-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 20px 18px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+    .sop-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .sop-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #0F172A;
+      margin-bottom: 8px;
+    }
+    .sop-desc {
+      font-size: 0.82rem;
+      color: #64748B;
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌟 全站 100% 嚴格一致品牌頂部 Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <a href="tabi_news_preview.html" class="header-util-btn" title="返回首頁">
+        <span>🏠 返回首頁</span>
+      </a>
+    </div>
+
+    <!-- 正中間品牌標誌與文字 -->
+    <div class="header-center">
+      <a href="tabi_news_preview.html" class="brand-wrap" title="返回首頁">
+        <div class="fuji-logo-box">
+          <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" class="brand-tabi-logo">
+        </div>
+        <div class="brand-text">
+          <h1 id="brandTitle">
+            <span class="brand-title-zh" id="brandTitleZh">日旅報報</span>
+          </h1>
+          <div class="brand-sub-official-wrap">
+            <span class="brand-title-en" id="brandTitleEn">JAPAN TABI</span>
+            <span class="brand-tag-official" id="brandTag">日本觀光情報</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- 頂部右側統一功能按鈕群 (與首頁、排行榜 100% 一致) -->
+    <div class="header-right">
+      <a href="japan_flight_deals.html" class="header-util-btn" title="Trip 機票比價與特惠航線">
+        <span>✈️ Trip 查機票</span>
+      </a>
+      <a href="japan_charter_rental.html" class="header-util-btn active" title="日本客製化包車一日遊 ＆ 日本自駕租車全攻略指南">
+        <span>🚗 包車 / 租車</span>
+      </a>
+      <a href="japan_inbound_rankings.html" class="header-util-btn" title="日本排行榜">
+        <span>🏆 日本排行榜</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 🌄 滿版全螢幕英雄視覺橫幅 (左右 100% 滿版，明亮透彩自然光) -->
+  <div class="hero-banner">
+    <div class="hero-banner-scrim"></div>
+    <div class="hero-banner-content">
+      <span class="hero-tag-badge">🚗 2026 全日本客製化包車 ＆ 租車自駕全覽特輯 ｜ 官方旗艦指南</span>
+      <h1 class="hero-title">日本客製化包車 ＆ 自駕租車全攻略指南</h1>
+      <p class="hero-subtitle">專屬中文司導到府接送・全日本外國人專用高速公路 ETC PASS 總整理・ToCoo! 租車比價與 Klook 官方特惠</p>
+    </div>
+  </div>
+
+  <main class="charter-page-container">
+
+    <!-- 🌟 圖二 Wanderly 浮動疊加卡盒 (Overlay on Hero Banner Bottom，比照排行榜風格) -->
+    <div class="charter-floating-card-wrap">
+      <div class="charter-floating-card">
+        <div class="charter-tabs-bar" id="charterTabsBar">
+          <a href="#sec-charter-trips" class="charter-tab-btn active" onclick="switchCharterTab(this)">
+            <span class="tab-main-text">🚘 客製包車一日遊</span>
+            <span class="tab-sub-text">專屬中文司機導覽</span>
+          </a>
+          <a href="#sec-etc-pass" class="charter-tab-btn" onclick="switchCharterTab(this)">
+            <span class="tab-main-text">🛣️ 高速 ETC PASS</span>
+            <span class="tab-sub-text">全日本周遊券總整理</span>
+          </a>
+          <a href="#sec-car-rental" class="charter-tab-btn" onclick="switchCharterTab(this)">
+            <span class="tab-main-text">🚗 租車自駕比價</span>
+            <span class="tab-sub-text">ToCoo! 免自負額</span>
+          </a>
+          <a href="#sec-airport-transfer" class="charter-tab-btn" onclick="switchCharterTab(this)">
+            <span class="tab-main-text">✈️ 24H 機場接送</span>
+            <span class="tab-sub-text">大行李專車直達飯店</span>
+          </a>
+          <a href="#sec-driving-sop" class="charter-tab-btn" onclick="switchCharterTab(this)">
+            <span class="tab-main-text">📘 自駕交規保險</span>
+            <span class="tab-sub-text">日文譯本與加油常規</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🚘 【第 1 區塊】Klook 日本客製化包車一日遊 (專屬中文司機 ＆ 飯店到府接送) -->
+    <section class="charter-section" id="sec-charter-trips">
+      <div class="section-header-wrap">
+        <div>
+          <span class="section-tag-pill">PRIVATE CHARTERED CAR & DAY TOUR</span>
+          <h2 class="section-title">🚘 日本客製化包車一日遊 (專屬中文司導 ＆ 飯店接送)</h2>
+          <p class="section-desc">省去搬大行李搭車擠電車之苦，家族長輩、親子家庭自由行首選，10 小時自由排定景點，全程中文司機貼心服務！</p>
+        </div>
+        <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E5%8C%85%E8%BB%8A" target="_blank" class="charter-book-btn">
+          <span>🎟️ 查看更多日本包車路線 ➔</span>
+        </a>
+      </div>
+
+      <div class="charter-products-grid">
+        
+        <!-- 商品 1: 富士山河口湖 -->
+        <div class="charter-product-card">
+          <div class="charter-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80" alt="富士山河口湖包車" class="charter-card-img">
+            <span class="charter-card-badge">🏆 東京出發人氣 No.1</span>
+          </div>
+          <div class="charter-card-body">
+            <div>
+              <h3 class="charter-item-title">富士山河口湖 ＆ 新倉山淺間 ＆ 忍野八海 客製包車一日遊</h3>
+              <div class="charter-item-highlights">
+                <span class="charter-hi-tag">中文司機</span>
+                <span class="charter-hi-tag">飯店到府接送</span>
+                <span class="charter-hi-tag">10小時行程自由訂</span>
+              </div>
+              <p class="charter-item-desc">從東京市區飯店出發，直達新倉山淺間五重塔拍富士絕景、漫步忍野八海清泉、打卡羅森日川時計店，回程可順遊御殿場 Outlets！</p>
+            </div>
+            <div class="charter-card-footer">
+              <span class="charter-price-hint">⭐ 4.9 顆星 ｜ 數千則好評</span>
+              <a href="https://www.klook.com/zh-TW/activity/95250-mt-fuji-day-tour-private-charter-from-tokyo/" target="_blank" class="charter-book-btn">
+                <span>立即預訂 ➔</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 商品 2: 京都奈良包車 -->
+        <div class="charter-product-card">
+          <div class="charter-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80" alt="京都奈良包車" class="charter-card-img">
+            <span class="charter-card-badge">⛩️ 關西經典必遊</span>
+          </div>
+          <div class="charter-card-body">
+            <div>
+              <h3 class="charter-item-title">京都伏見稻荷 ＆ 清水寺 ＆ 宇治抹茶 ＆ 奈良餵鹿 私人包車</h3>
+              <div class="charter-item-highlights">
+                <span class="charter-hi-tag">大阪/京都接送</span>
+                <span class="charter-hi-tag">避開人潮</span>
+                <span class="charter-hi-tag">行李隨車直載</span>
+              </div>
+              <p class="charter-item-desc">京都坡道石階多，搭乘專屬包車直達清水寺門口與伏見稻荷千本鳥居，午後前往宇治老舖品茗、奈良公園與萌鹿親密互動！</p>
+            </div>
+            <div class="charter-card-footer">
+              <span class="charter-price-hint">⭐ 4.9 顆星 ｜ 親子長輩最愛</span>
+              <a href="https://www.klook.com/zh-TW/activity/79018-kyoto-nara-private-car-charter-day-tour-osaka/" target="_blank" class="charter-book-btn">
+                <span>立即預訂 ➔</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 商品 3: 箱根溫泉包車 -->
+        <div class="charter-product-card">
+          <div class="charter-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80" alt="箱根包車" class="charter-card-img">
+            <span class="charter-card-badge">♨️ 名湯漫遊</span>
+          </div>
+          <div class="charter-card-body">
+            <div>
+              <h3 class="charter-item-title">箱根神社平和鳥居 ＆ 蘆之湖海賊船 ＆ 大涌谷地熱 客製包車</h3>
+              <div class="charter-item-highlights">
+                <span class="charter-hi-tag">東京直達箱根</span>
+                <span class="charter-hi-tag">免轉登山電車</span>
+                <span class="charter-hi-tag">免費安全座椅</span>
+              </div>
+              <p class="charter-item-desc">免去拖著行李在箱根轉乘登山纜車與巴士的不便。專車直達水上鳥居拍照，品嚐大涌谷延年益壽黑玉子，悠閒享受日歸溫泉！</p>
+            </div>
+            <div class="charter-card-footer">
+              <span class="charter-price-hint">⭐ 4.8 顆星 ｜ 舒適豪華座車</span>
+              <a href="https://www.klook.com/zh-TW/activity/95252-hakone-day-tour-private-charter-from-tokyo/" target="_blank" class="charter-book-btn">
+                <span>立即預訂 ➔</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 商品 4: 沖繩包車一日遊 -->
+        <div class="charter-product-card">
+          <div class="charter-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80" alt="沖繩包車一日遊" class="charter-card-img">
+            <span class="charter-card-badge">🌊 海島全景首選</span>
+          </div>
+          <div class="charter-card-body">
+            <div>
+              <h3 class="charter-item-title">沖繩美麗海水族館 ＆ 萬座毛 ＆ 古宇利大橋 客製包車一日遊</h3>
+              <div class="charter-item-highlights">
+                <span class="charter-hi-tag">那霸市區/機場接送</span>
+                <span class="charter-hi-tag">中文客服</span>
+                <span class="charter-hi-tag">不需開車輕鬆玩</span>
+              </div>
+              <p class="charter-item-desc">沖繩大眾交通不發達，不自駕也能暢遊全島！專車帶您直奔北部美麗海水族館看黑潮之海鯨鯊、跨越古宇利藍色大橋！</p>
+            </div>
+            <div class="charter-card-footer">
+              <span class="charter-price-hint">⭐ 4.9 顆星 ｜ 4~9人座皆有</span>
+              <a href="https://www.klook.com/zh-TW/activity/16518-private-car-charter-okinawa/" target="_blank" class="charter-book-btn">
+                <span>立即預訂 ➔</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 商品 5: 北海道富良野包車 -->
+        <div class="charter-product-card">
+          <div class="charter-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=700&q=80" alt="北海道富良野美瑛包車" class="charter-card-img">
+            <span class="charter-card-badge">🌸 四季花田秘境</span>
+          </div>
+          <div class="charter-card-body">
+            <div>
+              <h3 class="charter-item-title">北海道富良野薰衣草 ＆ 美瑛青池 ＆ 白鬚瀑布 札幌出發專車</h3>
+              <div class="charter-item-highlights">
+                <span class="charter-hi-tag">札幌出發直達</span>
+                <span class="charter-hi-tag">自由停靠拍照</span>
+                <span class="charter-hi-tag">避開團體大巴</span>
+              </div>
+              <p class="charter-item-desc">札幌到美瑛車程遙遠，搭乘舒適專車沿途欣賞超廣角之路，探訪富田農場、夢幻藍色青池與精靈露台，四季皆享極致美景！</p>
+            </div>
+            <div class="charter-card-footer">
+              <span class="charter-price-hint">⭐ 4.9 顆星 ｜ 家族出遊首選</span>
+              <a href="https://www.klook.com/zh-TW/activity/95430-furano-biei-private-day-tour-sapporo/" target="_blank" class="charter-book-btn">
+                <span>立即預訂 ➔</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 商品 6: 機場 24H 專車接送機 -->
+        <div class="charter-product-card" id="sec-airport-transfer">
+          <div class="charter-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80" alt="日本機場接送機" class="charter-card-img">
+            <span class="charter-card-badge">✈️ 24H 尊榮接機</span>
+          </div>
+          <div class="charter-card-body">
+            <div>
+              <h3 class="charter-item-title">日本主要國際機場 24H 專車接送機 (成田/羽田/關西/新千歲)</h3>
+              <div class="charter-item-highlights">
+                <span class="charter-hi-tag">航班延誤免費等</span>
+                <span class="charter-hi-tag">司機舉牌迎接</span>
+                <span class="charter-hi-tag">直達飯店門口</span>
+              </div>
+              <p class="charter-item-desc">紅眼航班或深夜抵達最安心！司機親切舉牌協助搬運行李，專車直達市區飯店門口，省去扛大件行李擠電車爬樓梯的痛苦！</p>
+            </div>
+            <div class="charter-card-footer">
+              <span class="charter-price-hint">⭐ 4.9 顆星 ｜ 一口價全包</span>
+              <a href="https://www.klook.com/zh-TW/airport-transfers/" target="_blank" class="charter-book-btn">
+                <span>立即預訂 ➔</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 🛣️ 【第 2 區塊】全日本外國人專用高速公路 ETC PASS (周遊券) 總整理 -->
+    <section class="charter-section" id="sec-etc-pass">
+      <div class="etc-pass-card-wrap">
+        <div class="section-header-wrap" style="border-bottom: 1.5px solid #F1F5F9; padding-bottom: 16px; margin-bottom: 16px;">
+          <div>
+            <span class="section-tag-pill" style="background:#DBEAFE; color:#1D4ED8;">EXPRESSWAY PASS COMPLETE GUIDE</span>
+            <h2 class="section-title">🛣️ 全日本外國人專用高速公路 ETC PASS (周遊券) 總整理</h2>
+            <p class="section-desc">
+              日本高速公路通行費為全球數一數二昂貴！外國旅客持「短期滯在」護照即可申辦固定天數「無限次通行」的周遊券，現省 40%～60% 過路費！
+            </p>
+          </div>
+          <a href="https://www2.tocoo.jp/cn/" target="_blank" class="charter-book-btn" style="background:linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);">
+            <span>💳 加購 ToCoo! TEP / ETC 卡 ➔</span>
+          </a>
+        </div>
+
+        <div class="etc-pass-grid">
+          
+          <!-- 1. TEP -->
+          <div class="etc-pass-item">
+            <div>
+              <div class="etc-item-top">
+                <h4 class="etc-name">1. TEP (ToCoo! Expressway Pass)</h4>
+                <span class="etc-badge" style="background:#DCFCE7; color:#15803D; border-color:#BBF7D0;">全日本唯一全國通</span>
+              </div>
+              <div class="etc-region">📍 適用範圍：全日本本州、四國、九州各大高速公路</div>
+              <p class="etc-desc">
+                ToCoo! 獨家外國旅客方案！固定天數全日本高速公路無限次暢遊，適合跨多都道府縣長途自駕旅行，租車時直接連同車輛一併領取專用 ETC 卡。
+              </p>
+            </div>
+            <a href="https://www2.tocoo.jp/cn/" target="_blank" class="etc-link-btn">
+              <span>查看 TEP 方案詳情 ➔</span>
+            </a>
+          </div>
+
+          <!-- 2. HEP -->
+          <div class="etc-pass-item">
+            <div>
+              <div class="etc-item-top">
+                <h4 class="etc-name">2. HEP (Hokkaido Expressway Pass)</h4>
+                <span class="etc-badge">北海道自駕必買</span>
+              </div>
+              <div class="etc-region">📍 適用範圍：北海道道央、道南、道東全境高速</div>
+              <p class="etc-desc">
+                暢行札幌、新千歲、函館、旭川、美瑛富良野與洞爺湖。北海道地廣路長，只要開趟新千歲來回旭川即刻回本，2 至 14 天彈性天數選擇！
+              </p>
+            </div>
+            <a href="https://www2.tocoo.jp/cn/" target="_blank" class="etc-link-btn">
+              <span>查看 HEP 方案詳情 ➔</span>
+            </a>
+          </div>
+
+          <!-- 3. CEP / NEP -->
+          <div class="etc-pass-item">
+            <div>
+              <div class="etc-item-top">
+                <h4 class="etc-name">3. CEP / NEP (Central Nippon Pass)</h4>
+                <span class="etc-badge">昇龍道・合掌村首選</span>
+              </div>
+              <div class="etc-region">📍 適用範圍：愛知・岐阜・富山・石川・長野・靜岡</div>
+              <p class="etc-desc">
+                玩日本中部名勝、白川鄉合掌村、飛驒高山、金澤兼六園必備！可加購 NEP (名古屋高速) 與 AIP (愛知道路)，立享整趟中部無憂過路。
+              </p>
+            </div>
+            <a href="https://www2.tocoo.jp/cn/" target="_blank" class="etc-link-btn">
+              <span>查看 CEP 方案詳情 ➔</span>
+            </a>
+          </div>
+
+          <!-- 4. KEP -->
+          <div class="etc-pass-item">
+            <div>
+              <div class="etc-item-top">
+                <h4 class="etc-name">4. KEP (Kyushu Expressway Pass)</h4>
+                <span class="etc-badge">九州溫泉環島必備</span>
+              </div>
+              <div class="etc-region">📍 適用範圍：福岡、佐賀、長崎、熊本、大分、宮崎、鹿兒島</div>
+              <p class="etc-desc">
+                九州由布院之森、阿蘇火山與別府地獄名湯自駕神器！福岡租車出發繞行九州一圈，通行費原本高達 15,000 日圓，使用 KEP 只要約半價！
+              </p>
+            </div>
+            <a href="https://www2.tocoo.jp/cn/" target="_blank" class="etc-link-btn">
+              <span>查看 KEP 方案詳情 ➔</span>
+            </a>
+          </div>
+
+          <!-- 5. SEP -->
+          <div class="etc-pass-item">
+            <div>
+              <div class="etc-item-top">
+                <h4 class="etc-name">5. SEP (San'in-Setouchi-Shikoku)</h4>
+                <span class="etc-badge">四國秘境・島波海道</span>
+              </div>
+              <div class="etc-region">📍 適用範圍：岡山、廣島、山口、鳥取、島根及四國 4 縣</div>
+              <p class="etc-desc">
+                山陰・瀨戶內・四國高速通行券！自駕島波海道橫跨瀨戶內海、走訪出雲大社與高知四萬十川，不限次數暢遊西部日本與四國秘境。
+              </p>
+            </div>
+            <a href="https://www2.tocoo.jp/cn/" target="_blank" class="etc-link-btn">
+              <span>查看 SEP 方案詳情 ➔</span>
+            </a>
+          </div>
+
+          <!-- 6. ToCoo! 獨立 ETC 卡租借 -->
+          <div class="etc-pass-item">
+            <div>
+              <div class="etc-item-top">
+                <h4 class="etc-name">6. ToCoo! 獨立 ETC 卡借賃</h4>
+                <span class="etc-badge" style="background:#FEF3C7; color:#92400E; border-color:#FDE68A;">平日夜間＆假日折扣</span>
+              </div>
+              <div class="etc-region">📍 適用範圍：全日本所有高速收費道路專用道</div>
+              <p class="etc-desc">
+                若不需買定額周遊券，租用 ToCoo! ETC 卡亦可直接走專用 ETC 匝道，無須停車掏現鈔，並自動享有日本高速公路深夜 7 折及假日 85 折優惠！
+              </p>
+            </div>
+            <a href="https://www2.tocoo.jp/cn/" target="_blank" class="etc-link-btn">
+              <span>查看 ETC 租借詳情 ➔</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 🚗 【第 3 區塊】ToCoo! ＆ Klook 全日本租車自駕線上比價 -->
+    <section class="charter-section" id="sec-car-rental">
+      
+      <!-- ToCoo! 大橫幅 -->
+      <div class="tocoo-promo-banner">
+        <div class="tocoo-promo-left">
+          <div style="font-size:0.75rem; font-weight:800; background:#34D399; color:#064E3B; padding:3px 10px; border-radius:6px; display:inline-block; margin-bottom:8px;">
+            OFFICIAL PARTNER ｜ 日本最大級外國人自駕比價網
+          </div>
+          <h3>ToCoo! 日本租車自駕比價網 (獨家免自負額方案)</h3>
+          <p>
+            收錄 Toyota、Nissan、Orix、Times、Budget 等全日本 30 多家租車巨頭。提供全中文預訂、獨家 TEP 高速公路 PASS 加購、中文 GPS 導航與全額免自負額 (零賠償) 賠償保險方案！
+          </p>
+        </div>
+        <a href="https://www2.tocoo.jp/cn/" target="_blank" class="tocoo-btn-action">
+          <span>🚗 前往 ToCoo! 租車比價 ➔</span>
+        </a>
+      </div>
+
+      <!-- Klook 租車 -->
+      <div style="background:#FFFFFF; border:1.5px solid #E2E8F0; border-radius:20px; padding:26px 30px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; box-shadow:0 4px 16px rgba(0,0,0,0.03);">
+        <div>
+          <span style="font-size:0.75rem; font-weight:900; background:#FFEDD5; color:#EA580C; padding:3px 8px; border-radius:4px;">KLOOK CAR RENTAL</span>
+          <h3 style="font-size:1.35rem; font-weight:900; color:#0F172A; margin:6px 0 4px;">Klook 全日本租車即時比價預約平台</h3>
+          <p style="font-size:0.85rem; color:#64748B; margin:0;">覆蓋日本全國主要國際機場、新幹線大站門市，支援免費取消、台灣駕照譯本即可取車，快速出發！</p>
+        </div>
+        <a href="https://www.klook.com/zh-TW/car-rentals/" target="_blank" class="charter-book-btn">
+          <span>🔍 前往 Klook 租車比價 ➔</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- 📘 【第 4 區塊】日本自駕租車交規・保險・證件 SOP 懶人包 -->
+    <section class="charter-section" id="sec-driving-sop">
+      <div class="section-header-wrap">
+        <div>
+          <span class="section-tag-pill" style="background:#E2E8F0; color:#334155;">DRIVING GUIDE & SAFETY SOP</span>
+          <h2 class="section-title">📘 日本自駕交規・保險・證件常識懶人包</h2>
+          <p class="section-desc">行前必讀！台灣駕照日文譯本必備規範、右駕左行轉彎技巧與道路安全須知</p>
+        </div>
+      </div>
+
+      <div class="driving-sop-grid">
+        
+        <!-- 卡片 1: 證件必備 -->
+        <div class="sop-item-card">
+          <span class="sop-icon">📄</span>
+          <h4 class="sop-title">1. 必備 3 樣證件</h4>
+          <p class="sop-desc">
+            台灣旅客取車時必須攜帶：<b>① 台灣護照原件</b>、<b>② 台灣普通駕照原件</b> (不可過期)、<b>③ 監理所核發之日文譯本</b> (注意：國際駕照不適用於日本！)。
+          </p>
+        </div>
+
+        <!-- 卡片 2: 右駕左行 -->
+        <div class="sop-item-card">
+          <span class="sop-icon">🚗</span>
+          <h4 class="sop-title">2. 右駕左行口訣</h4>
+          <p class="sop-desc">
+            謹記<b>「左小轉、右大轉」</b>，駕駛人靠道路中央分道線行駛。方向盤右側為轉向燈、左側為雨刷，避免轉彎時誤啟動雨刷！
+          </p>
+        </div>
+
+        <!-- 卡片 3: 停看聽標誌 -->
+        <div class="sop-item-card">
+          <span class="sop-icon">🛑</span>
+          <h4 class="sop-title">3. 「止まれ」必須停死</h4>
+          <p class="sop-desc">
+            路口見到倒三角形紅色<b>「止まれ (TOMARE)」</b>或鐵路平交道前，必須<b>車輛完全靜止停死 3 秒</b>，左右擺頭確認無車後方可起步通行！
+          </p>
+        </div>
+
+        <!-- 卡片 4: 免責保險與 NOC -->
+        <div class="sop-item-card">
+          <span class="sop-icon">🛡️</span>
+          <h4 class="sop-title">4. 務必保全 CDW + NOC</h4>
+          <p class="sop-desc">
+            租車時強烈建議加購<b>「免責賠償制度 (CDW)」</b>與<b>「營業損失補償 (NOC 安心險)」</b>。一旦發生輕微刮蹭碰撞，也能享有 0 自負額無憂保障！
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function switchCharterTab(el) {
+      document.querySelectorAll('.charter-tab-btn').forEach(btn => btn.classList.remove('active'));
+      if (el) el.classList.add('active');
+    }
+  </script>
+</body>
+</html>

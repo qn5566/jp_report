@@ -3028,6 +3028,27 @@
       color: #FFFFFF !important;
       box-shadow: 0 2px 8px rgba(9, 79, 141, 0.25) !important;
     }
+    
+    /* 🏕️ 露營自駕專屬柔美淡雅粉綠漸層底色 (粉粉綠綠淡淡的) */
+    body.mode-camp {
+      background: linear-gradient(145deg, #F3F9F5 0%, #FDF4F6 30%, #F0F8F4 68%, #FCF5F7 100%) !important;
+      background-attachment: fixed;
+    }
+    body.mode-camp .community-feed-section {
+      background: linear-gradient(135deg, #F4FBF6 0%, #FEF5F7 50%, #F5FBF7 100%) !important;
+      border: 1.5px solid #C8E6D3 !important;
+      box-shadow: 0 4px 18px rgba(138, 194, 160, 0.15) !important;
+    }
+    body.mode-camp .feed-title {
+      color: #2D6A4F !important;
+    }
+    body.mode-camp .feed-sub-hint {
+      color: #52796F !important;
+    }
+    body.mode-camp .tabi-card {
+      border-color: #E2ECE5;
+    }
+
     body.mode-camp .sub-context-pill.active {
       background: linear-gradient(135deg, #2D6A4F 0%, #52B788 100%) !important;
       border-color: #2D6A4F !important;
@@ -6660,6 +6681,63 @@
       z-index: 5;
     }
 
+    
+    /* 🏮 黑色夜景夜晚櫻花 / 夜楓卡牌專屬主題 (自動切換深色黑夜背景) */
+    .tabi-card.is-night-theme-card {
+      background: linear-gradient(160deg, #161C26 0%, #0E131C 100%) !important;
+      border: 1.5px solid #2D3A4F !important;
+      color: #F1F5F9 !important;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45), 0 0 16px rgba(225, 29, 72, 0.12) !important;
+    }
+    .tabi-card.is-night-theme-card .card-title-header h3 {
+      color: #FFFFFF !important;
+      text-shadow: 0 0 12px rgba(255, 180, 200, 0.35) !important;
+    }
+    .tabi-card.is-night-theme-card .card-clean-concise-desc {
+      color: #CBD5E1 !important;
+    }
+    .tabi-card.is-night-theme-card .card-desc-full {
+      color: #94A3B8 !important;
+    }
+    .tabi-card.is-night-theme-card .card-meta-row .meta-tag-pill {
+      background: #222B3B !important;
+      border-color: #334155 !important;
+      color: #E2E8F0 !important;
+    }
+    .tabi-card.is-night-theme-card .spot-cafe-card {
+      background: rgba(22, 28, 38, 0.9) !important;
+      border-color: #334155 !important;
+    }
+    .tabi-card.is-night-theme-card .cafe-name {
+      color: #F8FAFC !important;
+    }
+    .tabi-card.is-night-theme-card .cafe-feature {
+      color: #94A3B8 !important;
+    }
+    .tabi-card.is-night-theme-card .itinerary-timeline-wrap {
+      background: #18202E !important;
+      border-color: #2D3A4F !important;
+    }
+    .tabi-card.is-night-theme-card .itinerary-step-title {
+      color: #F1F5F9 !important;
+    }
+    .tabi-card.is-night-theme-card .itinerary-step-desc {
+      color: #94A3B8 !important;
+    }
+    .tabi-card.is-night-theme-card .meguro-night-callout-box {
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.18) 0%, rgba(15, 20, 28, 0.92) 100%) !important;
+      border: 1.5px solid #FB7185 !important;
+      border-left: 5px solid #E11D48 !important;
+      box-shadow: 0 0 24px rgba(225, 29, 72, 0.28) !important;
+    }
+    .tabi-card.is-night-theme-card .meguro-callout-headline {
+      color: #FFFFFF !important;
+      text-shadow: 0 0 10px rgba(251, 113, 133, 0.4) !important;
+    }
+    .tabi-card.is-night-theme-card .meguro-callout-time {
+      color: #FDA4AF !important;
+    }
+
     /* 🏮 目黑川櫻並木專屬夜間點燈明顯提示卡盒 */
     .meguro-night-callout-box {
       margin: 10px 0 12px 0 !important;
@@ -6850,13 +6928,13 @@
       </a>
 
       <!-- 2. 🚗 包車 / 租車 專屬按鈕 -->
-      <button class="header-util-btn" onclick="openCharterRentalPortal()" title="全日本自駕租車比價 ＆ 私人中文包車一日遊">
+      <a href="japan_charter_rental.html" class="header-util-btn" title="日本客製化包車一日遊 ＆ 日本自駕租車全攻略指南">
         <span class="util-btn-icon">🚗</span>
         <span>包車 / 租車</span>
-      </button>
+      </a>
 
       <!-- 3. 🏆 7大排行特輯 專屬旗艦入口 -->
-      <a href="japan_inbound_rankings.html" target="_blank" class="header-util-btn" style="text-decoration:none; color:inherit;" title="外國旅客最著迷的 7 大排行榜維度與延伸項目盤點">
+      <a href="japan_inbound_rankings.html" class="header-util-btn" style="text-decoration:none; color:inherit;" title="外國旅客最著迷的 7 大排行榜維度與延伸項目盤點">
         <span class="util-btn-icon">🏆</span>
         <span>日本排行榜</span>
       </a>
@@ -6996,7 +7074,7 @@
         </div>
 
         <!-- 3. 露營與自駕 -->
-        <div class="deal-big-card" id="dealCard_camp_charter" onclick="switchMasterHub('camp_charter', this)">
+        <div class="deal-big-card" id="dealCard_camp_charter" onclick="window.location.href='japan_charter_rental.html'">
           <div class="deal-card-img-wrap">
             <img src="./images/menu_camp.jpg" alt="露營與自駕" loading="lazy">
           </div>
@@ -7007,7 +7085,7 @@
         </div>
 
         <!-- 4. 鐵道之旅 -->
-        <div class="deal-big-card" id="dealCard_topics" onclick="switchMasterHub('topics', this)">
+        <div class="deal-big-card" id="dealCard_topics" onclick="window.location.href='japan_train_tour.html'">
           <div class="deal-card-img-wrap">
             <img src="./images/menu_train.jpg" alt="鐵道之旅" loading="lazy">
           </div>
@@ -18862,8 +18940,10 @@
       const bar = document.getElementById('featureFilterBar');
       if (!bar) return;
 
+      // ❄️ 嚴格限制：僅在賞花前線 (flower) 且選中櫻花或秋楓時顯示，滑雪(snow)、露營自駕(camp)等一律徹底隱藏並清空
       if (currentMasterHub !== 'flower') {
         bar.style.display = 'none';
+        bar.innerHTML = '';
         return;
       }
 
@@ -18874,39 +18954,40 @@
             <span>🍁 全部紅葉名所</span>
           </button>
           <button class="feature-filter-pill pill-momiji ${currentMomijiFeature === 'night' ? 'active' : ''}" onclick="selectMomijiFeature('night', this)">
-            <span>🏮 夜楓點燈 (Night Light-up)</span>
+            <span>🏮 夜楓點燈</span>
           </button>
           <button class="feature-filter-pill pill-momiji ${currentMomijiFeature === 'temple' ? 'active' : ''}" onclick="selectMomijiFeature('temple', this)">
-            <span>⛩️ 寺廟名剎賞楓 (Temple Momiji)</span>
+            <span>⛩️ 寺廟賞楓</span>
           </button>
           <button class="feature-filter-pill pill-momiji ${currentMomijiFeature === 'peak' ? 'active' : ''}" onclick="selectMomijiFeature('peak', this)">
-            <span>🍁 見頃火紅 (100% Peak)</span>
+            <span>🍁 見頃火紅</span>
           </button>
           <button class="feature-filter-pill pill-momiji ${currentMomijiFeature === 'gorge' ? 'active' : ''}" onclick="selectMomijiFeature('gorge', this)">
-            <span>🍂 溪谷與湖畔絕景</span>
+            <span>🍂 溪谷絕景</span>
           </button>
         `;
       } else if (currentSubItemId === 'sakura_bloom' || currentSeason === 'sakura') {
         bar.style.display = 'flex';
         bar.innerHTML = `
           <button class="feature-filter-pill pill-sakura ${currentSakuraFeature === 'all' ? 'active' : ''}" onclick="selectSakuraFeature('all', this)">
-            <span>🌸 全部櫻花 (80+)</span>
+            <span>🌸 全部櫻花</span>
           </button>
           <button class="feature-filter-pill pill-sakura ${currentSakuraFeature === 'night' ? 'active' : ''}" onclick="selectSakuraFeature('night', this)">
-            <span>🏮 夜櫻點燈名所</span>
+            <span>🏮 夜櫻點燈</span>
           </button>
           <button class="feature-filter-pill pill-sakura ${currentSakuraFeature === 'full_bloom' ? 'active' : ''}" onclick="selectSakuraFeature('full_bloom', this)">
-            <span>🌸 滿開無死角 (100% / 吹雪)</span>
+            <span>🌸 滿開吹雪</span>
           </button>
           <button class="feature-filter-pill pill-sakura ${currentSakuraFeature === 'yaezakura' ? 'active' : ''}" onclick="selectSakuraFeature('yaezakura', this)">
-            <span>🌺 晚開八重櫻 / 枝垂櫻</span>
+            <span>🌺 晚開八重櫻</span>
           </button>
           <button class="feature-filter-pill pill-sakura ${currentSakuraFeature === 'yoshino' ? 'active' : ''}" onclick="selectSakuraFeature('yoshino', this)">
-            <span>🌿 經典染井吉野櫻</span>
+            <span>🌿 染井吉野櫻</span>
           </button>
         `;
       } else {
         bar.style.display = 'none';
+        bar.innerHTML = '';
       }
     }
 
@@ -19008,30 +19089,36 @@
             </div>
           `;
         }
-        renderFeatureFilterBar();
       } else {
-        renderFeatureFilterBar();
         bar.style.display = 'none';
+        bar.innerHTML = '';
       }
+
+      // ❄️ 確保無論切換到雪場、露營自駕或鐵道，櫻花/秋楓快篩列一律被嚴格清除與隱藏
+      renderFeatureFilterBar();
     }
     
     function switchMasterHub(hubKey, el) {
-      currentMasterHub = hubKey;
-      renderDynamicRegionBar();
-      const regionBar = document.getElementById('sakuraRegionBar');
-      if (regionBar) {
-        regionBar.style.display = (hubKey === 'flower') ? 'block' : 'none';
+      if (hubKey === 'topics') {
+        window.location.href = 'japan_train_tour.html';
+        return;
       }
+      if (hubKey === 'camp_charter') {
+        window.location.href = 'japan_charter_rental.html';
+        return;
+      }
+
+      currentMasterHub = hubKey;
       const config = MASTER_HUBS_CONFIG[hubKey];
       if (!config) return;
+
+      currentSubItemId = config.subItems[0].id;
 
       // 🌟 點擊切換時同步更新四季主題與降雪特效
       if (hubKey === 'snow') {
         currentSeason = 'snow';
       } else if (hubKey === 'flower') {
         currentSeason = 'sakura';
-      } else if (hubKey === 'topics') {
-        currentSeason = 'train';
       } else {
         currentSeason = config.feedSeason || 'spots';
       }
@@ -19042,7 +19129,8 @@
       const activeDealCard = document.getElementById(`dealCard_${hubKey}`);
       if (activeDealCard) activeDealCard.classList.add('active');
 
-      currentSubItemId = config.subItems[0].id;
+      renderDynamicRegionBar();
+      renderFeatureFilterBar();
       renderSubContextPills();
       handleSubItemSelection(config.subItems[0], false);
       initCanvasFX(); // ❄️ 即刻啟動對應自然粒子特效 (粉雪紛飛 / 櫻花吹雪 / 夏夜花火)
@@ -19066,6 +19154,7 @@
 
     function handleSubItemSelection(item, userClick) {
       currentSubItemId = item.id;
+      renderDynamicRegionBar();
 
       const container = document.getElementById('subContextPillsContainer');
       if (container) {
@@ -19229,6 +19318,13 @@
       const container = document.getElementById('cards-container');
       if (!container) return;
       container.innerHTML = '';
+
+      // 🛡️ 若非賞花前線（如露營自駕、極上粉雪、鐵道），櫻花快篩列必須 100% 徹底刪除與隱藏！
+      const featBar = document.getElementById('featureFilterBar');
+      if (featBar && currentMasterHub !== 'flower') {
+        featBar.style.display = 'none';
+        featBar.innerHTML = '';
+      }
 
       const config = MASTER_HUBS_CONFIG[currentMasterHub] || MASTER_HUBS_CONFIG['flower'];
       const activeSub = config.subItems.find(s => s.id === currentSubItemId) || config.subItems[0];
@@ -19413,7 +19509,7 @@
       container.className = 'spots-grid-layout';
       uniqueFiltered.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'tabi-card';
+        card.className = `tabi-card ${isNight ? 'is-night-theme-card' : ''}`;
         card.id = `spot-card-${item.id}`;
         card.setAttribute('data-spot-id', item.id);
 
@@ -19422,7 +19518,9 @@
         const bookingFinalUrl = ensureBookingAffiliate(item.bookingUrl);
 
         // 🌙 白天與夜晚點燈圖片與狀態切換
-        const isNight = (spotDayNightState[item.id] === 'night');
+        const isNight = ((item.theme === 'sakura' && currentSakuraFeature === 'night') || 
+                            (item.theme === 'momiji' && currentMomijiFeature === 'night') || 
+                            (spotDayNightState[item.id] === 'night'));
         const isFlowerOrMomiji = (item.theme === 'sakura' || item.theme === 'momiji' || item.category === 'flower');
         const defaultNightPhoto = (item.theme === 'momiji') 
           ? 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80' 
@@ -19464,24 +19562,73 @@
             </div>
             <div class="meguro-callout-headline">800株染井吉野櫻形成4km粉紅水岸</div>
             <div class="meguro-callout-time">⏰ 點燈時間：17:00 - 20:00 ｜ 中之橋、南部橋粉紅雪洞燈籠點燈</div>
-            <button type="button" class="callout-action-btn">
-              ${isNight ? '切換白天 ☀️' : '切換夜景 🌙'}
-            </button>
+            
           </div>
         ` : '';
 
+        // 🛡️ 徹底防護 undefined：全欄位保證優雅顯示，杜絕任何 undefined 字符
+        const safeTitle = (item.title && item.title !== 'undefined') ? item.title : '日本精選名所';
+        const safeSubtitle = (item.subtitle && item.subtitle !== 'undefined') ? item.subtitle : '';
+        const safeTag = (item.tag && item.tag !== 'undefined') ? item.tag : (item.regionName || '日本精選');
+        const safeDesc = (item.desc && item.desc !== 'undefined') ? item.desc : (safeSubtitle || '全日本精選四季情報，特派員現地親訪推薦。');
+
+        // 情境專屬狀態標籤 (避免滑雪/露營出現櫻花滿開)
+        let statusTagText = '';
+        if (item.theme === 'snow') {
+          statusTagText = item.snowDepth || item.species || '❄️ 天然粉雪積雪中';
+        } else if (item.theme === 'camp') {
+          statusTagText = item.siteStatus || item.viewRating || '⛺ 絕景露營席位';
+        } else if (item.theme === 'momiji') {
+          statusTagText = item.bloomStatus || '🍁 見頃火紅 (100%)';
+        } else if (item.theme === 'sakura') {
+          statusTagText = item.bloomStatus || '🌸 滿開 (100%)';
+        } else {
+          statusTagText = item.bloomStatus || '✨ 即時推薦';
+        }
+
+        // 情境專屬元數據 (避免露營/滑雪出現「櫻花品種：染井吉野櫻」)
+        let metaRowContent = '';
+        if (item.theme === 'snow') {
+          metaRowContent = `
+            <span class="meta-tag-pill">⛷️ 雪質：${item.species || '100% 天然輕粉雪 JAPOW'}</span>
+            <span class="meta-tag-pill">🚇 交通：${item.locationDetail || '新幹線 / 巴士直達雪場'}</span>
+          `;
+        } else if (item.theme === 'camp') {
+          metaRowContent = `
+            <span class="meta-tag-pill">⛺ 營地：${item.campTypeInfo ? item.campTypeInfo.split('｜')[0].trim() : (item.siteStatus || '絕景露營')}</span>
+            <span class="meta-tag-pill">🛣️ 交通：${item.navInfo || item.locationDetail || '自駕導航直達'}</span>
+          `;
+        } else if (item.theme === 'momiji') {
+          metaRowContent = `
+            <span class="meta-tag-pill">🍁 品種：${item.species || '伊呂波楓・山紅葉'}</span>
+            <span class="meta-tag-pill">🚇 交通：${item.locationDetail || '鄰近車站步行即達'}</span>
+            ${(isNight || item.hasNightLight) ? `<span class="meta-tag-pill spot-night-meta" style="color:#BE123C; background:#FFF1F2; border-color:#FDA4AF;">${item.nightHours || '🏮 17:00 - 20:30 夜間點燈'}</span>` : ''}
+          `;
+        } else if (item.theme === 'sakura') {
+          metaRowContent = `
+            <span class="meta-tag-pill">🌸 品種：${item.species || '染井吉野櫻'}</span>
+            <span class="meta-tag-pill">🚇 交通：${item.locationDetail || '鄰近地鐵站步行即達'}</span>
+            ${(isNight || item.hasNightLight) ? `<span class="meta-tag-pill spot-night-meta" style="color:#BE123C; background:#FFF1F2; border-color:#FDA4AF; display:${(isNight || item.hasNightLight) ? 'inline-flex' : 'none'};">${item.nightHours || '🏮 17:00 - 20:00 夜間點燈'}</span>` : ''}
+          `;
+        } else {
+          metaRowContent = `
+            <span class="meta-tag-pill">📍 特色：${item.species || safeSubtitle || '全日本精選絕景'}</span>
+            <span class="meta-tag-pill">🚇 交通：${item.locationDetail || '鄰近車站步行即達'}</span>
+          `;
+        }
+
         card.innerHTML = `
           <div class="card-img-box">
-            <img src="${activeCoverImg}" alt="${item.title}" loading="lazy" style="transition: opacity 0.25s ease;">
-            <button class="btn-card-fav ${isFav ? 'active' : ''}" onclick="toggleFavorite('${item.id}', 'spot', '${item.title.replace(/'/g, "\\'")}', '${item.img}', '${item.region || ''}', '${item.tag || ''}'); event.stopPropagation();" title="${isFav ? '已在收藏本' : '加入我的行程收藏'}">
+            <img src="${activeCoverImg}" alt="${safeTitle}" loading="lazy" style="transition: opacity 0.25s ease;">
+            <button class="btn-card-fav ${isFav ? 'active' : ''}" onclick="toggleFavorite('${item.id}', 'spot', '${safeTitle.replace(/'/g, "\\'")}', '${item.img}', '${item.region || ''}', '${safeTag}'); event.stopPropagation();" title="${isFav ? '已在收藏本' : '加入我的行程收藏'}">
               ${isFav ? '❤️' : '🤍'}
             </button>
             <!-- 🌟 地區在左上角 (小巧水平標籤) -->
-            <div class="card-region-badge">📍 ${item.tag}</div>
-            <div class="card-bloom-status-tag" style="bottom:10px; top:auto; left:10px; right:auto;">${item.bloomStatus || '🌸 滿開 (100%)'}</div>
+            <div class="card-region-badge">📍 ${safeTag}</div>
+            <div class="card-bloom-status-tag" style="bottom:10px; top:auto; left:10px; right:auto;">${statusTagText}</div>
             ${item.metrics && item.category === 'hanabi' ? `<div class="hanabi-spec-badge">🎆 ${item.metrics.depth}</div>` : ''}
 
-            <!-- ☀️ 白天 ⇋ 🌙 夜晚點燈互動切換開關 (右上角) -->
+            <!-- ☀️ 白天 ⇋ 🌙 夜晚點燈互動切換開關 (右上角，僅賞花與楓葉顯示) -->
             ${isFlowerOrMomiji ? `
               <button type="button" class="card-daynight-toggle ${isNight ? 'is-night' : ''}" onclick="toggleSpotDayNight('${item.id}', event)" title="點擊切換【☀️ 白天景致】與【🌙 夜間點燈】">
                 <span class="daynight-icon">${isNight ? '🌙' : '☀️'}</span>
@@ -19497,25 +19644,21 @@
             <div class="card-title-header">
               <div>
                 <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
-                  <h3 style="margin:0; font-size:1.1rem; font-weight:900; color:#1E293B;">${item.title}</h3>
+                  <h3 style="margin:0; font-size:1.1rem; font-weight:900; color:#1E293B;">${safeTitle}</h3>
                   ${verifyBadge}
                 </div>
-                <div class="card-subtitle-line" style="font-size:0.78rem; color:#64748B; margin:3px 0 6px;">${item.subtitle}</div>
+                ${safeSubtitle ? `<div class="card-subtitle-line" style="font-size:0.78rem; color:#64748B; margin:3px 0 6px;">${safeSubtitle}</div>` : ''}
               </div>
             </div>
 
             ${meguroNightCallout}
 
-            <!-- 🌸 櫻花品種 ＆ 🚇 距離地鐵站交通資訊 ＆ 🏮 點燈時段 -->
+            <!-- 🌸 情境專屬元數據 (品種/雪質/營地 ＆ 交通資訊 ＆ 點燈時段) -->
             <div class="spot-meta-row">
-              <span class="meta-tag-pill">🌸 品種：${item.species || '染井吉野櫻'}</span>
-              <span class="meta-tag-pill">🚇 交通：${item.locationDetail || '鄰近地鐵站步行即達'}</span>
-              <span class="meta-tag-pill spot-night-meta" style="color:#BE123C; background:#FFF1F2; border-color:#FDA4AF; display:${(isNight || item.hasNightLight) ? 'inline-flex' : 'none'};">
-                ${item.nightHours || '🏮 17:00 - 20:00 夜間點燈'}
-              </span>
+              ${metaRowContent}
             </div>
 
-            <p class="card-clean-concise-desc">${item.desc}</p>
+            <p class="card-clean-concise-desc">${safeDesc}</p>
 
             ${(item.theme === 'camp') ? `
               <!-- ⛺ 露營自駕專屬四大關鍵指標 (取代品種與花況) -->
