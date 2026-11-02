@@ -711,21 +711,154 @@
       color: #64748B;
       line-height: 1.5;
     }
-  </style>
+  
+    /* 🚘 區域選項標籤欄 (8大區域快速切換) */
+    .charter-region-tabs-bar {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 14px 4px 18px 4px;
+      margin-bottom: 22px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .charter-region-tabs-bar::-webkit-scrollbar { display: none; }
+    .charter-region-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      border-radius: 24px;
+      border: 1px solid var(--border-morandi, #CBD5E1);
+      background: #FFFFFF;
+      color: #334155;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .charter-region-btn:hover {
+      background: #F8FAFC;
+      border-color: #94A3B8;
+      color: #0F172A;
+      transform: translateY(-1px);
+    }
+    .charter-region-btn.active {
+      background: #BC282E;
+      border-color: #BC282E;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(188, 40, 46, 0.28);
+    }
+
+    /* 🚘 3 個卡牌一整排顯示 (3 Columns Grid) */
+    .charter-products-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 22px !important;
+    }
+    @media (max-width: 1024px) {
+      .charter-products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media (max-width: 680px) {
+      .charter-products-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* 卡牌細節與站點路線美化 */
+    .charter-product-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .charter-product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      border-color: #CBD5E1;
+    }
+    .charter-card-img-wrap {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    .charter-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .charter-product-card:hover .charter-card-img {
+      transform: scale(1.05);
+    }
+    .charter-card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 10px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(6px);
+      color: #FFFFFF;
+      font-size: 0.74rem;
+      font-weight: 800;
+      border-radius: 6px;
+      letter-spacing: 0.02em;
+    }
+    .charter-route-flow {
+      background: #F8FAFC;
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin: 10px 0;
+      font-size: 0.78rem;
+      color: #334155;
+      border-left: 3px solid #BC282E;
+      line-height: 1.5;
+    }
+    /* 預約按鈕：日系茜紅漸層，絕對不含任何 klook 字眼 */
+    .charter-book-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px !important;
+      padding: 9px 16px !important;
+      background: linear-gradient(135deg, #C53D43 0%, #A82429 100%) !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(168, 36, 41, 0.25) !important;
+      border-radius: 8px !important;
+      font-size: 0.82rem !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      box-shadow: 0 2px 6px rgba(197, 61, 67, 0.25) !important;
+      transition: all 0.25s ease !important;
+      width: 100% !important;
+      text-align: center !important;
+    }
+    .charter-book-btn:hover {
+      background: linear-gradient(135deg, #D44349 0%, #B5282E 100%) !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 4px 12px rgba(197, 61, 67, 0.35) !important;
+    }
+
+</style>
 </head>
 <body>
 
-  <!-- 🌟 全站 100% 嚴格一致品牌頂部 Header -->
-  <header class="app-header">
+    <header class="app-header">
     <div class="header-left">
-      <a href="tabi_news_preview.html" class="header-util-btn" title="返回首頁">
-        <span>🏠 返回首頁</span>
-      </a>
+      <!-- 左側平衡留白，保障中央品牌在視覺上精準居中 -->
     </div>
 
     <!-- 正中間品牌標誌與文字 -->
     <div class="header-center">
-      <a href="tabi_news_preview.html" class="brand-wrap" title="返回首頁">
+      <a href="tabi_news_preview.html" class="brand-wrap brand-centered" title="日旅報報 JAPAN TABI">
         <div class="fuji-logo-box">
           <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" class="brand-tabi-logo">
         </div>
@@ -800,166 +933,42 @@
       <div class="section-header-wrap">
         <div>
           <span class="section-tag-pill">PRIVATE CHARTERED CAR</span>
-          <h2 class="section-title">🚘 客製包車一日遊 (中文司導 ＆ 飯店接送)</h2>
-          <p class="section-desc">家庭親子、長輩出遊首選，自由排定景點，行李隨車直載免擠電車！</p>
+          <h2 class="section-title">🚘 客製包車一日遊 (中文司導 ＆ 飯店到府接送)</h2>
+          <p class="section-desc">家庭親子、長輩出遊首選！涵蓋全日本 8 大地區，自由排定景點，行李隨車直載免擠電車爬樓梯！</p>
         </div>
-        <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E5%8C%85%E8%BB%8A" target="_blank" class="charter-book-btn">
-          <span>更多路線 ➔</span>
-        </a>
       </div>
 
-      <div class="charter-products-grid">
-        
-        <!-- 商品 1: 富士山河口湖 -->
-        <div class="charter-product-card">
-          <div class="charter-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80" alt="富士山河口湖包車" class="charter-card-img">
-            <span class="charter-card-badge">🏆 東京熱銷 No.1</span>
-          </div>
-          <div class="charter-card-body">
-            <div>
-              <h3 class="charter-item-title">富士山河口湖 ＆ 新倉山淺間 ＆ 忍野八海 包車一日遊</h3>
-              <div class="charter-item-highlights">
-                <span class="charter-hi-tag">中文司機</span>
-                <span class="charter-hi-tag">飯店到府接送</span>
-                <span class="charter-hi-tag">自由彈性</span>
-              </div>
-              <p class="charter-item-desc">東京市區出發，打卡新倉山淺間五重塔富士絕景、漫步忍野八海與日川時計店，回程可順遊御殿場 Outlets！</p>
-            </div>
-            <div class="charter-card-footer">
-              <span class="charter-price-hint">⭐ 4.9 顆星好評</span>
-              <a href="https://www.klook.com/zh-TW/activity/95250-mt-fuji-day-tour-private-charter-from-tokyo/" target="_blank" class="charter-book-btn">
-                <span>立即預訂 ➔</span>
-              </a>
-            </div>
-          </div>
-        </div>
+      <!-- 🚘 8 大區域快速選項切換 (關東/關西/北海道/沖繩/中部/九州/東北/四國) -->
+      <div class="charter-region-tabs-bar" id="charterRegionTabsBar">
+        <button class="charter-region-btn active" onclick="switchCharterRegion('kanto', this)">
+          <span>🗼 關東・東京近郊 (6)</span>
+        </button>
+        <button class="charter-region-btn" onclick="switchCharterRegion('kansai', this)">
+          <span>⛩️ 關西・京阪神奈 (6)</span>
+        </button>
+        <button class="charter-region-btn" onclick="switchCharterRegion('hokkaido', this)">
+          <span>❄️ 北海道全境 (6)</span>
+        </button>
+        <button class="charter-region-btn" onclick="switchCharterRegion('okinawa', this)">
+          <span>🌺 沖繩海島 (6)</span>
+        </button>
+        <button class="charter-region-btn" onclick="switchCharterRegion('chubu', this)">
+          <span>🏔️ 中部・北陸昇龍道 (6)</span>
+        </button>
+        <button class="charter-region-btn" onclick="switchCharterRegion('kyushu', this)">
+          <span>🌋 九州全境 (6)</span>
+        </button>
+        <button class="charter-region-btn" onclick="switchCharterRegion('tohoku', this)">
+          <span>🌲 東北秘境美景 (6)</span>
+        </button>
+        <button class="charter-region-btn" onclick="switchCharterRegion('shikoku', this)">
+          <span>🌊 四國・瀨戶內海 (6)</span>
+        </button>
+      </div>
 
-        <!-- 商品 2: 京都奈良包車 -->
-        <div class="charter-product-card">
-          <div class="charter-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80" alt="京都奈良包車" class="charter-card-img">
-            <span class="charter-card-badge">⛩️ 關西經典必遊</span>
-          </div>
-          <div class="charter-card-body">
-            <div>
-              <h3 class="charter-item-title">京都伏見稻荷 ＆ 清水寺 ＆ 宇治抹茶 ＆ 奈良餵鹿 包車</h3>
-              <div class="charter-item-highlights">
-                <span class="charter-hi-tag">大阪/京都接送</span>
-                <span class="charter-hi-tag">避開人潮</span>
-                <span class="charter-hi-tag">長輩親子推薦</span>
-              </div>
-              <p class="charter-item-desc">直達清水寺與伏見稻荷千本鳥居，免爬長坡！午後品嚐宇治老舖抹茶、奈良公園與萌鹿親密合照。</p>
-            </div>
-            <div class="charter-card-footer">
-              <span class="charter-price-hint">⭐ 4.9 顆星好評</span>
-              <a href="https://www.klook.com/zh-TW/activity/79018-kyoto-nara-private-car-charter-day-tour-osaka/" target="_blank" class="charter-book-btn">
-                <span>立即預訂 ➔</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 商品 3: 箱根溫泉包車 -->
-        <div class="charter-product-card">
-          <div class="charter-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80" alt="箱根包車" class="charter-card-img">
-            <span class="charter-card-badge">♨️ 名湯漫遊</span>
-          </div>
-          <div class="charter-card-body">
-            <div>
-              <h3 class="charter-item-title">箱根神社平和鳥居 ＆ 蘆之湖海賊船 ＆ 大涌谷包車一日遊</h3>
-              <div class="charter-item-highlights">
-                <span class="charter-hi-tag">東京直達箱根</span>
-                <span class="charter-hi-tag">免轉登山纜車</span>
-                <span class="charter-hi-tag">免費安全座椅</span>
-              </div>
-              <p class="charter-item-desc">免拖行李轉車，專車直達水上鳥居拍照，品嚐大涌谷黑玉子與蘆之湖美景，悠閒享受日歸溫泉。</p>
-            </div>
-            <div class="charter-card-footer">
-              <span class="charter-price-hint">⭐ 4.8 顆星好評</span>
-              <a href="https://www.klook.com/zh-TW/activity/95252-hakone-day-tour-private-charter-from-tokyo/" target="_blank" class="charter-book-btn">
-                <span>立即預訂 ➔</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 商品 4: 沖繩包車一日遊 -->
-        <div class="charter-product-card">
-          <div class="charter-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80" alt="沖繩包車一日遊" class="charter-card-img">
-            <span class="charter-card-badge">🌊 沖繩自由行</span>
-          </div>
-          <div class="charter-card-body">
-            <div>
-              <h3 class="charter-item-title">沖繩美麗海水族館 ＆ 萬座毛 ＆ 古宇利大橋 客製包車</h3>
-              <div class="charter-item-highlights">
-                <span class="charter-hi-tag">那霸市區/機場</span>
-                <span class="charter-hi-tag">中文客服</span>
-                <span class="charter-hi-tag">不開車輕鬆玩</span>
-              </div>
-              <p class="charter-item-desc">不自駕也能全島暢遊！專車直奔美麗海水族館看黑潮鯨鯊、萬座毛海景象鼻崖與跨海藍色古宇利大橋。</p>
-            </div>
-            <div class="charter-card-footer">
-              <span class="charter-price-hint">⭐ 4.9 顆星好評</span>
-              <a href="https://www.klook.com/zh-TW/activity/16518-private-car-charter-okinawa/" target="_blank" class="charter-book-btn">
-                <span>立即預訂 ➔</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 商品 5: 北海道富良野包車 -->
-        <div class="charter-product-card">
-          <div class="charter-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=700&q=80" alt="北海道富良野美瑛包車" class="charter-card-img">
-            <span class="charter-card-badge">🌸 四季花田秘境</span>
-          </div>
-          <div class="charter-card-body">
-            <div>
-              <h3 class="charter-item-title">北海道富良野薰衣草 ＆ 美瑛青池 札幌出發私人包車</h3>
-              <div class="charter-item-highlights">
-                <span class="charter-hi-tag">札幌出發直達</span>
-                <span class="charter-hi-tag">隨走隨停</span>
-                <span class="charter-hi-tag">避開團體大巴</span>
-              </div>
-              <p class="charter-item-desc">舒適專車漫遊富田農場花海、美瑛白鬚瀑布、夢幻藍色青池與精靈露台，四季皆享極致北國景致。</p>
-            </div>
-            <div class="charter-card-footer">
-              <span class="charter-price-hint">⭐ 4.9 顆星好評</span>
-              <a href="https://www.klook.com/zh-TW/activity/95430-furano-biei-private-day-tour-sapporo/" target="_blank" class="charter-book-btn">
-                <span>立即預訂 ➔</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 商品 6: 機場 24H 專車接送機 -->
-        <div class="charter-product-card" id="sec-airport-transfer">
-          <div class="charter-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80" alt="日本機場接送機" class="charter-card-img">
-            <span class="charter-card-badge">✈️ 24H 專車接機</span>
-          </div>
-          <div class="charter-card-body">
-            <div>
-              <h3 class="charter-item-title">日本主要國際機場 24H 專車接送機 (成田/羽田/關西/新千歲)</h3>
-              <div class="charter-item-highlights">
-                <span class="charter-hi-tag">航班延誤免費等</span>
-                <span class="charter-hi-tag">司機舉牌迎接</span>
-                <span class="charter-hi-tag">直達飯店</span>
-              </div>
-              <p class="charter-item-desc">紅眼航班或深夜抵達最安心！司機親切舉牌協助行李，專車直達飯店門口，免扛大行李擠電車爬樓梯。</p>
-            </div>
-            <div class="charter-card-footer">
-              <span class="charter-price-hint">⭐ 4.9 顆星好評</span>
-              <a href="https://www.klook.com/zh-TW/airport-transfers/" target="_blank" class="charter-book-btn">
-                <span>立即預訂 ➔</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
+      <!-- 🚘 3 個卡牌一整排動態展示 Grid (每區 6 個精選行程) -->
+      <div class="charter-products-grid" id="charterProductsContainer">
+        <!-- JS 動態渲染 6 個行程卡片 -->
       </div>
     </section>
 
@@ -1090,6 +1099,23 @@
     <!-- 🚗 【第 3 區塊】租車自駕線上比價 (專屬分潤優惠) -->
     <section class="charter-section" id="sec-car-rental">
       
+      <!-- 🌺 沖繩自駕專刊黃金 Banner (直連沖繩專區 ＆ ToCoo! 租車分潤) -->
+      <div style="background:linear-gradient(135deg, #0284C7 0%, #0369A1 100%); border-radius:14px; padding:18px 24px; color:#FFFFFF; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; box-shadow:0 6px 20px rgba(2,132,199,0.25);">
+        <div>
+          <div style="font-size:0.75rem; font-weight:800; background:rgba(255,255,255,0.2); padding:2px 8px; border-radius:4px; display:inline-block; margin-bottom:6px; letter-spacing:0.05em;">OKINAWA SPECIAL ｜ 官方特刊</div>
+          <h3 style="font-size:1.2rem; font-weight:900; margin-bottom:4px;">🌺【沖繩海島自駕專刊】那霸機場取車 ＆ 全島親子自駕大地圖</h3>
+          <p style="font-size:0.85rem; opacity:0.92; line-height:1.5;">嚴選全島 MapCode、免費停車格、溜滑梯遮陽指數與 5 天 4 夜不繞路行程算盤！</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="japan_okinawa_drive.html" style="display:inline-flex; align-items:center; gap:6px; padding:10px 18px; background:#FFFFFF; color:#0369A1; text-decoration:none; font-size:0.85rem; font-weight:800; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+            <span>查看沖繩特輯 ➔</span>
+          </a>
+          <a href="https://afflink.one/s/FruK8" target="_blank" style="display:inline-flex; align-items:center; gap:6px; padding:10px 18px; background:#F59E0B; color:#FFFFFF; text-decoration:none; font-size:0.85rem; font-weight:900; border-radius:8px; box-shadow:0 2px 8px rgba(245,158,11,0.35);">
+            <span>🚗 那霸取車比價 ➔</span>
+          </a>
+        </div>
+      </div>
+
       <!-- 租車比價專屬橫幅 (分潤連結：https://afflink.one/s/FruK8) -->
       <div class="tocoo-promo-banner">
         <div class="tocoo-promo-left">
@@ -1178,6 +1204,69 @@
       document.querySelectorAll('.charter-tab-btn').forEach(btn => btn.classList.remove('active'));
       if (el) el.classList.add('active');
     }
-  </script>
+  
+    // 🚘 全日本 8 大地區 48 個客製包車一日遊行程資料庫
+    const CHARTER_DATA = {"kanto": {"name": "🗼 關東・東京近郊", "trips": [{"title": "富士山河口湖 ＆ 新倉山淺間 ＆ 忍野八海 包車一日遊", "tag": "🏆 東京熱銷 No.1", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "highlights": ["中文司導", "飯店專車接送", "免轉車爬坡"], "desc": "打卡新倉山淺間五重塔富士山絕景、漫步忍野八海清泉、日川時計店網美階梯，順遊御殿場 Outlets！", "route": "📍 東京市區飯店出發 ➔ 新倉山淺間公園 ➔ 河口湖大石公園 ➔ 忍野八海 ➔ 返回東京", "hours": "⏱️ 10 小時用車 ｜ 🚗 7~10人座阿爾法/海獅", "url": "https://www.klook.com/zh-TW/activity/95250-mt-fuji-day-tour-private-charter-from-tokyo/"}, {"title": "箱根神社平和鳥居 ＆ 蘆之湖海賊船 ＆ 大涌谷包車", "tag": "♨️ 溫泉名湯漫遊", "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80", "highlights": ["東京直達箱根", "免費安全座椅", "日歸溫泉放鬆"], "desc": "專車直達水上鳥居拍照，免拖行李轉乘登山纜車，品嚐大涌谷黑玉子與蘆之湖美景。", "route": "📍 東京出發 ➔ 箱根神社水中鳥居 ➔ 蘆之湖海賊船 ➔ 大涌谷火山地熱 ➔ 返回東京", "hours": "⏱️ 10 小時用車 ｜ 🚗 舒適商務保母車", "url": "https://www.klook.com/zh-TW/activity/95252-hakone-day-tour-private-charter-from-tokyo/"}, {"title": "鎌倉江之島 ＆ 灌籃高手平交道 ＆ 長谷寺包車一日遊", "tag": "🌊 湘南海岸打卡", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "highlights": ["動漫朝聖", "湘南蔚藍海岸", "江之島海鮮"], "desc": "鎌倉高校前平交道熱血回憶，參拜高德院鎌倉大佛，登江之島海蠟燭燈塔眺望富士山。", "route": "📍 東京出發 ➔ 鎌倉高校前平交道 ➔ 高德院大佛 ➔ 鶴岡八幡宮小町通 ➔ 江之島神社", "hours": "⏱️ 9 小時用車 ｜ 🚗 親子家庭自選", "url": "https://www.klook.com/zh-TW/activity/79017-kamakura-private-car-charter-day-tour-tokyo/"}, {"title": "輕井澤白絲瀑布 ＆ 雲場池 ＆ 舊輕井澤銀座通 包車", "tag": "🌲 避暑與紅葉勝地", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "highlights": ["皇家避暑山莊", "王子 Outlet", "高原教堂漫步"], "desc": "清幽漫步雲場池倒影、白絲瀑布水簾，午後造訪全日本最大輕井澤王子購物廣場悠閒血拼。", "route": "📍 東京出發 ➔ 雲場池天鵝湖 ➔ 白絲瀑布 ➔ 舊輕井澤銀座通 ➔ 王子Outlet購物", "hours": "⏱️ 10 小時用車 ｜ 🚗 豪華商務座駕", "url": "https://www.klook.com/zh-TW/activity/95254-karuizawa-private-day-tour-from-tokyo/"}, {"title": "日光東照宮 ＆ 華嚴瀑布 ＆ 中禪寺湖 世界遺產包車", "tag": "🏯 世界文化遺產", "img": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80", "highlights": ["德川家康靈廟", "日本三大名瀑", "紅葉百選名所"], "desc": "參觀陽明門極致金箔木雕、三猿雕刻，專車行駛伊呂波坂九彎十八拐，登觀景台仰望壯麗瀑布。", "route": "📍 東京出發 ➔ 日光東照宮 ➔ 伊呂波坂山道 ➔ 華嚴瀑布 ➔ 中禪寺湖畔散策", "hours": "⏱️ 10 小時用車 ｜ 🚗 7~10人座專車", "url": "https://www.klook.com/zh-TW/activity/95256-nikko-world-heritage-private-day-tour-from-tokyo/"}, {"title": "伊豆半島 城崎海岸門脇吊橋 ＆ 修善寺溫泉包車一日遊", "tag": "🌊 海蝕斷崖名湯", "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80", "highlights": ["川端康成伊豆舞孃", "竹林小徑足湯", "海景斷崖漫步"], "desc": "漫步修善寺竹林小徑與朱紅戀人橋，挑戰城崎海岸驚險海蝕吊橋，品嚐金目鯛特選海鮮料理。", "route": "📍 東京出發 ➔ 修善寺溫泉古街 ➔ 竹林小徑 ➔ 城崎海岸門脇吊橋 ➔ 大室山纜車", "hours": "⏱️ 10 小時用車 ｜ 🚗 全程中文司導", "url": "https://www.klook.com/zh-TW/activity/95258-izu-peninsula-private-day-tour-from-tokyo/"}]}, "kansai": {"name": "⛩️ 關西・京阪神奈", "trips": [{"title": "京都伏見稻荷 ＆ 清水寺 ＆ 宇治抹茶 ＆ 奈良餵鹿 包車", "tag": "🏆 關西經典必遊", "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80", "highlights": ["大阪/京都接送", "千本鳥居朝聖", "長輩親子推薦"], "desc": "專車直達清水寺與伏見稻荷，省去爬坡擠公車苦惱！午後品嚐宇治老舖抹茶，奈良公園親密餵鹿。", "route": "📍 大阪/京都飯店 ➔ 清水寺三年坂 ➔ 伏見稻荷大社 ➔ 宇治平等院 ➔ 奈良公園", "hours": "⏱️ 10 小時用車 ｜ 🚗 7~10人座保母車", "url": "https://www.klook.com/zh-TW/activity/79018-kyoto-nara-private-car-charter-day-tour-osaka/"}, {"title": "京都天橋立 ＆ 伊根舟屋 ＆ 美山町茅葺之里 海之京都包車", "tag": "🌊 日本三景海之京都", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "highlights": ["搭船餵海鷗", "日本三大絕景", "傳統茅草屋聚落"], "desc": "搭乘觀光船穿梭伊根灣水上舟屋，天橋立飛龍觀「股見」奇景，回程順遊美山童話茅草屋。", "route": "📍 大阪出發 ➔ 天橋立飛龍觀纜車 ➔ 伊根灣舟屋搭船 ➔ 美山町茅葺聚落 ➔ 返回大阪", "hours": "⏱️ 10 小時用車 ｜ 🚗 專車長途直達", "url": "https://www.klook.com/zh-TW/activity/95260-amanohashidate-ine-funaya-private-day-tour-osaka/"}, {"title": "神戶有馬溫泉 ＆ 六甲山千萬夜景 ＆ 明石海峽大橋 包車", "tag": "🌃 日本三大夜景", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "highlights": ["金之湯名湯", "神戶黑毛和牛", "百萬燦爛港灣"], "desc": "漫步有馬溫泉老街享受金之湯碳酸泉，品嚐正宗神戶牛鐵板燒，傍晚登上六甲山俯瞰璀璨夜景。", "route": "📍 大阪出發 ➔ 明石海峽大橋 ➔ 北野異人館 ➔ 有馬溫泉古街 ➔ 六甲山天覽台夜景", "hours": "⏱️ 9 小時用車 ｜ 🚗 舒適家庭座駕", "url": "https://www.klook.com/zh-TW/activity/95262-kobe-arima-onsen-rokko-night-view-private-tour/"}, {"title": "滋賀琵琶湖 白鬚神社水上鳥居 ＆ 近江八幡水鄉包車", "tag": "⛵ 湖畔絕景漫步", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "highlights": ["水中神木鳥居", "搖櫓手搖木船", "近江和牛名饌"], "desc": "拍攝琵琶湖白鬚神社湖中大鳥居朝聖美照，乘搖櫓木船漫遊八幡堀護城河，享用入口即化近江牛排。", "route": "📍 京都出發 ➔ 白鬚神社湖中鳥居 ➔ 滿月寺浮御堂 ➔ 近江八幡水鄉老街 ➔ 彥根城", "hours": "⏱️ 9 小時用車 ｜ 🚗 深度和風私享", "url": "https://www.klook.com/zh-TW/activity/95264-lake-biwa-shirahige-shrine-private-tour-kyoto/"}, {"title": "和歌山白濱海岸 ＆ 三段壁 ＆ 千疊敷 ＆ 圓月島夕陽包車", "tag": "🌊 太平洋海蝕絕壁", "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80", "highlights": ["白良濱細白沙灘", "海賊地下洞窟", "天然足湯溫泉"], "desc": "專車直奔南紀白濱！參觀三段壁地下海盜洞窟與驚濤駭浪，圓月島海蝕洞欣賞日本百選夕陽。", "route": "📍 大阪出發 ➔ 白良濱沙灘 ➔ 三段壁洞窟 ➔ 千疊敷岩石海岸 ➔ 圓月島夕陽落日", "hours": "⏱️ 10 小時用車 ｜ 🚗 親友長途舒適車", "url": "https://www.klook.com/zh-TW/activity/95266-wakayama-shirahama-private-day-tour-from-osaka/"}, {"title": "京都嵐山竹林 ＆ 嵯峨野小火車 ＆ 金閣寺包車一日遊", "tag": "🎋 古都風雅經典", "img": "https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=600&q=80", "highlights": ["小火車劃位免排", "金光閃耀舍利殿", "渡月橋水岸"], "desc": "專車前往嵐山接駁，漫遊野宮神社與天龍寺曹源池庭園，下午造訪金箔倒映鏡湖池的金閣寺。", "route": "📍 京都/大阪出發 ➔ 嵯峨野觀光小火車 ➔ 嵐山竹林小徑 ➔ 渡月橋 ➔ 鹿苑寺金閣寺", "hours": "⏱️ 8 小時用車 ｜ 🚗 司機熟門熟路", "url": "https://www.klook.com/zh-TW/activity/95268-kyoto-arashiyama-kinkakuji-private-day-tour/"}]}, "hokkaido": {"name": "❄️ 北海道全境", "trips": [{"title": "北海道富良野花田 ＆ 美瑛青池 ＆ 白鬚瀑布 私人包車", "tag": "🌸 四季夢幻北國", "img": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80", "highlights": ["富田農場花海", "精靈露台木屋", "美瑛四季彩之丘"], "desc": "夏季七彩花田與薰衣草雪糕，冬季夢幻藍色積雪青池與白鬚瀑布，隨走隨停避開大型遊覽車。", "route": "📍 札幌出發 ➔ 富田農場花海 ➔ 美瑛青池 ➔ 白鬚瀑布 ➔ 森林精靈露台 ➔ 返回札幌", "hours": "⏱️ 10 小時用車 ｜ 🚗 7~10人座雪胎配備", "url": "https://www.klook.com/zh-TW/activity/95430-furano-biei-private-day-tour-sapporo/"}, {"title": "小樽運河 ＆ 天狗山纜車 ＆ 白色戀人觀光工廠 包車", "tag": "浪漫港都巡禮", "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80", "highlights": ["《情書》拍攝地", "小樽音樂盒堂", "天狗山百萬夜景"], "desc": "漫步小樽運河石造倉庫群、品嚐北菓樓泡芙與LeTAO雙層乳酪蛋糕，登天狗山俯瞰港灣點燈。", "route": "📍 札幌出發 ➔ 白色戀人公園 ➔ 小樽運河散策 ➔ 童話十字路口音樂盒館 ➔ 天狗山夜景", "hours": "⏱️ 8 小時用車 ｜ 🚗 舒適家庭座駕", "url": "https://www.klook.com/zh-TW/activity/95432-otaru-canal-tenguyama-private-day-tour-sapporo/"}, {"title": "洞爺湖展望台 ＆ 登別地獄谷 ＆ 昭和新山熊牧場 包車", "tag": "♨️ 地熱溫泉奇觀", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "highlights": ["活火山白煙裊裊", "近距離餵棕熊", "日歸溫泉享受"], "desc": "近距離觀賞登別地獄谷硫磺噴氣孔，造訪仍在冒煙的昭和新山與熊牧場，洞爺湖筒倉展望台全景。", "route": "📍 札幌出發 ➔ 登別地獄谷大湯沼 ➔ 昭和新山熊牧場 ➔ 洞爺湖筒倉展望台 ➔ 中島湖畔", "hours": "⏱️ 10 小時用車 ｜ 🚗 親子長途首選", "url": "https://www.klook.com/zh-TW/activity/95434-lake-toya-noboribetsu-jigokudani-private-tour/"}, {"title": "函館五稜郭 ＆ 金森紅磚倉庫 ＆ 函館山米其林夜景 包車", "tag": "⭐ 世界三大夜景", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "highlights": ["星形五稜郭塔", "函館朝市海鮮丼", "百萬金鑽夜景"], "desc": "登五稜郭塔俯瞰星形要塞全貌，金森倉庫品嚐小丑漢堡，傍晚免排纜車專車直達山頂觀景台。", "route": "📍 函館出發 ➔ 函館朝市海膽丼 ➔ 五稜郭公園 ➔ 金森紅磚倉庫群 ➔ 函館山夜景", "hours": "⏱️ 8 小時用車 ｜ 🚗 免轉公車纜車", "url": "https://www.klook.com/zh-TW/activity/95436-hakodate-goryokaku-night-view-private-tour/"}, {"title": "旭川旭山動物園 ＆ 白金青池 ＆ 拓真館四季美景 包車", "tag": "🐧 企鵝漫步人氣", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "highlights": ["冬季企鵝散步秀", "北極熊海豹水中隧道", "白樺樹林漫步"], "desc": "日本最受歡迎動物園！看企鵝大搖大擺在雪地漫步、北極熊跳水，順道打卡美瑛四季之丘。", "route": "📍 札幌出發 ➔ 旭山動物園 ➔ 旭川拉麵村 ➔ 美瑛青池 ➔ 拓真館白樺林 ➔ 返回札幌", "hours": "⏱️ 10 小時用車 ｜ 🚗 7~10人座專車", "url": "https://www.klook.com/zh-TW/activity/95438-asahiyama-zoo-blue-pond-private-day-tour/"}, {"title": "二世谷 (Niseko) 滑雪場 ＆ 羊蹄山名水公園 專車接送", "tag": "⛷️ 極上粉雪天國", "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80", "highlights": ["JAPOW 頂級野雪", "雪具專車直載", "羊蹄山蝦夷富士"], "desc": "大件雪具與行李隨車直載，從新千歲機場或札幌直奔二世谷四大雪場，品嚐京極名水豆腐與咖啡。", "route": "📍 札幌/機場接送 ➔ 京極町名水公園 ➔ 二世谷比羅夫滑雪場 ➔ 留壽都度假村", "hours": "⏱️ 單程直達/全日包車 ｜ 🚗 四驅四輪雪胎防滑", "url": "https://www.klook.com/zh-TW/activity/95440-niseko-ski-resort-private-transfer-sapporo/"}]}, "okinawa": {"name": "🌺 沖繩海島", "trips": [{"title": "美麗海水族館 ＆ 萬座毛 ＆ 古宇利大橋 沖繩經典包車", "tag": "🏆 沖繩熱銷 No.1", "img": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80", "highlights": ["那霸市區出發", "不自駕輕鬆玩", "黑潮鯨鯊震撼"], "desc": "專車直奔美麗海水族館看黑潮鯨鯊、萬座毛海景象鼻崖與跨越碧藍海水之古宇利大橋。", "route": "📍 那霸出發 ➔ 萬座毛象鼻岩 ➔ 美麗海水族館 ➔ 古宇利大橋跨海 ➔ 返回那霸", "hours": "⏱️ 10 小時用車 ｜ 🚗 中文司導到府接送", "url": "https://www.klook.com/zh-TW/activity/16518-private-car-charter-okinawa/"}, {"title": "沖繩中部美國村 ＆ 東南植物樂園 ＆ 星野海景咖啡 包車", "tag": "🌊 浪漫海景夕陽", "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", "highlights": ["星野 Banta Cafe", "美國村異國街景", "近距離餵水豚"], "desc": "漫步讀谷村依崖而建的星野咖啡露台，美國村落日步道採買，東南植物樂園體驗親子生態樂趣。", "route": "📍 那霸出發 ➔ 殘波岬燈塔 ➔ 星野 Banta Cafe ➔ 東南植物樂園 ➔ 美國村夜景", "hours": "⏱️ 9 小時用車 ｜ 🚗 7~10人座保母車", "url": "https://www.klook.com/zh-TW/activity/95442-okinawa-central-american-village-private-tour/"}, {"title": "沖繩南部齋場御嶽 ＆ 沖繩世界文化王國 ＆ 瀨長島包車", "tag": "⛩️ 琉球文化遺產", "img": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80", "highlights": ["玉泉洞鐘乳石", "地中海純白露台", "世界文化遺產"], "desc": "走進琉球最高聖地齋場御嶽吸收天地靈氣，探訪玉泉洞三十萬根鐘乳石，瀨長島看飛機劃過蔚藍大海。", "route": "📍 那霸出發 ➔ 齋場御嶽 ➔ 沖繩世界玉泉洞 ➔ Cave Cafe 洞穴咖啡 ➔ 瀨長島夕照", "hours": "⏱️ 8 小時用車 ｜ 🚗 舒適冷氣商務車", "url": "https://www.klook.com/zh-TW/activity/95444-okinawa-south-seifa-utaki-gyokusendo-tour/"}, {"title": "沖繩親子公園巡禮 DINO恐龍公園 ＆ 中城跳跳床包車", "tag": "🦖 親子放電必推", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "highlights": ["侏羅紀原生森林", "全島最大彈簧網", "家長輕鬆免開車"], "desc": "全為小孩量身打造！穿梭名護會叫會動的擬真恐龍森林，中城公園大型白色跳跳床瘋狂放電。", "route": "📍 那霸出發 ➔ DINO恐龍公園 ➔ 百年古家大家阿古豬麵 ➔ 中城公園 ➔ 永旺來客夢", "hours": "⏱️ 9 小時用車 ｜ 🚗 免費安全座椅配置", "url": "https://www.klook.com/zh-TW/activity/95446-okinawa-family-kids-parks-private-charter/"}, {"title": "青之洞窟浮潛 ＆ 恩納海灘 ＆ 琉球之牛和牛專車接送", "tag": "🤿 夢幻水下藍洞", "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80", "highlights": ["真榮田岬藍洞", "專車直達免濕身換車", "頂級和牛免排隊"], "desc": "上午中文教練帶領探索青之洞窟神秘藍光，下午萬座海灘玩水踏浪，晚餐專車送達琉球之牛享用和牛燒肉。", "route": "📍 飯店出發 ➔ 真榮田岬青之洞窟浮潛 ➔ 萬座海灘 ➔ 琉球之牛恩納店 ➔ 返回飯店", "hours": "⏱️ 8 小時用車 ｜ 🚗 全程無憂接駁", "url": "https://www.klook.com/zh-TW/activity/95448-okinawa-blue-cave-yakiniku-private-tour/"}, {"title": "iias 豐崎商場 ＆ ASHIBINAA Outlet ＆ 系滿海鮮購物包車", "tag": "🛍️ 登機前最後掃貨", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "highlights": ["免提行李搭公車", "現剖生海膽與龍蝦", "機場專車直接送機"], "desc": "回台當天首選！行李全程放在專車後車廂，系滿市場品嚐現撈生魚片，Outlet 名牌大採購直奔機場登機。", "route": "📍 那霸飯店出發 ➔ 系滿魚市場 ➔ iias豐崎商場 ➔ ASHIBINAA Outlet ➔ 那霸機場送機", "hours": "⏱️ 6~8 小時彈性用車 ｜ 🚗 行李超大容量", "url": "https://www.klook.com/zh-TW/activity/95450-okinawa-outlet-shopping-airport-transfer/"}]}, "chubu": {"name": "🏔️ 中部・北陸昇龍道", "trips": [{"title": "白川鄉合掌村 ＆ 飛驒高山老街 ＆ 宮川朝市 私人包車", "tag": "🏆 昇龍道必遊 No.1", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "highlights": ["世界文化遺產", "飛驒牛握壽司", "童話薑餅屋聚落"], "desc": "名古​​屋出發專車直奔白川鄉合掌造聚落，高山三之町古街品嚐炙燒飛驒和牛，免去擠濃飛巴士排隊之苦。", "route": "📍 名古屋出發 ➔ 飛驒高山三町古街 ➔ 宮川朝市 ➔ 白川鄉合掌村展望台 ➔ 返回名古屋", "hours": "⏱️ 10 小時用車 ｜ 🚗 7~10人座專車", "url": "https://www.klook.com/zh-TW/activity/95452-shirakawago-takayama-private-tour-nagoya/"}, {"title": "立山黑部阿爾卑斯路線 ＆ 扇澤水庫 專車接駁包車", "tag": "雪壁大絕景", "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80", "highlights": ["20公尺巨大雪壁", "免扛行李橫越", "黑部水庫震撼洩洪"], "desc": "每年4~6月開山壯麗雪壁！包車司機協助行李從立山站直接送至扇澤站，讓全家輕鬆享受六種交通工具橫越之旅。", "route": "📍 富山/長野出發 ➔ 立山站 ➔ 室堂雪之大谷 ➔ 黑部水庫 ➔ 扇澤站接駁 ➔ 溫泉飯店", "hours": "⏱️ 全日跨山接送 ｜ 🚗 行李隨車轉運", "url": "https://www.klook.com/zh-TW/activity/95454-tateyama-kurobe-alpine-route-private-transfer/"}, {"title": "金澤兼六園 ＆ 金澤二十一世紀美術館 ＆ 東茶屋街包車", "tag": "🍵 加賀百萬石風華", "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80", "highlights": ["日本三大名園", "金箔冰淇淋", "阿納莫泳池打卡"], "desc": "欣賞兼六園琴姬燈籠與雪吊，漫步東茶屋街格子窗老舖品嚐金箔甜點，近江町市場享用豪華海鮮丼。", "route": "📍 金澤出發 ➔ 兼六園 ➔ 金澤21世紀美術館 ➔ 近江町市場 ➔ 東茶屋街散策", "hours": "⏱️ 8 小時用車 ｜ 🚗 深度和風巡禮", "url": "https://www.klook.com/zh-TW/activity/95456-kanazawa-kenrokuen-higashi-chaya-private-tour/"}, {"title": "長野松本城國寶天守 ＆ 上高地大正池神之故鄉包車", "tag": "🌲 神之故鄉美境", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "highlights": ["國寶黑色烏城", "河童橋雪山倒影", "大正池枯木水波"], "desc": "日本現存最古老五重六階松本城，專車送至上高地管制站轉乘接駁，漫遊穗高連峰下人間仙境。", "route": "📍 名古屋/長野出發 ➔ 國寶松本城 ➔ 大正池枯木倒影 ➔ 河童橋畔 ➔ 返回市區", "hours": "⏱️ 10 小時用車 ｜ 🚗 高原山道專家司機", "url": "https://www.klook.com/zh-TW/activity/95458-kamikochi-matsumoto-castle-private-tour/"}, {"title": "伊勢神宮內宮 ＆ 托福橫丁 ＆ 鳥羽海女小屋海鮮包車", "tag": "⛩️ 全日本心靈故鄉", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "highlights": ["一生必去伊勢神宮", "現烤伊勢龍蝦", "赤福餅老店品嚐"], "desc": "參拜供奉天照大神的最高聖殿伊勢神宮，托福橫丁品嚐伊勢烏龍麵與赤福，海女小屋享用炭火現烤扇貝龍蝦。", "route": "📍 名古屋出發 ➔ 伊勢神宮內宮 ➔ 托福橫丁 ➔ 鳥羽海女小屋現烤海鮮 ➔ 二見浦夫婦岩", "hours": "⏱️ 10 小時用車 ｜ 🚗 7~10人座保母車", "url": "https://www.klook.com/zh-TW/activity/95460-ise-jingu-toba-ama-hut-private-day-tour/"}, {"title": "名古屋近郊 吉卜力公園 ＆ 犬山城 ＆ 樂高樂園包車", "tag": "🏰 親子童話專車", "img": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80", "highlights": ["吉卜力大倉庫", "國寶犬山城下町", "樂高戶外樂園"], "desc": "省去繁瑣電車轉乘與換線！專車直達愛知世博紀念公園吉卜力大倉庫，午後造訪犬山城品嚐烤丸子。", "route": "📍 名古屋出發 ➔ 吉卜力公園 (愛地球博園) ➔ 國寶犬山城 ➔ 犬山下町老街 ➔ 返回名古屋", "hours": "⏱️ 8 小時用車 ｜ 🚗 親子包車首選", "url": "https://www.klook.com/zh-TW/activity/95462-ghibli-park-inuyama-castle-private-tour-nagoya/"}]}, "kyushu": {"name": "🌋 九州全境", "trips": [{"title": "福岡出發 由布院金鱗湖 ＆ 別府地獄溫泉巡禮 客製包車", "tag": "🏆 九州熱銷 No.1", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "highlights": ["金鱗湖朝霧晨景", "海地獄血之池地獄", "由布院湯之坪老街"], "desc": "福岡市區出發，漫步由布院湯之坪街道、品嚐B-Speak蛋糕卷與金賞可樂餅，打卡別府湛藍海地獄溫泉蒸氣。", "route": "📍 福岡飯店出發 ➔ 由布院金鱗湖 ➔ 湯之坪街道 ➔ 別府海地獄 ➔ 竈地獄足湯 ➔ 返回福岡", "hours": "⏱️ 10 小時用車 ｜ 🚗 7~10人座專車", "url": "https://www.klook.com/zh-TW/activity/95464-yufuin-beppu-hells-private-day-tour-fukuoka/"}, {"title": "阿蘇火山直升機體驗 ＆ 草千里之濱 ＆ 熊本城包車", "tag": "🌋 壯麗活火山群", "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80", "highlights": ["俯瞰阿蘇火山口", "草千里騎馬奔馳", "日本三大名城熊本城"], "desc": "直達阿蘇中岳火山口觀景台，在無垠草原草千里騎馬散步，午後造訪加藤清正建造的黑色熊本城天守閣。", "route": "📍 熊本/福岡出發 ➔ 阿蘇中岳火山口 ➔ 草千里之濱 ➔ 白川水源 ➔ 熊本城櫻之馬場", "hours": "⏱️ 10 小時用車 ｜ 🚗 舒適家庭座駕", "url": "https://www.klook.com/zh-TW/activity/95466-aso-volcano-kumamoto-castle-private-day-tour/"}, {"title": "高千穗峽真名井瀑布 划船 ＆ 天岩戶神社 神話包車", "tag": "🚣 宮崎神話峽谷", "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80", "highlights": ["划船穿越瀑布", "天安河原祈願石堆", "高千穗牛名物料理"], "desc": "划木船仰望直瀉而下的真名井瀑布與柱狀玄武岩峽谷，造訪天照大神隱身天岩戶洞穴，靈氣滿溢。", "route": "📍 熊本/福岡出發 ➔ 高千穗峽划船 ➔ 真名井瀑布 ➔ 天岩戶神社 ➔ 天安河原", "hours": "⏱️ 10 小時用車 ｜ 🚗 山路資深司導", "url": "https://www.klook.com/zh-TW/activity/95468-takachiho-gorge-shrine-private-day-tour/"}, {"title": "太宰府天滿宮 ＆ 門司港懷舊街區 ＆ 唐戶市場海鮮包車", "tag": "🦀 關門海峽海鮮", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "highlights": ["隈研吾星巴克", "週末唐戶市場河豚壽司", "復古紅磚洋樓"], "desc": "參拜學問之神太宰府品嚐現烤梅枝餅，前往門司港欣賞百年車站與開門大橋，唐戶市場享用新鮮河豚與黑鮪壽司。", "route": "📍 福岡出發 ➔ 太宰府天滿宮 ➔ 門司港懷舊特區 ➔ 下關唐戶市場 ➔ 皿倉山纜車夜景", "hours": "⏱️ 9 小時用車 ｜ 🚗 親朋好友暢快出遊", "url": "https://www.klook.com/zh-TW/activity/95470-dazaifu-mojiko-karato-market-private-tour/"}, {"title": "長崎九十九島遊船 ＆ 哥拉巴園 ＆ 稻佐山夜景包車一日遊", "tag": "🚢 歐風海港夜景", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "highlights": ["九十九島海賊船", "世界新三大夜景", "長崎強棒拉麵"], "desc": "搭乘未來號海盜船穿梭九十九島碧綠島礁，漫步哥拉巴園木造洋樓，傍晚專車送達稻佐山山頂看百萬星河夜景。", "route": "📍 福岡/長崎出發 ➔ 佐世保九十九島遊船 ➔ 哥拉巴園 ➔ 大浦天主堂 ➔ 稻佐山展望台", "hours": "⏱️ 10 小時用車 ｜ 🚗 免去轉車登山之苦", "url": "https://www.klook.com/zh-TW/activity/95472-nagasaki-kujukushima-inasayama-night-view-tour/"}, {"title": "鹿兒島櫻島活火山 ＆ 仙巖園磯庭園 ＆ 指宿砂浴溫泉包車", "tag": "🌋 砂浴世界唯一", "img": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80", "highlights": ["近距離眺望櫻島火山", "天然熱砂覆蓋排毒", "篤姬薩摩藩莊園"], "desc": "搭車登櫻島渡輪橫越錦江灣，仙巖園遠眺櫻島借景庭園，前往指宿海岸體驗世界罕見天然地熱砂浴。", "route": "📍 鹿兒島出發 ➔ 櫻島熔岩展望所 ➔ 仙巖園 ➔ 指宿砂蒸溫泉會館 ➔ 西大山最南端車站", "hours": "⏱️ 10 小時用車 ｜ 🚗 7~10人座專車", "url": "https://www.klook.com/zh-TW/activity/95474-kagoshima-sakurajima-ibusuki-sand-bath-tour/"}]}, "tohoku": {"name": "🌲 東北秘境美景", "trips": [{"title": "山形銀山溫泉 ＆ 藏王樹冰雪怪纜車 ＆ 藏王溫泉包車", "tag": "🏆 東北冬雪 No.1", "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80", "highlights": ["大正浪漫大雪街景", "藏王巨型冰怪群", "宮崎駿神隱少女靈感"], "desc": "雪季全日本最難預約勝地！專車直達銀山溫泉煤氣燈黃昏夜景，搭乘藏王纜車俯瞰壯觀樹冰群。", "route": "📍 仙台/山形出發 ➔ 藏王纜車樹冰山頂 ➔ 藏王溫泉街 ➔ 銀山溫泉大雪點燈 ➔ 返回市區", "hours": "⏱️ 10 小時用車 ｜ 🚗 雪地資深四驅專車", "url": "https://www.klook.com/zh-TW/activity/95476-ginzan-onsen-zao-snow-monsters-private-tour/"}, {"title": "青森奧入瀨溪流 ＆ 十和田湖遊船 ＆ 弘前城包車一日遊", "tag": "🍁 芬多精紅葉名所", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "highlights": ["銚子大瀑布水氣", "十和田湖碧綠倒影", "弘前城櫻花護城河"], "desc": "沿著奧入瀨溪流 14 公里精華段停靠拍攝阿修羅之流與銚子大瀑布，漫遊十和田湖畔乙女之像。", "route": "📍 青森/八戶出發 ➔ 奧入瀨溪流精華段 ➔ 銚子大瀑布 ➔ 十和田湖休屋 ➔ 弘前公園", "hours": "⏱️ 9 小時用車 ｜ 🚗 專車悠閒停靠", "url": "https://www.klook.com/zh-TW/activity/95478-oirase-stream-lake-towada-hirosaki-tour/"}, {"title": "福島會津若松 大內宿茅草屋 ＆ 只見線鐵道第一鐵橋包車", "tag": "📸 鐵道攝影聖地", "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80", "highlights": ["大蔥吃蕎麥麵", "江戶宿場傳統街景", "只見線川霧列車穿越"], "desc": "打卡全世界攝影師瘋狂的只見線第一鐵橋列車行駛倒影，大內宿茅草屋街道品嚐名物大蔥蕎麥麵。", "route": "📍 郡山/會津出發 ➔ 只見線第一鐵橋展望台 ➔ 大內宿古宿場 ➔ 會津鶴之城 ➔ 返回市區", "hours": "⏱️ 9 小時用車 ｜ 🚗 司機精準掌握火車時間", "url": "https://www.klook.com/zh-TW/activity/95480-ouchijuku-tadami-line-bridge-private-tour/"}, {"title": "秋田田澤湖金之辰子 ＆ 角館武家屋敷陸奧小京都包車", "tag": "🎋 陸奧武士小京都", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "highlights": ["全日本最深琉璃湖", "黑色木造武士宅邸", "比內地雞親子丼"], "desc": "田澤湖深邃琉璃藍湖水映襯金色辰子像，角館漫步三百年青柳家與石黑家武家宅邸，品嚐比內地雞美食。", "route": "📍 秋田/盛岡出發 ➔ 田澤湖御座石神社 ➔ 金之辰子像 ➔ 角館武家屋敷通 ➔ 乳頭溫泉鄉", "hours": "⏱️ 9 小時用車 ｜ 🚗 7~10人座座駕", "url": "https://www.klook.com/zh-TW/activity/95482-lake-tazawa-kakunodate-samurai-private-tour/"}, {"title": "宮城松島海岸 日本三景遊船 ＆ 嚴美溪郭公糰子包車", "tag": "⛵ 日本三大名景", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "highlights": ["松島灣兩百六十島", "飛天飛索飛天糰子", "瑞嚴寺國寶庭園"], "desc": "松島搭乘遊船欣賞奇岩怪石松樹，五大堂紅色透橋，午後前往一之關嚴美溪體驗吊籃飛天糰子與翡翠溪谷。", "route": "📍 仙台出發 ➔ 松島海岸搭船 ➔ 五大堂與瑞嚴寺 ➔ 平泉中尊寺金色堂 ➔ 嚴美溪飛天糰子", "hours": "⏱️ 9 小時用車 ｜ 🚗 仙台出發一日往返", "url": "https://www.klook.com/zh-TW/activity/95484-matsushima-bay-genbikei-gorge-private-tour/"}, {"title": "岩手猊鼻溪遊船 ＆ 平泉中尊寺世界遺產 ＆ 毛越寺包車", "tag": "🚣 船夫高亢船歌", "img": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80", "highlights": ["百公尺懸崖手搖舟", "奧州藤原金箔佛堂", "許願投石試手氣"], "desc": "搭乘手搖木舟穿行於猊鼻溪壯麗石灰岩絕壁之間，聆聽船夫清脆悠揚猊鼻追分民謠，投擲幸運福石。", "route": "📍 仙台/盛岡出發 ➔ 猊鼻溪手搖扁舟 ➔ 平泉中尊寺金色堂 ➔ 毛越寺淨土庭園 ➔ 返回市區", "hours": "⏱️ 9 小時用車 ｜ 🚗 舒適家庭座駕", "url": "https://www.klook.com/zh-TW/activity/95486-geibikei-gorge-chusonji-temple-private-tour/"}]}, "shikoku": {"name": "🌊 四國・瀨戶內海", "trips": [{"title": "香川金刀比羅宮 ＆ 父母濱天空之鏡 ＆ 栗林公園包車", "tag": "🏆 四國熱銷 No.1", "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80", "highlights": ["南美烏尤尼天空之鏡", "讚岐手打烏龍麵", "米其林三星栗林公園"], "desc": "參拜一生必登一次的日本人金刀比羅宮，父母濱退潮無風時拍出絕美天空之鏡夕陽剪影，栗林公園掬月亭品茗。", "route": "📍 高松出發 ➔ 栗林公園 ➔ 讚岐手打烏龍麵名店 ➔ 金刀比羅宮表參道 ➔ 父母濱天空之鏡", "hours": "⏱️ 9 小時用車 ｜ 🚗 司機精算潮汐時間", "url": "https://www.klook.com/zh-TW/activity/95488-chichibugahama-kotohiragu-ritsurin-tour/"}, {"title": "愛媛道後溫泉本館 ＆ 松山城空中纜車 ＆ 下灘車站包車", "tag": "♨️ 三千年最古神湯", "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80", "highlights": ["神隱少女油屋原型", "神隱鐵道水中鐵軌", "日本第一海景無人站"], "desc": "參觀三千年歷史道後溫泉本館木造三層樓，搭空中纜車登松山城俯瞰瀨戶內海，下灘車站拍青春18海天一色。", "route": "📍 松山出發 ➔ 道後溫泉本館與少爺鐘 ➔ 松山城天守閣 ➔ 下灘車站海景夕陽 ➔ 內子座老街", "hours": "⏱️ 8 小時用車 ｜ 🚗 舒適商務專車", "url": "https://www.klook.com/zh-TW/activity/95490-dogo-onsen-matsuyama-castle-shimonada-tour/"}, {"title": "德島鳴門漩渦遊船 ＆ 大塚國際美術館 ＆ 祖谷藤橋包車", "tag": "🌀 世界最大海洋漩渦", "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80", "highlights": ["鳴門大潮巨型漩渦", "世界名畫陶板複製", "日本三大秘境蔓橋"], "desc": "搭乘渦潮觀潮船近距離感受直徑達 20 公尺海洋巨漩渦震撼，大塚美術館一比一重現西斯汀教堂壁畫。", "route": "📍 德島/高松出發 ➔ 鳴門海峽漩渦觀潮船 ➔ 渦之道步道 ➔ 大塚國際美術館 ➔ 祖谷蔓橋", "hours": "⏱️ 10 小時用車 ｜ 🚗 司機依大潮潮汐安排", "url": "https://www.klook.com/zh-TW/activity/95492-naruto-whirlpools-otsuka-museum-iya-bridge-tour/"}, {"title": "小豆島橄欖公園 ＆ 魔女宅急便飛天掃帚 ＆ 天使之路包車", "tag": "🧹 瀨戶內海魔女飛行", "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80", "highlights": ["純白希臘風車", "退潮戀人漫步沙道", "寒霞溪纜車奇岩"], "desc": "在小豆島橄欖公園借用魔法掃帚與希臘風車合影，天使之路沙灘在退潮時浮現，牽手走過傳說帶來幸福。", "route": "📍 高松港搭渡輪至小豆島 ➔ 天使之路 ➔ 橄欖公園白色風車 ➔ 二十四之瞳電影村 ➔ 寒霞溪", "hours": "⏱️ 全日島上包車 ｜ 🚗 隨船到港接駁", "url": "https://www.klook.com/zh-TW/activity/95494-shodoshima-olive-park-angel-road-private-tour/"}, {"title": "高知桂濱坂本龍馬像 ＆ 弘人市場炙燒鰹魚 ＆ 仁淀川包車", "tag": "🐟 奇蹟的仁淀藍", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", "highlights": ["稻草現炙鰹魚半敲燒", "仁淀川水晶玻璃水質", "高知城百年天守"], "desc": "在弘人市場欣賞大火稻草炙燒鰹魚並搭配蒜片生薑，漫步桂濱月牙灣仰望坂本龍馬銅像，沉浸於奇蹟仁淀藍秘境。", "route": "📍 高知出發 ➔ 桂濱海岸與坂本龍馬像 ➔ 弘人市場在地美食 ➔ 高知城 ➔ 仁淀川安居溪谷", "hours": "⏱️ 9 小時用車 ｜ 🚗 司機私房推薦", "url": "https://www.klook.com/zh-TW/activity/95496-kochi-katsurahama-hirome-market-niyodo-blue-tour/"}, {"title": "島波海道跨海七橋 ＆ 尾道千光寺貓之細道 包車一日遊", "tag": "🚲 瀨戶內海跳島公路", "img": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80", "highlights": ["七座雄偉跨海大橋", "尾道復古坡道與萌貓", "耕三寺未來心之丘"], "desc": "開車橫跨連結本州與四國的島波海道，造訪生口島純白大理石庭園未來心之丘，尾道纜車俯瞰千光寺絕景。", "route": "📍 廣島/松山出發 ➔ 島波海道跨海大橋 ➔ 生口島耕三寺 ➔ 尾道千光寺纜車 ➔ 貓之細道", "hours": "⏱️ 10 小時用車 ｜ 🚗 跨海跳島私享", "url": "https://www.klook.com/zh-TW/activity/95498-shimanami-kaido-onomichi-senkoji-private-tour/"}]}};
+    let currentCharterRegion = 'kanto';
+
+    function renderCharterTrips(regionKey) {
+      const container = document.getElementById('charterProductsContainer');
+      if (!container) return;
+      const regData = CHARTER_DATA[regionKey] || CHARTER_DATA['kanto'];
+      const trips = regData.trips || [];
+
+      let html = '';
+      trips.forEach(trip => {
+        const hiHtml = (trip.highlights || []).map(h => `<span class="charter-hi-tag">${h}</span>`).join('');
+        
+        html += `
+          <div class="charter-product-card">
+            <div class="charter-card-img-wrap">
+              <img src="${trip.img}" alt="${trip.title}" class="charter-card-img" loading="lazy">
+              <span class="charter-card-badge">${trip.tag}</span>
+            </div>
+            <div class="charter-card-body" style="padding:18px 20px; display:flex; flex-direction:column; flex:1;">
+              <div>
+                <h3 class="charter-item-title" style="font-size:1.05rem; font-weight:800; line-height:1.4; margin-bottom:8px; color:#0F172A;">${trip.title}</h3>
+                <div class="charter-item-highlights" style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px;">
+                  ${hiHtml}
+                </div>
+                <p class="charter-item-desc" style="font-size:0.82rem; color:#475569; line-height:1.55; margin-bottom:10px;">${trip.desc}</p>
+                
+                <!-- 經典站點順路圖 -->
+                <div class="charter-route-flow">
+                  ${trip.route}
+                </div>
+                <div style="font-size:0.75rem; color:#0369A1; font-weight:700; margin-bottom:14px;">
+                  ${trip.hours}
+                </div>
+              </div>
+
+              <!-- 預約按鈕：日系茜紅漸層，絕對不含任何 klook 字樣 -->
+              <div style="margin-top:auto; padding-top:10px;">
+                <a href="${trip.url}" target="_blank" class="charter-book-btn" title="即時預約專屬座駕">
+                  <span>🎟️ 預約中文包車一日遊 ➔</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+
+    function switchCharterRegion(regKey, btn) {
+      currentCharterRegion = regKey;
+      document.querySelectorAll('.charter-region-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderCharterTrips(regKey);
+    }
+
+    // 頁面載入時預設初始化關東包車
+    document.addEventListener('DOMContentLoaded', function() {
+      renderCharterTrips('kanto');
+    });
+
+</script>
 </body>
 </html>

@@ -764,17 +764,15 @@
 </head>
 <body>
 
-  <!-- 頂部與首頁一致的 Header (中央 LOGO 點選即回首頁) -->
+    <!-- 頂部與首頁一致的 Header (中央 LOGO 點選即回首頁) -->
   <header class="app-header">
     <div class="header-left">
-      <a href="tabi_news_preview.html" class="header-util-btn" title="返回首頁">
-        <span>🏠 返回首頁</span>
-      </a>
+      <!-- 左側平衡留白，保障中央品牌在視覺上精準居中 -->
     </div>
 
-    <!-- 🌟 正中間品牌標誌與文字 (點擊直達首頁) -->
+    <!-- 🌟 正中間單一品牌標誌與文字 (點擊直達首頁) -->
     <div class="header-center">
-      <a href="tabi_news_preview.html" class="brand-wrap brand-centered" title="返回首頁">
+      <a href="tabi_news_preview.html" class="brand-wrap brand-centered" title="日旅報報 JAPAN TABI">
         <div class="fuji-logo-box">
           <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" class="brand-tabi-logo">
         </div>
@@ -785,17 +783,6 @@
           <div class="brand-sub-official-wrap">
             <span class="brand-title-en" id="brandTitleEn">JAPAN TABI</span>
             <span class="brand-tag-official" id="brandTag">日本觀光情報</span>
-          </div>
-        </div>
-      </a>
-    </div>
-        <div class="brand-text">
-          <h1 id="brandTitle">
-            <span class="brand-title-zh">日旅報報</span>
-          </h1>
-          <div class="brand-sub-official-wrap">
-            <span class="brand-title-en">JAPAN TABI</span>
-            <span class="brand-tag-official">日本觀光情報</span>
           </div>
         </div>
       </a>
@@ -1238,26 +1225,229 @@
       else fromSel.value = 'taipei';
     }
 
-    // 頂部四大服務切換
-    function switchSearchTab(type, btn) {
+    // 🌟 四大服務格子按鈕連動切換 (Tab Switch)
+    let currentTab = 'flights';
+    function switchSearchTab(tabKey, btn) {
+      currentTab = tabKey;
       document.querySelectorAll('.search-tab-pill').forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
 
-      if (type === 'hotels') {
-        window.open(buildTripDeepLink('/hotels/list?city=tokyo'), '_blank');
-      } else if (type === 'charter') {
-        window.open(buildTripDeepLink('/carhire/'), '_blank');
-      } else if (type === 'jrpass') {
-        window.open(buildTripDeepLink('/trains/'), '_blank');
+      const formGrid = document.getElementById('flightSearchForm');
+      if (!formGrid) return;
+
+      if (tabKey === 'flights') {
+        formGrid.innerHTML = `
+          <!-- 出發地 -->
+          <div class="form-field-box">
+            <span class="field-label">出發地 (From)</span>
+            <select id="flightFrom" class="field-select">
+              <option value="taipei" selected>🇹🇼 台北 (TPE / TSA)</option>
+              <option value="kaohsiung">🇹🇼 高雄 (KHH)</option>
+              <option value="bangkok">🇹🇭 曼谷 (BKK / DMK)</option>
+              <option value="hongkong">🇭🇰 香港 (HKG)</option>
+              <option value="singapore">🇸🇬 新加坡 (SIN)</option>
+              <option value="kualalumpur">🇲🇾 吉隆坡 (KUL)</option>
+            </select>
+          </div>
+
+          <!-- 對調按鈕 -->
+          <div class="swap-btn-wrap">
+            <button class="btn-swap" onclick="swapOriginDest()" title="對調出發與抵達地">⇄</button>
+          </div>
+
+          <!-- 目的地 -->
+          <div class="form-field-box">
+            <span class="field-label">目的地 (To 日本航點)</span>
+            <select id="flightTo" class="field-select">
+              <option value="tokyo" selected>🗼 東京 全部機場 (NRT/HND)</option>
+              <option value="osaka">🐙 大阪 關西 (KIX)</option>
+              <option value="sapporo">❄️ 札幌 新千歲 (CTS)</option>
+              <option value="fukuoka">🍜 福岡 (FUK)</option>
+              <option value="okinawa">🌺 沖繩 那霸 (OKA)</option>
+              <option value="nagoya">🏔️ 名古屋 中部 (NGO)</option>
+              <option value="sendai">🌲 仙台 (SDJ)</option>
+            </select>
+          </div>
+
+          <!-- 出發日期 -->
+          <div class="form-field-box">
+            <span class="field-label">出發日期 (Depart)</span>
+            <input type="date" id="flightDepartDate" class="field-input">
+          </div>
+
+          <!-- 回程日期 -->
+          <div class="form-field-box">
+            <span class="field-label">回程日期 (Return)</span>
+            <input type="date" id="flightReturnDate" class="field-input">
+          </div>
+
+          <!-- 人數與艙等 -->
+          <div class="form-field-box">
+            <span class="field-label">人數與艙等</span>
+            <select id="flightClass" class="field-select">
+              <option value="1_econ" selected>1位成人, 經濟艙</option>
+              <option value="2_econ">2位成人, 經濟艙</option>
+              <option value="family">2位成人 + 1位兒童</option>
+              <option value="1_biz">1位成人, 商務艙</option>
+            </select>
+          </div>
+
+          <!-- 搜尋按鈕 (Trip.com 亮藍漸層) -->
+          <div>
+            <button class="btn-search-flights" onclick="executeFlightSearch()">
+              <span>搜尋機票 🚀</span>
+            </button>
+          </div>
+        `;
+        setDefaultDates();
+      } else if (tabKey === 'hotels') {
+        formGrid.innerHTML = `
+          <div class="form-field-box" style="grid-column: span 2;">
+            <span class="field-label">入住目的地 (City)</span>
+            <select id="hotelCity" class="field-select">
+              <option value="tokyo" selected>🗼 東京 (新宿/銀座/澀谷/淺草)</option>
+              <option value="osaka">🐙 大阪 (難波/心齋橋/梅田)</option>
+              <option value="kyoto">🍵 京都 (祇園/京都車站/河原町)</option>
+              <option value="sapporo">❄️ 札幌・北海道 (薄野/小樽/富良野)</option>
+              <option value="fukuoka">🍜 福岡・九州 (博多/天神)</option>
+              <option value="okinawa">🌺 沖繩 (那霸/美國村/恩納村)</option>
+            </select>
+          </div>
+          <div class="form-field-box">
+            <span class="field-label">入住日期 (Check-in)</span>
+            <input type="date" id="hotelCheckIn" class="field-input">
+          </div>
+          <div class="form-field-box">
+            <span class="field-label">退房日期 (Check-out)</span>
+            <input type="date" id="hotelCheckOut" class="field-input">
+          </div>
+          <div class="form-field-box">
+            <span class="field-label">房型與人數</span>
+            <select id="hotelGuests" class="field-select">
+              <option value="2_adults" selected>1 間客房, 2 位成人</option>
+              <option value="1_adult">1 間客房, 1 位成人</option>
+              <option value="family">1 間客房, 2 大 1 小</option>
+            </select>
+          </div>
+          <div>
+            <button class="btn-search-flights" onclick="executeHotelSearch()">
+              <span>搜尋超值飯店 🏨</span>
+            </button>
+          </div>
+        `;
+        setHotelDefaultDates();
+      } else if (tabKey === 'charter') {
+        formGrid.innerHTML = `
+          <div class="form-field-box" style="grid-column: span 2;">
+            <span class="field-label">抵達機場 (Airport)</span>
+            <select id="charterAirport" class="field-select">
+              <option value="NRT" selected>✈️ 成田國際機場 (NRT) ➔ 東京市區</option>
+              <option value="HND">✈️ 羽田國際機場 (HND) ➔ 東京市區</option>
+              <option value="KIX">✈️ 關西國際機場 (KIX) ➔ 大阪/京都</option>
+              <option value="FUK">✈️ 福岡國際機場 (FUK) ➔ 福岡市區/別府</option>
+              <option value="CTS">✈️ 新千歲國際機場 (CTS) ➔ 札幌/二世谷</option>
+            </select>
+          </div>
+          <div class="form-field-box" style="grid-column: span 2;">
+            <span class="field-label">接送日期與時間</span>
+            <input type="date" id="charterDate" class="field-input">
+          </div>
+          <div class="form-field-box">
+            <span class="field-label">乘坐人數與行李數</span>
+            <select class="field-select">
+              <option selected>1~4 人座 (阿爾法/商務保母車)</option>
+              <option>5~6 人座 (豐田海獅舒適型)</option>
+              <option>7~9 人座 (家庭大團大容量)</option>
+            </select>
+          </div>
+          <div>
+            <button class="btn-search-flights" onclick="window.location.href='japan_charter_rental.html'">
+              <span>搜尋中文包車 🚗</span>
+            </button>
+          </div>
+        `;
+        const d = new Date(); d.setDate(d.getDate() + 7);
+        const el = document.getElementById('charterDate');
+        if (el) el.value = d.toISOString().split('T')[0];
+      } else if (tabKey === 'jrpass') {
+        formGrid.innerHTML = `
+          <div class="form-field-box" style="grid-column: span 3;">
+            <span class="field-label">周遊券種類 (JR Pass)</span>
+            <select id="jrPassType" class="field-select">
+              <option value="all_japan" selected>🚄 全日本 JR PASS 鐵路周遊券 (7/14/21日)</option>
+              <option value="jr_east">🍁 JR 東日本鐵路周遊券 (東北地區 / 長野新潟)</option>
+              <option value="jr_west">🐙 JR 關西廣域周遊券 (大阪/京都/城崎溫泉/岡山)</option>
+              <option value="jr_kyushu">🌋 JR 九州鐵路周遊券 (全九州/北部九州)</option>
+              <option value="hokkaido">❄️ JR 北海道鐵路周遊券 (札幌/函館/富良野)</option>
+            </select>
+          </div>
+          <div class="form-field-box" style="grid-column: span 2;">
+            <span class="field-label">預計啟用日期</span>
+            <input type="date" id="jrPassDate" class="field-input">
+          </div>
+          <div>
+            <button class="btn-search-flights" onclick="executeJrPassSearch()">
+              <span>查詢鐵道票券 🎫</span>
+            </button>
+          </div>
+        `;
+        const d = new Date(); d.setDate(d.getDate() + 7);
+        const el = document.getElementById('jrPassDate');
+        if (el) el.value = d.toISOString().split('T')[0];
       }
+    }
+
+    function executeHotelSearch() {
+      const city = document.getElementById('hotelCity')?.value || 'tokyo';
+      const cin = document.getElementById('hotelCheckIn')?.value;
+      const cout = document.getElementById('hotelCheckOut')?.value;
+      let path = `/hotels/list?city=${city}`;
+      if (cin) path += `&checkIn=${cin}`;
+      if (cout) path += `&checkOut=${cout}`;
+      const url = buildTripDeepLink(path);
+      window.open(url, '_blank');
+    }
+
+    function executeJrPassSearch() {
+      const pass = document.getElementById('jrPassType')?.value || 'all_japan';
+      const url = buildTripDeepLink(`/trains/japan-rail-pass?type=${pass}`);
+      window.open(url, '_blank');
+    }
+
+    function setHotelDefaultDates() {
+      const today = new Date();
+      const inDate = new Date(today);
+      inDate.setDate(today.getDate() + 7);
+      const outDate = new Date(inDate);
+      outDate.setDate(inDate.getDate() + 5);
+
+      const inEl = document.getElementById('hotelCheckIn');
+      const outEl = document.getElementById('hotelCheckOut');
+      if (inEl) inEl.value = inDate.toISOString().split('T')[0];
+      if (outEl) outEl.value = outDate.toISOString().split('T')[0];
+    }
+
+    function setDefaultDates() {
+      const today = new Date();
+      const nextTue = new Date(today);
+      // 預設 7 天後的週二出發、週日回程（通常是特惠較低價時段）
+      const dayOffset = (2 - today.getDay() + 7) % 7 || 7;
+      nextTue.setDate(today.getDate() + dayOffset + 7);
+      const nextSun = new Date(nextTue);
+      nextSun.setDate(nextTue.getDate() + 5);
+
+      const dInput = document.getElementById('flightDepartDate');
+      const rInput = document.getElementById('flightReturnDate');
+      if (dInput) dInput.value = nextTue.toISOString().split('T')[0];
+      if (rInput) rInput.value = nextSun.toISOString().split('T')[0];
     }
 
     // 執行機票搜尋跳轉 (帶 30 天 Cookie 歸因)
     function executeFlightSearch() {
-      const from = document.getElementById('flightFrom').value || 'taipei';
-      const to = document.getElementById('flightTo').value || 'tokyo';
-      const dDate = document.getElementById('flightDepartDate').value;
-      const rDate = document.getElementById('flightReturnDate').value;
+      const from = document.getElementById('flightFrom')?.value || 'taipei';
+      const to = document.getElementById('flightTo')?.value || 'tokyo';
+      const dDate = document.getElementById('flightDepartDate')?.value;
+      const rDate = document.getElementById('flightReturnDate')?.value;
 
       let path = `/flights/${from}-to-${to}`;
       if (dDate) {
@@ -1270,20 +1460,6 @@
 
     // 初始化日期預設值
     document.addEventListener('DOMContentLoaded', function() {
-      const today = new Date();
-      const nextFri = new Date(today);
-      nextFri.setDate(today.getDate() + ((7 - today.getDay() + 5) % 7 || 7));
-      const nextTue = new Date(nextFri);
-      nextTue.setDate(nextFri.getDate() + 4);
-
-      const dInput = document.getElementById('flightDepartDate');
-      const rInput = document.getElementById('flightReturnDate');
-      if (dInput) dInput.value = nextFri.toISOString().split('T')[0];
-      if (rInput) rInput.value = nextTue.toISOString().split('T')[0];
-
-      renderRoutesGrid('taiwan');
+      setDefaultDates();
+      renderRoutesGrid('all');
     });
-  </script>
-
-</body>
-</html>
