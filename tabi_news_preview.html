@@ -2598,75 +2598,75 @@
       }
     }
     .deal-big-card {
+      position: relative;
       background: #FFFFFF;
-      border: 2px solid #F0EBE5;
-      border-radius: 22px;
+      border: 2px solid #E2E8F0;
+      border-radius: 20px;
       overflow: hidden;
       cursor: pointer;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
       display: flex;
       flex-direction: column;
     }
     .deal-big-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
-      border-color: #FFB76D;
+      box-shadow: 0 12px 28px rgba(9, 79, 141, 0.12);
+      border-color: #094F8D;
     }
     .deal-big-card.active {
-      border-color: #F97940;
-      box-shadow: 0 8px 26px rgba(249, 121, 64, 0.22);
-      background: #FFFAF8;
+      border-color: #094F8D;
+      box-shadow: 0 8px 24px rgba(9, 79, 141, 0.22);
     }
     .deal-card-img-wrap {
       position: relative;
       width: 100%;
-      height: 165px;
+      height: 240px;
       overflow: hidden;
+      background: #F8FAFC;
     }
     .deal-card-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       transition: transform 0.4s ease;
+      display: block;
     }
     .deal-big-card:hover .deal-card-img-wrap img {
-      transform: scale(1.06);
+      transform: scale(1.05);
     }
-    .deal-card-gradient {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 60%);
-    }
-    .deal-floating-tag {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(8px);
-      color: #FFFFFF;
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 3px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .deal-big-card.active .deal-floating-tag {
-      background: #F97940;
-      border-color: #F97940;
-    }
-    .deal-card-content {
-      padding: 16px;
+    .deal-card-bottom-bar {
+      padding: 14px 18px;
+      background: #FFFFFF;
       display: flex;
-      flex-direction: column;
-      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #F1F5F9;
+      transition: background 0.2s ease;
+    }
+    .deal-big-card.active .deal-card-bottom-bar {
+      background: #F0F7FD;
     }
     .deal-item-name {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       font-weight: 900;
-      color: #2D3748;
-      margin: 0 0 10px;
-      line-height: 1.25;
+      color: #1E293B;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+    .deal-big-card.active .deal-item-name {
+      color: #094F8D;
+    }
+    .deal-item-arrow {
+      font-size: 0.95rem;
+      color: #94A3B8;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .deal-big-card:hover .deal-item-arrow,
+    .deal-big-card.active .deal-item-arrow {
+      color: #094F8D;
+      transform: translateX(3px);
     }
     .deal-meta-rows {
       display: flex;
@@ -5815,94 +5815,52 @@
     <section class="hot-deals-section" id="hotDealsSection">
 
 
-      <!-- 四大菜單大卡片列 (點擊切換主題並連動下方即時名所) -->
+      <!-- 四大菜單大卡片列 (點擊切換主題並連動下方即時名所・僅寫菜單名稱・極簡純粹) -->
       <div class="deals-cards-grid" id="dealsCardsScroller">
         
-        <!-- 1. 🌸 賞花前線 -->
+        <!-- 1. 賞花前線 -->
         <div class="deal-big-card active" id="dealCard_flower" onclick="switchMasterHub('flower', this)">
           <div class="deal-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=600&q=80" alt="賞花前線" loading="lazy">
-            <div class="deal-card-gradient"></div>
-            <div class="deal-floating-tag">🌸 1. 四季花期</div>
+            <img src="./images/menu_sakura.jpg" alt="賞花前線" loading="lazy">
           </div>
-          <div class="deal-card-content">
-            <h3 class="deal-item-name">賞花前線 (Cherry Blossom)</h3>
-            <div class="deal-meta-rows">
-              <div class="deal-meta-item">🌸 2026 前線即時預報</div>
-              <div class="deal-meta-item">⭐ 全日本 80 大名所</div>
-              <div class="deal-meta-item">🍵 景觀茶寮・米其林席位</div>
-            </div>
-            <button class="btn-deal-discover">
-              <span>Discover Now</span>
-              <span>➔</span>
-            </button>
+          <div class="deal-card-bottom-bar">
+            <h3 class="deal-item-name">賞花前線</h3>
+            <span class="deal-item-arrow">➔</span>
           </div>
         </div>
 
-        <!-- 2. ❄️ 極上粉雪 -->
+        <!-- 2. 極上粉雪 -->
         <div class="deal-big-card" id="dealCard_snow" onclick="switchMasterHub('snow', this)">
           <div class="deal-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="極上粉雪" loading="lazy">
-            <div class="deal-card-gradient"></div>
-            <div class="deal-floating-tag">❄️ 2. 極上粉雪</div>
+            <img src="./images/menu_snow.jpg" alt="極上粉雪" loading="lazy">
           </div>
-          <div class="deal-card-content">
-            <h3 class="deal-item-name">極上粉雪 (Ski & Snow)</h3>
-            <div class="deal-meta-rows">
-              <div class="deal-meta-item">⛷️ 100% 天然鬆軟乾粉雪</div>
-              <div class="deal-meta-item">♨️ 越後湯澤・白馬・二世谷</div>
-              <div class="deal-meta-item">🎿 中文教練・雪具租借</div>
-            </div>
-            <button class="btn-deal-discover">
-              <span>Discover Now</span>
-              <span>➔</span>
-            </button>
+          <div class="deal-card-bottom-bar">
+            <h3 class="deal-item-name">極上粉雪</h3>
+            <span class="deal-item-arrow">➔</span>
           </div>
         </div>
 
-        <!-- 3. ⛺ 露營自駕 -->
+        <!-- 3. 露營與自駕 -->
         <div class="deal-big-card" id="dealCard_camp_charter" onclick="switchMasterHub('camp_charter', this)">
           <div class="deal-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="露營與自駕包車" loading="lazy">
-            <div class="deal-card-gradient"></div>
-            <div class="deal-floating-tag">⛺ 3. 露營自駕</div>
+            <img src="./images/menu_camp.jpg" alt="露營與自駕" loading="lazy">
           </div>
-          <div class="deal-card-content">
-            <h3 class="deal-item-name">露營與自駕包車 (Outdoor)</h3>
-            <div class="deal-meta-rows">
-              <div class="deal-meta-item">🗻 富士山直面湖畔營地</div>
-              <div class="deal-meta-item">⛺ 免裝備 Glamping 星空帳</div>
-              <div class="deal-meta-item">🚗 日本租車比價・私人包車</div>
-            </div>
-            <button class="btn-deal-discover">
-              <span>Discover Now</span>
-              <span>➔</span>
-            </button>
+          <div class="deal-card-bottom-bar">
+            <h3 class="deal-item-name">露營與自駕</h3>
+            <span class="deal-item-arrow">➔</span>
           </div>
         </div>
 
-        <!-- 4. 🎌 深度專題 -->
+        <!-- 4. 鐵道之旅 -->
         <div class="deal-big-card" id="dealCard_topics" onclick="switchMasterHub('topics', this)">
           <div class="deal-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=600&q=80" alt="深度專題" loading="lazy">
-            <div class="deal-card-gradient"></div>
-            <div class="deal-floating-tag">🎌 4. 深度專題</div>
+            <img src="./images/menu_train.jpg" alt="鐵道之旅" loading="lazy">
           </div>
-          <div class="deal-card-content">
-            <h3 class="deal-item-name">深度專題 (Topics)</h3>
-            <div class="deal-meta-rows">
-              <div class="deal-meta-item">🎆 夏夜萬發花火大會</div>
-              <div class="deal-meta-item">🚂 觀光列車・蒸汽火車 SL</div>
-              <div class="deal-meta-item">🎭 動漫聖地巡禮・快閃店</div>
-            </div>
-            <button class="btn-deal-discover">
-              <span>Discover Now</span>
-              <span>➔</span>
-            </button>
+          <div class="deal-card-bottom-bar">
+            <h3 class="deal-item-name">鐵道之旅</h3>
+            <span class="deal-item-arrow">➔</span>
           </div>
-        </div>
-
-      </div>
+        </div>      </div>
     </section>
 
     <!-- 🌸 賞櫻最前線全日本花季即時分享 (規劃在四大菜單正下方) -->
@@ -14737,7 +14695,7 @@
       },
       'camp_charter': {
         themeMode: 'camp',
-        title: '⛺ 露營與自駕包車',
+        title: '⛺ 露營與自駕',
         feedSeason: 'spots',
         subItems: [
           { id: 'camp_fuji', icon: '🗻', name: '富士山直面營地（浩庵／田貫湖）', type: 'portal', val: 'openCampPortal' },
@@ -14749,7 +14707,7 @@
       },
       'topics': {
         themeMode: 'hanabi',
-        title: '🎌 深度專題',
+        title: '🚂 鐵道之旅',
         feedSeason: 'hanabi',
         subItems: [
           { id: 'topic_hanabi', icon: '🎆', name: '夏夜花火大會（觀覽席／日程）', type: 'season', val: 'hanabi' },
