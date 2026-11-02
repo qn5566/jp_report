@@ -6370,6 +6370,39 @@
       color: #FFFFFF !important;
     }
 
+
+    /* 🎿 雪場卡片專屬 3 按鈕排版 (預約教練 ＋ 訂飯店 ＋ 包車服務 - 嚴格零分潤字樣、零Klook品牌) */
+    .ski-action-bar {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr 1fr !important;
+      gap: 6px !important;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid #F1F5F9;
+    }
+    @media (max-width: 520px) {
+      .ski-action-bar {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      .ski-action-bar .btn-act-mint {
+        grid-column: 1 / -1;
+      }
+    }
+    .btn-act-mint {
+      background: linear-gradient(135deg, #77C9C5 0%, #B9D672 100%) !important;
+      color: #1A3828 !important;
+      border: none !important;
+      box-shadow: 0 2px 8px rgba(119, 201, 197, 0.28) !important;
+      font-weight: 800 !important;
+      border-radius: 999px !important;
+    }
+    .btn-act-mint:hover {
+      background: linear-gradient(135deg, #5FBDB9 0%, #A5C85A 100%) !important;
+      color: #0E291B !important;
+      box-shadow: 0 4px 14px rgba(119, 201, 197, 0.42) !important;
+      transform: translateY(-2px);
+    }
+    
 </style>
 </head>
 <body class="mode-spots">
@@ -16807,6 +16840,793 @@
             "feature": "法式精品奢華酒店・世界第一傳奇早餐法式牛角可頌"
       }
 }
+,
+
+      // ❄️ 2026 全日本滑雪場旗艦資料庫 (北海道・長野・新潟・東北・富士近郊 全境收錄)
+        "id": "ski_niseko_united",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "hokkaido",
+      "regionName": "北海道",
+      "skiLevel": "advanced",
+      "title": "二世谷滑雪度假村 (Niseko United)",
+      "subtitle": "全球滑雪粉雪之王・羊蹄山逆富士夜滑・JAPOW野雪樹林",
+      "tag": "北海道・二世谷",
+      "bloomStatus": "❄️ 積雪 290cm ｜ JAPOW 極上乾粉雪",
+      "species": "難度：高階野雪 30% ｜ 中級 40% ｜ 初級 30%",
+      "locationDetail": "新千歲機場接駁巴士約2.5小時直達四大雪場門口",
+      "desc": "世界滑雪客夢寐以求的最高殿堂！四座相連雪場一票全通，乾粉雪厚度傲視全球，夜間滑雪全開直面羊蹄山壯闊雪景。",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%8C%E4%B8%96%E8%B0%B7%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%8C%E4%B8%96%E8%B0%B7&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%20%E6%BB%91%E9%9B%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "The Barn Niseko 景觀餐廳",
+            "feature": "傳統北海道穀倉造型・在地食材法式鄉村暖心料理"
+      },
+      "japanFood": {
+            "name": "比羅夫 阿武茶 (A-Bu-Cha 2號店)",
+            "feature": "爆滿人氣居酒屋・炙燒和牛與現滾海鮮相撲鍋"
+      },
+      "hotel": {
+            "name": "Park Hyatt Niseko Hanazono (花園柏悅)",
+            "feature": "直面雪道Ski-in/Ski-out・全套房私人溫泉湯屋"
+      }
+},
+        "id": "ski_rusutsu_resort",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "hokkaido",
+      "regionName": "北海道",
+      "skiLevel": "intermediate",
+      "title": "留壽都滑雪度假村 (Rusutsu Resort)",
+      "subtitle": "獲評全日本第一滑雪場・37條雪道橫跨三座大山",
+      "tag": "北海道・留壽都",
+      "bloomStatus": "❄️ 積雪 280cm ｜ 鬆軟天然未壓雪",
+      "species": "難度：中級進階 40% ｜ 初級 30% ｜ 高階 30%",
+      "locationDetail": "札幌市區 / 新千歲機場專屬接駁巴士直達約90分鐘",
+      "img": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%95%99%E5%A3%BD%E9%83%BD%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%95%99%E5%A3%BD%E9%83%BD&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%20%E6%BB%91%E9%9B%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "威斯汀 中庭 Lounge Atrium",
+            "feature": "挑高兩層玻璃全景・眺望雪道享用熱巧克力下午茶"
+      },
+      "japanFood": {
+            "name": "留壽都 雪花亭 (Yukibana)",
+            "feature": "北海道當季三大蟹御膳・十勝和牛壽喜燒鍋物"
+      },
+      "hotel": {
+            "name": "The Westin Rusutsu Resort (留壽都威斯汀)",
+            "feature": "連續榮獲日本最佳滑雪飯店・全雙層樓中樓套房"
+      }
+},
+        "id": "ski_kiroro_snow",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "hokkaido",
+      "regionName": "北海道",
+      "skiLevel": "beginner",
+      "title": "喜樂樂雪世界 (Kiroro Snow World)",
+      "subtitle": "降雪量全日本第一・初學者友善長緩道・極致Ski-in/Ski-out",
+      "tag": "北海道・余市",
+      "bloomStatus": "❄️ 積雪 360cm ｜ 全日最高降雪量",
+      "species": "難度：初級新手 38% ｜ 中級 29% ｜ 高階 33%",
+      "locationDetail": "JR小樽站轉乘定點巴士約40分鐘 / 札幌出發60分",
+      "img": "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%96%9C%E6%A8%82%E6%A8%82%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%96%9C%E6%A8%82%E6%A8%82&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%20%E6%BB%91%E9%9B%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "山頂 Asari View 景觀餐廳",
+            "feature": "標高1180米展望・敲響幸福之鐘眺望日本海"
+      },
+      "japanFood": {
+            "name": "Club Med Kiroro 旬味割烹",
+            "feature": "全包式奢華法式日料・現握北海道握壽司與雪蟹"
+      },
+      "hotel": {
+            "name": "Club Med Kiroro Grand (喜樂樂全包渡假村)",
+            "feature": "兒童滑雪學校直通・出門即滑雪場・露天天然溫泉"
+      }
+},
+        "id": "ski_tomamu_hoshino",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "hokkaido",
+      "regionName": "北海道",
+      "skiLevel": "beginner",
+      "title": "星野渡假村 TOMAMU (Hoshino TOMAMU)",
+      "subtitle": "全日本家庭新手首選・微笑海灘造浪池・愛絲冰城夢幻夜景",
+      "tag": "北海道・占冠",
+      "bloomStatus": "❄️ 積雪 250cm ｜ 溫潤乾粉雪・家庭首選",
+      "species": "難度：初級新手 29% ｜ 中級 58% ｜ 高階 13%",
+      "locationDetail": "JR石勝線TOMAMU站出站即達渡假村免費專屬巴士接駁",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%98%9F%E9%87%8E%20TOMAMU%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=TOMAMU&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%20%E6%BB%91%E9%9B%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "霧冰平台 雲 Cafe",
+            "feature": "搭乘纜車登上海拔1088米・在雪山之巔喝棉花糖雲朵咖啡"
+      },
+      "japanFood": {
+            "name": "森林餐廳「Nininupuri」",
+            "feature": "百年冷杉林環繞挑高透明窗・四大肉品與海鮮自助盛宴"
+      },
+      "hotel": {
+            "name": "RISONARE Tomamu (星野全套房)",
+            "feature": "全客房配備超大景觀按摩浴缸與私人三溫暖桑拿"
+      }
+},
+        "id": "ski_furano_resort",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "hokkaido",
+      "regionName": "北海道",
+      "skiLevel": "intermediate",
+      "title": "富良野滑雪場 (Furano Ski Resort)",
+      "subtitle": "王子大飯店直通・晴天率極高・十勝岳群峰眺望4000米滑道",
+      "tag": "北海道・富良野",
+      "bloomStatus": "❄️ 積雪 240cm ｜ 晴天率90%・極致視野",
+      "species": "難度：中級進階 40% ｜ 初級 40% ｜ 高階 20%",
+      "locationDetail": "旭川機場接駁巴士約60分鐘直達 / JR富良野站車程10分",
+      "img": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E8%89%AF%E9%87%8E%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AF%8C%E8%89%AF%E9%87%8E&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%20%E6%BB%91%E9%9B%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "森林精靈露台 咖啡屋「森之時計」",
+            "feature": "倉本聰日劇取景地・在靜謐雪森林木屋自己磨手沖咖啡"
+      },
+      "japanFood": {
+            "name": "富良野 白樺 蒙古烤肉成吉思汗",
+            "feature": "在地牧場極嫩羊肉・無腥味搭配特製蘋果洋蔥醬汁"
+      },
+      "hotel": {
+            "name": "新富良野王子大飯店 (New Furano Prince)",
+            "feature": "雪道直接滑進大廳・紫彩之湯天然露天溫泉"
+      }
+},
+        "id": "ski_sapporo_kokusai",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "hokkaido",
+      "regionName": "北海道",
+      "skiLevel": "beginner",
+      "title": "札幌國際滑雪場 (Sapporo Kokusai)",
+      "subtitle": "札幌市區與定山溪溫泉直通・超寬緩坡魔毯新手天堂",
+      "tag": "北海道・札幌/定山溪",
+      "bloomStatus": "❄️ 積雪 320cm ｜ 穩定厚粉雪",
+      "species": "難度：初級新手 30% ｜ 中級 50% ｜ 高階 20%",
+      "locationDetail": "札幌市區巴士總站出發約90分鐘 / 定山溪溫泉出發30分",
+      "img": "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9C%AD%E5%B9%8C%E5%9C%8B%E9%9A%9B%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%9A%E5%B1%B1%E6%BA%AA&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9C%AD%E5%B9%8C%20%E6%BB%91%E9%9B%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "山頂 Cafe SKS",
+            "feature": "晴天可遠眺小樽港與石狩灣・品嚐暖心熱可可肉桂捲"
+      },
+      "japanFood": {
+            "name": "定山溪 溫泉街 翠山亭 炭火會席",
+            "feature": "滑雪後放鬆首選・十勝黑毛和牛與北海道海膽刺身"
+      },
+      "hotel": {
+            "name": "定山溪 萬世閣 溫泉渡假酒店",
+            "feature": "頂樓溪谷景觀露天風呂・三溫暖桑拿與日式自助饗宴"
+      }
+},
+        "id": "ski_sapporo_teine",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "hokkaido",
+      "regionName": "北海道",
+      "skiLevel": "advanced",
+      "title": "札幌手稻滑雪場 (Sapporo Teine)",
+      "subtitle": "冬奧主會場・38度極限北壁陡坡・俯瞰石狩灣蔚藍大海",
+      "tag": "北海道・札幌",
+      "bloomStatus": "❄️ 積雪 260cm ｜ 奧運認證賽道",
+      "species": "難度：高階野雪 25% ｜ 中級 40% ｜ 初級 35%",
+      "locationDetail": "JR手稻站轉乘巴士約16分鐘直達 / 札幌市區出發40分",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%89%8B%E7%A8%BB%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9C%AD%E5%B9%8C&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9C%AD%E5%B9%8C%20%E6%BB%91%E9%9B%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "Teine Highland 展望全景餐廳",
+            "feature": "一邊滑雪一邊直視札幌百萬夜景與大海"
+      },
+      "japanFood": {
+            "name": "薄野 湯咖哩 名店「Suage+」",
+            "feature": "濃郁香料高湯・整隻酥炸知床雞腿與彩椒"
+      },
+      "hotel": {
+            "name": "JR東日本札幌 METS 酒店",
+            "feature": "JR札幌站北口步行2分・出發滑雪極速便捷"
+      }
+},
+        "id": "ski_hakuba_happo",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "nagano",
+      "regionName": "長野白馬",
+      "skiLevel": "advanced",
+      "title": "白馬八方尾根滑雪場 (Hakuba Happo-One)",
+      "subtitle": "1998長野冬奧主會場・標高差1071米・北阿爾卑斯壯麗雄姿",
+      "tag": "長野・白馬",
+      "bloomStatus": "❄️ 積雪 270cm ｜ 國際級競賽賽道",
+      "species": "難度：高階野雪 20% ｜ 中級 50% ｜ 初級 30%",
+      "locationDetail": "長野新幹線站搭乘白馬急行巴士約60分鐘直達",
+      "img": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%99%BD%E9%A6%AC%E5%85%AB%E6%96%B9%E5%B0%BE%E6%A0%B9%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%99%BD%E9%A6%AC&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E7%99%BD%E9%A6%AC%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "Hakuba Mountain Harbor 懸崖露台",
+            "feature": "正對白馬三山絕壁斷崖・在天空露台享用紐約超人氣可頌"
+      },
+      "japanFood": {
+            "name": "白馬 八方溫泉街 蕎麥 信州手打",
+            "feature": "長野名物十割蕎麥・現炸香菇天婦羅配地酒"
+      },
+      "hotel": {
+            "name": "白馬溫泉 塞拉利昂飯店 (Hotel Sierra Resort)",
+            "feature": "萬坪森林庭園・四大獨立私人景觀露天溫泉湯屋"
+      }
+},
+        "id": "ski_hakuba_goryu47",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "nagano",
+      "regionName": "長野白馬",
+      "skiLevel": "beginner",
+      "title": "白馬五龍 ＆ Hakuba47 (Goryu & 47)",
+      "subtitle": "兩山相連通票暢滑・五龍山麓平緩寬道・47專業跳台公園",
+      "tag": "長野・白馬",
+      "bloomStatus": "❄️ 積雪 260cm ｜ 設施完備全能型",
+      "species": "難度：初級新手 35% ｜ 中級 40% ｜ 高階 25%",
+      "locationDetail": "JR大糸線白馬站出站轉乘接駁公車約10分鐘",
+      "img": "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%99%BD%E9%A6%AC%E4%BA%94%E9%BE%8D%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%99%BD%E9%A6%AC&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E7%99%BD%E9%A6%AC%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "Hakuba47 基地 Pizza House",
+            "feature": "石窯現烤脆皮柴燒披薩・起司香濃多汁"
+      },
+      "japanFood": {
+            "name": "五龍 Escal Plaza 居酒屋 魚民",
+            "feature": "滑雪中心內部暖心拉麵、炸豬排丼飯與生啤酒"
+      },
+      "hotel": {
+            "name": "白馬 山之飯店 (Hotel de L'Habit)",
+            "feature": "五龍雪道直通步行3分・英式歐風溫馨木造溫泉"
+      }
+},
+        "id": "ski_nozawa_onsen",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "nagano",
+      "regionName": "長野野澤",
+      "skiLevel": "intermediate",
+      "title": "野澤溫泉滑雪場 (Nozawa Onsen)",
+      "subtitle": "13座免費公共外湯溫泉街・10公里超長林間滑道",
+      "tag": "長野・野澤溫泉",
+      "bloomStatus": "❄️ 積雪 300cm ｜ 溫泉老街與粉雪絕配",
+      "species": "難度：中級進階 30% ｜ 初級 40% ｜ 高階 30%",
+      "locationDetail": "北陸新幹線飯山站搭乘野澤溫泉Liner公車約25分鐘直達",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%87%8E%E6%BE%A4%E6%BA%AB%E6%B3%89%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%87%8E%E6%BE%A4%E6%BA%AB%E6%B3%89&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "信州 野澤溫泉 精釀啤酒房 (Taproom)",
+            "feature": "溫泉水釀造野澤在地精釀生啤・下雪天微醺小聚"
+      },
+      "japanFood": {
+            "name": "野澤 麻釜 溫泉水煮蛋＆溫泉饅頭",
+            "feature": "90度天然源泉滾煮溫泉蛋・熱騰騰紅豆包"
+      },
+      "hotel": {
+            "name": "野澤溫泉 住吉屋 (Sumiyoshiya)",
+            "feature": "百年傳統純和風溫泉旅館・麻釜源泉自流名湯"
+      }
+},
+        "id": "ski_shiga_kogen",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "nagano",
+      "regionName": "長野志賀",
+      "skiLevel": "intermediate",
+      "title": "志賀高原滑雪場 (Shiga Kogen)",
+      "subtitle": "全日本最大滑雪度假區・18座雪場一票到底・標高2307米極乾雪質",
+      "tag": "長野・志賀高原",
+      "bloomStatus": "❄️ 積雪 280cm ｜ 全國最大規模・極乾粉雪",
+      "species": "難度：中級進階 35% ｜ 初級 45% ｜ 高階 20%",
+      "locationDetail": "長野新幹線站搭乘長電急行巴士約70分鐘直達",
+      "img": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%BF%97%E8%B3%80%E9%AB%98%E5%8E%9F%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BF%97%E8%B3%80%E9%AB%98%E5%8E%9F&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "橫手山頂 2307 雲之展望麵包坊",
+            "feature": "全日本海拔最高麵包店・熱呼呼現烤濃湯磨菇酥皮麵包"
+      },
+      "japanFood": {
+            "name": "志賀 燒額山 王子大飯店 宴席",
+            "feature": "長野信州牛朴葉味噌燒・蘋果風味豬肉涮涮鍋"
+      },
+      "hotel": {
+            "name": "志賀高原 王子大飯店 (東館/南館/西館)",
+            "feature": "纜車出門即滑・全日本滑雪客一生必住傳奇度假飯店"
+      }
+},
+        "id": "ski_madarao_kogen",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "nagano",
+      "regionName": "長野斑尾",
+      "skiLevel": "advanced",
+      "title": "斑尾高原滑雪場 (Madarao Mountain)",
+      "subtitle": "日本第一未壓雪樹林道 (Tree Run)・自然碗狀地形碗公粉雪",
+      "tag": "長野・斑尾高原",
+      "bloomStatus": "❄️ 積雪 310cm ｜ 樹林野雪天花板",
+      "species": "難度：高階野雪 35% ｜ 中級 35% ｜ 初級 30%",
+      "locationDetail": "北陸新幹線飯山站搭乘斑尾高原巴士約30分鐘直達",
+      "img": "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%96%91%E5%B0%BE%E9%AB%98%E5%8E%9F%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%96%91%E5%B0%BE%E9%AB%98%E5%8E%9F&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "斑尾高原 柴燒火爐 Cafe Tyrol",
+            "feature": "跳完樹林道喝熱紅酒・自家製漢堡與蘋果派"
+      },
+      "japanFood": {
+            "name": "斑尾 鄉土和食「美里」",
+            "feature": "信州野澤菜炸野菜天麩羅・信州鮭魚生魚片"
+      },
+      "hotel": {
+            "name": "斑尾高原飯店 (Madarao Kogen Hotel)",
+            "feature": "天然自涌溫泉大浴場・Ski-in/Ski-out滑進大廳"
+      }
+},
+        "id": "ski_karuizawa_prince",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "nagano",
+      "regionName": "長野輕井澤",
+      "skiLevel": "beginner",
+      "title": "輕井澤王子滑雪場 (Karuizawa Prince)",
+      "subtitle": "東京新幹線60分鐘直達・王子Outlet購物天堂・晴天率90%",
+      "tag": "長野・輕井澤",
+      "bloomStatus": "❄️ 積雪 120cm ｜ 人工造雪晴空萬里",
+      "species": "難度：初級新手 50% ｜ 中級 30% ｜ 高階 20%",
+      "locationDetail": "北陸新幹線輕井澤站南口出站步行即達 / 免費接駁車3分",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%BC%95%E4%BA%95%E6%BE%A4%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%BC%95%E4%BA%95%E6%BE%A4&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E8%BC%95%E4%BA%95%E6%BE%A4%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "輕井澤 澤村烘焙坊 (Sawamura)",
+            "feature": "雪景露台歐式麵包・手沖深焙咖啡配熱三明治"
+      },
+      "japanFood": {
+            "name": "輕井澤 川上庵 (Kawakami An)",
+            "feature": "全日本排隊神級蕎麥麵・巨無霸炸海老天婦羅"
+      },
+      "hotel": {
+            "name": "輕井澤王子大飯店 西館 (Karuizawa Prince West)",
+            "feature": "小木屋別墅區・溫泉棟「MOMIJI」露天溫泉享受"
+      }
+},
+        "id": "ski_gala_yuzawa",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "niigata",
+      "regionName": "新潟湯澤",
+      "skiLevel": "beginner",
+      "title": "GALA湯澤滑雪度假村 (GALA Yuzawa)",
+      "subtitle": "全世界唯一新幹線車站直通纜車站・JR Pass無痛直達・中文服務",
+      "tag": "新潟・越後湯澤",
+      "bloomStatus": "❄️ 積雪 280cm ｜ 新幹線出站即滑",
+      "species": "難度：初級新手 35% ｜ 中級 45% ｜ 高階 20%",
+      "locationDetail": "上越新幹線「GALA湯澤站」出改札口即達雪具租借與纜車大廳",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=GALA%E6%B9%AF%E6%BE%A4%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%BE%A4&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%BE%A4%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "GALA 休息站「Cheers」二樓景觀餐堂",
+            "feature": "大片玻璃景觀欣賞中央雪道滑行英姿・品嚐越光米炸豬排"
+      },
+      "japanFood": {
+            "name": "越後湯澤站內 ぽんしゅ館 (Ponshukan)",
+            "feature": "500日圓投幣品嚐96種越後地酒・爆彈明太子大飯糰"
+      },
+      "hotel": {
+            "name": "越後湯澤溫泉 湯澤大飯店 (Yuzawa Grand Hotel)",
+            "feature": "車站西口步行2分・庭園風露天溫泉岩風呂"
+      }
+},
+        "id": "ski_naeba_resort",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "niigata",
+      "regionName": "新潟苗場",
+      "skiLevel": "intermediate",
+      "title": "苗場滑雪場 (Naeba Ski Resort)",
+      "subtitle": "苗場王子飯店大浴場直通・全日本最長5.5公里龍之纜車相連神樂",
+      "tag": "新潟・苗場",
+      "bloomStatus": "❄️ 積雪 260cm ｜ 設施完備人氣第一",
+      "species": "難度：中級進階 40% ｜ 初級 30% ｜ 高階 30%",
+      "locationDetail": "JR越後湯澤站東口搭乘王子飯店接駁巴士約40分鐘直達",
+      "img": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%8B%97%E5%A0%B4%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%8B%97%E5%A0%B4&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%BE%A4%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "龍之纜車 (Dragondola) 展望山頂茶房",
+            "feature": "全日本最長纜車俯瞰雪谷溪流・雪山之巔咖啡享受"
+      },
+      "japanFood": {
+            "name": "苗場王子大飯店 宴會廳「三國」",
+            "feature": "新潟魚沼產越光米釜飯・深雪野菜天婦羅套餐"
+      },
+      "hotel": {
+            "name": "苗場王子大飯店 (Naeba Prince Hotel)",
+            "feature": "雪道第一排・出房門即是滑雪場・火泉天然溫泉"
+      }
+},
+        "id": "ski_kagura_resort",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "niigata",
+      "regionName": "新潟神樂",
+      "skiLevel": "advanced",
+      "title": "神樂滑雪場 (Kagura Ski Resort)",
+      "subtitle": "標高1845米特乾粉雪・開放滑至5月下旬・和田小屋初雪第一刷",
+      "tag": "新潟・神樂/三俁/田代",
+      "bloomStatus": "❄️ 積雪 340cm ｜ 季末春雪延長至5月",
+      "species": "難度：高階野雪 30% ｜ 中級 35% ｜ 初級 35%",
+      "locationDetail": "JR越後湯澤站搭乘路線巴士約20分鐘抵達三俁站纜車口",
+      "img": "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%A5%9E%E6%A8%82%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A5%9E%E6%A8%82%E6%BB%91%E9%9B%AA%E5%A0%B4&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%BE%A4%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "神樂 和田小屋 (Wada Goya)",
+            "feature": "坐落海拔1380米半山腰・入住即可享受清晨無人第一刷粉雪"
+      },
+      "japanFood": {
+            "name": "三俁 街道茶屋 越後もち処",
+            "feature": "現搗熱騰騰艾草年糕麻糬・沾黃豆粉配熱茶"
+      },
+      "hotel": {
+            "name": "越後湯澤 雙葉溫泉旅館 (Hotel Futaba)",
+            "feature": "二十八種不同天然風呂・眺望谷川連峰頂級名門宿"
+      }
+},
+        "id": "ski_yuzawa_kogen",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "niigata",
+      "regionName": "新潟湯澤",
+      "skiLevel": "beginner",
+      "title": "湯澤高原滑雪場 (Yuzawa Kogen)",
+      "subtitle": "世界最大166人空中巨型纜車・湯澤溫泉街步行即達・家庭樂園",
+      "tag": "新潟・越後湯澤",
+      "bloomStatus": "❄️ 積雪 230cm ｜ 家庭老街休閒首選",
+      "species": "難度：初級新手 40% ｜ 中級 40% ｜ 高階 20%",
+      "locationDetail": "JR越後湯澤站西口出站步行8分鐘即達空中纜車山麓站",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%B9%AF%E6%BE%A4%E9%AB%98%E5%8E%9F%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%BE%A4&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%BE%A4%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "山頂露台 Edelweiss 景觀義麵",
+            "feature": "全景俯瞰整個越後湯澤溫泉街盆地全貌"
+      },
+      "japanFood": {
+            "name": "越後湯澤 保よし (Yasuyoshi)",
+            "feature": "舞茸天婦羅與魚沼產越光米豬排飯・滑雪客排隊熱點"
+      },
+      "hotel": {
+            "name": "四季 Yuzawa Quattro (全四間頂級客房)",
+            "feature": "私人樓中樓套房・室內獨立源泉溫泉浴槽奢華首選"
+      }
+},
+        "id": "ski_myoko_suginohara",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "niigata",
+      "regionName": "新潟妙高",
+      "skiLevel": "intermediate",
+      "title": "妙高杉之原滑雪場 (Myoko Suginohara)",
+      "subtitle": "日本最長8.5公里無間斷連續滑降・野尻湖超廣角全景視野",
+      "tag": "新潟・妙高高原",
+      "bloomStatus": "❄️ 積雪 310cm ｜ 最長滑降極致巡航",
+      "species": "難度：中級進階 40% ｜ 初級 40% ｜ 高階 20%",
+      "locationDetail": "越後心跳鐵道妙高高原站搭乘巴士約15分鐘",
+      "img": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A6%99%E9%AB%98%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A6%99%E9%AB%98&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A6%99%E9%AB%98%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "杉之原 山頂 三田原 展望茶房",
+            "feature": "直視野尻湖湛藍水面與富士山同框・現烤年糕"
+      },
+      "japanFood": {
+            "name": "妙高 壽喜燒 名店「いしだ」",
+            "feature": "信州和牛與新潟日本海刺身雙拼・備長炭燒烤"
+      },
+      "hotel": {
+            "name": "赤倉觀光酒店 (Akakura Kanko Hotel)",
+            "feature": "1937年創業高原古典奢華名門・天際無邊際溫泉雲海"
+      }
+},
+        "id": "ski_akakura_onsen",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "niigata",
+      "regionName": "新潟妙高",
+      "skiLevel": "beginner",
+      "title": "赤倉溫泉滑雪場 (Akakura Onsen)",
+      "subtitle": "100%天然純雪無人工造雪・超平緩開闊雪面・百年老湯赤倉溫泉",
+      "tag": "新潟・妙高高原",
+      "bloomStatus": "❄️ 積雪 300cm ｜ 100%純天然純雪",
+      "species": "難度：初級新手 50% ｜ 中級 30% ｜ 高階 20%",
+      "locationDetail": "信濃鐵道妙高高原站搭乘接駁車約10分鐘直達溫泉街",
+      "img": "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%B5%A4%E5%80%89%E6%BA%AB%E6%B3%89%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%B5%A4%E5%80%89%E6%BA%AB%E6%B3%89&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A6%99%E9%AB%98%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "赤倉溫泉街 喫茶室「古民家」",
+            "feature": "壁爐炭火溫暖・品嚐長野新潟邊界地酒布丁"
+      },
+      "japanFood": {
+            "name": "赤倉 手打手揉烏龍麵「妙高」",
+            "feature": "極彈牙手工粗麵配信州炸野菇與溫泉玉子"
+      },
+      "hotel": {
+            "name": "赤倉溫泉 旅館 香雲閣 (Kounkaku)",
+            "feature": "妙高山天然源泉掛流・純和風木造百年旅館"
+      }
+},
+        "id": "ski_zao_onsen",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "tohoku",
+      "regionName": "東北藏王",
+      "skiLevel": "intermediate",
+      "title": "藏王溫泉滑雪場 (Zao Onsen Ski Resort)",
+      "subtitle": "世界奇觀「雪怪樹冰」穿梭夜間點燈・強酸性硫磺美人湯",
+      "tag": "山形・藏王溫泉",
+      "bloomStatus": "❄️ 積雪 250cm ｜ 樹冰群生壯麗奇觀",
+      "species": "難度：中級進階 40% ｜ 初級 40% ｜ 高階 20%",
+      "locationDetail": "山形新幹線山形站搭乘巴士約40分鐘直達藏王溫泉巴士總站",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%97%8F%E7%8E%8B%20%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%97%8F%E7%8E%8B%E6%BA%AB%E6%B3%89&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E5%8C%97%20%E8%97%8F%E7%8E%8B%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "藏王山頂 三五郎小屋 (Sangoro)",
+            "feature": "美式木造巨大壁爐・熱巧克力與烤起司漢堡・極受滑雪客喜愛"
+      },
+      "japanFood": {
+            "name": "藏王溫泉 爐端燒 ろばた (Robata)",
+            "feature": "在地山形牛成吉思汗燒肉・現煮山菜芋頭湯"
+      },
+      "hotel": {
+            "name": "藏王國際飯店 (Zao Kokusai Hotel)",
+            "feature": "八右衛門之湯100%全木造乳白色硫磺溫泉・雪道出門即滑"
+      }
+},
+        "id": "ski_appi_kogen",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "tohoku",
+      "regionName": "東北安比",
+      "skiLevel": "intermediate",
+      "title": "安比高原滑雪度假村 (APPI Kogen)",
+      "subtitle": "北緯40度「阿斯匹靈超細乾粉雪」・北面朝向極致雪質・洲際五星飯店",
+      "tag": "岩手・安比高原",
+      "bloomStatus": "❄️ 積雪 260cm ｜ 鑽石級細乾粉雪",
+      "species": "難度：中級進階 40% ｜ 初級 30% ｜ 高階 30%",
+      "locationDetail": "東北新幹線盛岡站轉乘JR花輪線至安比高原站約55分鐘",
+      "img": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%AE%89%E6%AF%94%E9%AB%98%E5%8E%9F%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%89%E6%AF%94%E9%AB%98%E5%8E%9F&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E5%8C%97%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "安比 洲際酒店 景觀茶沙龍",
+            "feature": "全景落地玻璃眺望前森山雪道・英式下午茶"
+      },
+      "japanFood": {
+            "name": "安比 割烹「七時雨」",
+            "feature": "前澤牛與三陸產鮮鮑魚陶板燒・岩手極上會席"
+      },
+      "hotel": {
+            "name": "ANA InterContinental Appi Kogen (安比洲際)",
+            "feature": "獲選世界奢華酒店大獎・頂級溫泉水療與管家服務"
+      }
+},
+        "id": "ski_geto_kogen",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "tohoku",
+      "regionName": "東北夏油",
+      "skiLevel": "advanced",
+      "title": "夏油高原滑雪場 (Geto Kogen Resort)",
+      "subtitle": "降雪量全國冠軍豪雪聖地・14座頂級極限未壓雪樹林道",
+      "tag": "岩手・夏油高原",
+      "bloomStatus": "❄️ 積雪 410cm ｜ 全國降雪量之冠",
+      "species": "難度：高階野雪 40% ｜ 中級 20% ｜ 初級 40%",
+      "locationDetail": "東北新幹線北上站搭乘免費接駁巴士約50分鐘直達",
+      "img": "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A4%8F%E6%B2%B9%E9%AB%98%E5%8E%9F%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%8C%97%E4%B8%8A%E5%B8%82&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E5%8C%97%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "夏油 雙層基地美食廣場 咖哩工房",
+            "feature": "雪場頂級濃郁牛肉熟成咖哩・補充整天體力"
+      },
+      "japanFood": {
+            "name": "夏油高原溫泉 兔森之湯 鄉土和食",
+            "feature": "滑雪完直奔露天展望岩風呂・品嚐岩手在地雜穀飯定食"
+      },
+      "hotel": {
+            "name": "夏油高原滑雪度假村 青年膠囊＆標準客房",
+            "feature": "基地直通・提供滑雪客最高性價比背包與家庭住宿"
+      }
+},
+        "id": "ski_nekoma_bandai",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "tohoku",
+      "regionName": "東北磐梯",
+      "skiLevel": "intermediate",
+      "title": "星野集團 貓魔滑雪場 (星野裏磐梯)",
+      "subtitle": "南北兩山2024全新纜車相通・超微細「微粉雪」Micro-fine Snow",
+      "tag": "福島・裏磐梯",
+      "bloomStatus": "❄️ 積雪 290cm ｜ 微細粉雪暢滑至黃金週",
+      "species": "難度：中級進階 40% ｜ 初級 35% ｜ 高階 25%",
+      "locationDetail": "東北新幹線郡山站轉乘磐越西線至豬苗代站搭乘免費接駁車40分",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%B2%93%E9%AD%94%E6%BB%91%E9%9B%AA%E5%A0%B4&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%A3%8F%E7%A3%90%E6%A2%AF&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E5%8C%97%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "貓魔 山頂 展望木屋 Cafe",
+            "feature": "遠眺豬苗代湖蔚藍水面與磐梯山火山錐"
+      },
+      "japanFood": {
+            "name": "喜多方 醬油叉燒拉麵 坂內食堂",
+            "feature": "福島最具代表性清爽豚骨小魚乾湯頭・鋪滿整碗叉燒"
+      },
+      "hotel": {
+            "name": "星野集團 磐梯山溫泉飯店",
+            "feature": "直接滑進滑出・會津酒藏清酒品飲與檜木溫泉大浴場"
+      }
+},
+        "id": "ski_snowtown_yeti",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "kanto_fuji",
+      "regionName": "富士山近郊",
+      "skiLevel": "beginner",
+      "title": "富士山二合目 Snowtown Yeti",
+      "subtitle": "連續25年全日本最早開雪場 (10月下旬起跑)・直面富士山頂宏偉夜滑",
+      "tag": "靜岡・富士山二合目",
+      "bloomStatus": "❄️ 積雪 140cm ｜ 全國最早開雪場・富士山第一排",
+      "species": "難度：初級新手 50% ｜ 中級 40% ｜ 高階 10%",
+      "locationDetail": "新宿站/橫濱站/三島站搭乘直達滑雪專車約100分鐘直達",
+      "img": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=Snowtown%20Yeti%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BE%A1%E6%AE%BF%E5%A0%B4&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "Yeti 富士山景觀餐廳",
+            "feature": "窗外就是近在咫尺的富士山巨大雪頂・品嚐富士山造型咖哩飯"
+      },
+      "japanFood": {
+            "name": "御殿場 さわやか (Sawayaka) 漢堡排",
+            "feature": "靜岡限定神級炭火手打100%牛肉漢堡排・外焦內粉嫩"
+      },
+      "hotel": {
+            "name": "HOTEL CLAD (御殿場Outlet直通)",
+            "feature": "頂樓「木之花之湯」直面富士山雄姿超絕景溫泉"
+      }
+},
+        "id": "ski_kusatsu_onsen",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "kanto_fuji",
+      "regionName": "群馬草津",
+      "skiLevel": "beginner",
+      "title": "草津溫泉滑雪場 (Kusatsu Onsen)",
+      "subtitle": "日本三大名湯草津直達・2024全新空中纜車・山頂露台景觀",
+      "tag": "群馬・草津溫泉",
+      "bloomStatus": "❄️ 積雪 200cm ｜ 頂級溫泉與初雪雙享",
+      "species": "難度：初級新手 50% ｜ 中級 30% ｜ 高階 20%",
+      "locationDetail": "JR特急草津・四萬號長野原草津口站轉乘巴士約25分鐘",
+      "img": "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%8D%89%E6%B4%A5%E6%BA%AB%E6%B3%89%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%8D%89%E6%B4%A5%E6%BA%AB%E6%B3%89&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E8%8D%89%E6%B4%A5%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "草津 湯畑 草津溫泉布丁 (草津ぷりん)",
+            "feature": "湯畑旁排隊名店・翠綠夜光布丁與濃郁溫泉蛋霜淇淋"
+      },
+      "japanFood": {
+            "name": "草津 三國家 蕎麥 (Mikuniya)",
+            "feature": "鴨汁冷蕎麥麵・濃郁鴨肉香蔥沾醬・人氣第一"
+      },
+      "hotel": {
+            "name": "草津溫泉 望雲 (Boun)",
+            "feature": "十返舍一九等文人喜愛的古雅名宿・六大源泉掛流露天湯"
+      }
+},
+        "id": "ski_marunuma_kogen",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "kanto_fuji",
+      "regionName": "群馬丸沼",
+      "skiLevel": "intermediate",
+      "title": "群馬丸沼高原滑雪場 (Marunuma Kogen)",
+      "subtitle": "日光白根山山頂標高2000米・4000米連綿地形浪道・滑至5月黃金週",
+      "tag": "群馬・利根郡",
+      "bloomStatus": "❄️ 積雪 260cm ｜ 關東最高海拔極乾粉雪",
+      "species": "難度：中級進階 45% ｜ 初級 35% ｜ 高階 20%",
+      "locationDetail": "JR上越新幹線上毛高原站搭乘冬季接駁巴士約80分鐘",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%B8%B8%E6%B2%BC%E9%AB%98%E5%8E%9F%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%B8%B8%E6%B2%BC%E9%AB%98%E5%8E%9F&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%97%9C%E6%9D%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "山頂露台「日光白根山 Cafe」",
+            "feature": "海拔2000米戶外天然木甲板・正對日光白根山火口湖群"
+      },
+      "japanFood": {
+            "name": "片品村 尾瀨 鄉土料理「尾瀬の郷」",
+            "feature": "純淨雪水灌溉越光米・香烤岩魚與手揉蒟蒻"
+      },
+      "hotel": {
+            "name": "丸沼高原 Chalet 丸沼溫泉旅館",
+            "feature": "雪道山麓直通・溫暖天然弱鹼性溫泉洗淨筋骨"
+      }
+},
+        "id": "ski_biwako_valley",
+      "theme": "snow",
+      "category": "ski",
+      "snowRegion": "kanto_fuji",
+      "regionName": "關西琵琶湖",
+      "skiLevel": "beginner",
+      "title": "琵琶湖 Valley 滑雪場 (Biwako Valley)",
+      "subtitle": "京都大阪直達60分鐘・大型空中纜車俯瞰日本第一大湖琵琶湖絕景",
+      "tag": "滋賀・大津市",
+      "bloomStatus": "❄️ 積雪 180cm ｜ 關西最美海天一色",
+      "species": "難度：初級新手 40% ｜ 中級 40% ｜ 高階 20%",
+      "locationDetail": "JR湖西線志賀站搭乘江若交通巴士約10分鐘直達纜車站",
+      "img": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=700&q=80",
+      "coachUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%90%B5%E7%90%B6%E6%B9%96Valley%20%E6%BB%91%E9%9B%AA&aid=123436&utm_medium=affiliate-alwayson",
+      "hotelUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A4%A7%E6%B4%A5&aid=2422002",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E5%A4%A7%E9%98%AA%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "cafe": {
+            "name": "琵琶湖 Terrace (The Biwako Terrace)",
+            "feature": "關西第一網紅景觀露台・藍天碧水倒影在無邊際水池"
+      },
+      "japanFood": {
+            "name": "大津 雄琴溫泉 近江牛割烹料理",
+            "feature": "日本三大和牛近江牛壽喜燒・脂香甘甜細緻"
+      },
+      "hotel": {
+            "name": "琵琶湖 雄琴溫泉 琵琶湖花街道",
+            "feature": "大正浪漫木質溫泉旅館・客房露天風呂眺望琵琶湖晨曦"
+      }
+}
     ];
 
     let currentSeason = 'spots';
@@ -16917,10 +17737,11 @@
         title: '❄️ 極上粉雪',
         feedSeason: 'snow',
         subItems: [
-          { id: 'snow_beginner', icon: '🎿', name: '新手入門（魔毯／寬緩坡）', type: 'filter_keyword', val: 'GALA' },
-          { id: 'snow_japow', icon: '🏂', name: 'JAPOW乾粉雪（野雪／樹林道）', type: 'filter_keyword', val: '粉雪' },
-          { id: 'snow_onsen', icon: '♨️', name: '溫泉街雪場（滑雪＋泡湯）', type: 'filter_keyword', val: '溫泉' },
-          { id: 'snow_coach', icon: '👨‍🏫', name: '中文教練名冊（線上預約）', type: 'action', val: 'openCoachBooking' }
+          { id: 'snow_level_all', icon: '🎿', name: '全部難度', type: 'snow_level', val: 'all' },
+          { id: 'snow_level_beginner', icon: '🟢', name: '初級新手（魔毯／寬緩道／綠線）', type: 'snow_level', val: 'beginner' },
+          { id: 'snow_level_intermediate', icon: '🟡', name: '中級進階（景觀巡航／紅線）', type: 'snow_level', val: 'intermediate' },
+          { id: 'snow_level_advanced', icon: '🔴', name: '高階野雪（JAPOW天然乾粉／樹林道）', type: 'snow_level', val: 'advanced' },
+          { id: 'snow_coach_portal', icon: '👨‍🏫', name: '全日本認證中文教練名冊 ↗', type: 'portal', val: 'openCoachBooking' }
         ]
       },
       'camp_charter': {
@@ -16953,8 +17774,89 @@
     let currentMasterHub = 'flower';
     let currentSubItemId = 'sakura_bloom';
 
+    
+    let currentSnowRegion = 'all';
+    let currentSnowLevel = 'all';
+
+    function selectSnowRegion(regKey, btn) {
+      currentSnowRegion = regKey;
+      const bar = document.getElementById('sakuraRegionBar');
+      if (bar) {
+        bar.querySelectorAll('.region-pill').forEach(b => b.classList.remove('active'));
+      }
+      if (btn) btn.classList.add('active');
+      renderCards();
+    }
+
+    function renderDynamicRegionBar() {
+      const bar = document.getElementById('sakuraRegionBar');
+      if (!bar) return;
+
+      if (currentMasterHub === 'snow') {
+        bar.style.display = 'block';
+        bar.innerHTML = `
+          <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+            <button class="region-pill ${currentSnowRegion === 'all' ? 'active' : ''}" onclick="selectSnowRegion('all', this)">
+              <span>🗾</span> <span>全日本雪場 (27)</span>
+            </button>
+            <button class="region-pill ${currentSnowRegion === 'hokkaido' ? 'active' : ''}" onclick="selectSnowRegion('hokkaido', this)">
+              <span>❄️</span> <span>北海道 (7)</span>
+            </button>
+            <button class="region-pill ${currentSnowRegion === 'nagano' ? 'active' : ''}" onclick="selectSnowRegion('nagano', this)">
+              <span>🏔️</span> <span>長野・白馬 (6)</span>
+            </button>
+            <button class="region-pill ${currentSnowRegion === 'niigata' ? 'active' : ''}" onclick="selectSnowRegion('niigata', this)">
+              <span>🎿</span> <span>新潟・越後湯澤 (6)</span>
+            </button>
+            <button class="region-pill ${currentSnowRegion === 'tohoku' ? 'active' : ''}" onclick="selectSnowRegion('tohoku', this)">
+              <span>🏯</span> <span>東北・藏王 (4)</span>
+            </button>
+            <button class="region-pill ${currentSnowRegion === 'kanto_fuji' ? 'active' : ''}" onclick="selectSnowRegion('kanto_fuji', this)">
+              <span>🗻</span> <span>關東・近郊 (4)</span>
+            </button>
+          </div>
+        `;
+      } else if (currentMasterHub === 'flower') {
+        bar.style.display = 'block';
+        bar.innerHTML = `
+          <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+            <button class="region-pill ${currentSakuraRegion === 'all' ? 'active' : ''}" data-region="all" onclick="selectSakuraRegion('all', this)">
+              <span>🌸</span> <span>全日本名所 (140)</span>
+            </button>
+            <button class="region-pill ${currentSakuraRegion === 'kanto' ? 'active' : ''}" data-region="kanto" onclick="selectSakuraRegion('kanto', this)">
+              <span>🗼</span> <span>關東・東京 (40)</span>
+            </button>
+            <button class="region-pill ${currentSakuraRegion === 'kansai' ? 'active' : ''}" data-region="kansai" onclick="selectSakuraRegion('kansai', this)">
+              <span>⛩️</span> <span>關西・京都大阪 (40)</span>
+            </button>
+            <button class="region-pill ${currentSakuraRegion === 'tohoku' ? 'active' : ''}" data-region="tohoku" onclick="selectSakuraRegion('tohoku', this)">
+              <span>🏯</span> <span>東北 (10)</span>
+            </button>
+            <button class="region-pill ${currentSakuraRegion === 'chubu' ? 'active' : ''}" data-region="chubu" onclick="selectSakuraRegion('chubu', this)">
+              <span>🗻</span> <span>中部・甲信越 (10)</span>
+            </button>
+            <button class="region-pill ${currentSakuraRegion === 'hokkaido' ? 'active' : ''}" data-region="hokkaido" onclick="selectSakuraRegion('hokkaido', this)">
+              <span>❄️</span> <span>北海道 (10)</span>
+            </button>
+            <button class="region-pill ${currentSakuraRegion === 'chugoku' ? 'active' : ''}" data-region="chugoku" onclick="selectSakuraRegion('chugoku', this)">
+              <span>🌊</span> <span>中國・山陽山陰 (10)</span>
+            </button>
+            <button class="region-pill ${currentSakuraRegion === 'shikoku' ? 'active' : ''}" data-region="shikoku" onclick="selectSakuraRegion('shikoku', this)">
+              <span>🛶</span> <span>四國 (10)</span>
+            </button>
+            <button class="region-pill ${currentSakuraRegion === 'kyushu' ? 'active' : ''}" data-region="kyushu" onclick="selectSakuraRegion('kyushu', this)">
+              <span>🌴</span> <span>九州・沖繩 (10)</span>
+            </button>
+          </div>
+        `;
+      } else {
+        bar.style.display = 'none';
+      }
+    }
+    
     function switchMasterHub(hubKey, el) {
       currentMasterHub = hubKey;
+      renderDynamicRegionBar();
       const regionBar = document.getElementById('sakuraRegionBar');
       if (regionBar) {
         regionBar.style.display = (hubKey === 'flower') ? 'block' : 'none';
@@ -17012,7 +17914,11 @@
         });
       }
 
-      if (item.type === 'portal') {
+      if (item.type === 'snow_level') {
+        currentSnowLevel = item.val;
+        renderCards();
+        return;
+      } else if (item.type === 'portal') {
         if (userClick && window[item.val]) {
           window[item.val]();
         } else {
@@ -17186,13 +18092,20 @@
           return true;
         }
 
-        // 母夾 2：極上粉雪
+        // 母夾 2：極上粉雪 (支援地區一級過濾 ＋ 初級/中級/高階 二級難度過濾)
         if (currentMasterHub === 'snow') {
           if (item.theme !== 'snow') return false;
-          if (activeSub.type === 'filter_keyword') {
-            const matchKw = (item.title + item.desc + item.tag).includes(activeSub.val);
-            return matchKw || true; // 保障至少呈現雪場
+
+          // 地區過濾
+          if (currentSnowRegion !== 'all') {
+            if (item.snowRegion && item.snowRegion !== currentSnowRegion) return false;
           }
+
+          // 難度二級過濾
+          if (currentSnowLevel !== 'all') {
+            if (item.skiLevel && item.skiLevel !== currentSnowLevel) return false;
+          }
+
           return true;
         }
 
@@ -17366,8 +18279,20 @@
               </div>
             </div>
 
-            <!-- 底部操作按鈕列 (深靛藍 ＆ 純淨白，簡約不花俏) -->
-            ${(item.category === 'hanabi' || item.theme === 'hanabi') ? `
+            <!-- 底部操作按鈕列 (雪場專屬 3 大實用功能：預約教練 ＋ 訂飯店 ＋ 包車服務，嚴格零分潤字樣、零Klook品牌) -->
+            ${(item.theme === 'snow') ? `
+              <div class="card-action-bar ski-action-bar">
+                <a href="${item.coachUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent(item.title + ' 滑雪教練') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="btn-act-clean btn-act-primary" title="預約該雪場認證專業中文教練與裝備雪票" onclick="event.stopPropagation();">
+                  <span>👨‍🏫 預約教練</span>
+                </a>
+                <a href="${item.hotelUrl || ('https://www.booking.com/searchresults.zh-tw.html?ss=' + encodeURIComponent(item.title) + '&aid=2422002')}" target="_blank" class="btn-act-clean btn-act-secondary" title="預訂雪場周邊Ski-in/Ski-out飯店與溫泉旅館" onclick="event.stopPropagation();">
+                  <span>🏨 預訂飯店</span>
+                </a>
+                <a href="${item.charterUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent((item.regionName || item.tag || '日本') + ' 滑雪包車') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="btn-act-clean btn-act-mint" title="預約機場/市區直達雪場私人中文包車" onclick="event.stopPropagation();">
+                  <span>🚐 包車服務</span>
+                </a>
+              </div>
+            ` : (item.category === 'hanabi' || item.theme === 'hanabi') ? `
               <div class="card-action-bar hanabi-action-bar">
                 <a href="${item.yukataUrl || 'https://www.klook.com/zh-TW/search/result/?query=%E6%B5%B4%E8%A1%A3%E9%AB%94%E9%A9%97&aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" class="btn-act-clean btn-act-secondary" title="預約花火祭典浴衣方案" onclick="event.stopPropagation();">
                   <span>👘 浴衣預約</span>
