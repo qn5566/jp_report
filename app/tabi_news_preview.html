@@ -1769,6 +1769,100 @@
       padding: 14px 16px;
     }
 
+    
+    /* 🏮 白天夜晚相片切換微型開關 (方案 B：卡片封面右上角點燈標籤) */
+    .day-night-toggle-capsule {
+      position: absolute;
+      top: 10px;
+      right: 50px;
+      z-index: 5;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 999px;
+      padding: 3px 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .day-night-toggle-capsule:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+    .day-night-toggle-capsule.mode-night {
+      background: rgba(26, 32, 44, 0.94) !important;
+      border-color: #F59E0B !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 3px 12px rgba(245, 158, 11, 0.3) !important;
+    }
+    .dn-badge-text {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: #B45309;
+      white-space: nowrap;
+    }
+    .day-night-toggle-capsule.mode-night .dn-badge-text {
+      color: #FDE68A !important;
+    }
+    .dn-switch-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: #F1F5F9;
+      padding: 1px 6px;
+      border-radius: 999px;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #475569;
+      border: 0.5px solid #CBD5E1;
+      transition: all 0.2s;
+    }
+    .day-night-toggle-capsule.mode-night .dn-switch-pill {
+      background: #334155;
+      border-color: #475569;
+      color: #CBD5E1;
+    }
+    .dn-state-day.active {
+      color: #F97940;
+      font-weight: 900;
+    }
+    .dn-state-night.active {
+      color: #FDE68A;
+      font-weight: 900;
+    }
+    .dn-sep {
+      color: #94A3B8;
+      font-size: 0.62rem;
+    }
+    
+    /* 下方營業時間與最後入場動態標註 */
+    .night-hours-banner {
+      display: none;
+      background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+      color: #FEF3C7;
+      border: 1px solid #F59E0B;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      margin: 6px 0 8px 0;
+      animation: fadeInBanner 0.25s ease;
+    }
+    .night-hours-banner.show {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @keyframes fadeInBanner {
+      from { opacity: 0; transform: translateY(-3px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* 篩選面板 */
     .filter-box {
       background: rgba(255, 255, 255, 0.9);
@@ -23020,6 +23114,71 @@
         `;
         grid.appendChild(card);
       });
+    }
+
+    
+    function toggleSpotDayNight(spotId, event) {
+      if (event) event.stopPropagation();
+
+      const card = document.getElementById(`spot-card-${spotId}`);
+      if (!card) return;
+
+      const capsule = card.querySelector('.day-night-toggle-capsule');
+      const imgEl = card.querySelector('.card-thumb');
+      const hoursBanner = document.getElementById(`nightHours_${spotId}`);
+      const dayText = capsule ? capsule.querySelector('.dn-state-day') : null;
+      const nightText = capsule ? capsule.querySelector('.dn-state-night') : null;
+      const badgeText = capsule ? capsule.querySelector('.dn-badge-text') : null;
+
+      const item = SPOTS_DATABASE.find(s => s.id === spotId);
+      if (!item) return;
+
+      const isNight = capsule && capsule.classList.contains('mode-night');
+
+      if (!isNight) {
+        // 切換至夜晚 (Night Mode)
+        if (capsule) capsule.classList.add('mode-night');
+        if (dayText) dayText.classList.remove('active');
+        if (nightText) nightText.classList.add('active');
+        if (badgeText) badgeText.innerHTML = `🏮 夜間點燈中`;
+
+        // 圖片切換為夜晚照片 (平滑淡入淡出)
+        const nightPhoto = item.nightImg || 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80';
+        if (imgEl) {
+          imgEl.style.transition = 'opacity 0.2s ease';
+          imgEl.style.opacity = '0.3';
+          setTimeout(() => {
+            imgEl.src = nightPhoto;
+            imgEl.style.opacity = '1';
+          }, 150);
+        }
+
+        // 下方營業時間立刻標註最後入場時間
+        if (hoursBanner) {
+          hoursBanner.classList.add('show');
+        }
+      } else {
+        // 切換回白天 (Day Mode)
+        if (capsule) capsule.classList.remove('mode-night');
+        if (dayText) dayText.classList.add('active');
+        if (nightText) nightText.classList.remove('active');
+        if (badgeText) badgeText.innerHTML = item.nightLightupTime || `🏮 18:00-21:00 點燈`;
+
+        // 圖片切換回白天照片
+        if (imgEl) {
+          imgEl.style.transition = 'opacity 0.2s ease';
+          imgEl.style.opacity = '0.3';
+          setTimeout(() => {
+            imgEl.src = item.img;
+            imgEl.style.opacity = '1';
+          }, 150);
+        }
+
+        // 隱藏夜晚最後入場標註
+        if (hoursBanner) {
+          hoursBanner.classList.remove('show');
+        }
+      }
     }
 
     function renderCards() {
