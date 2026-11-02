@@ -2253,6 +2253,559 @@
     }
 
 
+    
+    /* ========================================================
+       [Ticket Plan 國際沉浸式旗艦 Hero Banner]
+       ======================================================== */
+    .portal-ticket-hero {
+      position: relative;
+      min-height: 480px;
+      background: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1800&q=85') center 35% / cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 60px 24px 100px;
+      overflow: hidden;
+    }
+    .hero-overlay-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.78) 0%, rgba(30, 41, 59, 0.65) 50%, rgba(15, 23, 42, 0.85) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero-content-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 960px) {
+      .hero-content-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .portal-ticket-hero {
+        padding: 40px 16px 80px;
+        min-height: auto;
+      }
+    }
+    .hero-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #FFD283;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .hero-main-title {
+      font-size: 2.85rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.15;
+      margin: 0 0 16px;
+      letter-spacing: -0.5px;
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+    }
+    @media (max-width: 600px) {
+      .hero-main-title {
+        font-size: 2.1rem;
+      }
+    }
+    .hero-quote-text {
+      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.55;
+      margin: 0 0 24px;
+      font-style: italic;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    .hero-quote-sub {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.88rem;
+      color: #E2E8F0;
+      font-style: normal;
+      font-weight: 600;
+    }
+    .btn-hero-discover {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      color: #FFFFFF;
+      padding: 12px 28px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    }
+    .btn-hero-discover:hover {
+      background: #FFFFFF;
+      color: #0F172A;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.35);
+    }
+    .hero-arrow {
+      transition: transform 0.2s ease;
+    }
+    .btn-hero-discover:hover .hero-arrow {
+      transform: translateX(4px);
+    }
+
+    /* 右側 3 張錯落浮空預覽卡片 (Sakura / Snow / Hanabi) */
+    .hero-floating-card-trio {
+      display: flex;
+      gap: 14px;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    @media (max-width: 600px) {
+      .hero-floating-card-trio {
+        display: none;
+      }
+    }
+    .floating-preview-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      background: #1E293B;
+    }
+    .floating-preview-card.card-tall {
+      width: 145px;
+      height: 230px;
+      transform: translateY(-20px);
+    }
+    .floating-preview-card.card-medium {
+      width: 140px;
+      height: 205px;
+      transform: translateY(0);
+    }
+    .floating-preview-card.card-short {
+      width: 130px;
+      height: 185px;
+      transform: translateY(15px);
+    }
+    .floating-preview-card:hover {
+      transform: translateY(-28px) scale(1.04);
+      border-color: #F97940;
+      box-shadow: 0 20px 40px rgba(249, 121, 64, 0.35);
+    }
+    .floating-preview-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .floating-preview-card:hover img {
+      transform: scale(1.08);
+    }
+    .float-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 12px;
+      color: #FFFFFF;
+    }
+    .float-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #FFB76D;
+      margin-bottom: 2px;
+    }
+    .float-title {
+      font-size: 0.84rem;
+      font-weight: 900;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .float-sub {
+      font-size: 0.68rem;
+      color: #CBD5E1;
+      margin-top: 2px;
+    }
+
+    /* ========================================================
+       [HOT DEALS 四大菜單大卡片區塊 - 往上覆蓋 Hero]
+       ======================================================== */
+    .ticket-plan-container {
+      margin-top: -65px !important;
+      position: relative;
+      z-index: 10;
+      background: #FAF9F7 !important;
+      border-radius: 36px 36px 0 0 !important;
+      box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.12) !important;
+      padding: 36px 24px 60px !important;
+    }
+    @media (max-width: 600px) {
+      .ticket-plan-container {
+        margin-top: -45px !important;
+        border-radius: 28px 28px 0 0 !important;
+        padding: 24px 14px 40px !important;
+      }
+    }
+    .hot-deals-section {
+      margin-bottom: 30px;
+    }
+    .hot-deals-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding: 0 4px;
+    }
+    .hot-deals-title {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: #831843;
+      margin: 0;
+      letter-spacing: 0.5px;
+      line-height: 1.15;
+    }
+    .hot-deals-subtitle {
+      font-size: 0.88rem;
+      color: #718096;
+      font-weight: 700;
+      margin: 6px 0 0;
+    }
+    .deals-arrow-nav {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-deals-arrow {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid #E2E8F0;
+      background: #FFFFFF;
+      color: #475569;
+      font-size: 1.2rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+    .btn-deals-arrow:hover {
+      background: #F97940;
+      color: #FFFFFF;
+      border-color: #F97940;
+      transform: scale(1.05);
+    }
+
+    /* 4 張大菜單卡片 Grid */
+    .deals-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 8px;
+    }
+    @media (max-width: 1080px) {
+      .deals-cards-grid {
+        grid-template-columns: repeat(4, 280px);
+        scroll-snap-type: x mandatory;
+      }
+      .deal-big-card {
+        scroll-snap-align: start;
+      }
+    }
+    .deal-big-card {
+      background: #FFFFFF;
+      border: 2px solid #F0EBE5;
+      border-radius: 22px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+    }
+    .deal-big-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+      border-color: #FFB76D;
+    }
+    .deal-big-card.active {
+      border-color: #F97940;
+      box-shadow: 0 8px 26px rgba(249, 121, 64, 0.22);
+      background: #FFFAF8;
+    }
+    .deal-card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 165px;
+      overflow: hidden;
+    }
+    .deal-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .deal-big-card:hover .deal-card-img-wrap img {
+      transform: scale(1.06);
+    }
+    .deal-card-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 60%);
+    }
+    .deal-floating-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .deal-big-card.active .deal-floating-tag {
+      background: #F97940;
+      border-color: #F97940;
+    }
+    .deal-card-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .deal-item-name {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #2D3748;
+      margin: 0 0 10px;
+      line-height: 1.25;
+    }
+    .deal-meta-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+    .deal-meta-item {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #718096;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-deal-discover {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      color: #334155;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 8px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .deal-big-card:hover .btn-deal-discover {
+      background: #F97940;
+      color: #FFFFFF;
+      border-color: #F97940;
+    }
+    .deal-big-card.active .btn-deal-discover {
+      background: linear-gradient(135deg, #F97940 0%, #EA580C 100%);
+      color: #FFFFFF;
+      border-color: #F97940;
+    }
+
+    /* ========================================================
+       [極簡抗疲勞櫻花卡片 - 和風低飽和色票規範]
+       ======================================================== */
+    .spots-grid-layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 20px !important;
+    }
+    @media (max-width: 960px) {
+      .spots-grid-layout {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+      }
+    }
+    @media (max-width: 600px) {
+      .spots-grid-layout {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+    }
+    .tabi-card {
+      background: #FFFFFF !important;
+      border: 1.5px solid #F3EDE8 !important;
+      border-radius: 18px !important;
+      overflow: hidden !important;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+      transition: all 0.22s ease !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .tabi-card:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08) !important;
+      border-color: #FFCCCC !important;
+    }
+    .card-img-box {
+      position: relative !important;
+      width: 100% !important;
+      height: 180px !important;
+      overflow: hidden !important;
+      background: #F1F5F9 !important;
+    }
+    .card-img-box img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      transition: transform 0.4s ease !important;
+    }
+    .tabi-card:hover .card-img-box img {
+      transform: scale(1.05) !important;
+    }
+    .card-floating-badge {
+      position: absolute !important;
+      bottom: 10px !important;
+      left: 10px !important;
+      background: rgba(15, 23, 42, 0.72) !important;
+      backdrop-filter: blur(8px) !important;
+      color: #FFFFFF !important;
+      font-size: 0.7rem !important;
+      font-weight: 800 !important;
+      padding: 3px 9px !important;
+      border-radius: 999px !important;
+    }
+    .card-bloom-status-tag {
+      position: absolute !important;
+      top: 10px !important;
+      left: 10px !important;
+      background: #F97940 !important;
+      color: #FFFFFF !important;
+      font-size: 0.72rem !important;
+      font-weight: 900 !important;
+      padding: 3px 10px !important;
+      border-radius: 999px !important;
+      box-shadow: 0 2px 6px rgba(249, 121, 64, 0.35) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 4px !important;
+    }
+    .card-body {
+      padding: 16px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      flex: 1 !important;
+    }
+    .card-title-header h3 {
+      font-size: 1.05rem !important;
+      font-weight: 900 !important;
+      color: #2D3748 !important;
+      margin: 0 !important;
+      line-height: 1.3 !important;
+    }
+    .card-subtitle-line {
+      font-size: 0.76rem !important;
+      color: #718096 !important;
+      font-weight: 600 !important;
+      margin: 4px 0 8px !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+    .card-clean-concise-desc {
+      font-size: 0.74rem !important;
+      color: #718096 !important;
+      line-height: 1.45 !important;
+      margin: 0 0 12px !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+    }
+    .clean-action-row {
+      margin-top: auto !important;
+      display: grid !important;
+      grid-template-columns: 1.25fr 1fr !important;
+      gap: 8px !important;
+    }
+    .btn-clean-primary {
+      background: linear-gradient(135deg, #F97940 0%, #EA580C 100%) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      padding: 8px 12px !important;
+      border-radius: 10px !important;
+      font-size: 0.78rem !important;
+      font-weight: 800 !important;
+      cursor: pointer !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 4px !important;
+      box-shadow: 0 2px 6px rgba(249, 121, 64, 0.28) !important;
+      transition: all 0.2s ease !important;
+      text-decoration: none !important;
+    }
+    .btn-clean-primary:hover {
+      transform: translateY(-1px) !important;
+      box-shadow: 0 4px 12px rgba(249, 121, 64, 0.4) !important;
+    }
+    .btn-clean-secondary {
+      background: #FFF7ED !important;
+      border: 1.5px solid #FDBA74 !important;
+      color: #C2410C !important;
+      padding: 8px 10px !important;
+      border-radius: 10px !important;
+      font-size: 0.76rem !important;
+      font-weight: 800 !important;
+      cursor: pointer !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 4px !important;
+      transition: all 0.2s ease !important;
+    }
+    .btn-clean-secondary:hover {
+      background: #FFEDD5 !important;
+    }
+
+
     /* ========================================================
        [頂部第一層：4 大情境母夾] Master Hub Navigation
        ======================================================== */
@@ -4838,7 +5391,40 @@
       color: #2D3748 !important;
     }
 
-  </style>
+  
+    /* 🌸 地區篩選膠囊按鈕 (低疲勞日雜極簡風) */
+    .sakura-region-bar {
+      display: block;
+    }
+    .region-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 15px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #718096;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .region-pill:hover {
+      color: #F97940;
+      border-color: #FFB76D;
+      background: #FFFBF7;
+    }
+    .region-pill.active {
+      color: #FFFFFF !important;
+      background: linear-gradient(135deg, #F97940 0%, #FFB76D 100%) !important;
+      border-color: transparent !important;
+      box-shadow: 0 4px 12px rgba(249, 121, 64, 0.25) !important;
+    }
+
+</style>
 </head>
 <body class="mode-spots">
 
@@ -4926,61 +5512,186 @@
     </div>
   </header>
 
-  <div class="web-container">
+  <!-- 🌟 國際旅行社旗艦級沉浸式 Hero Banner (Ticket Plan 風格) -->
+  <section class="portal-ticket-hero" id="ticketHeroSection">
+    <div class="hero-overlay-gradient"></div>
+    <div class="hero-content-container">
+      <div class="hero-left-pane">
+        <div class="hero-tag-pill">🌸 2026 全日本四季情報官方觀測網</div>
+        <h1 class="hero-main-title">
+          EXPLORE BEAUTIFUL<br>JAPAN WITH US
+        </h1>
+        <p class="hero-quote-text">
+          “Let us take the hassle out of travel planning, so you can focus on the adventure ahead.”<br>
+          <span class="hero-quote-sub">讓四季美景撫慰心靈，全日本櫻花花期、極上粉雪、秘境露營與夏夜花火即時連線。</span>
+        </p>
+        <div class="hero-btn-row">
+          <button class="btn-hero-discover" onclick="scrollToDeals()">
+            <span>Discover Now</span>
+            <span class="hero-arrow">➔</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-right-pane">
+        <!-- 3 張立體錯落浮空預覽卡片 (櫻花・粉雪・花火) -->
+        <div class="hero-floating-card-trio">
+          <div class="floating-preview-card card-tall" onclick="switchMasterHub('flower', null); scrollToDeals();">
+            <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=500&q=80" alt="Sakura" loading="lazy">
+            <div class="float-card-overlay">
+              <span class="float-badge">🌸 櫻花盛典</span>
+              <div class="float-title">目黑川櫻並木</div>
+              <div class="float-sub">滿開吹雪水岸絕景</div>
+            </div>
+          </div>
+          <div class="floating-preview-card card-medium" onclick="switchMasterHub('snow', null); scrollToDeals();">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=500&q=80" alt="Snow" loading="lazy">
+            <div class="float-card-overlay">
+              <span class="float-badge">❄️ 極上粉雪</span>
+              <div class="float-title">二世谷乾粉雪</div>
+              <div class="float-sub">JAPOW 頂級野雪</div>
+            </div>
+          </div>
+          <div class="floating-preview-card card-short" onclick="switchMasterHub('topics', null); scrollToDeals();">
+            <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=500&q=80" alt="Hanabi" loading="lazy">
+            <div class="float-card-overlay">
+              <span class="float-badge">🎆 璀璨花火</span>
+              <div class="float-title">隅田川花火大會</div>
+              <div class="float-sub">晴空塔雙會場連發</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 白色質感大圓角容器 (向上覆蓋 Hero Banner) -->
+  <div class="web-container ticket-plan-container">
     
-  <!-- 全寬頂部時令分類導航欄 (第一排：全部景點 ＋ 五季時令) -->
-    <!-- [頂部第一層：4 大情境母夾] (一目瞭然，告別首頁過多按鈕堆疊) -->
-  <nav class="master-hub-nav-strip">
-    <div class="master-hub-scroll-wrap">
-      <button class="master-hub-tab active" id="hubTab_flower" onclick="switchMasterHub('flower', this)">
-        <span class="hub-tab-icon">🌸</span>
-        <span class="hub-tab-title">1. 賞花前線</span>
-      </button>
-      <button class="master-hub-tab" id="hubTab_snow" onclick="switchMasterHub('snow', this)">
-        <span class="hub-tab-icon">❄️</span>
-        <span class="hub-tab-title">2. 極上粉雪</span>
-      </button>
-      <button class="master-hub-tab" id="hubTab_camp_charter" onclick="switchMasterHub('camp_charter', this)">
-        <span class="hub-tab-icon">⛺</span>
-        <span class="hub-tab-title">3. 露營與自駕包車</span>
-      </button>
-      <button class="master-hub-tab" id="hubTab_topics" onclick="switchMasterHub('topics', this)">
-        <span class="hub-tab-icon">🎌</span>
-        <span class="hub-tab-title">4. 深度專題</span>
-      </button>
-    </div>
-  </nav>
+    <!-- 🎯 HOT DEALS 四大菜單大卡片區塊 (四大主題探索) -->
+    <section class="hot-deals-section" id="hotDealsSection">
 
-  <!-- [第二層：情境子分類動態膠囊列] (依選中母夾連動展開，精簡高雅) -->
-  <div class="sub-context-nav-bar" id="subContextNavBar">
-    <div class="sub-context-scroll-wrap" id="subContextPillsContainer">
-      <!-- JS 動態生成專屬子項目膠囊 -->
-    </div>
-  </div>
 
-  <!-- 即時動態投稿看板 (精簡橫向滑動版) -->
-  <div class="community-feed-section" id="communityFeedSection">
-    <div class="feed-header">
-      <div class="feed-title">
-        <span id="feedTitleIcon" style="font-size:1.15rem;">🌸</span>
-        <span id="feedTitleText">全日本花季即時分享，大家踴躍分享吧</span>
-        <span class="feed-sub-hint" id="feedSubHint" style="display:none;"></span>
+      <!-- 四大菜單大卡片列 (點擊切換主題並連動下方即時名所) -->
+      <div class="deals-cards-grid" id="dealsCardsScroller">
+        
+        <!-- 1. 🌸 賞花前線 -->
+        <div class="deal-big-card active" id="dealCard_flower" onclick="switchMasterHub('flower', this)">
+          <div class="deal-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=600&q=80" alt="賞花前線" loading="lazy">
+            <div class="deal-card-gradient"></div>
+            <div class="deal-floating-tag">🌸 1. 四季花期</div>
+          </div>
+          <div class="deal-card-content">
+            <h3 class="deal-item-name">賞花前線 (Cherry Blossom)</h3>
+            <div class="deal-meta-rows">
+              <div class="deal-meta-item">🌸 2026 前線即時預報</div>
+              <div class="deal-meta-item">⭐ 全日本 80 大名所</div>
+              <div class="deal-meta-item">🍵 景觀茶寮・米其林席位</div>
+            </div>
+            <button class="btn-deal-discover">
+              <span>Discover Now</span>
+              <span>➔</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. ❄️ 極上粉雪 -->
+        <div class="deal-big-card" id="dealCard_snow" onclick="switchMasterHub('snow', this)">
+          <div class="deal-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="極上粉雪" loading="lazy">
+            <div class="deal-card-gradient"></div>
+            <div class="deal-floating-tag">❄️ 2. 極上粉雪</div>
+          </div>
+          <div class="deal-card-content">
+            <h3 class="deal-item-name">極上粉雪 (Ski & Snow)</h3>
+            <div class="deal-meta-rows">
+              <div class="deal-meta-item">⛷️ 100% 天然鬆軟乾粉雪</div>
+              <div class="deal-meta-item">♨️ 越後湯澤・白馬・二世谷</div>
+              <div class="deal-meta-item">🎿 中文教練・雪具租借</div>
+            </div>
+            <button class="btn-deal-discover">
+              <span>Discover Now</span>
+              <span>➔</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. ⛺ 露營自駕 -->
+        <div class="deal-big-card" id="dealCard_camp_charter" onclick="switchMasterHub('camp_charter', this)">
+          <div class="deal-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="露營與自駕包車" loading="lazy">
+            <div class="deal-card-gradient"></div>
+            <div class="deal-floating-tag">⛺ 3. 露營自駕</div>
+          </div>
+          <div class="deal-card-content">
+            <h3 class="deal-item-name">露營與自駕包車 (Outdoor)</h3>
+            <div class="deal-meta-rows">
+              <div class="deal-meta-item">🗻 富士山直面湖畔營地</div>
+              <div class="deal-meta-item">⛺ 免裝備 Glamping 星空帳</div>
+              <div class="deal-meta-item">🚗 日本租車比價・私人包車</div>
+            </div>
+            <button class="btn-deal-discover">
+              <span>Discover Now</span>
+              <span>➔</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. 🎌 深度專題 -->
+        <div class="deal-big-card" id="dealCard_topics" onclick="switchMasterHub('topics', this)">
+          <div class="deal-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=600&q=80" alt="深度專題" loading="lazy">
+            <div class="deal-card-gradient"></div>
+            <div class="deal-floating-tag">🎌 4. 深度專題</div>
+          </div>
+          <div class="deal-card-content">
+            <h3 class="deal-item-name">深度專題 (Topics)</h3>
+            <div class="deal-meta-rows">
+              <div class="deal-meta-item">🎆 夏夜萬發花火大會</div>
+              <div class="deal-meta-item">🚂 觀光列車・蒸汽火車 SL</div>
+              <div class="deal-meta-item">🎭 動漫聖地巡禮・快閃店</div>
+            </div>
+            <button class="btn-deal-discover">
+              <span>Discover Now</span>
+              <span>➔</span>
+            </button>
+          </div>
+        </div>
+
       </div>
-      <div style="display:flex; align-items:center; gap:10px;">
-        <span style="font-size:0.75rem; color:#64748B; font-weight:800; background:#F1F5F9; padding:4px 10px; border-radius:12px;">
-          👉 往右滑看更多現場 (12+)
-        </span>
-        <button class="btn-upload-banner" onclick="openUploadModal()">
-          <span>📸</span>
-          <span id="uploadBtnText">我要分享最新實況 ➔</span>
-        </button>
+    </section>
+
+    <!-- 🌸 賞櫻最前線全日本花季即時分享 (規劃在四大菜單正下方) -->
+    <div class="community-feed-section" id="communityFeedSection">
+      <div class="feed-header">
+        <div class="feed-title">
+          <span id="feedTitleIcon" style="font-size:1.15rem;">🌸</span>
+          <span id="feedTitleText">賞櫻最前線：全日本花季現場即時分享</span>
+          <span class="feed-sub-hint" id="feedSubHint" style="display:none;"></span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:0.75rem; color:#64748B; font-weight:800; background:#F1F5F9; padding:4px 10px; border-radius:12px;">
+            👉 往右滑看更多現場 (12+)
+          </span>
+          <button class="btn-upload-banner" onclick="openUploadModal()">
+            <span>📸</span>
+            <span id="uploadBtnText">我要分享最新實況 ➔</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="feed-scroller" id="communityFeedContainer">
+        <!-- 動態渲染回報卡片 -->
       </div>
     </div>
 
-    <div class="feed-scroller" id="communityFeedContainer">
-      <!-- 動態渲染回報卡片 -->
+    <!-- [第二層：情境子分類動態膠囊列] (依選中母夾連動展開，精簡高雅) -->
+    <div class="sub-context-nav-bar" id="subContextNavBar">
+      <div class="sub-context-scroll-wrap" id="subContextPillsContainer">
+        <!-- JS 動態生成專屬子項目膠囊 -->
+      </div>
     </div>
-  </div>
 
   <!-- 檢視模式切換列 (雙軌最佳化：圖文卡片 ⇄ 精簡條列) -->
   <div class="view-mode-bar">
@@ -4993,6 +5704,40 @@
       </button>
       <button class="btn-view-toggle" id="btnViewList" onclick="setViewMode('list')">
         <span>📑</span> <span>精簡條列</span>
+      </button>
+    </div>
+  </div>
+
+  
+  <!-- 🗾 全日本地區篩選膠囊 (依全日本 8 大地區分配，每區 10 大櫻花名所) -->
+  <div class="sakura-region-bar" id="sakuraRegionBar" style="margin: 12px 0 18px 0;">
+    <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+      <button class="region-pill active" data-region="all" onclick="selectSakuraRegion('all', this)">
+        <span>🌸</span> <span>全日本名所 (80)</span>
+      </button>
+      <button class="region-pill" data-region="kanto" onclick="selectSakuraRegion('kanto', this)">
+        <span>🗼</span> <span>關東・東京 (10)</span>
+      </button>
+      <button class="region-pill" data-region="kansai" onclick="selectSakuraRegion('kansai', this)">
+        <span>⛩️</span> <span>關西・京阪神 (10)</span>
+      </button>
+      <button class="region-pill" data-region="tohoku" onclick="selectSakuraRegion('tohoku', this)">
+        <span>🏯</span> <span>東北 (10)</span>
+      </button>
+      <button class="region-pill" data-region="chubu" onclick="selectSakuraRegion('chubu', this)">
+        <span>🗻</span> <span>中部・甲信越 (10)</span>
+      </button>
+      <button class="region-pill" data-region="hokkaido" onclick="selectSakuraRegion('hokkaido', this)">
+        <span>❄️</span> <span>北海道 (10)</span>
+      </button>
+      <button class="region-pill" data-region="chugoku" onclick="selectSakuraRegion('chugoku', this)">
+        <span>🌊</span> <span>中國・山陽山陰 (10)</span>
+      </button>
+      <button class="region-pill" data-region="shikoku" onclick="selectSakuraRegion('shikoku', this)">
+        <span>🛶</span> <span>四國 (10)</span>
+      </button>
+      <button class="region-pill" data-region="kyushu" onclick="selectSakuraRegion('kyushu', this)">
+        <span>🌴</span> <span>九州・沖繩 (10)</span>
       </button>
     </div>
   </div>
@@ -10917,6 +11662,1288 @@
     // 22+ 景點資料庫
     // 24+ 全日本四季名所・官方觀測與特派員資料庫
     const SPOTS_DATABASE = [
+      // 🌸 全日本 8 大地區 80 經典櫻花名所 (各區 10 處)
+      {
+        id: 'meguro_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kanto',
+        title: '目黑川櫻並木',
+        subtitle: '800株染井吉野櫻形成4km粉紅水岸',
+        tag: '東京・目黑區',
+        bloomStatus: '🌸 滿開吹雪 (100%)',
+        species: '染井吉野櫻',
+        desc: '東京最經典水岸櫻花隧道，落花漂浮川面形成夢幻粉紅花毯。',
+        locationDetail: '中目黑站出站步行1分鐘即達川畔步道',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E7%9B%AE%E9%BB%91%E5%B7%9D%20%E6%AB%BB%E8%8A%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC+%E4%B8%AD%E7%9B%AE%E9%BB%91'
+      },
+      {
+        id: 'chidorigafuchi',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kanto',
+        title: '千鳥之淵綠道',
+        subtitle: '皇居護城河兩岸260株垂櫻倒影',
+        tag: '東京・千代田區',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻、大島櫻',
+        desc: '護城河兩岸粉櫻傾瀉入水，泛舟水面仰望櫻花覆蓋蒼穹絕景。',
+        locationDetail: '九段下站2號出口步行3分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%8D%83%E9%B3%A5%E4%B9%8B%E6%B7%B5',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC+%E4%B8%AD%E7%9B%AE%E9%BB%91'
+      },
+      {
+        id: 'shinjuku_late_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kanto',
+        title: '新宿御苑 (晚櫻救援名所)',
+        subtitle: '65種、千株八重櫻延續至4月下旬',
+        tag: '東京・新宿區',
+        bloomStatus: '🌸 八重櫻滿開中',
+        species: '一葉櫻、關山櫻、普賢象',
+        desc: '當吉野櫻凋謝時八重櫻花團錦簇接棒盛開，草坪野餐最舒服。',
+        locationDetail: '千駄谷門、新宿門出站步行5分鐘',
+        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%96%B0%E5%AE%BF%E5%BE%A1%E8%8B%91',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC+%E6%96%B0%E5%AE%BF'
+      },
+      {
+        id: 'ueno_park',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kanto',
+        title: '上野恩賜公園',
+        subtitle: '江戶時代起即為日本第一賞櫻名所',
+        tag: '東京・台東區',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻、寒櫻',
+        desc: '千株櫻樹大道盛開，不忍池畔微風徐來，歷史悠久的庶民花見盛會。',
+        locationDetail: 'JR上野站公園口出站即達',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%B8%8A%E9%87%8E%20%E6%AB%BB%E8%8A%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC+%E4%B8%8A%E9%87%8E'
+      },
+      {
+        id: 'sumida_park_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kanto',
+        title: '隅田公園櫻並木',
+        subtitle: '晴空塔與吾妻橋畔的1公里櫻花綠道',
+        tag: '東京・墨田區',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻、里櫻',
+        desc: '沿隅田川漫步，晴空塔與櫻花同框是東京最具代表性的春日明信片。',
+        locationDetail: '淺草站或本所吾妻橋站步行5分鐘',
+        img: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%9A%85%E7%94%B0%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC+%E6%B7%BA%E8%8D%89'
+      },
+      {
+        id: 'inokashira_park',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kanto',
+        title: '井之頭恩賜公園',
+        subtitle: '踩天鵝船穿梭櫻枝倒影池泉水面',
+        tag: '東京・武藏野市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻、山櫻',
+        desc: '吉祥寺旁的綠意綠洲，湖面櫻吹雪花筏如粉紅浮毯，情侶約會首選。',
+        locationDetail: '吉祥寺站南口步行5分鐘',
+        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%90%89%E7%A5%A5%E5%AF%BA%20%E6%AB%BB%E8%8A%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%90%89%E7%A5%A5%E5%AF%BA'
+      },
+      {
+        id: 'rikugien_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kanto',
+        title: '六義園 (夜櫻枝垂巨木)',
+        subtitle: '高15公尺巨型瀑布枝垂櫻夜間點燈',
+        tag: '東京・文京區',
+        bloomStatus: '🌸 滿開點燈中',
+        species: '江戶枝垂櫻',
+        desc: '回遊式築山泉水庭園，入夜後打上粉金柔光，宛如粉紅瀑布傾瀉。',
+        locationDetail: '駒込站出站步行7分鐘',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%85%AD%E7%BE%A9%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC+%E9%A7%92%E8%BE%bc'
+      },
+      {
+        id: 'koishikawa_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kanto',
+        title: '小石川後樂園',
+        subtitle: '水戶德川家江戶名園・巨型枝垂櫻',
+        tag: '東京・文京區',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '樹齡60年枝垂櫻',
+        desc: '以西湖堤等中國名勝為意境的古典庭園，入園即見壯麗枝垂櫻迎賓。',
+        locationDetail: '飯田橋站C3出口步行3分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%B0%8F%E7%9F%B3%E5%B7%9D%E5%BE%8C%E6%A8%82%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC+%E9%A3%AF%E7%94%B0%E6%A9%8B'
+      },
+      {
+        id: 'gongendo_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kanto',
+        title: '幸手權現堂櫻堤',
+        subtitle: '1公里千本櫻與金黃油菜花雙色絕景',
+        tag: '埼玉・幸手市',
+        bloomStatus: '🌸 滿開見頃',
+        species: '染井吉野櫻、油菜花海',
+        desc: '粉紅櫻花隧道與腳下金黃油菜花田交織，關東最壯觀的春天色彩饗宴。',
+        locationDetail: '東武日光線幸手站搭乘巴士10分鐘',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%AC%8A%E7%8F%BE%E5%A0%82%E6%AB%BB%E5%A0%A4',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%9F%BC%E7%8E%89'
+      },
+      {
+        id: 'sankeien_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kanto',
+        title: '橫濱三溪園',
+        subtitle: '古建築古都名園・三重塔與山櫻同框',
+        tag: '神奈川・橫濱',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻、山櫻',
+        desc: '京都與鎌倉移建的歷史古建築散布園中，櫻花映襯古塔幽雅靜謐。',
+        locationDetail: 'JR根岸站轉乘市營巴士10分鐘',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%B8%89%E6%BA%AA%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%A9%AB%E6%BF%B1'
+      },
+      {
+        id: 'tetsugaku_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kansai',
+        title: '京都 哲學之道',
+        subtitle: '疏水兩岸500株櫻花交織的靜思石板路',
+        tag: '京都・左京區',
+        bloomStatus: '🌸 滿開吹雪 (95%)',
+        species: '關雪櫻',
+        desc: '沿琵琶湖疏水分線緩步慢行，落櫻順著流水緩緩漂向銀閣寺方向。',
+        locationDetail: '市巴士銀閣寺前站出站步行2分鐘',
+        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%93%B2%E5%AD%B8%E4%B9%8B%E9%81%93',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD'
+      },
+      {
+        id: 'daigoji_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kansai',
+        title: '京都 醍醐寺',
+        subtitle: '豐臣秀吉花見名所・世界遺產千株櫻',
+        tag: '京都・伏見區',
+        bloomStatus: '🌸 滿開 (100%)',
+        species: '枝垂櫻、吉野櫻',
+        desc: '「醍醐之花見」傳承數百年，三寶院憲深林苑的巨大太閣枝垂櫻震撼人心。',
+        locationDetail: '地鐵東西線醍醐站步行10分鐘',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%86%8D%E9%86%90%E5%AF%BA',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD'
+      },
+      {
+        id: 'ninnaji_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kansai',
+        title: '京都 仁和寺',
+        subtitle: '京都花期最後壓軸・低矮御室櫻',
+        tag: '京都・右京區',
+        bloomStatus: '🌸 御室櫻盛開中',
+        species: '御室櫻 (矮生櫻)',
+        desc: '樹高僅2~3公尺的低矮花朵撲鼻生香，五重塔在櫻花叢中若隱若現。',
+        locationDetail: '嵐電御室仁和寺站步行3分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%BB%81%E5%92%8C%E5%AF%BA',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD'
+      },
+      {
+        id: 'kiyomizu_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kansai',
+        title: '京都 清水寺',
+        subtitle: '本堂清水舞台俯瞰千株粉櫻雲海',
+        tag: '京都・東山區',
+        bloomStatus: '🌸 滿開點燈中',
+        species: '染井吉野櫻、山櫻',
+        desc: '懸空懸造舞台宛如漂浮在櫻花林海之上，夜間藍色觀音祥光照亮夜櫻。',
+        locationDetail: '市巴士清水道站步行10分鐘',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%B8%85%E6%B0%B4%E5%AF%BA',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD'
+      },
+      {
+        id: 'keage_incline',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kansai',
+        title: '京都 蹴上傾斜鐵道',
+        subtitle: '廢線鐵道兩側90株染井吉野櫻花廊',
+        tag: '京都・東山區',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻',
+        desc: '走在退役鐵軌枕木上，兩旁櫻樹交織成粉色拱廊，京都拍照熱度第一。',
+        locationDetail: '地鐵東西線蹴上站出閘即達',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E8%B9%B4%E4%B8%8A%E9%90%B5%E9%81%93',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD'
+      },
+      {
+        id: 'osakajo_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kansai',
+        title: '大阪 大阪城公園',
+        subtitle: '西之丸庭園300株櫻花環繞巍峨天守閣',
+        tag: '大阪・中央區',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '護城河石垣映襯盛開櫻花，夜間西之丸庭園燈光秀將天守閣染成粉金。',
+        locationDetail: 'JR森之宮站出站步行3分鐘',
+        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%A4%A7%E9%98%AA%E5%9F%8E',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A4%A7%E9%98%AA'
+      },
+      {
+        id: 'japan_mint_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kansai',
+        title: '大阪 造幣局櫻花大道',
+        subtitle: '每年僅開放7天・140種珍稀八重櫻',
+        tag: '大阪・北區',
+        bloomStatus: '🌸 限定開放中',
+        species: '大手毬、紅手毬',
+        desc: '560公尺專用通道兩側栽種340株名種櫻花，花團大如繡球花般華麗。',
+        locationDetail: '天滿橋站步行10分鐘',
+        img: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%80%A0%E5%B9%A3%E5%B1%80',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A4%A7%E9%98%AA'
+      },
+      {
+        id: 'yoshino_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kansai',
+        title: '奈良 吉野山 (一目千本)',
+        subtitle: '3萬株山櫻由山麓依序蔓延至山頂',
+        tag: '奈良・吉野町',
+        bloomStatus: '🌸 下千本滿開',
+        species: '白山櫻 (山櫻)',
+        desc: '日本第一賞櫻仙境！下千本、中千本、上千本至奧千本連綿一個月之久。',
+        locationDetail: '近鐵吉野站轉乘纜車',
+        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%90%89%E9%87%8E%E5%B1%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A5%88%E8%89%AF'
+      },
+      {
+        id: 'himeji_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kansai',
+        title: '兵庫 姬路城',
+        subtitle: '世界遺產白鷺城與千株粉櫻同框',
+        tag: '兵庫・姬路市',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻',
+        desc: '純白如白鷺展翅的五層大天守，與三之丸廣場合圍的櫻花海相互輝映。',
+        locationDetail: 'JR姬路站步行15分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%A7%AC%E8%B7%AF%E5%9F%8E',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A7%AC%E8%B7%AF'
+      },
+      {
+        id: 'kaizu_osaki',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kansai',
+        title: '滋賀 琵琶湖海津大崎',
+        subtitle: '4公里湖畔800株櫻花樹礁岩隧道',
+        tag: '滋賀・高島市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '奧琵琶湖礁岩岬角旁，乘花見遊覽船從水面眺望群山與櫻花相映成趣。',
+        locationDetail: 'JR牧野站轉乘湖西巴士',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%B5%B7%E6%B4%A5%E5%A4%A7%E5%B4%8E',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%BB%8B%E8%B3%80'
+      },
+      {
+        id: 'hirosaki_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'tohoku',
+        title: '青森 弘前公園',
+        subtitle: '日本第一櫻吹雪・粉紅花筏護城河',
+        tag: '青森・弘前市',
+        bloomStatus: '🌸 滿開吹雪花筏',
+        species: '染井吉野櫻 (2,600株)',
+        desc: '護城河水面完全被花瓣覆蓋成粉紅色花毯，蘋果修剪農法培育出厚實花球。',
+        locationDetail: 'JR弘前站搭乘巴士15分鐘',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%BC%98%E5%89%8D%20%E6%AB%BB%E8%8A%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%9D%92%E6%A3%AE+%E5%BC%98%E5%89%8D'
+      },
+      {
+        id: 'kitakami_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'tohoku',
+        title: '岩手 北上展勝地',
+        subtitle: '北上川2公里櫻花隧道與百尾鯉魚旗',
+        tag: '岩手・北上市',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻 (10,000株)',
+        desc: '搭乘古色古香觀光馬車穿梭花海，川上懸掛百面鯉魚旗隨風翻飛。',
+        locationDetail: 'JR北上站東口步行20分鐘',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E4%B8%8A%E5%B1%95%E5%8B%9D%E5%9C%B0',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B2%A9%E6%89%8B'
+      },
+      {
+        id: 'kakunodate_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'tohoku',
+        title: '秋田 角館武家屋敷',
+        subtitle: '黑板塀映襯162株國家天然紀念物枝垂櫻',
+        tag: '秋田・仙北市',
+        bloomStatus: '🌸 枝垂櫻滿開中',
+        species: '角館枝垂櫻',
+        desc: '陸奧小京都古樸武士宅邸，深黑木牆與粉柔瀑布櫻花構成極致對比。',
+        locationDetail: 'JR角館站出站步行15分鐘',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E8%A7%92%E9%A4%A8',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A7%8B%E7%94%B0'
+      },
+      {
+        id: 'hitome_senbon',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'tohoku',
+        title: '宮城 白石川堤一目千本櫻',
+        subtitle: '8公里1,200株櫻花連綿殘雪藏王連峰',
+        tag: '宮城・大河原町',
+        bloomStatus: '🌸 滿開 (100%)',
+        species: '染井吉野櫻',
+        desc: '東北最壯麗宏大的櫻堤，清澈白石川倒映遠方雪白藏王山巒與粉櫻。',
+        locationDetail: 'JR大河原站步行3分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%B8%80%E7%9B%AE%E5%8D%83%E6%9C%AC%E6%AB%BB',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BB%99%E5%8F%B0'
+      },
+      {
+        id: 'miharu_takizakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'tohoku',
+        title: '福島 三春瀧櫻',
+        subtitle: '樹齡超1,000年！日本三大名櫻之首',
+        tag: '福島・三春町',
+        bloomStatus: '🌸 千年巨櫻滿開',
+        species: '紅枝垂櫻',
+        desc: '高13.5公尺、枝展東西25公尺，花朵如瀑布飛瀉而下，充滿靈氣。',
+        locationDetail: 'JR三春站轉乘接駁巴士',
+        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%B8%89%E6%98%A5%E7%80%A7%E6%AB%BB',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%83%A1%E5%B1%B1'
+      },
+      {
+        id: 'tsurugajo_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'tohoku',
+        title: '福島 會津若松鶴之城',
+        subtitle: '全日本唯一紅瓦天守閣與千株櫻花',
+        tag: '福島・會津若松',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '東日本最大級夜櫻點燈，護城河水面清晰倒映紅色瓦頂與盛開吉野櫻。',
+        locationDetail: 'JR會津若松站搭市區巴士',
+        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%B6%B4%E4%B9%8B%E5%9F%8E',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9C%83%E6%B4%A5%E8%8B%A5%E6%9D%BE'
+      },
+      {
+        id: 'nicchusen_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'tohoku',
+        title: '福島 喜多方日中線枝垂櫻',
+        subtitle: '3公里廢線鐵道・千株枝垂櫻與老蒸機',
+        tag: '福島・喜多方市',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '枝垂櫻',
+        desc: '散步在昔日蒸汽鐵道上，粉紅垂枝櫻宛如流蘇簾幕，中段陳設黑色SL蒸機。',
+        locationDetail: 'JR喜多方站步行5分鐘',
+        img: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E4%B8%AD%E7%B7%9A%E6%AB%BB%E8%8A%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%96%9C%E5%A4%9A%E6%96%B9'
+      },
+      {
+        id: 'towada_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'tohoku',
+        title: '青森 十和田市官廳街通',
+        subtitle: '日本街道百選・現代雕塑與櫻花林道',
+        tag: '青森・十和田市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '十和田市現代美術館旁，綠意赤松與淡粉櫻花大道交織出清亮現代感。',
+        locationDetail: 'JR七戶十和田站搭乘巴士30分鐘',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%8D%81%E5%92%8C%E7%94%B0',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%AB%E6%88%B6'
+      },
+      {
+        id: 'eboshiyama_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'tohoku',
+        title: '山形 烏帽子山公園',
+        subtitle: '置賜櫻花回廊名所・赤湯溫泉街俯瞰',
+        tag: '山形・南陽市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '烏帽子山千本櫻',
+        desc: '巨大的石造大鳥居被櫻花環繞，山頂可俯瞰整座溫泉街與盛開山櫻。',
+        locationDetail: 'JR赤湯站步行20分鐘',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E7%83%8F%E5%B8%BD%E5%AD%90%E5%B1%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B1%B1%E5%BD%A2'
+      },
+      {
+        id: 'makito_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'tohoku',
+        title: '秋田 橫手真人公園',
+        subtitle: '日本櫻花名所百選・池泉迴遊鏡櫻',
+        tag: '秋田・橫手市',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻 (2,000株)',
+        desc: '巨岩峭壁映襯池畔盛開櫻樹，花吹雪飄落湖面形成雙重倒影風情。',
+        locationDetail: 'JR十文字站搭車15分鐘',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E7%9C%9F%E4%BA%BA%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%A9%AB%E6%89%8B'
+      },
+      {
+        id: 'takato_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chubu',
+        title: '長野 高遠城址公園',
+        subtitle: '天下第一櫻！1,500株特有高遠小彼岸櫻',
+        tag: '長野・伊那市',
+        bloomStatus: '🌸 天下第一櫻滿開',
+        species: '高遠小彼岸櫻',
+        desc: '櫻花名所百選首位！花色比吉野櫻更深更粉，宛如整座山頭籠罩在粉紅雲霧中。',
+        locationDetail: 'JR伊那市站轉搭巴士25分鐘',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%AB%98%E9%81%A0%E5%9F%8E%E5%9D%80',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%95%B7%E9%87%8E'
+      },
+      {
+        id: 'arakurayama_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chubu',
+        title: '山梨 新倉山淺間公園',
+        subtitle: '富士山＋五重塔＋滿櫻的三位一體明信片',
+        tag: '山梨・富士吉田',
+        bloomStatus: '🌸 滿開 (100%)',
+        species: '染井吉野櫻',
+        desc: '登上398階咲耶階段，眺望冠雪富士山與忠靈塔同框，全球旅人朝聖絕景。',
+        locationDetail: '富士急行線下吉田站步行10分鐘',
+        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%96%B0%E5%80%89%E5%B1%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96'
+      },
+      {
+        id: 'ubuyagasaki_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chubu',
+        title: '山梨 富士河口湖產屋崎',
+        subtitle: '河口湖逆富士倒影與水岸櫻樹',
+        tag: '山梨・河口湖',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '清晨無風時刻，湖面如鏡倒映富士山雪冠，兩旁粉櫻垂向水面格外靈秀。',
+        locationDetail: '河口湖周遊巴士產屋崎站下車即達',
+        img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%B2%B3%E5%8F%A3%E6%B9%96%20%E6%AB%BB%E8%8A%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96'
+      },
+      {
+        id: 'kenrokuen_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chubu',
+        title: '石川 金澤兼六園',
+        subtitle: '日本三大名園・400株兼六園菊櫻',
+        tag: '石川・金澤市',
+        bloomStatus: '🌸 名園盛開 (無料開園)',
+        species: '兼六園菊櫻',
+        desc: '兼具六種造園景觀的名園，琴柱燈籠旁曲水流觴與名木櫻花交相輝映。',
+        locationDetail: 'JR金澤站轉搭巴士15分鐘',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%85%BC%E5%85%AD%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%87%91%E6%BE%A4'
+      },
+      {
+        id: 'takada_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chubu',
+        title: '新潟 高田城址公園',
+        subtitle: '日本三大夜櫻！4,000盞雪洞紙燈籠',
+        tag: '新潟・上越市',
+        bloomStatus: '🌸 夜櫻點燈 (95%)',
+        species: '染井吉野櫻 (4,000株)',
+        desc: '護城河水面倒映三重櫓古城，紙燈籠點亮漫天粉紅櫻花，規模極其宏偉。',
+        locationDetail: '越後心動鐵道高田站步行15分鐘',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%AB%98%E7%94%B0%E5%9F%8E',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E4%B8%8A%E8%B6%8A'
+      },
+      {
+        id: 'matsumotojo_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chubu',
+        title: '長野 國寶松本城',
+        subtitle: '日本最古老五重天守閣與雪山倒影',
+        tag: '長野・松本市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '黑白相間的國寶天守矗立於護城河中，遠方北阿爾卑斯殘雪與粉櫻同框。',
+        locationDetail: 'JR松本站步行15分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%9D%BE%E6%9C%AC%E5%9F%8E',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%BE%E6%9C%AC'
+      },
+      {
+        id: 'garyu_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chubu',
+        title: '長野 須坂市臥龍公園',
+        subtitle: '龍池兩岸倒映800株粉櫻與遠山',
+        tag: '長野・須坂市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '名列日本櫻花百選，沿著池畔散步品嚐名物黑輪與櫻花糰子，溫馨恬淡。',
+        locationDetail: '長野電鐵須坂站轉乘巴士10分鐘',
+        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E8%87%A5%E9%BE%8D%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%95%B7%E9%87%8E'
+      },
+      {
+        id: 'shinkaigawa_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chubu',
+        title: '岐阜 各務原新境川堤',
+        subtitle: '百十郎櫻！河畔兩岸1,200株櫻花大道',
+        tag: '岐阜・各務原市',
+        bloomStatus: '🌸 滿開見頃',
+        species: '染井吉野櫻',
+        desc: '歌舞伎役者市川百十郎所贈櫻樹，河川水面鋪滿落櫻，名列櫻花百選。',
+        locationDetail: '名鐵市民公園前站出站即達',
+        img: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%96%B0%E5%A2%83%E5%B7%9D%E5%A0%A4',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B2%90%E9%98%9C'
+      },
+      {
+        id: 'matsukawa_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chubu',
+        title: '富山 松川公園',
+        subtitle: '市中心水岸花見遊覽船穿梭櫻枝下',
+        tag: '富山・富山市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '搭乘七橋花見遊覽船穿過櫻花拱門，江戶時代富山城殘留護城河遺跡。',
+        locationDetail: 'JR富山站南口步行10分鐘',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%9D%BE%E5%B7%9D%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AF%8C%E5%B1%B1'
+      },
+      {
+        id: 'tsurumai_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chubu',
+        title: '愛知 名古屋鶴舞公園',
+        subtitle: '西洋噴泉塔與和風迴遊池千株盛櫻',
+        tag: '愛知・名古屋',
+        bloomStatus: '🌸 滿開夜櫻點燈',
+        species: '染井吉野櫻',
+        desc: '名古屋最歷史悠久的名園，古典歐風大噴泉與滿開櫻花共構獨特和洋風貌。',
+        locationDetail: 'JR鶴舞站4號出口出站即達',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%B6%B4%E8%88%9E%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%90%8D%E5%8F%A4%E5%B1%8B'
+      },
+      {
+        id: 'goryokaku_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'hokkaido',
+        title: '函館 五稜郭公園',
+        subtitle: '登上五稜郭塔！俯瞰星形粉紅要塞花海',
+        tag: '北海道・函館市',
+        bloomStatus: '🌸 滿開 (100%)',
+        species: '染井吉野櫻 (1,600株)',
+        desc: '登上107公尺高展望台，將獨一無二的五芒星粉紅要塞全景盡收眼底。',
+        locationDetail: '函館市電五稜郭公園前站步行10分鐘',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%BA%94%E7%A8%9C%E9%83%AD%20%E6%AB%BB%E8%8A%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%87%BD%E9%A4%A8'
+      },
+      {
+        id: 'matsumae_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'hokkaido',
+        title: '松前公園 松前城',
+        subtitle: '北海道唯一日本式城堡・250種萬株櫻',
+        tag: '北海道・松前町',
+        bloomStatus: '🌸 滿開盛開中',
+        species: '早開、中開、晚開三大類櫻種',
+        desc: '品種極多花期長達一個月，白壁天守閣被粉紅花浪層層包圍壯麗無比。',
+        locationDetail: 'JR木古內站轉搭巴士約1.5小時',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%9D%BE%E5%89%8D%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%87%BD%E9%A4%A8'
+      },
+      {
+        id: 'hokkaido_jingu_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'hokkaido',
+        title: '札幌 北海道神宮',
+        subtitle: '櫻花與梅花同時盛開的北國獨特奇景',
+        tag: '北海道・札幌市',
+        bloomStatus: '🌸 櫻梅同開 (95%)',
+        species: '蝦夷山櫻',
+        desc: '北國特有的春天奇景，櫻花與梅花同時怒放，參拜品嚐名物判官餅。',
+        locationDetail: '地鐵圓山公園站步行15分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%E7%A5%9E%E5%AE%AE',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9C%AD%E5%B9%8C'
+      },
+      {
+        id: 'maruyama_park_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'hokkaido',
+        title: '札幌 圓山公園',
+        subtitle: '札幌市民賞櫻吃烤羊肉成吉思汗名所',
+        tag: '北海道・札幌市',
+        bloomStatus: '🌸 滿開見頃',
+        species: '蝦夷山櫻',
+        desc: '北海道傳統花見習俗，在盛開的蝦夷山櫻下享受炭火成吉思汗烤羊肉。',
+        locationDetail: '地鐵圓山公園站出閘即達',
+        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%9C%93%E5%B1%B1%E5%85%AC%E5%9C%92%20%E6%9C%AD%E5%B9%8C',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9C%AD%E5%B9%8C'
+      },
+      {
+        id: 'nijukken_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'hokkaido',
+        title: '新冠 靜內二十間道路櫻並木',
+        subtitle: '寬36m、長7公里直通天際的3,000株櫻花大道',
+        tag: '北海道・日高町',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '蝦夷山櫻',
+        desc: '日本規模最宏偉筆直的櫻花大道，道路寬達20間（約36公尺），一望無際。',
+        locationDetail: '從札幌自駕約2小時',
+        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%BA%8C%E5%8D%81%E9%96%93%E9%81%93%E8%B7%AF',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%97%A5%E9%AB%98'
+      },
+      {
+        id: 'moerenuma_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'hokkaido',
+        title: '札幌 莫埃來沼公園櫻之森',
+        subtitle: '野口勇雕塑大地景觀與2,000株櫻花林',
+        tag: '北海道・札幌市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '蝦夷山櫻',
+        desc: '藝術幾何山丘與櫻花林融為一體，租一輛自行車在廣闊幾何大地中追櫻。',
+        locationDetail: '地鐵環狀通東站轉乘中央巴士25分鐘',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E8%8E%AB%E5%9F%83%E4%BE%86%E6%B2%BC',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9C%AD%E5%B9%8C'
+      },
+      {
+        id: 'noboribetsu_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'hokkaido',
+        title: '登別 櫻坂 (櫻花隧道)',
+        subtitle: 'JR登別站直通溫泉街的2,000株櫻花公路',
+        tag: '北海道・登別市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '蝦夷山櫻',
+        desc: '開車穿行在粉紅櫻花拱門下前往登別地獄谷溫泉，春日自駕首選景觀路段。',
+        locationDetail: 'JR登別站前道道2號線往溫泉方向',
+        img: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E7%99%BB%E5%88%A5%20%E6%AB%BB%E8%8A%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E7%99%BB%E5%88%A5'
+      },
+      {
+        id: 'asahiyama_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'hokkaido',
+        title: '旭川 旭山公園',
+        subtitle: '旭山動物園旁・3,500株蝦夷山櫻花海',
+        tag: '北海道・旭川市',
+        bloomStatus: '🌸 滿開點燈中',
+        species: '蝦夷山櫻',
+        desc: '看完北極熊與企鵝後直接走入後方旭山山麓，萬朵深粉櫻花在山坡怒放。',
+        locationDetail: 'JR旭川站搭乘公車約40分鐘',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%AD%E5%B1%B1%E5%8B%95%E7%89%A9%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%97%AD%E5%B7%9D'
+      },
+      {
+        id: 'seiryuji_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'hokkaido',
+        title: '根室 清隆寺',
+        subtitle: '日本櫻花前線終點站！5月下旬最後千島櫻',
+        tag: '北海道・根室市',
+        bloomStatus: '🌸 5月下旬最後櫻花',
+        species: '千島櫻',
+        desc: '日本全境櫻花開花最遲的地點，象徵全日本春天的最後句點。',
+        locationDetail: 'JR根室站步行15分鐘',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%A0%B9%E5%AE%A4',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%A0%B9%E5%AE%A4'
+      },
+      {
+        id: 'aobagaoka_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'hokkaido',
+        title: '森町 青葉之丘公園',
+        subtitle: '樹齡逾百年的珍稀固有種森小石川櫻',
+        tag: '北海道・森町',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '森小石川櫻',
+        desc: '駒之岳火山背景下，百年老櫻蒼勁挺拔，每年春季舉辦森町櫻花祭熱鬧非凡。',
+        locationDetail: 'JR森站步行15分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%9D%92%E8%91%89%E4%B9%8B%E4%B8%98',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%87%BD%E9%A4%A8'
+      },
+      {
+        id: 'miyajima_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chugoku',
+        title: '廣島 宮島嚴島神社',
+        subtitle: '海上大鳥居與五重塔畔1,900株櫻花',
+        tag: '廣島・廿日市',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻',
+        desc: '瀨戶內海潮起潮落，海上紅色大鳥居、朱紅多寶塔與鹿兒穿梭櫻花樹下。',
+        locationDetail: '宮島口乘渡輪10分鐘抵達宮島碼頭',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%AE%AE%E5%B3%B6',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BB%A3%E5%B3%B6'
+      },
+      {
+        id: 'senkoji_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chugoku',
+        title: '廣島 尾道千光寺公園',
+        subtitle: '搭纜車俯瞰瀨戶內海島嶼與山坡櫻花',
+        tag: '廣島・尾道市',
+        bloomStatus: '🌸 滿開見頃',
+        species: '染井吉野櫻',
+        desc: '依山傍海的文藝之城，從山頂千光寺觀景台眺望尾道水道與盛開粉櫻。',
+        locationDetail: 'JR尾道站搭公車至千光寺纜車站',
+        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%B0%BE%E9%81%93',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B0%BE%E9%81%93'
+      },
+      {
+        id: 'tsuyamajo_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chugoku',
+        title: '岡山 津山城鶴山公園',
+        subtitle: '日本三大平山城！高聳石垣與5,000株櫻海',
+        tag: '岡山・津山市',
+        bloomStatus: '🌸 滿開 (100%)',
+        species: '染井吉野櫻',
+        desc: '登上多層宏偉雄壯的石垣頂峰，俯瞰萬朵櫻花宛如波浪般覆蓋整座古城。',
+        locationDetail: 'JR津山站步行10分鐘',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%B4%A5%E5%B1%B1%E5%9F%8E',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B2%A1%E5%B1%B1'
+      },
+      {
+        id: 'kintaikyo_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chugoku',
+        title: '山口 岩國錦帶橋',
+        subtitle: '日本三大名橋！木造五連拱橋與千株櫻堤',
+        tag: '山口・岩國市',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻',
+        desc: '錦川上典雅的木造拱橋，沿河岸櫻花隧道漫步，一睹日本古建築極致造藝。',
+        locationDetail: 'JR岩國站搭公車20分鐘直達錦帶橋',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%8C%A6%E5%B8%B6%E6%A9%8B',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B2%A9%E5%9C%8B'
+      },
+      {
+        id: 'korakuen_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chugoku',
+        title: '岡山 後樂園',
+        subtitle: '日本三大名園・大立馬櫻與旭川櫻堤',
+        tag: '岡山・岡山市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '米其林三星評鑑大名庭園，園內延養亭旁櫻樹與園外旭川堤櫻花連成一體。',
+        locationDetail: 'JR岡山站轉搭巴士10分鐘',
+        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%BE%8C%E6%A8%82%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B2%A1%E5%B1%B1'
+      },
+      {
+        id: 'matsuejo_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chugoku',
+        title: '島根 國寶松江城',
+        subtitle: '千鳥破風黑天守與護城河堀川遊覽船',
+        tag: '島根・松江市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '搭乘堀川遊覽小舟穿過櫻枝垂落的水道，登上千鳥城俯瞰穴道湖風光。',
+        locationDetail: 'JR松江站搭公車10分鐘',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%9D%BE%E6%B1%9F%E5%9F%8E',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%BE%E6%B1%9F'
+      },
+      {
+        id: 'utsubuki_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chugoku',
+        title: '鳥取 倉吉打吹公園',
+        subtitle: '白壁土藏群旁・4,000株櫻花與羽衣池',
+        tag: '鳥取・倉吉市',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻',
+        desc: '山陰第一櫻花名所，打吹山麓春季被各色杜鵑與櫻花妝點得繽紛燦爛。',
+        locationDetail: 'JR倉吉站轉乘市內巴士15分鐘',
+        img: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%89%93%E5%90%B9%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%B3%A5%E5%8F%96'
+      },
+      {
+        id: 'hiikawa_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chugoku',
+        title: '島根 斐伊川堤防櫻並木',
+        subtitle: '神話故鄉2公里櫻花隧道・櫻花百選',
+        tag: '島根・雲南市',
+        bloomStatus: '🌸 滿開盛景',
+        species: '染井吉野櫻',
+        desc: '八岐大蛇神話發源地，堤防兩側茂密老櫻枝幹相交，被譽為中國地方第一櫻並木。',
+        locationDetail: 'JR木次站出站步行1分鐘即達',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%96%90%E4%BC%8A%E5%B7%9D',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%87%BA%E9%9B%B2'
+      },
+      {
+        id: 'hiroshima_peace_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chugoku',
+        title: '廣島 和平紀念公園',
+        subtitle: '原爆圓頂旁元安川兩岸300株祈願粉櫻',
+        tag: '廣島・中區',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '象徵和平與重生的櫻花在元安川兩岸盛開，可搭乘河川觀光船由水面仰望。',
+        locationDetail: '廣電原爆圓頂前站步行1分鐘',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%BB%A3%E5%B3%B6%20%E5%92%8C%E5%B9%B3%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BB%A3%E5%B3%B6'
+      },
+      {
+        id: 'ichinosakagawa_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'chugoku',
+        title: '山口 一之坂川櫻並木',
+        subtitle: '仿照京都鴨川修建・200株染井吉野櫻水岸',
+        tag: '山口・山口市',
+        bloomStatus: '🌸 滿開夜櫻點燈',
+        species: '染井吉野櫻',
+        desc: '大內文化時期仿京都意象設計的水道，古樸石橋旁櫻花垂入清流，夜櫻極美。',
+        locationDetail: 'JR山口站步行15分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%B8%80%E4%B9%8B%E5%9D%82%E5%B7%9D',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B1%B1%E5%8F%A3'
+      },
+      {
+        id: 'shiudeyama_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'shikoku',
+        title: '香川 紫雲出山',
+        subtitle: '紐約時報力薦！瀨戶內海雲海與千株櫻花',
+        tag: '香川・三豐市',
+        bloomStatus: '🌸 滿開絕景 (預約制)',
+        species: '染井吉野櫻',
+        desc: '標高352公尺山頂展望台，粉紅櫻花與瀨戶內海湛藍島影共構世界級絕景。',
+        locationDetail: 'JR詫間站轉搭花季專車接駁',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E7%B4%AB%E9%9B%B2%E5%87%BA%E5%B1%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E6%9D%BE'
+      },
+      {
+        id: 'kotohira_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'shikoku',
+        title: '香川 琴平金刀比羅宮',
+        subtitle: '785級石階參道・3,500株櫻花滿開迎神',
+        tag: '香川・琴平町',
+        bloomStatus: '🌸 參道滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '登上金刀比羅宮長長參道，大門前櫻花馬場兩側櫻花盛開形成粉紅拱道。',
+        locationDetail: '琴電琴平站步行15分鐘抵達參道口',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%87%91%E5%88%80%E6%AF%94%E7%BE%85%E5%AE%AE',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E7%90%B4%E5%B9%B3'
+      },
+      {
+        id: 'matsuyamajo_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'shikoku',
+        title: '愛媛 松山城山公園',
+        subtitle: '勝山之巔現存十二天守之一・200株吉野櫻',
+        tag: '愛媛・松山市',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻',
+        desc: '搭乘空中吊椅登上城頂，黑瓦石垣天守閣周圍櫻花環繞，俯瞰松山市景。',
+        locationDetail: '伊予鐵道大街道站步行5分鐘至纜車站',
+        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%9D%BE%E5%B1%B1%E5%9F%8E',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%BE%E5%B1%B1'
+      },
+      {
+        id: 'hirakiyama_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'shikoku',
+        title: '愛媛 今治開山公園',
+        subtitle: '島波海道伯方島頂・俯瞰跨海大橋與櫻花',
+        tag: '愛媛・今治市',
+        bloomStatus: '🌸 滿開見頃',
+        species: '染井吉野櫻',
+        desc: '位於伯方島開山山頂，展望台可將伯方·大島大橋與滿山盛櫻同框收入鏡頭。',
+        locationDetail: '西瀨戶自動車道伯方島IC開車10分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%96%8B%E5%B1%B1%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BB%8A%E6%B2%BB'
+      },
+      {
+        id: 'makino_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'shikoku',
+        title: '高知 牧野植物園',
+        subtitle: '日本植物學之父故鄉・40種原生野生櫻',
+        tag: '高知・高知市',
+        bloomStatus: '🌸 珍稀櫻盛開',
+        species: '山櫻、大島櫻',
+        desc: '五台山上的綠意殿堂，收集全日本多種珍貴原生櫻花品種，極具知性美。',
+        locationDetail: 'JR高知站搭乘MY遊巴士約30分鐘',
+        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E7%89%A7%E9%87%8E%E6%A4%8D%E7%89%A9%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E7%9F%A5'
+      },
+      {
+        id: 'bizan_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'shikoku',
+        title: '德島 眉山公園',
+        subtitle: '搭乘眉山纜車・俯瞰阿波吉野川出海口',
+        tag: '德島・德島市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '德島市地標眉山山頂，春季整座山坡被櫻花覆蓋，遠眺大鳴門橋海景。',
+        locationDetail: 'JR德島站步行10分鐘至阿波舞會館搭纜車',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E7%9C%89%E5%B1%B1%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BE%B7%E5%B3%B6'
+      },
+      {
+        id: 'kagamino_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'shikoku',
+        title: '高知 香美市鏡野公園',
+        subtitle: '200公尺櫻花拱門林道・櫻花百選名所',
+        tag: '高知・香美市',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻',
+        desc: '高知工科大學旁，枝枒繁盛的吉野櫻相扣形成天然粉紅隧道，散步極為浪漫。',
+        locationDetail: 'JR土佐山田站轉搭巴士約10分鐘',
+        img: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%8F%A1%E9%87%8E%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E7%9F%A5'
+      },
+      {
+        id: 'hiwasa_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'shikoku',
+        title: '德島 日和佐八幡神社',
+        subtitle: '大濱海岸旁海風櫻花・海龜產卵聖地',
+        tag: '德島・美波町',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '面對太平洋的大濱海灘，神社參道兩側櫻樹盛開，海潮聲伴隨落櫻飄零。',
+        locationDetail: 'JR日和佐站步行15分鐘',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E5%92%8C%E4%BD%90',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%BE%B7%E5%B3%B6'
+      },
+      {
+        id: 'sekizenan_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'shikoku',
+        title: '愛媛 積善山千本櫻',
+        subtitle: '岩城島積善山・三千本天女羽衣櫻花道',
+        tag: '愛媛・上島町',
+        bloomStatus: '🌸 滿開 (100%)',
+        species: '染井吉野櫻',
+        desc: '登上岩城島最高峰，由山腳盤旋至山頂的粉紅櫻帶被稱為「天女的羽衣」。',
+        locationDetail: '從因島或生口島搭渡輪直達岩城港',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E7%A9%8D%E5%96%84%E5%B1%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B0%BE%E9%81%93'
+      },
+      {
+        id: 'ritsurin_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'shikoku',
+        title: '香川 特別名勝栗林公園',
+        subtitle: '米其林三星評鑑！一步一景日暮亭夜櫻',
+        tag: '香川・高松市',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻',
+        desc: '紫雲山為背景的六大水池與十三座假山，南湖偃月橋與櫻花倒影無與倫比。',
+        locationDetail: 'JR栗林公園北口站步行3分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%A0%97%E6%9E%97%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E6%9D%BE'
+      },
+      {
+        id: 'maizuru_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kyushu',
+        title: '福岡 舞鶴公園 (福岡城跡)',
+        subtitle: '福岡城古石垣與千株櫻花祭夜間幻燈',
+        tag: '福岡・中央區',
+        bloomStatus: '🌸 滿開 (100%)',
+        species: '染井吉野櫻',
+        desc: '黑田官兵衛所築福岡城遺跡，春櫻怒放映襯黑色古城牆，福岡市內第一賞櫻點。',
+        locationDetail: '地鐵赤坂站或大濠公園站步行8分鐘',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E8%88%9E%E9%B6%B4%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A6%8F%E5%B2%A1'
+      },
+      {
+        id: 'nishi_park_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kyushu',
+        title: '福岡 西公園',
+        subtitle: '櫻花百選名所！丘陵展望台俯瞰博多灣',
+        tag: '福岡・中央區',
+        bloomStatus: '🌸 滿開見頃',
+        species: '染井吉野櫻',
+        desc: '博多灣海風吹拂，山頂光雲神社兩側櫻花滿開，可一覽能古島與志賀島海景。',
+        locationDetail: '地鐵大濠公園站步行15分鐘',
+        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E8%A5%BF%E5%85%AC%E5%9C%92%20%E7%A6%8F%E5%B2%A1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A6%8F%E5%B2%A1'
+      },
+      {
+        id: 'kumamotojo_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kyushu',
+        title: '熊本 熊本城',
+        subtitle: '名將加藤清正黑漆天守閣與800株盛櫻',
+        tag: '熊本・中央區',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻',
+        desc: '日本三大名城之一，震後完全修復的大天守前，粉櫻怒放映照武者返石垣。',
+        locationDetail: '熊本市電熊本城·市役所前站步行3分鐘',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E7%86%8A%E6%9C%AC%E5%9F%8E',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E7%86%8A%E6%9C%AC'
+      },
+      {
+        id: 'ogi_park_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kyushu',
+        title: '佐賀 小城公園',
+        subtitle: '二代小城藩主所建名園・3,000株櫻花倒影',
+        tag: '佐賀・小城市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '佐賀唯一入選日本櫻花百選名勝，心字池水面倒映滿山櫻花，品嚐名物小城羊羹。',
+        locationDetail: 'JR唐津線小城站步行5分鐘',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%B0%8F%E5%9F%8E%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BD%90%E8%B3%80'
+      },
+      {
+        id: 'isshingyo_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kyushu',
+        title: '熊本 南阿蘇一心行大櫻',
+        subtitle: '樹齡逾400年神木！阿蘇火山連峰下孤櫻',
+        tag: '熊本・南阿蘇村',
+        bloomStatus: '🌸 400年神木滿開',
+        species: '山櫻巨木',
+        desc: '矗立在金黃油菜花田中央的古巨櫻，枝展達26公尺，阿蘇五岳為背景氣勢磅礴。',
+        locationDetail: '南阿蘇鐵道中松站步行15分鐘',
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%B8%80%E5%BF%83%E8%A1%8C%E5%A4%A7%E6%AB%BB',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%98%BF%E8%98%87'
+      },
+      {
+        id: 'mifuneyama_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kyushu',
+        title: '佐賀 武雄御船山樂園',
+        subtitle: '鍋島藩主50萬平方公尺名園・斷崖夜櫻',
+        tag: '佐賀・武雄市',
+        bloomStatus: '🌸 滿開 (95%)',
+        species: '染井吉野櫻',
+        desc: '雄偉奇岩御船山斷崖下，池泉周邊兩千株櫻花盛開，九州最大級夜間點燈盛典。',
+        locationDetail: 'JR武雄溫泉站搭計程車5分鐘',
+        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%BE%A1%E8%88%B9%E5%B1%B1',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%AD%A6%E9%9B%84'
+      },
+      {
+        id: 'kirishima_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kyushu',
+        title: '鹿兒島 霧島神宮',
+        subtitle: '南九州最大鳥居參道與朱紅社殿春櫻',
+        tag: '鹿兒島・霧島市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '天孫降臨神話古社，穿過三之鳥居，朱紅華麗本殿在粉白櫻花簇擁下莊嚴神聖。',
+        locationDetail: 'JR霧島神宮站轉搭巴士約15分鐘',
+        img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%9C%A7%E5%B3%B6%E7%A5%9E%E5%AE%AE',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%B9%BF%E5%85%92%E5%B3%B6'
+      },
+      {
+        id: 'tadamoto_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kyushu',
+        title: '鹿兒島 伊佐市忠元公園',
+        subtitle: '2公里千本櫻直通路・鹿兒島唯一櫻花百選',
+        tag: '鹿兒島・伊佐市',
+        bloomStatus: '🌸 滿開 (90%)',
+        species: '染井吉野櫻',
+        desc: '長達2公里的筆直櫻花大道，草地廣場寬廣，春季千盞提燈點亮夜空無比燦爛。',
+        locationDetail: 'JR新水俁站開車約40分鐘',
+        img: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%BF%A0%E5%85%83%E5%85%AC%E5%9C%92',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E9%B9%BF%E5%85%92%E5%B3%B6'
+      },
+      {
+        id: 'saitobaru_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kyushu',
+        title: '宮崎 西都原古墳群',
+        subtitle: '古代巨塚旁2,000株櫻花與30萬株油菜花',
+        tag: '宮崎・西都市',
+        bloomStatus: '🌸 雙色花海盛開',
+        species: '染井吉野櫻',
+        desc: '特別史跡古墳群台地上，粉紅櫻花與鮮黃油菜花交織出遼闊大地春日拼圖。',
+        locationDetail: '西都巴士總站轉搭接駁公車',
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E8%A5%BF%E9%83%BD%E5%8E%9F',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AE%AE%E5%B4%8E'
+      },
+      {
+        id: 'nakijin_sakura',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'kyushu',
+        title: '沖繩 今歸仁城跡',
+        subtitle: '日本最早櫻花季！世界遺產古城寒緋櫻',
+        tag: '沖繩・國頭郡',
+        bloomStatus: '🌸 寒緋櫻盛開',
+        species: '琉球寒緋櫻',
+        desc: '每年1月下旬即吹響日本櫻花季號角，平郎門古城石垣打上夢幻彩燈。',
+        locationDetail: '那霸機場自駕約1.5小時',
+        img: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%BB%8A%E6%AD%B8%E4%BB%81',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%96%E7%B9%A4'
+      },
+
       // 🚂 精彩鐵道・觀光列車與蒸汽火車 (SL)
       {
         id: 'sl_banetsu',
@@ -12400,6 +14427,42 @@
       filteredFeeds.forEach(item => {
         const card = document.createElement('div');
         card.className = 'feed-snap-card';
+                // 抗疲勞極簡卡片呈現 (依和風櫻花低飽和色票規範)
+        if (item.theme === 'sakura' || item.theme === 'flower') {
+          card.innerHTML = `
+            <div class="card-img-box">
+              <img src="${item.img}" alt="${item.title}" loading="lazy">
+              <button class="btn-card-fav ${isFav ? 'active' : ''}" onclick="toggleFavorite('${item.id}', 'spot', '${item.title.replace(/'/g, "\\'")}', '${item.img}', '${item.region || ''}', '${item.tag || ''}'); event.stopPropagation();" title="${isFav ? '已在收藏本' : '加入我的行程收藏'}">
+                ${isFav ? '❤️' : '🤍'}
+              </button>
+              <div class="card-floating-badge">${item.tag}</div>
+              <div class="card-bloom-status-tag">${item.bloomStatus || '🌸 滿開 (100%)'}</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-header">
+                <div>
+                  <h3 style="margin:0; font-size:1.05rem; font-weight:900; color:#2D3748;">${item.title}</h3>
+                  <div class="card-subtitle-line" style="font-size:0.76rem; color:#718096; margin:3px 0 6px;">${item.subtitle}</div>
+                </div>
+              </div>
+              
+              <p class="card-clean-concise-desc">${item.desc}</p>
+
+              <!-- 底部極簡雙按鈕 (抗疲勞，查看實況 ＋ 散策指引) -->
+              <div class="clean-action-row">
+                <a href="${klookFinalUrl}" target="_blank" class="btn-clean-primary" onclick="event.stopPropagation();">
+                  <span>🌸 查看現場實況</span>
+                </a>
+                <button class="btn-clean-secondary" onclick="openReadingSheet('${item.id}'); event.stopPropagation();">
+                  <span>🚶 散策指引</span>
+                </button>
+              </div>
+            </div>
+          `;
+          container.appendChild(card);
+          return;
+        }
+
         card.innerHTML = `
           <div class="feed-snap-img">
             <img src="${item.img}" alt="${item.spot}" loading="lazy">
@@ -12473,6 +14536,10 @@
 
     function switchMasterHub(hubKey, el) {
       currentMasterHub = hubKey;
+      const regionBar = document.getElementById('sakuraRegionBar');
+      if (regionBar) {
+        regionBar.style.display = (hubKey === 'flower') ? 'block' : 'none';
+      }
       const config = MASTER_HUBS_CONFIG[hubKey];
       if (!config) return;
 
@@ -12570,6 +14637,20 @@
       }
     }
 
+    
+    let currentSakuraRegion = 'all';
+
+    function selectSakuraRegion(regionKey, btn) {
+      currentSakuraRegion = regionKey;
+      const bar = document.getElementById('sakuraRegionBar');
+      if (bar) {
+        bar.querySelectorAll('.region-pill').forEach(pill => {
+          pill.classList.toggle('active', pill.getAttribute('data-region') === regionKey);
+        });
+      }
+      renderCards();
+    }
+
     function renderCards() {
       const container = document.getElementById('cards-container');
       if (!container) return;
@@ -12581,15 +14662,26 @@
       const filtered = SPOTS_DATABASE.filter(item => {
         if (currentCategory === 'report-only') return item.report && item.report.hasReport;
 
-        // 母夾 1：賞花前線
+        // 母夾 1：賞花前線 (支援 8 大地區過濾)
         if (currentMasterHub === 'flower') {
+          let matchSeason = false;
           if (activeSub.type === 'season') {
-            return item.theme === activeSub.val;
+            matchSeason = (item.theme === activeSub.val);
+          } else if (activeSub.type === 'spot_id') {
+            matchSeason = (item.id === activeSub.val || item.theme === 'flower' || item.theme === 'sakura');
+          } else {
+            matchSeason = ['sakura', 'momiji', 'ginkgo', 'flower'].includes(item.theme);
           }
-          if (activeSub.type === 'spot_id') {
-            return item.id === activeSub.val || item.theme === 'flower' || item.theme === 'sakura';
+          if (!matchSeason) return false;
+
+          // 若在春櫻盛典，且選擇了特定地區
+          if (currentSakuraRegion !== 'all' && (item.theme === 'sakura' || activeSub.val === 'sakura')) {
+            if (currentSakuraRegion === 'kanto') {
+              return item.region === 'kanto' || item.region === 'tokyo';
+            }
+            return item.region === currentSakuraRegion;
           }
-          return ['sakura', 'momiji', 'ginkgo', 'flower'].includes(item.theme);
+          return true;
         }
 
         // 母夾 2：極上粉雪
