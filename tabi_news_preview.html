@@ -1602,6 +1602,191 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     }
 
+    /* ========================================================
+       [頂部第一層：4 大情境母夾] Master Hub Navigation
+       ======================================================== */
+    .master-hub-nav-strip {
+      background: #FFFFFF;
+      border-bottom: 1.5px solid #F1F5F9;
+      position: sticky;
+      top: 60px;
+      z-index: 99;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      padding: 8px 0;
+    }
+    .master-hub-scroll-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .master-hub-scroll-wrap::-webkit-scrollbar { display: none; }
+
+    .master-hub-tab {
+      flex: 1 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: 1.5px solid transparent;
+      font-size: 0.95rem;
+      font-weight: 900;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .master-hub-tab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+    .hub-tab-icon {
+      font-size: 1.15rem;
+      transition: transform 0.2s ease;
+    }
+    .master-hub-tab:hover .hub-tab-icon {
+      transform: scale(1.15);
+    }
+
+    /* 4 大母夾各別配色 */
+    #hubTab_flower {
+      background: #FFF7F5;
+      border-color: #FFCCCC;
+      color: #EA580C;
+    }
+    #hubTab_flower.active {
+      background: linear-gradient(135deg, #F97940 0%, #FFB76D 100%) !important;
+      border-color: #F97940 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 18px rgba(249, 121, 64, 0.35) !important;
+    }
+
+    #hubTab_snow {
+      background: #F0F8FA;
+      border-color: #C8E4E8;
+      color: #2D6A75;
+    }
+    #hubTab_snow.active {
+      background: linear-gradient(135deg, #2D6A75 0%, #3B7A87 40%, #ADCCD1 100%) !important;
+      border-color: #2D6A75 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 18px rgba(45, 106, 117, 0.35) !important;
+    }
+
+    #hubTab_camp_charter {
+      background: #F0FDF4;
+      border-color: #BBF7D0;
+      color: #15803D;
+    }
+    #hubTab_camp_charter.active {
+      background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
+      border-color: #059669 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 18px rgba(5, 150, 105, 0.35) !important;
+    }
+
+    #hubTab_topics {
+      background: #F5F3FF;
+      border-color: #DDD6FE;
+      color: #6D28D9;
+    }
+    #hubTab_topics.active {
+      background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #EC4899 100%) !important;
+      border-color: #4F46E5 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35) !important;
+    }
+
+    /* [第二層：情境子分類動態膠囊列] */
+    .sub-context-nav-bar {
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+    .sub-context-scroll-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 4px 2px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .sub-context-scroll-wrap::-webkit-scrollbar { display: none; }
+
+    .sub-context-pill {
+      flex: 0 0 auto;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #475569;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      white-space: nowrap;
+    }
+    .sub-context-pill:hover {
+      border-color: #CBD5E1;
+      transform: translateY(-1.5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+    .sub-context-pill.active {
+      background: #0F172A !important;
+      border-color: #0F172A !important;
+      color: #FFFFFF !important;
+      font-weight: 900 !important;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25) !important;
+    }
+
+    body.mode-sakura .sub-context-pill.active {
+      background: linear-gradient(135deg, #F97940 0%, #FFB76D 100%) !important;
+      border-color: #F97940 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(249, 121, 64, 0.35) !important;
+    }
+    body.mode-snow .sub-context-pill.active {
+      background: linear-gradient(135deg, #2D6A75 0%, #ADCCD1 100%) !important;
+      border-color: #2D6A75 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(45, 106, 117, 0.35) !important;
+    }
+    body.mode-camp .sub-context-pill.active {
+      background: linear-gradient(135deg, #059669 0%, #10B981 100%) !important;
+      border-color: #059669 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35) !important;
+    }
+    body.mode-momiji .sub-context-pill.active {
+      background: linear-gradient(135deg, #C2410C 0%, #FF9969 100%) !important;
+      border-color: #C2410C !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(194, 65, 12, 0.35) !important;
+    }
+    body.mode-ginkgo .sub-context-pill.active {
+      background: linear-gradient(135deg, #9FAF64 0%, #FFD283 100%) !important;
+      border-color: #9FAF64 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(159, 175, 100, 0.35) !important;
+    }
+    body.mode-hanabi .sub-context-pill.active {
+      background: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%) !important;
+      border-color: #4F46E5 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
+    }
+
     /* 景點卡片網格 (桌面端平衡 3 欄) */
     .spots-grid-layout {
       margin-top: 8px;
@@ -4097,144 +4282,75 @@
   <div class="web-container">
     
   <!-- 全寬頂部時令分類導航欄 (第一排：全部景點 ＋ 五季時令) -->
-    <nav class="full-bleed-nav-strip">
-    <div class="nav-strip-scroll-wrap">
-      <button class="nav-strip-item tab-spots active-spots" onclick="switchSeason('spots', this)">
-        <span class="nav-strip-icon">⛩️</span><span class="i18n-btn" data-key="tab_spots">全部景點</span>
+    <!-- [頂部第一層：4 大情境母夾] (一目瞭然，告別首頁過多按鈕堆疊) -->
+  <nav class="master-hub-nav-strip">
+    <div class="master-hub-scroll-wrap">
+      <button class="master-hub-tab active" id="hubTab_flower" onclick="switchMasterHub('flower', this)">
+        <span class="hub-tab-icon">🌸</span>
+        <span class="hub-tab-title">1. 賞花前線</span>
       </button>
-      <button class="nav-strip-item tab-sakura" onclick="switchSeason('sakura', this)">
-        <span class="nav-strip-icon">🌸</span><span class="i18n-btn" data-key="tab_sakura">櫻花盛典</span>
+      <button class="master-hub-tab" id="hubTab_snow" onclick="switchMasterHub('snow', this)">
+        <span class="hub-tab-icon">❄️</span>
+        <span class="hub-tab-title">2. 極上粉雪</span>
       </button>
-      <button class="nav-strip-item tab-hanabi" onclick="switchSeason('hanabi', this)">
-        <span class="nav-strip-icon">🎆</span><span class="i18n-btn" data-key="tab_hanabi">夏夜花火</span>
+      <button class="master-hub-tab" id="hubTab_camp_charter" onclick="switchMasterHub('camp_charter', this)">
+        <span class="hub-tab-icon">⛺</span>
+        <span class="hub-tab-title">3. 露營與自駕包車</span>
       </button>
-      <button class="nav-strip-item tab-snow" onclick="switchSeason('snow', this)">
-        <span class="nav-strip-icon">❄️</span><span class="i18n-btn" data-key="tab_snow">極上粉雪</span>
-      </button>
-      <button class="nav-strip-item tab-momiji" onclick="switchSeason('momiji', this)">
-        <span class="nav-strip-icon">🍁</span><span class="i18n-btn" data-key="tab_momiji">秋楓見頃</span>
-      </button>
-      <button class="nav-strip-item tab-ginkgo" onclick="switchSeason('ginkgo', this)">
-        <span class="nav-strip-icon">🍂</span><span class="i18n-btn" data-key="tab_ginkgo">金黃銀杏</span>
+      <button class="master-hub-tab" id="hubTab_topics" onclick="switchMasterHub('topics', this)">
+        <span class="hub-tab-icon">🎌</span>
+        <span class="hub-tab-title">4. 深度專題</span>
       </button>
     </div>
   </nav>
 
-  
-  <!-- 📸 四大深度主題卡牌 (無間距・四等份無圓角・3D立體活潑交互) -->
-  <div class="explore-tiles-grid">
-    <!-- 1. 鐵道景觀列車與SL之旅 -->
-    <div class="feature-photo-tile" onclick="openTrainPortal()">
-      <img src="https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?auto=format&fit=crop&w=800&q=80" alt="由布院之森觀光列車">
-      <div class="feature-tile-scrim"></div>
-      <div class="feature-tile-content">
-        <span class="feature-tile-badge">🚂 鐵道特輯</span>
-        <div class="feature-tile-title">日本鐵道之旅</div>
-        <div class="feature-tile-sub">由布院之森・新幹線劃位 ➔</div>
-      </div>
-    </div>
-
-    <!-- 2. 日本露營自駕 -->
-    <div class="feature-photo-tile" onclick="openCampPortal()">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="本栖湖露營自駕">
-      <div class="feature-tile-scrim"></div>
-      <div class="feature-tile-content">
-        <span class="feature-tile-badge">⛺ 露營自駕</span>
-        <div class="feature-tile-title">日本露營自駕</div>
-        <div class="feature-tile-sub">露營車租借・全境營地地圖 ➔</div>
-      </div>
-    </div>
-
-    <!-- 3. 日本動漫巡禮 -->
-    <div class="feature-photo-tile" onclick="openAcgPortal()">
-      <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80" alt="動漫特展">
-      <div class="feature-tile-scrim"></div>
-      <div class="feature-tile-content">
-        <span class="feature-tile-badge">🎪 動漫巡禮</span>
-        <div class="feature-tile-title">日本動漫巡禮</div>
-        <div class="feature-tile-sub">展覽特展・寶可夢中心圖鑑 ➔</div>
-      </div>
-    </div>
-
-    <!-- 4. 日本職棒觀戰 -->
-    <div class="feature-photo-tile" onclick="openSportsPortal()">
-      <img src="https://images.unsplash.com/photo-1563299796-17596ed6b017?auto=format&fit=crop&w=800&q=80" alt="日本職棒甲子園">
-      <div class="feature-tile-scrim"></div>
-      <div class="feature-tile-content">
-        <span class="feature-tile-badge">⚾ 職棒運動</span>
-        <div class="feature-tile-title">日本職棒觀戰</div>
-        <div class="feature-tile-sub">甲子園巨蛋・門票賽程行事曆 ➔</div>
-      </div>
+  <!-- [第二層：情境子分類動態膠囊列] (依選中母夾連動展開，精簡高雅) -->
+  <div class="sub-context-nav-bar" id="subContextNavBar">
+    <div class="sub-context-scroll-wrap" id="subContextPillsContainer">
+      <!-- JS 動態生成專屬子項目膠囊 -->
     </div>
   </div>
 
-  <!-- 即時花況投稿看板 (精簡橫向滑動版) -->
-    <div class="community-feed-section">
-      <div class="feed-header">
-        <div class="feed-title">
-          <span id="feedTitleIcon" style="font-size:1.15rem;">🌸</span>
-          <span id="feedTitleText">全日本花季即時分享，大家踴躍分享吧</span>
-          <span class="feed-sub-hint" id="feedSubHint" style="display:none;"></span>
-        </div>
-        <div style="display:flex; align-items:center; gap:10px;">
-          <span style="font-size:0.75rem; color:#64748B; font-weight:800; background:#F1F5F9; padding:4px 10px; border-radius:12px;">
-            👉 往右滑看更多櫻花名所 (12+)
-          </span>
-          <button class="btn-upload-banner" onclick="openUploadModal()">
-            <span>📸</span>
-            <span id="uploadBtnText">我要分享最新實況 ➔</span>
-          </button>
-        </div>
+  <!-- 即時動態投稿看板 (精簡橫向滑動版) -->
+  <div class="community-feed-section" id="communityFeedSection">
+    <div class="feed-header">
+      <div class="feed-title">
+        <span id="feedTitleIcon" style="font-size:1.15rem;">🌸</span>
+        <span id="feedTitleText">全日本花季即時分享，大家踴躍分享吧</span>
+        <span class="feed-sub-hint" id="feedSubHint" style="display:none;"></span>
       </div>
-
-      <div class="feed-scroller" id="communityFeedContainer">
-        <!-- 動態渲染回報卡片 -->
-      </div>
-    </div>
-
-    <!-- 篩選面板 (動態情境連動二級篩選) -->
-    <div class="filter-box" id="mainFilterBox">
-      <div class="filter-line" id="filterRegionLine">
-        <span class="filter-lbl" id="filterRegionLbl">📍 地區：</span>
-        <div class="filter-pills" id="regionPillsContainer">
-          <button class="stamp-pill active" onclick="filterRegion('all', this)">🗾 全日本精選 (22+)</button>
-          <button class="stamp-pill" onclick="filterRegion('tokyo', this)">🗼 東京首都圈</button>
-          <button class="stamp-pill" onclick="filterRegion('kansai', this)">🐙 關西圈 (京阪神)</button>
-          <button class="stamp-pill" onclick="filterRegion('niigata', this)">🌾 新潟・長岡</button>
-          <button class="stamp-pill" onclick="filterRegion('hokkaido', this)">❄️ 北海道</button>
-          <button class="stamp-pill" onclick="filterRegion('tohoku', this)">🌲 東北・長野</button>
-        </div>
-      </div>
-
-      <div class="filter-line" id="filterCatLine">
-        <span class="filter-lbl" id="filterCatLbl">🏷️ 類別：</span>
-        <div class="filter-pills" id="catPillsContainer">
-          <button class="stamp-pill active" onclick="filterCategory('all', this)">全部收錄</button>
-          <button class="stamp-pill" onclick="filterCategory('flower', this)">🌸 花季名所</button>
-          <button class="stamp-pill" onclick="filterCategory('hanabi', this)">🎆 花火大會</button>
-          <button class="stamp-pill" onclick="filterCategory('ski', this)">⛷️ 滑雪雪場</button>
-          <button class="stamp-pill stamp-pill-reporter" onclick="filterCategory('report-only', this)">📷 僅看特派員報導</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 檢視模式切換列 (雙軌最佳化：圖文卡片 ⇄ 精簡條列) -->
-    <div class="view-mode-bar">
-      <div style="font-size:0.8rem; font-weight:800; color:#64748B; display:flex; align-items:center; gap:6px;">
-        <span>⛩️</span> <span id="spotsCountHint">即時精選名所 (22+)</span>
-      </div>
-      <div class="view-mode-toggles">
-        <button class="btn-view-toggle active" id="btnViewGrid" onclick="setViewMode('grid')">
-          <span>🗂️</span> <span>圖文卡片</span>
-        </button>
-        <button class="btn-view-toggle" id="btnViewList" onclick="setViewMode('list')">
-          <span>📑</span> <span>精簡條列</span>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="font-size:0.75rem; color:#64748B; font-weight:800; background:#F1F5F9; padding:4px 10px; border-radius:12px;">
+          👉 往右滑看更多現場 (12+)
+        </span>
+        <button class="btn-upload-banner" onclick="openUploadModal()">
+          <span>📸</span>
+          <span id="uploadBtnText">我要分享最新實況 ➔</span>
         </button>
       </div>
     </div>
 
-    <!-- 景點卡片容器 (支援 3 欄 Grid 或 手機 List View) -->
-    <div class="spots-grid-layout" id="cards-container">
+    <div class="feed-scroller" id="communityFeedContainer">
+      <!-- 動態渲染回報卡片 -->
+    </div>
+  </div>
+
+  <!-- 檢視模式切換列 (雙軌最佳化：圖文卡片 ⇄ 精簡條列) -->
+  <div class="view-mode-bar">
+    <div style="font-size:0.8rem; font-weight:800; color:#64748B; display:flex; align-items:center; gap:6px;">
+      <span>⛩️</span> <span id="spotsCountHint">即時精選名所</span>
+    </div>
+    <div class="view-mode-toggles">
+      <button class="btn-view-toggle active" id="btnViewGrid" onclick="setViewMode('grid')">
+        <span>🗂️</span> <span>圖文卡片</span>
+      </button>
+      <button class="btn-view-toggle" id="btnViewList" onclick="setViewMode('list')">
+        <span>📑</span> <span>精簡條列</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="spots-grid-layout" id="cards-container">
       <!-- JS 動態生成卡片 -->
     </div>
 
@@ -11105,6 +11221,130 @@
       });
     }
 
+    // [頂部第一層：4 大情境母夾] 完整架構設定
+    const MASTER_HUBS_CONFIG = {
+      'flower': {
+        themeMode: 'sakura',
+        title: '🌸 賞花前線',
+        feedSeason: 'sakura',
+        subItems: [
+          { id: 'sakura_bloom', icon: '🌸', name: '春櫻盛典（即時花況看板）', type: 'season', val: 'sakura' },
+          { id: 'fuji_wisteria', icon: '💜', name: '紫藤瀑布（足利／河內藤園）', type: 'spot_id', val: 'ashikaga_fuji' },
+          { id: 'nemophila_sea', icon: '💙', name: '粉蝶花海（常陸海濱公園）', type: 'spot_id', val: 'hitachi_flower' },
+          { id: 'hydrangea_season', icon: '💙', name: '繡球花季（鎌倉／京都名寺）', type: 'spot_id', val: 'hydrangea_flower' },
+          { id: 'momiji_view', icon: '🍁', name: '秋楓見頃（紅葉情報速報）', type: 'season', val: 'momiji' },
+          { id: 'ginkgo_gold', icon: '🍂', name: '金黃銀杏（街道並木黃金毯）', type: 'season', val: 'ginkgo' }
+        ]
+      },
+      'snow': {
+        themeMode: 'snow',
+        title: '❄️ 極上粉雪',
+        feedSeason: 'snow',
+        subItems: [
+          { id: 'snow_beginner', icon: '🎿', name: '新手入門（魔毯／寬緩坡）', type: 'filter_keyword', val: 'GALA' },
+          { id: 'snow_japow', icon: '🏂', name: 'JAPOW乾粉雪（野雪／樹林道）', type: 'filter_keyword', val: '粉雪' },
+          { id: 'snow_onsen', icon: '♨️', name: '溫泉街雪場（滑雪＋泡湯）', type: 'filter_keyword', val: '溫泉' },
+          { id: 'snow_coach', icon: '👨‍🏫', name: '中文教練名冊（線上預約）', type: 'action', val: 'openCoachBooking' }
+        ]
+      },
+      'camp_charter': {
+        themeMode: 'camp',
+        title: '⛺ 露營與自駕包車',
+        feedSeason: 'spots',
+        subItems: [
+          { id: 'camp_fuji', icon: '🗻', name: '富士山直面營地（浩庵／田貫湖）', type: 'portal', val: 'openCampPortal' },
+          { id: 'camp_glamping', icon: '🎪', name: '免裝備 Glamping（星空帳／小木屋）', type: 'portal', val: 'openCampPortal' },
+          { id: 'camp_rv', icon: '🚐', name: '露營車合法泊（RV Park清單）', type: 'portal', val: 'openCampPortal' },
+          { id: 'charter_rental', icon: '🚗', name: '日本租車比價 ↗（中文GPS）', type: 'portal', val: 'openCharterRentalPortal' },
+          { id: 'charter_private', icon: '👨‍✈️', name: '私人中文包車 ↗（家庭一日遊）', type: 'portal', val: 'openCharterRentalPortal' }
+        ]
+      },
+      'topics': {
+        themeMode: 'hanabi',
+        title: '🎌 深度專題',
+        feedSeason: 'hanabi',
+        subItems: [
+          { id: 'topic_hanabi', icon: '🎆', name: '夏夜花火大會（觀覽席／日程）', type: 'season', val: 'hanabi' },
+          { id: 'topic_train', icon: '🚂', name: '鐵道・SL觀光列車（全日本30大名車）', type: 'portal', val: 'openTrainPortal' },
+          { id: 'topic_acg', icon: '🎪', name: '動漫巡禮・快閃店（秋葉原／吉卜力）', type: 'portal', val: 'openAcgPortal' },
+          { id: 'topic_sports', icon: '⚾', name: '日本職棒甲子園（門票賽程行事曆）', type: 'portal', val: 'openSportsPortal' }
+        ]
+      }
+    };
+
+    let currentMasterHub = 'flower';
+    let currentSubItemId = 'sakura_bloom';
+
+    function switchMasterHub(hubKey, el) {
+      currentMasterHub = hubKey;
+      const config = MASTER_HUBS_CONFIG[hubKey];
+      if (!config) return;
+
+      document.querySelectorAll('.master-hub-tab').forEach(t => t.classList.remove('active'));
+      if (el) {
+        el.classList.add('active');
+      } else {
+        const tab = document.getElementById(`hubTab_${hubKey}`);
+        if (tab) tab.classList.add('active');
+      }
+
+      currentSubItemId = config.subItems[0].id;
+      document.body.className = `mode-${config.themeMode}`;
+
+      renderSubContextPills();
+      handleSubItemSelection(config.subItems[0], false);
+    }
+
+    function renderSubContextPills() {
+      const config = MASTER_HUBS_CONFIG[currentMasterHub];
+      const container = document.getElementById('subContextPillsContainer');
+      if (!config || !container) return;
+
+      container.innerHTML = '';
+      config.subItems.forEach(item => {
+        const btn = document.createElement('button');
+        const isAct = currentSubItemId === item.id;
+        btn.className = `sub-context-pill ${isAct ? 'active' : ''}`;
+        btn.innerHTML = `<span>${item.icon}</span> <span>${item.name}</span>`;
+        btn.onclick = () => handleSubItemSelection(item, true);
+        container.appendChild(btn);
+      });
+    }
+
+    function handleSubItemSelection(item, userClick) {
+      currentSubItemId = item.id;
+
+      const container = document.getElementById('subContextPillsContainer');
+      if (container) {
+        container.querySelectorAll('.sub-context-pill').forEach((pill, idx) => {
+          const isTarget = MASTER_HUBS_CONFIG[currentMasterHub].subItems[idx]?.id === item.id;
+          pill.classList.toggle('active', isTarget);
+        });
+      }
+
+      if (item.type === 'portal') {
+        if (userClick && window[item.val]) {
+          window[item.val]();
+        } else {
+          renderCards();
+        }
+      } else if (item.type === 'action') {
+        if (userClick) {
+          if (item.val === 'openCoachBooking') {
+            window.open('https://www.klook.com/zh-TW/search/result/?query=%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson&utm_source=non-network&utm_campaign=123436', '_blank');
+          }
+        }
+      } else if (item.type === 'season') {
+        currentSeason = item.val;
+        document.body.className = `mode-${item.val}`;
+        renderCards();
+        renderCommunityFeeds();
+        initCanvasFX();
+      } else if (item.type === 'spot_id' || item.type === 'filter_keyword') {
+        renderCards();
+      }
+    }
+
     let currentViewMode = 'grid';
 
     function setViewMode(mode) {
@@ -11139,11 +11379,47 @@
       if (!container) return;
       container.innerHTML = '';
 
+      const config = MASTER_HUBS_CONFIG[currentMasterHub] || MASTER_HUBS_CONFIG['flower'];
+      const activeSub = config.subItems.find(s => s.id === currentSubItemId) || config.subItems[0];
+
       const filtered = SPOTS_DATABASE.filter(item => {
         if (currentCategory === 'report-only') return item.report && item.report.hasReport;
-        if (currentSeason !== 'spots' && item.theme !== currentSeason) return false;
-        if (currentRegion !== 'all' && item.region !== currentRegion) return false;
-        if (currentCategory !== 'all' && item.category !== currentCategory) return false;
+
+        // 母夾 1：賞花前線
+        if (currentMasterHub === 'flower') {
+          if (activeSub.type === 'season') {
+            return item.theme === activeSub.val;
+          }
+          if (activeSub.type === 'spot_id') {
+            return item.id === activeSub.val || item.theme === 'flower' || item.theme === 'sakura';
+          }
+          return ['sakura', 'momiji', 'ginkgo', 'flower'].includes(item.theme);
+        }
+
+        // 母夾 2：極上粉雪
+        if (currentMasterHub === 'snow') {
+          if (item.theme !== 'snow') return false;
+          if (activeSub.type === 'filter_keyword') {
+            const matchKw = (item.title + item.desc + item.tag).includes(activeSub.val);
+            return matchKw || true; // 保障至少呈現雪場
+          }
+          return true;
+        }
+
+        // 母夾 3：露營與自駕包車
+        if (currentMasterHub === 'camp_charter') {
+          return item.theme === 'camp' || item.theme === 'train' || item.category === 'outdoor_camp';
+        }
+
+        // 母夾 4：深度專題
+        if (currentMasterHub === 'topics') {
+          if (activeSub.id === 'topic_hanabi') return item.theme === 'hanabi';
+          if (activeSub.id === 'topic_train') return item.theme === 'train';
+          if (activeSub.id === 'topic_acg') return item.theme === 'acg';
+          if (activeSub.id === 'topic_sports') return item.theme === 'sports';
+          return ['hanabi', 'train', 'acg', 'sports'].includes(item.theme);
+        }
+
         return true;
       });
 
@@ -12251,7 +12527,7 @@
         }
       }
 
-      renderDynamicFilter();
+      renderSubContextPills(); renderDynamicFilter();
       renderCards();
       renderCommunityFeeds();
       initCanvasFX();
