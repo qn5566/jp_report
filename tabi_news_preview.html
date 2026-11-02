@@ -5667,6 +5667,332 @@
       color: #0F172A !important;
     }
 
+
+    .app-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250, 248, 245, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-morandi);
+      padding: 10px 32px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-self: start;
+    }
+    .header-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: center;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-self: end;
+    }
+    @media (max-width: 980px) {
+      .app-header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 16px;
+      }
+      .header-left, .header-right {
+        justify-self: center;
+      }
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+    /* 🌟 LOGO 放大 10% (54px x 54px)，帶有日之丸朱紅雙環與立體陰影 */
+    .fuji-logo-box {
+      width: 54px !important;
+      height: 54px !important;
+      border-radius: 50% !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      border: 2.5px solid #ED1A21 !important;
+      box-shadow: 0 4px 14px rgba(237, 26, 33, 0.18) !important;
+      overflow: hidden;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .brand-wrap:hover .fuji-logo-box {
+      transform: scale(1.06);
+      box-shadow: 0 6px 18px rgba(237, 26, 33, 0.28) !important;
+    }
+    .fuji-logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 50%;
+    }
+    /* 🌟 品牌字體與排版依用戶截圖重新設計 */
+    .brand-text h1 {
+      font-size: 1.55rem !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      line-height: 1.15;
+    }
+    .brand-title-zh {
+      color: #094F8D !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.2px;
+      font-size: 1.55rem !important;
+    }
+    .brand-title-en {
+      color: #ED1A21 !important;
+      font-family: var(--font-en);
+      font-size: 1.25rem !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.6px;
+      margin-left: 2px;
+    }
+    .brand-tag-official {
+      font-size: 0.74rem !important;
+      font-weight: 800 !important;
+      background: #ED1A21 !important;
+      color: #FFFFFF !important;
+      padding: 3px 9px !important;
+      border-radius: 6px !important;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 6px rgba(237, 26, 33, 0.28) !important;
+      margin-left: 4px;
+    }
+    .brand-sub-quote {
+      font-size: 0.82rem !important;
+      color: #5B6B82 !important;
+      font-weight: 700 !important;
+      margin-top: 3px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .brand-sub-quote .sub-dot {
+      color: #5B6B82;
+      font-weight: 900;
+    }
+
+
+    /* 4 張大菜單卡片 Grid：距離拉開 (gap: 28px) */
+    .deals-cards-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 28px !important;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 10px 4px 18px !important;
+    }
+    @media (max-width: 1100px) {
+      .deals-cards-grid {
+        grid-template-columns: repeat(4, 275px) !important;
+        gap: 22px !important;
+        scroll-snap-type: x mandatory;
+      }
+    }
+    /* 長方形卡片 (Rectangle Artwork Cards) */
+    .deal-big-card {
+      position: relative;
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+    }
+    .deal-big-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 32px rgba(9, 79, 141, 0.14);
+      border-color: #094F8D;
+    }
+    .deal-big-card.active {
+      border-color: #094F8D;
+      box-shadow: 0 8px 26px rgba(9, 79, 141, 0.24);
+    }
+    /* 長方形圖片容器：高度拉長至 320px，微縮放以完整呈現直式插畫 (天空、富士山、湖畔、列車、雪山) */
+    .deal-card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 320px !important;
+      overflow: hidden;
+      background: #F8FAFC;
+    }
+    .deal-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    .deal-big-card:hover .deal-card-img-wrap img {
+      transform: scale(1.03);
+    }
+    /* 底部簡潔菜單標題列 (僅寫菜單名稱) */
+    .deal-card-bottom-bar {
+      padding: 14px 18px !important;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #F1F5F9;
+      transition: background 0.2s ease;
+    }
+    .deal-big-card.active .deal-card-bottom-bar {
+      background: #F0F7FD;
+    }
+    .deal-item-name {
+      font-size: 1.15rem !important;
+      font-weight: 900 !important;
+      color: #1E293B !important;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+    .deal-big-card.active .deal-item-name {
+      color: #094F8D !important;
+    }
+    .deal-item-arrow {
+      font-size: 1.05rem;
+      color: #94A3B8;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .deal-big-card:hover .deal-item-arrow,
+    .deal-big-card.active .deal-item-arrow {
+      color: #094F8D;
+      transform: translateX(4px);
+    }
+
+
+    /* 修正左上角地區標籤：消除 top 與 bottom 衝突造成的直條色塊 */
+    .card-region-badge, .card-floating-badge {
+      position: absolute !important;
+      top: 10px !important;
+      left: 10px !important;
+      bottom: auto !important;
+      right: auto !important;
+      width: auto !important;
+      height: auto !important;
+      background: rgba(15, 23, 42, 0.8) !important;
+      backdrop-filter: blur(8px) !important;
+      color: #FFFFFF !important;
+      font-size: 0.72rem !important;
+      font-weight: 800 !important;
+      padding: 4px 10px !important;
+      border-radius: 6px !important;
+      z-index: 5 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 4px !important;
+      line-height: 1.2 !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
+    }
+    /* 花況標籤放置於右上角愛心按鈕旁 */
+    .card-bloom-status-tag {
+      position: absolute !important;
+      top: 10px !important;
+      right: 48px !important;
+      bottom: auto !important;
+      left: auto !important;
+      background: rgba(255, 255, 255, 0.95) !important;
+      color: #BE123C !important;
+      border: 1px solid #FFE4E6 !important;
+      font-size: 0.72rem !important;
+      font-weight: 800 !important;
+      padding: 3px 9px !important;
+      border-radius: 6px !important;
+      z-index: 5 !important;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+    }
+    /* 櫻花品種與地鐵站交通標籤列 */
+    .spot-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 8px 0;
+    }
+    .meta-tag-pill {
+      background: #F1F5F9;
+      color: #334155;
+      font-size: 0.73rem;
+      font-weight: 700;
+      padding: 3.5px 9px;
+      border-radius: 6px;
+      border: 1px solid #E2E8F0;
+    }
+    /* 直接展開的功能模組小清單 (咖啡、飯店、米其林、日料、附近賞櫻) */
+    .spot-direct-features-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin: 8px 0 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .feature-item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding-bottom: 7px;
+      border-bottom: 1px dashed #E2E8F0;
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+    .feature-item-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .feature-item-label {
+      font-weight: 800;
+      color: #094F8D;
+      white-space: nowrap;
+      min-width: 82px;
+      flex-shrink: 0;
+    }
+    .feature-item-val {
+      flex: 1;
+      min-width: 0;
+      color: #1E293B;
+    }
+    .feature-item-val strong {
+      color: #1E293B;
+      font-weight: 700;
+      display: inline-block;
+      margin-right: 4px;
+    }
+    .feature-sub-txt {
+      color: #64748B;
+      font-size: 0.72rem;
+      display: block;
+      margin-top: 1px;
+    }
+
 </style>
 </head>
 <body class="mode-spots">
@@ -5681,32 +6007,46 @@
 
   <canvas id="fx-canvas"></canvas>
 
-  <!-- 頂部 Header：官方規格品牌識別 -->
+    <!-- 頂部 Header：官方規格品牌識別 (置中排版 ＆ LOGO 放大 10%) -->
   <header class="app-header">
-    <a href="#" class="brand-wrap">
-      <div class="fuji-logo-box">
-        <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" class="brand-tabi-logo">
-      </div>
-      <div class="brand-text">
-        <h1 id="brandTitle">
-          <span class="brand-title-zh" id="brandTitleZh">日旅報報</span>
-          <span class="brand-title-en" id="brandTitleEn">JAPAN TABI</span>
-          <span class="brand-tag-official" id="brandTag">日本觀光情報</span>
-        </h1>
-        <div class="brand-sub-quote" id="brandSub">花期前線・夏夜花火・雪況觀測</div>
-      </div>
-    </a>
-
-    <div class="header-right">
-      <!-- 🚗 包車 / 租車 專屬按鈕 (首頁繁中旁・點擊開啟包車租車專頁) -->
-      <button class="btn-charter-nav-pill" onclick="openCharterRentalPortal()" style="display:inline-flex; align-items:center; gap:6px; background:linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%); border:1.5px solid #FDBA74; color:#C2410C; font-weight:900; font-size:0.82rem; padding:7px 15px; border-radius:22px; cursor:pointer; box-shadow:0 3px 10px rgba(234,88,12,0.12); transition:all 0.2s;" onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform='none'">
+    <div class="header-left">
+      <!-- Trip 查機票按鈕 -->
+      <button class="btn-trip-pill" onclick="window.open(buildTripFlightUrl('tokyo'), '_blank')">
+        <span>✈️</span>
+        <span id="tripBtnText">Trip 查機票</span>
+      </button>
+      <!-- 🚗 包車 / 租車 專屬按鈕 -->
+      <button class="btn-charter-nav-pill" onclick="openCharterRentalPortal()">
         <span>🚗</span>
         <span>包車 / 租車</span>
-        
       </button>
+    </div>
 
-      <!-- 前台語言切換器 (Header Selector: 🌐 Language 下拉 7 國語言) -->
-      
+    <!-- 🌟 官網正中間品牌標誌與全新文字排版 -->
+    <div class="header-center">
+      <a href="#" class="brand-wrap brand-centered">
+        <div class="fuji-logo-box">
+          <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" class="brand-tabi-logo">
+        </div>
+        <div class="brand-text">
+          <h1 id="brandTitle">
+            <span class="brand-title-zh" id="brandTitleZh">日旅報報</span>
+            <span class="brand-title-en" id="brandTitleEn">JAPAN TABI</span>
+            <span class="brand-tag-official" id="brandTag">日本觀光情報</span>
+          </h1>
+          <div class="brand-sub-quote" id="brandSub">
+            <span>花期前線</span>
+            <span class="sub-dot">•</span>
+            <span>夏夜花火</span>
+            <span class="sub-dot">•</span>
+            <span>雪況觀測</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="header-right">
+      <!-- 前台語言切換器 (Header Selector: 🌐 Language 下拉選單) -->
       <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
         <button class="lang-selector-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)">
           <span class="lang-globe-icon">🌐</span>
@@ -5746,12 +6086,6 @@
           </button>
         </div>
       </div>
-
-      <!-- Trip 查機票按鈕 -->
-      <button class="btn-trip-pill" onclick="window.open(buildTripFlightUrl('tokyo'), '_blank')">
-        <span>✈️</span>
-        <span id="tripBtnText">Trip 查機票</span>
-      </button>
     </div>
   </header>
 
@@ -14960,71 +15294,34 @@
         card.id = `spot-card-${item.id}`;
         card.setAttribute('data-spot-id', item.id);
 
-        let reportStampBtn = '';
-        if (item.report && item.report.hasReport) {
-          reportStampBtn = `
-            <button class="btn-reporter-report-badge" onclick="openReadingSheet('${item.id}'); event.stopPropagation();" title="點擊查閱特派員親測報告">
-              <span>${I18N[currentLang].reporterBadge}</span>
-            </button>
-          `;
-        }
-
-        let speciesHtml = '';
-        if (item.species) {
-          speciesHtml = `
-            <div class="flower-meta-pill-box" style="margin-bottom:8px;">
-              <span class="flower-species-tag">${item.species}</span>
-              <span class="data-source-chip">📊 ${item.dataSource}</span>
-            </div>
-          `;
-        }
-
-        let cafeHtml = '';
-        if (item.cafe) {
-          cafeHtml = `
-            <div class="spot-cafe-card">
-              <div class="cafe-thumb">
-                <img src="${item.cafe.img}" alt="${item.cafe.name}" loading="lazy">
-              </div>
-              <div class="cafe-info">
-                <div class="cafe-tag-lbl">${item.cafe.tag}</div>
-                <div class="cafe-name">${item.cafe.name}</div>
-                <div class="cafe-feature">${item.cafe.feature}</div>
-              </div>
-            </div>
-          `;
-        }
-
-        let metricsHtml = '';
-        if (item.metrics) {
-          const labels = item.metricLabels || ['指標 1', '指標 2', '指標 3'];
-          const isHanabi = item.category === 'hanabi' || item.theme === 'hanabi';
-          metricsHtml = `
-            <div class="metrics-trio-box ${isHanabi ? 'hanabi-trio-box' : ''}">
-              <div class="metric-cell">
-                <div class="metric-caption">${isHanabi ? '🎆 ' : ''}${labels[0]}</div>
-                <div class="metric-val highlight-val">${item.metrics.depth}</div>
-              </div>
-              <div class="metric-cell">
-                <div class="metric-caption">${isHanabi ? '⏱️ ' : ''}${labels[1]}</div>
-                <div class="metric-val sub-val">${item.metrics.quality}</div>
-              </div>
-              <div class="metric-cell">
-                <div class="metric-caption">${isHanabi ? '🏛️ ' : ''}${labels[2]}</div>
-                <div class="metric-val sub-val">${item.metrics.lift}</div>
-              </div>
-            </div>
-          `;
-        }
-
         const isFav = isFavorite(item.id);
         const klookFinalUrl = ensureKlookAffiliate(item.klookUrl);
         const bookingFinalUrl = ensureBookingAffiliate(item.bookingUrl);
 
-        // 即時時效認證標章
+        // 站長親訪認證標籤
         const verifyBadge = (item.report && item.report.hasReport)
           ? `<span class="live-verify-badge">⚡ 今早 07:30 現場實測</span>`
           : `<span class="live-verify-badge">📷 站長親訪認證開箱</span>`;
+
+        // 咖啡推薦資料
+        const cafeName = item.cafe ? item.cafe.name : `${item.title} 景觀咖啡工坊`;
+        const cafeFeature = item.cafe ? item.cafe.feature : '水岸窗景・露台第一排・步行3分鐘即達';
+
+        // 日料推薦資料
+        const japanFoodName = item.japanFood ? item.japanFood.name : `${item.title} 周邊黑毛和牛壽喜燒 / 割烹壽司`;
+        const japanFoodFeature = item.japanFood ? item.japanFood.feature : '季節旬味套餐・嚴選道地風味・席位預定';
+
+        // 米其林推薦資料
+        const michelinName = item.michelin ? item.michelin.name : `${item.title} 周邊米其林嚴選席位`;
+        const michelinFeature = 'KKday × Tabelog 專人代訂・免日文通話保證入席';
+
+        // 附近賞櫻推薦資料
+        const nearbySakuraName = item.rescueRoute ? item.rescueRoute.badge : ((item.region === 'kanto' || item.region === 'tokyo') ? '新宿御苑・濱離宮恩賜庭園' : '周邊晚開八重櫻接力名所');
+        const nearbySakuraFeature = item.rescueRoute ? item.rescueRoute.message : '車程 20 分鐘直達・晚開八重櫻接棒・花期可延長至 4 月下旬！';
+
+        // 飯店住宿推薦資料
+        const hotelName = item.hotel ? item.hotel.name : `${item.title} 周邊景觀溫泉飯店 / 市區星級設計旅店`;
+        const hotelFeature = 'Booking.com 站長嚴選推薦・近地鐵站無痛回房休息';
 
         card.innerHTML = `
           <div class="card-img-box">
@@ -15032,122 +15329,87 @@
             <button class="btn-card-fav ${isFav ? 'active' : ''}" onclick="toggleFavorite('${item.id}', 'spot', '${item.title.replace(/'/g, "\\'")}', '${item.img}', '${item.region || ''}', '${item.tag || ''}'); event.stopPropagation();" title="${isFav ? '已在收藏本' : '加入我的行程收藏'}">
               ${isFav ? '❤️' : '🤍'}
             </button>
-            <div class="card-floating-badge">${item.tag}</div>
+            <!-- 🌟 地區在左上角 (小巧水平標籤，徹底修復黑條) -->
+            <div class="card-region-badge">📍 ${item.tag}</div>
+            <div class="card-bloom-status-tag">${item.bloomStatus || '🌸 滿開 (100%)'}</div>
             ${item.metrics && item.category === 'hanabi' ? `<div class="hanabi-spec-badge">🎆 ${item.metrics.depth}</div>` : ''}
           </div>
           <div class="card-body">
             <div class="card-title-header">
               <div>
                 <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
-                  <h3 style="margin:0;">${item.title}</h3>
+                  <h3 style="margin:0; font-size:1.1rem; font-weight:900; color:#1E293B;">${item.title}</h3>
                   ${verifyBadge}
                 </div>
-                <div class="card-subtitle-line">${item.subtitle}</div>
+                <div class="card-subtitle-line" style="font-size:0.78rem; color:#64748B; margin:3px 0 6px;">${item.subtitle}</div>
               </div>
-              ${reportStampBtn}
             </div>
-            
-            ${metricsHtml}
 
-            <!-- 當日天候與風向風速儀表 (花火攝影愛好者剛需) -->
-            ${item.weatherWind ? `
-              <div class="hanabi-weather-wind-box">
-                <div class="h-weather-title-row">
-                  <span class="h-weather-badge">💨 當日天候與風向觀測儀表 (攝影迷聖經)</span>
-                  <span class="h-smoke-badge" style="color:${item.weatherWind.smokeColor || '#10B981'};">● 排煙評級：${item.weatherWind.smokeRating}</span>
-                </div>
-                <div class="h-weather-grid">
-                  <div class="h-weather-item">
-                    <span class="h-w-lbl">🧭 即時風向風速</span>
-                    <span class="h-w-val font-accent-amber">${item.weatherWind.windDir} ｜ ${item.weatherWind.windSpeed}</span>
-                  </div>
-                  <div class="h-weather-item">
-                    <span class="h-w-lbl">👀 最佳順風觀賞點</span>
-                    <span class="h-w-val font-accent-emerald">${item.weatherWind.bestSpot}</span>
-                  </div>
-                  <div class="h-weather-item">
-                    <span class="h-w-lbl">🌡️ 體感環境</span>
-                    <span class="h-w-val">${item.weatherWind.temp} ｜ 濕度 ${item.weatherWind.humidity}</span>
-                  </div>
-                </div>
-                ${item.weatherWind.photoTips ? `
-                  <div class="h-photo-tips">${item.weatherWind.photoTips}</div>
-                ` : ''}
-              </div>
-            ` : ''}
+            <!-- 🌸 櫻花品種 ＆ 🚇 距離地鐵站交通資訊 (直接展開顯示) -->
+            <div class="spot-meta-row">
+              <span class="meta-tag-pill">🌸 品種：${item.species || '染井吉野櫻'}</span>
+              <span class="meta-tag-pill">🚇 交通：${item.locationDetail || '鄰近地鐵站步行即達'}</span>
+            </div>
 
-            <!-- 特派員散場避雷指南 (避開 100 萬人潮塞爆車站) -->
-            ${item.evacuationGuide ? `
-              <div class="hanabi-evacuation-guide-box">
-                <div class="evac-header-row">
-                  <div class="evac-title-wrap">
-                    <span class="evac-icon">🚶</span>
-                    <span class="evac-title">特派員散場避雷筆記</span>
-                  </div>
-                  <span class="evac-danger-pill">🚨 避開：${item.evacuationGuide.bottleneckStation}</span>
-                </div>
-                
-                <div class="evac-warning-banner">
-                  ${item.evacuationGuide.warningNotice}
-                </div>
-
-                <div class="evac-routes-list">
-                  ${item.evacuationGuide.routes.map(r => `
-                    <div class="evac-route-item">
-                      <div class="evac-route-header">
-                        <span class="evac-dir-pill">${r.direction}</span>
-                        <span class="evac-station-name">${r.station}</span>
-                        <span class="evac-time-badge">${r.walkTime}</span>
-                      </div>
-                      <div class="evac-route-detail">${r.routeDetail}</div>
-                    </div>
-                  `).join('')}
-                </div>
-
-                <div class="evac-expert-tip">
-                  ${item.evacuationGuide.expertTip}
-                </div>
-              </div>
-            ` : ''}
-
-            <!-- 🌸 櫻花替代接力路線 (花期尾聲溫馨提示) -->
-            ${item.rescueRoute ? `
-              <div class="rescue-route-simple-box">
-                <div class="rescue-simple-header">
-                  <span class="rescue-simple-tag">🌸 滿開接力推薦</span>
-                  <span class="rescue-simple-sub">${item.rescueRoute.badge}</span>
-                </div>
-                <p class="rescue-simple-desc">${item.rescueRoute.message}</p>
-                <button class="btn-rescue-simple-action" onclick="jumpToSpot('${item.rescueRoute.targetSpotId}'); event.stopPropagation();">
-                  <span>${item.rescueRoute.actionText || '➔ 查看接力名所'}</span>
-                </button>
-              </div>
-            ` : ''}
-
-            ${speciesHtml}
             <p class="card-clean-concise-desc">${item.desc}</p>
 
-            <!-- ☕ 周邊推薦咖啡 (寫咖啡就好・全部直接顯示・純淨無干擾) -->
-            ${item.cafe ? `
-              <div class="spot-cafe-simple-box">
-                <div class="cafe-simple-thumb">
-                  <img src="${item.cafe.img}" alt="${item.cafe.name}" loading="lazy">
-                </div>
-                <div class="cafe-simple-info">
-                  <div class="cafe-simple-label">☕ 推薦咖啡</div>
-                  <div class="cafe-simple-name">${item.cafe.name}</div>
-                  <div class="cafe-simple-feature">${item.cafe.feature}</div>
+            <!-- 🌟 直接展開功能模組 (咖啡、飯店、米其林、日料、附近賞櫻) -->
+            <div class="spot-direct-features-box">
+              
+              <!-- ☕ 景觀咖啡 -->
+              <div class="feature-item-row">
+                <div class="feature-item-label">☕ 景觀咖啡</div>
+                <div class="feature-item-val">
+                  <strong>${cafeName}</strong>
+                  <span class="feature-sub-txt">${cafeFeature}</span>
                 </div>
               </div>
-            ` : ''}
 
-            <!-- 底部操作按鈕列 (極簡低疲勞・深靛藍與純淨白・告別花俏刺眼) -->
+              <!-- 🍣 日料推薦 -->
+              <div class="feature-item-row">
+                <div class="feature-item-label">🍣 日料推薦</div>
+                <div class="feature-item-val">
+                  <strong>${japanFoodName}</strong>
+                  <span class="feature-sub-txt">${japanFoodFeature}</span>
+                </div>
+              </div>
+
+              <!-- ⭐ 米其林席位 -->
+              <div class="feature-item-row">
+                <div class="feature-item-label">⭐ 米其林席位</div>
+                <div class="feature-item-val">
+                  <strong>${michelinName}</strong>
+                  <span class="feature-sub-txt">${michelinFeature}</span>
+                </div>
+              </div>
+
+              <!-- 🌸 推薦附近的賞櫻景點 -->
+              <div class="feature-item-row">
+                <div class="feature-item-label">🌸 附近賞櫻</div>
+                <div class="feature-item-val">
+                  <strong>${nearbySakuraName}</strong>
+                  <span class="feature-sub-txt">${nearbySakuraFeature}</span>
+                </div>
+              </div>
+
+              <!-- 🏨 推薦飯店 -->
+              <div class="feature-item-row">
+                <div class="feature-item-label">🏨 推薦飯店</div>
+                <div class="feature-item-val">
+                  <strong>${hotelName}</strong>
+                  <span class="feature-sub-txt">${hotelFeature}</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 底部操作按鈕列 (深靛藍 ＆ 純淨白，簡約不花俏) -->
             ${(item.category === 'hanabi' || item.theme === 'hanabi') ? `
               <div class="card-action-bar hanabi-action-bar">
-                <a href="${item.yukataUrl || 'https://www.klook.com/zh-TW/search/result/?query=%E6%B5%B4%E8%A1%A3%E9%AB%94%E9%A9%97&aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" class="btn-act-clean btn-act-secondary" title="預約花火祭典浴衣方案（含專業髮型設計）" onclick="event.stopPropagation();">
+                <a href="${item.yukataUrl || 'https://www.klook.com/zh-TW/search/result/?query=%E6%B5%B4%E8%A1%A3%E9%AB%94%E9%A9%97&aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" class="btn-act-clean btn-act-secondary" title="預約花火祭典浴衣方案" onclick="event.stopPropagation();">
                   <span>👘 浴衣預約</span>
                 </a>
-                <a href="${item.houseboatUrl || klookFinalUrl}" target="_blank" class="btn-act-clean btn-act-primary" title="預約花火大會限定屋形船觀覽席或指定席" onclick="event.stopPropagation();">
+                <a href="${item.houseboatUrl || klookFinalUrl}" target="_blank" class="btn-act-clean btn-act-primary" title="預約觀覽席或屋形船" onclick="event.stopPropagation();">
                   <span>🛶 預約觀覽席</span>
                 </a>
                 <a href="${bookingFinalUrl}" target="_blank" class="btn-act-clean btn-act-secondary" title="預約周邊住宿免深夜趕車" onclick="event.stopPropagation();">
@@ -15157,10 +15419,10 @@
             ` : `
               <div class="card-action-bar">
                 <a href="${klookFinalUrl}" target="_blank" class="btn-act-clean btn-act-primary" onclick="event.stopPropagation();">
-                  <span>${currentLang === 'zh-TW' ? (item.activityText || I18N[currentLang].btnDefaultActivity) : (item.activityTextEn || I18N[currentLang].btnDefaultActivity)}</span>
+                  <span>🎟️ 預定行程</span>
                 </a>
                 <a href="${bookingFinalUrl}" target="_blank" class="btn-act-clean btn-act-secondary" onclick="event.stopPropagation();">
-                  <span>${I18N[currentLang].btnBooking}</span>
+                  <span>🏨 訂房去</span>
                 </a>
               </div>
             `}
