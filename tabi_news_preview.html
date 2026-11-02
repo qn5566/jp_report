@@ -7051,22 +7051,7 @@
   <div class="web-container ticket-plan-container">
     
     <!-- 🎯 HOT DEALS 四大菜單大卡片區塊 (四大主題探索) -->
-        <!-- 🌺 沖繩海島自駕旗艦特刊直通橫幅 (超醒目海島藍 ＋ 5天4夜行程算盤) -->
-    <div style="max-width:1200px; margin:0 auto 16px auto; padding:0 16px;">
-      <a href="japan_okinawa_drive.html" style="display:flex; justify-content:space-between; align-items:center; background:linear-gradient(135deg, #0284C7 0%, #0369A1 100%); color:#FFFFFF; text-decoration:none; border-radius:16px; padding:16px 24px; box-shadow:0 8px 24px rgba(2,132,199,0.3); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        <div style="display:flex; align-items:center; gap:14px;">
-          <span style="font-size:2rem;">🌺</span>
-          <div>
-            <div style="font-size:0.75rem; font-weight:800; background:rgba(255,255,255,0.2); padding:2px 8px; border-radius:4px; display:inline-block; margin-bottom:4px;">2026 OKINAWA SPECIAL ｜ 官方特刊</div>
-            <div style="font-size:1.15rem; font-weight:900;">沖繩海島不繞路自駕攻略 ｜ 親子溜滑梯・青之洞窟・和牛燒肉・海景度假村</div>
-            <div style="font-size:0.8rem; opacity:0.9; margin-top:2px;">內建 MapCode 導航、免費停車格、遮陽指數與「5 天 4 夜不繞路行程算盤」</div>
-          </div>
-        </div>
-        <div style="padding:8px 16px; background:#FFFFFF; color:#0369A1; font-weight:900; font-size:0.85rem; border-radius:20px; white-space:nowrap; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
-          立即探索 ➔
-        </div>
-      </a>
-    </div>
+
     <section class="hot-deals-section" id="hotDealsSection">
 
 
@@ -13071,7 +13056,7 @@
         species: '染井吉野櫻 (800株)',
         hasNightLight: true,
         nightHours: '🏮 17:00 - 20:00 (南部橋～中之橋粉紅燈籠點燈)',
-        nightImg: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=700&q=80',
+        nightImg: './images/meguro_night_sakura.jpg',
         prominentNightNotice: '『夜間點燈』目黑川櫻並木・800株染井吉野櫻形成4km粉紅水岸',
         desc: '東京最經典水岸櫻花隧道，落花漂浮川面形成夢幻粉紅花毯。入夜後粉紅雪洞紙燈籠點亮水波，形成浪漫粉紅倒影。',
         locationDetail: '中目黑站出站步行1分鐘即達川畔步道',
@@ -14616,7 +14601,7 @@
         subtitle: '800株染井吉野櫻形成4km粉紅水岸',
         hasNightLight: true,
         nightHours: '🏮 17:00 - 20:00 (南部橋～中之橋粉紅燈籠點燈)',
-        nightImg: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=700&q=80',
+        nightImg: './images/meguro_night_sakura.jpg',
         prominentNightNotice: '『夜間點燈』目黑川櫻並木・800株染井吉野櫻形成4km粉紅水岸',
         tag: '🌸 東京・目黑區',
         species: '染井吉野櫻 (Somei Yoshino)',
@@ -15817,7 +15802,7 @@
         hasNightLight: true,
         isTemple: true,
         nightHours: '🏮 17:30 - 20:30 (錦雲橋與放生池鏡面夜楓投影)',
-        nightImg: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=700&q=80',
+        nightImg: './images/meguro_night_sakura.jpg',
         desc: '自古享有「秋天就是永觀堂」美譽！放生池畔的多寶塔與漫山楓林相映成趣，夜間點燈倒影如水彩畫般純粹。',
         locationDetail: '地下鐵東西線蹴上站步行 15 分鐘',
         img: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80',
@@ -18885,7 +18870,7 @@
 
       const nightPhoto = item.nightImg || (item.theme === 'momiji' 
         ? 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80' 
-        : 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=700&q=80');
+        : './images/meguro_night_sakura.jpg');
 
       if (imgEl) {
         imgEl.style.transition = 'opacity 0.25s ease';
@@ -19530,7 +19515,7 @@
         const isFlowerOrMomiji = (item.theme === 'sakura' || item.theme === 'momiji' || item.category === 'flower');
         const defaultNightPhoto = (item.theme === 'momiji') 
           ? 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80' 
-          : 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=700&q=80';
+          : './images/meguro_night_sakura.jpg';
         const nightPhoto = item.nightImg || defaultNightPhoto;
         const activeCoverImg = isNight ? nightPhoto : item.img;
 
@@ -21264,19 +21249,7 @@
     });
 
     // 文字複製自動掛載官方出處宣告
-    document.addEventListener('copy', function(e) {
-      const sel = window.getSelection().toString();
-      if (sel && sel.length > 20) {
-        e.preventDefault();
-        const copyNotice = sel + "\n\n--------------------\n【日旅報報 JAPAN TABI 官方特約觀測現地取材認證】\n本文與觀光景點情報受著作權法保護，未經授權禁止爬蟲搬運與商業轉載。\n官方專題網址：" + window.location.href;
-        if (e.clipboardData) {
-          e.clipboardData.setData('text/plain', copyNotice);
-        } else if (window.clipboardData) {
-          window.clipboardData.setData('Text', copyNotice);
-        }
-        showToast('已複製選取文字，並附加《日旅報報》官方版權出處！', '📋');
-      }
-    });
+    /* copy listener removed */
 
     // 全站 Trip.com 深度追蹤封裝 (30天 Cookie 閉環)
     function goTripDeepLink(path, category) {
