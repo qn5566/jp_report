@@ -1013,7 +1013,368 @@
       transform: translateY(-1px);
     }
 
-</style>
+
+    /* 🏆 前三名大圖展示網格 (Top 3 Showcase Grid) */
+    .rank-top3-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 34px;
+    }
+    @media (max-width: 960px) {
+      .rank-top3-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+    }
+
+    .rank-top3-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .rank-top3-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.10);
+      border-color: #B46B5E;
+    }
+    .top3-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      background: #E2E8F0;
+    }
+    .top3-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .rank-top3-card:hover .top3-img {
+      transform: scale(1.05);
+    }
+    .top3-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 5px 12px;
+      border-radius: 10px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .badge-no1 {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+    }
+    .badge-no2 {
+      background: linear-gradient(135deg, #64748B 0%, #475569 100%);
+      box-shadow: 0 4px 14px rgba(100, 116, 139, 0.35);
+    }
+    .badge-no3 {
+      background: linear-gradient(135deg, #D19989 0%, #B46B5E 100%);
+      box-shadow: 0 4px 14px rgba(180, 107, 94, 0.35);
+    }
+    .top3-region-chip {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .top3-card-body {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .top3-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #0F172A;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .top3-sub {
+      font-size: 0.8rem;
+      color: #64748B;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .top3-budget-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #B46B5E;
+      margin-bottom: 10px;
+    }
+    .top3-desc {
+      font-size: 0.84rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    
+    /* 推薦菜色盒 */
+    .dishes-box {
+      background: #FFF7ED;
+      border: 1px solid #FFEDD5;
+      border-radius: 12px;
+      padding: 9px 12px;
+      margin-bottom: 14px;
+    }
+    .dishes-title {
+      font-size: 0.72rem;
+      font-weight: 900;
+      color: #C2410C;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 5px;
+    }
+    .dishes-tags-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .dish-pill {
+      background: #FFFFFF;
+      color: #9A3412;
+      border: 1px solid #FDBA74;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+
+    /* 4 大核心功能按鈕列 (地圖 / 包車 / 飯店 / 預約) */
+    .card-actions-trio {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      padding-top: 12px;
+      border-top: 1px solid #F1F5F9;
+    }
+    .action-btn-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      padding: 7px 2px;
+      border-radius: 9px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-action-map {
+      background: #F1F5F9;
+      color: #334155;
+      border: 1px solid #CBD5E1;
+    }
+    .btn-action-map:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+    .btn-action-charter {
+      background: #FFF7ED;
+      color: #C2410C;
+      border: 1px solid #FFEDD5;
+    }
+    .btn-action-charter:hover {
+      background: #FFEDD5;
+      color: #9A3412;
+    }
+    .btn-action-hotel {
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+    }
+    .btn-action-hotel:hover {
+      background: #DBEAFE;
+      color: #1E40AF;
+    }
+    .btn-action-book {
+      background: linear-gradient(135deg, var(--color-terracotta-300), var(--color-terracotta-400));
+      color: #FFFFFF;
+      border: none;
+    }
+    .btn-action-book:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    /* 🏅 第四名起 4 欄精緻網格 (4 Columns Per Row) */
+    .rank-4col-section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 30px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #E2E8F0;
+    }
+    .rank-4col-section-header h3 {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #0F172A;
+    }
+    .rank-4col-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 1080px) {
+      .rank-4col-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .rank-4col-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .rank-4col-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+      transition: all 0.25s ease;
+      justify-content: space-between;
+    }
+    .rank-4col-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      border-color: #B46B5E;
+    }
+    .rank-4col-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 155px;
+      overflow: hidden;
+      background: #E2E8F0;
+    }
+    .rank-4col-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .rank-4col-card:hover .rank-4col-img {
+      transform: scale(1.05);
+    }
+    .rank-4col-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 900;
+    }
+    .rank-4col-region {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #0F172A;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.66rem;
+      font-weight: 800;
+    }
+    .rank-4col-body {
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .rank-4col-title {
+      font-size: 0.98rem;
+      font-weight: 900;
+      color: #0F172A;
+      line-height: 1.3;
+      margin-bottom: 3px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .rank-4col-budget {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #B46B5E;
+      margin-bottom: 6px;
+    }
+    .rank-4col-desc {
+      font-size: 0.78rem;
+      color: #64748B;
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    .rank-4col-dishes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+    .dish-tag-mini {
+      background: #FFF7ED;
+      color: #C2410C;
+      font-size: 0.66rem;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 4px;
+      border: 1px solid #FFEDD5;
+      white-space: nowrap;
+    }
+    .rank-4col-actions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      padding-top: 8px;
+      border-top: 1px solid #F1F5F9;
+    }
+    .rank-4col-actions .action-btn-item {
+      padding: 5px 2px;
+      font-size: 0.7rem;
+    }
+
+  </style>
 </head>
 <body>
 
@@ -1217,420 +1578,177 @@
       renderCategoryView(filteredItems);
     }
 
+        // 🍲 根據名店資料與分類動態產生招牌推薦菜色
+    function getRecommendedDishes(item, catKey) {
+      if (item.dishes && item.dishes.length > 0) return item.dishes;
+      const text = (item.name + ' ' + (item.sub || '') + ' ' + (item.desc || '')).toLowerCase();
+
+      if (catKey === 'gourmet') {
+        if (text.includes('次郎') || text.includes('齋藤') || text.includes('壽司') || text.includes('鮨')) {
+          return ['極上藍鰭鮪魚大腹握壽司', '北海道生海膽軍艦', '煮切醬油熟成車海老'];
+        }
+        if (text.includes('和牛') || text.includes('三嶋亭') || text.includes('今半') || text.includes('牛') || text.includes('燒肉')) {
+          return ['特選 A5 黑毛和牛炭火燒', '極厚切鹽蔥和牛牛舌', '和牛炙燒海膽壽喜燒'];
+        }
+        if (text.includes('鰻') || text.includes('野田岩')) {
+          return ['天然鰻魚特選蒲燒重', '白燒鰻魚佐生山葵', '特製鰻魚肝吸物'];
+        }
+        if (text.includes('天婦羅') || text.includes('近藤')) {
+          return ['活車海老酥炸天婦羅', '極選銀寶魚佐藻鹽', '名物圓柱炸地瓜'];
+        }
+        if (text.includes('割烹') || text.includes('懷石') || text.includes('龍吟') || text.includes('虎白')) {
+          return ['旬之炭火割烹會席', '伊勢海老椀物', '松茸炊飯'];
+        }
+        return ['主廚特選板前料理', '旬之時令手作一品', '當季特選名物'];
+      } else if (catKey === 'culture') {
+        return ['手筅現刷御抹茶 (濃茶)', '老舖抹茶宇治金時芭菲', '町家手作季節生和菓子'];
+      } else if (catKey === 'budo') {
+        return ['相撲部屋力士相撲鍋 (ちゃんこ鍋)', '傳統木枡席特選觀戰便當', '道場限定番付表紀念品'];
+      } else if (catKey === 'snow') {
+        return ['地產黑毛和牛溫泉蒸籠會席', '雪見露天貸切風呂一泊二食', '岩魚鹽燒與季節山菜旬味'];
+      } else if (catKey === 'sports') {
+        return ['甲子園球場名物咖哩飯', '大會限定花火觀覽便當', '球場限定牛骨風味拉麵'];
+      } else if (catKey === 'fuji') {
+        return ['富士山溶岩石板燒料理', '千萬夜景特選展望會席', '山梨地酒純米大吟釀'];
+      }
+      return ['主廚特選推薦', '名物料理一品', '旬之時令名品'];
+    }
+
+    // 🏆 排行榜核心視圖渲染：前三名大圖展示 ＋ 第四名起四個餐廳一排
     function renderCategoryView(items) {
       const container = document.getElementById('rankingsDisplayContainer');
       if (!container) return;
       container.innerHTML = '';
 
       if (!items || items.length === 0) {
-        container.innerHTML = '<div style="text-align:center; padding:40px; color:#94A3B8;">無相符推薦</div>';
+        container.innerHTML = '<div style="text-align:center; padding:50px 20px; color:#94A3B8; background:#FFF; border-radius:16px; border:1px dashed #CBD5E1;"><span style="font-size:2.5rem;">🔍</span><h4 style="margin-top:10px; font-weight:800; color:#1E293B;">暫無相符推薦項目</h4></div>';
         return;
       }
 
-      // ♨️ 雪見名湯百選：專屬 24 處全行程、全圖片、不規則幾何圖文排列 (Irregular Editorial Layouts)
-      if (currentCategory === 'snow') {
-        renderOnsenEditorialList(items, container);
-        return;
-      }
-
-      // 其他分類：Top 1 Spotlight + Top 2 & 3 雙拼跨頁 + 4～24 緊湊菜單型名錄
-      renderSpotlightAndMenuList(items, container);
-    }
-
-    // ♨️ 渲染名湯百選 24 處不規則幾何圖文排列 (Pattern A, B, C, D 循環交替)
-    function renderOnsenEditorialList(items, container) {
-      let html = '<div class="onsen-editorial-track">';
-
-      items.forEach((it, idx) => {
-        const patternType = idx % 4; // 4 種幾何不規則圖文風格交替
-        const springText = it.spring || '天然純度 100% 弱鹼性美肌泉質';
-        const step1 = it.step1 || '15:00 迎賓 Check-in 享用日式和菓子與熱茶';
-        const step2 = it.step2 || '16:30 夕暮雪見露天風呂體驗放鬆';
-        const step3 = it.step3 || '18:30 房內享用特選和牛會席一泊二食宴';
-        const transit = it.transit || `${it.tag} 車站搭乘定期接駁專車`;
-        const temp = it.temp || '52°C';
-        const ph = it.ph || 'pH 7.2';
-
-        if (patternType === 0) {
-          // 樣式 1：大拱門左開大跨頁 (Pattern A)
-          html += `
-            <div class="onsen-card-base onsen-pattern-a">
-              <div class="onsen-arch-left">
-                <img src="${it.img}" alt="${it.name}" loading="lazy">
-                <div style="position:absolute; top:12px; left:12px; display:flex; gap:6px;">
-                  <span class="onsen-rank-chip" style="background:#FFF; color:#B46B5E; box-shadow:0 2px 6px rgba(0,0,0,0.15);">No. ${it.rank} 名湯百選</span>
-                  <span class="onsen-rank-chip" style="background:rgba(30,41,59,0.85); color:#FFF; border:none;">♨️ ${temp}</span>
-                </div>
-              </div>
-              <div class="onsen-card-content">
-                <div>
-                  <div class="onsen-title-line">${it.name}</div>
-                  <div class="onsen-sub-line">${it.sub} ｜ 📍 ${it.tag}</div>
-                  
-                  <div class="onsen-spring-box">
-                    ♨️ 泉質特性：${springText}
-                  </div>
-
-                  <div class="onsen-itinerary-timeline">
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">茶道</span>
-                      <div>${step1}</div>
-                    </div>
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">溫泉</span>
-                      <div>${step2}</div>
-                    </div>
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">旬味</span>
-                      <div>${step3}</div>
-                    </div>
-                  </div>
-
-                  <div class="onsen-transit-info">
-                    <span>🚆 交通指引：${transit}</span>
-                  </div>
-                </div>
-
-                <div class="onsen-card-actions">
-                  <a href="${it.url1 || '#'}" target="_blank" class="btn-rank-primary">
-                    <span>一泊二食預約 ↗</span>
-                  </a>
-                  <a href="${it.url2 || '#'}" target="_blank" class="btn-rank-secondary">
-                    <span>查空房與接送 ↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          `;
-        } else if (patternType === 1) {
-          // 樣式 2：反向圖文 拱門右開 (Pattern B)
-          html += `
-            <div class="onsen-card-base onsen-pattern-b">
-              <div class="onsen-card-content">
-                <div>
-                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                    <span class="onsen-rank-chip">No. ${it.rank} 名湯百選</span>
-                    <span style="font-size:0.75rem; color:#64748B; font-weight:800;">💧 ${ph} 美肌</span>
-                  </div>
-                  <div class="onsen-title-line">${it.name}</div>
-                  <div class="onsen-sub-line">${it.sub} ｜ 📍 ${it.tag}</div>
-                  
-                  <div class="onsen-spring-box" style="border-left-color:var(--color-smoky-400);">
-                    ♨️ 療效功效：${springText}
-                  </div>
-
-                  <div class="onsen-itinerary-timeline">
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">漫步</span>
-                      <div>${step1}</div>
-                    </div>
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">秘湯</span>
-                      <div>${step2}</div>
-                    </div>
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">會席</span>
-                      <div>${step3}</div>
-                    </div>
-                  </div>
-
-                  <div class="onsen-transit-info">
-                    <span>🚆 交通指引：${transit}</span>
-                  </div>
-                </div>
-
-                <div class="onsen-card-actions">
-                  <a href="${it.url1 || '#'}" target="_blank" class="btn-rank-primary">
-                    <span>一泊二食預約 ↗</span>
-                  </a>
-                  <a href="${it.url2 || '#'}" target="_blank" class="btn-rank-secondary">
-                    <span>查空房與接送 ↗</span>
-                  </a>
-                </div>
-              </div>
-              <div class="onsen-arch-right">
-                <img src="${it.img}" alt="${it.name}" loading="lazy">
-                <div style="position:absolute; bottom:12px; right:12px;">
-                  <span class="onsen-rank-chip" style="background:rgba(255,255,255,0.95); color:#1E293B; box-shadow:0 2px 8px rgba(0,0,0,0.12);">湯泊體驗首選</span>
-                </div>
-              </div>
-            </div>
-          `;
-        } else if (patternType === 2) {
-          // 樣式 3：雙立柱拱門雙圖跨頁 (Pattern C - 參考圖二 slide 2)
-          html += `
-            <div class="onsen-card-base onsen-pattern-c">
-              <div class="onsen-dual-pillars">
-                <div class="pillar-img-box">
-                  <img src="${it.img}" alt="${it.name}" loading="lazy">
-                  <span style="position:absolute; bottom:8px; left:8px; background:rgba(0,0,0,0.65); color:#FFF; font-size:0.65rem; padding:2px 6px; border-radius:4px;">露天風呂</span>
-                </div>
-                <div class="pillar-img-box" style="border-radius:12px 12px 50px 50px;">
-                  <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=500&q=80" alt="溫泉會席" loading="lazy">
-                  <span style="position:absolute; bottom:8px; left:8px; background:rgba(0,0,0,0.65); color:#FFF; font-size:0.65rem; padding:2px 6px; border-radius:4px;">會席料理</span>
-                </div>
-              </div>
-              <div class="onsen-card-content">
-                <div>
-                  <span class="onsen-rank-chip">No. ${it.rank} 名湯百選</span>
-                  <div class="onsen-title-line">${it.name}</div>
-                  <div class="onsen-sub-line">${it.sub}</div>
-                  
-                  <div class="onsen-spring-box">
-                    ♨️ 泉質與特色：${springText}
-                  </div>
-
-                  <div class="onsen-itinerary-timeline">
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">抵達</span>
-                      <div>${step1}</div>
-                    </div>
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">入浴</span>
-                      <div>${step2}</div>
-                    </div>
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">夜宴</span>
-                      <div>${step3}</div>
-                    </div>
-                  </div>
-
-                  <div class="onsen-transit-info">
-                    <span>🚆 交通：${transit}</span>
-                  </div>
-                </div>
-
-                <div class="onsen-card-actions">
-                  <a href="${it.url1 || '#'}" target="_blank" class="btn-rank-primary">
-                    <span>一泊二食預約 ↗</span>
-                  </a>
-                  <a href="${it.url2 || '#'}" target="_blank" class="btn-rank-secondary">
-                    <span>查空房與接送 ↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          `;
-        } else {
-          // 樣式 4：幾何圓弧全景切角 (Pattern D - 參考圖二 slide 3)
-          html += `
-            <div class="onsen-card-base onsen-pattern-d">
-              <div class="onsen-curved-cutout">
-                <img src="${it.img}" alt="${it.name}" loading="lazy">
-                <div style="position:absolute; top:12px; left:12px;">
-                  <span class="onsen-rank-chip" style="background:#FFFFFF; color:#B46B5E;">No. ${it.rank} 名湯百選</span>
-                </div>
-                <div style="position:absolute; bottom:14px; left:14px; display:flex; gap:6px;">
-                  <span style="background:rgba(30,41,59,0.9); color:#FFF; font-size:0.7rem; font-weight:800; padding:3px 8px; border-radius:6px;">泉溫 ${temp}</span>
-                  <span style="background:rgba(255,255,255,0.92); color:#1E293B; font-size:0.7rem; font-weight:800; padding:3px 8px; border-radius:6px;">${ph}</span>
-                </div>
-              </div>
-              <div class="onsen-card-content">
-                <div>
-                  <div class="onsen-title-line">${it.name}</div>
-                  <div class="onsen-sub-line">${it.sub} ｜ 📍 ${it.tag}</div>
-                  
-                  <div class="onsen-spring-box">
-                    ♨️ 泉質認證：${springText}
-                  </div>
-
-                  <div class="onsen-itinerary-timeline">
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">迎賓</span>
-                      <div>${step1}</div>
-                    </div>
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">野湯</span>
-                      <div>${step2}</div>
-                    </div>
-                    <div class="itinerary-step-row">
-                      <span class="step-time-badge">美饌</span>
-                      <div>${step3}</div>
-                    </div>
-                  </div>
-
-                  <div class="onsen-transit-info">
-                    <span>🚆 交通指引：${transit}</span>
-                  </div>
-                </div>
-
-                <div class="onsen-card-actions">
-                  <a href="${it.url1 || '#'}" target="_blank" class="btn-rank-primary">
-                    <span>一泊二食預約 ↗</span>
-                  </a>
-                  <a href="${it.url2 || '#'}" target="_blank" class="btn-rank-secondary">
-                    <span>查空房與接送 ↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          `;
-        }
-      });
-
-      html += '</div>';
-      container.innerHTML = html;
-    }
-
-    // 常規卡片渲染 (Top 1 Spotlight + Top 2 & 3 雙拼跨頁 + 4～24 菜單型名錄)
-    function renderSpotlightAndMenuList(items, container) {
-      const top1 = items[0];
-      const top2 = items.length > 1 ? items[1] : null;
-      const top3 = items.length > 2 ? items[2] : null;
+      const top3 = items.slice(0, 3);
       const rest = items.slice(3);
 
-      let spotlightHtml = '<div class="spotlight-section">';
+      let fullHtml = '';
 
-      // No. 1 金榜
-      if (top1) {
-        const badgesHtml = (top1.badges || ['【線上代訂保證席位】', '【建議提前 30 天搶訂】'])
-          .map(b => `<span class="badge-guarantee">${b}</span>`).join('');
+      // 🥇 1. 前三名大圖展示網格 (Top 3 Large Showcase)
+      fullHtml += '<div class="rank-top3-grid">';
+      top3.forEach((it, idx) => {
+        const rankNum = idx + 1;
+        const badgeClass = rankNum === 1 ? 'badge-no1' : (rankNum === 2 ? 'badge-no2' : 'badge-no3');
+        const badgeLabel = rankNum === 1 ? '👑 No. 01 殿堂冠軍' : (rankNum === 2 ? '🥈 No. 02 權威亞軍' : '🥉 No. 03 極上季軍');
+        const dishes = getRecommendedDishes(it, currentCategory);
+        const dishesHtml = dishes.map(d => `<span class="dish-pill">${d}</span>`).join('');
+        
+        const cityName = it.tag ? it.tag.split('・')[0] : '日本';
+        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(it.name + ' ' + (it.tag || ''))}`;
+        const charterUrl = `https://www.klook.com/zh-TW/search/result/?query=${encodeURIComponent(cityName + '包車')}`;
+        const hotelUrl = `https://www.booking.com/searchresults.zh-tw.html?ss=${encodeURIComponent(cityName + '飯店')}`;
+        const bookUrl = it.url1 || 'https://www.klook.com/zh-TW/';
 
-        const diffClass = (top1.diff && top1.diff.includes('極高')) ? 'diff-hard' : ((top1.diff && top1.diff.includes('提前')) ? 'diff-med' : 'diff-easy');
-        const soulTagsHtml = `
-          <div class="three-soul-tags">
-            <span class="soul-tag ${diffClass}">${top1.diff || '🔴 訂位難度極高（需代訂抽籤）'}</span>
-            <span class="soul-tag">${top1.lang || '🗣️ 支援中文線上代訂'}</span>
-            <span class="soul-tag">${top1.dress || '👔 Smart Casual（禁短褲涼鞋）'}</span>
-          </div>
-        `;
-
-        spotlightHtml += `
-          <div class="top1-hero-card">
-            <div class="top1-img-wrap">
-              <img class="top1-img" src="${top1.img}" alt="${top1.name}" loading="lazy">
-              <span class="top1-rank-badge">👑 No. 01 殿堂金榜</span>
+        fullHtml += `
+          <div class="rank-top3-card">
+            <div class="top3-img-wrap">
+              <img class="top3-img" src="${it.img}" alt="${it.name}" loading="lazy">
+              <span class="top3-badge ${badgeClass}">${badgeLabel}</span>
+              <span class="top3-region-chip">📍 ${it.tag || '日本精選'}</span>
             </div>
-            <div class="top1-content">
+            <div class="top3-card-body">
               <div>
-                <div class="top1-guarantee-badges">
-                  ${badgesHtml}
+                <h3 class="top3-title">${it.name}</h3>
+                <div class="top3-sub">${it.sub || ''}</div>
+                <div class="top3-budget-row">
+                  <span>💴 ${it.budget || '人均 ￥35,000 起'}</span>
+                  <span>・</span>
+                  <span>${it.station || it.tag || '交通便利'}</span>
                 </div>
-                <h3 class="top1-title">${top1.name}</h3>
-                <div class="top1-station-budget">
-                  <span>${top1.station || top1.tag}</span>
-                  <span>💴 ${top1.budget || '人均 ￥35,000 起'}</span>
+                <p class="top3-desc">${it.desc || '全日本指標頂級體驗名店。'}</p>
+                
+                <!-- 🍲 推薦招牌菜色 -->
+                <div class="dishes-box">
+                  <div class="dishes-title">
+                    <span>🍲</span> <span>必點推薦招牌菜色</span>
+                  </div>
+                  <div class="dishes-tags-wrap">
+                    ${dishesHtml}
+                  </div>
                 </div>
-                <div class="top1-quote-box">
-                  💬 評語：「${top1.quote || top1.desc}」
-                </div>
-                ${soulTagsHtml}
               </div>
-              <div class="top1-actions">
-                <a href="${top1.url1 || '#'}" target="_blank" class="btn-rank-primary">
-                  <span>預訂席位保證 ↗</span>
+
+              <!-- 4 大核心功能按鈕 (地圖 / Klook包車 / Booking飯店 / 預約) -->
+              <div class="card-actions-trio">
+                <a href="${mapUrl}" target="_blank" class="action-btn-item btn-action-map" title="Google Maps 導航">
+                  <span>🗺️ 地圖</span>
                 </a>
-                <a href="${top1.url2 || '#'}" target="_blank" class="btn-rank-secondary">
-                  <span>查周邊住宿 ↗</span>
+                <a href="${charterUrl}" target="_blank" class="action-btn-item btn-action-charter" title="Klook 客製包車一日遊串接">
+                  <span>🚗 包車</span>
+                </a>
+                <a href="${hotelUrl}" target="_blank" class="action-btn-item btn-action-hotel" title="Booking.com 周邊飯店訂房">
+                  <span>🏨 飯店</span>
+                </a>
+                <a href="${bookUrl}" target="_blank" class="action-btn-item btn-action-book" title="席位預約與指引">
+                  <span>🎟️ 預約</span>
                 </a>
               </div>
             </div>
           </div>
         `;
-      }
+      });
+      fullHtml += '</div>';
 
-      // No. 2 ＆ No. 3 雙拼跨頁卡
-      if (top2 || top3) {
-        spotlightHtml += '<div class="top23-grid">';
-
-        [top2, top3].forEach((it, idx) => {
-          if (!it) return;
-          const isNo2 = idx === 0;
-          const badgeClass = isNo2 ? 'badge-silver' : 'badge-bronze';
-          const badgeText = isNo2 ? '🥈 No. 02 銀榜' : '🥉 No. 03 銅榜';
-
-          const diffClass = (it.diff && it.diff.includes('極高')) ? 'diff-hard' : ((it.diff && it.diff.includes('提前')) ? 'diff-med' : 'diff-easy');
-          const soulTagsHtml = `
-            <div class="three-soul-tags" style="margin-bottom:12px;">
-              <span class="soul-tag ${diffClass}">${it.diff || '🟡 提前 14 天可訂'}</span>
-              <span class="soul-tag">${it.lang || '🗣️ 英文菜單 OK'}</span>
-              <span class="soul-tag">${it.dress || '👔 Smart Casual'}</span>
-            </div>
-          `;
-
-          spotlightHtml += `
-            <div class="spotlight-card">
-              <div class="spotlight-img-wrap">
-                <img class="spotlight-img" src="${it.img}" alt="${it.name}" loading="lazy">
-                <span class="spotlight-rank-badge ${badgeClass}">${badgeText}</span>
-              </div>
-              <div class="spotlight-body">
-                <div>
-                  <h4 class="spotlight-title">${it.name}</h4>
-                  <div style="font-size:0.76rem; color:#64748B; font-weight:700; margin-bottom:6px;">
-                    <span>${it.station || it.tag}</span> ｜ <span>💴 ${it.budget || '￥20,000 起'}</span>
-                  </div>
-                  <p style="font-size:0.8rem; color:#475569; line-height:1.45; margin-bottom:8px;">
-                    ${it.desc}
-                  </p>
-                  ${soulTagsHtml}
-                </div>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:auto;">
-                  <a href="${it.url1 || '#'}" target="_blank" class="btn-rank-primary">
-                    <span>席位預訂 ↗</span>
-                  </a>
-                  <a href="${it.url2 || '#'}" target="_blank" class="btn-rank-secondary">
-                    <span>周邊住宿 ↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          `;
-        });
-
-        spotlightHtml += '</div>';
-      }
-
-      spotlightHtml += '</div>';
-      container.innerHTML += spotlightHtml;
-
-      // 第 4～24 名：食慾誘人雙欄雜誌卡片流 (高彩度高清實拍 ＆ 刺激感官饕客短評)
+      // 🏅 2. 第四名開始：四個餐廳一排網格 (4 Columns Per Row)
       if (rest.length > 0) {
-        let listHtml = `
-          <div class="menu-list-section" style="margin-top:20px;">
-            <div class="menu-list-header">
-              <span>🍱 精選饗宴盛會 (第 4～${items.length} 位)</span>
-              <span style="font-size:0.75rem; color:#8A8377; font-weight:700;">美饌色澤・產地直送 ｜ 線上預訂席位</span>
-            </div>
-            <div class="feast-grid-track">
+        fullHtml += `
+          <div class="rank-4col-section-header">
+            <span>✨</span>
+            <h3>經典名所排行榜 (No. 04 ～ No. ${items.length})</h3>
+          </div>
+          <div class="rank-4col-grid">
         `;
 
-        rest.forEach(it => {
-          const dishTag = it.heroDish || '招牌特撰旬味';
-          const sensoryNote = it.sensoryQuote || it.desc;
-          const tagsList = it.sensoryTags || ['🌟 招牌必點', '🥩 產地直送', '🍷 席位推薦'];
+        rest.forEach((it) => {
+          const dishes = getRecommendedDishes(it, currentCategory).slice(0, 2);
+          const dishesHtml = dishes.map(d => `<span class="dish-tag-mini">${d}</span>`).join('');
+          
+          const cityName = it.tag ? it.tag.split('・')[0] : '日本';
+          const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(it.name + ' ' + (it.tag || ''))}`;
+          const charterUrl = `https://www.klook.com/zh-TW/search/result/?query=${encodeURIComponent(cityName + '包車')}`;
+          const hotelUrl = `https://www.booking.com/searchresults.zh-tw.html?ss=${encodeURIComponent(cityName + '飯店')}`;
+          const bookUrl = it.url1 || 'https://www.klook.com/zh-TW/';
 
-          listHtml += `
-            <div class="feast-showcase-card">
-              <div class="feast-cover-box">
-                <img class="feast-cover-img" src="${it.img}" alt="${it.name}" loading="lazy">
-                <span class="feast-num-tag">#${it.rank}</span>
-                <span class="feast-dish-tag">${dishTag}</span>
-              </div>
-              <div class="feast-content-box">
-                <div>
-                  <div class="feast-name-row">
-                    <h4 class="feast-item-title">${it.name}</h4>
-                    <span class="feast-price-chip">${it.budget || '￥15,000 起'}</span>
-                  </div>
-                  <div class="feast-loc-line">📍 ${it.station || it.tag}</div>
-
-                  <!-- 刺激感官的味覺焦點 -->
-                  <div class="feast-sensory-bubble">
-                    👅 <b>味覺焦點：</b>${sensoryNote}
-                  </div>
-
-                  <div class="feast-tags-row">
-                    ${tagsList.map(t => `<span class="feast-tag-pill">${t}</span>`).join('')}
+          fullHtml += `
+            <div class="rank-4col-card">
+              <div>
+                <div class="rank-4col-img-wrap">
+                  <img class="rank-4col-img" src="${it.img}" alt="${it.name}" loading="lazy">
+                  <span class="rank-4col-badge">No. ${it.rank}</span>
+                  <span class="rank-4col-region">📍 ${it.tag || '名所'}</span>
+                </div>
+                <div class="rank-4col-body">
+                  <h4 class="rank-4col-title" title="${it.name}">${it.name}</h4>
+                  <div class="rank-4col-budget">💴 ${it.budget || '人均 ￥15,000 起'}</div>
+                  <p class="rank-4col-desc">${it.desc || it.sub || '日本精選指標名店。'}</p>
+                  
+                  <!-- 推薦菜色小標籤 -->
+                  <div class="rank-4col-dishes">
+                    ${dishesHtml}
                   </div>
                 </div>
+              </div>
 
-                <div class="feast-action-row">
-                  <a href="${it.url1 || '#'}" target="_blank" class="btn-feast-cta">
-                    <span>預訂極上席位 ➔</span>
+              <!-- 4 大功能按鈕列 -->
+              <div style="padding:0 14px 14px 14px;">
+                <div class="rank-4col-actions">
+                  <a href="${mapUrl}" target="_blank" class="action-btn-item btn-action-map" title="Google Maps 導航">
+                    <span>🗺️ 地圖</span>
                   </a>
-                  <a href="${it.url2 || '#'}" target="_blank" class="btn-feast-sub">
-                    <span>周邊住宿 ↗</span>
+                  <a href="${charterUrl}" target="_blank" class="action-btn-item btn-action-charter" title="Klook 包車">
+                    <span>🚗 包車</span>
+                  </a>
+                  <a href="${hotelUrl}" target="_blank" class="action-btn-item btn-action-hotel" title="Booking 訂房">
+                    <span>🏨 飯店</span>
+                  </a>
+                  <a href="${bookUrl}" target="_blank" class="action-btn-item btn-action-book" title="預約席位">
+                    <span>🎟️ 預約</span>
                   </a>
                 </div>
               </div>
@@ -1638,12 +1756,10 @@
           `;
         });
 
-        listHtml += `
-            </div>
-          </div>
-        `;
-        container.innerHTML += listHtml;
+        fullHtml += '</div>';
       }
+
+      container.innerHTML = fullHtml;
     }
 
     // 初始化渲染米其林
