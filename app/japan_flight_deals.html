@@ -12,7 +12,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="日本機票即時比價 ｜ 台北/泰國/香港飛日本特惠航線 ｜ 日旅報報">
   <meta property="og:description" content="即時查詢台北、曼谷、香港直飛日本各航點最平機票！500+航空即時比價，30天安心開票保障。">
-  <meta property="og:image" content="./images/hero_snow_mountains.jpg">
+  <meta property="og:image" content="./images/flight_deals_hero_fuji.jpg">
   <meta property="og:type" content="website">
 
   <!-- JSON-LD 結構化資料 (SEO) -->
@@ -203,7 +203,7 @@
     .flight-hero-wrap {
       position: relative;
       min-height: 480px;
-      background: url('./images/hero_snow_mountains.jpg') center center / cover no-repeat;
+      background: url('./images/flight_deals_hero_fuji.jpg') center center / cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -660,37 +660,139 @@
       border-color: var(--color-terracotta-400);
     }
 
-    /* 💡 SEO 常見問題 (FAQ Accordion) */
-    .seo-faq-section {
-      max-width: 900px;
-      margin: 20px auto 40px auto;
+    /* 💡 最新入境須知 ＆ 機票預訂 FAQ 雙欄版面 (Japan Entry Guide & Flight FAQ) */
+    .entry-faq-layout-section {
+      max-width: 1080px;
+      margin: 36px auto 50px auto;
+      padding: 0 16px;
+    }
+    .entry-faq-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+    }
+    @media (max-width: 860px) {
+      .entry-faq-grid { grid-template-columns: 1fr; }
+    }
+    .entry-guide-card, .faq-panel-card {
       background: #FFFFFF;
-      border: 1px solid var(--border-morandi);
-      border-radius: 16px;
-      padding: 24px 28px;
+      border: 1px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 26px 28px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
     }
-    .seo-faq-section h3 {
-      font-size: 1.25rem;
+    .panel-header-block {
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1.5px solid #F1F5F9;
+    }
+    .panel-header-block h3 {
+      font-size: 1.18rem;
       font-weight: 900;
-      color: #1E293B;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .panel-header-en {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: #0284C7;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .panel-header-desc {
+      font-size: 0.78rem;
+      color: #64748B;
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+
+    /* 左側入境指南 Step 列表 */
+    .guide-step-item {
+      display: flex;
+      gap: 14px;
       margin-bottom: 16px;
-      text-align: center;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed #E2E8F0;
     }
-    .faq-item {
-      border-bottom: 1px solid var(--color-warmgray-100);
-      padding: 12px 0;
+    .guide-step-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
     }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-q {
+    .step-badge-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #E0F2FE;
+      color: #0284C7;
+      font-size: 0.75rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-content-box h4 {
       font-size: 0.92rem;
       font-weight: 800;
       color: #1E293B;
       margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    .faq-a {
-      font-size: 0.82rem;
+    .step-content-box p {
+      font-size: 0.8rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .step-highlight-pill {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 1px 7px;
+      border-radius: 4px;
+      background: #FFF7ED;
+      color: #C2410C;
+      border: 1px solid #FFEDD5;
+      margin-top: 6px;
+    }
+
+    /* 右側 FAQ 列表 */
+    .faq-item-box {
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .faq-item-box:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .faq-q-text {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      line-height: 1.45;
+    }
+    .faq-q-badge {
+      color: #0284C7;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+    .faq-a-text {
+      font-size: 0.8rem;
       color: #64748B;
-      line-height: 1.55;
+      line-height: 1.6;
+      padding-left: 20px;
     }
 
     /* 頁尾 */
@@ -914,6 +1016,235 @@
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06) !important;
     }
 
+  
+    .guide-action-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-decoration: none;
+      background: #F0F9FF;
+      color: #0284C7;
+      border: 1px solid #BAE6FD;
+      transition: all 0.2s ease;
+    }
+    .guide-action-link-btn:hover {
+      background: #0284C7;
+      color: #FFFFFF;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+    .guide-action-klook {
+      background: #FFF7ED;
+      color: #EA580C;
+      border-color: #FED7AA;
+    }
+    .guide-action-klook:hover {
+      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.28);
+    }
+
+  
+    /* 🌟 全站統一極致日系 Header 品牌標誌與多國語言選單 (100% 統一) */
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #E2E8F0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .header-left { flex: 1; display: flex; align-items: center; }
+    .header-center { flex: 0 0 auto; display: flex; justify-content: center; align-items: center; }
+    .header-right { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 7px; flex-wrap: nowrap; }
+    
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .fuji-logo-box {
+      width: 54px !important;
+      height: 54px !important;
+      border-radius: 50% !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      border: 2.5px solid #ED1A21 !important;
+      box-shadow: 0 4px 14px rgba(237, 26, 33, 0.18) !important;
+      overflow: hidden;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .brand-wrap:hover .fuji-logo-box {
+      transform: scale(1.06);
+      box-shadow: 0 6px 18px rgba(237, 26, 33, 0.28) !important;
+    }
+    .brand-tabi-logo, .fuji-logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 50%;
+    }
+    .brand-text h1 {
+      font-size: 1.55rem !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      line-height: 1.15;
+    }
+    .brand-title-zh {
+      color: #094F8D !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.2px;
+      font-size: 1.55rem !important;
+    }
+    .brand-sub-official-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 3px;
+    }
+    .brand-title-en {
+      color: #ED1A21 !important;
+      font-size: 0.72rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.12em !important;
+    }
+    .brand-tag-official {
+      font-size: 0.65rem !important;
+      font-weight: 800 !important;
+      background: #ED1A21 !important;
+      color: #FFFFFF !important;
+      padding: 2px 7px !important;
+      border-radius: 4px !important;
+      letter-spacing: 0.05em !important;
+      box-shadow: 0 2px 6px rgba(237, 26, 33, 0.28) !important;
+    }
+
+    .header-util-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 4px !important;
+      padding: 0 11px !important;
+      height: 33px !important;
+      line-height: 33px !important;
+      border-radius: 17px !important;
+      font-size: 0.77rem !important;
+      font-weight: 700 !important;
+      color: #334155 !important;
+      text-decoration: none !important;
+      background: #FFFFFF !important;
+      border: 1px solid #CBD5E1 !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      letter-spacing: 0.02em !important;
+      box-sizing: border-box !important;
+    }
+    .header-util-btn:hover {
+      background: #F8FAFC !important;
+      border-color: #94A3B8 !important;
+      color: #0F172A !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06) !important;
+    }
+    .header-util-btn.btn-nav-okinawa {
+      border-color: #BAE6FD !important;
+      color: #0369A1 !important;
+    }
+    .header-util-btn.btn-nav-okinawa:hover {
+      background: #F0F9FF !important;
+      border-color: #7DD3FC !important;
+      color: #0284C7 !important;
+    }
+    .header-util-btn.active {
+      background: #F1F5F9 !important;
+      border-color: #94A3B8 !important;
+      color: #0F172A !important;
+      font-weight: 800 !important;
+    }
+    .header-util-btn.btn-nav-okinawa.active {
+      background: #E0F2FE !important;
+      border-color: #7DD3FC !important;
+      color: #0284C7 !important;
+    }
+
+    /* 前台語言切換器 (Header Language Selector: 🌐 Language 7 國語言下拉選單) */
+    .lang-selector-dropdown-wrap {
+      position: relative;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .lang-selector-dropdown-wrap.open .lang-arrow {
+      transform: rotate(180deg);
+    }
+    .lang-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 175px;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 6px;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.14), 0 3px 8px rgba(0,0,0,0.04);
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      z-index: 10005;
+      animation: langFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .lang-selector-dropdown-wrap.open .lang-dropdown-menu {
+      display: flex;
+    }
+    .lang-menu-opt {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: none;
+      background: transparent;
+      color: #334155;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      width: 100%;
+      text-align: left;
+    }
+    .lang-menu-opt:hover {
+      background: #F1F5F9;
+      color: #0F172A;
+    }
+    .lang-menu-opt.active {
+      background: #F0FDF4;
+      color: #16A34A;
+      font-weight: 800;
+    }
+    .lang-flag { font-size: 1rem; }
+    .lang-name { flex: 1; }
+    .lang-check { font-size: 0.85rem; font-weight: 900; }
+
   </style>
 </head>
 <body>
@@ -924,7 +1255,7 @@
       <!-- 左側平衡留白，保障中央品牌在視覺上精準居中 -->
     </div>
 
-    <!-- 🌟 正中間單一品牌標誌與文字 (點擊直達首頁) -->
+    <!-- 🌟 官網正中間品牌標誌與文字排版 (54px 日之丸朱紅雙環 Logo，左右完全對齊) -->
     <div class="header-center">
       <a href="tabi_news_preview.html" class="brand-wrap brand-centered" title="日旅報報 JAPAN TABI">
         <div class="fuji-logo-box">
@@ -942,7 +1273,8 @@
       </a>
     </div>
 
-        <div class="header-right">
+    <!-- 🌟 頂部右側統一功能按鈕群 (✈️ 查機票 ＋ 🚗 包車/租車 ＋ 🌺 沖繩自駕 ＋ 🏆 日本排行 ＋ 🌐 Language) -->
+    <div class="header-right">
       <a href="japan_flight_deals.html" class="header-util-btn active" title="Trip 機票即時比價與特惠航線">
         <span>✈️ 查機票</span>
       </a>
@@ -955,6 +1287,47 @@
       <a href="japan_inbound_rankings.html" class="header-util-btn " title="日本排行榜">
         <span>🏆 日本排行</span>
       </a>
+
+      <!-- 🌐 前台多國語言切換器 (Language Selector) -->
+      <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
+        <button class="header-util-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)" title="切換語言">
+          <span class="util-btn-icon">🌐</span>
+          <span id="currentLangLabel">Language</span>
+          <span class="lang-arrow" id="langArrow">▾</span>
+        </button>
+        <div class="lang-dropdown-menu" id="langDropdownMenu">
+          <button class="lang-menu-opt active" data-lang="zh-TW" onclick="selectLanguage('zh-TW', '繁體中文')">
+            <span class="lang-flag">🇹🇼</span>
+            <span class="lang-name">繁體中文</span>
+            <span class="lang-check">✓</span>
+          </button>
+          <button class="lang-menu-opt" data-lang="en" onclick="selectLanguage('en', 'English')">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-name">English</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="ko" onclick="selectLanguage('ko', '한국어')">
+            <span class="lang-flag">🇰🇷</span>
+            <span class="lang-name">한국어</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="zh-CN" onclick="selectLanguage('zh-CN', '简体中文')">
+            <span class="lang-flag">🇨🇳</span>
+            <span class="lang-name">简体中文</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="th" onclick="selectLanguage('th', 'ไทย')">
+            <span class="lang-flag">🇹🇭</span>
+            <span class="lang-name">ไทย</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="ja" onclick="selectLanguage('ja', '日本語')">
+            <span class="lang-flag">🇯🇵</span>
+            <span class="lang-name">日本語</span>
+            <span class="lang-check"></span>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -1093,46 +1466,134 @@
 
     <!-- ✈️ 精選超值直飛航線廣告卡片 (參考圖一 Popular Destinations) -->
     <section class="deals-container">
-      <div class="deals-header">
-        <div>
-          <h3>精選超值直飛航線 (Popular Flight Deals)</h3>
-          <p>即時連線機票價格 ｜ 點選直達官方專屬 30 天特惠通道</p>
-        </div>
-        
-        <!-- 出發地切換：台灣出發 / 泰國出發 / 港澳星馬 -->
-        <div class="origin-selector-bar">
-          <button class="origin-tab-btn active" onclick="switchOriginTab('taiwan', this)">
-            🇹🇼 台灣出發
-          </button>
-          <button class="origin-tab-btn" onclick="switchOriginTab('thailand', this)">
-            🇹🇭 泰國出發
-          </button>
-          <button class="origin-tab-btn" onclick="switchOriginTab('hk_sea', this)">
-            🇭🇰 港澳星馬
-          </button>
-        </div>
-      </div>
-
       <!-- 動態航線卡片 Grid -->
       <div class="routes-grid" id="routesGridContainer">
         <!-- JS 動態生成航線卡片 -->
       </div>
     </section>
 
-    <!-- 💡 SEO 常見問題 (FAQ) -->
-    <section class="seo-faq-section">
-      <h3>✈️ 日本機票預訂常見問題 (FAQ)</h3>
-      <div class="faq-item">
-        <div class="faq-q">Q1: 提前多久預訂飛日本機票最便宜？</div>
-        <div class="faq-a">建議在出發前 45～90 天預訂通常能取得最佳票價。若計畫在櫻花季 (3月下旬~4月中旬) 或跨年雪季前往，建議提早 3～4 個月鎖定機票。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Q2: 泰國或東南亞飛日本有直飛推薦嗎？</div>
-        <div class="faq-a">曼谷 (BKK/DMK) 直飛東京成田、大阪關西及福岡航線非常密集，泰國航空、全日空、Zipair 及泰亞航均有營運，單程票價經常落在 ฿4,500~฿6,000 左右，十分親民。</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Q3: 飛東京該選成田機場 (NRT) 還是羽田機場 (HND)？</div>
-        <div class="faq-a">成田機場廉航選擇多、機票往往較便宜，搭乘 Skyliner 約 36 分鐘可抵達日暮里/上野；羽田機場距離東京市中心極近 (單軌電車13分鐘抵達濱松町)，適合商務客或講求省時的旅客。</div>
+    <!-- 💡 日本進出境須知 ＆ 機票預訂 FAQ (2-Column Premium Layout) -->
+    <section class="entry-faq-layout-section">
+      <div class="entry-faq-grid">
+        
+        <!-- 左欄：日本入境須知與退稅全攻略 -->
+        <div class="entry-guide-card">
+          <div class="panel-header-block">
+            <h3><span>🛂</span> 日本最新入境 ＆ 填寫須知</h3>
+            <span class="panel-header-en">Japan Entry Guidelines & Visit Japan Web</span>
+            <p class="panel-header-desc">出發前務必確認入境手續與退稅規定，省下機場排隊通關時間！</p>
+          </div>
+
+          <!-- Step 1: Visit Japan Web -->
+          <div class="guide-step-item">
+            <div class="step-badge-num">1</div>
+            <div class="step-content-box">
+              <h4>📱 Visit Japan Web (VJW) 線上填寫</h4>
+              <p>出發前建議先於 VJW 官網登錄旅客資訊，填寫入境審查卡與海關申報。填寫完成後產出 QR Code，入境時直接掃碼通關，免手寫紙本表格。</p>
+              <div style="display:flex; align-items:center; gap:8px; margin-top:8px; flex-wrap:wrap;">
+                <span class="step-highlight-pill">⚡ 建議於出發航班起飛 6 小時前填寫完成</span>
+                <a href="https://vjw-lp.digital.go.jp/zh-hant/" target="_blank" rel="noopener noreferrer" class="guide-action-link-btn">
+                  📱 前往 VJW 官方填寫系統 ➔
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: 護照與免簽停留 -->
+          <div class="guide-step-item">
+            <div class="step-badge-num">2</div>
+            <div class="step-content-box">
+              <h4>📘 護照效期與停留天數規範</h4>
+              <p>台灣、港澳旅客持有效普通護照可享 90 天觀光免簽證待遇。護照效期原則上只需涵蓋預計停留天數即可，但建議保有 6 個月以上效期最穩妥。</p>
+              <div style="display:flex; align-items:center; gap:8px; margin-top:8px; flex-wrap:wrap;">
+                <span class="step-highlight-pill">📘 建議出發日起算效期 6 個月以上</span>
+                <a href="https://www.klook.com/zh-TW/activity/67911-taiwan-passport-application-service/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" rel="noopener noreferrer" class="guide-action-link-btn guide-action-klook">
+                  🛂 專人代辦換發護照・免排隊 ➔
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: 海關違禁品與攜帶限制 -->
+          <div class="guide-step-item">
+            <div class="step-badge-num">3</div>
+            <div class="step-content-box">
+              <h4>🚫 海關申報與嚴禁肉製品</h4>
+              <p>嚴禁攜帶任何肉製品（包含含肉真空包、肉乾、含肉泡麵）入境日本，違者處 300 萬日圓以下罰金。黃金製品不論純度重量皆須誠實申報。</p>
+            </div>
+          </div>
+
+          <!-- Step 4: 2026 最新免稅與退稅新制 -->
+          <div class="guide-step-item">
+            <div class="step-badge-num">4</div>
+            <div class="step-content-box">
+              <h4>🛍️ 日本最新免稅退稅須知 (Tax-Free)</h4>
+              <p>同一店家單日含稅金額滿 5,000 日圓可享 10% 退稅。一般物品與消耗品可合併計算，退稅封裝袋於出境日本前嚴禁拆封使用。</p>
+              <span class="step-highlight-pill">🏷️ 出境時海關隨機抽查，請保留購買收據備查</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右欄：機票預訂常見 QA 整理 -->
+        <div class="faq-panel-card">
+          <div class="panel-header-block">
+            <h3><span>❓</span> 機票預訂常見問題 (FAQ)</h3>
+            <span class="panel-header-en">Flight Booking Frequently Asked Questions</span>
+            <p class="panel-header-desc">彙整台日熱門航線旅客最常諮詢的訂票、行李與選場指南。</p>
+          </div>
+
+          <div class="faq-item-box">
+            <div class="faq-q-text">
+              <span class="faq-q-badge">Q1</span>
+              <span>提前多久預訂飛日本機票最便宜？</span>
+            </div>
+            <div class="faq-a-text">
+              平日建議出發前 45～90 天預訂最佳。櫻花季 (3月下旬~4月中旬)、楓葉季 (11月) 或跨年雪季，建議提早 3～4 個月鎖定早鳥優惠，善用 Trip.com 價格追蹤功能。
+            </div>
+          </div>
+
+          <div class="faq-item-box">
+            <div class="faq-q-text">
+              <span class="faq-q-badge">Q2</span>
+              <span>飛東京該選成田 (NRT) 還是羽田 (HND)？</span>
+            </div>
+            <div class="faq-a-text">
+              成田機場廉航選擇多、促銷票價通常便宜 \$2,000~\$4,000，搭乘 Skyliner 約 36 分鐘抵達上野；羽田機場距市區極近 (單軌電車 13 分直達濱松町)，適合短天數或商務旅客。
+            </div>
+          </div>
+
+          <div class="faq-item-box">
+            <div class="faq-q-text">
+              <span class="faq-q-badge">Q3</span>
+              <span>廉價航空 (LCC) 購票時需特別注意什麼？</span>
+            </div>
+            <div class="faq-a-text">
+              廉價航空基礎票價多不含託運行李與機上餐飲。訂票時建議預先加購 20~25kg 託運行李，現場臨時加購費用多出 50% 以上；並請確認手提行李重量限額 (通常 7kg)。
+            </div>
+          </div>
+
+          <div class="faq-item-box">
+            <div class="faq-q-text">
+              <span class="faq-q-badge">Q4</span>
+              <span>訂票後姓名拼音填錯怎麼辦？</span>
+            </div>
+            <div class="faq-a-text">
+              國際機票姓名必須與護照完全一致。若發現字母拼錯，請第一時間聯繫 Trip.com 24h 中文客服協助向航空公司申請更正，出發當天現場改名可能衍生高額手續費甚至重購。
+            </div>
+          </div>
+
+          <div class="faq-item-box">
+            <div class="faq-q-text">
+              <span class="faq-q-badge">Q5</span>
+              <span>遭遇航班延誤或取消如何保障權益？</span>
+            </div>
+            <div class="faq-a-text">
+              若因天候因素（如颱風或暴風雪）取消，可申請全額退票或免費改簽後續航班。出發前務必投保包含「班機延誤/旅程取消」之海外旅遊不便險，並向地勤索取班機延誤證明書。
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
 

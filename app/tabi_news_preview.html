@@ -80,10 +80,44 @@
     body.mode-sakura .community-feed-section {
       background: rgba(255, 255, 255, 0.96);
       border: 1px solid var(--border-morandi);
-      border-radius: 14px;
-      padding: 12px 18px;
-      margin-bottom: 20px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+      border-radius: 12px;
+      padding: 8px 14px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    .feed-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .feed-title {
+      font-size: 0.88rem !important;
+      font-weight: 800 !important;
+    }
+    .feed-snap-card {
+      flex-shrink: 0;
+      width: 160px !important;
+      border-radius: 10px !important;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03) !important;
+    }
+    .feed-snap-img {
+      height: 64px !important;
+    }
+    .feed-snap-body {
+      padding: 5px 8px !important;
+      gap: 1px !important;
+    }
+    .feed-spot-name {
+      font-size: 0.74rem !important;
+      line-height: 1.25 !important;
+    }
+    .feed-spot-desc {
+      font-size: 0.64rem !important;
+      line-height: 1.3 !important;
     }
     body.mode-sakura .community-feed-section { background: rgba(255, 245, 248, 0.94); border-color: #F8D5E1; }
     body.mode-hanabi .community-feed-section { background: #161B2E; border-color: #2D3748; }
@@ -1006,10 +1040,44 @@
     .community-feed-section {
       background: rgba(255, 255, 255, 0.96);
       border: 1px solid var(--border-morandi);
-      border-radius: 14px;
-      padding: 12px 18px;
-      margin-bottom: 20px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+      border-radius: 12px;
+      padding: 8px 14px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    .feed-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .feed-title {
+      font-size: 0.88rem !important;
+      font-weight: 800 !important;
+    }
+    .feed-snap-card {
+      flex-shrink: 0;
+      width: 160px !important;
+      border-radius: 10px !important;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03) !important;
+    }
+    .feed-snap-img {
+      height: 64px !important;
+    }
+    .feed-snap-body {
+      padding: 5px 8px !important;
+      gap: 1px !important;
+    }
+    .feed-spot-name {
+      font-size: 0.74rem !important;
+      line-height: 1.25 !important;
+    }
+    .feed-spot-desc {
+      font-size: 0.64rem !important;
+      line-height: 1.3 !important;
     }
     body.mode-sakura .community-feed-section { background: rgba(255, 245, 248, 0.94); border-color: #F8D5E1; }
     body.mode-hanabi .community-feed-section { background: #161B2E; border-color: #2D3748; }
@@ -6939,7 +7007,214 @@
       border-color: #7DD3FC !important;
       color: #0284C7 !important;
     }
-</style>
+
+    /* 📸 全日本花況現場即時情報局 ＆ 旅人實拍相簿 Modal */
+    .live-report-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      width: 92%;
+      max-width: 880px;
+      max-height: 88vh;
+      background: #FFFFFF;
+      border-radius: 24px;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
+      z-index: 10006;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      border: 1.5px solid #F1F5F9;
+    }
+    .live-report-modal.show {
+      display: flex;
+    }
+    @keyframes modalPopIn {
+      to { transform: translate(-50%, -50%) scale(1); }
+    }
+    .live-modal-header {
+      padding: 18px 24px 14px 24px;
+      background: #FAF8F5;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .live-modal-title-h3 {
+      font-size: 1.22rem;
+      font-weight: 900;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .live-modal-close-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid #CBD5E1;
+      background: #FFFFFF;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748B;
+      transition: all 0.15s ease;
+    }
+    .live-modal-close-btn:hover {
+      background: #F1F5F9;
+      color: #0F172A;
+    }
+    .live-modal-tabs-bar {
+      display: flex;
+      padding: 10px 24px;
+      background: #FFFFFF;
+      gap: 12px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .live-tab-btn {
+      padding: 7px 18px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      border: 1px solid #E2E8F0;
+      background: #F8FAFC;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .live-tab-btn.active {
+      background: #C53D43;
+      color: #FFFFFF;
+      border-color: #C53D43;
+      box-shadow: 0 2px 8px rgba(197, 61, 67, 0.25);
+    }
+    .live-modal-body-scroll {
+      padding: 18px 24px 30px 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    /* 相簿瀑布流卡片網格 */
+    .live-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 640px) {
+      .live-photo-grid { grid-template-columns: 1fr; }
+    }
+    .live-card-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .live-card-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    .live-card-img-wrap {
+      position: relative;
+      height: 180px;
+      background: #E2E8F0;
+    }
+    .live-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .live-card-time-pill {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(15, 23, 42, 0.82);
+      backdrop-filter: blur(6px);
+      color: #FFFFFF;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+    .live-card-bloom-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: #C53D43;
+      color: #FFFFFF;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+    .live-card-content {
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .live-card-author-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.76rem;
+    }
+    .live-author-name {
+      font-weight: 800;
+      color: #1E293B;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .live-spot-tag {
+      font-size: 0.72rem;
+      color: #0284C7;
+      font-weight: 700;
+    }
+    .live-card-quote {
+      font-size: 0.8rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+    .live-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 8px;
+      border-top: 1px dashed #E2E8F0;
+    }
+    .live-like-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 14px;
+      border: 1px solid #FDA4AF;
+      background: #FFF1F2;
+      color: #BE123C;
+      font-size: 0.75rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .live-like-btn:hover {
+      background: #FFE4E6;
+      transform: scale(1.05);
+    }
+    .live-jump-spot-btn {
+      font-size: 0.74rem;
+      color: #0284C7;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+  </style>
 </head>
 <body class="mode-spots">
 
@@ -6959,9 +7234,9 @@
       <!-- 左側平衡留白，保障中央品牌在視覺上精準居中 -->
     </div>
 
-    <!-- 🌟 官網正中間品牌標誌與文字排版 (JAPAN TABI 小小的在左，日本觀光情報在右，左右完全對齊) -->
+    <!-- 🌟 官網正中間品牌標誌與文字排版 (54px 日之丸朱紅雙環 Logo，左右完全對齊) -->
     <div class="header-center">
-      <a href="#" class="brand-wrap brand-centered">
+      <a href="tabi_news_preview.html" class="brand-wrap brand-centered" title="日旅報報 JAPAN TABI">
         <div class="fuji-logo-box">
           <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" class="brand-tabi-logo">
         </div>
@@ -6977,8 +7252,8 @@
       </a>
     </div>
 
-    <!-- 🌟 頂部右側統一功能按鈕群 (✈️ Trip 查機票 ＋ 🚗 包車/租車 ＋ 🌐 Language，統一高度與整齊配色) -->
-        <div class="header-right">
+    <!-- 🌟 頂部右側統一功能按鈕群 (✈️ 查機票 ＋ 🚗 包車/租車 ＋ 🌺 沖繩自駕 ＋ 🏆 日本排行 ＋ 🌐 Language) -->
+    <div class="header-right">
       <a href="japan_flight_deals.html" class="header-util-btn " title="Trip 機票即時比價與特惠航線">
         <span>✈️ 查機票</span>
       </a>
@@ -6991,6 +7266,47 @@
       <a href="japan_inbound_rankings.html" class="header-util-btn " title="日本排行榜">
         <span>🏆 日本排行</span>
       </a>
+
+      <!-- 🌐 前台多國語言切換器 (Language Selector) -->
+      <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
+        <button class="header-util-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)" title="切換語言">
+          <span class="util-btn-icon">🌐</span>
+          <span id="currentLangLabel">Language</span>
+          <span class="lang-arrow" id="langArrow">▾</span>
+        </button>
+        <div class="lang-dropdown-menu" id="langDropdownMenu">
+          <button class="lang-menu-opt active" data-lang="zh-TW" onclick="selectLanguage('zh-TW', '繁體中文')">
+            <span class="lang-flag">🇹🇼</span>
+            <span class="lang-name">繁體中文</span>
+            <span class="lang-check">✓</span>
+          </button>
+          <button class="lang-menu-opt" data-lang="en" onclick="selectLanguage('en', 'English')">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-name">English</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="ko" onclick="selectLanguage('ko', '한국어')">
+            <span class="lang-flag">🇰🇷</span>
+            <span class="lang-name">한국어</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="zh-CN" onclick="selectLanguage('zh-CN', '简体中文')">
+            <span class="lang-flag">🇨🇳</span>
+            <span class="lang-name">简体中文</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="th" onclick="selectLanguage('th', 'ไทย')">
+            <span class="lang-flag">🇹🇭</span>
+            <span class="lang-name">ไทย</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="ja" onclick="selectLanguage('ja', '日本語')">
+            <span class="lang-flag">🇯🇵</span>
+            <span class="lang-name">日本語</span>
+            <span class="lang-check"></span>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -7013,12 +7329,7 @@
         <p class="hero-quote-text" style="margin-top: 4px;">
           <span class="hero-quote-sub">讓四季美景撫慰心靈，全日本櫻花花期、極上粉雪、季節鐵道與秘境露營即時連線。</span>
         </p>
-        <div class="hero-btn-row">
-          <button class="btn-hero-discover" onclick="scrollToDeals()">
-            <span>Discover Now</span>
-            <span class="hero-arrow">➔</span>
-          </button>
-        </div>
+        
       </div>
 
             <div class="hero-right-pane">
@@ -7121,7 +7432,7 @@
           <span style="font-size:0.75rem; color:#64748B; font-weight:800; background:#F1F5F9; padding:4px 10px; border-radius:12px;">
             👉 往右滑看更多現場 (12+)
           </span>
-          <button class="btn-upload-banner" onclick="openUploadModal()">
+          <button class="btn-upload-banner" onclick="openLiveReportModal('upload')">
             <span>📸</span>
             <span id="uploadBtnText">我要分享最新實況 ➔</span>
           </button>
@@ -13155,7 +13466,7 @@
         species: '染井吉野櫻、山櫻',
         desc: '吉祥寺旁的綠意綠洲，湖面櫻吹雪花筏如粉紅浮毯，情侶約會首選。',
         locationDetail: '吉祥寺站南口步行5分鐘',
-        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80',
+        img: './images/inokashira_park_sakura.jpg',
         klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%90%89%E7%A5%A5%E5%AF%BA%20%E6%AB%BB%E8%8A%B1',
         bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E5%90%89%E7%A5%A5%E5%AF%BA'
       },
@@ -13464,7 +13775,28 @@
         nightImg: './images/hirosaki_moat_night.jpg',
         hasNightLight: true,
         nightHours: '🏮 18:00 - 22:00 點燈',
-        cafe: {
+        cafe: 
+      {
+        id: 'hirosaki_castle_night',
+        theme: 'sakura',
+        category: 'flower',
+        region: 'tohoku',
+        title: '弘前城天守閣・西濠櫻花隧道',
+        subtitle: '日本三大夜櫻！天守與西濠倒影絕景',
+        tag: '東北・青森',
+        bloomStatus: '🌸 滿開吹雪 (100%)',
+        species: '染井吉野櫻、八重紅枝垂',
+        desc: '西濠春陽橋櫻花隧道在夜間投射燈照射下倒映水面，天守閣在燈光中傲然聳立，櫻吹雪形成全日本最美粉紅地毯。',
+        locationDetail: 'JR弘前站搭乘土手町循環巴士至「市役所前」下車',
+        nightHours: '🏮 17:30 - 21:00 (弘前櫻花祭夜間特別點燈)',
+        hasNightLight: true,
+        img: './images/hirosaki_castle_night.jpg',
+        nightImg: './images/hirosaki_castle_night.jpg',
+        ticketLabel: '預約門票',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%BC%98%E5%89%8D%E5%85%AC%E5%9C%92%E6%AB%BB%E8%8A%B1&aid=123436&utm_medium=affiliate-alwayson',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=Hirosaki'
+      },
+{
           name: '名曲＆珈琲 羅針盤 (弘前老鋪喫茶)',
           feature: '大正昭和復古黑膠唱片・自烘虹吸式深焙手沖咖啡・步行5分鐘'
         },
@@ -15925,7 +16257,168 @@
         klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%B0%B8%E8%A7%80%E5%A0%82',
         bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD+%E6%B0%B8%E8%A7%80%E5%A0%82'
       },
+      
       {
+        id: 'arashiyama_tenryuji',
+        theme: 'momiji',
+        category: 'flower',
+        region: 'kansai',
+        title: '京都嵐山・天龍寺曹源池',
+        subtitle: '借景嵐山火紅楓葉！世界文化遺產回遊式庭園',
+        tag: '關西・京都',
+        bloomStatus: '🍁 見頃盛開 (100%)',
+        species: '伊呂波楓・山紅葉',
+        desc: '渡月橋兩岸山頭層林盡染，天龍寺曹源池倒映滿山火紅與金黃，清晨 8 點散策沉浸極致禪意。',
+        locationDetail: '嵐電嵐山站步行 1 分鐘，大方丈前曹源池庭園',
+        nightHours: '🏮 17:00 - 20:30 (嵯峨野嵐山花燈路・渡月橋水波點燈)',
+        hasNightLight: true,
+        img: './images/momiji_tenryuji.jpg',
+        nightImg: './images/momiji_tenryuji.jpg',
+        ticketLabel: '預定行程',
+        klookUrl: 'https://www.klook.com/zh-TW/activity/67911-taiwan-passport-application-service/?aid=123436&utm_medium=affiliate-alwayson',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=Arashiyama+Kyoto'
+      },
+      {
+        id: 'kiyomizu_momiji',
+        theme: 'momiji',
+        category: 'flower',
+        region: 'kansai',
+        title: '京都清水寺・音羽山夜楓舞台',
+        subtitle: '秋夜特別拜觀！千手觀音慈悲藍色青龍光束柱',
+        tag: '關西・京都',
+        bloomStatus: '🍁 見頃盛開 (100%)',
+        species: '千株山紅葉、伊呂波楓',
+        desc: '懸空舞台俯瞰千年古都秋夜錦繡，一道青龍藍色光束刺破天際，1000株楓紅如燃燒火焰圍繞清水舞台。',
+        locationDetail: '京阪電車祇園四條站 / 清水五條站步行15分',
+        nightHours: '🏮 17:30 - 21:00 (夜間特別拜觀・最後入場 20:30)',
+        hasNightLight: true,
+        img: './images/momiji_kiyomizu_night.jpg',
+        nightImg: './images/momiji_kiyomizu_night.jpg',
+        ticketLabel: '預定行程',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%B8%85%E6%B0%B4%E5%AF%BA%E9%96%80%E7%A5%A8&aid=123436&utm_medium=affiliate-alwayson',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=Kiyomizu-dera+Kyoto'
+      },
+      {
+        id: 'rikugien_momiji',
+        theme: 'momiji',
+        category: 'flower',
+        region: 'kanto',
+        title: '東京六義園・大名庭園秋夜',
+        subtitle: '都心水鏡倒影！江戶回遊式築山泉水庭園',
+        tag: '東京・文京區',
+        bloomStatus: '🍁 見頃盛開 (100%)',
+        species: '560株伊呂波楓、銀杏、野村楓',
+        desc: '江戶時代大名柳澤吉保歷時七年打造。渡月橋與大泉水池倒映整片金黃與火紅，夜間投射燈與竹林光影秀交織出極致幽玄氛圍。',
+        locationDetail: 'JR山手線 / 地鐵南北線駒込站步行7分',
+        nightHours: '🏮 18:00 - 20:30 (庭園之秋特別夜間點燈)',
+        hasNightLight: true,
+        img: './images/momiji_rikugien_night.jpg',
+        nightImg: './images/momiji_rikugien_night.jpg',
+        ticketLabel: '預定行程',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%85%AD%E7%BE%A9%E5%9C%92%E9%96%80%E7%A5%A8&aid=123436&utm_medium=affiliate-alwayson',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=Komagome+Tokyo'
+      },
+      {
+        id: 'kodaiji_momiji',
+        theme: 'momiji',
+        category: 'flower',
+        region: 'kansai',
+        title: '京都高台寺・臥龍池水鏡夜楓',
+        subtitle: '北政所寧寧菩提寺！無風水面極致對稱倒影',
+        tag: '關西・京都',
+        bloomStatus: '🍁 見頃盛開 (100%)',
+        species: '1000株山紅葉、枝垂楓',
+        desc: '臥龍池在無風秋夜宛如一面黑曜石鏡，紅葉與楓樹倒影清晰無比，分不清何處是水何處是天；方丈庭園更配有現代立體投影光雕。',
+        locationDetail: '京阪祇園四條站步行15分 / 八坂神社旁',
+        nightHours: '🏮 17:00 - 21:30 (秋季夜間特別拜觀光雕秀)',
+        hasNightLight: true,
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        nightImg: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80',
+        ticketLabel: '預定行程',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%AB%98%E5%8F%B0%E5%AF%BA&aid=123436&utm_medium=affiliate-alwayson',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=Gion+Kyoto'
+      },
+      {
+        id: 'korankei_momiji',
+        theme: 'momiji',
+        category: 'flower',
+        region: 'chubu',
+        title: '愛知香嵐溪・巴川夜楓',
+        subtitle: '東海第一紅葉名所！四千株楓樹倒映巴川水面',
+        tag: '中部・愛知',
+        bloomStatus: '🍁 見頃盛開 (100%)',
+        species: '11種楓樹、伊呂波楓、大紅葉',
+        desc: '飯盛山香積寺第十一世三榮和尚一株一株親手栽種，如今4000株楓樹沿巴川兩岸鋪展，夜間投射燈穿透朱紅待月橋，美得攝人心魄。',
+        locationDetail: '名鐵名鐵豐田線淨水站轉乘巴士約45分',
+        nightHours: '🏮 17:00 - 21:00 (香嵐溪紅葉祭每日點燈)',
+        hasNightLight: true,
+        img: 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=700&q=80',
+        nightImg: 'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=700&q=80',
+        ticketLabel: '預定行程',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%A6%99%E5%B5%90%E6%BA%AA&aid=123436&utm_medium=affiliate-alwayson',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=Toyota+Aichi'
+      },
+      {
+        id: 'kawaguchiko_momiji',
+        theme: 'momiji',
+        category: 'flower',
+        region: 'chubu',
+        title: '山梨河口湖・紅葉迴廊',
+        subtitle: '富士山與紅葉共演！60株百年巨木夜間點燈',
+        tag: '中部・山梨',
+        bloomStatus: '🍁 見頃盛開 (100%)',
+        species: '古木梨川紅葉、山紅葉',
+        desc: '梨川兩側長約150公尺的古老巨木形成宛如火焰燃燒的紅葉隧道，夜間燈光自下仰射，落葉鋪滿河床宛如紅毯，背景即是富士山。',
+        locationDetail: '富士急行河口湖站搭乘周遊巴士「久保田一竹美術館」下車',
+        nightHours: '🏮 16:30 - 21:30 (富士河口湖紅葉祭點燈)',
+        hasNightLight: true,
+        img: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=700&q=80',
+        nightImg: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=700&q=80',
+        ticketLabel: '預定行程',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%B2%B3%E5%8F%A3%E6%B9%96%E7%B4%85%E8%91%89&aid=123436&utm_medium=affiliate-alwayson',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=Fujikawaguchiko'
+      },
+      {
+        id: 'mifuneyama_momiji',
+        theme: 'momiji',
+        category: 'flower',
+        region: 'kyushu',
+        title: '佐賀御船山樂園・秋之夜',
+        subtitle: '日本最大規模夜楓！50萬平方公尺武雄鍋島大名遺產',
+        tag: '九州・佐賀',
+        bloomStatus: '🍁 見頃盛開 (100%)',
+        species: '約4萬株杜鵑與紅葉、伊呂波楓',
+        desc: '以險峻的御船山斷崖為借景，池水完整鏡射打燈的樹木與斷崖，是全日本規模最大的紅葉夜間點燈，配合 teamLab 數位藝術展極震撼。',
+        locationDetail: 'JR佐世保線武雄溫泉站搭乘計程車約5分鐘',
+        nightHours: '🏮 17:30 - 22:00 (たまゆらの夕べ 巨木點燈)',
+        hasNightLight: true,
+        img: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        nightImg: 'https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80',
+        ticketLabel: '預定行程',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%BE%A1%E8%88%B9%E5%B1%B1%E6%A8%82%E5%9C%92&aid=123436&utm_medium=affiliate-alwayson',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=Takeo+Onsen'
+      },
+      {
+        id: 'nakano_momiji',
+        theme: 'momiji',
+        category: 'flower',
+        region: 'tohoku',
+        title: '青森中野紅葉山・清流夜楓',
+        subtitle: '津輕小京都！不動瀑布與錦木神社夜間光影',
+        tag: '東北・青森',
+        bloomStatus: '🍁 見頃盛開 (100%)',
+        species: '享保年間移植之京都楓樹',
+        desc: '江戶時代津輕藩主從京都運來百餘種楓樹種植。紅葉山被中野神社與清澈溪流環繞，夜間燈光映照不動瀑布，宛如置身夢幻仙境。',
+        locationDetail: '弘南鐵道黑石站搭乘巴士約25分',
+        nightHours: '🏮 16:30 - 21:00 (中野神社夜間特別點燈)',
+        hasNightLight: true,
+        img: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=700&q=80',
+        nightImg: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=700&q=80',
+        ticketLabel: '預定行程',
+        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%9D%92%E6%A3%AE%E7%B4%85%E8%91%89&aid=123436&utm_medium=affiliate-alwayson',
+        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=Aomori'
+      },
+{
         id: 'tofukuji_momiji',
         theme: 'momiji',
         category: 'flower',
@@ -19736,16 +20229,7 @@
             ${item.metrics && item.category === 'hanabi' ? `<div class="hanabi-spec-badge">🎆 ${item.metrics.depth}</div>` : ''}
 
             <!-- ☀️ 白天 ⇋ 🌙 夜晚點燈互動切換開關 (右上角，僅賞花與楓葉顯示) -->
-            ${isFlowerOrMomiji ? `
-              <button type="button" class="card-daynight-toggle ${isNight ? 'is-night' : ''}" onclick="toggleSpotDayNight('${item.id}', event)" title="點擊切換【☀️ 白天景致】與【🌙 夜間點燈】">
-                <span class="daynight-icon">${isNight ? '🌙' : '☀️'}</span>
-                <span class="daynight-text">${isNight ? (item.theme === 'momiji' ? '夜楓點燈' : '夜櫻點燈') : '白天景致'}</span>
-                <span class="daynight-symbol">⇋</span>
-              </button>
-              <div class="card-night-illum-badge" style="display:${isNight ? 'flex' : 'none'};">
-                <span>🏮 夜間點燈中</span>
-              </div>
-            ` : ''}
+            
           </div>
           <div class="card-body">
             <div class="card-title-header">
@@ -21547,7 +22031,16 @@
     // 初始化收藏本計數與動態情境篩選
     document.addEventListener('DOMContentLoaded', function() {
       updateFavoriteBadge();
+      // 🌸 首頁預設認定顯示「賞花前線」，自動展開所有花種選項 (櫻花、紫藤花、粉蝶花、繡球花、秋楓、銀杏)
+      currentMasterHub = 'flower';
+      currentSeason = 'sakura';
+      currentSubItemId = 'sakura_bloom';
+      document.body.className = 'mode-sakura';
+      renderSubContextPills();
+      renderFeatureFilterBar();
+      renderDynamicRegionBar();
       renderDynamicFilter();
+      renderCards();
     });
 
 
@@ -21669,6 +22162,83 @@ ${window.location.href}`;
       setTimeout(() => {
         goTripDeepLink(path || '/flights/taipei-to-tokyo');
       }, 350);
+    }
+
+  
+    // 📸 全日本花況現場即時情報局 Modal 交互
+    function openLiveReportModal(initialTab) {
+      const modal = document.getElementById('liveReportModal');
+      const scrim = document.getElementById('mainScrim');
+      if (modal) modal.classList.add('show');
+      if (scrim) scrim.classList.add('active');
+      if (initialTab) switchLiveModalTab(initialTab);
+    }
+
+    function closeLiveReportModal() {
+      const modal = document.getElementById('liveReportModal');
+      const scrim = document.getElementById('mainScrim');
+      if (modal) modal.classList.remove('show');
+      if (scrim) scrim.classList.remove('active');
+    }
+
+    function switchLiveModalTab(tabKey) {
+      const pTab = document.getElementById('tabLivePhotos');
+      const uTab = document.getElementById('tabLiveUpload');
+      const pView = document.getElementById('liveViewPhotos');
+      const uView = document.getElementById('liveViewUpload');
+      if (tabKey === 'photos') {
+        if (pTab) pTab.classList.add('active');
+        if (uTab) uTab.classList.remove('active');
+        if (pView) pView.style.display = 'block';
+        if (uView) uView.style.display = 'none';
+      } else {
+        if (pTab) pTab.classList.remove('active');
+        if (uTab) uTab.classList.add('active');
+        if (pView) pView.style.display = 'none';
+        if (uView) uView.style.display = 'block';
+      }
+    }
+
+    function likeLivePost(btn, baseCount) {
+      const countEl = btn.querySelector('.like-count');
+      if (!countEl) return;
+      let curr = parseInt(countEl.innerText) || baseCount;
+      if (!btn.classList.contains('liked')) {
+        btn.classList.add('liked');
+        countEl.innerText = curr + 1;
+        btn.style.background = '#FDA4AF';
+        btn.style.color = '#881337';
+      }
+    }
+
+    function jumpToSpotCard(spotId) {
+      closeLiveReportModal();
+      const el = document.getElementById(`spot-${spotId}`) || document.querySelector(`[data-spot-id="${spotId}"]`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.style.outline = '3px solid #C53D43';
+        setTimeout(() => { el.style.outline = 'none'; }, 2500);
+      }
+    }
+
+    function handleModalPhotoPreview(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const wrap = document.getElementById('modalPhotoPreviewWrap');
+          const img = document.getElementById('modalPhotoPreviewImg');
+          if (wrap && img) {
+            img.src = e.target.result;
+            wrap.style.display = 'block';
+          }
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    function submitLiveReport() {
+      alert('🎉 感謝您的現地取材回報！您的即時花況已發布至相簿，協助正在規劃的旅人！');
+      switchLiveModalTab('photos');
     }
 
   </script>
@@ -21801,6 +22371,195 @@ ${window.location.href}`;
   <div class="tabi-toast" id="tabiToast">
     <span id="toastIcon">🛡️</span>
     <span id="toastMsg">提示訊息</span>
+  </div>
+
+
+  <!-- 📸 全日本花況現場即時情報局 ＆ 旅人實拍相簿 Modal (增加網站停留度與互動回報) -->
+  <div class="live-report-modal" id="liveReportModal">
+    <div class="live-modal-header">
+      <div class="live-modal-title-h3">
+        <span>🌸</span>
+        <span>全日本花況現場即時情報局 ＆ 旅人相簿</span>
+      </div>
+      <button class="live-modal-close-btn" onclick="closeLiveReportModal()" title="關閉">✕</button>
+    </div>
+
+    <!-- 頂部 Tab 切換 -->
+    <div class="live-modal-tabs-bar">
+      <button class="live-tab-btn active" id="tabLivePhotos" onclick="switchLiveModalTab('photos')">
+        👀 旅人實拍照片牆 (即時更新 28+)
+      </button>
+      <button class="live-tab-btn" id="tabLiveUpload" onclick="switchLiveModalTab('upload')">
+        📸 我要回報 / 上傳今天花況
+      </button>
+    </div>
+
+    <div class="live-modal-body-scroll">
+      <!-- 視圖 1: 實拍相簿瀑布流 -->
+      <div id="liveViewPhotos">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+          <div style="font-size:0.8rem; color:#64748B;">
+            ⚡ 旅人現地即時取材連線 ｜ 看別人拍的花況，規劃最美花期不踩雷！
+          </div>
+          <div style="display:flex; gap:6px;">
+            <span style="font-size:0.72rem; padding:3px 8px; background:#F0FDF4; color:#16A34A; border-radius:6px; font-weight:800;">● 現場連線中</span>
+          </div>
+        </div>
+
+        <div class="live-photo-grid">
+          <!-- Card 1: 目黑川 -->
+          <div class="live-card-item">
+            <div class="live-card-img-wrap">
+              <img src="./images/meguro_day_sakura.jpg" class="live-card-img" alt="目黑川櫻並木">
+              <span class="live-card-time-pill">⚡ 15 分鐘前實拍</span>
+              <span class="live-card-bloom-badge">🌸 滿開吹雪 100%</span>
+            </div>
+            <div class="live-card-content">
+              <div class="live-card-author-row">
+                <span class="live-author-name">🌸 小南・日旅特派員</span>
+                <span class="live-spot-tag">東京・目黑區</span>
+              </div>
+              <p class="live-card-quote">
+                「水面已經鋪滿粉紅櫻花地毯！清晨 7 點去完全免排隊，落櫻隨風飄落美如仙境，建議走到底部天橋取景最佳！」
+              </p>
+              <div class="live-card-footer">
+                <button class="live-like-btn" onclick="likeLivePost(this, 412)">
+                  <span>❤️</span> <span class="like-count">412</span> 讚
+                </button>
+                <a class="live-jump-spot-btn" onclick="jumpToSpotCard('meguro_sakura')">查看此名所攻略 ➔</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: 千鳥之淵 -->
+          <div class="live-card-item">
+            <div class="live-card-img-wrap">
+              <img src="./images/chidorigafuchi_day.jpg" class="live-card-img" alt="千鳥之淵">
+              <span class="live-card-time-pill">⚡ 今晨 08:00 實拍</span>
+              <span class="live-card-bloom-badge">🌸 滿開護城河</span>
+            </div>
+            <div class="live-card-content">
+              <div class="live-card-author-row">
+                <span class="live-author-name">📷 Eason 晨光攝影師</span>
+                <span class="live-spot-tag">東京・千代田區</span>
+              </div>
+              <p class="live-card-quote">
+                「划船 09:00 前必須取號！清晨 7 點護城河水面無風倒影如鏡，粉紅櫻花垂入水面，太震撼了！」
+              </p>
+              <div class="live-card-footer">
+                <button class="live-like-btn" onclick="likeLivePost(this, 328)">
+                  <span>❤️</span> <span class="like-count">328</span> 讚
+                </button>
+                <a class="live-jump-spot-btn" onclick="jumpToSpotCard('chidorigafuchi')">查看此名所攻略 ➔</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: 嵐山天龍寺 -->
+          <div class="live-card-item">
+            <div class="live-card-img-wrap">
+              <img src="./images/momiji_tenryuji.jpg" class="live-card-img" alt="天龍寺曹源池">
+              <span class="live-card-time-pill">⚡ 昨夜點燈實拍</span>
+              <span class="live-card-bloom-badge" style="background:#EA580C;">🏮 夜間點燈中</span>
+            </div>
+            <div class="live-card-content">
+              <div class="live-card-author-row">
+                <span class="live-author-name">🍁 嵐山行者・Ken</span>
+                <span class="live-spot-tag">京都・嵐山</span>
+              </div>
+              <p class="live-card-quote">
+                「曹源池倒映滿山火紅與金黃，華燈初上禪意十足，推薦下午 16:30 入園，可同時欣賞夕陽與夜間點燈！」
+              </p>
+              <div class="live-card-footer">
+                <button class="live-like-btn" onclick="likeLivePost(this, 295)">
+                  <span>❤️</span> <span class="like-count">295</span> 讚
+                </button>
+                <a class="live-jump-spot-btn" onclick="jumpToSpotCard('arashiyama_tenryuji')">查看此名所攻略 ➔</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: 弘前公園 -->
+          <div class="live-card-item">
+            <div class="live-card-img-wrap">
+              <img src="./images/hirosaki_night_sakura.jpg" class="live-card-img" alt="弘前公園">
+              <span class="live-card-time-pill">⚡ 昨晚 19:30 實拍</span>
+              <span class="live-card-bloom-badge">🏮 下乘橋夜櫻</span>
+            </div>
+            <div class="live-card-content">
+              <div class="live-card-author-row">
+                <span class="live-author-name">❄️ 東北特派員・Yuki</span>
+                <span class="live-spot-tag">青森・弘前市</span>
+              </div>
+              <p class="live-card-quote">
+                「下乘橋夜櫻點燈與西濠春陽橋櫻花隧道，一生必看一次！外濠櫻花花筏已經初現，超級夢幻！」
+              </p>
+              <div class="live-card-footer">
+                <button class="live-like-btn" onclick="likeLivePost(this, 356)">
+                  <span>❤️</span> <span class="like-count">356</span> 讚
+                </button>
+                <a class="live-jump-spot-btn" onclick="jumpToSpotCard('hirosaki_park')">查看此名所攻略 ➔</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 視圖 2: 我要回報 / 上傳花況表單 -->
+      <div id="liveViewUpload" style="display:none;">
+        <div style="background:#FFF7ED; border:1px solid #FED7AA; border-radius:12px; padding:12px 16px; margin-bottom:16px; font-size:0.8rem; color:#9A3412;">
+          🎁 感謝您參與旅人現地回報！分享您今天在景點拍攝的照片與花況，協助更多旅人避開人潮、掌握最佳花期！
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
+          <div>
+            <label style="display:block; font-size:0.8rem; font-weight:800; color:#1E293B; margin-bottom:4px;">📍 賞花景點</label>
+            <select id="modalSpotSelect" style="width:100%; padding:9px 12px; border-radius:10px; border:1px solid #CBD5E1; font-size:0.84rem; background:#FFF;">
+              <option value="meguro">東京・目黑川櫻並木</option>
+              <option value="chidori">東京・千鳥之淵綠道</option>
+              <option value="inokashira">東京・井之頭恩賜公園</option>
+              <option value="ueno">東京・上野恩賜公園</option>
+              <option value="shinjuku">東京・新宿御苑</option>
+              <option value="kiyomizu">京都・清水寺音羽山</option>
+              <option value="tenryuji">京都・嵐山天龍寺</option>
+              <option value="hirosaki">青森・弘前城公園</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block; font-size:0.8rem; font-weight:800; color:#1E293B; margin-bottom:4px;">🌸 今日花況進度</label>
+            <select id="modalBloomSelect" style="width:100%; padding:9px 12px; border-radius:10px; border:1px solid #CBD5E1; font-size:0.84rem; background:#FFF;">
+              <option value="full">🌸 滿開吹雪中 (100%) - 最美推薦</option>
+              <option value="70">🌸 7-8分開 (即將滿開)</option>
+              <option value="50">🌱 5分開 (花苞綻放)</option>
+              <option value="late">🍃 晚櫻吹雪落花</option>
+              <option value="night">🏮 夜間點燈中</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <label style="display:block; font-size:0.8rem; font-weight:800; color:#1E293B; margin-bottom:4px;">📷 上傳今天現場拍攝照片</label>
+          <div onclick="document.getElementById('modalFileInput').click()" style="border:2px dashed #CBD5E1; border-radius:14px; padding:24px 16px; text-align:center; background:#F8FAFC; cursor:pointer;">
+            <input type="file" id="modalFileInput" accept="image/*" style="display:none;" onchange="handleModalPhotoPreview(this)">
+            <div style="font-size:1.8rem; margin-bottom:4px;">📸</div>
+            <div style="font-size:0.85rem; font-weight:800; color:#1E293B;">點擊選擇照片 或 手機拍照上傳</div>
+            <div style="font-size:0.72rem; color:#64748B; margin-top:2px;">自動讀取照片 EXIF 拍攝時間 ｜ 支援 JPG, PNG</div>
+            <div id="modalPhotoPreviewWrap" style="margin-top:10px; display:none;">
+              <img id="modalPhotoPreviewImg" style="max-height:140px; border-radius:8px; object-fit:cover;">
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:18px;">
+          <label style="display:block; font-size:0.8rem; font-weight:800; color:#1E293B; margin-bottom:4px;">💡 現場心得與特派員避坑建議</label>
+          <textarea id="modalCommentInput" rows="3" placeholder="例如：今天人潮狀況如何？推薦幾點去？推車是否好推？光線哪邊順光？" style="width:100%; padding:10px 12px; border-radius:10px; border:1px solid #CBD5E1; font-size:0.82rem; font-family:inherit;"></textarea>
+        </div>
+
+        <button onclick="submitLiveReport()" style="width:100%; padding:12px; border-radius:12px; border:none; background:linear-gradient(135deg, #FF6B4A 0%, #C53D43 100%); color:#FFF; font-size:0.95rem; font-weight:900; cursor:pointer; box-shadow:0 4px 14px rgba(197, 61, 67, 0.35);">
+          🚀 發布我的現場實況 (獲得特派員勳章)
+        </button>
+      </div>
+    </div>
   </div>
 
 </body>

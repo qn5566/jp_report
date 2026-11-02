@@ -84,211 +84,170 @@
     .header-util-btn:hover { background: #F8FAFC !important; border-color: #94A3B8 !important; color: #0F172A !important; transform: translateY(-1px) !important; }
     .header-util-btn.btn-nav-okinawa.active { background: #E0F2FE !important; border-color: #7DD3FC !important; color: #0284C7 !important; font-weight: 800 !important; }
 
-    /* 🌊 1. 頂部橫幅 Hero：通透陽光海島漸層 + 視覺焦點 Hero Point */
+    
+    /* 🫧 沖繩蔚藍海洋夢幻向上漂浮泡泡特效 (Dreamy Upward Ocean Bubbles) */
+    .ocean-bubbles-container {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .ocean-bubble {
+      position: absolute;
+      bottom: -40px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 32% 30%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.4) 25%, rgba(186, 230, 253, 0.25) 55%, rgba(14, 165, 233, 0.4) 95%);
+      box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.8), 0 2px 10px rgba(2, 132, 199, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      animation: floatUpward linear infinite;
+      backdrop-filter: blur(0.5px);
+    }
+    .ocean-bubble::after {
+      content: '';
+      position: absolute;
+      top: 18%;
+      left: 22%;
+      width: 25%;
+      height: 25%;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.85);
+      filter: blur(0.5px);
+    }
+    @keyframes floatUpward {
+      0% {
+        transform: translateY(0) translateX(0) scale(0.6);
+        opacity: 0;
+      }
+      12% {
+        opacity: 0.85;
+      }
+      50% {
+        transform: translateY(-240px) translateX(18px) scale(0.95);
+        opacity: 0.9;
+      }
+      80% {
+        transform: translateY(-380px) translateX(-12px) scale(1.05);
+        opacity: 0.85;
+      }
+      100% {
+        transform: translateY(-520px) translateX(16px) scale(1.15);
+        opacity: 0;
+      }
+    }
+
+    /* 🌊 1. 頂部橫幅 Hero：全景蔚藍珊瑚礁背景 ＋ 詩意文案 ＋ 底部壓邊半透明菜單 */
     .okinawa-hero-luminous {
       position: relative;
-      background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 40%, #E0F7FA 75%, #F0FDF4 100%);
-      padding: 42px 24px 36px 24px;
+      background: linear-gradient(90deg, rgba(12, 74, 110, 0.65) 0%, rgba(12, 74, 110, 0.35) 45%, rgba(12, 74, 110, 0.05) 75%, transparent 100%), 
+                  url('./images/okinawa_hero_banner.jpg') center 35% / cover no-repeat;
+      padding: 65px 24px 105px 24px;
       overflow: hidden;
-      border-bottom: 1px solid var(--border-sky);
-    }
-    /* 柔美波浪光暈背景飾紋 */
-    .okinawa-hero-luminous::before {
-      content: "";
-      position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 420px;
-      height: 420px;
-      background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(224, 242, 254, 0) 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .okinawa-hero-luminous::after {
-      content: "";
-      position: absolute;
-      bottom: -60px;
-      left: 10%;
-      width: 500px;
-      height: 200px;
-      background: radial-gradient(ellipse, rgba(255, 107, 74, 0.1) 0%, rgba(240, 249, 255, 0) 70%);
-      pointer-events: none;
+      min-height: 440px;
+      display: flex;
+      align-items: center;
     }
     .hero-container {
-      max-width: 1140px;
+      max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.25fr 0.95fr;
-      gap: 32px;
+      display: flex;
+      justify-content: flex-start;
       align-items: center;
       position: relative;
       z-index: 2;
     }
-    .hero-badge-wrap {
+
+    /* 🕊️ 左側歐美法式文青純文字 (無透明色塊，純粹優雅) */
+    .hero-editorial-wrap {
+      max-width: 680px;
+      text-align: left;
+    }
+    .hero-tag-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 4px 12px;
-      background: #FFFFFF;
-      border: 1px solid var(--border-sky);
-      border-radius: 20px;
-      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #BAE6FD;
+      letter-spacing: 0.5px;
       margin-bottom: 14px;
     }
-    .hero-badge-icon { font-size: 0.85rem; }
-    .hero-badge-text { font-size: 0.74rem; font-weight: 800; color: #0284C7; letter-spacing: 0.05em; }
-    .hero-main-title {
-      font-size: 2.15rem;
-      font-weight: 900;
-      color: #0F172A;
-      line-height: 1.28;
-      letter-spacing: -0.01em;
-      margin-bottom: 12px;
-    }
-    .hero-title-highlight {
-      background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-    }
-    .hero-desc-lead {
-      font-size: 0.95rem;
-      color: #334155;
-      font-weight: 600;
-      line-height: 1.6;
-      margin-bottom: 18px;
-    }
-    .hero-pills-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 22px;
-    }
-    .hero-feat-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 4px 10px;
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid #CBD5E1;
-      border-radius: 6px;
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: #475569;
-    }
-    /* 高對比暖橘落日租車按鈕 */
-    .hero-coral-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 26px;
-      background: linear-gradient(135deg, #FF6B4A 0%, #EA580C 100%);
-      color: #FFFFFF !important;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 800;
-      border-radius: 28px;
-      box-shadow: var(--shadow-coral);
-      transition: all 0.25s ease;
+    .hero-quote-en {
+      font-family: 'Cormorant Garamond', 'Playfair Display', Didot, 'Bodoni MT', Georgia, serif;
+      font-style: italic;
+      font-size: 1.22rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.45;
       letter-spacing: 0.02em;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
     }
-    .hero-coral-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(234, 88, 12, 0.45);
-      background: linear-gradient(135deg, #FF7B5C 0%, #F97316 100%);
-    }
-
-    /* Hero 右側視覺焦點卡片 (Hero Point) */
-    .hero-visual-card {
-      position: relative;
-      background: #FFFFFF;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 2px solid #FFFFFF;
-      box-shadow: 0 12px 32px rgba(2, 132, 199, 0.12);
-      transform: perspective(1000px) rotateY(-2deg);
-      transition: transform 0.3s ease;
-    }
-    .hero-visual-card:hover { transform: perspective(1000px) rotateY(0deg) translateY(-3px); }
-    .hero-visual-img-box {
-      position: relative;
-      height: 230px;
-      overflow: hidden;
-    }
-    .hero-visual-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .hero-visual-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(15, 23, 42, 0.7) 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 16px;
-      color: #FFFFFF;
-    }
-    .hero-visual-tag {
-      align-self: flex-start;
-      background: rgba(2, 132, 199, 0.9);
-      color: #FFFFFF;
-      font-size: 0.68rem;
-      font-weight: 800;
-      padding: 3px 8px;
-      border-radius: 4px;
-      margin-bottom: 6px;
-    }
-    .hero-visual-title {
-      font-size: 1.1rem;
-      font-weight: 900;
-      margin-bottom: 2px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    }
-    .hero-visual-sub {
-      font-size: 0.75rem;
-      opacity: 0.92;
-    }
-    .hero-visual-footer-bar {
-      padding: 10px 16px;
-      background: #FFFFFF;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.74rem;
+    .hero-quote-zh {
+      font-family: 'Noto Serif TC', 'Shippori Mincho', serif;
+      font-size: 1.72rem;
       font-weight: 700;
-      color: #334155;
+      color: #FFFFFF;
+      line-height: 1.48;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
     }
-    .hero-visual-footer-bar span.accent {
-      color: #0284C7;
-      font-weight: 800;
+    .hero-quote-sub {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.6;
+      font-weight: 500;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+    }
+    @media (max-width: 768px) {
+      .okinawa-hero-luminous { padding: 45px 16px 85px 16px; min-height: 380px; }
+      .hero-quote-zh { font-size: 1.35rem; }
+      .hero-quote-en { font-size: 1.05rem; }
     }
 
-    /* 🧭 2. 日式和風雙軸吸頂列 (單排合一，空間還給內容) */
-    .sticky-dock-bar {
-      position: sticky;
-      top: 54px;
-      z-index: 900;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    /* 🧭 2. 一體成型大圓角覆蓋板塊 (Seamless Unified Content Sheet - 參考首頁) */
+    .okinawa-main-sheet {
+      position: relative;
+      z-index: 10;
+      margin-top: -65px;
+      background: #FAF9F7;
+      border-radius: 36px 36px 0 0;
+      box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.08);
+      padding: 32px 24px 60px;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .dock-container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 8px 16px;
+    @media (max-width: 600px) {
+      .okinawa-main-sheet {
+        margin-top: -45px;
+        border-radius: 28px 28px 0 0;
+        padding: 20px 12px 40px;
+      }
+    }
+
+    /* 菜單一體成型 (無包圍外框線條，大方自然) */
+    .sheet-menu-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 14px;
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid #E2E8F0;
     }
-    /* 左側主題分類膠囊 (印章感，橫軸滑動) */
     .dock-category-scroll {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       overflow-x: auto;
       white-space: nowrap;
       scrollbar-width: none;
@@ -298,17 +257,18 @@
     .cat-stamp-btn {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 6px 14px;
-      border-radius: 18px;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 20px;
       border: 1px solid #E2E8F0;
       background: #FFFFFF;
       color: #475569;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s ease;
       white-space: nowrap;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
     }
     .cat-stamp-btn:hover {
       background: #F0F9FF;
@@ -320,10 +280,10 @@
       background: #0284C7;
       color: #FFFFFF;
       border-color: #0284C7;
-      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+      box-shadow: 0 3px 10px rgba(2, 132, 199, 0.28);
     }
 
-    /* 右側地區極簡微型切換器 (下拉選單，乾淨不佔位) */
+    /* 右側地區極簡微型切換器 (下拉選單) */
     .region-dropdown-wrap {
       position: relative;
       flex-shrink: 0;
@@ -332,45 +292,44 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 14px;
-      border-radius: 18px;
+      padding: 7px 16px;
+      border-radius: 20px;
       border: 1.5px solid #0284C7;
-      background: #E0F2FE;
-      color: #0369A1;
-      font-size: 0.78rem;
+      background: #FFFFFF;
+      color: #0284C7;
+      font-size: 0.8rem;
       font-weight: 800;
       cursor: pointer;
       transition: all 0.2s ease;
       white-space: nowrap;
     }
     .region-select-trigger:hover {
-      background: #BAE6FD;
+      background: #E0F2FE;
     }
     .region-dropdown-menu {
       position: absolute;
       top: calc(100% + 6px);
       right: 0;
       background: #FFFFFF;
-      border-radius: 12px;
+      border-radius: 14px;
       border: 1px solid var(--border-color);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
       width: 190px;
-      padding: 6px;
+      padding: 6px 0;
+      z-index: 1000;
       display: none;
-      z-index: 999;
     }
     .region-dropdown-menu.show { display: block; }
     .region-menu-item {
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      font-weight: 700;
+      padding: 9px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
       color: #334155;
-      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 6px;
-      transition: background 0.15s ease;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: background 0.15s;
     }
     .region-menu-item:hover { background: #F0F9FF; color: #0284C7; }
     .region-menu-item.active { background: #E0F2FE; color: #0284C7; font-weight: 800; }
@@ -379,32 +338,33 @@
     
     /* 🕊️ 法式文青文人詩意引言 (French Poetic Editorial Quote) */
     .hero-poetic-quote-wrap {
-      margin-bottom: 20px;
-      padding: 16px 20px;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-left: 3.5px solid #0284C7;
-      border-radius: 0 14px 14px 0;
-      box-shadow: 0 4px 18px rgba(2, 132, 199, 0.08);
+      margin-top: 6px;
+      margin-bottom: 0;
+      padding: 24px 28px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-left: 4px solid #0284C7;
+      border-radius: 0 16px 16px 0;
+      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.08);
       position: relative;
     }
     .poetic-quote-zh {
       font-family: 'Noto Serif TC', 'Songti TC', serif;
-      font-size: 1.02rem;
-      font-weight: 600;
+      font-size: 1.18rem;
+      font-weight: 700;
       color: #0C4A6E;
-      line-height: 1.68;
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
+      line-height: 1.78;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
     }
     .poetic-quote-en {
       font-family: 'Cormorant Garamond', 'Playfair Display', Didot, 'Bodoni MT', Georgia, serif;
       font-style: italic;
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       font-weight: 500;
       color: #0369A1;
-      line-height: 1.45;
+      line-height: 1.5;
       letter-spacing: 0.025em;
     }
 
@@ -589,33 +549,48 @@
     }
 
     /* 🏖️ 4. 下方景點卡片：強化「實戰生存筆記」視覺重量 (MapCode一鍵複製 + 亮點指標) */
+    /* 🌟 5 欄一排大方歐美排版 (5 Columns Spot Grid) */
     .okinawa-main-grid {
-      max-width: 1140px;
-      margin: 24px auto 50px auto;
+      max-width: 1440px;
+      margin: 24px auto 60px auto;
       padding: 0 16px;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 1380px) {
+      .okinawa-main-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    }
+    @media (max-width: 1080px) {
+      .okinawa-main-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    }
+    @media (max-width: 768px) {
+      .okinawa-main-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    }
+    @media (max-width: 480px) {
+      .okinawa-main-grid { grid-template-columns: 1fr; }
     }
     .spot-card {
       background: #FFFFFF;
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
       border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       display: flex;
       flex-direction: column;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .spot-card:hover {
       transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.12);
       border-color: #BAE6FD;
     }
     .spot-img-wrap {
       position: relative;
-      height: 195px;
+      width: 100%;
+      height: 148px;
       overflow: hidden;
+      background: #E2E8F0;
     }
     .spot-img {
       width: 100%;
@@ -623,128 +598,109 @@
       object-fit: cover;
       transition: transform 0.4s ease;
     }
-    .spot-card:hover .spot-img { transform: scale(1.03); }
-    .spot-region-badge {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      padding: 3px 9px;
-      background: rgba(15, 23, 42, 0.78);
-      backdrop-filter: blur(4px);
-      color: #FFFFFF;
-      font-size: 0.68rem;
-      font-weight: 800;
-      border-radius: 5px;
-    }
-    .spot-cat-badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 3px 9px;
-      background: rgba(2, 132, 199, 0.92);
-      color: #FFFFFF;
-      font-size: 0.68rem;
-      font-weight: 800;
-      border-radius: 5px;
+    .spot-card:hover .spot-img {
+      transform: scale(1.06);
     }
     .spot-body {
-      padding: 16px 18px;
-      flex: 1;
+      padding: 12px 14px;
       display: flex;
       flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      gap: 10px;
     }
     .spot-title {
-      font-size: 1.1rem;
-      font-weight: 900;
+      font-size: 0.95rem;
+      font-weight: 800;
       color: #0F172A;
-      margin-bottom: 2px;
       line-height: 1.3;
+      margin-bottom: 2px;
     }
-    .spot-subtitle {
-      font-size: 0.77rem;
-      font-weight: 700;
+    .spot-sub {
+      font-size: 0.72rem;
       color: #0284C7;
-      margin-bottom: 8px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 6px;
     }
     .spot-desc {
-      font-size: 0.82rem;
+      font-size: 0.76rem;
       color: #475569;
       line-height: 1.5;
-      margin-bottom: 12px;
-    }
-
-    /* 🛡️ 實戰生存筆記 (高對比醒目重點、MapCode一鍵複製) */
-    .survival-capsule-box {
-      background: #F8FAFC;
-      border: 1px solid var(--border-sky);
-      border-radius: 10px;
-      padding: 10px 12px;
-      margin-bottom: 14px;
-      font-size: 0.75rem;
-      color: #334155;
-    }
-    .mapcode-highlight-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-      background: #FFFFFF;
-      border: 1px solid #CBD5E1;
-      border-radius: 6px;
-      padding: 5px 8px;
       margin-bottom: 8px;
     }
-    .mapcode-val {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-weight: 900;
-      color: #0F172A;
-      font-size: 0.85rem;
-      letter-spacing: 0.04em;
-    }
-    .copy-mapcode-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      padding: 2px 8px;
-      border-radius: 4px;
-      background: #E0F2FE;
-      color: #0284C7;
-      border: 1px solid #BAE6FD;
-      font-size: 0.68rem;
-      font-weight: 800;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .copy-mapcode-btn:hover {
-      background: #0284C7;
-      color: #FFFFFF;
+    .survival-note-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 7px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.7rem;
     }
     .survival-item-row {
       display: flex;
-      align-items: baseline;
-      gap: 6px;
-      margin-bottom: 4px;
-      line-height: 1.45;
+      align-items: flex-start;
+      gap: 4px;
+      line-height: 1.35;
     }
-    .survival-item-row:last-child { margin-bottom: 0; }
     .survival-label {
       font-weight: 800;
-      color: #1E293B;
+      color: #334155;
       flex-shrink: 0;
     }
-    .survival-val-parking { color: #334155; }
-    .survival-val-shade { color: #D97706; font-weight: 700; }
-    .survival-val-tip { color: #0284C7; font-weight: 700; }
-
-    /* 4 大功能按鈕 (高度齊平、日系精工) */
+    .survival-val {
+      color: #64748B;
+      font-weight: 600;
+    }
     .spot-actions-trio {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      padding-top: 12px;
-      border-top: 1px solid #F1F5F9;
-      margin-top: auto;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .okinawa-action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 6px 4px;
+      border-radius: 8px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      text-align: center;
+    }
+    .btn-okinawa-map {
+      background: #F1F5F9;
+      color: #334155;
+      border: 1px solid #CBD5E1;
+    }
+    .btn-okinawa-map:hover { background: #E2E8F0; }
+    .btn-okinawa-drive {
+      background: #E0F2FE;
+      color: #0284C7;
+      border: 1px solid #BAE6FD;
+    }
+    .btn-okinawa-drive:hover { background: #0284C7; color: #FFF; }
+    .btn-okinawa-hotel {
+      background: #FEF3C7;
+      color: #B45309;
+      border: 1px solid #FDE68A;
+    }
+    .btn-okinawa-hotel:hover { background: #F59E0B; color: #FFF; }
+    .btn-okinawa-cta {
+      background: linear-gradient(135deg, #FF6B4A 0%, #EA580C 100%);
+      color: #FFFFFF;
+      border: 1px solid #FF6B4A;
+      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.2);
+    }
+    .btn-okinawa-cta:hover {
+      background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+      transform: translateY(-1px);
     }
     .okinawa-action-btn {
       display: inline-flex;
@@ -973,16 +929,216 @@
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06) !important;
     }
 
+  
+    /* 🌟 全站統一極致日系 Header 品牌標誌與多國語言選單 (100% 統一) */
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #E2E8F0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .header-left { flex: 1; display: flex; align-items: center; }
+    .header-center { flex: 0 0 auto; display: flex; justify-content: center; align-items: center; }
+    .header-right { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 7px; flex-wrap: nowrap; }
+    
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .fuji-logo-box {
+      width: 54px !important;
+      height: 54px !important;
+      border-radius: 50% !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      border: 2.5px solid #ED1A21 !important;
+      box-shadow: 0 4px 14px rgba(237, 26, 33, 0.18) !important;
+      overflow: hidden;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .brand-wrap:hover .fuji-logo-box {
+      transform: scale(1.06);
+      box-shadow: 0 6px 18px rgba(237, 26, 33, 0.28) !important;
+    }
+    .brand-tabi-logo, .fuji-logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 50%;
+    }
+    .brand-text h1 {
+      font-size: 1.55rem !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      line-height: 1.15;
+    }
+    .brand-title-zh {
+      color: #094F8D !important;
+      font-weight: 900 !important;
+      letter-spacing: -0.2px;
+      font-size: 1.55rem !important;
+    }
+    .brand-sub-official-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 3px;
+    }
+    .brand-title-en {
+      color: #ED1A21 !important;
+      font-size: 0.72rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.12em !important;
+    }
+    .brand-tag-official {
+      font-size: 0.65rem !important;
+      font-weight: 800 !important;
+      background: #ED1A21 !important;
+      color: #FFFFFF !important;
+      padding: 2px 7px !important;
+      border-radius: 4px !important;
+      letter-spacing: 0.05em !important;
+      box-shadow: 0 2px 6px rgba(237, 26, 33, 0.28) !important;
+    }
+
+    .header-util-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 4px !important;
+      padding: 0 11px !important;
+      height: 33px !important;
+      line-height: 33px !important;
+      border-radius: 17px !important;
+      font-size: 0.77rem !important;
+      font-weight: 700 !important;
+      color: #334155 !important;
+      text-decoration: none !important;
+      background: #FFFFFF !important;
+      border: 1px solid #CBD5E1 !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      letter-spacing: 0.02em !important;
+      box-sizing: border-box !important;
+    }
+    .header-util-btn:hover {
+      background: #F8FAFC !important;
+      border-color: #94A3B8 !important;
+      color: #0F172A !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06) !important;
+    }
+    .header-util-btn.btn-nav-okinawa {
+      border-color: #BAE6FD !important;
+      color: #0369A1 !important;
+    }
+    .header-util-btn.btn-nav-okinawa:hover {
+      background: #F0F9FF !important;
+      border-color: #7DD3FC !important;
+      color: #0284C7 !important;
+    }
+    .header-util-btn.active {
+      background: #F1F5F9 !important;
+      border-color: #94A3B8 !important;
+      color: #0F172A !important;
+      font-weight: 800 !important;
+    }
+    .header-util-btn.btn-nav-okinawa.active {
+      background: #E0F2FE !important;
+      border-color: #7DD3FC !important;
+      color: #0284C7 !important;
+    }
+
+    /* 前台語言切換器 (Header Language Selector: 🌐 Language 7 國語言下拉選單) */
+    .lang-selector-dropdown-wrap {
+      position: relative;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .lang-selector-dropdown-wrap.open .lang-arrow {
+      transform: rotate(180deg);
+    }
+    .lang-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 175px;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 6px;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.14), 0 3px 8px rgba(0,0,0,0.04);
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      z-index: 10005;
+      animation: langFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .lang-selector-dropdown-wrap.open .lang-dropdown-menu {
+      display: flex;
+    }
+    .lang-menu-opt {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: none;
+      background: transparent;
+      color: #334155;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      width: 100%;
+      text-align: left;
+    }
+    .lang-menu-opt:hover {
+      background: #F1F5F9;
+      color: #0F172A;
+    }
+    .lang-menu-opt.active {
+      background: #F0FDF4;
+      color: #16A34A;
+      font-weight: 800;
+    }
+    .lang-flag { font-size: 1rem; }
+    .lang-name { flex: 1; }
+    .lang-check { font-size: 0.85rem; font-weight: 900; }
+
   </style>
 </head>
 <body>
 
   <!-- 全站統一 Header (單行不折行、高度齊平) -->
   <header class="app-header">
-    <div class="header-left"></div>
+    <div class="header-left">
+      <!-- 左側平衡留白，保障中央品牌在視覺上精準居中 -->
+    </div>
 
+    <!-- 🌟 官網正中間品牌標誌與文字排版 (54px 日之丸朱紅雙環 Logo，左右完全對齊) -->
     <div class="header-center">
-      <a href="tabi_news_preview.html" class="brand-wrap" title="日旅報報 JAPAN TABI">
+      <a href="tabi_news_preview.html" class="brand-wrap brand-centered" title="日旅報報 JAPAN TABI">
         <div class="fuji-logo-box">
           <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" class="brand-tabi-logo">
         </div>
@@ -998,73 +1154,91 @@
       </a>
     </div>
 
+    <!-- 🌟 頂部右側統一功能按鈕群 (✈️ 查機票 ＋ 🚗 包車/租車 ＋ 🌺 沖繩自駕 ＋ 🏆 日本排行 ＋ 🌐 Language) -->
     <div class="header-right">
-      <a href="japan_flight_deals.html" class="header-util-btn" title="Trip 機票即時比價與特惠航線">
+      <a href="japan_flight_deals.html" class="header-util-btn " title="Trip 機票即時比價與特惠航線">
         <span>✈️ 查機票</span>
       </a>
-      <a href="japan_charter_rental.html" class="header-util-btn" title="日本客製包車 ＆ 自駕租車指南">
+      <a href="japan_charter_rental.html" class="header-util-btn " title="日本客製包車 ＆ 自駕租車指南">
         <span>🚗 包車/租車</span>
       </a>
       <a href="japan_okinawa_drive.html" class="header-util-btn btn-nav-okinawa active" title="沖繩海島不繞路自駕攻略">
         <span>🌺 沖繩自駕</span>
       </a>
-      <a href="japan_inbound_rankings.html" class="header-util-btn" title="日本排行榜">
+      <a href="japan_inbound_rankings.html" class="header-util-btn " title="日本排行榜">
         <span>🏆 日本排行</span>
       </a>
+
+      <!-- 🌐 前台多國語言切換器 (Language Selector) -->
+      <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
+        <button class="header-util-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)" title="切換語言">
+          <span class="util-btn-icon">🌐</span>
+          <span id="currentLangLabel">Language</span>
+          <span class="lang-arrow" id="langArrow">▾</span>
+        </button>
+        <div class="lang-dropdown-menu" id="langDropdownMenu">
+          <button class="lang-menu-opt active" data-lang="zh-TW" onclick="selectLanguage('zh-TW', '繁體中文')">
+            <span class="lang-flag">🇹🇼</span>
+            <span class="lang-name">繁體中文</span>
+            <span class="lang-check">✓</span>
+          </button>
+          <button class="lang-menu-opt" data-lang="en" onclick="selectLanguage('en', 'English')">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-name">English</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="ko" onclick="selectLanguage('ko', '한국어')">
+            <span class="lang-flag">🇰🇷</span>
+            <span class="lang-name">한국어</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="zh-CN" onclick="selectLanguage('zh-CN', '简体中文')">
+            <span class="lang-flag">🇨🇳</span>
+            <span class="lang-name">简体中文</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="th" onclick="selectLanguage('th', 'ไทย')">
+            <span class="lang-flag">🇹🇭</span>
+            <span class="lang-name">ไทย</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="ja" onclick="selectLanguage('ja', '日本語')">
+            <span class="lang-flag">🇯🇵</span>
+            <span class="lang-name">日本語</span>
+            <span class="lang-check"></span>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- 🌊 1. 頂部橫幅 Hero：通透陽光海島漸層 + 視覺焦點 Hero Point -->
-  <section class="okinawa-hero-luminous">
+  <!-- 🌊 1. 頂部橫幅 Hero：全景蔚藍珊瑚礁背景 ＋ 詩意文案 ＋ 底部壓邊半透明菜單 -->
+  <!-- 🌊 1. 頂部橫幅 Hero (全景珊瑚礁 ＋ 左側純粹法式文青文字，無底色塊) -->
+  <header class="okinawa-hero-luminous" id="okinawaHero">
+    <!-- 🫧 蔚藍海洋向上飄浮夢幻泡泡容器 -->
+    <div class="ocean-bubbles-container" id="oceanBubbles"></div>
     <div class="hero-container">
-      <div class="hero-left-col">
-        <div class="hero-badge-wrap">
-          <span class="hero-badge-icon">🌺</span>
-          <span class="hero-badge-text">OKINAWA ROAD TRIP ｜ 日旅特派員現地取材實戰</span>
+      <div class="hero-editorial-wrap">
+        <div class="hero-tag-pill">🏝️ 2026 OKINAWA ROAD TRIP ｜ 全島自駕自由行實戰</div>
+        <div class="hero-quote-en">
+          “The essence of travel isn't measured by destinations checked off,<br>
+          but by the unnamed shores that urge you to slow down and stay.”
         </div>
-
-        <!-- 🕊️ 法式文青文人詩意引言 (French Poetic Editorial Quote) -->
-        <div class="hero-poetic-quote-wrap">
-          <div class="poetic-quote-zh">
-            「旅行的意義，不在於抵達了幾座地標，<br>
-            而在於你願意為哪一片無名的浪花，踩下煞車。」
-          </div>
-          <div class="poetic-quote-en">
-            “The essence of travel isn't measured by destinations checked off,<br>
-            but by the unnamed shores that urge you to slow down and stay.”
-          </div>
-        </div>
-
-        <h2 class="hero-main-title">
-          告別死板觀光書！<br>
-          <span class="hero-title-highlight">帶小孩自駕沖繩</span> 絕不繞路手帖
-        </h2>
-        <p class="hero-desc-lead">
-          全島順路軸線 × 實戰 MapCode 導航 × 溜滑梯遮陽指數 × 和牛免排隊秘技
-        </p>
-      </div>
-
-      <!-- Hero Point 視覺焦點 -->
-      <div class="hero-visual-card">
-        <div class="hero-visual-img-box">
-          <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80" alt="沖繩古宇利玻璃海" class="hero-visual-img">
-          <div class="hero-visual-overlay">
-            <span class="hero-visual-tag">🌊 慶良間澄藍 ｜ 水質透明度 30M</span>
-            <div class="hero-visual-title">古宇利島跨海大橋 ＆ 水岸踏浪</div>
-            <div class="hero-visual-sub">自駕奔馳在蔚藍祖母綠海面上，宛若海上飛行</div>
-          </div>
-        </div>
-        <div class="hero-visual-footer-bar">
-          <span>📍 國道 58 號濱海順行</span>
-          <span class="accent">🅿️ 免費停車 50 格 ｜ 蝦蝦飯名店</span>
+        <h1 class="hero-quote-zh">
+          「旅行的意義，不在於抵達了幾座地標，<br>
+          而在於你願意為哪一片無名的浪花，踩下煞車。」
+        </h1>
+        <div class="hero-quote-sub">
+          沿著 58 號海岸線漫遊，串連古宇利大橋、絕景海邊咖啡、海龜浮潛與頂級和牛炭火燒肉。
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- 🧭 2. 日式和風雙軸吸頂列 (單排合一：主分類橫軸滑動 ＋ 右側極簡微型切換) -->
-  <nav class="sticky-dock-bar">
-    <div class="dock-container">
+  <!-- 🧭 2. 一體成型大圓角覆蓋主容器 (Seamless Unified Sheet - 參考首頁設計) -->
+  <main class="okinawa-main-sheet">
+    <!-- 菜單橫軸 (一體成型大方設計，無外框線條包圍) -->
+    <div class="sheet-menu-bar">
       <!-- 主分類橫軸滑動 (圖文印章風) -->
       <div class="dock-category-scroll" id="dockCategoryScroll">
         <button class="cat-stamp-btn active" onclick="filterByCategory('all', this)">
@@ -1083,10 +1257,16 @@
           <span>☕ 崖景海邊咖啡</span>
         </button>
         <button class="cat-stamp-btn" onclick="filterByCategory('shop', this)">
-          <span>🛍️ 10大商場</span>
+          <span>🛍️ 逛街商場</span>
         </button>
         <button class="cat-stamp-btn" onclick="filterByCategory('resort', this)">
           <span>🏨 海景度假村</span>
+        </button>
+        <button class="cat-stamp-btn" onclick="filterByCategory('summer', this)">
+          <span>☀️ 夏日玩法</span>
+        </button>
+        <button class="cat-stamp-btn" onclick="filterByCategory('winter', this)">
+          <span>❄️ 冬季溫泉旬味</span>
         </button>
       </div>
 
@@ -1106,7 +1286,6 @@
         </div>
       </div>
     </div>
-  </nav>
 
   <!-- 📅 3. 拯救「5天4夜行程算盤」：時光軸連環手帳 (Timeline Card) -->
   <section class="timeline-handbook-section">
@@ -1156,22 +1335,116 @@
     const OKINAWA_RENTAL_AFF_URL = "https://afflink.one/s/FruK8";
 
     // 22 大核心精選名所 (文字精簡提煉，突出實戰數據)
+        // 🌺 沖繩自駕全島 50+ 實戰生存名所資料庫 (9大分類・分潤齊全)
+    const OKINAWA_RENTAL_AFF_URL = "https://www2.tocoo.jp/cn/campaign/index?campaign_id=963&vos=clntocoo_affiliate_generic";
+    const KLOOK_AFF_PREFIX = "https://www.klook.com/zh-TW/activity/";
+    const KLOOK_AFF_PARAMS = "?aid=123436&utm_medium=affiliate-alwayson";
+
     const OKINAWA_SPOTS = [
+      // ==================== 🦖 1. 溜滑梯公園 (Kids Parks) ====================
       {
-        id: "churaumi",
-        region: "north",
+        id: "urasoe_park",
+        region: "south",
         cat: "kids",
-        name: "沖繩美麗海水族館",
-        sub: "黑潮之海 ｜ 世界第三大巨型水槽",
+        name: "浦添大公園 C區",
+        sub: "浦添市 ｜ 90米滾輪超長溜滑梯",
+        img: "https://images.unsplash.com/photo-1596464716127-f2a829822301?auto=format&fit=crop&w=600&q=80",
+        desc: "沖繩最具代表性的超長滾輪滑梯，直衝樹海視野絕佳。設有幼兒專屬軟墊安全區。",
+        mapcode: "33 282 825*33",
+        parking: "免費停車場 (約 80 車位)",
+        shade: "★★★★☆ (設大型遮陽棚推車步道)",
+        tips: "現場提供紙板防磨，周邊有「家庭連鎖定食大戶屋」與「麥當勞」設有親子餐區。",
+        mapUrl: "https://maps.google.com/?q=浦添大公園",
+        ctaText: "親子一日包車",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Urasoe"
+      },
+      {
+        id: "kaigungo_park",
+        region: "south",
+        cat: "kids",
+        name: "舊海軍司令部壕公園",
+        sub: "豐見城市 ｜ 雙軌立體滾輪滑梯",
+        img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=600&q=80",
+        desc: "沿山坡傾瀉而下的立體雙螺旋滑梯，速度感十足，制高點可俯瞰那霸市景與東海。",
+        mapcode: "33 036 694*00",
+        parking: "免費停車場 (約 100 車位)",
+        shade: "★★★☆☆ (下午遮蔭佳，備遮陽帽)",
+        tips: "鄰近「A&W 美式漢堡親子店」，設有草地戶外座與小朋友兒童餐椅。",
+        mapUrl: "https://maps.google.com/?q=舊海軍司令部壕公園",
+        ctaText: "租車自駕預約",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Tomigusuku"
+      },
+      {
+        id: "nakagusuku_park",
+        region: "central",
+        cat: "kids",
+        name: "中城公園 (巨型巨無霸蹦床)",
+        sub: "中頭郡 ｜ 全島最大巨型彈跳白網",
+        img: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80",
+        desc: "沖繩佔地最遼闊的國營公園，巨無霸白色彈跳充氣床與多層次滾輪溜滑梯，放電首選。",
+        mapcode: "33 410 668*84",
+        parking: "東區/西區大型免費停車場",
+        shade: "★★★★★ (大型棚架遮陽區充裕)",
+        tips: "大草坪適合野餐，鄰近「暖暮拉麵中城店」，自帶超大免費停車場免排隊。",
+        mapUrl: "https://maps.google.com/?q=中城公園",
+        ctaText: "親子行程預訂",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nakagusuku"
+      },
+      {
+        id: "nishizaki_park",
+        region: "south",
+        cat: "kids",
+        name: "西崎親水公園",
+        sub: "糸滿市 ｜ 溪流親水遊具水上滑梯",
         img: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80",
-        desc: "震撼鯨鯊垂直餵食秀與立體珊瑚之海，設有海景咖啡廳，推車動線完善。",
-        mapcode: "553 075 797*77",
-        parking: "P7 免費立體停車場 (近水族館)",
-        shade: "★★★★★ (全室內冷氣充足 ｜ 設推車友善坡道)",
-        tips: "超商先買實體票現省 10%，下午 15:00 鯨鯊餵食秀必看。",
-        mapUrl: "https://maps.google.com/?q=沖繩美麗海水族館",
-        ctaText: "門票預訂",
-        ctaUrl: "https://afflink.one/s/FruK8"
+        desc: "結合人工溪流與滑梯的親水水上公園，夏季可赤腳踩水，水深僅至腳踝極安全。",
+        mapcode: "232 484 794*81",
+        parking: "免費專用停車場",
+        shade: "★★★★☆ (涼亭步道林蔭遮陽)",
+        tips: "步行 5 分鐘即達「糸滿魚市場」，生魚片大生蠔即買即吃，設有冷氣洗手間。",
+        mapUrl: "https://maps.google.com/?q=西崎親水公園",
+        ctaText: "專車包車預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman"
+      },
+      {
+        id: "peace_memorial_park",
+        region: "south",
+        cat: "kids",
+        name: "平和祈念公園 命之卵遊具",
+        sub: "糸滿市 ｜ 巨型城堡生命之卵",
+        img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&q=80",
+        desc: "佔地壯麗的巨型螺旋城堡與迷宮滑梯，周邊視野遼闊直面蔚藍太平洋海景。",
+        mapcode: "232 341 416*37",
+        parking: "免費停車場 (500 車位)",
+        shade: "★★★★☆ (巨蛋造型遮陽遮雨)",
+        tips: "洗手間設有尿布台與親子隔間，園區入口有販售沖繩紅芋冰淇淋。",
+        mapUrl: "https://maps.google.com/?q=平和祈念公園",
+        ctaText: "沖繩自駕租車",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman"
+      },
+
+      // ==================== 🤿 2. 慶良間浮潛 (Snorkeling & Diving) ====================
+      {
+        id: "kerama_sea_turtle",
+        region: "south",
+        cat: "dive",
+        name: "慶良間群島 海龜共游浮潛",
+        sub: "座間味/阿嘉 ｜ 世界級透明度慶良間藍",
+        img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80",
+        desc: "水下能見度高達 30-50 米的世界三大潛點，99% 機率遇見野生綠蠵龜與小丑魚共游。",
+        mapcode: "33 158 558*00",
+        parking: "那霸三重城港收費停車場",
+        shade: "★☆☆☆☆ (快艇設遮陽棚)",
+        tips: "含那霸市區飯店專車來回接送、全套防寒衣、水下免費專業相機拍照與攝影檔交付。",
+        mapUrl: "https://maps.google.com/?q=三重城港",
+        ctaText: "海龜浮潛預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1301-kerama-islands-snorkeling-day-trip-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha"
       },
       {
         id: "blue_cave",
@@ -1180,174 +1453,469 @@
         name: "真榮田岬 青之洞窟 (藍洞)",
         sub: "恩納村 ｜ 夢幻幽藍水光熱帶魚群",
         img: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=600&q=80",
-        desc: "沖繩 No.1 浮潛秘境，陽光折射天然藍光，支援中文教練水下免費拍照。",
+        desc: "沖繩 No.1 浮潛秘境，陽光折射天然幽藍水光，支援中文教練水下免費拍照餵魚。",
         mapcode: "206 062 685*71",
         parking: "計時停車 (100日圓/小時)",
-        shade: "★☆☆☆☆ (水上活動 ｜ 請備海洋友善防曬)",
-        tips: "預約早晨 08:00 首梯水質最清澈，吹北風易封閉亮紅旗。",
+        shade: "★☆☆☆☆ (水上活動 ｜ 請備防曬)",
+        tips: "預約早晨 08:00 首梯水質最清澈，吹北風易亮紅旗，建議搭配備案店家。",
         mapUrl: "https://maps.google.com/?q=真榮田岬",
-        ctaText: "浮潛預訂",
-        ctaUrl: "https://afflink.one/s/FruK8"
+        ctaText: "藍洞浮潛預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1126-blue-cave-snorkeling-experience-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna"
       },
+      {
+        id: "kouri_clear_kayak",
+        region: "north",
+        cat: "dive",
+        name: "古宇利島 透明獨木舟 ＆ SUP",
+        sub: "名護/古宇利 ｜ 蒂芬妮藍果凍海划行",
+        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+        desc: "完全透明的壓克力獨木舟，向下直視五彩斑斕珊瑚礁，空拍機跟拍畫面宛如漂浮空中。",
+        mapcode: "485 693 485*00",
+        parking: "古宇利海灘免費停車場",
+        shade: "★☆☆☆☆ (請備長袖水母衣)",
+        tips: "古宇利大橋旁水流平緩，新手友善，周邊有名產「蝦蝦飯 Shrimp Wagon」。",
+        mapUrl: "https://maps.google.com/?q=古宇利海灘",
+        ctaText: "透明獨木舟預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/71424-clear-kayak-experience-in-kouri-island-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kouri"
+      },
+      {
+        id: "sesoko_parasailing",
+        region: "north",
+        cat: "dive",
+        name: "瀨底島 水上拖曳傘",
+        sub: "本部町 ｜ 50米高空鳥瞰珊瑚環礁",
+        img: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=600&q=80",
+        desc: "快艇加速升空至 50 公尺高空，360 度俯瞰瀨底大橋與伊江島城山絕美漸層海景。",
+        mapcode: "206 825 850*44",
+        parking: "本部港免費停車場",
+        shade: "★★☆☆☆ (快艇防曬吹風舒服)",
+        tips: "可穿著便服免濕身體驗，起降平穩，年滿 4 歲小朋友即可與家長同行搭乘。",
+        mapUrl: "https://maps.google.com/?q=瀨底海灘",
+        ctaText: "拖曳傘線上預訂",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/2186-parasailing-experience-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu"
+      },
+      {
+        id: "minna_island_trip",
+        region: "north",
+        cat: "dive",
+        name: "水納島 (牛角麵包島) 快艇浮潛",
+        sub: "本部町 ｜ 白沙月牙灣海水透明度第一",
+        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+        desc: "搭快艇僅 15 分鐘抵達的純白秘境小島，淺灘即可見滿布珊瑚與小丑魚海葵群。",
+        mapcode: "553 112 798*22",
+        parking: "渡久地港專用免費停車場",
+        shade: "★★☆☆☆ (島上可租陽傘躺椅)",
+        tips: "套裝含來回船票、浮潛裝備、香蕉船與BBQ午餐，夏季建議提前 2 週預約。",
+        mapUrl: "https://maps.google.com/?q=水納島",
+        ctaText: "水納島一日遊預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/17812-minna-island-day-trip-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu"
+      },
+
+      // ==================== 🥩 3. 頂級和牛燒肉 (Wagyu Beef) ====================
       {
         id: "ryukyu_no_ushi",
         region: "central",
         cat: "beef",
         name: "琉球之牛 恩納本館",
-        sub: "恩納村 ｜ 特選黑毛和牛炭火燒肉",
+        sub: "恩納村 ｜ 頂級縣產黑毛和牛",
         img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
-        desc: "炭火炙燒霜降牛五花與炙燒和牛握壽司，脂香濃郁入口即化，親子首選。",
+        desc: "炭火炙燒霜降頂級牛五花與炙燒和牛握壽司，脂香濃郁入口即化，排隊神級名店。",
         mapcode: "206 096 716*71",
-        parking: "附設免費停車位 30 格",
-        shade: "★★★★★ (冷氣包廂 ｜ 提供幼兒餐具/無辣湯麵)",
-        tips: "傍晚 16:30 前到現場抽號碼牌免排長龍，恩納店客席最寬敞。",
+        parking: "專用免費停車場 (約 30 車位)",
+        shade: "★★★★★ (全室內冷氣包廂 ｜ 排煙完善)",
+        tips: "午間套餐 CP 值極高現省 30%，晚餐強烈建議提早一個月官網線上預約。",
         mapUrl: "https://maps.google.com/?q=琉球之牛恩納本館",
-        ctaText: "周邊住宿",
-        ctaUrl: "https://afflink.one/s/FruK8"
+        ctaText: "租車直達導航",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna"
       },
       {
-        id: "nakagusuku_park",
-        region: "central",
-        cat: "kids",
-        name: "中城公園 (Nakagusuku)",
-        sub: "北中城 ｜ 全島最大巨型白色跳跳床",
-        img: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80",
-        desc: "巨大彈簧白跳跳床、超長滾輪溜滑梯與幼童分齡遊戲場，放電神點。",
-        mapcode: "33 410 668*33",
-        parking: "西/南區免費停車 150 格",
-        shade: "★★☆☆☆ (草皮無遮蔭 ｜ 建議 15:30 後前往)",
-        tips: "玩滾輪溜滑梯請自備滑草板，防金屬高溫燙屁股。",
-        mapUrl: "https://maps.google.com/?q=中城公園",
-        ctaText: "自駕導航",
-        ctaUrl: "https://afflink.one/s/FruK8"
+        id: "motobu_farm",
+        region: "north",
+        cat: "beef",
+        name: "燒肉 Motobu 牧場 本部店",
+        sub: "本部町 ｜ 牧場直營獨家牛種",
+        img: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80",
+        desc: "自家牧場酒糟發酵飼育，肉質細嫩融點低，曾獲農林水產大臣賞，產地直送保證。",
+        mapcode: "485 540 684*22",
+        parking: "門前免費停車場",
+        shade: "★★★★★ (木質和風包廂 ｜ 幼兒友善)",
+        tips: "離美麗海水族館僅 10 分鐘車程，逛完水族館午餐首選，白飯越光米免費續碗。",
+        mapUrl: "https://maps.google.com/?q=燒肉Motobu牧場本部店",
+        ctaText: "ToCoo! 租車特惠",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu"
       },
+      {
+        id: "jojoen_parco",
+        region: "south",
+        cat: "beef",
+        name: "敘敘苑 沖繩浦添Parco City",
+        sub: "浦添市 ｜ 全景無敵海景燒肉座席",
+        img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=600&q=80",
+        desc: "坐擁 180 度全景落日海景，頂級牛小排搭招牌香麻沙拉醬，極致享受無油煙味。",
+        mapcode: "33 339 060*33",
+        parking: "Parco City 4000個免費停車位",
+        shade: "★★★★★ (室內大型商場空調舒適)",
+        tips: "預訂 17:30 窗邊座位可同時收穫白晝蔚藍與橘紅落日絕景，商場支援退稅。",
+        mapUrl: "https://maps.google.com/?q=敘敘苑浦添PARCOCITY",
+        ctaText: "行李寄送預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1659-luggagent-luggage-services-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Urasoe"
+      },
+      {
+        id: "wagyu_shimbashi",
+        region: "naha",
+        cat: "beef",
+        name: "炭火燒肉 琉球神戶牛",
+        sub: "那霸市 ｜ A5特選石垣牛/宮崎牛",
+        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
+        desc: "國際通巷內隱世燒肉，備長炭直火鎖住肉汁，極品和牛橫膈膜與夏多布里昂必點。",
+        mapcode: "33 157 382*11",
+        parking: "附近收費投幣停車場",
+        shade: "★★★★★ (吸煙排氣設備優異)",
+        tips: "步行至單軌牧志站 3 分鐘，宵夜營業至凌晨，附中文平板點餐免溝通障礙。",
+        mapUrl: "https://maps.google.com/?q=國際通和牛燒肉",
+        ctaText: "那霸訂房比價",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha"
+      },
+
+      // ==================== ☕ 4. 崖景海邊咖啡 (Ocean Cafes) ====================
       {
         id: "banta_cafe",
         region: "central",
         cat: "cafe",
-        name: "星野集團 Banta Cafe",
-        sub: "讀谷村 ｜ 依海崖而建四種觀海露台",
-        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
-        desc: "日本最大海濱崖景咖啡，榻榻米露台直面落日絕景，氛圍極致放鬆。",
-        mapcode: "33 703 847*88",
-        parking: "專用停車 (店內消費折抵 1hr)",
-        shade: "★★★★☆ (室內冷氣席 ＋ 戶外遮陽甲板)",
-        tips: "日落前 1 小時到訪，搶佔第一排海景榻榻米觀景席。",
-        mapUrl: "https://maps.google.com/?q=星野Banta+Cafe",
-        ctaText: "路線導航",
-        ctaUrl: "https://afflink.one/s/FruK8"
+        name: "星野 BANTA CAFE",
+        sub: "讀谷村 ｜ 全日本規模最大海崖咖啡",
+        img: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80",
+        desc: "星野集團打造，依懸崖地勢劃分大屋頂露台、海邊露台、岩石露台與森林榻榻米座。",
+        mapcode: "33 741 850*44",
+        parking: "附專用免費停車場",
+        shade: "★★★★★ (挑高通風大棚架 ｜ 冷氣室內座)",
+        tips: "消費即可折抵停車費，傍晚日落魔幻時刻最美，招牌泡泡芒果汽水消暑好拍。",
+        mapUrl: "https://maps.google.com/?q=星野BANTACAFE",
+        ctaText: "租車一日遊預約",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Yomitan"
       },
       {
-        id: "kouri_beach",
-        region: "north",
-        cat: "dive",
-        name: "古宇利海灘 ＆ 跨海大橋",
-        sub: "今歸仁 ｜ 祖母綠玻璃海與水岸踏浪",
-        img: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80",
-        desc: "奔馳在跨海大橋如飛馳海上，橋下白沙平緩水淺，名物蝦蝦飯必吃。",
-        mapcode: "485 662 804*71",
-        parking: "橋頭免費停車場 50 格",
-        shade: "★★★☆☆ (橋墩下方有天然陰涼避曬處)",
-        tips: "橋旁設投幣淋浴間 (100日圓/次)，水淺無波適合幼童踏浪。",
-        mapUrl: "https://maps.google.com/?q=古宇利海灘",
-        ctaText: "包車一日遊",
-        ctaUrl: "https://afflink.one/s/FruK8"
-      },
-      {
-        id: "hotel_monterey",
-        region: "central",
-        cat: "resort",
-        name: "沖繩蒙特利水療度假酒店",
-        sub: "恩納村 ｜ 直通富著沙灘與造浪泳池",
-        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
-        desc: "親子指名第一！造浪池、漂漂河與兒童滑水道，下樓即是潔白天然沙灘。",
-        mapcode: "206 096 896*88",
-        parking: "房客專用地下/平面停車場",
-        shade: "★★★★★ (泳池洋傘 ｜ 室內幼兒遊戲室)",
-        tips: "步行 3 分鐘即達琉球之牛本館，周邊居酒屋林立機能極佳。",
-        mapUrl: "https://maps.google.com/?q=沖繩蒙特利水療度假酒店",
-        ctaText: "Booking 訂房",
-        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hotel+Monterey+Okinawa"
-      },
-      {
-        id: "iias_toyosaki",
+        id: "hamabe_no_chaya",
         region: "south",
-        cat: "shop",
-        name: "iias 沖繩豐崎",
-        sub: "豐見城 ｜ 距機場20分海景購物商場",
-        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
-        desc: "結合 DMM 水族館、恐龍樂園、KOJIMA 電器與海景美食街。",
-        mapcode: "232 543 400*25",
-        parking: "免費立體停車場 3,000 格",
-        shade: "★★★★★ (全室內舒適空調 ｜ 免費嬰兒推車)",
-        tips: "最後一天登機前掃貨與買伴手禮首選地，免曬太陽。",
-        mapUrl: "https://maps.google.com/?q=iias沖繩豐崎",
-        ctaText: "路線規劃",
-        ctaUrl: "https://afflink.one/s/FruK8"
+        cat: "cafe",
+        name: "濱邊茶屋 (浜辺の茶屋)",
+        sub: "南城市 ｜ 潮汐推移木窗窗邊海景",
+        img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80",
+        desc: "沖繩文青咖啡元祖，窗框外即是純淨白沙與浪花，滿潮時海水就在窗台下方拍打。",
+        mapcode: "232 469 491*06",
+        parking: "對面專屬免費停車場",
+        shade: "★★★☆☆ (海風自然對流 ｜ 樹蔭座席)",
+        tips: "不可預約需現場候位，退潮可走至潮間帶探索寄居蟹，提供手沖黑咖啡與自烤麵包。",
+        mapUrl: "https://maps.google.com/?q=濱邊茶屋",
+        ctaText: "南部包車預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nanjo"
       },
       {
-        id: "dino_park",
-        region: "north",
-        cat: "kids",
-        name: "DINO 恐龍 PARK 山原亞熱帶之森",
-        sub: "名護市 ｜ 原生蕨類森林實體巨型恐龍",
-        img: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80",
-        desc: "逼真音效與活動暴龍出沒，設有推車專用坡道，小孩探險尖叫連連。",
-        mapcode: "206 775 882*25",
-        parking: "免費停車場 100 格",
-        shade: "★★★★☆ (樹蔭林木茂密 ｜ 夏日涼爽微風)",
-        tips: "入口附設免費防蚊液借用，入園前務必先噴全身。",
-        mapUrl: "https://maps.google.com/?q=DINO+恐龍+PARK",
-        ctaText: "門票購買",
-        ctaUrl: "https://afflink.one/s/FruK8"
+        id: "shiawase_senagajima",
+        region: "south",
+        cat: "cafe",
+        name: "幸福鬆餅 瀨長島店",
+        sub: "豐見城市 ｜ 階梯海景看飛機起降",
+        img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
+        desc: "地中海白色希臘階梯座席，熱呼呼現煎舒芙蕾鬆餅，每 5 分鐘一架客機從頭頂掠過降落。",
+        mapcode: "33 002 605*15",
+        parking: "瀨長島全島免費停車",
+        shade: "★★★★☆ (設遮陽大洋傘 ｜ 室內空調座)",
+        tips: "行前兩週官網準時搶位，未預約需現場抽號碼牌等候約 40-60 分鐘。",
+        mapUrl: "https://maps.google.com/?q=幸福鬆餅瀨長島",
+        ctaText: "機場專車接送",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1659-luggagent-luggage-services-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Senagajima"
       },
+      {
+        id: "llota_kouri",
+        region: "north",
+        cat: "cafe",
+        name: "古宇利島 L LOTA",
+        sub: "名護/古宇利 ｜ 遠眺古宇利跨海大橋",
+        img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80",
+        desc: "隱身高台上的純白建築，整片落地窗俯瞰 2 公里跨海大橋全景，法式手作甜點精緻。",
+        mapcode: "485 692 291*00",
+        parking: "免費專用停車場",
+        shade: "★★★★★ (全室內採光極佳空調足)",
+        tips: "推薦午餐時段招牌海鮮義大利麵，搭配單品手沖咖啡，二樓露台為打卡聖地。",
+        mapUrl: "https://maps.google.com/?q=LLOTA古宇利島",
+        ctaText: "ToCoo! 租車特惠",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kouri"
+      },
+
+      // ==================== 🛍️ 5. 逛街商場 (Shopping Malls) ====================
       {
         id: "aeon_rycom",
         region: "central",
         cat: "shop",
-        name: "永旺夢樂城沖繩來客夢",
-        sub: "北中城 ｜ 全島最大商場百噸水族箱",
-        img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
-        desc: "中庭 100 噸海水水族箱，五大樓層推車暢行無阻，品牌齊全退稅快。",
+        name: "永旺夢樂城 沖繩來客夢",
+        sub: "北中城村 ｜ 全島最大巨型水族購物城",
+        img: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80",
+        desc: "230 間名店聚集，中庭擁有 100 噸巨型海水魚水槽，嬰兒推車免費借用，全室內雨備首選。",
         mapcode: "33 530 406*45",
-        parking: "免費停車場 4,000 格",
-        shade: "★★★★★ (全室內商場 ｜ 哺乳育兒室極齊全)",
-        tips: "一樓遊客中心憑外國護照先兌換免稅折扣禮券包。",
+        parking: "免費停車場 (4000 車位)",
+        shade: "★★★★★ (全室內巨型商場 ｜ 哺乳室設施極佳)",
+        tips: "服務中心提供 Klook 行李寄送當日直達那霸機場服務，退稅櫃檯集中一樓省時方便。",
         mapUrl: "https://maps.google.com/?q=永旺夢樂城沖繩來客夢",
-        ctaText: "自駕導航",
-        ctaUrl: "https://afflink.one/s/FruK8"
+        ctaText: "行李寄送預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1659-luggagent-luggage-services-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Okinawa+City"
       },
       {
-        id: "posillipo_cafe",
+        id: "parco_city",
         region: "south",
-        cat: "cafe",
-        name: "POSILLIPO 崖景義式海景餐廳",
-        sub: "瀨長島 ｜ 俯瞰那霸機場跑道起降與落日",
-        img: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80",
-        desc: "地中海純白露台直面蔚藍大海與飛機起降，手工柴燒披薩口感絕頂。",
-        mapcode: "33 002 605*14",
-        parking: "瀨長島公有免費停車格",
-        shade: "★★★★☆ (全冷氣景觀席 ｜ 提供兒童餐椅)",
-        tips: "非常適合抵達當天首餐午餐，或搭機返台前最後小憩看海。",
-        mapUrl: "https://maps.google.com/?q=POSILLIPO+瀨長島",
-        ctaText: "查看租車",
-        ctaUrl: "https://afflink.one/s/FruK8"
+        cat: "shop",
+        name: "浦添 PARCO CITY",
+        sub: "浦添市 ｜ 臨海 250 家海景名店",
+        img: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=600&q=80",
+        desc: "沖繩最新臨海購物地標，無印良品全島旗艦店、驚安唐吉訶德、3COINS 與海景美食街一應俱全。",
+        mapcode: "33 339 060*33",
+        parking: "立體免費停車場 (4000 車位)",
+        shade: "★★★★★ (冷氣極強 ｜ 設大片海景落地休息區)",
+        tips: "三樓美食街邊吃拉麵邊看東海夕陽，支援行李宅配至市區飯店與機場櫃檯。",
+        mapUrl: "https://maps.google.com/?q=浦添PARCOCITY",
+        ctaText: "行李特快宅配",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1659-luggagent-luggage-services-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Urasoe"
       },
       {
-        id: "peace_park",
+        id: "ashibinaa_outlet",
         region: "south",
-        cat: "kids",
-        name: "平和祈念公園 (命之卵城堡)",
-        sub: "系滿市 ｜ 彩虹攀爬城堡海景遊樂場",
-        img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
-        desc: "全島最大軟質地面遊具場，海景第一排，超長彩虹波浪滑梯超好玩。",
-        mapcode: "232 341 416*40",
-        parking: "超大免費停車場 300 格",
-        shade: "★★☆☆☆ (海風涼爽 ｜ 必備遮陽帽與水壺)",
-        tips: "開車 15 分鐘順遊系滿魚市場吃現開海膽與生蠔。",
-        mapUrl: "https://maps.google.com/?q=平和祈念公園命之卵",
-        ctaText: "自駕路線",
-        ctaUrl: "https://afflink.one/s/FruK8"
+        cat: "shop",
+        name: "ASHIBINAA 奧特萊斯購物城",
+        sub: "豐見城市 ｜ 距機場 15 分鐘精品折扣",
+        img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80",
+        desc: "古希臘建築露天商場，Coach、Gucci、Adidas、Le Creuset鑄鐵鍋等百大品牌免稅 3 折起。",
+        mapcode: "232 544 541*00",
+        parking: "免費專用停車場 (1000 車位)",
+        shade: "★★★★☆ (遮陽迴廊連結各店鋪)",
+        tips: "回台最後一天採買首選，寄物櫃可放 29 吋大行李箱，門口有那霸機場直達巴士站。",
+        mapUrl: "https://maps.google.com/?q=ASHIBINAAOutlet",
+        ctaText: "租車還車便捷",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Tomigusuku"
+      },
+      {
+        id: "naha_main_place",
+        region: "naha",
+        cat: "shop",
+        name: "那霸新都心 San-A Main Place",
+        sub: "那霸市 ｜ 電器超市服飾一站買齊",
+        img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+        desc: "單軌歌町站步行 5 分鐘，EDION 愛電王大電器行、大型超市、LoFt 與生活雜貨全覆蓋。",
+        mapcode: "33 188 559*02",
+        parking: "免費室內停車場 (2500 車位)",
+        shade: "★★★★★ (全室內避雨採買)",
+        tips: "超市營業至午夜 23:00，沖繩泡盛、黑糖、雪鹽伴手禮種類比國際通更齊全且免排隊。",
+        mapUrl: "https://maps.google.com/?q=San-AMainPlace那霸新都心",
+        ctaText: "那霸酒店預約",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Omoromachi+Naha",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha"
+      },
+
+      // ==================== 🏨 6. 海景度假村 (Resorts) ====================
+      {
+        id: "hoshinoya_okinawa",
+        region: "central",
+        cat: "resort",
+        name: "虹夕諾雅 沖繩 (HOSHINOYA)",
+        sub: "讀谷村 ｜ 琉球城牆臨海頂級隱世村",
+        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+        desc: "沿海岸線構築的現代御城，所有客房皆為海景別墅，無邊際深層海水泳池直面夕陽。",
+        mapcode: "33 741 785*12",
+        parking: "住客專屬免費代客泊車",
+        shade: "★★★★★ (客房私人露台遮陽舒適)",
+        tips: "Booking.com 保證早鳥訂房優惠，館內提供琉球道場晨間深呼吸與傳統三線琴體驗。",
+        mapUrl: "https://maps.google.com/?q=虹夕諾雅沖繩",
+        ctaText: "查看訂房價格",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hoshinoya+Okinawa",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hoshinoya+Okinawa"
+      },
+      {
+        id: "halekulani_okinawa",
+        region: "central",
+        cat: "resort",
+        name: "哈雷普那尼沖繩 (Halekulani)",
+        sub: "恩納村 ｜ 頂級天花板夏威夷五星",
+        img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
+        desc: "天國之屋傳奇，鑲嵌 150 萬片馬賽克白花無邊際泳池，世界奢華飯店指南五星榮譽。",
+        mapcode: "206 413 798*55",
+        parking: "免費代客泊車服務",
+        shade: "★★★★★ (頂級海灘服務 ｜ 冰毛巾飲水支援)",
+        tips: "館內擁有米其林二星主廚指導法式餐廳，步行即可達恩納海灘，服務細緻極致。",
+        mapUrl: "https://maps.google.com/?q=HalekulaniOkinawa",
+        ctaText: "五星訂房優惠",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Halekulani+Okinawa",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Halekulani+Okinawa"
+      },
+      {
+        id: "centurion_churaumi",
+        region: "north",
+        cat: "resort",
+        name: "沖繩美麗海世紀飯店",
+        sub: "本部町 ｜ 水族館步行 5 分鐘家庭首選",
+        img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
+        desc: "緊鄰海洋博公園，寬敞四人家庭房直面翡翠海灘，設有兒童戲水池與自助露天烤肉。",
+        mapcode: "553 075 425*33",
+        parking: "住客專用大型免費停車場",
+        shade: "★★★★☆ (室內兒童遊戲室與泳池洋傘)",
+        tips: "飯店門口即可借還 ToCoo! 租車，步行即可達水族館早晨開門第一波入場。",
+        mapUrl: "https://maps.google.com/?q=沖繩美麗海世紀飯店",
+        ctaText: "特惠訂房查價",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Centurion+Hotel+Okinawa+Churaumi",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Centurion+Hotel+Okinawa+Churaumi"
+      },
+      {
+        id: "ryukyu_onsen_senagajima",
+        region: "south",
+        cat: "resort",
+        name: "琉球溫泉 瀨長島渡假酒店",
+        sub: "豐見城市 ｜ 天然黃金溫泉海景立湯",
+        img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
+        desc: "沖繩唯一的地下天然湧泉溫泉飯店，站立在 1.2 米深露天立湯眺望東海落日與戰機起降。",
+        mapcode: "33 002 605*15",
+        parking: "免費停車場",
+        shade: "★★★★★ (室內外溫泉設施完備)",
+        tips: "距那霸機場僅 15 分鐘車程，適合作為自駕第一天或最後一晚極致放鬆享受。",
+        mapUrl: "https://maps.google.com/?q=琉球溫泉瀨長島渡假酒店",
+        ctaText: "海景溫泉訂房",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Ryukyu+Onsen+Senagajima+Hotel",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Senagajima"
+      },
+
+      // ==================== ☀️ 7. 夏日玩法 (Summer Beach & Water) ====================
+      {
+        id: "manzamo_parasail",
+        region: "central",
+        cat: "summer",
+        name: "萬座毛 象鼻岩海上拖曳傘",
+        sub: "恩納村 ｜ 俯瞰萬人可坐之天然綠草崖",
+        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+        desc: "夏日必玩水上活動，搭乘彩色降落傘翱翔碧海藍天，鳥瞰萬座毛象鼻岩與珊瑚斷崖。",
+        mapcode: "206 312 038*55",
+        parking: "萬座毛設施收費停車場",
+        shade: "★☆☆☆☆ (夏季豔陽請備防曬油)",
+        tips: "提供水下 Go-Pro 免費側拍服務，套裝包含專人穿戴安全帶與快艇高速巡航。",
+        mapUrl: "https://maps.google.com/?q=萬座毛",
+        ctaText: "夏日拖曳傘預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/2186-parasailing-experience-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna"
+      },
+      {
+        id: "bise_fukugi_tree",
+        region: "north",
+        cat: "summer",
+        name: "備瀨一線天 ＆ 福木林道自行車",
+        sub: "本部町 ｜ 綠蔭遮天夏日清涼避暑",
+        img: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80",
+        desc: "兩萬株古老福木交織成的翠綠隧道，微風徐徐完全阻隔豔陽，租借單車漫遊直達神秘海崖。",
+        mapcode: "553 105 654*00",
+        parking: "入口公營免費停車場",
+        shade: "★★★★★ (天然萬株古樹樹蔭涼爽)",
+        tips: "林道盡頭即為「一線天海邊」，退潮時可見清澈潮池，周邊有古民家沖繩麵咖啡。",
+        mapUrl: "https://maps.google.com/?q=備瀨福木林道",
+        ctaText: "ToCoo! 租車直達",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu"
+      },
+      {
+        id: "zanpa_sup_sunset",
+        region: "central",
+        cat: "summer",
+        name: "殘波岬 夕陽落日 SUP 立槳",
+        sub: "讀谷村 ｜ 白色燈塔下的金色餘暉",
+        img: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=600&q=80",
+        desc: "在平靜海面上划著 SUP 立式划槳，伴隨落日沉入東海，金色晚霞染紅整片浪花極浪漫。",
+        mapcode: "1005 685 324*55",
+        parking: "殘波岬公園免費停車場",
+        shade: "★★☆☆☆ (傍晚落日溫和不曬)",
+        tips: "新手可跪姿划行，教練隨隊並提供單眼相機捕捉夕陽剪影大片，含沖洗設備。",
+        mapUrl: "https://maps.google.com/?q=殘波岬燈塔",
+        ctaText: "落日SUP預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/71424-clear-kayak-experience-in-kouri-island-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Yomitan"
+      },
+
+      // ==================== ❄️ 8. 冬季溫泉旬味 (Winter Onsen & Food) ====================
+      {
+        id: "naha_whale_watching",
+        region: "naha",
+        cat: "winter",
+        name: "那霸出發 座頭鯨冬季賞鯨專船",
+        sub: "那霸/慶良間 ｜ 12月-4月限定座頭鯨育幼",
+        img: "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=600&q=80",
+        desc: "冬季座頭鯨返回沖繩溫暖海域繁衍，高達 99% 遇見率！近距離目睹巨鯨擺尾與躍出海面。",
+        mapcode: "33 158 558*00",
+        parking: "那霸泊港收費停車場",
+        shade: "★★★★☆ (冬季船內冷暖氣艙房舒適)",
+        tips: "Klook 專屬保證：若完全未看見鯨魚可全額退費或免費重搭！提供免費飯店接駁與防寒外套借用。",
+        mapUrl: "https://maps.google.com/?q=那霸泊港",
+        ctaText: "冬季賞鯨預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/836-whale-watching-trip-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha"
+      },
+      {
+        id: "senagajima_ryujin_onsen",
+        region: "south",
+        cat: "winter",
+        name: "瀨長島 龍神之湯天然溫泉",
+        sub: "豐見城市 ｜ 沖繩第一天然黃金泉",
+        img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
+        desc: "從地底 1000 米湧出的天然鈉鹽化物強鹽泉，具有絕佳保溫保濕效果，冬季暖身排毒首選。",
+        mapcode: "33 002 605*15",
+        parking: "瀨長島全島免費停車",
+        shade: "★★★★★ (純天然日式大浴場與芬蘭桑拿)",
+        tips: "非住客亦可購買單日泡湯券，設有芬蘭式 Loyly 蒸氣波，泡完喝一瓶冰涼琉球咖啡牛奶。",
+        mapUrl: "https://maps.google.com/?q=龍神之湯",
+        ctaText: "泡湯套票預訂",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/67911-taiwan-passport-application-service/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Senagajima"
+      },
+      {
+        id: "kokusai_yatai_mura",
+        region: "naha",
+        cat: "winter",
+        name: "國際通 屋台村 (暖心居酒屋)",
+        sub: "那霸市 ｜ 20家在地特色小吃通",
+        img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+        desc: "熱氣蒸騰的日式屋台街，冬季必吃阿古豬清湯火鍋、熱騰騰沖繩蕎麥麵、山苦瓜炒蛋與泡盛熱熱喝。",
+        mapcode: "33 158 450*22",
+        parking: "周邊收費停車場",
+        shade: "★★★★★ (冬季屋台拉下防風透明暖簾)",
+        tips: "每家小店僅容納 8-10 人，人情味極濃，建議點「Orion 生啤酒搭石垣牛握壽司」。",
+        mapUrl: "https://maps.google.com/?q=國際通屋台村",
+        ctaText: "國際通住宿查價",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha"
+      },
+      {
+        id: "danbo_ramen_itoman",
+        region: "south",
+        cat: "winter",
+        name: "暖暮拉麵 糸滿店 (免排隊秘境分店)",
+        sub: "糸滿市 ｜ 九州第一位濃厚豚骨拉麵",
+        img: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+        desc: "曾擊敗一蘭奪得九州拉麵冠軍！濃郁豚骨湯頭配上特製辣醬與博多極細麵，冬季暖胃極品。",
+        mapcode: "232 485 798*12",
+        parking: "專屬超大免費停車場 (免搶車位)",
+        shade: "★★★★★ (室內冷暖空調足)",
+        tips: "相比國際通店排隊一小時，糸滿分店幾乎隨到隨吃，必點一口餃子與半熟玉子叉燒麵。",
+        mapUrl: "https://maps.google.com/?q=暖暮拉麵糸滿店",
+        ctaText: "ToCoo! 租車自駕",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman"
       }
     ];
 
@@ -1621,57 +2189,65 @@
       let html = '';
       list.forEach(spot => {
         const regionLabel = spot.region === 'north' ? '📍 北部名護' : (spot.region === 'central' ? '🌊 中部恩納' : (spot.region === 'south' ? '🛍️ 南部系滿' : '🏮 那霸市區'));
-        const catLabel = spot.cat === 'kids' ? '🦖 親子公園' : (spot.cat === 'dive' ? '🤿 浮潛玩水' : (spot.cat === 'beef' ? '🥩 頂級和牛' : (spot.cat === 'cafe' ? '☕ 海景咖啡' : (spot.cat === 'shop' ? '🛍️ 免稅商場' : '🏨 度假村'))));
+        const catMap = {
+          kids: '🦖 親子公園',
+          dive: '🤿 慶良間浮潛',
+          beef: '🥩 頂級和牛',
+          cafe: '☕ 海景咖啡',
+          shop: '🛍️ 逛街商場',
+          resort: '🏨 度假村',
+          summer: '☀️ 夏日玩法',
+          winter: '❄️ 冬季溫泉'
+        };
+        const catLabel = catMap[spot.cat] || '🌺 沖繩必訪';
+        const hotelLink = spot.hotelUrl || 'https://www.booking.com/searchresults.zh-tw.html?ss=Okinawa';
 
         html += `
           <div class="spot-card">
             <div class="spot-img-wrap">
               <img class="spot-img" src="${spot.img}" alt="${spot.name}" loading="lazy">
-              <span class="spot-region-badge">${regionLabel}</span>
-              <span class="spot-cat-badge">${catLabel}</span>
+              <span class="spot-tag-pill">${regionLabel}</span>
+              <span class="spot-badge-order">${catLabel}</span>
             </div>
             <div class="spot-body">
-              <h3 class="spot-title">${spot.name}</h3>
-              <div class="spot-subtitle">${spot.sub}</div>
-              <p class="spot-desc">${spot.desc}</p>
+              <div>
+                <h3 class="spot-title">${spot.name}</h3>
+                <div class="spot-sub">${spot.sub}</div>
+                <p class="spot-desc">${spot.desc}</p>
+              </div>
 
-              <!-- 🛡️ 實戰生存膠囊 (MapCode一鍵複製 + 亮點指標) -->
-              <div class="survival-capsule-box">
-                <div class="mapcode-highlight-row">
-                  <div>
-                    <span style="font-size:0.7rem; color:#64748B; font-weight:700;">🚗 MapCode：</span>
-                    <span class="mapcode-val">${spot.mapcode}</span>
-                  </div>
-                  <button class="copy-mapcode-btn" onclick="copyMapCode('${spot.mapcode}', this)" title="複製 MapCode 供車機導航輸入">
-                    <span>📋 複製</span>
-                  </button>
+              <!-- 實戰生存筆記 (MapCode、遮陽推車、避坑) -->
+              <div class="survival-note-box">
+                <div class="survival-item-row" style="cursor:pointer;" onclick="copyMapCode('${spot.mapcode}', this)" title="點擊一鍵複製 MapCode">
+                  <span class="survival-label">🧭 MapCode：</span>
+                  <span class="survival-val" style="color:#0284C7; font-weight:800; text-decoration:underline;">${spot.mapcode} 📋</span>
                 </div>
                 <div class="survival-item-row">
                   <span class="survival-label">🅿️ 停車情報：</span>
-                  <span class="survival-val-parking">${spot.parking}</span>
+                  <span class="survival-val">${spot.parking}</span>
                 </div>
                 <div class="survival-item-row">
                   <span class="survival-label">☀️ 遮陽推車：</span>
-                  <span class="survival-val-shade">${spot.shade}</span>
+                  <span class="survival-val">${spot.shade}</span>
                 </div>
                 <div class="survival-item-row">
                   <span class="survival-label">💡 特派員避坑：</span>
-                  <span class="survival-val-tip">${spot.tips}</span>
+                  <span class="survival-val" style="color:#EA580C;">${spot.tips}</span>
                 </div>
               </div>
 
-              <!-- 4 大功能按鈕 (日系精工、高度齊平) -->
+              <!-- 4 大功能按鈕 (一排4顆日系精工小膠囊) -->
               <div class="spot-actions-trio">
-                <a href="${spot.mapUrl}" target="_blank" class="okinawa-action-btn btn-okinawa-map" title="Google Maps 導航">
+                <a href="${spot.mapUrl}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-map" title="Google Maps 導航">
                   <span>🗺️ 地圖</span>
                 </a>
-                <a href="${OKINAWA_RENTAL_AFF_URL}" target="_blank" class="okinawa-action-btn btn-okinawa-drive" title="ToCoo! 沖繩租車">
+                <a href="${OKINAWA_RENTAL_AFF_URL}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-drive" title="ToCoo! 沖繩租車優惠">
                   <span>🚗 租車</span>
                 </a>
-                <a href="https://www.booking.com/searchresults.zh-tw.html?ss=Okinawa" target="_blank" class="okinawa-action-btn btn-okinawa-hotel" title="周邊飯店住宿">
+                <a href="${hotelLink}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-hotel" title="Booking.com 查房價訂房">
                   <span>🏨 住宿</span>
                 </a>
-                <a href="${spot.ctaUrl}" target="_blank" class="okinawa-action-btn btn-okinawa-cta" title="${spot.ctaText}">
+                <a href="${spot.ctaUrl}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-cta" title="${spot.ctaText}">
                   <span>🎟️ ${spot.ctaText}</span>
                 </a>
               </div>
@@ -1779,7 +2355,83 @@
     document.addEventListener('DOMContentLoaded', function() {
       renderTimelineHandbook('family');
       renderOkinawaCards();
+      initOceanBubbles();
     });
+
+    // 🫧 沖繩蔚藍海洋自動生成飄浮泡泡邏輯
+    function initOceanBubbles() {
+      const container = document.getElementById('oceanBubbles');
+      if (!container) return;
+      
+      const bubbleCount = 22; // 常駐泡泡數量，優雅不卡頓
+      for (let i = 0; i < bubbleCount; i++) {
+        createBubble(container, true);
+      }
+
+      // 每隔 1.2 秒持續隨機冒出新生小泡泡
+      setInterval(() => {
+        if (container.children.length < 32) {
+          createBubble(container, false);
+        }
+      }, 1200);
+
+      // 滑鼠移動互動冒泡 (微量驚喜感)
+      const hero = document.getElementById('okinawaHero');
+      if (hero) {
+        let lastSpawn = 0;
+        hero.addEventListener('mousemove', (e) => {
+          const now = Date.now();
+          if (now - lastSpawn > 250) { // 限流避免過多
+            lastSpawn = now;
+            const rect = hero.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            createInteractiveBubble(container, x, y);
+          }
+        });
+      }
+    }
+
+    function createBubble(container, isInit) {
+      const bubble = document.createElement('div');
+      bubble.className = 'ocean-bubble';
+      
+      const size = Math.floor(Math.random() * 26) + 10; // 10px ~ 36px
+      const left = Math.random() * 96 + 2; // 2% ~ 98%
+      const duration = (Math.random() * 6 + 7).toFixed(1); // 7s ~ 13s
+      const delay = isInit ? (Math.random() * 8).toFixed(1) : '0';
+      
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${left}%`;
+      bubble.style.animationDuration = `${duration}s`;
+      bubble.style.animationDelay = `${delay}s`;
+      
+      bubble.addEventListener('animationend', () => {
+        bubble.remove();
+      });
+      container.appendChild(bubble);
+    }
+
+    function createInteractiveBubble(container, x, y) {
+      const bubble = document.createElement('div');
+      bubble.className = 'ocean-bubble';
+      const size = Math.floor(Math.random() * 16) + 8;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${x}px`;
+      bubble.style.bottom = `${container.clientHeight - y}px`;
+      bubble.style.animationDuration = '5.5s';
+      bubble.style.opacity = '0.9';
+      bubble.addEventListener('animationend', () => {
+        bubble.remove();
+      });
+      container.appendChild(bubble);
+    }
+
+    // 啟動泡泡
+    setTimeout(initOceanBubbles, 100);
+
   </script>
 </body>
 </html>
