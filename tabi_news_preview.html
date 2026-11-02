@@ -6403,6 +6403,174 @@
       transform: translateY(-2px);
     }
     
+
+    /* ⛺ 露營與自駕專屬卡片樣式 (指標參數框、避坑指南、4 顆高轉換按鈕) */
+    .camp-specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      background: #FDFBF7;
+      border: 1px solid #EFE9DE;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin: 8px 0;
+      font-size: 0.76rem;
+    }
+    @media (max-width: 500px) {
+      .camp-specs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .camp-spec-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .camp-spec-lbl {
+      color: #92400E;
+      font-weight: 800;
+      font-size: 0.72rem;
+    }
+    .camp-spec-val {
+      color: #334155;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .camp-tips-box {
+      background: #FFFBEB;
+      border: 1px dashed #FCD34D;
+      border-radius: 10px;
+      padding: 9px 12px;
+      margin: 8px 0 10px;
+      font-size: 0.75rem;
+      color: #78350F;
+      line-height: 1.5;
+    }
+
+    /* 4 顆核心按鈕組合 */
+    .camp-actions-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid #F1F5F9;
+    }
+    .camp-actions-row-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    @media (max-width: 480px) {
+      .camp-actions-row-top {
+        grid-template-columns: 1fr;
+      }
+    }
+    .btn-camp-primary {
+      background: linear-gradient(135deg, #F97940 0%, #FFB76D 100%) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      font-weight: 800 !important;
+      font-size: 0.82rem;
+      padding: 9px 12px;
+      border-radius: 999px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      box-shadow: 0 3px 10px rgba(249, 121, 64, 0.28) !important;
+      transition: all 0.2s ease;
+    }
+    .btn-camp-primary:hover {
+      transform: translateY(-1.5px);
+      box-shadow: 0 5px 14px rgba(249, 121, 64, 0.42) !important;
+    }
+
+    .btn-camp-rental {
+      background: linear-gradient(135deg, #77C9C5 0%, #B9D672 100%) !important;
+      color: #1A3828 !important;
+      border: none !important;
+      font-weight: 800 !important;
+      font-size: 0.82rem;
+      padding: 9px 12px;
+      border-radius: 999px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      box-shadow: 0 2px 8px rgba(119, 201, 197, 0.28) !important;
+      transition: all 0.2s ease;
+    }
+    .btn-camp-rental:hover {
+      transform: translateY(-1.5px);
+      box-shadow: 0 4px 12px rgba(119, 201, 197, 0.42) !important;
+    }
+
+    .btn-camp-charter {
+      background: linear-gradient(135deg, #F0F8FA 0%, #E2F1F4 100%) !important;
+      color: #2D6A75 !important;
+      border: 1.5px solid #ADCCD1 !important;
+      font-weight: 800 !important;
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      border-radius: 999px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }
+    .btn-camp-charter:hover {
+      background: linear-gradient(135deg, #2D6A75 0%, #3B7A87 100%) !important;
+      border-color: #2D6A75 !important;
+      color: #FFFFFF !important;
+      transform: translateY(-1.5px);
+    }
+
+    .btn-camp-qa-toggle {
+      background: #FFFFFF;
+      border: 1px dashed #CBD5E1;
+      color: #64748B;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+    .btn-camp-qa-toggle:hover {
+      border-color: #94A3B8;
+      color: #334155;
+      background: #F8FAFC;
+    }
+
+    .camp-qa-accordion-panel {
+      display: none;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-top: 6px;
+      font-size: 0.73rem;
+      line-height: 1.55;
+      color: #334155;
+    }
+    .camp-qa-accordion-panel.show {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+    
 </style>
 </head>
 <body class="mode-spots">
@@ -11889,14 +12057,18 @@
     <div class="footer-grid-4">
       <div class="footer-col">
         <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-          <div class="fuji-logo-box" style="width:34px; height:34px; border-radius:50%;">
-            <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+          <div class="fuji-logo-box" style="width:34px; height:34px; border-radius:50%; overflow:hidden;">
+            <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;">
           </div>
-          <h4 style="font-size:1.05rem; font-weight:900; border:none; margin:0; padding:0;">日旅報報 JAPAN TABI</h4>
+          <h4 style="font-size:1.05rem; font-weight:900; border:none; margin:0; padding:0; color:#1E293B;">日旅報報 JAPAN TABI</h4>
         </div>
-        <p style="font-size:0.78rem; color:#718096; line-height:1.7;">
+        <p style="font-size:0.78rem; color:#718096; line-height:1.7; margin-bottom:10px;">
           全日本四季時令前線・夏夜花火大會・雪況觀測・名所官方特約指南。嚴選觀光實勘情報，締造最高規格的自由行旅程。
         </p>
+        <div style="padding:8px 12px; background:rgba(241, 245, 249, 0.75); border-left:3px solid #094F8D; border-radius:4px; font-size:0.72rem; color:#64748B; line-height:1.5;">
+          <div style="font-weight:800; color:#094F8D; margin-bottom:2px;">🏅 官方特約觀測現地取材認證</div>
+          <div>全站情報受著作權保護，未經授權禁止搬運與商業轉載。</div>
+        </div>
       </div>
 
       <div class="footer-col">
@@ -11928,18 +12100,7 @@
       </div>
     </div>
 
-    <!-- 官方特約觀測現地取材認證與著作權聲明 -->
-    <div class="footer-certification-box" style="max-width:1440px; margin:24px auto 0; padding:16px 20px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; font-size:0.76rem; color:#64748B; line-height:1.6;">
-      <div style="font-weight:900; color:#094F8D; margin-bottom:4px; font-size:0.84rem;">
-        【日旅報報 JAPAN TABI 官方特約觀測現地取材認證】
-      </div>
-      <div>
-        本文與觀光景點情報受著作權法保護，未經授權禁止爬蟲搬運與商業轉載。
-      </div>
-      <div style="margin-top:4px; font-size:0.72rem; color:#94A3B8; word-break:break-all;">
-        官方專題網址：<a href="tabi_news_preview.html" style="color:#094F8D; text-decoration:underline;">file:///Users/nanaminanami/Documents/HiMyDream/日本旅遊報報/app/tabi_news_preview.html#</a>
-      </div>
-    </div>
+
 
     <div style="max-width:1440px; margin:20px auto 0; padding-top:18px; border-top:1px dashed #DDD8CE; display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:#A0AEC0; flex-wrap:wrap; gap:12px;">
       <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
@@ -17627,6 +17788,339 @@
             "feature": "大正浪漫木質溫泉旅館・客房露天風呂眺望琵琶湖晨曦"
       }
 }
+,
+
+      // ⛺ 2026 全日本露營與自駕前線資料庫 (絕景營地・免裝備奢華Glamping・露營車Vanlife全境收錄)
+        "id": "camp_kouan",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "autocamp",
+      "campRegion": "fuji",
+      "regionName": "富士五湖",
+      "title": "本栖湖 浩庵露營場 (Kouan Campsite)",
+      "subtitle": "日幣千圓背面取景聖地・湖畔第一排清晨夢幻「逆富士」倒影",
+      "tag": "山梨・本栖湖畔",
+      "siteStatus": "今日營位充足 (自由席)",
+      "viewRating": "逆富士能見度 90%",
+      "campTypeInfo": "湖畔碎石自由席 ｜ 支援車輛直達搭帳 (Auto Camp)",
+      "facilitiesInfo": "24h 溫水衛浴 ｜ 焚火可 (需自備焚火台) ｜ 浩庵食堂咖啡",
+      "vehicleInfo": "湖畔斜坡地質鬆軟，強烈建議預約 4WD 四驅車款以防陷車打滑",
+      "navInfo": "距中央自動車道「河口湖 IC」約 35 分鐘車程，國道 300 號直達",
+      "proTips": "• 湖畔碎石坡需備 30cm 鍛造長營釘抗山風；清晨 06:00 領號碼牌搶第一排湖景。\n• 適合東京出發取車直奔，沿途經道之驛「朝霧高原」補給在地和牛與蔬菜食材。",
+      "desc": "日本動漫《搖曳露營△》第一集朝聖聖地！清晨無風時湖面如鏡，富士山完整倒影水中，是全日本最具神聖感的露營席位。",
+      "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9C%AC%E6%A0%96%E6%B9%96&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "camp_fumotoppara",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "autocamp",
+      "campRegion": "fuji",
+      "regionName": "靜岡朝霧高原",
+      "title": "Fumotoppara 露營場 (ふもとっぱら)",
+      "subtitle": "全日本露營聖地天花板・遼闊朝霧大草原直面富士山完整雄姿",
+      "tag": "靜岡・富士宮",
+      "siteStatus": "週末熱門搶訂 (預約制)",
+      "viewRating": "富士山全景 100%",
+      "campTypeInfo": "全平坦大草原自由席 ｜ 露營車/SUV直達搭帳 ｜ 寵物友善",
+      "facilitiesInfo": "中央超大型景觀溫水炊事棟 ｜ 咖啡屋「金山 Terrace」｜ 乾淨衛浴",
+      "vehicleInfo": "草原腹地遼闊路面平整，標準 2WD 休旅車或露營車均可輕鬆進出",
+      "navInfo": "距新東名高速「新富士 IC」約 35 分鐘 / 中央道「河口湖 IC」約 40 分鐘",
+      "proTips": "• 富士山麓午後容易起風起霧，請務必攜帶防風天幕並打深鍛造地釘。\n• 場內「逆富士水池」是拍清晨日出金黃朝陽映照富士山頭的絕佳打卡機位！",
+      "desc": "露營玩家一生必朝聖的傳奇大草原！毫無人工建築遮擋，清晨從帳篷拉開拉鍊即見富士山拔地而起，日落赤富士美得令人屏息。",
+      "img": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%AF%8C%E5%A3%AB%E5%AE%AE&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "camp_tanukiko",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "autocamp",
+      "campRegion": "fuji",
+      "regionName": "靜岡富士宮",
+      "title": "田貫湖露營場 (Tanukiko Campsite)",
+      "subtitle": "4月與8月「鑽石富士」日出發源地・湖畔木棧休閒步道",
+      "tag": "靜岡・田貫湖畔",
+      "siteStatus": "南岸/北岸營位充足",
+      "viewRating": "鑽石富士景觀 95%",
+      "campTypeInfo": "湖畔草皮指定席 ｜ 手推車裝備搬運 ｜ 設有露營車專用泊車區",
+      "facilitiesInfo": "投幣式熱水淋浴 ｜ 自行車租借環湖 ｜ 湖畔展望烤肉區",
+      "vehicleInfo": "專屬大型免費停車場，提供多台大型手推車供車友搬運帳篷裝備",
+      "navInfo": "東名高速「富士 IC」出發經西富士道路約 45 分鐘車程",
+      "proTips": "• 推薦選擇「南側 A 區」面湖木棧道旁搭帳，清晨湖面水氣蒸騰宛如仙境。\n• 湖畔設有 3.3 公里無障礙環湖步道，適合帶長輩小孩騎單車散步。",
+      "desc": "靜岡縣富士山麓的如畫仙境，湖水平靜無波，每年春季櫻花盛開與秋天紅葉圍繞湖畔，是安靜享受家庭露營的首選地。",
+      "img": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%94%B0%E8%B2%AB%E6%B9%96&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%9D%9C%E5%B2%A1%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "camp_shojiko",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "autocamp",
+      "campRegion": "fuji",
+      "regionName": "山梨精進湖",
+      "title": "精進湖 露營村 (Shojiko Camping Cottage)",
+      "subtitle": "富士五湖最寧靜秘境・經典「抱子富士」大室山同框湖畔野營",
+      "tag": "山梨・精進湖畔",
+      "siteStatus": "湖畔自由野營開放",
+      "viewRating": "抱子富士全景 92%",
+      "campTypeInfo": "黑砂礫石湖畔自由席 ｜ 汽車露營 Auto Camp 自由出入",
+      "facilitiesInfo": "管理棟附設露天景觀風呂 ｜ 獨木舟租借體驗 ｜ 乾淨沖水馬桶",
+      "vehicleInfo": "近水區沙質較鬆軟，請依指示停放於硬實草皮碎石區域",
+      "navInfo": "中央道「河口湖 IC」約 25 分鐘，沿國道 139 號直行即達",
+      "proTips": "• 富士五湖中面積最小但最無光害，深夜抬頭即可看見璀璨銀河橫跨富士山頂。\n• 湖畔允許合法直接炊事焚火，需使用架高焚火台並落實無痕山林垃圾全帶走。",
+      "desc": "大自然愛好者的私房天堂，清晨由精進湖遠眺，前方的小小大室山就像被富士山擁抱在懷中，故稱「抱子富士」，清幽愜意無與倫比。",
+      "img": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%B2%BE%E9%80%B2%E6%B9%96&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "camp_toyako_mizube",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "autocamp",
+      "campRegion": "hokkaido",
+      "regionName": "北海道洞爺湖",
+      "title": "洞爺湖 水邊之里財田露營場 (Toyako Mizube)",
+      "subtitle": "北海道最美水岸草皮・中島倒影與夏季每晚璀璨湖上花火",
+      "tag": "北海道・洞爺湖",
+      "siteStatus": "夏季熱門營位 (需預約)",
+      "viewRating": "湖景與花火 98%",
+      "campTypeInfo": "廣闊湖畔草皮 Auto Camp ｜ 露營車專屬供電車宿位 ｜ 木造小屋",
+      "facilitiesInfo": "全天候溫水衛浴炊事棟 ｜ 洗衣烘乾設備 ｜ 獨木舟划水碼頭",
+      "vehicleInfo": "北海道自駕道路寬廣，非常適合新千歲機場租借露營車直接開入",
+      "navInfo": "距道央自動車道「岡田 IC」約 20 分鐘車程",
+      "proTips": "• 每年 4 月底至 10 月底每晚皆施放「洞爺湖長期花火」，坐在帳篷前即可獨享！\n• 營地設有「露營車專用供電泊位 (帶 100V 插座)」，車宿玩家補充電力極度方便。",
+      "desc": "北海道自駕露營的代表作！坐落洞爺湖最平靜清幽的北側水灣，草皮厚實如地毯，湖水清澈見底，是日本自駕環島旅客心中的五星級營地。",
+      "img": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B4%9E%E7%88%BA%E6%B9%96&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%96%B0%E5%8D%83%E6%AD%B2%E6%A9%9F%E5%A0%B4%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "glamp_hoshinoya_fuji",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "glamping",
+      "campRegion": "fuji",
+      "regionName": "山梨河口湖",
+      "title": "星野富士 (Hoshinoya Fuji)",
+      "subtitle": "全日本首座頂級奢華露營・雲上露台焚火・獨立極簡全景客室",
+      "tag": "山梨・河口湖畔",
+      "siteStatus": "一泊二食尊榮體驗 (熱門搶訂)",
+      "viewRating": "河口湖與富士山 100%",
+      "campTypeInfo": "私人極簡野奢木造 Cabins ｜ 獨立觀景露台焚火爐 ｜ 席夢思名床",
+      "facilitiesInfo": "雲上木棧露台木酒吧 ｜ 專屬露營管家 (Glamping Master) ｜ 晨間獨木舟",
+      "vehicleInfo": "抵達山麓接待處後由星野專屬 Jeep 吉普車接駁送上山林別墅",
+      "navInfo": "中央自動車道「河口湖 IC」出發約 20 分鐘車程",
+      "proTips": "• 推薦預訂「荷蘭鍋鹿肉排與山林野味燒烤」主廚私廚體驗，在松林間享用炭火晚餐。\n• 傍晚雲上露台有現場古典吉他伴奏與免費烤棉花糖，氣氛極度奢華浪漫。",
+      "desc": "日本奢華戶外露營的創始者！座落於河口湖北岸紅松林山坡上，每間極簡客房的落地窗與露台均正對富士山全景，顛覆傳統露營的所有想像。",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%98%9F%E9%87%8E%E5%AF%8C%E5%A3%AB&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "glamp_pica_saiko",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "glamping",
+      "campRegion": "fuji",
+      "regionName": "山梨富士西湖",
+      "title": "PICA 富士西湖 豪華露營村",
+      "subtitle": "北歐頂級小木屋・私人芬蘭桶型桑拿房・黑毛和牛炭火BBQ",
+      "tag": "山梨・富士西湖",
+      "siteStatus": "家庭與情侶首選 (免帶裝備)",
+      "viewRating": "森林湖畔景觀 95%",
+      "campTypeInfo": "豪華露營別墅 (Cottage) ｜ 星空透明半球帳 ｜ 獨立衛浴空調",
+      "facilitiesInfo": "柴燒芬蘭式桑拿房 (Barrel Sauna) ｜ 湖畔釣魚獨木舟 ｜ 戶外烤肉爐",
+      "vehicleInfo": "每棟豪華帳篷前皆設有專屬獨立停車位，上下行李極為優雅輕鬆",
+      "navInfo": "中央道「河口湖 IC」出發經國道 139 號約 15 分鐘車程",
+      "proTips": "• 推薦體驗「森林桑拿＋西湖天然冷水浴」，蒸熱後直接呼吸富士山清新冷空氣！\n• 晚餐套裝包含厚切甲州牛牛排與在地有機時蔬，無須做功課即可大啖美食。",
+      "desc": "適合不想狼狽搭帳篷的家庭與閨蜜客群，全套房配備星級飯店衛浴與冷暖氣，夜晚圍著私家露台營火談天，抬頭即是繁星點點。",
+      "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=PICA%E5%AF%8C%E5%A3%AB%E8%A5%BF%E6%B9%96&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "glamp_element_biwako",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "glamping",
+      "campRegion": "kansai_izu",
+      "regionName": "關西滋賀琵琶湖",
+      "title": "GLAMP ELEMENT 琵琶湖水上豪華露營",
+      "subtitle": "全包式奢華戶外水上帳篷・專屬私家獨木舟・近江牛鐵板燒",
+      "tag": "滋賀・米原/琵琶湖畔",
+      "siteStatus": "一泊二食全包式體驗 (熱門搶訂)",
+      "viewRating": "伊吹山水景 96%",
+      "campTypeInfo": "池畔水上雨滴帳 (Lotus Bell) ｜ 雙層圓頂穹頂帳 ｜ 獨立衛浴",
+      "facilitiesInfo": "全館全包式免費酒水吧 ｜ 私家露台專屬獨木舟 ｜ 美肌天然溫泉大浴場",
+      "vehicleInfo": "鄰近名神高速「米原 IC」約 10 分鐘，從京都/大阪自駕約 70 分鐘",
+      "navInfo": "JR米原站提供專車接駁服務（需事前預約）",
+      "proTips": "• 房費包含所有酒水飲料與專人送達露台的近江牛晚宴，不用額外掏錢超划算！\n• 每個帳篷專屬附贈一艘獨木舟，早晨直接從自己帳篷階梯划入水池，極致愜意。",
+      "desc": "關西最高規格的豪華露營勝地！水池環繞一座座宛如漂浮水面的圓頂帳篷，面對伊吹山雄偉山形，夜間水面打上夢幻彩燈，宛如夢遊仙境。",
+      "img": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=GLAMP+ELEMENT&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E7%90%B5%E7%90%B6%E6%B9%96%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "glamp_kanade_no_mori",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "glamping",
+      "campRegion": "kansai_izu",
+      "regionName": "靜岡伊豆半島",
+      "title": "伊豆 奏之森 (Kanade no Mori Resorts)",
+      "subtitle": "伊豆高原萬坪森林綠洲・駿河灣極鮮伊勢海老與黑毛和牛炭烤",
+      "tag": "靜岡・伊東/伊豆高原",
+      "siteStatus": "全新開幕野奢首選",
+      "viewRating": "伊豆森林海風 94%",
+      "campTypeInfo": "奢華寬敞圓頂天幕帳 ｜ 乾濕分離星級衛浴 ｜ 席夢思名床空調",
+      "facilitiesInfo": "手作熟成肉柴燒餐廳 ｜ 葡萄酒酒窖 ｜ 森林木棧散策道",
+      "vehicleInfo": "從東京自駕沿東名高速 ➔ 小田原厚木道路約 2 小時即達",
+      "navInfo": "伊豆急行線「伊豆高原站」車程約 12 分鐘",
+      "proTips": "• 營區附設專業熟成牛排館，提供頂級黑毛和牛T骨牛排與伊豆產金目鯛！\n• 鄰近大室山與城崎海岸，是安排東京近郊 3天2夜 自駕避暑賞海的絕佳據點。",
+      "desc": "靜岡伊豆半島2023年全新落成的旗艦豪華露營渡假村，在清幽森林微風中享用頂級燒烤與美酒，白天健行大室山，傍晚回帳篷泡湯看星空。",
+      "img": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BC%8A%E8%B1%86%E9%AB%98%E5%8E%9F&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BC%8A%E8%B1%86%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "glamp_snowpeak_hakuba",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "glamping",
+      "campRegion": "nagano",
+      "regionName": "長野白馬",
+      "title": "Snow Peak FIELD SUITE HAKUBA",
+      "subtitle": "戶外露營界愛馬仕・海拔1200米北阿爾卑斯八方尾根星空帳",
+      "tag": "長野・白馬村",
+      "siteStatus": "頂級野奢體驗 (極致高客單)",
+      "viewRating": "北阿爾卑斯群峰 100%",
+      "campTypeInfo": "隈研吾設計「住箱 (JYUBAKO)」移動木屋 ｜ 特製大型豪華帳",
+      "facilitiesInfo": "全包式私人露天景觀風呂 ｜ 米其林星級野炊法餐 ｜ 專屬越野車接送",
+      "vehicleInfo": "於白馬八方尾根山麓專屬休息室集合，搭乘專用 4WD 車輛直上山頂",
+      "navInfo": "北陸新幹線長野站轉乘特快巴士約 60 分鐘",
+      "proTips": "• 帳內全套採用 Snow Peak 頂級工藝器具，由知名法餐名廚在星空下為您現場烹調！\n• 走出帳篷即可俯瞰白馬村壯闊山谷，夜晚銀河倒瀉，是無可挑剔的夢幻露營。",
+      "desc": "日本露營第一品牌 Snow Peak 打造的戶外奢華巔峰之作！坐落白馬八方尾根高山台地，結合建築大師隈研吾的木質美學，為旅人帶來畢生難忘的奢華自然洗禮。",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%99%BD%E9%A6%AC%E6%9D%91&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E7%99%BD%E9%A6%AC%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "vanlife_fuji_route",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "vanlife",
+      "campRegion": "fuji",
+      "regionName": "富士五湖巡遊線",
+      "title": "富士五湖黃金環線 (4天3夜露營車巡航)",
+      "subtitle": "東京成田取車直奔・沿途入住朝霧高原合法 RV Park 泊點",
+      "tag": "山梨/靜岡・富士山環線",
+      "siteStatus": "經典自駕自遊路線 (4天3夜)",
+      "viewRating": "360度環繞富士山 100%",
+      "campTypeInfo": "露營車 Vanlife 路線 ｜ 推薦合法 RV Park 車宿泊點 ｜ 溫泉入浴推薦",
+      "facilitiesInfo": "供電供水充電樁 ｜ 24h 垃圾回收與水槽 ｜ 道之驛在地農產直銷",
+      "vehicleInfo": "推薦租借 Hiace 改裝露營車或輕型 K-Camper，配備暖氣與平躺床墊",
+      "navInfo": "東京市區/羽田/成田取車 ➔ 中央道約 90 分鐘直達富士山腳",
+      "proTips": "• 推薦停靠合法車宿點「RV Park 朝霧高原」與「RV Park 鳴澤」，水電齊全。\n• 日本嚴禁在一般便利商店或公路休息站擅自搭帳過夜，請務必停靠專屬 RV Park！",
+      "desc": "全日本最受歡迎的露營車入門路線！隨心所欲停靠山中湖、河口湖、西湖、精進湖與本栖湖，清晨躺在車上推開後門就是富士山，晚上泡完溫泉在車內煮火鍋吃宵夜。",
+      "img": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B2%B3%E5%8F%A3%E6%B9%96&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E5%AF%8C%E5%A3%AB%E5%B1%B1%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "vanlife_doto_hokkaido",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "vanlife",
+      "campRegion": "hokkaido",
+      "regionName": "道東三湖壯遊線",
+      "title": "北海道道東三湖曠野壯遊線 (5天4夜露營車巡航)",
+      "subtitle": "女滿別/釧路機場取車・屈斜路湖砂湯挖露天溫泉・阿寒湖車宿",
+      "tag": "北海道・道東曠野",
+      "siteStatus": "夏季與初秋自駕首選 (5天4夜)",
+      "viewRating": "原始森林與湖泊 99%",
+      "campTypeInfo": "自駕露營車長途壯遊 ｜ 屈斜路湖畔車宿 ｜ 摩周湖星空無光害",
+      "facilitiesInfo": "天然砂湯地熱 ｜ 24h 乾淨公共洗手間 ｜ 硫磺山天然溫泉蛋",
+      "vehicleInfo": "道東公路筆直廣袤但時有野生鹿穿梭，建議挑選配備防撞雷達之車款",
+      "navInfo": "女滿別機場取車 ➔ 國道 243 號經美幌峠直達屈斜路湖",
+      "proTips": "• 屈斜路湖「砂湯」只要在湖畔沙灘挖個小坑，熱騰騰天然溫泉水就會汩汩流出！\n• 車宿推薦「RV Park 阿寒丹頂之里」，附設天然溫泉大浴場與在地海鮮食堂。",
+      "desc": "遠離塵囂的極致大自然巡航！穿梭在北海道原始森林、阿寒摩周國立公園與知床半島之間，沿途天然露天溫泉星羅棋布，享受完全自由不受拘束的 Vanlife 生活。",
+      "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%98%BF%E6%82%8F%E6%B9%96&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E6%B5%B7%E9%81%93%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "vanlife_nagano_alps",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "vanlife",
+      "campRegion": "nagano",
+      "regionName": "長野北阿爾卑斯線",
+      "title": "長野北阿爾卑斯景觀山道 (4天3夜露營車巡航)",
+      "subtitle": "松本城出發・安曇野大王芥末農場 ➔ 白馬八方尾根RV Park",
+      "tag": "長野・松本/安曇野/白馬",
+      "siteStatus": "春夏秋季避暑巡航 (4天3夜)",
+      "viewRating": "北阿爾卑斯雪山全景 97%",
+      "campTypeInfo": "高山景觀自駕公路 ｜ 白馬高山車宿 ｜ 溫泉手湯足湯巡禮",
+      "facilitiesInfo": "供電供水充電樁 ｜ 地熱溫泉足湯 ｜ 信州蕎麥麵在地直銷",
+      "vehicleInfo": "山路陡坡較多，強烈建議具備引擎煞車輔助之車款以確保下坡安全",
+      "navInfo": "長野自動車道「安曇野 IC」沿北阿爾卑斯全景景觀道直達白馬",
+      "proTips": "• 途經「道之驛 安曇野松川」可品嚐產地直送信州蘋果與新鮮安曇野手打蕎麥。\n• 推薦停靠「RV Park 白馬溫泉」，步行 3 分鐘即可抵達八方之湯享受高鹼度美肌名湯。",
+      "desc": "沿著日本阿爾卑斯的壯麗山脊一路奔馳，夏日涼爽無比，秋季群山紅葉似火，一路上有清冽雪水灌溉的芥末田、清澈水車與古樸溫泉鄉，是日本山岳自駕的代表路線。",
+      "img": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%99%BD%E9%A6%AC&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E9%87%8E%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "vanlife_izu_coast",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "vanlife",
+      "campRegion": "kansai_izu",
+      "regionName": "伊豆海天巡航線",
+      "title": "伊豆半島海天巡航線 (3天2夜濱海自駕)",
+      "subtitle": "東京取車經熱海 ➔ 城崎海岸懸崖吊橋 ➔ 下田白濱海景車宿",
+      "tag": "靜岡・伊豆半島",
+      "siteStatus": "溫暖濱海休閒自駕 (3天2夜)",
+      "viewRating": "太平洋海景 96%",
+      "campTypeInfo": "沿海景觀國道 135 號 ｜ 海景 RV Park 車宿 ｜ 漁港現撈海鮮",
+      "facilitiesInfo": "海風露天溫泉 ｜ 下田漁港金目鯛料理 ｜ 濱海無光害夜空",
+      "vehicleInfo": "沿途道路維護良好，普通小轎車、休旅車或小型露營車均極度好開",
+      "navInfo": "從東京出發經東名高速 ➔ 小田原厚木道路約 1.5 小時抵達熱海",
+      "proTips": "• 推薦在「RV Park 伊豆白濱」車宿，早晨推開車門就是南伊豆第一名的白沙灘！\n• 沿途經過稻取漁港務必品嚐名物「紅燒金目鯛姿煮」，肉質鮮甜肥美無比。",
+      "desc": "四季氣候溫暖如春的海濱天堂！一邊吹著太平洋海風一邊沿著蔚藍海岸線巡航，參觀火山口大室山、漫步驚險刺激的門脇吊橋，晚上伴著潮騷海浪聲入眠。",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BC%8A%E8%B1%86&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BC%8A%E8%B1%86%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+},
+        "id": "vanlife_biwako_loop",
+      "theme": "camp",
+      "category": "outdoor_camp",
+      "campType": "vanlife",
+      "campRegion": "kansai_izu",
+      "regionName": "關西琵琶湖環線",
+      "title": "滋賀琵琶湖一週環湖自駕線 (3天2夜親水巡航)",
+      "subtitle": "京都大阪出發・白鬚神社水上鳥居 ➔ 奧琵琶湖高島RV Park",
+      "tag": "滋賀・琵琶湖環線",
+      "siteStatus": "關西最輕鬆自駕線 (3天2夜)",
+      "viewRating": "湖光山色 95%",
+      "campTypeInfo": "平坦環湖景觀公路 ｜ 湖畔 RV Park 供電車宿 ｜ 水上休閒活動",
+      "facilitiesInfo": "近江八幡水鄉游船 ｜ 彥根城戰國古蹟 ｜ 近江牛燒肉排隊名店",
+      "vehicleInfo": "全線圍繞日本最大湖泊琵琶湖，坡度平緩，適合新手第一次日本自駕車宿",
+      "navInfo": "從京都出發經國道 1 號約 25 分鐘即達大津琵琶湖南端",
+      "proTips": "• 推薦下午安排「白鬚神社」拍攝立於湖中的朱紅鳥居夕陽剪影，唯美震撼！\n• 晚上推薦停靠「RV Park 奧琵琶湖 Makino」，鄰近著名的「水杉林蔭大道」。",
+      "desc": "關西自由行最輕鬆寫意的自駕路線！避開京都市區擁擠人潮，沿著200公里的環湖公路漫遊，欣賞如大海般浩瀚的湖水，造訪國寶彥根城，品嚐入口即化的近江牛饗宴。",
+      "img": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=700&q=80",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%90%B5%E7%90%B6%E6%B9%96&aid=2422002",
+      "rentalUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson",
+      "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E7%90%B5%E7%90%B6%E6%B9%96%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+}
     ];
 
     let currentSeason = 'spots';
@@ -17749,11 +18243,11 @@
         title: '⛺ 露營與自駕',
         feedSeason: 'spots',
         subItems: [
-          { id: 'camp_fuji', icon: '🗻', name: '富士山直面營地（浩庵／田貫湖）', type: 'portal', val: 'openCampPortal' },
-          { id: 'camp_glamping', icon: '🎪', name: '免裝備 Glamping（星空帳／小木屋）', type: 'portal', val: 'openCampPortal' },
-          { id: 'camp_rv', icon: '🚐', name: '露營車合法泊（RV Park清單）', type: 'portal', val: 'openCampPortal' },
-          { id: 'charter_rental', icon: '🚗', name: '日本租車比價 ↗（中文GPS）', type: 'portal', val: 'openCharterRentalPortal' },
-          { id: 'charter_private', icon: '👨‍✈️', name: '私人中文包車 ↗（家庭一日遊）', type: 'portal', val: 'openCharterRentalPortal' }
+          { id: 'camp_type_all', icon: '⛺', name: '全部情境 (15)', type: 'camp_type', val: 'all' },
+          { id: 'camp_autocamp', icon: '⛺', name: '絕景露營場地 (Auto Camp)', type: 'camp_type', val: 'autocamp' },
+          { id: 'camp_glamping', icon: '🏕️', name: '免裝備豪華露營 (Glamping)', type: 'camp_type', val: 'glamping' },
+          { id: 'camp_vanlife', icon: '🚐', name: '露營車漫遊路線 (Vanlife)', type: 'camp_type', val: 'vanlife' },
+          { id: 'camp_charter_portal', icon: '🚗', name: '全日本租車包車攻略 ↗', type: 'portal', val: 'openCharterRentalPortal' }
         ]
       },
       'topics': {
@@ -17788,7 +18282,55 @@
       renderCards();
     }
 
+    let currentCampRegion = 'all';
+    let currentCampType = 'all';
+
+    function selectCampRegion(regKey, btn) {
+      currentCampRegion = regKey;
+      const bar = document.getElementById('sakuraRegionBar');
+      if (bar) {
+        bar.querySelectorAll('.region-pill').forEach(b => b.classList.remove('active'));
+      }
+      if (btn) btn.classList.add('active');
+      renderCards();
+    }
+
+    function toggleCampQa(spotId, btn) {
+      const panel = document.getElementById(`campQa_${spotId}`);
+      if (!panel) return;
+      const isShow = panel.classList.contains('show');
+      panel.classList.toggle('show', !isShow);
+      btn.innerHTML = isShow 
+        ? '<span>📖 查看自駕攻略 ＆ 外國人露營須知 ▾</span>' 
+        : '<span>收起自駕須知 ▴</span>';
+    }
+
     function renderDynamicRegionBar() {
+      const bar = document.getElementById('sakuraRegionBar');
+      if (!bar) return;
+
+      if (currentMasterHub === 'camp_charter') {
+        bar.style.display = 'block';
+        bar.innerHTML = `
+          <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
+            <button class="region-pill ${currentCampRegion === 'all' ? 'active' : ''}" onclick="selectCampRegion('all', this)">
+              <span>🗾</span> <span>全日本精選 (15)</span>
+            </button>
+            <button class="region-pill ${currentCampRegion === 'fuji' ? 'active' : ''}" onclick="selectCampRegion('fuji', this)">
+              <span>🗻</span> <span>富士五湖・靜岡 (5)</span>
+            </button>
+            <button class="region-pill ${currentCampRegion === 'hokkaido' ? 'active' : ''}" onclick="selectCampRegion('hokkaido', this)">
+              <span>❄️</span> <span>北海道曠野 (3)</span>
+            </button>
+            <button class="region-pill ${currentCampRegion === 'nagano' ? 'active' : ''}" onclick="selectCampRegion('nagano', this)">
+              <span>🏔️</span> <span>長野・北阿爾卑斯 (3)</span>
+            </button>
+            <button class="region-pill ${currentCampRegion === 'kansai_izu' ? 'active' : ''}" onclick="selectCampRegion('kansai_izu', this)">
+              <span>🌊</span> <span>關西琵琶湖・伊豆 (4)</span>
+            </button>
+          </div>
+        `;
+      } else
       const bar = document.getElementById('sakuraRegionBar');
       if (!bar) return;
 
@@ -17914,7 +18456,11 @@
         });
       }
 
-      if (item.type === 'snow_level') {
+      if (item.type === 'camp_type') {
+        currentCampType = item.val;
+        renderCards();
+        return;
+      } else if (item.type === 'snow_level') {
         currentSnowLevel = item.val;
         renderCards();
         return;
@@ -18109,9 +18655,21 @@
           return true;
         }
 
-        // 母夾 3：露營與自駕包車
+        // 母夾 3：露營與自駕 (嚴格排除鐵道特急，專注露營與自駕路線)
         if (currentMasterHub === 'camp_charter') {
-          return item.theme === 'camp' || item.theme === 'train' || item.category === 'outdoor_camp';
+          if (item.theme !== 'camp') return false;
+
+          // 地區過濾
+          if (currentCampRegion !== 'all') {
+            if (item.campRegion && item.campRegion !== currentCampRegion) return false;
+          }
+
+          // 情境二級過濾 (Auto Camp / Glamping / Vanlife)
+          if (currentCampType !== 'all') {
+            if (item.campType && item.campType !== currentCampType) return false;
+          }
+
+          return true;
         }
 
         // 母夾 4：深度專題
@@ -18247,6 +18805,58 @@
 
             <p class="card-clean-concise-desc">${item.desc}</p>
 
+            ${(item.theme === 'camp') ? `
+              <!-- ⛺ 露營自駕專屬四大關鍵指標 (取代品種與花況) -->
+              <div class="camp-specs-grid">
+                <div class="camp-spec-cell">
+                  <span class="camp-spec-lbl">⛺ 營位類型</span>
+                  <span class="camp-spec-val">${item.campTypeInfo || 'Auto Camp 車輛直達搭帳'}</span>
+                </div>
+                <div class="camp-spec-cell">
+                  <span class="camp-spec-lbl">🚿 設施評級</span>
+                  <span class="camp-spec-val">${item.facilitiesInfo || '24h 溫水衛浴 ｜ 焚火可 ｜ 景觀咖啡'}</span>
+                </div>
+                <div class="camp-spec-cell">
+                  <span class="camp-spec-lbl">🚗 車型建議</span>
+                  <span class="camp-spec-val">${item.vehicleInfo || '建議 4WD 四驅車款防滑'}</span>
+                </div>
+                <div class="camp-spec-cell">
+                  <span class="camp-spec-lbl">🛣️ 自駕導航</span>
+                  <span class="camp-spec-val">${item.navInfo || '高速公路交流道直達'}</span>
+                </div>
+              </div>
+
+              <!-- 💡 特派員自駕避坑筆記 -->
+              <div class="camp-tips-box">
+                <b>💡 特派員避坑筆記：</b><br>
+                ${(item.proTips || '• 湖畔搭帳需備 30cm 鍛造長營釘抗山風；清晨儘早進場選位。').replace(/\n/g, '<br>')}
+              </div>
+
+              <!-- 4 顆高轉換推薦按鈕組合 (嚴格零分潤字樣、零Klook字樣) -->
+              <div class="camp-actions-group">
+                <div class="camp-actions-row-top">
+                  <a href="${item.bookingUrl || 'https://www.booking.com/'}" target="_blank" class="btn-camp-primary" onclick="event.stopPropagation();" title="預約營位或豪華露營住宿">
+                    <span>⛺ 預約營位 / Glamping 訂房 ↗</span>
+                  </a>
+                  <a href="${item.rentalUrl || 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E7%A7%9F%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" class="btn-camp-rental" onclick="event.stopPropagation();" title="全日本自駕租車比價・中文GPS・含免責補償">
+                    <span>🚗 自駕租車比價 (中文GPS) ↗</span>
+                  </a>
+                </div>
+                <a href="${item.charterUrl || 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" class="btn-camp-charter" onclick="event.stopPropagation();" title="私人專屬中文司機包車一日遊">
+                  <span>🚐 私人包車接駁 (家庭一日遊) ↗</span>
+                </a>
+                <button type="button" class="btn-camp-qa-toggle" onclick="toggleCampQa('${item.id}', this); event.stopPropagation();">
+                  <span>📖 查看自駕攻略 ＆ 外國人露營須知 ▾</span>
+                </button>
+                <div class="camp-qa-accordion-panel" id="campQa_${item.id}">
+                  <b>【外國人自駕露營防踩雷須知】</b><br>
+                  • <b>駕照必備</b>：台灣旅客必須備妥「台灣駕照正本 ＋ 日文譯本 ＋ 護照」（國際駕照無效）。<br>
+                  • <b>車宿規定</b>：不可在一般超商停車場過夜，必須停靠合法的 RV Park 或汽車露營場。<br>
+                  • <b>車高限制</b>：露營車高度達 2.8～3.1m，嚴禁進入市區立體或地下機械停車場。<br>
+                  • <b>冬季防滑</b>：冬季山區行駛（12月~4月）租車請務必勾選「Studless 雪胎」。
+                </div>
+              </div>
+            ` : `
             <!-- 🌟 名所卡片微型膠囊切換器 (預設行程建議，自由切換美食咖啡與住宿，卡片高度縮減55%！) -->
             <div class="spot-pills-switcher">
               <button class="spot-switch-pill active" id="tabBtn_${item.id}_plan" onclick="switchSpotCardTab('${item.id}', 'plan', this); event.stopPropagation();">
@@ -18313,6 +18923,7 @@
                   <span>🏨 訂房去</span>
                 </a>
               </div>
+            `}
             `}
           </div>
         `;
