@@ -6933,8 +6933,14 @@
         <span>包車 / 租車</span>
       </a>
 
+      <!-- 🌟 沖繩海島不繞路自駕專區旗艦按鈕 (超醒目高對比海島藍) -->
+      <a href="japan_okinawa_drive.html" class="header-util-btn" style="background:linear-gradient(135deg, #0284C7, #0369A1); color:#FFFFFF; border:none; font-weight:800; box-shadow:0 2px 8px rgba(2,132,199,0.35);" title="沖繩海島不繞路自駕・親子與海景特輯">
+        <span class="util-btn-icon">🌺</span>
+        <span>沖繩自駕</span>
+      </a>
+
       <!-- 3. 🏆 7大排行特輯 專屬旗艦入口 -->
-      <a href="japan_inbound_rankings.html" class="header-util-btn" style="text-decoration:none; color:inherit;" title="外國旅客最著迷的 7 大排行榜維度與延伸項目盤點">
+      <a href="japan_inbound_rankings.html" class="header-util-btn" style="text-decoration:none;" title="日本排行榜">
         <span class="util-btn-icon">🏆</span>
         <span>日本排行榜</span>
       </a>
@@ -7045,6 +7051,22 @@
   <div class="web-container ticket-plan-container">
     
     <!-- 🎯 HOT DEALS 四大菜單大卡片區塊 (四大主題探索) -->
+        <!-- 🌺 沖繩海島自駕旗艦特刊直通橫幅 (超醒目海島藍 ＋ 5天4夜行程算盤) -->
+    <div style="max-width:1200px; margin:0 auto 16px auto; padding:0 16px;">
+      <a href="japan_okinawa_drive.html" style="display:flex; justify-content:space-between; align-items:center; background:linear-gradient(135deg, #0284C7 0%, #0369A1 100%); color:#FFFFFF; text-decoration:none; border-radius:16px; padding:16px 24px; box-shadow:0 8px 24px rgba(2,132,199,0.3); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span style="font-size:2rem;">🌺</span>
+          <div>
+            <div style="font-size:0.75rem; font-weight:800; background:rgba(255,255,255,0.2); padding:2px 8px; border-radius:4px; display:inline-block; margin-bottom:4px;">2026 OKINAWA SPECIAL ｜ 官方特刊</div>
+            <div style="font-size:1.15rem; font-weight:900;">沖繩海島不繞路自駕攻略 ｜ 親子溜滑梯・青之洞窟・和牛燒肉・海景度假村</div>
+            <div style="font-size:0.8rem; opacity:0.9; margin-top:2px;">內建 MapCode 導航、免費停車格、遮陽指數與「5 天 4 夜不繞路行程算盤」</div>
+          </div>
+        </div>
+        <div style="padding:8px 16px; background:#FFFFFF; color:#0369A1; font-weight:900; font-size:0.85rem; border-radius:20px; white-space:nowrap; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+          立即探索 ➔
+        </div>
+      </a>
+    </div>
     <section class="hot-deals-section" id="hotDealsSection">
 
 
@@ -19492,6 +19514,11 @@
       // 標準卡片模式 (3 欄 Grid + 漸進式揭露縮短高度 40%)
       container.className = 'spots-grid-layout';
       uniqueFiltered.forEach(item => {
+        // 🌙 白天與夜晚點燈圖片與狀態切換 (先計算 isNight 避免 TDZ ReferenceError)
+        const isNight = ((item.theme === 'sakura' && currentSakuraFeature === 'night') || 
+                            (item.theme === 'momiji' && currentMomijiFeature === 'night') || 
+                            (spotDayNightState[item.id] === 'night'));
+
         const card = document.createElement('div');
         card.className = `tabi-card ${isNight ? 'is-night-theme-card' : ''}`;
         card.id = `spot-card-${item.id}`;
@@ -19500,11 +19527,6 @@
         const isFav = isFavorite(item.id);
         const klookFinalUrl = ensureKlookAffiliate(item.klookUrl);
         const bookingFinalUrl = ensureBookingAffiliate(item.bookingUrl);
-
-        // 🌙 白天與夜晚點燈圖片與狀態切換
-        const isNight = ((item.theme === 'sakura' && currentSakuraFeature === 'night') || 
-                            (item.theme === 'momiji' && currentMomijiFeature === 'night') || 
-                            (spotDayNightState[item.id] === 'night'));
         const isFlowerOrMomiji = (item.theme === 'sakura' || item.theme === 'momiji' || item.category === 'flower');
         const defaultNightPhoto = (item.theme === 'momiji') 
           ? 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80' 

@@ -847,6 +847,18 @@
       box-shadow: 0 4px 12px rgba(197, 61, 67, 0.35) !important;
     }
 
+
+    button.nav-strip-item {
+      font-family: inherit;
+      border: 1.5px solid transparent;
+      outline: none;
+      text-align: center;
+      cursor: pointer;
+    }
+    .charter-section-tab-panel {
+      transition: opacity 0.3s ease;
+    }
+
 </style>
 </head>
 <body>
@@ -875,12 +887,15 @@
     </div>
 
     <!-- 頂部右側統一功能按鈕群 -->
-    <div class="header-right">
+        <div class="header-right">
       <a href="japan_flight_deals.html" class="header-util-btn" title="Trip 機票比價與特惠航線">
         <span>✈️ Trip 查機票</span>
       </a>
       <a href="japan_charter_rental.html" class="header-util-btn active" title="日本客製化包車一日遊 ＆ 日本自駕租車全攻略指南">
         <span>🚗 包車 / 租車</span>
+      </a>
+      <a href="japan_okinawa_drive.html" class="header-util-btn" style="background:linear-gradient(135deg, #0284C7, #0369A1); color:#FFFFFF; border:none; font-weight:800; box-shadow:0 2px 8px rgba(2,132,199,0.35);" title="沖繩海島不繞路自駕攻略">
+        <span>🌺 沖繩自駕</span>
       </a>
       <a href="japan_inbound_rankings.html" class="header-util-btn" title="日本排行榜">
         <span>🏆 日本排行榜</span>
@@ -929,7 +944,7 @@
     </div>
 
     <!-- 🚘 【第 1 區塊】Klook 日本客製化包車一日遊 -->
-    <section class="charter-section" id="sec-charter-trips">
+    <section class="charter-section" id="sec-charter-trips" class="charter-section charter-section-tab-panel" style="display:block;">
       <div class="section-header-wrap">
         <div>
           <span class="section-tag-pill">PRIVATE CHARTERED CAR</span>
@@ -973,7 +988,7 @@
     </section>
 
     <!-- 🛣️ 【第 2 區塊】全日本外國人專用高速公路 ETC PASS 總整理 -->
-    <section class="charter-section" id="sec-etc-pass">
+    <section class="charter-section" id="sec-etc-pass" class="charter-section charter-section-tab-panel" style="display:none;">
       <div class="etc-pass-card-wrap">
         <div class="section-header-wrap" style="border-bottom: 1.5px solid #F1F5F9; padding-bottom: 12px; margin-bottom: 12px;">
           <div>
@@ -1097,7 +1112,7 @@
     </section>
 
     <!-- 🚗 【第 3 區塊】租車自駕線上比價 (專屬分潤優惠) -->
-    <section class="charter-section" id="sec-car-rental">
+    <section class="charter-section" id="sec-car-rental" class="charter-section charter-section-tab-panel" style="display:none;">
       
       <!-- 🌺 沖繩自駕專刊黃金 Banner (直連沖繩專區 ＆ ToCoo! 租車分潤) -->
       <div style="background:linear-gradient(135deg, #0284C7 0%, #0369A1 100%); border-radius:14px; padding:18px 24px; color:#FFFFFF; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; box-shadow:0 6px 20px rgba(2,132,199,0.25);">
@@ -1147,7 +1162,69 @@
     </section>
 
     <!-- 📘 【第 4 區塊】日本自駕交規常識懶人包 -->
-    <section class="charter-section" id="sec-driving-sop">
+    
+    <!-- ✈️ 24H 機場專車接送專區 (獨立 Tab 面板) -->
+    <section class="charter-section charter-section-tab-panel" id="sec-airport-transfer" style="display:none;">
+      <div class="section-header-wrap">
+        <div>
+          <span class="section-tag-pill" style="background:#E0F2FE; color:#0369A1;">AIRPORT PRIVATE TRANSFER</span>
+          <h2 class="section-title">✈️ 日本主要國際機場 24H 專車接送機</h2>
+          <p class="section-desc">紅眼航班、全家老小或大件行李首選！司機親切舉牌迎接，專車直達飯店門口，免擠電車爬樓梯。</p>
+        </div>
+      </div>
+
+      <div class="charter-products-grid" style="grid-template-columns: repeat(3, 1fr) !important;">
+        <div class="charter-product-card">
+          <div class="charter-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80" alt="成田機場接送" class="charter-card-img">
+            <span class="charter-card-badge">🗼 東京熱門</span>
+          </div>
+          <div class="charter-card-body" style="padding:18px 20px; display:flex; flex-direction:column; flex:1;">
+            <h3 style="font-size:1.05rem; font-weight:800; color:#0F172A; margin-bottom:8px;">成田國際機場 (NRT) ⇄ 東京市區 24H 接送機</h3>
+            <p style="font-size:0.82rem; color:#475569; line-height:1.55; margin-bottom:12px;">航班延誤免費等待 90 分鐘，司機航廈舉牌迎接，直達新宿、銀座、淺草、澀谷各大飯店。</p>
+            <div style="margin-top:auto;">
+              <a href="https://www.klook.com/zh-TW/airport-transfers/" target="_blank" class="charter-book-btn">
+                <span>🎟️ 預約成田專車接送 ➔</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="charter-product-card">
+          <div class="charter-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80" alt="關西機場接送" class="charter-card-img">
+            <span class="charter-card-badge">🐙 關西必備</span>
+          </div>
+          <div class="charter-card-body" style="padding:18px 20px; display:flex; flex-direction:column; flex:1;">
+            <h3 style="font-size:1.05rem; font-weight:800; color:#0F172A; margin-bottom:8px;">關西國際機場 (KIX) ⇄ 大阪 / 京都各大飯店</h3>
+            <p style="font-size:0.82rem; color:#475569; line-height:1.55; margin-bottom:12px;">免拖行李在難波或梅田大迷宮轉車！跨區直達京都祇園或大阪心齋橋飯店門口。</p>
+            <div style="margin-top:auto;">
+              <a href="https://www.klook.com/zh-TW/airport-transfers/" target="_blank" class="charter-book-btn">
+                <span>🎟️ 預約關西專車接送 ➔</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="charter-product-card">
+          <div class="charter-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=700&q=80" alt="新千歲與沖繩接送" class="charter-card-img">
+            <span class="charter-card-badge">❄️ 北海道・沖繩</span>
+          </div>
+          <div class="charter-card-body" style="padding:18px 20px; display:flex; flex-direction:column; flex:1;">
+            <h3 style="font-size:1.05rem; font-weight:800; color:#0F172A; margin-bottom:8px;">新千歲 (CTS) ⇄ 札幌二世谷 ｜ 那霸 (OKA) ⇄ 恩納</h3>
+            <p style="font-size:0.82rem; color:#475569; line-height:1.55; margin-bottom:12px;">四驅雪胎大空間直奔二世谷滑雪場，或沖繩出關直達恩納海景度假村。</p>
+            <div style="margin-top:auto;">
+              <a href="https://www.klook.com/zh-TW/airport-transfers/" target="_blank" class="charter-book-btn">
+                <span>🎟️ 預約機場專車接送 ➔</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="charter-section charter-section-tab-panel" id="sec-driving-sop" style="display:none;">
       <div class="section-header-wrap">
         <div>
           <span class="section-tag-pill" style="background:#E2E8F0; color:#334155;">DRIVING GUIDE</span>
@@ -1266,6 +1343,27 @@
     document.addEventListener('DOMContentLoaded', function() {
       renderCharterTrips('kanto');
     });
+
+
+    // 🌟 頂部大分類核心 Tab 切換 (點按鈕才顯示對應內容，告別塞在同一個頁面！)
+    function switchCharterTab(targetId, btn) {
+      document.querySelectorAll('.charter-nav-strip .nav-strip-item').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const allPanels = ['sec-charter-trips', 'sec-car-rental', 'sec-etc-pass', 'sec-airport-transfer', 'sec-driving-sop'];
+      allPanels.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.style.display = (id === targetId) ? 'block' : 'none';
+        }
+      });
+
+      // 平滑捲動至頂部檢視區
+      const navStrip = document.querySelector('.charter-nav-strip');
+      if (navStrip) {
+        navStrip.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
 
 </script>
 </body>
