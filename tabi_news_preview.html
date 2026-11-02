@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="./images/japan_tabi_logo.png">
-  <title>日旅報報 JAPAN TABI NEWS ｜ 全日本四季時令前線・花火大會・極上粉雪・觀光名所官方指南</title>
+  <title>日旅報報 JAPAN TABI ｜ 全日本四季時令前線・花火大會・極上粉雪・觀光名所官方指南</title>
   
   <!-- 字體 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Shippori+Mincho:wght@600;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Shippori+Mincho:wght@600;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
     /* 莫蘭迪柔和粉嫩色系 (Morandi Soft Palette & Official Japanese Tourism Aesthetic) */
@@ -5998,13 +5998,376 @@
     .brand-text {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 3px;
+      align-items: center;
+      justify-content: center;
+      gap: 3px; /* 加上 3px 高度距離，解決兩排字體黏在一起的問題 */
     }
+    .brand-text h1 {
+      margin: 0;
+      padding: 0;
+      line-height: 1.1;
+      display: flex;
+    }
+    .brand-title-zh {
+      color: #094F8D !important;
+      font-weight: 900 !important;
+      font-size: 1.62rem !important;
+      letter-spacing: 0.5px !important;
+      display: block;
+      text-align: center;
+    }
+    /* 🌟 下方列：JAPAN TABI 在左，日本觀光情報在右，中間精準保持 5px 舒適親和距離 */
     .brand-sub-official-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px !important; /* 精準 5px 橫向距離 */
+      margin-top: 5px !important; /* 高度加上 3px 呼吸感 (從 2px 增至 5px) */
+      padding: 0;
+    }
+    .brand-title-en {
+      color: #ED1A21 !important;
+      font-family: var(--font-en);
+      font-size: 0.68rem !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      line-height: 1;
+      margin: 0 !important;
+      white-space: nowrap;
+    }
+    .brand-tag-official {
+      font-size: 0.62rem !important;
+      font-weight: 800 !important;
+      background: #ED1A21 !important;
+      color: #FFFFFF !important;
+      padding: 1.5px 6px !important;
+      border-radius: 4px !important;
+      letter-spacing: 0.4px;
+      box-shadow: 0 1px 4px rgba(237, 26, 33, 0.22) !important;
+      line-height: 1.25;
+      margin: 0 !important;
+      white-space: nowrap;
+    }
+
+    /* 🌟 官網頂部 Header 與官方 LOGO 區塊：無論任何模式 (包括鐵道或花火)，永遠保持高雅純淨象牙白底與官方品牌色，絕對不變黑 */
+    .app-header,
+    body.mode-hanabi .app-header,
+    body.mode-train .app-header,
+    body.mode-snow .app-header,
+    body.mode-sakura .app-header,
+    body.mode-camp .app-header {
+      background: rgba(250, 248, 245, 0.96) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border-bottom: 1px solid #E5E0D6 !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+    }
+    .brand-title-zh,
+    body.mode-hanabi .brand-title-zh,
+    body.mode-train .brand-title-zh {
+      color: #094F8D !important;
+    }
+    .brand-title-en,
+    body.mode-hanabi .brand-title-en,
+    body.mode-train .brand-title-en {
+      color: #ED1A21 !important;
+    }
+    .brand-tag-official,
+    body.mode-hanabi .brand-tag-official,
+    body.mode-train .brand-tag-official {
+      background: #ED1A21 !important;
+      color: #FFFFFF !important;
+    }
+    .header-util-btn,
+    body.mode-hanabi .header-util-btn,
+    body.mode-train .header-util-btn {
+      background: #FFFFFF !important;
+      border: 1.5px solid #E2E8F0 !important;
+      color: #334155 !important;
+    }
+
+    /* 🚂 鐵道之旅模式：保持清爽明亮的日系旅行質感，不變黑底 */
+    body.mode-train {
+      background: #FAF8F5 !important;
+      color: #2D3748 !important;
+    }
+    body.mode-train .community-feed-section {
+      background: linear-gradient(135deg, #F0FDF4 0%, #E0F2FE 100%) !important;
+      border: 1.5px solid #BAE6FD !important;
+      box-shadow: 0 4px 16px rgba(186, 230, 253, 0.25) !important;
+    }
+    body.mode-train .feed-title {
+      color: #0F172A !important;
+    }
+
+    /* 🌟 法式高訂細長雅緻字體 (French Haute-Couture Slender Serif) */
+    .hero-slogan-en {
+      font-family: 'Cormorant Garamond', 'Playfair Display', Didot, 'Bodoni MT', Georgia, serif;
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 1.15rem;
+      line-height: 1.5;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .hero-slogan-zh {
+      font-family: 'Shippori Mincho', 'Noto Serif TC', serif !important;
+      font-size: 1.62rem !important; /* 縮小尺寸，精準典雅適中 */
+      font-weight: 700 !important;
+      color: #FFFFFF !important;
+      line-height: 1.5 !important;
+      letter-spacing: 2px !important; /* 書法文藝字距 */
+      margin-bottom: 8px !important;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6) !important;
+    }
+    .hero-slogan-ja {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 1.6px;
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      margin-bottom: 14px;
+    }
+    .diary-quote-en {
+      font-family: 'Cormorant Garamond', 'Playfair Display', Didot, serif;
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: 1.6px;
+      color: #64748B;
+      font-size: 0.92rem;
+      margin-top: 6px;
+    }
+
+
+    /* 🌟 頂部右側功能按鈕統一樣式 (Trip、包車租車、語言切換：高度一致 36px，統一純白底柔灰邊框) */
+    .header-util-btn {
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      color: #334155;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .header-util-btn:hover {
+      border-color: #094F8D;
+      color: #094F8D;
+      background: #F8FAFC;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(9, 79, 141, 0.1);
+    }
+    .util-btn-icon {
+      font-size: 0.95rem;
+      line-height: 1;
+    }
+    .header-right {
       display: flex;
       align-items: center;
+      gap: 10px !important;
+      justify-self: end;
+    }
+
+
+    /* 🌟 名所卡片微型膠囊切換器 (Spot Card Micro Tab Switcher - 行程建議 / 美食咖啡 / 住宿) */
+    .spot-pills-switcher {
+      display: flex;
+      gap: 6px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 999px;
+      padding: 3px;
+      margin: 10px 0 12px;
+    }
+    .spot-switch-pill {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #64748B;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+    .spot-switch-pill:hover {
+      color: #F97940;
+    }
+    .spot-switch-pill.active {
+      background: #FFFFFF !important;
+      color: #EA580C !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+      font-weight: 900 !important;
+    }
+
+    /* 切換內容展示區 (高度精巧適中，資訊清晰，告別落落長堆疊) */
+    .spot-tab-content-panel {
+      min-height: 80px;
+      background: #FAF8F5;
+      border: 1px solid #F1EFE9;
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+    .spot-plan-step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .spot-plan-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      color: #334155;
+    }
+    .spot-plan-badge {
+      font-size: 0.68rem;
+      font-weight: 800;
+      background: #FFEDD5;
+      color: #C2410C;
+      border: 1px solid #FDBA74;
+      padding: 1px 6px;
+      border-radius: 6px;
+      flex-shrink: 0;
       margin-top: 1px;
+    }
+
+    /* 🌟 全站按鈕全面符合官方 6 套色票規範 (Palette-Strict Buttons) */
+    .btn-act-clean {
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+    .btn-act-clean:hover {
+      transform: translateY(-2px);
+    }
+    /* 主行動按鈕 (🎟️ 預定行程)：規範 Group 1 溫暖蜜桃橘粉 (#F97940 ➔ #FFB76D) */
+    .btn-act-primary {
+      background: linear-gradient(135deg, #F97940 0%, #FFB76D 100%) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      box-shadow: 0 3px 12px rgba(249, 121, 64, 0.32) !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) !important;
+    }
+    .btn-act-primary:hover {
+      background: linear-gradient(135deg, #EA6D35 0%, #FFA852 100%) !important;
+      box-shadow: 0 6px 18px rgba(249, 121, 64, 0.45) !important;
+    }
+    /* 次行動按鈕 (🏨 訂房去)：規範 Group 2/4 極上晨雪冰川藍 (#ADCCD1 邊框 ＋ #F0F8FA 柔光底) */
+    .btn-act-secondary {
+      background: linear-gradient(135deg, #F0F8FA 0%, #E2F1F4 100%) !important;
+      color: #2D6A75 !important;
+      border: 1.5px solid #ADCCD1 !important;
+      box-shadow: 0 2px 8px rgba(173, 204, 209, 0.22) !important;
+      text-shadow: none !important;
+    }
+    .btn-act-secondary:hover {
+      background: linear-gradient(135deg, #2D6A75 0%, #3B7A87 100%) !important;
+      border-color: #2D6A75 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 5px 14px rgba(45, 106, 117, 0.35) !important;
+    }
+
+    /* Hero Banner 探索按鈕：規範 Group 1 */
+    .btn-hero-discover {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #F97940 0%, #FFB76D 100%) !important;
+      border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+      color: #FFFFFF !important;
+      padding: 12px 30px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px rgba(249, 121, 64, 0.45) !important;
+      letter-spacing: 0.5px;
+    }
+    .btn-hero-discover:hover {
+      background: linear-gradient(135deg, #EA6D35 0%, #FFA852 100%) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(249, 121, 64, 0.6) !important;
+    }
+
+    /* 頂部功能按鈕：純白和紙底 ＋ 溫潤莫蘭迪邊框，懸浮呼應珊瑚橘 */
+    .header-util-btn {
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: #FFFFFF !important;
+      border: 1.5px solid #E8E5DF !important;
+      color: #4A3E31 !important;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .header-util-btn:hover {
+      border-color: #F97940 !important;
+      color: #F97940 !important;
+      background: #FFFBF9 !important;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(249, 121, 64, 0.15) !important;
+    }
+
+    /* 實況回報按鈕：規範 Group 1 */
+    .btn-upload-banner,
+    body.mode-sakura .btn-upload-banner {
+      background: linear-gradient(135deg, #F97940 0%, #FFB76D 100%) !important;
+      box-shadow: 0 3px 12px rgba(249, 121, 64, 0.35) !important;
+      color: #FFFFFF !important;
+    }
+    body.mode-snow .btn-upload-banner {
+      background: linear-gradient(135deg, #2D6A75 0%, #ADCCD1 100%) !important;
+      box-shadow: 0 3px 12px rgba(45, 106, 117, 0.35) !important;
+      color: #FFFFFF !important;
+    }
+    body.mode-train .btn-upload-banner {
+      background: linear-gradient(135deg, #77C9C5 0%, #B9D672 100%) !important;
+      box-shadow: 0 3px 12px rgba(119, 201, 197, 0.35) !important;
+      color: #1A3828 !important;
+    }
+    body.mode-camp .btn-upload-banner {
+      background: linear-gradient(135deg, #9FAF64 0%, #FFD283 100%) !important;
+      box-shadow: 0 3px 12px rgba(159, 175, 100, 0.35) !important;
+      color: #FFFFFF !important;
     }
 
 </style>
@@ -6021,22 +6384,13 @@
 
   <canvas id="fx-canvas"></canvas>
 
-    <!-- 頂部 Header：官方規格品牌識別 (置中排版 ＆ LOGO 放大 10%) -->
+    <!-- 頂部 Header：官方規格品牌識別 (中央品牌 ＆ 右側統一功能按鈕群) -->
   <header class="app-header">
     <div class="header-left">
-      <!-- Trip 查機票按鈕 -->
-      <button class="btn-trip-pill" onclick="window.open(buildTripFlightUrl('tokyo'), '_blank')">
-        <span>✈️</span>
-        <span id="tripBtnText">Trip 查機票</span>
-      </button>
-      <!-- 🚗 包車 / 租車 專屬按鈕 -->
-      <button class="btn-charter-nav-pill" onclick="openCharterRentalPortal()">
-        <span>🚗</span>
-        <span>包車 / 租車</span>
-      </button>
+      <!-- 左側平衡留白，保障中央品牌在視覺上精準居中 -->
     </div>
 
-    <!-- 🌟 官網正中間品牌標誌與全新文字排版 -->
+    <!-- 🌟 官網正中間品牌標誌與文字排版 (JAPAN TABI 小小的在左，日本觀光情報在右，左右完全對齊) -->
     <div class="header-center">
       <a href="#" class="brand-wrap brand-centered">
         <div class="fuji-logo-box">
@@ -6045,20 +6399,33 @@
         <div class="brand-text">
           <h1 id="brandTitle">
             <span class="brand-title-zh" id="brandTitleZh">日旅報報</span>
-            <span class="brand-title-en" id="brandTitleEn">JAPAN TABI</span>
           </h1>
           <div class="brand-sub-official-wrap">
+            <span class="brand-title-en" id="brandTitleEn">JAPAN TABI</span>
             <span class="brand-tag-official" id="brandTag">日本觀光情報</span>
           </div>
         </div>
       </a>
     </div>
 
+    <!-- 🌟 頂部右側統一功能按鈕群 (✈️ Trip 查機票 ＋ 🚗 包車/租車 ＋ 🌐 Language，統一高度與整齊配色) -->
     <div class="header-right">
-      <!-- 前台語言切換器 (Header Selector: 🌐 Language 下拉選單) -->
+      <!-- 1. Trip 查機票按鈕 -->
+      <button class="header-util-btn" onclick="window.open(buildTripFlightUrl('tokyo'), '_blank')" title="Trip.com 即時低價機票比價">
+        <span class="util-btn-icon">✈️</span>
+        <span id="tripBtnText">Trip 查機票</span>
+      </button>
+
+      <!-- 2. 🚗 包車 / 租車 專屬按鈕 -->
+      <button class="header-util-btn" onclick="openCharterRentalPortal()" title="全日本自駕租車比價 ＆ 私人中文包車一日遊">
+        <span class="util-btn-icon">🚗</span>
+        <span>包車 / 租車</span>
+      </button>
+
+      <!-- 3. 前台語言切換器 (🌐 Language) -->
       <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
-        <button class="lang-selector-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)">
-          <span class="lang-globe-icon">🌐</span>
+        <button class="header-util-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)" title="切換語言">
+          <span class="util-btn-icon">🌐</span>
           <span id="currentLangLabel">Language</span>
           <span class="lang-arrow" id="langArrow">▾</span>
         </button>
@@ -6104,12 +6471,18 @@
     <div class="hero-content-container">
       <div class="hero-left-pane">
         <div class="hero-tag-pill">🌸 2026 全日本四季情報官方觀測網</div>
-        <h1 class="hero-main-title">
-          EXPLORE BEAUTIFUL<br>JAPAN WITH US
-        </h1>
-        <p class="hero-quote-text">
-          “Let us take the hassle out of travel planning, so you can focus on the adventure ahead.”<br>
-          <span class="hero-quote-sub">讓四季美景撫慰心靈，全日本櫻花花期、極上粉雪、秘境露營與夏夜花火即時連線。</span>
+        <div class="hero-brand-slogan-lockup" style="margin-top: 8px;">
+          <!-- 🌟 細長法式風情英文 Slogan -->
+          <div class="hero-slogan-en">From Spring Blooms to Winter Snow — Every Encounter, Once in a Lifetime.</div>
+          <!-- 🌟 中文主標 -->
+          <h1 class="hero-slogan-zh">
+            春櫻冬雪，每一場與日本的相遇，<br>都是一期一會。
+          </h1>
+          <!-- 🌟 日文美學對照 -->
+          <div class="hero-slogan-ja">春の桜、冬の雪。すべての出逢いを、一期一会に。</div>
+        </div>
+        <p class="hero-quote-text" style="margin-top: 4px;">
+          <span class="hero-quote-sub">讓四季美景撫慰心靈，全日本櫻花花期、極上粉雪、季節鐵道與秘境露營即時連線。</span>
         </p>
         <div class="hero-btn-row">
           <button class="btn-hero-discover" onclick="scrollToDeals()">
@@ -6249,13 +6622,13 @@
   <div class="sakura-region-bar" id="sakuraRegionBar" style="margin: 12px 0 18px 0;">
     <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
       <button class="region-pill active" data-region="all" onclick="selectSakuraRegion('all', this)">
-        <span>🌸</span> <span>全日本名所 (80)</span>
+        <span>🌸</span> <span>全日本名所 (140)</span>
       </button>
       <button class="region-pill" data-region="kanto" onclick="selectSakuraRegion('kanto', this)">
-        <span>🗼</span> <span>關東・東京 (10)</span>
+        <span>🗼</span> <span>關東・東京 (40)</span>
       </button>
       <button class="region-pill" data-region="kansai" onclick="selectSakuraRegion('kansai', this)">
-        <span>⛩️</span> <span>關西・京阪神 (10)</span>
+        <span>⛩️</span> <span>關西・京都大阪 (40)</span>
       </button>
       <button class="region-pill" data-region="tohoku" onclick="selectSakuraRegion('tohoku', this)">
         <span>🏯</span> <span>東北 (10)</span>
@@ -8311,7 +8684,7 @@
             <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
           </div>
           <div>
-            <div style="font-weight:900; font-size:0.92rem; color:#1E293B;">日旅報報 JAPAN TABI NEWS</div>
+            <div style="font-weight:900; font-size:0.92rem; color:#1E293B;">日旅報報 JAPAN TABI</div>
             <div style="font-size:0.72rem; color:#64748B;">全日本四季時令前線・名所官方特約指南 ｜ 現地取材認證</div>
           </div>
         </div>
@@ -9212,7 +9585,7 @@
             <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
           </div>
           <div>
-            <div style="font-weight:900; font-size:0.92rem; color:#1E293B;">日旅報報 JAPAN TABI NEWS</div>
+            <div style="font-weight:900; font-size:0.92rem; color:#1E293B;">日旅報報 JAPAN TABI</div>
             <div style="font-size:0.72rem; color:#64748B;">全日本四季時令前線・名所官方特約指南 ｜ 現地取材認證</div>
           </div>
         </div>
@@ -11029,7 +11402,7 @@
             <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
           </div>
           <div>
-            <div style="font-weight:900; font-size:0.92rem; color:#1E293B;">日旅報報 JAPAN TABI NEWS</div>
+            <div style="font-weight:900; font-size:0.92rem; color:#1E293B;">日旅報報 JAPAN TABI</div>
             <div style="font-size:0.72rem; color:#64748B;">全日本四季時令前線・名所官方特約指南 ｜ 現地取材認證</div>
           </div>
         </div>
@@ -11352,7 +11725,7 @@
             <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
           </div>
           <div>
-            <div style="font-weight:900; font-size:0.92rem; color:#1E293B;">日旅報報 JAPAN TABI NEWS</div>
+            <div style="font-weight:900; font-size:0.92rem; color:#1E293B;">日旅報報 JAPAN TABI</div>
             <div style="font-size:0.72rem; color:#64748B;">全日本四季時令前線・名所官方特約指南 ｜ 現地取材認證</div>
           </div>
         </div>
@@ -11439,7 +11812,7 @@
     
     <!-- 《日旅報報》品牌創立 (換上官方 LOGO) -->
     <div class="footer-diary-banner">
-      <div class="diary-stamp-mark fuji-logo-box" style="width:54px; height:54px; border:2.5px solid #ED1A21; border-radius:50%; box-shadow:0 3px 12px rgba(237,26,33,0.18); overflow:hidden; flex-shrink:0;">
+      <div class="diary-stamp-mark fuji-logo-box" style="width:66px; height:66px; border:2.5px solid #ED1A21; border-radius:50%; box-shadow:0 4px 14px rgba(237,26,33,0.22); overflow:hidden; flex-shrink:0;">
         <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
       </div>
       <div class="diary-content">
@@ -11486,7 +11859,7 @@
           <div class="fuji-logo-box" style="width:34px; height:34px; border-radius:50%;">
             <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
           </div>
-          <h4 style="font-size:1.05rem; font-weight:900; border:none; margin:0; padding:0;">日旅報報 JAPAN TABI NEWS</h4>
+          <h4 style="font-size:1.05rem; font-weight:900; border:none; margin:0; padding:0;">日旅報報 JAPAN TABI</h4>
         </div>
         <p style="font-size:0.78rem; color:#718096; line-height:1.7;">
           全日本四季時令前線・夏夜花火大會・雪況觀測・名所官方特約指南。嚴選觀光實勘情報，締造最高規格的自由行旅程。
@@ -11525,7 +11898,7 @@
     <!-- 官方特約觀測現地取材認證與著作權聲明 -->
     <div class="footer-certification-box" style="max-width:1440px; margin:24px auto 0; padding:16px 20px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; font-size:0.76rem; color:#64748B; line-height:1.6;">
       <div style="font-weight:900; color:#094F8D; margin-bottom:4px; font-size:0.84rem;">
-        【日旅報報 JAPAN TABI NEWS 官方特約觀測現地取材認證】
+        【日旅報報 JAPAN TABI 官方特約觀測現地取材認證】
       </div>
       <div>
         本文與觀光景點情報受著作權法保護，未經授權禁止爬蟲搬運與商業轉載。
@@ -11537,7 +11910,7 @@
 
     <div style="max-width:1440px; margin:20px auto 0; padding-top:18px; border-top:1px dashed #DDD8CE; display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:#A0AEC0; flex-wrap:wrap; gap:12px;">
       <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
-        <span style="font-weight:700;">© 2026 日旅報報 JAPAN TABI NEWS ｜ 全日本觀光情報局</span>
+        <span style="font-weight:700;">© 2026 日旅報報 JAPAN TABI ｜ 全日本觀光情報局</span>
         
         <!-- IG & Threads 素雅簡約社群 ICON (無刺眼底色，高級灰階 hover 顯色) -->
         <div style="display:flex; align-items:center; gap:12px; margin-left:8px;">
@@ -11902,14 +12275,12 @@
       currentLang = lang;
       
       const t = I18N[lang] || I18N['zh-TW'];
-      const brandTitle = document.getElementById('brandTitle');
-      if (brandTitle) {
-        brandTitle.innerHTML = `
-          <span class="brand-title-zh" id="brandTitleZh">${t.brandTitle}</span>
-          <span class="brand-title-en" id="brandTitleEn">JAPAN TABI</span>
-          <span class="brand-tag-official" id="brandTag">${t.brandTag}</span>
-        `;
-      }
+      const brandTitleZh = document.getElementById('brandTitleZh');
+      if (brandTitleZh) brandTitleZh.innerText = t.brandTitle;
+      const brandTitleEn = document.getElementById('brandTitleEn');
+      if (brandTitleEn) brandTitleEn.innerText = t.brandEn || 'JAPAN TABI';
+      const brandTag = document.getElementById('brandTag');
+      if (brandTag) brandTag.innerText = t.brandTag;
       
       const brandSub = document.getElementById('brandSub');
       if (brandSub) brandSub.innerText = t.brandSub;
@@ -14921,6 +15292,1521 @@
           img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=80'
         }
       }
+,
+
+      // 🌸 擴充：東京 40 大櫻花名所 ＆ 關西（京都・大阪）40 大櫻花名所 深度完整收錄
+        "id": "yoyogi_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "代代木公園",
+      "subtitle": "700株大草坪野餐賞櫻勝地・市中心最受年輕人喜愛的花見草皮",
+      "tag": "東京・澀谷區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻、大島櫻",
+      "desc": "緊鄰原宿與明治神宮的廣闊草坪公園，櫻花盛開時鋪上野餐墊野餐氣氛最為熱烈悠閒。",
+      "locationDetail": "JR原宿站/地鐵明治神宮前站步行3分鐘",
+      "img": "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BB%A3%E4%BB%A3%E6%9C%A8%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B8%8B%E8%B0%B7",
+      "cafe": {
+            "name": "代代木公園 Tree by Naked",
+            "feature": "綠意窗景・有機早午餐・季節櫻花焙茶飲"
+      },
+      "japanFood": {
+            "name": "原宿 表參道米其林懷石料理",
+            "feature": "季節旬味套餐・嚴選黑毛和牛與海膽入席"
+      },
+      "hotel": {
+            "name": "澀谷 sequence MIYASHITA PARK",
+            "feature": "宮下公園高空綠洲・澀谷站步行5分直達"
+      }
+},
+        "id": "hamarikyu_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "濱離宮恩賜庭園",
+      "subtitle": "德川將軍潮入池泉・大片金黃油菜花與淡粉櫻花雙色交織",
+      "tag": "東京・中央區",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻、八重櫻、黃色鬱金櫻",
+      "desc": "引進東京灣海水的潮入池回遊名園，30萬株油菜花花海與櫻花同框，遠眺汐留摩天樓。",
+      "locationDetail": "都營大江戶線築地市場站步行7分鐘",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%BF%B1%E9%9B%A2%E5%AE%AE%E5%BA%AD%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B1%90%E7%95%99",
+      "cafe": {
+            "name": "水上茶屋「中島之茶屋」",
+            "feature": "池中浮島茶屋・享用上生菓子抹茶・窗景櫻倒影"
+      },
+      "japanFood": {
+            "name": "築地 壽司清本館",
+            "feature": "晨捕極鮮江戶前握壽司・百年老師傅現場手握"
+      },
+      "hotel": {
+            "name": "Conrad Tokyo (東京康萊德酒店)",
+            "feature": "俯瞰濱離宮庭園全景・汐留站直通五星奢華"
+      }
+},
+        "id": "shiba_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "芝公園與增上寺",
+      "subtitle": "東京鐵塔最佳經典機位・德川家靈廟朱紅三門與垂櫻同框",
+      "tag": "東京・港區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻、里櫻",
+      "desc": "東京最具辨識度的地標賞櫻角度！巍峨紅色東京鐵塔矗立在櫻花樹冠之後，夜間點燈絕景絕美。",
+      "locationDetail": "都營三田線芝公園站步行2分鐘 / 御成門站步行2分",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E9%90%B5%E5%A1%94%20%E8%8A%9D%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B8%AF%E5%8D%80+%E6%9D%B1%E4%BA%AC%E9%90%B5%E5%A1%94",
+      "cafe": {
+            "name": "Le Pain Quotidien 芝公園店",
+            "feature": "歐陸露天露台座席・直面東京鐵塔與春櫻日光浴"
+      },
+      "japanFood": {
+            "name": "東京 芝 とうふ屋うかい (豆腐屋Ukai)",
+            "feature": "江戶古宅庭園宴席・名物胡麻豆腐與炭火田樂燒"
+      },
+      "hotel": {
+            "name": "The Prince Park Tower Tokyo",
+            "feature": "客房窗景正對東京鐵塔頂部・芝公園綠地環抱"
+      }
+},
+        "id": "asuka_yama_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "飛鳥山公園",
+      "subtitle": "八代將軍德川吉宗開闢江戶名所・都電荒川線櫻花同框",
+      "tag": "東京・北區",
+      "bloomStatus": "🌸 滿開吹雪 (95%)",
+      "species": "染井吉野櫻、里櫻",
+      "desc": "自江戶時代即為平民賞櫻勝地，可乘坐可愛的單軌纜車登頂，捕捉路面電車都電穿梭櫻花的復古畫面。",
+      "locationDetail": "JR京濱東北線/都電荒川線王子站直達步行1分鐘",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%A3%9B%E9%B3%A5%E5%B1%B1%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%8E%8B%E5%AD%90%E7%AB%99",
+      "cafe": {
+            "name": "飛鳥山 展望茶房 櫻茶屋",
+            "feature": "俯瞰都電荒川線交會・品嚐現烤糯米糰子甘酒"
+      },
+      "japanFood": {
+            "name": "王子扇屋 江戶前厚燒玉子燒",
+            "feature": "300年老舖傳承・落語故事中的夢幻江戶風味"
+      },
+      "hotel": {
+            "name": "JR東日本大都會大飯店 東京池袋",
+            "feature": "轉乘直達王子站・JR池袋站西口步行1分鐘"
+      }
+},
+        "id": "yasukuni_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "靖國神社開花標本木",
+      "subtitle": "氣象廳東京櫻花宣告基準樹・神門前百株壯麗染井吉野",
+      "tag": "東京・千代田區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻 (東京都氣象觀測標本木)",
+      "desc": "每年全日本注目的東京開花宣告樹所在地！境內600株櫻花古木參天，神社鳥居與白壁掩映典雅肅穆。",
+      "locationDetail": "地鐵九段下站1號出口步行5分鐘",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%B9%9D%E6%AE%B5%E4%B8%8B",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%B9%9D%E6%AE%B5%E4%B8%8B",
+      "cafe": {
+            "name": "八雲茶寮 九段支店",
+            "feature": "精緻和菓子・現沏靜岡手摘煎茶・庭園靜心"
+      },
+      "japanFood": {
+            "name": "九段 斑鳩 本店 (Ikaruga)",
+            "feature": "東京名物豚骨魚介拉麵・濃厚湯頭與特選叉燒"
+      },
+      "hotel": {
+            "name": "Hotel Grand Palace Tokyo (重新裝修)",
+            "feature": "鄰近千鳥之淵與靖國神社・步行即達雙賞櫻名所"
+      }
+},
+        "id": "hibiya_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "日比谷公園",
+      "subtitle": "日本首座西式近代公園・雲形池大噴水與春櫻交會",
+      "tag": "東京・千代田區",
+      "bloomStatus": "🌸 滿開 (90%)",
+      "species": "染井吉野櫻、里櫻",
+      "desc": "帝國飯店與銀座旁繁華綠洲，鶴之噴水池水霧倒映岸邊垂櫻，適合午後漫步至銀座購物。",
+      "locationDetail": "地鐵日比谷站/霞關站出站即達",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%AF%94%E8%B0%B7",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%97%A5%E6%AF%94%E8%B0%B7",
+      "cafe": {
+            "name": "日比谷松本樓 森林露台咖啡",
+            "feature": "百年歷史歐風洋樓・坐在銀杏櫻花樹下嚐招牌咖哩"
+      },
+      "japanFood": {
+            "name": "銀座 壽司幸本店",
+            "feature": "江戶前老字號名店・天然白身魚與赤酢飯極致搭配"
+      },
+      "hotel": {
+            "name": "Imperial Hotel Tokyo (帝國飯店)",
+            "feature": "日本迎賓館傳奇名門・直面日比谷公園櫻木綠意"
+      }
+},
+        "id": "aoyama_reien_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "青山靈園櫻花大道",
+      "subtitle": "市中心幽靜壯麗的百年櫻花隧道・六本木新城眺望",
+      "tag": "東京・港區",
+      "bloomStatus": "🌸 滿開吹雪 (95%)",
+      "species": "染井吉野櫻",
+      "desc": "兩側樹齡逾百年的壯觀櫻花交織成拱形穹頂，落櫻如雪覆蓋路面，靜謐肅穆而極具詩意。",
+      "locationDetail": "地鐵乃木坂站5號出口步行3分鐘 / 外苑前站步行7分",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%9D%92%E5%B1%B1%20%E6%AB%BB%E8%8A%B1",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%9D%92%E5%B1%B1+%E5%85%AD%E6%9C%AC%E6%9C%A8",
+      "cafe": {
+            "name": "Blue Bottle Coffee Aoyama Cafe",
+            "feature": "綠意庭院二樓座位・精品手沖單品咖啡・悠閒早晨"
+      },
+      "japanFood": {
+            "name": "南青山 割烹 櫻川",
+            "feature": "四季旬彩懷石席・京都直送湯葉與春季烤香魚"
+      },
+      "hotel": {
+            "name": "The Capitol Hotel Tokyu",
+            "feature": "隈研吾大師和風設計・赤坂見附地鐵四線直通"
+      }
+},
+        "id": "mohrigarden_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "六本木之丘毛利庭園",
+      "subtitle": "都會摩天大樓倒影日式名園・夜間夢幻櫻花光影秀",
+      "tag": "東京・港區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "毛利甲斐守老櫻樹、染井吉野櫻、枝垂櫻",
+      "desc": "江戶時代大名毛利家屋敷古庭園，現代感森大廈與古典池泉迴遊、巨型愛心公共藝術同框。",
+      "locationDetail": "地鐵六本木站1C出口直通六本木之丘",
+      "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%85%AD%E6%9C%AC%E6%9C%A8%E4%B9%8B%E4%B8%98",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%AD%E6%9C%AC%E6%9C%A8",
+      "cafe": {
+            "name": "Harbs 六本木 Hills 店",
+            "feature": "名物新鮮水果千層蛋糕・外帶至毛利庭園池畔品嚐"
+      },
+      "japanFood": {
+            "name": "六本木 割烹 炭火燒鳥 今井",
+            "feature": "嚴選秋田比內地雞・炭香鮮嫩・米其林推薦席位"
+      },
+      "hotel": {
+            "name": "Grand Hyatt Tokyo (君悅酒店)",
+            "feature": "六本木之丘直通・下樓即達毛利庭園與森美術館"
+      }
+},
+        "id": "tokyo_midtown_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "東京中城 Midtown Sakura Street",
+      "subtitle": "長達200公尺春櫻街道・璀璨粉紅夜間光雕燈光秀",
+      "tag": "東京・港區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻（約150株老樹）",
+      "desc": "東京最時尚奢華的花見散步道，沿途高檔餐廳設有露天座席，粉櫻在精心設計的光雕下極盡浪漫。",
+      "locationDetail": "地鐵六本木站8號出口地下直通東京中城",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E4%B8%AD%E5%9F%8E",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E4%BA%AC%E4%B8%AD%E5%9F%8E",
+      "cafe": {
+            "name": "Toshi Yoroizuka 鎧塚俊彥甜點沙龍",
+            "feature": "米其林三星甜點名廚・吧台現點現做季節櫻花舒芙蕾"
+      },
+      "japanFood": {
+            "name": "中城 割烹 濱田家 (Hamadaya)",
+            "feature": "明治時代創立三星玄冶店・品味極上江戶料亭工藝"
+      },
+      "hotel": {
+            "name": "The Ritz-Carlton, Tokyo (麗思卡爾頓)",
+            "feature": "坐落中城塔頂53樓・俯瞰東京鐵塔與滿城櫻海"
+      }
+},
+        "id": "harimazaka_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "播磨坂櫻花並木",
+      "subtitle": "文京區閑靜坡道中央綠帶・120株櫻花拱門步道",
+      "tag": "東京・文京區",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻、鬱金櫻",
+      "desc": "文豪薈萃的文京文教區私房景點，寬闊車道中央整修為石板步道，綠地溪流造景與滿天櫻花融為一體。",
+      "locationDetail": "地鐵丸之內線茗荷谷站步行7分鐘",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%92%AD%E7%A3%A8%E5%9D%82",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%8C%97%E8%8D%B7%E8%B0%B7",
+      "cafe": {
+            "name": "Cafe&Bar 播磨坂 mori",
+            "feature": "正對櫻花斜坡・品嚐自家製法式鹹派與有機咖啡"
+      },
+      "japanFood": {
+            "name": "小石川 和食 蕎麥 蔦",
+            "feature": "現磨十割手打蕎麥麵・搭配酥脆櫻花蝦天婦羅"
+      },
+      "hotel": {
+            "name": "Hotel Chinzanso Tokyo (椿山莊大酒店)",
+            "feature": "百年悠久森林庭園・春季早晨薄霧雲海與古塔春櫻"
+      }
+},
+        "id": "otonashi_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "音無親水公園",
+      "subtitle": "日本都市公園百選・石橋迴廊水岸與潺潺溪流倒影春櫻",
+      "tag": "東京・北區",
+      "bloomStatus": "🌸 滿開 (90%)",
+      "species": "染井吉野櫻、山櫻",
+      "desc": "石造仿古拱橋跨越音無川，水車與舊水道旁櫻花如雲，與飛鳥山公園一併遊覽是北區經典動線。",
+      "locationDetail": "JR王子站北口出站即達步行1分鐘",
+      "img": "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%9F%B3%E7%84%A1%E8%A6%AA%E6%B0%B4%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%8E%8B%E5%AD%90",
+      "cafe": {
+            "name": "王子 渋沢亭 茶寮",
+            "feature": "欣賞音無川潺潺水車・品味和風抹茶冰淇淋甜品"
+      },
+      "japanFood": {
+            "name": "名代 鰻 登川 (Oji)",
+            "feature": "百年傳統秘傳醬汁・備長炭慢烤關東風味鰻魚飯"
+      },
+      "hotel": {
+            "name": "HOTEL MYSTAYS Higashi Ikebukuro",
+            "feature": "平價舒適連鎖設計旅店・鄰近池袋商圈生活機能齊全"
+      }
+},
+        "id": "kandagawa_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "神田川櫻並木 (面影橋)",
+      "subtitle": "都電荒川線復古電車直達・垂枝深入川面水岸花筏",
+      "tag": "東京・新宿/豐島區",
+      "bloomStatus": "🌸 滿開吹雪 (100%)",
+      "species": "染井吉野櫻",
+      "desc": "早稻田大學附近的私房水岸，河道狹窄兩岸櫻花完全合抱覆蓋水面，花瓣掉落形成厚厚粉紅花河。",
+      "locationDetail": "都電荒川線面影橋站下車即達",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%9D%A2%E5%BD%B1%E6%A9%8B%20%E6%AB%BB%E8%8A%B1",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%97%A9%E7%A8%BB%E7%94%B0",
+      "cafe": {
+            "name": "早稻田 穴八幡宮前 喫茶室",
+            "feature": "昭和復古喫茶店・手沖曼特寧與烤乳酪蛋糕"
+      },
+      "japanFood": {
+            "name": "神田川 鰻魚老舖 尾花",
+            "feature": "東京米其林一星名店・炭香撲鼻入口即化"
+      },
+      "hotel": {
+            "name": "Rihga Royal Hotel Tokyo (麗嘉皇家酒店)",
+            "feature": "正對大隈庭園・歐式宮廷古典風格大廳"
+      }
+},
+        "id": "zenpukuji_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "善福寺川綠地",
+      "subtitle": "綿延4.2公里400株櫻花道・杉並區寧靜住宅區賞櫻步道",
+      "tag": "東京・杉並區",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻、山櫻",
+      "desc": "完全沒有觀光客吵雜的東京在地人私房祕境，綠樹如茵的慢跑小徑伴隨盛開粉櫻，愜意無比。",
+      "locationDetail": "地鐵丸之內線新高圓寺站/南阿佐谷站步行15分鐘",
+      "img": "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%96%84%E7%A6%8F%E5%AF%BA%E5%B7%9D",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E5%9C%93%E5%AF%BA",
+      "cafe": {
+            "name": "阿佐谷 露台烘焙坊",
+            "feature": "天然酵母現烤法棍與可頌・河畔野餐第一首選"
+      },
+      "japanFood": {
+            "name": "荻窪 炭火燒肉 炭々",
+            "feature": "A5黑毛和牛稀少部位拼盤・在地饕客預約名店"
+      },
+      "hotel": {
+            "name": "JR東日本大都會大飯店 東京丸之內",
+            "feature": "直通東京車站・轉乘JR中央線暢遊杉並吉祥寺"
+      }
+},
+        "id": "koganei_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "小金井公園",
+      "subtitle": "1700株櫻花樹林立・江戶東京建築園復古建築同框",
+      "tag": "東京・小金井市",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "山櫻、染井吉野櫻、里櫻等50種",
+      "desc": "東京都內面積數一數二的大型都立公園，園內櫻花品種多達50種，花期長達一個月以上。",
+      "locationDetail": "JR中央線武藏小金井站轉乘西武巴士5分鐘",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%B0%8F%E9%87%91%E4%BA%95%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%AD%A6%E8%97%8F%E5%A2%83",
+      "cafe": {
+            "name": "江戶東京建築園 復古茶寮「武藏野」",
+            "feature": "坐在歷史古建築榻榻米上品茶・窗外櫻雨飄落"
+      },
+      "japanFood": {
+            "name": "武藏小金井 天麩羅 丸中",
+            "feature": "麻油香脆江戶前天丼・當季穴子魚與海老盛宴"
+      },
+      "hotel": {
+            "name": "吉祥寺第一酒店 (吉祥寺 Excel Hotel Tokyu)",
+            "feature": "吉祥寺生活圈核心・購物美食便利・直達公園"
+      }
+},
+        "id": "showa_kinen_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "國營昭和紀念公園櫻之園",
+      "subtitle": "1500株櫻花與巨幅油菜花地毯・立川遼闊大自然",
+      "tag": "東京・立川市",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻、大島櫻、枝垂櫻",
+      "desc": "佔地廣達180公頃的國營公園，巨大櫻樹垂覆至金黃色油菜花田之上，黃粉雙色強烈對比震撼人心。",
+      "locationDetail": "JR青梅線西立川站出站直達步行2分鐘",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%98%AD%E5%92%8C%E7%B4%80%E5%BF%B5%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%AB%8B%E5%B7%9D",
+      "cafe": {
+            "name": "昭和紀念公園 溪流廣場湖畔露台",
+            "feature": "自行車租借・在湖畔微風中享用熱咖啡與冰淇淋"
+      },
+      "japanFood": {
+            "name": "立川 炭火割烹 七福",
+            "feature": "嚴選日本海直送喉黑魚與甲州紅酒牛肉"
+      },
+      "hotel": {
+            "name": "SORANO HOTEL (立川空野酒店)",
+            "feature": "頂樓無邊際溫水泳池眺望富士山・北歐極簡木質"
+      }
+},
+        "id": "mizumoto_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "水元公園櫻花堤",
+      "subtitle": "東京最大水鄉公園・小合溜水岸綿延1.2公里櫻花林",
+      "tag": "東京・葛飾區",
+      "bloomStatus": "🌸 滿開 (90%)",
+      "species": "染井吉野櫻、八重櫻約700株",
+      "desc": "擁有水鄉澤國風貌的悠閒公園，水塘中水杉與岸邊櫻花倒影，宛如置身歐洲童話水畔。",
+      "locationDetail": "JR常磐線金町站轉乘京成巴士至水元公園站",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%B0%B4%E5%85%83%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%87%91%E7%94%BA",
+      "cafe": {
+            "name": "水元公園 水邊涼亭咖啡",
+            "feature": "野鳥觀察水邊木棧道・微風中品嚐咖啡冰品"
+      },
+      "japanFood": {
+            "name": "柴又 寅次郎 草糰子 高木屋老舖",
+            "feature": "百年電影拍攝地・艾草現做麻糬糰子配紅豆餡"
+      },
+      "hotel": {
+            "name": "淺草 View Hotel (淺草豪景酒店)",
+            "feature": "客房正對東京晴空塔與淺草寺・直通筑波快線"
+      }
+},
+        "id": "shakujii_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "石神井公園",
+      "subtitle": "三寶寺池天然名勝・老櫻枝幹垂落水面宛如畫卷",
+      "tag": "東京・練馬區",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻、野茉莉",
+      "desc": "保留武藏野天然原始風貌的國家名勝，古石神井城遺址與池畔水生植物、櫻花形成古樸和風意境。",
+      "locationDetail": "西武池袋線石神井公園站南口步行7分鐘",
+      "img": "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%9F%B3%E7%A5%9E%E4%BA%95%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%B7%B4%E9%A6%AC",
+      "cafe": {
+            "name": "豐島屋 湖畔茶房",
+            "feature": "昭和時代傳統木屋・欣賞天鵝船滑過倒影櫻花池"
+      },
+      "japanFood": {
+            "name": "手打蕎麥麵 菊谷 練馬店",
+            "feature": "全日本蕎麥麵百名店・兩款不同產地蕎麥評比盛宴"
+      },
+      "hotel": {
+            "name": "池袋 太陽城王子大飯店",
+            "feature": "直通太陽城水族館與購物商場・西武池袋線樞紐"
+      }
+},
+        "id": "kinuta_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "砧公園",
+      "subtitle": "樹齡數十年參天巨木・櫻花枝條垂落草地上的櫻花樹洞",
+      "tag": "東京・世田谷區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻、山櫻共840株",
+      "desc": "世田谷高級住宅區家庭首選野餐聖地，櫻花樹枝幹極其低垂，旅人伸手即可觸碰細緻粉白花瓣。",
+      "locationDetail": "東急田園都市線用賀站步行15分鐘 / 轉乘巴士5分",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%A0%A7%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%8C%E5%AD%90%E7%8E%89%E5%B7%9D",
+      "cafe": {
+            "name": "世田谷美術館內 餐廳 Le Jardin",
+            "feature": "美術館綠樹庭院景觀・優雅法式午間套餐"
+      },
+      "japanFood": {
+            "name": "二子玉川 割烹 壽司處 つかさ",
+            "feature": "當季白蝦與櫻煮章魚・精選日本清酒酒單"
+      },
+      "hotel": {
+            "name": "二子玉川 Excel Hotel Tokyu",
+            "feature": "二子玉川Rise頂樓・俯瞰多摩川與富士山夕景"
+      }
+},
+        "id": "gotenyama_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "品川御殿山花見",
+      "subtitle": "江戶浮世繪歌川廣重筆下品川名所・現代庭園山櫻",
+      "tag": "東京・品川區",
+      "bloomStatus": "🌸 滿開 (90%)",
+      "species": "染井吉野櫻、江戶彼岸櫻",
+      "desc": "自三代將軍德川家光種植櫻花起即名滿江戶，兩千坪迴遊式日式庭園中水瀑飛瀉，茶室掩映。",
+      "locationDetail": "JR品川站高輪口步行10分鐘 (提供免費接駁車)",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%BE%A1%E6%AE%BF%E5%B1%B1",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%93%81%E5%B7%9D",
+      "cafe": {
+            "name": "東京萬豪酒店 Lounge & Dining G",
+            "feature": "17米挑高玻璃中庭・享用粉紅櫻花主題下午茶"
+      },
+      "japanFood": {
+            "name": "品川 御殿山 日本料理「なだ万」",
+            "feature": "天保元年創業天保料亭老舖・春季櫻鯛御膳"
+      },
+      "hotel": {
+            "name": "Tokyo Marriott Hotel (東京萬豪酒店)",
+            "feature": "座落御殿山花園旁・新幹線與羽田機場直達樞紐"
+      }
+},
+        "id": "sakurazaka_ohta",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "大田區櫻坂 (Sakurazaka)",
+      "subtitle": "福山雅治百萬名曲《櫻坂》發源聖地・浪漫紅色櫻橋",
+      "tag": "東京・大田區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻約30株老樹",
+      "desc": "J-POP樂迷朝聖聖地！紅色行人欄杆天橋橫跨坡道，兩側盛開櫻花合攏成一條粉紅愛情拱廊。",
+      "locationDetail": "東急多摩川線沼部站出站步行5分鐘",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%AB%BB%E5%9D%82%20%E6%9D%B1%E4%BA%AC",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%94%B0%E5%9C%92%E8%AA%BF%E5%B8%83",
+      "cafe": {
+            "name": "沼部 櫻坂珈琲館",
+            "feature": "自家烘焙精品手沖豆・提供紀念明信片與黑膠音樂"
+      },
+      "japanFood": {
+            "name": "田園調布 鰻魚 名代野田岩分店",
+            "feature": "炭香細膩極致蒸烤・米其林名店傳承風味"
+      },
+      "hotel": {
+            "name": "羽田機場 第三航廈 Villa Fontaine 酒店",
+            "feature": "直通羽田機場登機門・頂樓富士山展望露天溫泉"
+      }
+},
+        "id": "ikegami_honmonji_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "池上本門寺",
+      "subtitle": "關東最古老五重塔國寶・大堂前滿開吉野櫻古剎景觀",
+      "tag": "東京・大田區",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻、笹部櫻",
+      "desc": "日蓮宗宗祖圓寂聖地，慶長年間建立的五重塔高聳入雲，400株櫻花在96級石階此經坂兩旁盛放。",
+      "locationDetail": "東急池上線池上站步行10分鐘",
+      "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%B1%A0%E4%B8%8A%E6%9C%AC%E9%96%80%E5%AF%BA",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%92%蒲%E7%94%B0",
+      "cafe": {
+            "name": "池上本門寺 朗峰會館 櫻庭園景觀咖啡",
+            "feature": "品嚐名物久壽餅葛粉糕配黑蜜黃豆粉"
+      },
+      "japanFood": {
+            "name": "池上 古民家手打蕎麥 連",
+            "feature": "大正時代老屋改造・石臼現磨手工冷蕎麥麵"
+      },
+      "hotel": {
+            "name": "蒲田 燦路都大飯店 (Hotel Sunroute Kamata)",
+            "feature": "鄰近JR蒲田站・羽田機場與品川商圈交通極速連接"
+      }
+},
+        "id": "kasai_rinkai_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "葛西臨海公園",
+      "subtitle": "東京灣鑽石與花大摩天輪・海風吹拂770株櫻花林",
+      "tag": "東京・江戶川區",
+      "bloomStatus": "🌸 滿開 (90%)",
+      "species": "染井吉野櫻、大島櫻",
+      "desc": "直面東京灣蔚藍海景，登上117公尺高巨型摩天輪可由高空俯瞰滿開櫻花林與遠眺迪士尼樂園。",
+      "locationDetail": "JR京葉線葛西臨海公園站出站直達",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%91%9B%E8%A5%BF%E8%87%A8%E6%B5%B7%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%91%9B%E8%A5%BF%E8%87%A8%E6%B5%B7%E5%85%AC%E5%9C%92",
+      "cafe": {
+            "name": "PARKLIFE CAFE & RESTAURANT",
+            "feature": "夏威夷風露天餐廳・海風吹拂品嚐煎餅漢堡"
+      },
+      "japanFood": {
+            "name": "東京灣 壽司割烹 潮騷",
+            "feature": "東京灣捕撈星鰻與蛤蜊料理・日落海景第一排"
+      },
+      "hotel": {
+            "name": "Hotel Seaside Edogawa",
+            "feature": "坐落葛西臨海公園內部・出門即是摩天輪與櫻花林"
+      }
+},
+        "id": "ukima_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "浮間公園荷蘭風車櫻花",
+      "subtitle": "巨大歐式荷蘭風車・浮間池湖畔與鬱金香櫻花同框",
+      "tag": "東京・板橋/北區",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻、里櫻",
+      "desc": "荒川舊河道改建的水畔公園，地標荷蘭古典大風車前盛開鬱金香與滿天粉櫻，異國情調滿溢。",
+      "locationDetail": "JR埼京線浮間舟渡站出站即達步行1分鐘",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%B5%AE%E9%96%93%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B5%AE%E9%96%93%E8%88%9F%E6%B8%A1",
+      "cafe": {
+            "name": "コメダ珈琲店 浮間公園店 (Komeda Coffee)",
+            "feature": "公園湖畔木屋門市・大片落地窗欣賞風車與櫻花"
+      },
+      "japanFood": {
+            "name": "浮間 手打手擀烏龍麵 甚五郎",
+            "feature": "武藏野彈牙手打烏龍・特製肉汁沾醬極具人氣"
+      },
+      "hotel": {
+            "name": "大和 Roynet 酒店 東京赤羽",
+            "feature": "JR埼京線與京濱東北線交會・交通便捷商務首選"
+      }
+},
+        "id": "kyu_furukawa_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "舊古河庭園",
+      "subtitle": "英國建築大師康德設計石造洋館・古典玫瑰園與春櫻",
+      "tag": "東京・北區",
+      "bloomStatus": "🌸 滿開 (90%)",
+      "species": "染井吉野櫻、枝垂櫻",
+      "desc": "大正初期建造的英式古典貴族洋館，順著斜坡而下是小川治兵衛設計的深邃日式心字池迴遊庭園。",
+      "locationDetail": "JR京濱東北線上中里站/地鐵西原站步行7分鐘",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%88%8A%E5%8F%A4%E6%B2%B3%E5%BA%AD%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%A7%92%E8%BE%BC",
+      "cafe": {
+            "name": "舊古河洋館喫茶室",
+            "feature": "在古董壁爐與英式彩繪玻璃窗前享用大吉嶺紅茶"
+      },
+      "japanFood": {
+            "name": "駒込 名物 軍雞鍋 庄助",
+            "feature": "百年炭火老鍋・斗雞鮮甜高湯與手工雞肉丸"
+      },
+      "hotel": {
+            "name": "JR東日本駒込站前 METS 酒店",
+            "feature": "六義園與舊古河庭園雙名園樞紐・JR駒込站南口直達"
+      }
+},
+        "id": "kunitachi_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "國立市大學通櫻花林蔭道",
+      "subtitle": "一橋大學旁寬闊林蔭大道・200株巨大吉野櫻綠蔭穹頂",
+      "tag": "東京・國立市",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻、銀杏交替",
+      "desc": "關東最美的學術文教大道！自國立車站南口放射延伸的40米大道，春季兩側櫻花盛開如隧道。",
+      "locationDetail": "JR中央線國立站南口出站即達",
+      "img": "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%9C%8B%E7%AB%8B%E5%A4%A7%E5%AD%B8%E9%80%9A",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%9C%8B%E7%AB%8B%E5%B8%82",
+      "cafe": {
+            "name": "一橋大學旁 邪宗門 咖啡館",
+            "feature": "古董老鐘嘀嗒迴響・昭和文人喜愛的手沖曼巴咖啡"
+      },
+      "japanFood": {
+            "name": "國立 本格手打蕎麥 百歩",
+            "feature": "國產石磨自家蕎麥粉・微風中品嚐鴨南蠻冷麵"
+      },
+      "hotel": {
+            "name": "JR東日本立川大都會飯店",
+            "feature": "JR中央線直達特快・周邊百貨商場購物機能完備"
+      }
+},
+        "id": "takao_itoyodaira_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "高尾山一丁平千本櫻",
+      "subtitle": "米其林三星登山名山・稜線上千本山櫻遠眺富士山積雪",
+      "tag": "東京・八王子市",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "山櫻、大島櫻、霞櫻",
+      "desc": "由高尾山頂往小佛城山稜線步行約30分鐘，整座山谷開滿粉白天生野櫻，天晴時富士山積雪清晰同框。",
+      "locationDetail": "京王高尾線高尾山口站搭乘登山纜車至山頂步道",
+      "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%AB%98%E5%B0%BE%E5%B1%B1",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%AB%98%E5%B0%BE%E5%B1%B1",
+      "cafe": {
+            "name": "高尾山頂 展望茶屋「曙」",
+            "feature": "戶外野餐桌眺望富士山・品嚐烤三福糰子與甘酒"
+      },
+      "japanFood": {
+            "name": "高尾山口 高橋家 炭火山藥泥蕎麥",
+            "feature": "180年柿樹老屋・信州安曇野現磨自然薯山藥泥"
+      },
+      "hotel": {
+            "name": "京王高尾山溫泉 極樂湯 溫泉宿",
+            "feature": "高尾山口站旁直達・登山健行後享受檜木露天風呂"
+      }
+},
+        "id": "okutama_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "奧多摩湖水根櫻花並木",
+      "subtitle": "清幽深邃天然高山湖泊・湖光山色倒影如鏡花筏",
+      "tag": "東京・奧多摩町",
+      "bloomStatus": "🌸 滿開 (90%)",
+      "species": "山櫻、染井吉野櫻約4000株",
+      "desc": "遠離東京都心的絕景秘境，奧多摩湖水面湛藍深邃，小河內水壩周邊滿山野櫻如粉紅錦緞披覆群山。",
+      "locationDetail": "JR青梅線奧多摩站轉乘西東京巴士約15分鐘",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A5%A7%E5%A4%9A%E6%91%A9%E6%B9%96",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A5%A7%E5%A4%9A%E6%91%A9",
+      "cafe": {
+            "name": "湖畔小木屋之宿 風之館",
+            "feature": "180度奧多摩湖全景・手沖高地咖啡與蘋果派"
+      },
+      "japanFood": {
+            "name": "奧多摩 釜飯名店「中川」",
+            "feature": "在地山菜與若雞釜飯・柴魚高湯清甜・預約滿席"
+      },
+      "hotel": {
+            "name": "奧多摩 荒澤屋 溫泉旅館",
+            "feature": "鶴之湯源泉名湯・爐端燒香魚・百年和風木造榻榻米"
+      }
+},
+        "id": "tamagawadai_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "多摩川台公園",
+      "subtitle": "多摩川丘陵眺望富士山夕陽・古墳群與300株山櫻",
+      "tag": "東京・大田區",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻、山櫻、枝垂櫻",
+      "desc": "沿著多摩川河畔丘陵展開的自然公園，保留多座4世紀古代古墳，春天櫻花滿山、視野遼闊直抵富士山。",
+      "locationDetail": "東急東橫線/目黑線/多摩川線多摩川站出站步行1分鐘",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A4%9A%E6%91%A9%E5%B7%9D%E5%8F%B0%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%94%B0%E5%9C%92%E8%AA%BF%E5%B8%83",
+      "cafe": {
+            "name": "多摩川畔 Delight 咖啡烘焙",
+            "feature": "河濱露天座席欣賞電車過橋・品嚐手沖拿鐵"
+      },
+      "japanFood": {
+            "name": "田園調布 鰻鱓料理 喜川",
+            "feature": "靜岡產活鰻直烤・皮脆肉嫩炭香撲鼻"
+      },
+      "hotel": {
+            "name": "武藏小杉 里士滿高級酒店",
+            "feature": "東橫線直通田園調布・羽田機場與橫濱樞紐"
+      }
+},
+        "id": "hamura_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "羽村堰玉川上水櫻並木",
+      "subtitle": "江戶開鑿玉川上水取水起點・水門旁500株櫻花與油菜花",
+      "tag": "東京・羽村市",
+      "bloomStatus": "🌸 滿開吹雪 (100%)",
+      "species": "染井吉野櫻",
+      "desc": "江戶水道發源歷史名勝，多摩川河畔取水堰周邊盛開櫻花，夜間舉辦春季櫻花祭並點上千盞和紙提燈。",
+      "locationDetail": "JR青梅線羽村站西口步行10分鐘",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%BE%BD%E6%9D%91%E5%A0%B0%20%E6%AB%BB%E8%8A%B1",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%BE%BD%E6%9D%91",
+      "cafe": {
+            "name": "玉川上水畔 櫻花茶房",
+            "feature": "水門景觀第一排・品嚐手工紅豆湯圓與甘酒"
+      },
+      "japanFood": {
+            "name": "羽村 地雞割烹 鳥よし",
+            "feature": "奧多摩地雞刺身與串燒・配搭青梅地酒「澤乃井」"
+      },
+      "hotel": {
+            "name": "東橫INN 東京青梅線昭島站南口",
+            "feature": "青梅線直達羽村與奧多摩・免費和式早餐"
+      }
+},
+        "id": "gajoen_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kanto",
+      "title": "目黑雅敘園水岸太鼓橋",
+      "subtitle": "日本首座婚宴藝術殿堂・太鼓橋水岸垂落朱紅櫻花",
+      "tag": "東京・目黑區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻、八重枝垂櫻",
+      "desc": "昭和初期創立被譽為「昭和龍宮城」，有形文化財「百段階梯」旁太鼓橋畔，盛開櫻花倒映目黑川清流。",
+      "locationDetail": "JR山手線/東急目黑線目黑站西口步行3分鐘",
+      "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%9B%AE%E9%BB%91%E9%9B%85%E6%95%98%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%9B%AE%E9%BB%91",
+      "cafe": {
+            "name": "目黑雅敘園 Cafe Lounge Pandora",
+            "feature": "落地窗面對瀑布庭園・享用櫻花雙人英式下午茶"
+      },
+      "japanFood": {
+            "name": "雅敘園 日本料理「渡風亭」",
+            "feature": "全包廂個室建築於室內庭園池畔・季節會席料理"
+      },
+      "hotel": {
+            "name": "Hotel Gajoen Tokyo (雅敘園東京酒店)",
+            "feature": "全套房配備檜木水療按摩浴缸・Small Luxury Hotels"
+      }
+},
+        "id": "arashiyama_togetsukyo",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "嵐山渡月橋與保津川",
+      "subtitle": "平安貴族渡假名勝・保津川兩岸千株山櫻倒影翠綠水面",
+      "tag": "京都・右京區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "山櫻、染井吉野櫻約1500株",
+      "desc": "京都最具代表性古典風景！嵐山群山被粉白野櫻點綴成天然畫布，搭乘保津川遊船穿梭其間最為愜意。",
+      "locationDetail": "阪急嵐山站出站步行5分鐘 / 京福嵐電嵐山站步行1分",
+      "img": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%B5%90%E5%B1%B1%20%E6%AB%BB%E8%8A%B1",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD+%E5%B5%90%E5%B1%B1",
+      "cafe": {
+            "name": "% ARABICA Kyoto Arashiyama",
+            "feature": "桂川畔極簡玻璃木屋・品味世界級拉花拿鐵與山櫻倒影"
+      },
+      "japanFood": {
+            "name": "嵐山 吉兆 (Kitcho Arashiyama)",
+            "feature": "米其林三星日本料理殿堂・保津川畔數寄屋造庭園"
+      },
+      "hotel": {
+            "name": "翠嵐 豪華精選酒店 (Suiran Luxury Collection)",
+            "feature": "保津川首排私人露天溫泉客房・歷史和風宅邸奢華"
+      }
+},
+        "id": "hirano_shrine_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "平野神社「平野夜櫻」",
+      "subtitle": "平安京遷都起千年櫻花神社・60種珍貴品種交替盛開",
+      "tag": "京都・北區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "魁櫻、白雲櫻、一葉櫻、平野妹背櫻共400株",
+      "desc": "自古便有「平野夜櫻」之美名，境內珍稀古櫻繁多，早開的「魁櫻」一旦綻放即宣告京都春天的正式來臨。",
+      "locationDetail": "JR京都站搭乘市巴士50/205至「衣笠校前」下車步行3分鐘",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%B9%B3%E9%87%8E%E7%A5%9E%E7%A4%BE",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD+%E5%8C%97%E5%8D%80",
+      "cafe": {
+            "name": "平野神社 櫻茶屋 境內茶亭",
+            "feature": "在滿天櫻花紅色茶蓆上品嚐櫻餅甘酒"
+      },
+      "japanFood": {
+            "name": "西陣 鳥岩樓 (Toriiwaro)",
+            "feature": "祇園老字號町家名物・午後限定絕品親子丼"
+      },
+      "hotel": {
+            "name": "京都麗思卡爾頓酒店 (The Ritz-Carlton, Kyoto)",
+            "feature": "坐落鴨川水岸・遠眺東山三十六峰櫻花稜線"
+      }
+},
+        "id": "maruyama_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "圓山公園祇園枝垂櫻",
+      "subtitle": "京都歷史最悠久公園・地標「祇園夜櫻」一休名木",
+      "tag": "京都・東山區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "一重白彼岸枝垂櫻（第二代）、染井吉野櫻",
+      "desc": "八坂神社後方京都最具代表性的夜間賞櫻集會地，樹齡近百年的初代名木子嗣枝垂如瀑布，篝火夜景極具魔力。",
+      "locationDetail": "京阪電車祇園四條站出站步行8分鐘",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%9C%93%E5%B1%B1%E5%85%AC%E5%9C%92%20%E4%BA%AC%E9%83%BD",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A5%87%E5%9C%92",
+      "cafe": {
+            "name": "長樂館 (Chourakukan)",
+            "feature": "明治時代菸草大王迎賓洋館・華麗洛可可沙龍英式下午茶"
+      },
+      "japanFood": {
+            "name": "祇園 丸山 (Gion Maruyama)",
+            "feature": "米其林二星京料理・極致細膩的季節美學會席"
+      },
+      "hotel": {
+            "name": "京都 祇園 四條 索拉利亞西鐵酒店",
+            "feature": "出門即是鴨川與先斗町・大浴場洗去漫步疲憊"
+      }
+},
+        "id": "heian_jingu_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "平安神宮神苑",
+      "subtitle": "谷崎潤一郎《細雪》名場景・八重紅枝垂櫻倒影栖鳳池",
+      "tag": "京都・左京區",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "八重紅枝垂櫻約150株",
+      "desc": "明治時代名匠小川治兵衛造園巔峰之作，漫天深粉紅色的八重紅枝垂櫻宛如天簾低垂，倒映在尚美館泰平閣池水之中。",
+      "locationDetail": "地鐵東西線東山站出站步行10分鐘",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%B9%B3%E5%AE%89%E7%A5%9E%E5%AE%AE",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD+%E5%B2%A1%E5%B4%8E",
+      "cafe": {
+            "name": "京都 蔦屋書店 岡崎公園店",
+            "feature": "羅姆劇場旁藝文空間・在櫻花大鳥居前品味手沖"
+      },
+      "japanFood": {
+            "name": "岡崎 京烏龍麵 權太呂",
+            "feature": "傳承百年黃金羅臼昆布高湯・酥脆櫻花蝦餅烏龍"
+      },
+      "hotel": {
+            "name": "Hotel Okura Kyoto (京都大倉飯店)",
+            "feature": "京都市役所直通・百年優雅管家服務・交通極便"
+      }
+},
+        "id": "kyoto_gyoen_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "京都御苑 近衛邸跡糸櫻",
+      "subtitle": "天皇古皇居大御所・西北隅近衛邸近百株壯麗早開枝垂櫻",
+      "tag": "京都・上京區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "糸櫻（早開枝垂櫻）、染井吉野櫻、山櫻共1000株",
+      "desc": "京都每年櫻花季最早綻放的名所！近衛池畔的古老糸櫻細長花枝隨風飄逸，花朵垂掛宛如粉白絲絹。",
+      "locationDetail": "地鐵烏丸線今出川站3號出口出站即達",
+      "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%E5%BE%A1%E8%8B%91",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BA%AC%E9%83%BD%E5%BE%A1%E6%89%80",
+      "cafe": {
+            "name": "京都御苑 檜垣茶寮",
+            "feature": "庭園中品嚐名物九條蔥烏龍麵與京手作抹茶雪糕"
+      },
+      "japanFood": {
+            "name": "出町柳 出町雙葉 (Futaba)",
+            "feature": "京都第一名豆大福・晨早排隊外帶至御苑櫻花樹下享用"
+      },
+      "hotel": {
+            "name": "京都凱悅酒店 (Hyatt Regency Kyoto)",
+            "feature": "三十三間堂旁・日式杉木極簡美學名邸"
+      }
+},
+        "id": "nakaragi_no_michi",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "賀茂川半木之道",
+      "subtitle": "植物園東側賀茂川堤防・竹架棚架攀爬800米紅枝垂櫻紅廊",
+      "tag": "京都・左京區",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "八重紅枝垂櫻約70株",
+      "desc": "沿著清澈賀茂川堤岸整修的散步道，特製竹棚讓紅枝垂櫻橫向延展成一條深粉紅隧道，微風徐徐動人心魄。",
+      "locationDetail": "地鐵烏丸線北大路站/北山站步行10分鐘",
+      "img": "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8D%8A%E6%9C%A8%E4%B9%8B%E9%81%93",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%8C%97%E5%B1%B1+%E4%BA%AC%E9%83%BD",
+      "cafe": {
+            "name": "Malebranche 北山本店",
+            "feature": "京都著名伴手禮「茶之菓」發源旗艦店・限定蒙布朗"
+      },
+      "japanFood": {
+            "name": "京都 蕎麥 じん六 (Jinroku)",
+            "feature": "米其林一星現磨手打蕎麥・搭配微甜爽脆鴨肉"
+      },
+      "hotel": {
+            "name": "京都布萊頓酒店 (Kyoto Brighton Hotel)",
+            "feature": "六層挑高中庭美侖美奐・御所西側清幽頂級住所"
+      }
+},
+        "id": "takasegawa_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "高瀨川櫻並木 (木屋町通)",
+      "subtitle": "百年町家建築與石板小橋・200株櫻花掩映溪流流水燈火",
+      "tag": "京都・中京區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻",
+      "desc": "角倉了以開鑿的運河兩岸盛開綿延櫻花，每逢入夜沿線居酒屋與料亭點亮燈籠，倒影河面最具古都浪漫風韻。",
+      "locationDetail": "京阪電車祇園四條站/三條站出站步行2分鐘",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9C%A8%E5%B1%8B%E7%94%BA%E9%80%9A",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9C%A8%E5%B1%8B%E7%94%BA",
+      "cafe": {
+            "name": "喫茶 ソワレ (Soiree)",
+            "feature": "昭和三年創立藍光喫茶館・名物五色果凍氣泡飲品"
+      },
+      "japanFood": {
+            "name": "先斗町 鴨川 納涼床 割烹料理",
+            "feature": "坐在高瀨川與鴨川旁榻榻米川床品嚐季節香魚"
+      },
+      "hotel": {
+            "name": "Hotel The Celestine Kyoto Gion",
+            "feature": "八坂通閑靜高雅和風酒店・大浴場與祇園傳統藝妓街近在咫尺"
+      }
+},
+        "id": "toji_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "東寺夜櫻與不二櫻",
+      "subtitle": "日本最高木造五重塔國寶・樹齡130年巨型八重紅枝垂櫻",
+      "tag": "京都・南區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "不二櫻（八重紅枝垂櫻）、染井吉野櫻約200株",
+      "desc": "世界遺產弘法大師真言宗總本山，高55米國寶五重塔在夜間投射燈下照亮盛開巨型不二櫻，瓢池倒影極其壯闊。",
+      "locationDetail": "近鐵京都線東寺站出站步行10分鐘 / JR京都站步行15分",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E5%AF%BA%20%E5%A4%9C%E6%AB%BB",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%9D%B1%E5%AF%BA",
+      "cafe": {
+            "name": "東寺 境內 庭園茶屋",
+            "feature": "遠眺五重塔不二櫻・品嚐宇治抹茶與生八橋"
+      },
+      "japanFood": {
+            "name": "京都 炭火鰻 祇園 U (Gion U)",
+            "feature": "桶裝四人份特大桶鰻魚飯・現剖現烤蒲燒極品"
+      },
+      "hotel": {
+            "name": "Miyako Hotel Kyoto Hachijo (京都八條都酒店)",
+            "feature": "JR京都站新幹線八條口對面・步行可達東寺夜櫻"
+      }
+},
+        "id": "gion_shirakawa_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "祇園白川櫻並木",
+      "subtitle": "石板路小橋流水與木造町家料亭・垂櫻掩映辰巳大明神",
+      "tag": "京都・東山區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "枝垂櫻、染井吉野櫻約40株",
+      "desc": "藝妓偶爾擦肩而過的祇園核心風雅之地，白川清流石板路旁枝垂櫻拂水，石橋辰巳大明神前夜櫻最具電影氛圍。",
+      "locationDetail": "京阪電車祇園四條站9號出口步行3分鐘",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%A5%87%E5%9C%92%E7%99%BD%E5%B7%9D",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A5%87%E5%9C%92%E7%99%BD%E5%B7%9D",
+      "cafe": {
+            "name": "祇園 白川 抹茶館 MACCHA HOUSE",
+            "feature": "排隊名物升半枡裝宇治抹茶提拉米蘇・滑嫩濃郁"
+      },
+      "japanFood": {
+            "name": "白川割烹料理 祇園 にしかわ (Nishikawa)",
+            "feature": "米其林二星名店・四季花見茶懷石手藝極致"
+      },
+      "hotel": {
+            "name": "Hoshinoya Kyoto (星野虹夕諾雅京都)",
+            "feature": "搭乘專屬木舟溯流而上・保津川隱密水岸私人庭院"
+      }
+},
+        "id": "sewaritei_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "淀川河川公園背割堤",
+      "subtitle": "宇治川與木津川匯流處・1.4公里220株粉紅櫻花大隧道",
+      "tag": "京都・八幡市",
+      "bloomStatus": "🌸 滿開吹雪 (100%)",
+      "species": "染井吉野櫻約220株",
+      "desc": "關西規模最磅礴的櫻花河堤隧道！兩側數十年老樹於頭頂交錯相連，登上展望塔俯瞰如同一條粉紅巨龍臥於雙川之間。",
+      "locationDetail": "京阪電車石清水八幡宮站出站步行10分鐘",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%83%8C%E5%89%B2%E5%A0%A4%20%E6%AB%BB%E8%8A%B1",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%85%AB%E5%B9%A1%E5%B8%82",
+      "cafe": {
+            "name": "さくらであい館 (櫻遇見館) 展望塔咖啡",
+            "feature": "25公尺高空展望台・鳥瞰背割堤整條櫻花長廊"
+      },
+      "japanFood": {
+            "name": "石清水八幡宮 走井餅老舖",
+            "feature": "江戶安永年間創業名物・柔軟麻糬包覆清甜紅豆餡"
+      },
+      "hotel": {
+            "name": "Hotel Keihan Kyoto Grande",
+            "feature": "京都車站直結地下通道・快速搭乘京阪前往背割堤"
+      }
+},
+        "id": "kema_sakuranomiya",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "毛馬櫻之宮公園",
+      "subtitle": "大川沿岸4.2公里4800株櫻花水岸綠地・水上巴士遊船",
+      "tag": "大阪・都島區",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻、山櫻、里櫻",
+      "desc": "大阪最遼闊的河畔櫻花公園，兩岸櫻花綿延無盡，搭乘大阪水上巴士「Aqualiner」由水面穿過櫻花拱門令人心醉。",
+      "locationDetail": "JR櫻之宮站西口出站即達步行1分鐘",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%AF%9B%E9%A6%AC%E6%AB%BB%E4%B9%8B%E5%AE%AE%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%AB%BB%E4%B9%8B%E5%AE%AE",
+      "cafe": {
+            "name": "Imperial Hotel Osaka 水岸花園咖啡",
+            "feature": "大阪帝國飯店大川景觀・品味春櫻特調茶飲點心"
+      },
+      "japanFood": {
+            "name": "天滿橋 割烹 寿し富",
+            "feature": "大阪中央市場直送活魚・江戶前手握與時令酒肴"
+      },
+      "hotel": {
+            "name": "Imperial Hotel Osaka (大阪帝國酒店)",
+            "feature": "正對毛利櫻之宮公園・客房落地窗俯瞰整條大川櫻花並木"
+      }
+},
+        "id": "expo70_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "萬博紀念公園櫻之園",
+      "subtitle": "岡本太郎「太陽之塔」・5500株九大櫻花品種名所百選",
+      "tag": "大阪・吹田市",
+      "bloomStatus": "🌸 滿開 (100%)",
+      "species": "染井吉野櫻、彼岸櫻、大島櫻等9種5500株",
+      "desc": "1970年大阪世博會原址，壯觀前衛的太陽之塔在滿山粉白櫻花映襯下更顯震撼，入夜舉辦盛大東山櫻花燈會。",
+      "locationDetail": "大阪單軌電車萬博紀念公園站出站直達",
+      "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%90%AC%E5%8D%9A%E7%B4%80%E5%BF%B5%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%90%B9%E7%94%B0",
+      "cafe": {
+            "name": "EXPOCITY 湖畔露天咖啡",
+            "feature": "全日本最大商場綠意廣場・品嚐手作漢堡與冰拿鐵"
+      },
+      "japanFood": {
+            "name": "吹田 割烹 甚兵衛",
+            "feature": "傳統關西割烹・香脆炸海老天婦羅與當季若竹煮"
+      },
+      "hotel": {
+            "name": "Hotel Hankyu International (阪急國際飯店)",
+            "feature": "大阪梅田交通核心・高空景觀客房俯瞰繁華夜景"
+      }
+},
+        "id": "satsukiyama_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "五月山公園",
+      "subtitle": "3500株山櫻染粉整座山頭・眺望大阪平原與日落夕霞",
+      "tag": "大阪・池田市",
+      "bloomStatus": "🌸 滿開 (90%)",
+      "species": "山櫻、染井吉野櫻約3500株",
+      "desc": "池田市象徵名山，自山腳至山頂展望台沿途櫻花如雲，山腳處更附設免費入場的可愛袋熊五月山動物園。",
+      "locationDetail": "阪急寶塚線池田站出站步行15分鐘",
+      "img": "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%94%E6%9C%88%E5%B1%B1%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%B1%A0%E7%94%B0",
+      "cafe": {
+            "name": "池田 綠之館 森林露台",
+            "feature": "健行中途茶房・品嚐池田名物炭燒咖啡與糰子"
+      },
+      "japanFood": {
+            "name": "池田 麵翁「百福亭」拉麵",
+            "feature": "日清拉麵發源地・現點現煮道地關西醬油雞湯拉麵"
+      },
+      "hotel": {
+            "name": "伏尾溫泉 不死王閣 (Fushio Onsen)",
+            "feature": "大阪市區近郊天然溫泉秘境・露天天然碳酸泉風呂"
+      }
+},
+        "id": "daisen_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "大仙公園日本庭園",
+      "subtitle": "世界遺產仁德天皇陵古墳旁・400株櫻花與日式池泉庭園",
+      "tag": "大阪・堺市",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻、八重櫻",
+      "desc": "坐落在世界文化遺產百舌鳥古墳群間的清幽公園，傳統築山林泉回遊式日本庭園中，木橋與垂櫻意境深遠。",
+      "locationDetail": "JR阪和線百舌鳥站出站步行5分鐘",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A4%A7%E4%BB%99%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A2%BA%E5%B8%82",
+      "cafe": {
+            "name": "大仙公園 日本庭園 茶室伸庵",
+            "feature": "國家登錄有形文化財・坐在茶席品味千利休故鄉抹茶"
+      },
+      "japanFood": {
+            "name": "堺市 名物 穴子料理 深清鮓",
+            "feature": "百年老舖箱壽司・入口即化蒸星鰻與特製醬汁"
+      },
+      "hotel": {
+            "name": "Hotel Agora Regency Osaka Sakai",
+            "feature": "南海本線堺站直通・關西機場與難波商圈交通樞紐"
+      }
+},
+        "id": "shitennoji_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "四天王寺本坊庭園",
+      "subtitle": "聖德太子飛鳥時代開創・極樂淨土庭園五重塔倒影春櫻",
+      "tag": "大阪・天王寺區",
+      "bloomStatus": "🌸 滿開 (90%)",
+      "species": "染井吉野櫻、山櫻",
+      "desc": "日本最古老的官寺之一，本坊庭園「極樂淨土之庭」泉水涓涓，飛鳥時代朱紅迴廊與粉白櫻花形成莊嚴對照。",
+      "locationDetail": "地鐵谷町線四天王寺前夕陽丘站4號出口步行5分鐘",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%9B%9B%E5%A4%A9%E7%8E%8B%E5%AF%BA",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A4%A9%E7%8E%8B%E5%AF%BA",
+      "cafe": {
+            "name": "四天王寺 釣鐘屋老舖 茶寮",
+            "feature": "明治時代創立釣鐘煎餅・香脆蛋香搭配現刷煎茶"
+      },
+      "japanFood": {
+            "name": "天王寺 串炸名店 八重勝",
+            "feature": "新世界老字號・外酥內嫩炸串配無酒精高麗菜"
+      },
+      "hotel": {
+            "name": "Osaka Marriott Miyako Hotel (大阪萬豪都酒店)",
+            "feature": "阿倍野Harukas 300頂樓・俯瞰四天王寺與全大阪櫻景"
+      }
+},
+        "id": "sumiyoshi_taisha_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "住吉大社太鼓橋",
+      "subtitle": "國寶住吉造古神社・朱紅反橋倒映水池與春櫻相互輝映",
+      "tag": "大阪・住吉區",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻",
+      "desc": "全國2300座住吉神社總本社，標誌性最大傾斜角反橋（太鼓橋）橫跨神池，橋畔盛開春櫻宛若浮世繪實景。",
+      "locationDetail": "南海本線住吉大社站出站步行3分鐘 / 阪堺電車住吉鳥居前站直達",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BD%8F%E5%90%89%E5%A4%A7%E7%A4%BE",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E4%BD%8F%E5%90%89",
+      "cafe": {
+            "name": "住吉大社前 喜久壽 銅鑼燒",
+            "feature": "大阪第一名手工銅鑼燒・鬆軟外皮包裹粒粒紅豆餡"
+      },
+      "japanFood": {
+            "name": "洋食料理 Yataro 住吉店",
+            "feature": "老大阪懷舊蛋包飯與炸牛排・深受在地家庭喜愛"
+      },
+      "hotel": {
+            "name": "Swissotel Nankai Osaka (瑞士南海酒店)",
+            "feature": "難波車站上方直通・搭乘南海電鐵直達住吉大社"
+      }
+},
+        "id": "yamanakadani_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "山中溪櫻並木 (JR鐵道櫻花隧道)",
+      "subtitle": "JR阪和線沿線千本櫻・電車呼嘯穿梭粉紅山谷花海",
+      "tag": "大阪・阪南市",
+      "bloomStatus": "🌸 滿開吹雪 (100%)",
+      "species": "染井吉野櫻約1000株",
+      "desc": "大阪最南端的鐵道賞櫻名所，山中川河道與鐵軌兩側開滿千本櫻，月台上即可拍攝列車鑽入櫻花隧道的經典鏡頭。",
+      "locationDetail": "JR阪和線山中溪站出站即達步行1分鐘",
+      "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%B1%B1%E4%B8%AD%E6%BA%AA",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E9%97%9C%E8%A5%BF%E6%A9%9F%E5%A0%B4",
+      "cafe": {
+            "name": "山中溪 わんぱく王國 休憩茶房",
+            "feature": "山谷微風吹拂・品嚐現烤日式草餅與山泉綠茶"
+      },
+      "japanFood": {
+            "name": "泉佐野 漁港青空市場 海鮮丼",
+            "feature": "大阪灣當晨捕獲生鮮地魚・生白蝦海膽干貝大滿貫"
+      },
+      "hotel": {
+            "name": "關西機場 日航酒店 (Hotel Nikko Kansai Airport)",
+            "feature": "第一航廈聯通直達・關西進出追櫻首日最佳落腳處"
+      }
+},
+        "id": "kishiwada_castle_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "岸和田城天守閣千本櫻",
+      "subtitle": "重森三玲設計「八陣之庭」名勝・護城河倒影三層天守閣",
+      "tag": "大阪・岸和田市",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻約170株",
+      "desc": "以「岸和田地車祭」聞名的戰國名城，水堀石垣兩旁櫻花如雲，與獨創的石庭八陣之庭形成剛柔並濟絕景。",
+      "locationDetail": "南海本線岸和田站/蛸地藏站步行7分鐘",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%B2%B8%E5%92%8C%E7%94%B0%E5%9F%8E",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B2%B8%E5%92%8C%E7%94%B0",
+      "cafe": {
+            "name": "岸和田城 隅櫓 俱樂部咖啡",
+            "feature": "望著古城天守閣與白壁石垣・享用抹茶蒙布朗"
+      },
+      "japanFood": {
+            "name": "岸和田 名物 割烹 鳥羽屋",
+            "feature": "泉州洋蔥水茄子與炸星鰻天婦羅・地方老滋味"
+      },
+      "hotel": {
+            "name": "Star Gate Hotel Kansai Airport",
+            "feature": "臨空城高空景觀飯店・摩天輪夜景與櫻花眺望"
+      }
+},
+        "id": "nara_park_ukimidou",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "奈良公園與浮見堂",
+      "subtitle": "千頭萌鹿穿梭櫻花樹下・鷺池八角木造水榭垂櫻絕景",
+      "tag": "奈良・奈良市",
+      "bloomStatus": "🌸 滿開吹雪 (100%)",
+      "species": "奈良八重櫻、九重櫻、染井吉野櫻共1700株",
+      "desc": "小鹿在飄落的櫻花雨中漫步覓食，鷺池中央的六角浮見堂宛若漂浮於粉色水面，是全日本最具童話感的畫面。",
+      "locationDetail": "近鐵奈良站出站步行15分鐘 (或搭乘市內循環巴士至春日大社前)",
+      "img": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A5%88%E8%89%AF%E5%85%AC%E5%9C%92%20%E6%AB%BB%E8%8A%B1",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A5%88%E8%89%AF",
+      "cafe": {
+            "name": "浮見堂畔 喫茶室「水谷茶屋」",
+            "feature": "茅草屋頂古風茶屋・溪流落櫻下享用蕨餅抹茶"
+      },
+      "japanFood": {
+            "name": "奈良 志津香 釜飯 (公園店)",
+            "feature": "排隊名物七幸釜飯・當季星鰻蝦仁與鍋巴香脆"
+      },
+      "hotel": {
+            "name": "奈良 萬豪 紫翠奢華精選酒店 (Shisui)",
+            "feature": "隈研吾設計隈和風別邸・古都名園私人露天溫泉客房"
+      }
+},
+        "id": "sahogawa_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "佐保川櫻並木",
+      "subtitle": "萬葉集歌詠古川・綿延5公里逾千株樹齡170年古櫻長廊",
+      "tag": "奈良・奈良市",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻、川路櫻（幕末奉行種植古木）",
+      "desc": "江戶幕府末期奈良奉行川路聖謨下令栽種的古老櫻花堤，河面狹窄花枝於頭頂交會，水面倒影如詩如畫。",
+      "locationDetail": "近鐵新大宮站出站步行5分鐘",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BD%90%E4%BF%9D%E5%B7%9D%20%E6%AB%BB%E8%8A%B1",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%96%B0%E5%A4%A7%E5%AE%AE",
+      "cafe": {
+            "name": "佐保川 河畔露台 櫻花咖啡",
+            "feature": "近距離欣賞花筏流水・手作蒙布朗蛋糕"
+      },
+      "japanFood": {
+            "name": "奈良 割烹 つる由 (Tsuruyu)",
+            "feature": "米其林二星京懷石・嚴選大和牛與大和蔬菜名門"
+      },
+      "hotel": {
+            "name": "JW Marriott Hotel Nara (奈良JW萬豪)",
+            "feature": "奈良市役所旁・全日本首座JW萬豪酒店・尊貴體驗"
+      }
+},
+        "id": "koriyama_castle_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "大和郡山城跡千本櫻",
+      "subtitle": "戰國大名豐臣秀長居城・石垣與城濠環繞滿開粉櫻",
+      "tag": "奈良・大和郡山市",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻約800株",
+      "desc": "名列日本櫻名所百選與續日本100名城，壯麗石垣倒映在護城河中，夜間懸掛數百盞燈籠更添古戰國豪情。",
+      "locationDetail": "近鐵郡山站出站步行7分鐘 / JR郡山站步行15分",
+      "img": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%83%A1%E5%B1%B1%E5%9F%8E%20%E6%AB%BB%E8%8A%B1",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%A4%A7%E5%92%8C%E9%83%A1%E5%B1%B1",
+      "cafe": {
+            "name": "郡山城天守台下 櫻花茶屋",
+            "feature": "石垣景觀第一排・品嚐奈良名物大和茶與柿葉壽司"
+      },
+      "japanFood": {
+            "name": "大和郡山 金魚街 菊花壽司",
+            "feature": "傳承大和古法柿葉包覆鯖魚鮭魚押壽司"
+      },
+      "hotel": {
+            "name": "奈良 ピアッツァ ホテル (Piazza Hotel Nara)",
+            "feature": "JR奈良站西口直通・轉乘大和路線極其便利"
+      }
+},
+        "id": "hasedera_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "長谷寺登廊千本櫻",
+      "subtitle": "真言宗豐山派總本山・399級木造登廊與山櫻花海",
+      "tag": "奈良・櫻井市",
+      "bloomStatus": "🌸 滿開 (90%)",
+      "species": "染井吉野櫻、山櫻、八重櫻約1000株",
+      "desc": "被譽為「花之御寺」，自仁王門沿著399階朱紅木造登廊漫步而上，初瀨山滿山櫻花如波浪般湧向本堂舞台。",
+      "locationDetail": "近鐵大阪線長谷寺站出站步行15分鐘",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E8%B0%B7%E5%AF%BA%20%E5%A5%88%E8%89%AF",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%AB%BB%E4%BA%95%E5%B8%82",
+      "cafe": {
+            "name": "長谷寺門前 田舎家 茶房",
+            "feature": "品嚐現搗熱騰騰艾草草餅與烤地瓜甘酒"
+      },
+      "japanFood": {
+            "name": "三輪山本 總本家 手延素麵",
+            "feature": "日本三輪素麵發源地・極細如絲冰鎮素麵"
+      },
+      "hotel": {
+            "name": "門前旅館 井谷屋 (Itaniya)",
+            "feature": "1861年文久年間創業・長谷寺參道第一名古老溫泉旅館"
+      }
+},
+        "id": "shukugawa_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "夙川公園河川敷綠地",
+      "subtitle": "日本櫻名所百選・夙川兩岸2.8公里1660株清流櫻並木",
+      "tag": "兵庫・西宮市",
+      "bloomStatus": "🌸 滿開吹雪 (100%)",
+      "species": "染井吉野櫻、大島櫻、夙川舞櫻",
+      "desc": "關西高級住宅區西宮市的驕傲，清澈小溪中設有踏腳石橋，旅人可走入溪心仰望兩側合抱的粉紅花穹。",
+      "locationDetail": "阪急神戶線夙川站出站即達 / JR神戶線櫻夙川站步行5分鐘",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A4%99%E5%B7%9D%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E8%A5%BF%E5%AE%AE",
+      "cafe": {
+            "name": "夙川 甜點名店 MICHEL BACH",
+            "feature": "排隊秒殺神級小花餅乾・外帶至河畔櫻花草皮"
+      },
+      "japanFood": {
+            "name": "西宮 灘五鄉 酒藏割烹料理",
+            "feature": "全日本第一清酒之鄉・現榨新鮮純米大吟釀配旬鮮"
+      },
+      "hotel": {
+            "name": "神戶灣喜來登酒店 (Kobe Bay Sheraton)",
+            "feature": "六甲島源泉露天溫泉・快速連接阪神電車賞櫻"
+      }
+},
+        "id": "akashi_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "明石公園明石城跡",
+      "subtitle": "日本百名城雙三重櫓・剛之池池畔千株櫻花倒影",
+      "tag": "兵庫・明石市",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻約1000株",
+      "desc": "宮本武藏指導開闢的築城名作，現存巽櫓與坤櫓高聳白壁石垣前，寬廣池水倒映天際粉白雲霞。",
+      "locationDetail": "JR山陽本線/山陽電鐵明石站北口出站步行5分鐘",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%98%8E%E7%9F%B3%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E6%98%8E%E7%9F%B3",
+      "cafe": {
+            "name": "TTT 明石公園 綠意湖畔露台",
+            "feature": "剛之池畔開放感木質甲板・提供明石海鮮燉飯與手沖"
+      },
+      "japanFood": {
+            "name": "明石名物 明石燒 本家きむらや",
+            "feature": "高湯浸泡鬆軟章魚燒玉子燒・明石鯛魚三吃"
+      },
+      "hotel": {
+            "name": "神戶 美利堅公園東方大酒店",
+            "feature": "神戶港270度海景波浪型地標・港灣夜景第一排"
+      }
+},
+        "id": "sumaura_park_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "須磨浦公園海景櫻花",
+      "subtitle": "直面瀨戶內海明石海峽大橋・3200株櫻花染粉沿海懸崖",
+      "tag": "兵庫・神戶市",
+      "bloomStatus": "🌸 滿開 (90%)",
+      "species": "染井吉野櫻、里櫻、普賢象",
+      "desc": "平敦盛一之谷古戰場遺址，乘坐復古纜車緩緩升空，腳下盛開櫻花與蔚藍瀨戶內海海天一色。",
+      "locationDetail": "山陽電鐵須磨浦公園站出站直達",
+      "img": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%A0%88%E7%A3%A8%E6%B5%A6%E5%85%AC%E5%9C%92",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A5%9E%E6%88%B6+%E9%A0%88%E7%A3%A8",
+      "cafe": {
+            "name": "須磨浦 旋轉展望台喫茶 Cosmoran",
+            "feature": "全日本唯一旋轉圓形咖啡館・360度旋轉欣賞海櫻全景"
+      },
+      "japanFood": {
+            "name": "神戶牛 割烹 菊水",
+            "feature": "特選A5神戶牛鐵板燒・入口甘甜油花化開"
+      },
+      "hotel": {
+            "name": "神戶大倉飯店 (Hotel Okura Kobe)",
+            "feature": "神戶港塔旁・傳統日式款待美學名門"
+      }
+},
+        "id": "kitano_tenman_sakura",
+      "theme": "sakura",
+      "category": "flower",
+      "region": "kansai",
+      "title": "北野異人館街 (天滿神社)",
+      "subtitle": "石階高處俯瞰神戶港與異國風情紅磚風見雞館・垂枝櫻",
+      "tag": "兵庫・神戶市",
+      "bloomStatus": "🌸 滿開 (95%)",
+      "species": "染井吉野櫻、枝垂櫻",
+      "desc": "明治時代外國領事與商人居住的浪漫異國街區，登上北野天滿神社高台石階，櫻花框住風見雞之館與神戶市區。",
+      "locationDetail": "JR/阪神/阪急三宮站出站步行15分鐘 (或搭乘City Loop巴士)",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+      "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%8C%97%E9%87%8E%E7%95%B0%E4%BA%BA%E9%A4%A8",
+      "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=%E7%A5%9E%E6%88%B6+%E5%8C%97%E9%87%8E",
+      "cafe": {
+            "name": "星巴克 神戶北野異人館店",
+            "feature": "在有形文化財綠白美式木屋享用季節櫻花飲品"
+      },
+      "japanFood": {
+            "name": "神戶 麤皮 (Aragawa)",
+            "feature": "世界傳奇炭烤神戶牛排名店・備長炭窯烤極致外酥內嫩"
+      },
+      "hotel": {
+            "name": "Kobe Kitano Hotel (神戶北野酒店)",
+            "feature": "法式精品奢華酒店・世界第一傳奇早餐法式牛角可頌"
+      }
+}
     ];
 
     let currentSeason = 'spots';
@@ -15050,14 +16936,16 @@
         ]
       },
       'topics': {
-        themeMode: 'hanabi',
+        themeMode: 'train',
         title: '🚂 鐵道之旅',
-        feedSeason: 'hanabi',
+        feedSeason: 'train',
         subItems: [
-          { id: 'topic_hanabi', icon: '🎆', name: '夏夜花火大會（觀覽席／日程）', type: 'season', val: 'hanabi' },
-          { id: 'topic_train', icon: '🚂', name: '鐵道・SL觀光列車（全日本30大名車）', type: 'portal', val: 'openTrainPortal' },
-          { id: 'topic_acg', icon: '🎪', name: '動漫巡禮・快閃店（秋葉原／吉卜力）', type: 'portal', val: 'openAcgPortal' },
-          { id: 'topic_sports', icon: '⚾', name: '日本職棒甲子園（門票賽程行事曆）', type: 'portal', val: 'openSportsPortal' }
+          { id: 'train_season_front', icon: '🗓️', name: '季節行駛前線（春夏秋冬開行月曆）', type: 'season_front', val: 'train_season_front' },
+          { id: 'train_winter', icon: '❄️', name: '冬雪前線（SL冬之濕原／流冰物語）', type: 'season_front', val: 'winter' },
+          { id: 'train_spring', icon: '🌸', name: '春花前線（夷隅油菜花／嵐山小火車）', type: 'season_front', val: 'spring' },
+          { id: 'train_summer', icon: '🌾', name: '夏綠前線（薰衣草慢車／皮卡丘列車）', type: 'season_front', val: 'summer' },
+          { id: 'train_autumn', icon: '🍁', name: '秋楓前線（叡山紅葉隧道／磐越物語）', type: 'season_front', val: 'autumn' },
+          { id: 'topic_train', icon: '🚂', name: '全日本30大觀光特急圖鑑 ↗', type: 'portal', val: 'openTrainPortal' }
         ]
       }
     };
@@ -15074,19 +16962,27 @@
       const config = MASTER_HUBS_CONFIG[hubKey];
       if (!config) return;
 
-      document.querySelectorAll('.master-hub-tab').forEach(t => t.classList.remove('active'));
-      if (el) {
-        el.classList.add('active');
+      // 🌟 點擊切換時同步更新四季主題與降雪特效
+      if (hubKey === 'snow') {
+        currentSeason = 'snow';
+      } else if (hubKey === 'flower') {
+        currentSeason = 'sakura';
+      } else if (hubKey === 'topics') {
+        currentSeason = 'train';
       } else {
-        const tab = document.getElementById(`hubTab_${hubKey}`);
-        if (tab) tab.classList.add('active');
+        currentSeason = config.feedSeason || 'spots';
       }
-
-      currentSubItemId = config.subItems[0].id;
       document.body.className = `mode-${config.themeMode}`;
 
+      // 連動更新四大菜單大卡片的 active 狀態
+      document.querySelectorAll('.deal-big-card').forEach(c => c.classList.remove('active'));
+      const activeDealCard = document.getElementById(`dealCard_${hubKey}`);
+      if (activeDealCard) activeDealCard.classList.add('active');
+
+      currentSubItemId = config.subItems[0].id;
       renderSubContextPills();
       handleSubItemSelection(config.subItems[0], false);
+      initCanvasFX(); // ❄️ 即刻啟動對應自然粒子特效 (粉雪紛飛 / 櫻花吹雪 / 夏夜花火)
     }
 
     function renderSubContextPills() {
@@ -15128,6 +17024,28 @@
             window.open('https://www.klook.com/zh-TW/search/result/?query=%E6%BB%91%E9%9B%AA%E6%95%99%E7%B7%B4&aid=123436&utm_medium=affiliate-alwayson&utm_source=non-network&utm_campaign=123436', '_blank');
           }
         }
+      } else if (item.id === 'fuji_wisteria') {
+        // 💜 紫藤瀑布：專屬紫色花瓣飄落特效
+        currentSeason = 'wisteria';
+        document.body.className = 'mode-wisteria';
+        renderCards();
+        initCanvasFX();
+      } else if (item.id === 'nemophila_sea') {
+        // 💙 粉蝶花海：專屬藍紫與粉橘花片紛飛特效
+        currentSeason = 'nemophila';
+        document.body.className = 'mode-nemophila';
+        renderCards();
+        initCanvasFX();
+      } else if (item.id === 'hydrangea_season') {
+        currentSeason = 'hydrangea';
+        document.body.className = 'mode-hydrangea';
+        renderCards();
+        initCanvasFX();
+      } else if (item.type === 'season_front') {
+        currentSeason = 'train';
+        document.body.className = 'mode-train';
+        renderCards();
+        initCanvasFX();
       } else if (item.type === 'season') {
         currentSeason = item.val;
         document.body.className = `mode-${item.val}`;
@@ -15182,6 +17100,59 @@
       renderCards();
     }
 
+    
+    // 🌟 名所卡片微型分頁切換控制 (行程建議 / 美食日料 / 推薦住宿)
+    function switchSpotCardTab(spotId, tabKey, btn) {
+      const parentCard = document.getElementById(`spot-card-${spotId}`);
+      if (!parentCard) return;
+
+      parentCard.querySelectorAll('.spot-switch-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const pane = document.getElementById(`tabPane_${spotId}`);
+      if (!pane) return;
+
+      const spot = SPOTS_DATABASE.find(s => s.id === spotId) || {};
+      const cafeName = spot.cafe ? spot.cafe.name : `${spot.title || '名所'} 景觀咖啡工坊`;
+      const cafeFeature = spot.cafe ? spot.cafe.feature : '水岸窗景・露台第一排・步行3分鐘即達';
+      const japanFoodName = spot.japanFood ? spot.japanFood.name : `${spot.title || '名所'} 黑毛和牛壽喜燒 / 割烹壽司`;
+      const hotelName = spot.hotel ? spot.hotel.name : `${spot.title || '名所'} 周邊景觀溫泉飯店 / 設計旅宿`;
+
+      if (tabKey === 'plan') {
+        pane.innerHTML = `
+          <div class="spot-plan-step-list">
+            <div class="spot-plan-step-item">
+              <span class="spot-plan-badge">09:30</span>
+              <div><b>晨光漫步：</b>避開人潮搶先抵達，沿順光水岸/雪道取景留影。</div>
+            </div>
+            <div class="spot-plan-step-item">
+              <span class="spot-plan-badge">12:30</span>
+              <div><b>景觀旬味：</b>品嚐在地名物料理，或至景觀咖啡露台遠眺絕景。</div>
+            </div>
+            <div class="spot-plan-step-item">
+              <span class="spot-plan-badge">18:00</span>
+              <div><b>夜間點燈：</b>華燈初上觀賞夜景倒影，晚餐預約頂級黑毛和牛割烹。</div>
+            </div>
+          </div>
+        `;
+      } else if (tabKey === 'food') {
+        pane.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="color:#0F172A; font-weight:800;">☕ 景觀咖啡：${cafeName}</div>
+            <div style="color:#64748B; font-size:0.74rem;">${cafeFeature}</div>
+            <div style="color:#0F172A; font-weight:800; margin-top:2px;">🍣 日料推薦：${japanFoodName}</div>
+          </div>
+        `;
+      } else if (tabKey === 'stay') {
+        pane.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="color:#0F172A; font-weight:800;">🏨 推薦住宿：${hotelName}</div>
+            <div style="color:#64748B; font-size:0.74rem;">近車站商圈・高評價溫泉景觀客房・特約早鳥優惠</div>
+          </div>
+        `;
+      }
+    }
+    
     function renderCards() {
       const container = document.getElementById('cards-container');
       if (!container) return;
@@ -15363,54 +17334,36 @@
 
             <p class="card-clean-concise-desc">${item.desc}</p>
 
-            <!-- 🌟 直接展開功能模組 (咖啡、飯店、米其林、日料、附近賞櫻) -->
-            <div class="spot-direct-features-box">
-              
-              <!-- ☕ 景觀咖啡 -->
-              <div class="feature-item-row">
-                <div class="feature-item-label">☕ 景觀咖啡</div>
-                <div class="feature-item-val">
-                  <strong>${cafeName}</strong>
-                  <span class="feature-sub-txt">${cafeFeature}</span>
+            <!-- 🌟 名所卡片微型膠囊切換器 (預設行程建議，自由切換美食咖啡與住宿，卡片高度縮減55%！) -->
+            <div class="spot-pills-switcher">
+              <button class="spot-switch-pill active" id="tabBtn_${item.id}_plan" onclick="switchSpotCardTab('${item.id}', 'plan', this); event.stopPropagation();">
+                <span>🗺️ 行程建議</span>
+              </button>
+              <button class="spot-switch-pill" id="tabBtn_${item.id}_food" onclick="switchSpotCardTab('${item.id}', 'food', this); event.stopPropagation();">
+                <span>☕ 美食日料</span>
+              </button>
+              <button class="spot-switch-pill" id="tabBtn_${item.id}_stay" onclick="switchSpotCardTab('${item.id}', 'stay', this); event.stopPropagation();">
+                <span>🏨 推薦住宿</span>
+              </button>
+            </div>
+
+            <!-- 切換顯示內容容器 -->
+            <div class="spot-tab-content-panel" id="tabPane_${item.id}">
+              <!-- 預設：🗺️ 行程建議 -->
+              <div class="spot-plan-step-list">
+                <div class="spot-plan-step-item">
+                  <span class="spot-plan-badge">09:30</span>
+                  <div><b>晨光漫步：</b>避開人潮搶先抵達，沿順光水岸/雪道取景留影。</div>
+                </div>
+                <div class="spot-plan-step-item">
+                  <span class="spot-plan-badge">12:30</span>
+                  <div><b>景觀旬味：</b>品嚐在地名物料理，或至景觀咖啡露台遠眺絕景。</div>
+                </div>
+                <div class="spot-plan-step-item">
+                  <span class="spot-plan-badge">18:00</span>
+                  <div><b>夜間點燈：</b>華燈初上觀賞夜景倒影，晚餐預約頂級黑毛和牛割烹。</div>
                 </div>
               </div>
-
-              <!-- 🍣 日料推薦 -->
-              <div class="feature-item-row">
-                <div class="feature-item-label">🍣 日料推薦</div>
-                <div class="feature-item-val">
-                  <strong>${japanFoodName}</strong>
-                  <span class="feature-sub-txt">${japanFoodFeature}</span>
-                </div>
-              </div>
-
-              <!-- ⭐ 米其林席位 -->
-              <div class="feature-item-row">
-                <div class="feature-item-label">⭐ 米其林席位</div>
-                <div class="feature-item-val">
-                  <strong>${michelinName}</strong>
-                  <span class="feature-sub-txt">${michelinFeature}</span>
-                </div>
-              </div>
-
-              <!-- 🌸 推薦附近的賞櫻景點 -->
-              <div class="feature-item-row">
-                <div class="feature-item-label">🌸 附近賞櫻</div>
-                <div class="feature-item-val">
-                  <strong>${nearbySakuraName}</strong>
-                  <span class="feature-sub-txt">${nearbySakuraFeature}</span>
-                </div>
-              </div>
-
-              <!-- 🏨 推薦飯店 -->
-              <div class="feature-item-row">
-                <div class="feature-item-label">🏨 推薦飯店</div>
-                <div class="feature-item-val">
-                  <strong>${hotelName}</strong>
-                  <span class="feature-sub-txt">${hotelFeature}</span>
-                </div>
-              </div>
-
             </div>
 
             <!-- 底部操作按鈕列 (深靛藍 ＆ 純淨白，簡約不花俏) -->
@@ -16634,33 +18587,65 @@
 
       let count = 24;
       if (currentSeason === 'sakura') count = 65;
-      else if (currentSeason === 'snow') count = 38;
-      else if (currentSeason === 'momiji') count = 46; // 🍁 楓葉漫天曼妙飄舞
-      else if (currentSeason === 'ginkgo') count = 38; // 🍂 銀杏飄落
+      else if (currentSeason === 'wisteria') count = 75; // 💜 紫藤瀑布曼妙紫花飄落
+      else if (currentSeason === 'nemophila') count = 70; // 💙 粉蝶花海藍紫粉橘花片
+      else if (currentSeason === 'hydrangea') count = 60; // 💙 繡球花瓣
+      else if (currentSeason === 'snow') count = 85; // ❄️ 漫天晶瑩 JAPOW 天然乾粉雪
+      else if (currentSeason === 'momiji') count = 46;
+      else if (currentSeason === 'ginkgo') count = 38;
       else if (currentSeason === 'spots') count = 0;
 
       const sakuraColors = ['#F472B6', '#FB7185', '#FDA4AF', '#F43F5E', '#FFB7C5', '#F9A8D4'];
-      const momijiColors = ['#DC2626', '#EA580C', '#B91C1C', '#C2410C', '#991B1B', '#E11D48']; // 丹楓真紅・朱紅・琥珀
+      const wisteriaColors = ['#9333EA', '#A855F7', '#C084FC', '#7E22CE', '#D8B4FE', '#E9D5FF', '#6B21A8']; // 💜 紫藤瀑布高雅紫羅蘭色階
+      const nemophilaColors = ['#38BDF8', '#60A5FA', '#818CF8', '#A78BFA', '#0EA5E9', '#93C5FD', '#FDBA74', '#FB923C']; // 💙 粉蝶花：藍紫與粉橘花片
+      const momijiColors = ['#DC2626', '#EA580C', '#B91C1C', '#C2410C', '#991B1B', '#E11D48'];
 
       for (let i = 0; i < count; i++) {
         const isSakura = currentSeason === 'sakura';
         const isSnowFlurry = isSakura && (i % 3 === 0);
         const isMomiji = currentSeason === 'momiji';
 
+        let particleColor = sakuraColors[i % sakuraColors.length];
+        if (currentSeason === 'wisteria') {
+          particleColor = wisteriaColors[i % wisteriaColors.length];
+        } else if (currentSeason === 'nemophila') {
+          particleColor = nemophilaColors[i % nemophilaColors.length];
+        } else if (isMomiji) {
+          particleColor = momijiColors[i % momijiColors.length];
+        } else if (isSnowFlurry) {
+          particleColor = 'rgba(255, 255, 255, 0.92)';
+        }
+
+        const isSnow = currentSeason === 'snow';
+        let pSize;
+        if (isSnow) {
+          // ❄️ 0.8px ~ 2.1px 微小粉雪，絕不大顆笨重，兼顧空靈輕盈
+          pSize = Math.random() * 1.3 + 0.8;
+        } else if (isMomiji) {
+          pSize = Math.random() * 6 + 9;
+        } else if (currentSeason === 'wisteria') {
+          pSize = Math.random() * 4 + 3.5;
+        } else if (isSnowFlurry) {
+          pSize = Math.random() * 1.4 + 0.8;
+        } else {
+          pSize = Math.random() * 5 + 3;
+        }
+
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           isSnowFlurry: isSnowFlurry,
-          size: isMomiji ? (Math.random() * 6 + 9) : (isSnowFlurry ? (Math.random() * 2.5 + 1.2) : (Math.random() * 5 + 3)),
-          // 🍁 楓葉在風中翻轉飄落：垂直帶微浮力、水平隨風擺盪
-          speedY: isMomiji ? (Math.random() * 0.9 + 0.55) : (isSnowFlurry ? (Math.random() * 0.9 + 0.35) : (Math.random() * 1.1 + 0.45)),
-          speedX: isMomiji ? (Math.random() * 1.4 - 0.7) : (Math.random() * 0.7 - 0.35),
+          size: pSize,
+          // ❄️ 緩慢微風飄落，夢幻柔和
+          speedY: isSnow ? (Math.random() * 0.65 + 0.35) : (isMomiji ? (Math.random() * 0.9 + 0.55) : (currentSeason === 'wisteria' ? (Math.random() * 1.2 + 0.6) : (isSnowFlurry ? (Math.random() * 0.9 + 0.35) : (Math.random() * 1.1 + 0.45)))),
+          speedX: isSnow ? (Math.random() * 0.4 - 0.2) : (isMomiji ? (Math.random() * 1.4 - 0.7) : (Math.random() * 0.8 - 0.4)),
           rot: Math.random() * Math.PI * 2,
-          rotSpeed: isMomiji ? (Math.random() * 0.04 - 0.02) : (Math.random() * 0.02 - 0.01),
+          rotSpeed: Math.random() * 0.03 - 0.015,
           wobble: Math.random() * Math.PI * 2,
-          wobbleSpeed: isMomiji ? (Math.random() * 0.04 + 0.02) : (Math.random() * 0.025 + 0.01),
-          alpha: Math.random() * 0.35 + 0.65,
-          color: isMomiji ? momijiColors[i % momijiColors.length] : (isSnowFlurry ? 'rgba(255, 255, 255, 0.92)' : sakuraColors[i % sakuraColors.length])
+          wobbleSpeed: isSnow ? (Math.random() * 0.02 + 0.01) : (Math.random() * 0.03 + 0.01),
+          alpha: isSnow ? (Math.random() * 0.45 + 0.35) : (Math.random() * 0.35 + 0.65),
+          color: particleColor,
+          haloMultiplier: isSnow ? (Math.random() * 1.4 + 1.8) : 1
         });
       }
     }
@@ -16737,10 +18722,41 @@
               ctx.ellipse(0, 0, p.size * 1.35, p.size * 0.75, 0.22, 0, Math.PI * 2);
               ctx.fill();
             }
-          } else if (currentSeason === 'snow') {
-            ctx.fillStyle = `rgba(180, 205, 225, ${p.alpha})`;
+          } else if (currentSeason === 'wisteria') {
+            // 💜 紫藤瀑布：水滴型優雅垂墜的紫色花瓣
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.alpha;
             ctx.beginPath();
-            ctx.arc(0, 0, p.size * 0.75, 0, Math.PI * 2);
+            ctx.moveTo(0, -p.size * 1.5);
+            ctx.bezierCurveTo(p.size * 0.85, -p.size * 0.5, p.size * 0.85, p.size * 0.8, 0, p.size * 1.2);
+            ctx.bezierCurveTo(-p.size * 0.85, p.size * 0.8, -p.size * 0.85, -p.size * 0.5, 0, -p.size * 1.5);
+            ctx.fill();
+          } else if (currentSeason === 'nemophila') {
+            // 💙 粉蝶花海：藍紫與粉橘交織的圓潤花片 ＋ 白色微光花蕊
+            ctx.fillStyle = p.color;
+            ctx.globalAlpha = p.alpha;
+            ctx.beginPath();
+            ctx.ellipse(0, 0, p.size * 1.2, p.size * 0.85, 0.3, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 中心微光花蕊
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+            ctx.beginPath();
+            ctx.arc(0, 0, p.size * 0.3, 0, Math.PI * 2);
+            ctx.fill();
+          } else if (currentSeason === 'snow' || p.isSnowFlurry) {
+            // ❄️ 唯美朦朧日系微細乾粉雪 (Soft Misty JAPOW Powder Snow)
+            // 移除所有生硬十字與粗笨大顆粒，純淨徑向柔光漸層營造唯美散焦「朦朧感」
+            const haloRadius = p.size * (p.haloMultiplier || 2.2);
+            const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, haloRadius);
+            grad.addColorStop(0, `rgba(255, 255, 255, ${Math.min(1, p.alpha * 1.25)})`);
+            grad.addColorStop(0.35, `rgba(240, 248, 255, ${p.alpha * 0.65})`);
+            grad.addColorStop(0.7, `rgba(225, 240, 255, ${p.alpha * 0.2})`);
+            grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(0, 0, haloRadius, 0, Math.PI * 2);
             ctx.fill();
           } else if (currentSeason === 'momiji') {
             // 🍁 逼真五角日系丹楓紅葉 (Japanese Momiji 5-lobed Maple Leaf)
@@ -16864,7 +18880,7 @@
       const sel = window.getSelection().toString();
       if (sel && sel.length > 20) {
         e.preventDefault();
-        const copyNotice = sel + "\n\n--------------------\n【日旅報報 JAPAN TABI NEWS 官方特約觀測現地取材認證】\n本文與觀光景點情報受著作權法保護，未經授權禁止爬蟲搬運與商業轉載。\n官方專題網址：" + window.location.href;
+        const copyNotice = sel + "\n\n--------------------\n【日旅報報 JAPAN TABI 官方特約觀測現地取材認證】\n本文與觀光景點情報受著作權法保護，未經授權禁止爬蟲搬運與商業轉載。\n官方專題網址：" + window.location.href;
         if (e.clipboardData) {
           e.clipboardData.setData('text/plain', copyNotice);
         } else if (window.clipboardData) {
@@ -16996,7 +19012,7 @@
         text += `${i + 1}. [${item.tag || '景點'}] ${item.title} (${item.region || '日本'})\n`;
       });
       text += "==================================\n";
-      text += "行程規劃來源：《日旅報報 JAPAN TABI NEWS》\n" + window.location.href;
+      text += "行程規劃來源：《日旅報報 JAPAN TABI》\n" + window.location.href;
 
       navigator.clipboard.writeText(text).then(() => {
         showToast('已複製行程文字清單至剪貼簿！可直接貼至記事本。', '📋');
@@ -17148,7 +19164,7 @@
    - 報警：110 ｜ 救護：119 ｜ 道路救援：#8139
    - 即使輕微擦撞也必須報警開立「事故證明書」，保險方可理賠！
 =========================================
-來源：《日旅報報 JAPAN TABI NEWS》日本自駕指南
+來源：《日旅報報 JAPAN TABI》日本自駕指南
 ${window.location.href}`;
 
       navigator.clipboard.writeText(text).then(() => {
