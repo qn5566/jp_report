@@ -1989,6 +1989,270 @@
     }
 
 
+    
+    /* ========================================================
+       [夏夜花火天候風向儀表] Hanabi Weather & Wind Dashboard
+       ======================================================== */
+    .hanabi-weather-wind-box {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border: 1.5px solid #334155;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin: 10px 0;
+      color: #F8FAFC;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+    .h-weather-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .h-weather-badge {
+      font-size: 0.73rem;
+      font-weight: 900;
+      color: #FDE047;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: 0.2px;
+    }
+    .h-smoke-badge {
+      font-size: 0.68rem;
+      font-weight: 800;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 2px 7px;
+      border-radius: 999px;
+      line-height: 1.2;
+    }
+    .h-weather-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .h-weather-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .h-w-lbl {
+      font-size: 0.64rem;
+      color: #94A3B8;
+      font-weight: 700;
+    }
+    .h-w-val {
+      font-size: 0.74rem;
+      color: #F1F5F9;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .font-accent-amber {
+      color: #FBBF24 !important;
+    }
+    .font-accent-emerald {
+      color: #34D399 !important;
+    }
+    .h-photo-tips {
+      font-size: 0.69rem;
+      color: #CBD5E1;
+      line-height: 1.35;
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      border-radius: 6px;
+      padding: 5px 8px;
+      margin-top: 4px;
+    }
+
+    /* ========================================================
+       [特派員散場避雷指南] Hanabi Evacuation & Station Diversion Guide
+       ======================================================== */
+    .hanabi-evacuation-guide-box {
+      background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);
+      border: 1.5px solid #FDA4AF;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin: 10px 0;
+      color: #881337;
+      box-shadow: 0 2px 8px rgba(225, 29, 72, 0.08);
+    }
+    body.mode-hanabi .hanabi-evacuation-guide-box {
+      background: linear-gradient(135deg, #2D151F 0%, #1A0D14 100%);
+      border-color: #BE123C;
+      color: #FECDD3;
+    }
+    .evac-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .evac-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .evac-icon {
+      font-size: 0.95rem;
+    }
+    .evac-title {
+      font-size: 0.78rem;
+      font-weight: 900;
+      color: #BE123C;
+    }
+    body.mode-hanabi .evac-title {
+      color: #FB7185;
+    }
+    .evac-danger-pill {
+      font-size: 0.67rem;
+      font-weight: 800;
+      background: #E11D48;
+      color: #FFFFFF;
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.2px;
+    }
+    .evac-warning-banner {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #9F1239;
+      line-height: 1.4;
+      margin-bottom: 8px;
+      background: rgba(225, 29, 72, 0.08);
+      padding: 5px 8px;
+      border-radius: 6px;
+      border-left: 3px solid #E11D48;
+    }
+    body.mode-hanabi .evac-warning-banner {
+      color: #FDA4AF;
+      background: rgba(225, 29, 72, 0.2);
+    }
+    .evac-routes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .evac-route-item {
+      background: #FFFFFF;
+      border: 1px solid #FECDD3;
+      border-radius: 8px;
+      padding: 7px 9px;
+    }
+    body.mode-hanabi .evac-route-item {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(253, 164, 175, 0.2);
+    }
+    .evac-route-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 3px;
+      flex-wrap: wrap;
+    }
+    .evac-dir-pill {
+      font-size: 0.64rem;
+      font-weight: 800;
+      color: #0369A1;
+      background: #E0F2FE;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+    }
+    body.mode-hanabi .evac-dir-pill {
+      color: #7DD3FC;
+      background: rgba(2, 132, 199, 0.25);
+    }
+    .evac-station-name {
+      font-size: 0.76rem;
+      font-weight: 900;
+      color: #0F172A;
+    }
+    body.mode-hanabi .evac-station-name {
+      color: #F8FAFC;
+    }
+    .evac-time-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #059669;
+      background: #D1FAE5;
+      padding: 1px 5px;
+      border-radius: 4px;
+      margin-left: auto;
+    }
+    body.mode-hanabi .evac-time-badge {
+      color: #6EE7B7;
+      background: rgba(5, 150, 105, 0.25);
+    }
+    .evac-route-detail {
+      font-size: 0.71rem;
+      color: #475569;
+      line-height: 1.35;
+    }
+    body.mode-hanabi .evac-route-detail {
+      color: #CBD5E1;
+    }
+    .evac-expert-tip {
+      font-size: 0.69rem;
+      font-weight: 700;
+      color: #92400E;
+      background: #FEF3C7;
+      border: 1px solid #FDE68A;
+      border-radius: 6px;
+      padding: 5px 8px;
+      line-height: 1.35;
+      margin-top: 4px;
+    }
+    body.mode-hanabi .evac-expert-tip {
+      color: #FDE68A;
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+
+    /* 花火專屬三顆變現行動按鈕 */
+    .hanabi-action-bar {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr 1fr !important;
+      gap: 6px !important;
+    }
+    @media (max-width: 480px) {
+      .hanabi-action-bar {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      .hanabi-action-bar .btn-act-booking-blue {
+        grid-column: 1 / -1;
+      }
+    }
+    .btn-act-yukata {
+      background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 6px rgba(109, 40, 217, 0.3) !important;
+    }
+    .btn-act-yukata:hover {
+      box-shadow: 0 4px 12px rgba(109, 40, 217, 0.45) !important;
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+    .btn-act-houseboat {
+      background: linear-gradient(135deg, #F43F5E 0%, #BE123C 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 6px rgba(225, 29, 72, 0.35) !important;
+    }
+    .btn-act-houseboat:hover {
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.5) !important;
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+
+
     /* ========================================================
        [頂部第一層：4 大情境母夾] Master Hub Navigation
        ======================================================== */
@@ -4614,47 +4878,6 @@
 
       <!-- 前台語言切換器 (Header Selector: 🌐 Language 下拉 7 國語言) -->
       
-      <!-- 前台幣別切換器 (Header Currency Selector: 💱 TWD ▾) -->
-      <div class="lang-selector-dropdown-wrap" id="currencySelectorWrap">
-        <button class="lang-selector-btn" id="currencyDropdownTrigger" onclick="toggleCurrencyDropdown(event)">
-          <span class="lang-globe-icon">💱</span>
-          <span id="currentCurrencyLabel">TWD (NT$)</span>
-          <span class="lang-arrow" id="currencyArrow">▾</span>
-        </button>
-        <div class="lang-dropdown-menu" id="currencyDropdownMenu">
-          <button class="lang-menu-opt currency-menu-opt active" data-curr="TWD" onclick="selectCurrency('TWD', 'TWD (NT$)')">
-            <span class="lang-flag">🇹🇼</span>
-            <span class="lang-name">新台幣 TWD (NT$)</span>
-            <span class="lang-check">✓</span>
-          </button>
-          <button class="lang-menu-opt currency-menu-opt" data-curr="JPY" onclick="selectCurrency('JPY', 'JPY (¥)')">
-            <span class="lang-flag">🇯🇵</span>
-            <span class="lang-name">日圓 JPY (¥)</span>
-            <span class="lang-check"></span>
-          </button>
-          <button class="lang-menu-opt currency-menu-opt" data-curr="USD" onclick="selectCurrency('USD', 'USD ($)')">
-            <span class="lang-flag">🇺🇸</span>
-            <span class="lang-name">美元 USD ($)</span>
-            <span class="lang-check"></span>
-          </button>
-          <button class="lang-menu-opt currency-menu-opt" data-curr="HKD" onclick="selectCurrency('HKD', 'HKD (HK$)')">
-            <span class="lang-flag">🇭🇰</span>
-            <span class="lang-name">港幣 HKD (HK$)</span>
-            <span class="lang-check"></span>
-          </button>
-          <button class="lang-menu-opt currency-menu-opt" data-curr="KRW" onclick="selectCurrency('KRW', 'KRW (₩)')">
-            <span class="lang-flag">🇰🇷</span>
-            <span class="lang-name">韓元 KRW (₩)</span>
-            <span class="lang-check"></span>
-          </button>
-          <button class="lang-menu-opt currency-menu-opt" data-curr="THB" onclick="selectCurrency('THB', 'THB (฿)')">
-            <span class="lang-flag">🇹🇭</span>
-            <span class="lang-name">泰銖 THB (฿)</span>
-            <span class="lang-check"></span>
-          </button>
-        </div>
-      </div>
-
       <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
         <button class="lang-selector-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)">
           <span class="lang-globe-icon">🌐</span>
@@ -10336,41 +10559,7 @@
       return `${cfg.symbol} ${Math.round(converted).toLocaleString()}`;
     }
 
-    function toggleCurrencyDropdown(e) {
-      e.stopPropagation();
-      const wrap = document.getElementById('currencySelectorWrap');
-      if (wrap) wrap.classList.toggle('open');
-      const langWrap = document.getElementById('langSelectorWrap');
-      if (langWrap) langWrap.classList.remove('open');
-    }
 
-    function selectCurrency(currCode, currLabel) {
-      currentCurrency = currCode;
-      localStorage.setItem('tabi_currency', currCode);
-      const wrap = document.getElementById('currencySelectorWrap');
-      if (wrap) wrap.classList.remove('open');
-      
-      const label = document.getElementById('currentCurrencyLabel');
-      if (label) label.textContent = currLabel;
-
-      document.querySelectorAll('.currency-menu-opt').forEach(opt => {
-        const isThis = opt.getAttribute('data-curr') === currCode;
-        opt.classList.toggle('active', isThis);
-        const check = opt.querySelector('.lang-check');
-        if (check) check.textContent = isThis ? '✓' : '';
-      });
-
-      renderCards();
-      showToast(`💱 幣別已切換為：${currLabel}，即時自動換算`, '✨');
-    }
-
-    // 點擊空白處自動關閉幣別選單
-    document.addEventListener('click', function(e) {
-      const wrap = document.getElementById('currencySelectorWrap');
-      if (wrap && !wrap.contains(e.target)) {
-        wrap.classList.remove('open');
-      }
-    });
 
     // 櫻花前線救援路線平滑切換
     function jumpToSpot(targetSpotId) {
@@ -11024,6 +11213,95 @@
       {
         id: 'sumida_hanabi',
         theme: 'hanabi',
+        yukataUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%B7%BA%E8%8D%89%20%E6%B5%B4%E8%A1%A3&aid=123436&utm_medium=affiliate-alwayson',
+        houseboatUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%9A%85%E7%94%B0%E5%B7%9D%20%E5%B1%8B%E5%BD%A2%E8%88%B9&aid=123436&utm_medium=affiliate-alwayson',
+        weatherWind: {
+          windDir: '西南風 (SW)',
+          windSpeed: '3.2 m/s (理想微風)',
+          smokeRating: '極佳 (無積煙風險)',
+          smokeColor: '#10B981',
+          bestSpot: '墨田區右岸河川敷 (下風處避開・晴空塔同框順光面)',
+          temp: '27°C (夏夜微溫)',
+          humidity: '68% (通透度良好)',
+          photoTips: '💡 建議鏡頭 16-35mm 廣角，快門設 4-8 秒，避開煙火重疊積白光。'
+        },
+        evacuationGuide: {
+          alertLevel: 'critical',
+          bottleneckStation: '淺草站 (銀座線/淺草線/東武晴空塔線)',
+          bottleneckWaitTime: '管制 90～120 分鐘 (人潮擠爆寸步難行)',
+          warningNotice: '⚠️ 淺草站大會結束時實施分批人流管制超過 90 分鐘，千萬別去！',
+          routes: [
+            {
+              direction: '向東走 (首選分流)',
+              station: '本所吾妻橋站 (都營淺草線)',
+              walkTime: '徒步約 12 分鐘',
+              routeDetail: '過吾妻橋往東沿淺草通直行約 800m，免排隊直接刷卡進站直通日本橋/新橋！'
+            },
+            {
+              direction: '向東南走 (晴空塔方向)',
+              station: '押上站 (半藏門線 / 京成押上線)',
+              walkTime: '徒步約 16 分鐘',
+              routeDetail: '避開雷門人流，沿言問通直達晴空塔底，半藏門線始發列車空位多，直達澀谷/新宿！'
+            },
+            {
+              direction: '向北走 (第一會場散場)',
+              station: '曳舟站 / 京成曳舟站',
+              walkTime: '徒步約 15 分鐘',
+              routeDetail: '第一會場向東出水戶街道直通曳舟站，避開南側淺草人潮回上野/日暮里。'
+            }
+          ],
+          expertTip: '💡 特派員避雷秘笈：大會於 20:30 結束，可提早 15 分鐘（20:15）起身移動；或就地續攤野餐至 21:40，淺草站管制解除後再優雅進站！'
+        },
+        perks: {
+          cafes: [
+            {
+              name: '淺草河岸 2F 露台咖啡酒吧 (Riverside Bar)',
+              feature: '隈研吾建築美學視野・2F 露天大露台俯瞰吾妻橋與花火・免街頭推擠',
+              tags: ['河岸第一排', '精釀生啤', '步行 4 分鐘'],
+              waitHint: '花火當日需提前 1 個月預訂露台專案',
+              img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=260&q=80'
+            },
+            {
+              name: '晴空塔 31F 頂樓景觀酒吧「Sky Restaurant 634」',
+              feature: '地上 345m 俯瞰全東京夜景與萬發煙火盛宴・法式香檳極上保留席',
+              tags: ['31F頂奢夜景', '法式香檳晚宴', '保證保留席'],
+              waitHint: '每年花火席秒殺，專人代訂通道',
+              img: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=260&q=80'
+            }
+          ],
+          michelin: [
+            {
+              name: '隅田川傳統豪華屋形船・花火包船觀覽席',
+              feature: '江戶前現炸天婦羅盛宴・地酒生啤無限量暢飲・川心第一排震撼仰望',
+              tags: ['🛶 屋形船第一排', '天婦羅放題', '高客單分潤'],
+              priceTwd: 8800,
+              priceJpy: 41800,
+              affiliateType: 'KKday × 隅田川屋形船協會 (高額抽成)',
+              affiliateUrl: 'https://www.kkday.com/zh-tw/product/productlist?keyword=%E9%9A%85%E7%94%B0%E5%B7%9D%20%E5%B1%8B%E5%BD%A2%E8%88%B9&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '預訂屋形船特等席 ➔'
+            },
+            {
+              name: '淺草「駒形前川」200年鰻魚老舖・河畔花火懷石',
+              feature: '米其林評鑑推薦老舖・特選國產活鰻蒲燒・窗外正對隅田川璀璨煙花',
+              tags: ['🍱 江戶前鰻魚', '200年名店', '保證景觀席'],
+              priceTwd: 5200,
+              priceJpy: 24700,
+              affiliateType: 'Klook 美食套餐 (保證保留席)',
+              affiliateUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%B7%BA%E8%8D%89%20%E9%B0%BB%E9%AD%9A%E9%A3%AF&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '搶訂河景鰻魚席 ➔'
+            }
+          ],
+          walkGuide: {
+            spotName: '隅田川花火大會雙會場精華導引',
+            steps: [
+              { step: '1', title: '出站抵達', desc: '14:00 前抵達「淺草站」或「本所吾妻橋站」，先完成浴衣換裝與隨身補給。' },
+              { step: '2', title: '浴衣漫步', desc: '穿著浴衣沿隅田公園漫步，拍下晴空塔與吾妻橋夏日同框美照。' },
+              { step: '3', title: '進入觀賞席', desc: '17:30 前完成驗票進入付費觀賞席或屋形船登船碼頭。' },
+              { step: '4', title: '倒數開射', desc: '19:00 第一發花火升空，享受雙會場 20,000 發連發震撼！' }
+            ],
+            tips: '💡 站長叮嚀：大會結束淺草站管制超過 90 分鐘，請依避雷指南往本所吾妻橋或押上站進站！'
+          }
+        },
         category: 'hanabi',
         region: 'tokyo',
         title: '隅田川花火大會',
@@ -11065,6 +11343,89 @@
       {
         id: 'nagaoka_hanabi',
         theme: 'hanabi',
+        yukataUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%96%B0%E6%BD%9F%20%E6%B5%B4%E8%A1%A3&aid=123436&utm_medium=affiliate-alwayson',
+        houseboatUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%95%B7%E5%B2%A1%20%E8%8A%B1%E7%81%AB%E5%BA%A7%E4%BD%8D&aid=123436&utm_medium=affiliate-alwayson',
+        weatherWind: {
+          windDir: '西北風 (NW)',
+          windSpeed: '2.8 m/s (最佳風速)',
+          smokeRating: '極佳 (煙霧順向帶離河面)',
+          smokeColor: '#10B981',
+          bestSpot: '信濃川右岸長生橋側 (煙霧往左岸吹，右岸全程清透高清)',
+          temp: '25°C (河畔涼爽舒適)',
+          humidity: '62% (大氣透明度高)',
+          photoTips: '💡 鳳凰花火全寬達 2 公里，務必使用 12-24mm 超廣角直出或全景接圖！'
+        },
+        evacuationGuide: {
+          alertLevel: 'critical',
+          bottleneckStation: 'JR 長岡站 (東口 / 西口新幹線進站)',
+          bottleneckWaitTime: '進站管制 120 分鐘以上 (20萬人塞爆)',
+          warningNotice: '⚠️ 長岡站東西口散場排隊人龍達數公里，新幹線排隊長達 2 小時！',
+          routes: [
+            {
+              direction: '信越本線往南 (避開長岡站)',
+              station: '宮內站 (JR 信越本線 / 上越線)',
+              walkTime: '大手大橋南側徒步約 25 分鐘',
+              routeDetail: '從右岸河川敷沿長岡大橋南下，步行至宮內站上車往越後湯澤/新潟方向，免擠長岡站！'
+            },
+            {
+              direction: '原地避難續攤 (最舒服方案)',
+              station: '信濃川河川敷野餐墊區',
+              walkTime: '原地停留 45～60 分鐘',
+              routeDetail: '大會壓軸鳳凰煙火結束後，不要隨人潮推擠，開一罐新潟地酒慢慢收拾，22:00 再步向長岡站輕鬆進站。'
+            }
+          ],
+          expertTip: '💡 特派員避雷秘笈：持 JR Pass 或新幹線指定席票的旅人，務必提早買好回程車票，新幹線加班車開至午夜，不用慌張！'
+        },
+        perks: {
+          cafes: [
+            {
+              name: '長岡信濃川 觀覽茶房 (VIP河畔茶寮)',
+              feature: '河畔冷氣包廂・享用越後名物雪室熟成豬肉拼盤與新潟純米大吟釀配花火',
+              tags: ['河畔冷氣包廂', '地酒暢飲', '避暑首選'],
+              waitHint: '大會前 3 個月開放官網預訂',
+              img: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=260&q=80'
+            },
+            {
+              name: '越後湯澤ぽんしゅ館 長岡店 (地酒續攤)',
+              feature: '散場後到長岡車站旁投幣試飲 100 款清酒，配巨型越光米飯糰消磨尖峰',
+              tags: ['100款地酒試飲', '爆彈飯糰', '避難聖地'],
+              waitHint: '散場營業至 23:30',
+              img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=260&q=80'
+            }
+          ],
+          michelin: [
+            {
+              name: '長岡花火 A 會場・右岸長生橋側官方特等桌席',
+              feature: '官方保證特等席位・正三尺玉爆炸正下方極限震撼・附專屬野餐墊',
+              tags: ['🎆 官方保證席', '正三尺玉下方', '高客單分潤'],
+              priceTwd: 6500,
+              priceJpy: 30800,
+              affiliateType: 'KKday 日本三大花火特等席專車',
+              affiliateUrl: 'https://www.kkday.com/zh-tw/product/productlist?keyword=%E9%95%B7%E5%B2%A1%E8%8A%B1%E7%81%AB&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '代訂官方特等席 ➔'
+            },
+            {
+              name: '新潟古町名店「割烹 大橋屋」花火特製越後極上便當',
+              feature: '米其林評鑑推薦・越後極上四季旬味・當日直送長岡會場專屬領取',
+              tags: ['⭐ 米其林評鑑', '越後極上旬味', '會場專人直送'],
+              priceTwd: 3200,
+              priceJpy: 15200,
+              affiliateType: 'Klook 美食 (限定外帶席位預約)',
+              affiliateUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%96%B0%E6%BD%9F%20%E7%BE%8E%E9%A3%9F&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '預約料亭限定便當 ➔'
+            }
+          ],
+          walkGuide: {
+            spotName: '長岡祭大花火大會信濃川動線',
+            steps: [
+              { step: '1', title: '長岡抵達', desc: '搭乘上越新幹線抵達 JR 長岡站，從西口大手通直行約 1.8km 即達會場。' },
+              { step: '2', title: '長生橋分流', desc: '過長生橋前往右岸付費觀覽席，17:00 前完成安檢入座。' },
+              { step: '3', title: '鳳凰齊射', desc: '19:20 施放全日本最震撼 2 公里寬鳳凰祈願花火。' },
+              { step: '4', title: '避雷散場', desc: '散場請避開長岡站人龍，依避雷指引轉往宮內站或原地野餐避難。' }
+            ],
+            tips: '💡 站長叮嚀：會場無收費席無法進入河川敷，千萬不要現場碰運氣；提早預約官方指定席！'
+          }
+        },
         category: 'hanabi',
         region: 'niigata',
         title: '長岡祭大花火大會',
@@ -11453,6 +11814,89 @@
       {
         id: 'biwako_hanabi',
         theme: 'hanabi',
+        yukataUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%20%E6%B5%B4%E8%A1%A3&aid=123436&utm_medium=affiliate-alwayson',
+        houseboatUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E7%90%B5%E7%90%B6%E6%B9%96%20%E8%8A%B1%E7%81%AB%20%E9%81%8A%E8%88%B9&aid=123436&utm_medium=affiliate-alwayson',
+        weatherWind: {
+          windDir: '北北東風 (NNE)',
+          windSpeed: '3.5 m/s (湖面清風)',
+          smokeRating: '優良 (煙霧向湖心擴散)',
+          smokeColor: '#10B981',
+          bestSpot: '大津港修景綠地 (水中花火第一排・正向仰角無遮蔽)',
+          temp: '26°C (湖畔有涼意)',
+          humidity: '72% (湖面微霧感倒影極美)',
+          photoTips: '💡 湖面波光倒影需要減光鏡 ND4-8，光圈縮至 F11 捕捉水天一色連發！'
+        },
+        evacuationGuide: {
+          alertLevel: 'critical',
+          bottleneckStation: 'JR 大津站 / 京阪 琵琶湖濱大津站',
+          bottleneckWaitTime: '進站排隊 60～90 分鐘',
+          warningNotice: '⚠️ 散場時 JR 大津站長龍綿延 1 公里，月台擠得水洩不通！',
+          routes: [
+            {
+              direction: '向西轉乘京阪線 (京都分流首選)',
+              station: '三井寺站 / 大津市役所前站 (京阪石山坂本線)',
+              walkTime: '沿湖畔向西徒步約 15 分鐘',
+              routeDetail: '避開濱大津站人龍，往西走一站至三井寺站上車，在京阪膳所或皇子山輕鬆轉乘直達京都三條/四條烏丸！'
+            },
+            {
+              direction: '向東走 (JR 替代站)',
+              station: 'JR 膳所站',
+              walkTime: '向東南徒步約 20 分鐘',
+              routeDetail: '繞過大津站正面人流，沿湖畔大通往膳所站搭乘琵琶湖線回京都，排隊時間縮短 70%！'
+            }
+          ],
+          expertTip: '💡 特派員避雷秘笈：強烈建議先在手機 Suica / ICOCA 儲值足夠金額，散場購票機大排長龍，直接刷卡秒過閘門！'
+        },
+        perks: {
+          cafes: [
+            {
+              name: '大津港湖畔星空 Bar (Lake Biwa Skyline Lounge)',
+              feature: '露天親水平台直面湖面水中煙火・近江精釀生啤與夏夜微風・水中花火第一排',
+              tags: ['湖畔第一排', '近江精釀生啤', '微風徐徐'],
+              waitHint: '需提早線上預購花火露台席',
+              img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=260&q=80'
+            },
+            {
+              name: '琵琶湖大津王子大飯店 38F 天空酒廊',
+              feature: '圓弧形透明全景落地窗・高空俯瞰萬發水上花火盛大炸開・免日曬雨淋頂級包廂',
+              tags: ['38F高空全景', '落地玻璃視野', '免日曬雨淋'],
+              waitHint: '包廂客單價高，提供專人預約席',
+              img: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=260&q=80'
+            }
+          ],
+          michelin: [
+            {
+              name: '琵琶湖豪華觀光船「密西根號 (Michigan)」花火晚宴席',
+              feature: '行駛於琵琶湖南湖核心水域・湖心零死角水上花火・豪華自助Buffet酒水暢飲',
+              tags: ['🚢 密西根號遊船', '湖心零死角花火', 'Buffet暢飲'],
+              priceTwd: 7800,
+              priceJpy: 37050,
+              affiliateType: 'KKday 密西根花火觀覽船保證登船券',
+              affiliateUrl: 'https://www.kkday.com/zh-tw/product/productlist?keyword=%E7%90%B5%E7%90%B6%E6%B9%96%20%E8%8A%B1%E7%81%AB&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '搶訂密西根花火船席 ➔'
+            },
+            {
+              name: '大津「近江牛 かね吉」創業120年特選近江牛涮涮鍋',
+              feature: '日本三大和牛近江牛老舖・特選A5霜降和牛・花火散場專人保留席位',
+              tags: ['🥩 日本三大和牛', '創業120年名舖', '特選A5近江牛'],
+              priceTwd: 4500,
+              priceJpy: 21370,
+              affiliateType: 'Klook 美食套餐 (保證保留席)',
+              affiliateUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E8%BF%91%E6%B1%9F%E7%89%9B&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '預約近江牛晚宴席 ➔'
+            }
+          ],
+          walkGuide: {
+            spotName: 'びわ湖大花火大會大津港散策路線',
+            steps: [
+              { step: '1', title: '京都出發', desc: '從京都站搭乘 JR 琵琶湖線 10 分鐘直達 JR 大津站，出站沿中央大通步行至湖畔。' },
+              { step: '2', title: '湖畔親水', desc: '抵達大津港修景綠地，欣賞琵琶湖壯闊水天一色全景。' },
+              { step: '3', title: '水中花火', desc: '19:30 湖面升起巨大的半圓形水中花火，水面倒映金光燦爛。' },
+              { step: '4', title: '避雷分流', desc: '散場沿湖畔向西徒步 15 分鐘至京阪三井寺站搭車直達京都，避開 JR 大排長龍！' }
+            ],
+            tips: '💡 站長叮嚀：大津站回程人潮極度擁擠，走三井寺站轉京阪電車回京都最順暢！'
+          }
+        },
         category: 'hanabi',
         region: 'kansai',
         title: 'びわ湖大花火大會',
@@ -11581,6 +12025,73 @@
       {
         id: 'kamakura_hanabi',
         theme: 'hanabi',
+        yukataUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%8E%8C%E5%80%89%20%E6%B5%B4%E8%A1%A3&aid=123436&utm_medium=affiliate-alwayson',
+        houseboatUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%8E%8C%E5%80%89%20%E8%8A%B1%E7%81%AB%20%E8%88%B9&aid=123436&utm_medium=affiliate-alwayson',
+        weatherWind: {
+          windDir: '南南西海風 (SSW)',
+          windSpeed: '4.2 m/s (海風強勁清爽)',
+          smokeRating: '極佳 (海風完全吹散煙霧)',
+          smokeColor: '#10B981',
+          bestSpot: '由比濱海灘中央區 (潮水線第一排沙灘)',
+          temp: '24°C (海風吹拂非常涼爽)',
+          humidity: '75% (海平面純淨夜色)',
+          photoTips: '💡 腳架請深插沙灘防海浪微晃，快門 3-5 秒定格快艇投擲出水面金色半圓！'
+        },
+        evacuationGuide: {
+          alertLevel: 'high',
+          bottleneckStation: '江之電 由比濱站 / 和田塚站',
+          bottleneckWaitTime: '月台極小・封閉排隊約 60 分鐘',
+          warningNotice: '⚠️ 江之電由比濱站單線單月台，散場排隊隊伍排到海灘大馬路！',
+          routes: [
+            {
+              direction: '直攻 JR 鎌倉站 (東京/橫濱大動脈)',
+              station: 'JR 鎌倉站西口 (橫須賀線 / 湘南新宿線)',
+              walkTime: '沿若宮大路直行徒步約 18 分鐘',
+              routeDetail: '不要浪費時間等江之電！沿海風散步道直直走回鎌倉站，橫須賀線每 10 分鐘一班 15 節超長車廂，全數載走！'
+            }
+          ],
+          expertTip: '💡 特派員避雷秘笈：穿木屐走路若不習慣，回程前可在海灘旁超商換回球鞋，18 分鐘快步直達鎌倉站！'
+        },
+        perks: {
+          cafes: [
+            {
+              name: '材木座露台海景餐廳 (ZAIMOKU THE TERRACE)',
+              feature: '面海第一排頂樓露天平台・露天BBQ與精釀生啤・由比濱水中花火直面視野',
+              tags: ['面海第一排', '湘南美學', '露天BBQ'],
+              waitHint: '花火當日提供預約制海景席',
+              img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=260&q=80'
+            },
+            {
+              name: 'Daisy’s Cafe Kamakura (由比濱美式露台)',
+              feature: '海風第一排美式復古露天席位・一邊喝冰鎮調酒一邊享受海潮香氣',
+              tags: ['由比濱正對面', '特調生啤', '步行 2 分鐘'],
+              waitHint: '午後即座無虛席',
+              img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=260&q=80'
+            }
+          ],
+          michelin: [
+            {
+              name: '湘南海岸花火觀覽快艇・由比濱水上尊榮席',
+              feature: '專屬快艇出海觀賞水中投擲花火・近距離感受衝擊波與滿天星冠・附香檳',
+              tags: ['🚤 專屬快艇觀賞', '近距離衝擊波', '香檳暢飲'],
+              priceTwd: 5800,
+              priceJpy: 27550,
+              affiliateType: 'Klook 鎌倉花火水上遊艇體驗',
+              affiliateUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E9%8E%8C%E5%80%89%E8%8A%B1%E7%81%AB&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '預約水上快艇特等席 ➔'
+            }
+          ],
+          walkGuide: {
+            spotName: '鎌倉海岸花火大會由比濱海灘路線',
+            steps: [
+              { step: '1', title: '抵達海灘', desc: '從鎌倉站或江之電由比濱站出站，直達由比濱海岸沙灘。' },
+              { step: '2', title: '沙灘野餐', desc: '鋪設野餐墊，脫下鞋子踩在細沙上，等待夕陽西沉。' },
+              { step: '3', title: '水中連發', desc: '19:20 快艇高速飛馳於海平面投擲煙火，在浪花中炸開金色巨花。' },
+              { step: '4', title: '快步避雷', desc: '散場切勿擠江之電，沿若宮大路直行 18 分鐘回 JR 鎌倉站搭橫須賀線！' }
+            ],
+            tips: '💡 站長叮嚀：散場不要排江之電，直走回鎌倉站最快！'
+          }
+        },
         category: 'hanabi',
         region: 'tokyo',
         title: '鎌倉海岸花火大會',
@@ -12259,6 +12770,67 @@
             
             ${metricsHtml}
 
+            <!-- 當日天候與風向風速儀表 (花火攝影愛好者剛需) -->
+            ${item.weatherWind ? `
+              <div class="hanabi-weather-wind-box">
+                <div class="h-weather-title-row">
+                  <span class="h-weather-badge">💨 當日天候與風向觀測儀表 (攝影迷聖經)</span>
+                  <span class="h-smoke-badge" style="color:${item.weatherWind.smokeColor || '#10B981'};">● 排煙評級：${item.weatherWind.smokeRating}</span>
+                </div>
+                <div class="h-weather-grid">
+                  <div class="h-weather-item">
+                    <span class="h-w-lbl">🧭 即時風向風速</span>
+                    <span class="h-w-val font-accent-amber">${item.weatherWind.windDir} ｜ ${item.weatherWind.windSpeed}</span>
+                  </div>
+                  <div class="h-weather-item">
+                    <span class="h-w-lbl">👀 最佳順風觀賞點</span>
+                    <span class="h-w-val font-accent-emerald">${item.weatherWind.bestSpot}</span>
+                  </div>
+                  <div class="h-weather-item">
+                    <span class="h-w-lbl">🌡️ 體感環境</span>
+                    <span class="h-w-val">${item.weatherWind.temp} ｜ 濕度 ${item.weatherWind.humidity}</span>
+                  </div>
+                </div>
+                ${item.weatherWind.photoTips ? `
+                  <div class="h-photo-tips">${item.weatherWind.photoTips}</div>
+                ` : ''}
+              </div>
+            ` : ''}
+
+            <!-- 特派員散場避雷指南 (避開 100 萬人潮塞爆車站) -->
+            ${item.evacuationGuide ? `
+              <div class="hanabi-evacuation-guide-box">
+                <div class="evac-header-row">
+                  <div class="evac-title-wrap">
+                    <span class="evac-icon">🚶</span>
+                    <span class="evac-title">特派員散場避雷筆記</span>
+                  </div>
+                  <span class="evac-danger-pill">🚨 避開：${item.evacuationGuide.bottleneckStation}</span>
+                </div>
+                
+                <div class="evac-warning-banner">
+                  ${item.evacuationGuide.warningNotice}
+                </div>
+
+                <div class="evac-routes-list">
+                  ${item.evacuationGuide.routes.map(r => `
+                    <div class="evac-route-item">
+                      <div class="evac-route-header">
+                        <span class="evac-dir-pill">${r.direction}</span>
+                        <span class="evac-station-name">${r.station}</span>
+                        <span class="evac-time-badge">${r.walkTime}</span>
+                      </div>
+                      <div class="evac-route-detail">${r.routeDetail}</div>
+                    </div>
+                  `).join('')}
+                </div>
+
+                <div class="evac-expert-tip">
+                  ${item.evacuationGuide.expertTip}
+                </div>
+              </div>
+            ` : ''}
+
             <!-- 漸進式收折詳情 (縮短垂直高度 40%，點擊展開) -->
             <button class="btn-toggle-details" onclick="toggleCardDetails(this, '${item.id}'); event.stopPropagation();">
               <span>展開詳情 ▾</span>
@@ -12324,15 +12896,15 @@
                   <div class="spot-perks-container" id="perks-${item.id}">
                     <div class="perks-tab-bar">
                       <button class="perks-tab-btn active" onclick="switchPerksTab('${item.id}', 'cafe', this); event.stopPropagation();">
-                        <span>☕ 景觀咖啡</span>
+                        <span>${(item.category === 'hanabi' || item.theme === 'hanabi') ? '🍹 景觀露台/茶寮' : '☕ 景觀咖啡'}</span>
                         <span class="perks-tab-count">${cafeCount}</span>
                       </button>
                       <button class="perks-tab-btn" onclick="switchPerksTab('${item.id}', 'michelin', this); event.stopPropagation();">
-                        <span>🍣 頂級日料/米其林</span>
+                        <span>${(item.category === 'hanabi' || item.theme === 'hanabi') ? '🛶 屋形船/保留席' : '🍣 頂級日料/米其林'}</span>
                         <span class="perks-tab-badge">高分潤</span>
                       </button>
                       <button class="perks-tab-btn" onclick="switchPerksTab('${item.id}', 'walk', this); event.stopPropagation();">
-                        <span>🚶 站內步行指引</span>
+                        <span>${(item.category === 'hanabi' || item.theme === 'hanabi') ? '🚶 散策動線與避雷' : '🚶 站內步行指引'}</span>
                         <span class="perks-tab-count">免外跳</span>
                       </button>
                     </div>
@@ -12405,15 +12977,29 @@
               })()}
             </div>
 
-            <!-- 底部操作列 (支援 Klook 分潤追蹤 ＆ 優惠訂房) -->
-            <div class="card-action-bar">
-              <a href="${klookFinalUrl}" target="_blank" class="btn-act-gradient btn-act-apricot">
-                <span>${currentLang === 'zh-TW' ? (item.activityText || I18N[currentLang].btnDefaultActivity) : (item.activityTextEn || I18N[currentLang].btnDefaultActivity)}</span>
-              </a>
-              <a href="${bookingFinalUrl}" target="_blank" class="btn-act-gradient btn-act-booking-blue">
-                <span>${I18N[currentLang].btnBooking}</span>
-              </a>
-            </div>
+            <!-- 底部操作列 (花火大會高額雙變現組合：浴衣預約 ＋ 屋形船/保留席 ＋ 訂房) -->
+            ${(item.category === 'hanabi' || item.theme === 'hanabi') ? `
+              <div class="card-action-bar hanabi-action-bar">
+                <a href="${item.yukataUrl || 'https://www.klook.com/zh-TW/search/result/?query=%E6%B5%B4%E8%A1%A3%E9%AB%94%E9%A9%97&aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" class="btn-act-gradient btn-act-yukata" title="預約花火祭典浴衣方案（含專業髮型設計）" onclick="event.stopPropagation();">
+                  <span>👘 預約浴衣 (含髮型)</span>
+                </a>
+                <a href="${item.houseboatUrl || klookFinalUrl}" target="_blank" class="btn-act-gradient btn-act-houseboat" title="預約花火大會限定屋形船觀覽席或指定席" onclick="event.stopPropagation();">
+                  <span>🛶 預約屋形船/花火席</span>
+                </a>
+                <a href="${bookingFinalUrl}" target="_blank" class="btn-act-gradient btn-act-booking-blue" title="預約周邊住宿免深夜趕車" onclick="event.stopPropagation();">
+                  <span>🏨 查周邊訂房</span>
+                </a>
+              </div>
+            ` : `
+              <div class="card-action-bar">
+                <a href="${klookFinalUrl}" target="_blank" class="btn-act-gradient btn-act-apricot">
+                  <span>${currentLang === 'zh-TW' ? (item.activityText || I18N[currentLang].btnDefaultActivity) : (item.activityTextEn || I18N[currentLang].btnDefaultActivity)}</span>
+                </a>
+                <a href="${bookingFinalUrl}" target="_blank" class="btn-act-gradient btn-act-booking-blue">
+                  <span>${I18N[currentLang].btnBooking}</span>
+                </a>
+              </div>
+            `}
           </div>
         `;
         container.appendChild(card);
