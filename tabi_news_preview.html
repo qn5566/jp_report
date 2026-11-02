@@ -1602,6 +1602,393 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     }
 
+    
+    /* ========================================================
+       [櫻花前線救援路線] Rescue Route Alert Box & Pulse Animation
+       ======================================================== */
+    .rescue-route-alert-box {
+      background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+      border: 1.5px solid #FDBA74;
+      border-radius: 14px;
+      padding: 11px 14px;
+      margin: 12px 14px 4px;
+      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      animation: fadeInRescue 0.3s ease;
+    }
+    @keyframes fadeInRescue {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .rescue-alert-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .rescue-alert-badge {
+      background: #EA580C;
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 2.5px 9px;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 2px 5px rgba(234, 88, 12, 0.25);
+    }
+    .rescue-alert-status {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #C2410C;
+    }
+    .rescue-alert-desc {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #7C2D12;
+      line-height: 1.45;
+      margin: 0;
+    }
+    .rescue-alert-desc strong {
+      color: #9A3412;
+    }
+    .btn-rescue-action {
+      background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 10px;
+      padding: 7px 14px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
+      align-self: flex-start;
+    }
+    .btn-rescue-action:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+      filter: brightness(1.05);
+    }
+
+    @keyframes rescuePulseHighlight {
+      0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.8); transform: scale(1); }
+      35% { box-shadow: 0 0 0 14px rgba(234, 88, 12, 0); transform: scale(1.025); }
+      70% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.6); transform: scale(1); }
+      100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); transform: scale(1); }
+    }
+    .rescue-target-highlight {
+      animation: rescuePulseHighlight 1.5s cubic-bezier(0.16, 1, 0.3, 1) 2;
+      border: 2.5px solid #EA580C !important;
+    }
+
+    /* ========================================================
+       [高分潤續攤與站內步行指引] Spot Perks Tabs (Cafe / Michelin / Walk)
+       ======================================================== */
+    .spot-perks-container {
+      margin-top: 12px;
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .perks-tab-bar {
+      display: flex;
+      background: #E2E8F0;
+      padding: 3px;
+      border-radius: 10px;
+      gap: 3px;
+      margin-bottom: 10px;
+    }
+    .perks-tab-btn {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 6px 4px;
+      border-radius: 8px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #64748B;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+    .perks-tab-btn:hover {
+      color: #1E293B;
+    }
+    .perks-tab-btn.active {
+      background: #FFFFFF;
+      color: #0F172A;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .perks-tab-badge {
+      background: linear-gradient(135deg, #E11D48 0%, #BE123C 100%);
+      color: #FFFFFF;
+      font-size: 0.62rem;
+      font-weight: 900;
+      padding: 1px 5px;
+      border-radius: 999px;
+      line-height: 1.2;
+    }
+    .perks-tab-count {
+      background: #E2E8F0;
+      color: #475569;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 999px;
+    }
+    .perks-tab-btn.active .perks-tab-count {
+      background: #F1F5F9;
+      color: #0F172A;
+    }
+
+    .perks-tab-pane {
+      display: none;
+      animation: fadeInPane 0.2s ease;
+    }
+    .perks-tab-pane.active {
+      display: block;
+    }
+    @keyframes fadeInPane {
+      from { opacity: 0; transform: translateY(2px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 咖啡清單項目 */
+    .perk-cafe-item {
+      display: flex;
+      gap: 10px;
+      padding: 8px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      margin-bottom: 7px;
+      align-items: center;
+    }
+    .perk-cafe-item:last-child {
+      margin-bottom: 0;
+    }
+    .perk-cafe-thumb {
+      width: 58px;
+      height: 58px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .perk-cafe-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .perk-cafe-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .perk-cafe-desc {
+      font-size: 0.72rem;
+      color: #64748B;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+    .perk-tag-pills {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .perk-pill {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 1.5px 6px;
+      border-radius: 4px;
+      background: #F1F5F9;
+      color: #475569;
+    }
+    .perk-pill-accent {
+      background: #FEF3C7;
+      color: #B45309;
+    }
+
+    /* 米其林與高客單日料 (高分潤主力) */
+    .perk-michelin-item {
+      background: #FFFFFF;
+      border: 1.5px solid #FDE68A;
+      border-left: 4px solid #F59E0B;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 6px rgba(245, 158, 11, 0.08);
+    }
+    .perk-michelin-item:last-child {
+      margin-bottom: 0;
+    }
+    .michelin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .michelin-title {
+      font-size: 0.84rem;
+      font-weight: 900;
+      color: #0F172A;
+    }
+    .michelin-affiliate-tag {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #B45309;
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      padding: 2px 6px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .michelin-desc {
+      font-size: 0.72rem;
+      color: #475569;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .michelin-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed #E2E8F0;
+      flex-wrap: wrap;
+    }
+    .michelin-price-box {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .michelin-price-val {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: #E11D48;
+    }
+    .michelin-price-sub {
+      font-size: 0.68rem;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+    .btn-michelin-book {
+      background: linear-gradient(135deg, #E11D48 0%, #BE123C 100%);
+      color: #FFFFFF !important;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 2px 6px rgba(225, 29, 72, 0.25);
+      transition: all 0.2s ease;
+    }
+    .btn-michelin-book:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(225, 29, 72, 0.35);
+      filter: brightness(1.08);
+    }
+
+    /* 站內文字步行指引 (免開 Google 地圖) */
+    .walk-guide-box {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .walk-spot-title {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #0284C7;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .walk-step-row {
+      display: flex;
+      gap: 9px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .walk-step-row:last-child {
+      margin-bottom: 0;
+    }
+    .walk-step-row:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 24px;
+      bottom: -6px;
+      width: 2px;
+      background: #E2E8F0;
+    }
+    .walk-step-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: #E0F2FE;
+      color: #0284C7;
+      font-size: 0.72rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .walk-step-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .walk-step-title {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #1E293B;
+      margin-bottom: 2px;
+    }
+    .walk-step-txt {
+      font-size: 0.72rem;
+      color: #64748B;
+      line-height: 1.4;
+    }
+    .walk-guide-tip {
+      margin-top: 8px;
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: 8px;
+      padding: 6px 9px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #92400E;
+      line-height: 1.35;
+    }
+
+
     /* ========================================================
        [頂部第一層：4 大情境母夾] Master Hub Navigation
        ======================================================== */
@@ -4226,6 +4613,48 @@
       </button>
 
       <!-- 前台語言切換器 (Header Selector: 🌐 Language 下拉 7 國語言) -->
+      
+      <!-- 前台幣別切換器 (Header Currency Selector: 💱 TWD ▾) -->
+      <div class="lang-selector-dropdown-wrap" id="currencySelectorWrap">
+        <button class="lang-selector-btn" id="currencyDropdownTrigger" onclick="toggleCurrencyDropdown(event)">
+          <span class="lang-globe-icon">💱</span>
+          <span id="currentCurrencyLabel">TWD (NT$)</span>
+          <span class="lang-arrow" id="currencyArrow">▾</span>
+        </button>
+        <div class="lang-dropdown-menu" id="currencyDropdownMenu">
+          <button class="lang-menu-opt currency-menu-opt active" data-curr="TWD" onclick="selectCurrency('TWD', 'TWD (NT$)')">
+            <span class="lang-flag">🇹🇼</span>
+            <span class="lang-name">新台幣 TWD (NT$)</span>
+            <span class="lang-check">✓</span>
+          </button>
+          <button class="lang-menu-opt currency-menu-opt" data-curr="JPY" onclick="selectCurrency('JPY', 'JPY (¥)')">
+            <span class="lang-flag">🇯🇵</span>
+            <span class="lang-name">日圓 JPY (¥)</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt currency-menu-opt" data-curr="USD" onclick="selectCurrency('USD', 'USD ($)')">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-name">美元 USD ($)</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt currency-menu-opt" data-curr="HKD" onclick="selectCurrency('HKD', 'HKD (HK$)')">
+            <span class="lang-flag">🇭🇰</span>
+            <span class="lang-name">港幣 HKD (HK$)</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt currency-menu-opt" data-curr="KRW" onclick="selectCurrency('KRW', 'KRW (₩)')">
+            <span class="lang-flag">🇰🇷</span>
+            <span class="lang-name">韓元 KRW (₩)</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt currency-menu-opt" data-curr="THB" onclick="selectCurrency('THB', 'THB (฿)')">
+            <span class="lang-flag">🇹🇭</span>
+            <span class="lang-name">泰銖 THB (฿)</span>
+            <span class="lang-check"></span>
+          </button>
+        </div>
+      </div>
+
       <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
         <button class="lang-selector-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)">
           <span class="lang-globe-icon">🌐</span>
@@ -9883,6 +10312,105 @@
       if (wrap) wrap.classList.toggle('open');
     }
 
+    
+    // ========================================================
+    // 多國貨幣匯率換算系統 (TWD, JPY, USD, HKD, KRW, THB)
+    // ========================================================
+    const CURRENCIES = {
+      'TWD': { symbol: 'NT$', rate: 1, label: 'TWD (NT$)', flag: '🇹🇼' },
+      'JPY': { symbol: '¥', rate: 4.75, label: 'JPY (¥)', flag: '🇯🇵' },
+      'USD': { symbol: '$', rate: 0.031, label: 'USD ($)', flag: '🇺🇸' },
+      'HKD': { symbol: 'HK$', rate: 0.24, label: 'HKD (HK$)', flag: '🇭🇰' },
+      'KRW': { symbol: '₩', rate: 42.5, label: 'KRW (₩)', flag: '🇰🇷' },
+      'THB': { symbol: '฿', rate: 1.12, label: 'THB (฿)', flag: '🇹🇭' }
+    };
+
+    let currentCurrency = localStorage.getItem('tabi_currency') || 'TWD';
+
+    function formatCurrency(ntdAmount) {
+      const cfg = CURRENCIES[currentCurrency] || CURRENCIES['TWD'];
+      const converted = ntdAmount * cfg.rate;
+      if (currentCurrency === 'USD') {
+        return `${cfg.symbol} ${converted.toFixed(1)}`;
+      }
+      return `${cfg.symbol} ${Math.round(converted).toLocaleString()}`;
+    }
+
+    function toggleCurrencyDropdown(e) {
+      e.stopPropagation();
+      const wrap = document.getElementById('currencySelectorWrap');
+      if (wrap) wrap.classList.toggle('open');
+      const langWrap = document.getElementById('langSelectorWrap');
+      if (langWrap) langWrap.classList.remove('open');
+    }
+
+    function selectCurrency(currCode, currLabel) {
+      currentCurrency = currCode;
+      localStorage.setItem('tabi_currency', currCode);
+      const wrap = document.getElementById('currencySelectorWrap');
+      if (wrap) wrap.classList.remove('open');
+      
+      const label = document.getElementById('currentCurrencyLabel');
+      if (label) label.textContent = currLabel;
+
+      document.querySelectorAll('.currency-menu-opt').forEach(opt => {
+        const isThis = opt.getAttribute('data-curr') === currCode;
+        opt.classList.toggle('active', isThis);
+        const check = opt.querySelector('.lang-check');
+        if (check) check.textContent = isThis ? '✓' : '';
+      });
+
+      renderCards();
+      showToast(`💱 幣別已切換為：${currLabel}，即時自動換算`, '✨');
+    }
+
+    // 點擊空白處自動關閉幣別選單
+    document.addEventListener('click', function(e) {
+      const wrap = document.getElementById('currencySelectorWrap');
+      if (wrap && !wrap.contains(e.target)) {
+        wrap.classList.remove('open');
+      }
+    });
+
+    // 櫻花前線救援路線平滑切換
+    function jumpToSpot(targetSpotId) {
+      if (currentMasterHub !== 'flower') {
+        selectMasterHub('flower');
+      }
+      setTimeout(() => {
+        let card = document.getElementById(`spot-card-${targetSpotId}`);
+        if (!card) {
+          // 若當前子標籤過濾隱藏了該卡片，切換到第一個子分類
+          currentSubItemId = 'sub_sakura_now';
+          renderCards();
+          card = document.getElementById(`spot-card-${targetSpotId}`);
+        }
+        if (card) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.classList.remove('rescue-target-highlight');
+          void card.offsetWidth;
+          card.classList.add('rescue-target-highlight');
+          showToast('🌸 已為您無縫接力切換至晚開接棒名所！', '✨');
+        } else {
+          showToast('🌸 正在為您定位接力備案名所...', '✨');
+        }
+      }, 150);
+    }
+
+    // 周邊續攤三段式標籤切換 (景觀咖啡 / 頂級日料米其林 / 站內步行指引)
+    function switchPerksTab(spotId, tabKey, btn) {
+      const container = document.getElementById(`perks-${spotId}`);
+      if (!container) return;
+
+      container.querySelectorAll('.perks-tab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      container.querySelectorAll('.perks-tab-pane').forEach(p => p.classList.remove('active'));
+      const targetPane = document.getElementById(`pane-${spotId}-${tabKey}`);
+      if (targetPane) targetPane.classList.add('active');
+    }
+
+
     function selectLanguage(langCode, langName) {
       const wrap = document.getElementById('langSelectorWrap');
       if (wrap) wrap.classList.remove('open');
@@ -10401,6 +10929,62 @@
       {
         id: 'meguro_sakura',
         theme: 'sakura',
+        rescueRoute: {
+          badge: '🌸 染井吉野櫻已吹雪？',
+          message: '附近替代景點推薦：車程 20 分鐘直達「新宿御苑（一葉/關山八重櫻滿開中）」或「濱離宮恩賜庭園」，花期可延長至 4 月下旬！',
+          targetSpotId: 'shinjuku_late_sakura',
+          actionText: '➔ 一鍵切換看接力備案名所'
+        },
+        perks: {
+          cafes: [
+            {
+              name: '星巴克臻選® 東京烘焙工坊',
+              feature: '隈研吾大師操刀・4F 露台平視櫻花花頂・手沖櫻花特調',
+              tags: ['露台第一排', '外帶免排隊', '步行 6 分鐘'],
+              waitHint: '建議 06:45 抽發券機號碼牌',
+              img: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=260&q=80'
+            },
+            {
+              name: 'ONIBUS COFFEE 中目黑',
+              feature: '古典木造古民家・2F 窗景伴隨電車與粉櫻・手沖神店',
+              tags: ['窗景電車', '手沖冠軍', '步行 3 分鐘'],
+              waitHint: '現場候位約 15～20 分鐘',
+              img: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=260&q=80'
+            }
+          ],
+          michelin: [
+            {
+              name: '米其林一星・割烹中目黑「いし井」',
+              feature: '春季櫻鯛盛宴・江戶前旬味懷石・專屬保證入席',
+              tags: ['⭐ 米其林一星', '免日文電話代訂', '高客單保證席'],
+              priceTwd: 4800,
+              priceJpy: 22800,
+              affiliateType: 'KKday × Tabelog 保證席',
+              affiliateUrl: 'https://www.kkday.com/zh-tw/product/productlist?keyword=%E7%B1%B3%E5%85%B6%E6%9E%97%20%E6%9D%B1%E4%BA%AC&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '代訂米其林保證席 ➔'
+            },
+            {
+              name: '目黑川「黑毛和牛 寿喜焼 桜坂」川景席',
+              feature: 'A5 特選黑毛和牛・窗外直接俯瞰目黑川夜櫻光影水波',
+              tags: ['🥩 A5黑毛和牛', '目黑川第一排夜櫻', '獨家 95 折套餐'],
+              priceTwd: 3600,
+              priceJpy: 17100,
+              affiliateType: 'Klook 美食套餐 (獨家 95 折)',
+              affiliateUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E7%9B%AE%E9%BB%91%E5%B7%9D%20%E5%92%8C%E7%89%9B&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '搶訂川景和牛席 ➔'
+            }
+          ],
+          walkGuide: {
+            spotName: '目黑川櫻並木核心段 (中之橋～南部橋)',
+            steps: [
+              { step: '1', title: '出站口', desc: '東急東橫線／日比谷線「中目黑站」【正面改札口】出站。' },
+              { step: '2', title: '橫越路口', desc: '依號誌過馬路橫越山手通，直行約 80 公尺見「中之橋」（川面起點）。' },
+              { step: '3', title: '川畔綠道', desc: '過橋右轉步入「目黑川櫻並木步道」，沿水岸林蔭緩步向前欣賞落櫻倒影。' },
+              { step: '4', title: '精華取景', desc: '步行約 3 分鐘抵達「南部橋」與「朝日橋」，為晨光倒影與夜間打燈最佳拍攝點！' }
+            ],
+            tips: '💡 站長叮嚀：全段平坦無階梯，推嬰兒車或長輩散策全程無障礙；清晨 07:00 前前往人潮最少。'
+          }
+        },
         category: 'flower',
         region: 'tokyo',
         title: '目黑川櫻並木',
@@ -10561,6 +11145,56 @@
       {
         id: 'shinjuku_late_sakura',
         theme: 'sakura',
+        perks: {
+          cafes: [
+            {
+              name: '新宿御苑 翔天亭茶室',
+              feature: '庭園池畔品嚐正統宇治抹茶與當日現作櫻餅點心',
+              tags: ['池畔茶室', '當日現作櫻餅', '步行 4 分鐘'],
+              waitHint: '午後約需等候 10 分鐘',
+              img: 'https://images.unsplash.com/photo-1545048702-7936070012e7?auto=format&fit=crop&w=260&q=80'
+            },
+            {
+              name: 'Cafe La Boheme 新宿御苑',
+              feature: '落地大窗俯瞰新宿御苑綠意・知名動畫取景義式人氣名店',
+              tags: ['綠意大窗', '人氣義大利麵', '步行 5 分鐘'],
+              waitHint: '建議提前線上預約或避開正餐尖峰',
+              img: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=260&q=80'
+            }
+          ],
+          michelin: [
+            {
+              name: '新宿 割烹「中島」米其林一星柳川鍋套餐',
+              feature: '新宿唯一米其林一星割烹料理・老江戶沙丁魚柳川風懷石',
+              tags: ['⭐ 米其林一星', '江戶割烹老舖', '超高CP值席位'],
+              priceTwd: 2800,
+              priceJpy: 13300,
+              affiliateType: 'KKday × Tabelog 保證席',
+              affiliateUrl: 'https://www.kkday.com/zh-tw/product/productlist?keyword=%E6%96%B0%E5%AE%BF%20%E7%B1%B3%E5%85%B6%E6%9E%97&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '代訂米其林席位 ➔'
+            },
+            {
+              name: '今半 新宿高島屋店・極上黑毛和牛壽喜燒',
+              feature: '百年傳統極上霜降和牛・特製秘傳割下醬汁・專人桌邊現煮服務',
+              tags: ['🥩 百年老舖', 'A5極上和牛', '窗景包廂'],
+              priceTwd: 4200,
+              priceJpy: 19950,
+              affiliateType: 'Klook 美食套餐 (保證入席)',
+              affiliateUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E4%BB%8A%E5%8D%8A%20%E6%96%B0%E5%AE%BF&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '預約保證入席 ➔'
+            }
+          ],
+          walkGuide: {
+            spotName: '新宿御苑晚櫻核心步道 (千駄谷門～草坪大溫室)',
+            steps: [
+              { step: '1', title: '避人潮推薦', desc: '搭乘 JR 總武線至「千駄谷站」出站，步行 5 分鐘由「千駄谷門」入園（避開新宿門 80% 人潮）。' },
+              { step: '2', title: '直通櫻林', desc: '入園安檢後（禁攜酒精），沿右側林道直行 150 公尺，即抵達晚開八重櫻／一葉櫻核心草坪區。' },
+              { step: '3', title: '巨型花團', desc: '漫步至舊御涼亭（台灣閣），遠眺關山櫻如繡球花團錦簇垂入水塘倒影。' },
+              { step: '4', title: '草地野餐', desc: '在溫室前草皮鋪上野餐墊，微風徐來享受粉櫻雪片飄落的午後野餐時光。' }
+            ],
+            tips: '💡 站長叮嚀：園區需購買門票（大人 ¥500），建議先線上購票刷 QR Code 秒通關，免現場排售票機。'
+          }
+        },
         category: 'flower',
         region: 'tokyo',
         title: '新宿御苑 (晚櫻救援名所)',
@@ -10599,6 +11233,62 @@
       {
         id: 'chidorigafuchi',
         theme: 'sakura',
+        rescueRoute: {
+          badge: '🌸 皇居護城河吹雪中？',
+          message: '花期凋謝別慌！搭乘地鐵 15 分鐘直達「新宿御苑」或「小石川後樂園」，晚開八重櫻接棒盛開至 4 月下旬！',
+          targetSpotId: 'shinjuku_late_sakura',
+          actionText: '➔ 一鍵切換看接力備案名所'
+        },
+        perks: {
+          cafes: [
+            {
+              name: '北之丸公園 Cafe 33',
+              feature: '落地窗俯瞰護城河櫻樹・日式手工焙茶拿鐵與櫻花蒙布朗',
+              tags: ['護城河窗景', '焙茶甜點', '步行 4 分鐘'],
+              waitHint: '花季露台席位約需等候 20 分鐘',
+              img: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=260&q=80'
+            },
+            {
+              name: 'DIXANS 神保町 (法式手沖咖啡)',
+              feature: '東京文青名店・現烤厚切黑糖吐司・手沖耶加雪菲配櫻景散步',
+              tags: ['文青烘焙', '手沖精品', '步行 8 分鐘'],
+              waitHint: '提供外帶杯，邊喝邊漫步護城河綠道最愜意',
+              img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=260&q=80'
+            }
+          ],
+          michelin: [
+            {
+              name: '紀尾井町 割烹「福田」米其林二星京料理',
+              feature: '東京最優雅京料理老舖・當季櫻鯛與春筍御飯・預約困難店',
+              tags: ['⭐⭐ 米其林二星', '日本政商名流愛店', '保證席位代訂'],
+              priceTwd: 6500,
+              priceJpy: 30800,
+              affiliateType: 'KKday × Tabelog 專人代訂',
+              affiliateUrl: 'https://www.kkday.com/zh-tw/product/productlist?keyword=%E7%B1%B3%E5%85%B6%E6%9E%97%20%E6%9D%B1%E4%BA%AC&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '代訂米其林二星席 ➔'
+            },
+            {
+              name: '靖國神社參道「八千代」江戶前鰻魚重',
+              feature: '特選國產活鰻現烤・傳承百年蒲燒醬汁・賞櫻必吃熱氣蒸騰鰻魚飯',
+              tags: ['🍱 炭火活鰻', '百年傳承醬汁', '步行 5 分鐘'],
+              priceTwd: 2200,
+              priceJpy: 10450,
+              affiliateType: 'Klook 美食套餐 (免排隊預約)',
+              affiliateUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%20%E9%B0%BB%E9%AD%9A&aid=123436&utm_medium=affiliate-alwayson',
+              affiliateBtnText: '預訂蒲燒鰻魚套餐 ➔'
+            }
+          ],
+          walkGuide: {
+            spotName: '千鳥之淵護城河划船場散策路線',
+            steps: [
+              { step: '1', title: '地鐵出站', desc: '東京地鐵半藏門線／東西線／都營新宿線「九段下站」【2號出口】出站。' },
+              { step: '2', title: '步道入口', desc: '出站直行沿靖國通步行約 150 公尺，見內堀通左轉，即達千鳥之淵綠道北端入口。' },
+              { step: '3', title: '划船場取號', desc: '沿著綠道緩步直行 300 公尺見「千鳥之淵乘船場」，若想划船請先於取號機抽號碼券。' },
+              { step: '4', title: '櫻花隧道', desc: '沿護城河崖壁步道繼續南行至半藏門，可將 260 株古木櫻樹傾瀉入水的極景一覽無餘！' }
+            ],
+            tips: '💡 站長叮嚀：划船人潮極多，強烈建議 09:00 前抵達排隊；夜間 18:00 起護城河點亮 LED 燈，夜櫻倒影絕美。'
+          }
+        },
         category: 'flower',
         region: 'tokyo',
         title: '千鳥之淵綠道',
@@ -11477,6 +12167,8 @@
       filtered.forEach(item => {
         const card = document.createElement('div');
         card.className = 'tabi-card';
+        card.id = `spot-card-${item.id}`;
+        card.setAttribute('data-spot-id', item.id);
 
         let reportStampBtn = '';
         if (item.report && item.report.hasReport) {
@@ -11572,18 +12264,145 @@
               <span>展開詳情 ▾</span>
             </button>
 
+            <!-- 櫻花前線救援路線警示盒 (花謝了別慌！替代接力路線) -->
+            ${item.rescueRoute ? `
+              <div class="rescue-route-alert-box" id="rescue-box-${item.id}">
+                <div class="rescue-alert-header">
+                  <span class="rescue-alert-badge">🌸 替代接力路線 (Rescue Route)</span>
+                  <span class="rescue-alert-status">滿開吹雪／花期尾聲</span>
+                </div>
+                <p class="rescue-alert-desc">
+                  <strong>${item.rescueRoute.badge}</strong> ${item.rescueRoute.message}
+                </p>
+                <button class="btn-rescue-action" onclick="jumpToSpot('${item.rescueRoute.targetSpotId}'); event.stopPropagation();">
+                  <span>${item.rescueRoute.actionText || '➔ 一鍵切換看接力備案名所'}</span>
+                </button>
+              </div>
+            ` : ''}
+
             <div class="card-collapsible-details" id="details-${item.id}">
               ${speciesHtml}
               <p class="card-desc">${item.desc}</p>
-              ${cafeHtml}
-              <div class="quick-food-actions">
-                <button class="btn-quick-pill" onclick="openReadingSheet('${item.id}'); event.stopPropagation();">
-                  ☕ 附近景觀名店 (2)
-                </button>
-                <button class="btn-quick-pill" onclick="openReadingSheet('${item.id}'); event.stopPropagation();">
-                  🍶 雪後和牛在地酒 (3)
-                </button>
-              </div>
+
+              <!-- 賞櫻周邊續攤・米其林與人氣咖啡三段式選單 (免開 Google 地圖) -->
+              ${(() => {
+                const perks = item.perks || {
+                  cafes: item.cafe ? [{
+                    name: item.cafe.name,
+                    feature: item.cafe.feature,
+                    tags: ['名所推薦', '步行 5 分鐘'],
+                    waitHint: '現場依序排隊',
+                    img: item.cafe.img
+                  }] : [],
+                  michelin: [
+                    {
+                      name: `${item.title} 周邊嚴選和風料理保證席`,
+                      feature: '季節旬味套餐・免日文代訂・高客單保證入席',
+                      tags: ['⭐ 精選名店', '代訂保證席', '高分潤主力'],
+                      priceTwd: 3500,
+                      priceJpy: 16600,
+                      affiliateType: 'KKday × Tabelog 專人代訂',
+                      affiliateUrl: ensureKlookAffiliate(item.klookUrl),
+                      affiliateBtnText: '立即代訂保證席 ➔'
+                    }
+                  ],
+                  walkGuide: {
+                    spotName: `${item.title} 核心散策動線`,
+                    steps: [
+                      { step: '1', title: '出發抵達', desc: item.locationDetail || '鄰近大眾交通站點出站依指標步行即達。' },
+                      { step: '2', title: '入園景觀', desc: '沿名所主幹道前行，欣賞兩側盛開景致。' },
+                      { step: '3', title: '最佳拍攝', desc: '推薦於順光清晨或點燈時段拍照，視野最為純粹開闊。' }
+                    ],
+                    tips: '💡 站長叮嚀：站內指引免跳出地圖，防止行程迷失；清晨順光拍攝效果最震撼！'
+                  }
+                };
+
+                const cafeCount = perks.cafes.length;
+                const michelinCount = perks.michelin.length;
+
+                return `
+                  <div class="spot-perks-container" id="perks-${item.id}">
+                    <div class="perks-tab-bar">
+                      <button class="perks-tab-btn active" onclick="switchPerksTab('${item.id}', 'cafe', this); event.stopPropagation();">
+                        <span>☕ 景觀咖啡</span>
+                        <span class="perks-tab-count">${cafeCount}</span>
+                      </button>
+                      <button class="perks-tab-btn" onclick="switchPerksTab('${item.id}', 'michelin', this); event.stopPropagation();">
+                        <span>🍣 頂級日料/米其林</span>
+                        <span class="perks-tab-badge">高分潤</span>
+                      </button>
+                      <button class="perks-tab-btn" onclick="switchPerksTab('${item.id}', 'walk', this); event.stopPropagation();">
+                        <span>🚶 站內步行指引</span>
+                        <span class="perks-tab-count">免外跳</span>
+                      </button>
+                    </div>
+
+                    <!-- ☕ 景觀咖啡面板 -->
+                    <div class="perks-tab-pane active" id="pane-${item.id}-cafe">
+                      ${perks.cafes.map(cafe => `
+                        <div class="perk-cafe-item">
+                          <img class="perk-cafe-thumb" src="${cafe.img}" alt="${cafe.name}" loading="lazy">
+                          <div class="perk-cafe-info">
+                            <div class="perk-cafe-title">${cafe.name}</div>
+                            <div class="perk-cafe-desc">${cafe.feature}</div>
+                            <div class="perk-tag-pills">
+                              ${cafe.tags.map((t, idx) => `<span class="perk-pill ${idx === 0 ? 'perk-pill-accent' : ''}">${t}</span>`).join('')}
+                              ${cafe.waitHint ? `<span class="perk-pill" style="color:#C2410C; background:#FFEDD5;">⏱️ ${cafe.waitHint}</span>` : ''}
+                            </div>
+                          </div>
+                        </div>
+                      `).join('')}
+                    </div>
+
+                    <!-- 🍣 頂級日料 / 米其林席位面板 (高客單分潤主力) -->
+                    <div class="perks-tab-pane" id="pane-${item.id}-michelin">
+                      ${perks.michelin.map(mich => `
+                        <div class="perk-michelin-item">
+                          <div class="michelin-header">
+                            <div class="michelin-title">${mich.name}</div>
+                            <span class="michelin-affiliate-tag">${mich.affiliateType}</span>
+                          </div>
+                          <div class="michelin-desc">${mich.feature}</div>
+                          <div class="perk-tag-pills" style="margin-bottom:6px;">
+                            ${mich.tags.map(t => `<span class="perk-pill perk-pill-accent">${t}</span>`).join('')}
+                          </div>
+                          <div class="michelin-footer">
+                            <div class="michelin-price-box">
+                              <span class="michelin-price-val">${formatCurrency(mich.priceTwd)}</span>
+                              <span class="michelin-price-sub">起 / 位 (約 ¥${mich.priceJpy.toLocaleString()})</span>
+                            </div>
+                            <a href="${mich.affiliateUrl}" target="_blank" class="btn-michelin-book" onclick="event.stopPropagation();">
+                              <span>${mich.affiliateBtnText}</span>
+                            </a>
+                          </div>
+                        </div>
+                      `).join('')}
+                    </div>
+
+                    <!-- 🚶 站內文字步行指引面板 (免開 Google 地圖) -->
+                    <div class="perks-tab-pane" id="pane-${item.id}-walk">
+                      <div class="walk-guide-box">
+                        <div class="walk-spot-title">
+                          <span>🚶</span>
+                          <span>${perks.walkGuide.spotName}</span>
+                        </div>
+                        <div class="walk-steps-list">
+                          ${perks.walkGuide.steps.map(s => `
+                            <div class="walk-step-row">
+                              <div class="walk-step-circle">${s.step}</div>
+                              <div class="walk-step-content">
+                                <div class="walk-step-title">${s.title}</div>
+                                <div class="walk-step-txt">${s.desc}</div>
+                              </div>
+                            </div>
+                          `).join('')}
+                        </div>
+                        ${perks.walkGuide.tips ? `<div class="walk-guide-tip">${perks.walkGuide.tips}</div>` : ''}
+                      </div>
+                    </div>
+                  </div>
+                `;
+              })()}
             </div>
 
             <!-- 底部操作列 (支援 Klook 分潤追蹤 ＆ 優惠訂房) -->
