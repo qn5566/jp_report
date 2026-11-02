@@ -6881,7 +6881,65 @@
       box-shadow: 0 2px 10px rgba(194, 65, 12, 0.15) !important;
     }
 
-  </style>
+      /* 🌟 全站統一極致日系 Header 導航按鈕 (單行不折行、高度齊平、精緻膠囊圓角) */
+    .header-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 7px;
+      flex-wrap: nowrap;
+    }
+    .header-util-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 4px !important;
+      padding: 0 11px !important;
+      height: 33px !important;
+      line-height: 33px !important;
+      border-radius: 17px !important;
+      font-size: 0.77rem !important;
+      font-weight: 700 !important;
+      color: #334155 !important;
+      text-decoration: none !important;
+      background: #FFFFFF !important;
+      border: 1px solid #CBD5E1 !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      letter-spacing: 0.02em !important;
+      box-sizing: border-box !important;
+    }
+    .header-util-btn:hover {
+      background: #F8FAFC !important;
+      border-color: #94A3B8 !important;
+      color: #0F172A !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06) !important;
+    }
+    .header-util-btn.btn-nav-okinawa {
+      border-color: #BAE6FD !important;
+      color: #0369A1 !important;
+    }
+    .header-util-btn.btn-nav-okinawa:hover {
+      background: #F0F9FF !important;
+      border-color: #7DD3FC !important;
+      color: #0284C7 !important;
+    }
+    .header-util-btn.active {
+      background: #F1F5F9 !important;
+      border-color: #94A3B8 !important;
+      color: #0F172A !important;
+      font-weight: 800 !important;
+    }
+    .header-util-btn.btn-nav-okinawa.active {
+      background: #E0F2FE !important;
+      border-color: #7DD3FC !important;
+      color: #0284C7 !important;
+    }
+</style>
 </head>
 <body class="mode-spots">
 
@@ -6920,71 +6978,19 @@
     </div>
 
     <!-- 🌟 頂部右側統一功能按鈕群 (✈️ Trip 查機票 ＋ 🚗 包車/租車 ＋ 🌐 Language，統一高度與整齊配色) -->
-    <div class="header-right">
-      <!-- 1. Trip 查機票按鈕 -->
-      <a href="japan_flight_deals.html" class="header-util-btn" title="Trip 機票即時比價與特惠航線">
-        <span class="util-btn-icon">✈️</span>
-        <span id="tripBtnText">Trip 查機票</span>
+        <div class="header-right">
+      <a href="japan_flight_deals.html" class="header-util-btn " title="Trip 機票即時比價與特惠航線">
+        <span>✈️ 查機票</span>
       </a>
-
-      <!-- 2. 🚗 包車 / 租車 專屬按鈕 -->
-      <a href="japan_charter_rental.html" class="header-util-btn" title="日本客製化包車一日遊 ＆ 日本自駕租車全攻略指南">
-        <span class="util-btn-icon">🚗</span>
-        <span>包車 / 租車</span>
+      <a href="japan_charter_rental.html" class="header-util-btn " title="日本客製包車 ＆ 自駕租車指南">
+        <span>🚗 包車/租車</span>
       </a>
-
-      <!-- 🌟 沖繩海島不繞路自駕專區旗艦按鈕 (超醒目高對比海島藍) -->
-      <a href="japan_okinawa_drive.html" class="header-util-btn" style="background:linear-gradient(135deg, #0284C7, #0369A1); color:#FFFFFF; border:none; font-weight:800; box-shadow:0 2px 8px rgba(2,132,199,0.35);" title="沖繩海島不繞路自駕・親子與海景特輯">
-        <span class="util-btn-icon">🌺</span>
-        <span>沖繩自駕</span>
+      <a href="japan_okinawa_drive.html" class="header-util-btn btn-nav-okinawa " title="沖繩海島不繞路自駕攻略">
+        <span>🌺 沖繩自駕</span>
       </a>
-
-      <!-- 3. 🏆 7大排行特輯 專屬旗艦入口 -->
-      <a href="japan_inbound_rankings.html" class="header-util-btn" style="text-decoration:none;" title="日本排行榜">
-        <span class="util-btn-icon">🏆</span>
-        <span>日本排行榜</span>
+      <a href="japan_inbound_rankings.html" class="header-util-btn " title="日本排行榜">
+        <span>🏆 日本排行</span>
       </a>
-
-      <!-- 3. 前台語言切換器 (🌐 Language) -->
-      <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
-        <button class="header-util-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)" title="切換語言">
-          <span class="util-btn-icon">🌐</span>
-          <span id="currentLangLabel">Language</span>
-          <span class="lang-arrow" id="langArrow">▾</span>
-        </button>
-        <div class="lang-dropdown-menu" id="langDropdownMenu">
-          <button class="lang-menu-opt active" data-lang="zh-TW" onclick="selectLanguage('zh-TW', '繁體中文')">
-            <span class="lang-flag">🇹🇼</span>
-            <span class="lang-name">繁體中文</span>
-            <span class="lang-check">✓</span>
-          </button>
-          <button class="lang-menu-opt" data-lang="en" onclick="selectLanguage('en', 'English')">
-            <span class="lang-flag">🇺🇸</span>
-            <span class="lang-name">English</span>
-            <span class="lang-check"></span>
-          </button>
-          <button class="lang-menu-opt" data-lang="ko" onclick="selectLanguage('ko', '한국어')">
-            <span class="lang-flag">🇰🇷</span>
-            <span class="lang-name">한국어</span>
-            <span class="lang-check"></span>
-          </button>
-          <button class="lang-menu-opt" data-lang="zh-CN" onclick="selectLanguage('zh-CN', '简体中文')">
-            <span class="lang-flag">🇨🇳</span>
-            <span class="lang-name">简体中文</span>
-            <span class="lang-check"></span>
-          </button>
-          <button class="lang-menu-opt" data-lang="th" onclick="selectLanguage('th', 'ไทย')">
-            <span class="lang-flag">🇹🇭</span>
-            <span class="lang-name">ไทย</span>
-            <span class="lang-check"></span>
-          </button>
-          <button class="lang-menu-opt" data-lang="ja" onclick="selectLanguage('ja', '日本語')">
-            <span class="lang-flag">🇯🇵</span>
-            <span class="lang-name">日本語</span>
-            <span class="lang-check"></span>
-          </button>
-        </div>
-      </div>
     </div>
   </header>
 
