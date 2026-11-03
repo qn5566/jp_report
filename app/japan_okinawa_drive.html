@@ -1403,7 +1403,128 @@
       color: #FEF08A;
     }
 
-</style>
+
+    /* 🛡️ 自駕手冊彈出按鈕樣式 (小巧精緻、不佔版面) */
+    .sop-trigger-bar {
+      margin-bottom: 14px;
+    }
+    .btn-sop-modal-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #EFF6FF 0%, #E0F2FE 100%);
+      border: 1.5px solid #BAE6FD;
+      color: #0369A1;
+      padding: 9px 18px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(2, 132, 199, 0.08);
+      transition: all 0.2s ease;
+    }
+    .btn-sop-modal-trigger:hover {
+      background: #FFFFFF;
+      border-color: #0284C7;
+      color: #0284C7;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.16);
+    }
+    .btn-sop-modal-trigger .trigger-icon {
+      font-size: 1.15rem;
+    }
+    .btn-sop-modal-trigger .trigger-badge {
+      background: #0284C7;
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 9999px;
+      margin-left: 4px;
+    }
+
+    /* 🛡️ 彈出視窗 (Modal Backdrop & Dialog) */
+    .sop-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .sop-modal-backdrop.active {
+      display: flex;
+      opacity: 1;
+    }
+    .sop-modal-dialog {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 960px;
+      max-height: 90vh;
+      border-radius: 20px;
+      overflow-y: auto;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+      border: 2px solid #BAE6FD;
+      transform: scale(0.95);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .sop-modal-backdrop.active .sop-modal-dialog {
+      transform: scale(1);
+    }
+    .sop-modal-header {
+      position: sticky;
+      top: 0;
+      background: #FFFFFF;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 28px;
+      border-bottom: 1.5px solid #E2E8F0;
+    }
+    .sop-modal-pill {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #0284C7;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .sop-modal-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0F172A;
+      margin: 0;
+    }
+    .sop-modal-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #F1F5F9;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #64748B;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .sop-modal-close:hover {
+      background: #EF4444;
+      color: #FFFFFF;
+    }
+    .sop-modal-body {
+      padding: 24px 28px 36px 28px;
+    }
+
+  </style>
 </head>
 <body>
 
@@ -1523,9 +1644,19 @@
     <div class="handbook-card-main">
       <div class="handbook-header">
         <div class="handbook-title-box">
-          <h3><span>📅</span> 沖繩不繞路自駕時光手帳</h3>
+          <h3><span>📅</span> 沖繩行程推薦</h3>
           <p>依地理順行規劃，告別南來北往無效折返，後座小孩不哭鬧！</p>
         </div>
+
+        <!-- 🛡️ 沖繩自駕手冊彈出按鈕 (位於行程按鈕上方，小巧精緻不佔版面) -->
+        <div class="sop-trigger-bar">
+          <button type="button" class="btn-sop-modal-trigger" onclick="openOkinawaSopModal()" title="查看完整日本自駕取還車、保險理賠與緊急救援指南">
+            <span class="trigger-icon">🛡️</span>
+            <span class="trigger-title">沖繩租車自駕注意、保險理賠 ＆ 緊急救援完整指南</span>
+            <span class="trigger-badge">📖 點擊查看手冊 ▾</span>
+          </button>
+        </div>
+
         <div class="plan-switch-pills">
           <button class="plan-chip-btn active" onclick="switchItineraryPlan('family', this)">👨‍👩‍👧 親子放電 5 日</button>
           <button class="plan-chip-btn" onclick="switchItineraryPlan('senior', this)">👴 孝親長輩 4 日</button>
@@ -1540,7 +1671,7 @@
         <span class="protip-text" id="itineraryProTipText">小提醒：日本自駕 6 歲以下幼兒依法必須租用安全座椅，建議預先向租車公司預約。</span>
       </div>
 
-      <div class="timeline-cards-row"<div class="timeline-cards-row" id="itineraryTimelineRow">
+      <div class="timeline-cards-row" id="itineraryTimelineRow">
         <!-- JS 動態生成帶圖片的時光軸卡片 -->
       </div>
     </div>
@@ -1579,112 +1710,7 @@
     </section>
 
     <!-- 🚙 專屬模組 2: 沖繩租車自駕安全手冊與救援專區 (海島大自然冒險配色、高專業信賴感) -->
-    <section class="okinawa-driving-sop-section" id="sec-okinawa-rental-guide">
-      <div class="okinawa-sop-container">
-        
-        <div class="okinawa-sop-header">
-          <div>
-            <div class="okinawa-sop-pill">
-              🏝️ OKINAWA ROAD TRIP GUIDE ｜ 沖繩自駕安全防護手冊
-            </div>
-            <h3 class="okinawa-sop-title">沖繩租車自駕注意、保險理賠 ＆ 緊急救援完整指南</h3>
-            <p class="okinawa-sop-desc">馳騁沖繩 58 號濱海公路前必讀隨身手冊！涵蓋正本駕照規定、取還車錄影SOP、CDW/NOC保險、擦撞報警鐵則與爆胎失竊應變</p>
-          </div>
-          <div class="okinawa-sop-btn-group">
-            <a href="https://afflink.one/s/FruK8" target="_blank" class="btn-sop-tocoo">前往 ToCoo! 租車比價</a>
-            <a href="https://www.klook.com/zh-TW/car-rentals/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-sop-klook">Klook 租車比價</a>
-            <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E7%B6%B2%E5%8D%A1+%E9%80%9A%E8%A9%B1&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-sop-sim">可打電話網卡/eSIM</a>
-          </div>
-        </div>
-
-        <!-- 🚨 法律強制性警示卡 -->
-        <div class="okinawa-sop-alert">
-          <div class="okinawa-sop-alert-badge">⚠️ 法律強制規定</div>
-          <div class="okinawa-sop-alert-text">
-            <b>【小擦撞未報警，保險依法全額不予理賠】</b><br>
-            依據日本《道路交通法》第 72 條規定，不論車損多輕微（例如倒車擦撞牆角、刮傷後視鏡、自撞電線桿），<b>駕駛人均負有立即通報警察之法定義務</b>。<br>
-            若未於事故現場立即撥打 110 報警取得<b>「交通事故證明編號」</b>而逕自離去，依法視同「肇事逃逸（当て逃げ）」，<b>所有購買之 CDW、NOC 及信用卡旅遊不便險依法完全失效，所有修復費用與營業損失全由駕駛人承擔</b>！
-          </div>
-        </div>
-
-        <!-- 6 大核心自駕手冊模組 -->
-        <div class="okinawa-sop-grid">
-          <!-- 模組 1: 必備證件 -->
-          <div class="okinawa-sop-card">
-            <div class="sop-card-tag">MODULE 01 ｜ 證件審查</div>
-            <h4 class="sop-card-h4">必備 3 樣正本證件</h4>
-            <div class="sop-card-p">
-              • <b>台灣護照正本</b>（有效期內）。<br>
-              • <b>台灣駕照正本</b>（過期請務必至監理所更換新版）。<br>
-              • <b>監理所核發之「日文譯本正本」</b>（紙本正本）。<br>
-              <div class="sop-card-tip">
-                ⚠️ <b>國際駕照 (IDP) 在日本完全無效！</b>日本依雙邊協定僅承認「台灣駕照正本 ＋ 日文譯本」，持國際駕照會被門市拒絕出車。
-              </div>
-            </div>
-          </div>
-
-          <!-- 模組 2: 取還車 SOP -->
-          <div class="okinawa-sop-card">
-            <div class="sop-card-tag">MODULE 02 ｜ 取還流程</div>
-            <h4 class="sop-card-h4">取車交車 ＆ 加油還車 SOP</h4>
-            <div class="sop-card-p">
-              • <b>交車 360 度錄影存證</b>：取車時會同店員以手機錄影車身刮痕、輪框磨損、擋風玻璃小石痕，避免還車糾紛。<br>
-              • <b>滿油還車（満タン返却）</b>：還車前務必於門市 5 公里內的正規加油站加滿指定油品（紅色 Regular），並<b>妥善保留加油收據</b>供店員查驗時間。
-            </div>
-          </div>
-
-          <!-- 模組 3: 保險 CDW vs NOC -->
-          <div class="okinawa-sop-card">
-            <div class="sop-card-tag">MODULE 03 ｜ 保險剖析</div>
-            <h4 class="sop-card-h4">CDW 免責與 NOC 營業損失</h4>
-            <div class="sop-card-p">
-              • <b>CDW (免責補償)</b>：免除物損與車損的自負額（約 5~10 萬日圓）。<br>
-              • <b>NOC (營業損失)</b>：車輛進廠維修期間租車公司的營業補償（自力開回賠 2 萬日圓，需拖吊賠 5 萬日圓）。<br>
-              • <b>最佳解法</b>：預訂時加購<b>全額全險（CDW + NOC 雙免除）</b>，達成真正的 0 自負額無痛安心自駕。
-            </div>
-          </div>
-
-          <!-- 模組 4: 兒童安全座椅 -->
-          <div class="okinawa-sop-card">
-            <div class="sop-card-tag">MODULE 04 ｜ 幼兒法規</div>
-            <h4 class="sop-card-h4">未滿 6 歲強制兒童汽座</h4>
-            <div class="sop-card-p">
-              • 依日本道路交通法，<b>未滿 6 歲幼兒乘車依法強制安裝兒童安全座椅</b>。<br>
-              • 租車公司若發現有幼童隨行但未預約安裝汽座，<b>依法有權直接拒絕出車</b>！<br>
-              • 分類：嬰兒提籃 (0~1歲)、幼兒座椅 (1~4歲)、學童增高墊 (4歲以上)。
-            </div>
-          </div>
-
-          <!-- 模組 5: 爆胎與失竊 -->
-          <div class="okinawa-sop-card">
-            <div class="sop-card-tag">MODULE 05 ｜ 爆胎失竊</div>
-            <h4 class="sop-card-h4">輪胎破損與車內物品遭竊</h4>
-            <div class="sop-card-p">
-              • <b>行駛爆胎</b>：切換危險燈靠邊停，放置三角反光牌於車後 50m，撥打保險救援卡上的 JAF 救援專線。<br>
-              • <b>物品遭竊</b>：在景點或海灘切勿留護照或現金於車內；若遭破窗竊盜，立即撥打 110 取得<b>「盜難證明 (Tounan Shomei)」</b>以利申請旅遊不便險。
-            </div>
-          </div>
-
-          <!-- 模組 6: 緊急電話與通話網卡 -->
-          <div class="okinawa-sop-card">
-            <div class="sop-card-tag">MODULE 06 ｜ 通訊聯絡</div>
-            <h4 class="sop-card-h4">緊急聯絡與必備通話網卡</h4>
-            <div class="sop-card-p">
-              • <b>警察 110 ｜ 救護 119 ｜ JAF 救援 #8139</b><br>
-              • <b>台灣駐那霸辦事處急難救助電話</b>：090-1942-1107（24H）<br>
-              • <b>強烈建議</b>：自駕請務必備妥<b>「可打電話的日本 SIM / eSIM 網卡」</b>（撥打 110/119 與救援無法靠純上網卡！）。
-            </div>
-          </div>
-        </div>
-
-        <div class="okinawa-sop-rescue-box">
-          <div class="sop-rescue-text">
-            <b>💡 事故現場不會日文怎麼辦？</b> 先說：「<b>Tourist, English please.</b>」並朗讀身旁最近電線桿或公車站牌上的綠色地名編號。
-          </div>
-          <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E7%B6%B2%E5%8D%A1+%E9%80%9A%E8%A9%B1&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-rescue-action">預約可打電話日本網卡 ➔</a>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- 菜單橫軸 (一體成型大方設計，無外框線條包圍) -->
     <div class="sheet-menu-bar">
@@ -2926,6 +2952,142 @@
     // 啟動泡泡
     setTimeout(initOceanBubbles, 100);
 
+  
+    function openOkinawaSopModal() {
+      const modal = document.getElementById('modalOkinawaSop');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeOkinawaSopModal() {
+      const modal = document.getElementById('modalOkinawaSop');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+    function closeOkinawaSopModalOnBackdrop(e) {
+      if (e.target.id === 'modalOkinawaSop') {
+        closeOkinawaSopModal();
+      }
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeOkinawaSopModal();
+      }
+    });
+
   </script>
+
+  <!-- 🛡️ 沖繩租車自駕注意、保險理賠 ＆ 緊急救援完整手冊彈出視窗 (Modal) -->
+  <div id="modalOkinawaSop" class="sop-modal-backdrop" onclick="closeOkinawaSopModalOnBackdrop(event)">
+    <div class="sop-modal-dialog">
+      <div class="sop-modal-header">
+        <div>
+          <div class="sop-modal-pill">🏝️ OKINAWA ROAD TRIP GUIDE ｜ 沖繩自駕安全防護手冊</div>
+          <h3 class="sop-modal-title">沖繩租車自駕注意、保險理賠 ＆ 緊急救援完整指南</h3>
+        </div>
+        <button type="button" class="sop-modal-close" onclick="closeOkinawaSopModal()" aria-label="關閉視窗">✕</button>
+      </div>
+
+      <div class="sop-modal-body">
+        <div class="okinawa-sop-btn-group" style="margin-bottom: 20px;">
+          <a href="https://afflink.one/s/FruK8" target="_blank" class="btn-sop-tocoo">前往 ToCoo! 租車比價</a>
+          <a href="https://www.klook.com/zh-TW/car-rentals/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-sop-klook">Klook 租車比價</a>
+          <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E7%B6%B2%E5%8D%A1+%E9%80%9A%E8%A9%B1&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-sop-sim">可打電話網卡/eSIM</a>
+        </div>
+
+        <!-- 🚨 法律強制性警示卡 -->
+        <div class="okinawa-sop-alert">
+          <div class="okinawa-sop-alert-badge">⚠️ 法律強制規定</div>
+          <div class="okinawa-sop-alert-text">
+            <b>【小擦撞未報警，保險依法全額不予理賠】</b><br>
+            依據日本《道路交通法》第 72 條規定，不論車損多輕微（例如倒車擦撞牆角、刮傷後視鏡、自撞電線桿），<b>駕駛人均負有立即通報警察之法定義務</b>。<br>
+            若未於事故現場立即撥打 110 報警取得<b>「交通事故證明編號」</b>而逕自離去，依法視同「肇事逃逸（当て逃げ）」，<b>所有購買之 CDW、NOC 及信用卡旅遊不便險依法完全失效，所有修復費用與營業損失全由駕駛人承擔</b>！
+          </div>
+        </div>
+
+        <!-- 6 大核心自駕手冊模組 -->
+        <div class="okinawa-sop-grid">
+          <!-- 模組 1: 必備證件 -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 01 ｜ 證件審查</div>
+            <h4 class="sop-card-h4">必備 3 樣正本證件</h4>
+            <div class="sop-card-p">
+              • <b>台灣護照正本</b>（有效期內）。<br>
+              • <b>台灣駕照正本</b>（過期請務必至監理所更換新版）。<br>
+              • <b>監理所核發之「日文譯本正本」</b>（紙本正本）。<br>
+              <div class="sop-card-tip">
+                ⚠️ <b>國際駕照 (IDP) 在日本完全無效！</b>日本依雙邊協定僅承認「台灣駕照正本 ＋ 日文譯本」，持國際駕照會被門市拒絕出車。
+              </div>
+            </div>
+          </div>
+
+          <!-- 模組 2: 取還車 SOP -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 02 ｜ 取還流程</div>
+            <h4 class="sop-card-h4">取車交車 ＆ 加油還車 SOP</h4>
+            <div class="sop-card-p">
+              • <b>交車 360 度錄影存證</b>：取車時會同店員以手機錄影車身刮痕、輪框磨損、擋風玻璃小石痕，避免還車糾紛。<br>
+              • <b>滿油還車（満タン返却）</b>：還車前務必於門市 5 公里內的正規加油站加滿指定油品（紅色 Regular），並<b>妥善保留加油收據</b>供店員查驗時間。
+            </div>
+          </div>
+
+          <!-- 模組 3: 保險 CDW vs NOC -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 03 ｜ 保險剖析</div>
+            <h4 class="sop-card-h4">CDW 免責與 NOC 營業損失</h4>
+            <div class="sop-card-p">
+              • <b>CDW (免責補償)</b>：免除物損與車損的自負額（約 5~10 萬日圓）。<br>
+              • <b>NOC (營業損失)</b>：車輛進廠維修期間租車公司的營業補償（自力開回賠 2 萬日圓，需拖吊賠 5 萬日圓）。<br>
+              • <b>最佳解法</b>：預訂時加購<b>全額全險（CDW + NOC 雙免除）</b>，達成真正的 0 自負額無痛安心自駕。
+            </div>
+          </div>
+
+          <!-- 模組 4: 兒童安全座椅 -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 04 ｜ 幼兒法規</div>
+            <h4 class="sop-card-h4">未滿 6 歲強制兒童汽座</h4>
+            <div class="sop-card-p">
+              • 依日本道路交通法，<b>未滿 6 歲幼兒乘車依法強制安裝兒童安全座椅</b>。<br>
+              • 租車公司若發現有幼童隨行但未預約安裝汽座，<b>依法有權直接拒絕出車</b>！<br>
+              • 分類：嬰兒提籃 (0~1歲)、幼兒座椅 (1~4歲)、學童增高墊 (4歲以上)。
+            </div>
+          </div>
+
+          <!-- 模組 5: 爆胎與失竊 -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 05 ｜ 爆胎失竊</div>
+            <h4 class="sop-card-h4">輪胎破損與車內物品遭竊</h4>
+            <div class="sop-card-p">
+              • <b>行駛爆胎</b>：切換危險燈靠邊停，放置三角反光牌於車後 50m，撥打保險救援卡上的 JAF 救援專線。<br>
+              • <b>物品遭竊</b>：在景點或海灘切勿留護照或現金於車內；若遭破窗竊盜，立即撥打 110 取得<b>「盜難證明 (Tounan Shomei)」</b>以利申請旅遊不便險。
+            </div>
+          </div>
+
+          <!-- 模組 6: 緊急電話與通話網卡 -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 06 ｜ 通訊聯絡</div>
+            <h4 class="sop-card-h4">緊急聯絡與必備通話網卡</h4>
+            <div class="sop-card-p">
+              • <b>警察 110 ｜ 救護 119 ｜ JAF 救援 #8139</b><br>
+              • <b>台灣駐那霸辦事處急難救助電話</b>：090-1942-1107（24H）<br>
+              • <b>強烈建議</b>：自駕請務必備妥<b>「可打電話的日本 SIM / eSIM 網卡」</b>（撥打 110/119 與救援無法靠純上網卡！）。
+            </div>
+          </div>
+        </div>
+
+        <!-- 救命口譯救援錦囊 -->
+        <div class="okinawa-sop-footer-tip">
+          <div class="sop-footer-left">
+            <b>💡 事故現場不會日文怎麼辦？</b> 先說：「<b>Tourist, English please.</b>」並朗讀身旁最近電線桿或公車站牌上的綠色地名編號。
+          </div>
+          <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E7%B6%B2%E5%8D%A1+%E9%80%9A%E8%A9%B1&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-sop-sim-action">預約日本通話網卡 ➔</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
