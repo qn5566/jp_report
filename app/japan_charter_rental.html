@@ -1989,6 +1989,320 @@
       transform: translateY(-2px);
     }
 
+  
+    /* 🌟 TRAVEL PACKAGES CRAFTED FOR YOU 專業高雅雜誌風排版 */
+    .crafted-packages-section {
+      max-width: 1280px;
+      margin: 60px auto 80px;
+      padding: 0 24px;
+    }
+    .crafted-header-wrap {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 36px;
+    }
+    .crafted-tag-pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      font-weight: 700;
+      color: #92400E;
+      background: #FEF3C7;
+      border: 1px solid #FDE68A;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .crafted-main-title {
+      font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      font-size: 2.8rem;
+      color: #0F172A;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .crafted-main-title em {
+      font-style: italic;
+      color: #C2410C;
+      font-weight: 400;
+    }
+    .crafted-main-desc {
+      font-size: 1.02rem;
+      color: #475569;
+      line-height: 1.7;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* 篩選膠囊 */
+    .crafted-region-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .crafted-filter-btn {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      padding: 9px 18px;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .crafted-filter-btn:hover {
+      border-color: #CBD5E1;
+      background: #F8FAFC;
+      transform: translateY(-1px);
+    }
+    .crafted-filter-btn.active {
+      background: #0F172A;
+      color: #FFFFFF;
+      border-color: #0F172A;
+      box-shadow: 0 4px 12px rgba(15,23,42,0.18);
+    }
+
+    /* 卡片排列網格 */
+    .crafted-grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 28px;
+    }
+    .crafted-pkg-card {
+      background: #FFFFFF;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .crafted-pkg-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.09);
+      border-color: #CBD5E1;
+    }
+
+    /* 頂部媒體照片 */
+    .crafted-card-media {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+    }
+    .crafted-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .crafted-pkg-card:hover .crafted-card-img {
+      transform: scale(1.06);
+    }
+    .crafted-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 100%);
+    }
+    .crafted-badges-top {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+    .badge-region {
+      background: rgba(15, 23, 42, 0.82);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .badge-duration {
+      background: rgba(254, 243, 199, 0.94);
+      backdrop-filter: blur(8px);
+      color: #92400E;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 9px;
+      border-radius: 6px;
+    }
+    .crafted-badge-vehicle {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      color: #0F172A;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    }
+
+    /* 卡片內容主體 */
+    .crafted-card-main {
+      padding: 22px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .crafted-card-name {
+      font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0F172A;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .crafted-card-sub {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #C2410C;
+      letter-spacing: 0.3px;
+      margin-bottom: 12px;
+    }
+    .crafted-card-narrative {
+      font-size: 0.88rem;
+      color: #475569;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    /* 路線盒 */
+    .crafted-route-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .route-line-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+    .route-icon {
+      font-weight: 700;
+      color: #0F172A;
+      font-size: 0.78rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .route-txt {
+      flex: 1;
+    }
+
+    /* 飯店推薦盒 */
+    .crafted-hotel-box {
+      background: #FFFBEB;
+      border: 1px solid #FEF3C7;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+    }
+    .hotel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .hotel-tag {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #92400E;
+    }
+    .hotel-link {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #B45309;
+      text-decoration: none;
+    }
+    .hotel-link:hover {
+      text-decoration: underline;
+    }
+    .hotel-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #78350F;
+      line-height: 1.4;
+    }
+
+    /* 雙預訂按鈕 */
+    .crafted-card-actions {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .btn-pkg-klook, .btn-pkg-trip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 11px 8px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .btn-pkg-klook {
+      background: #C2410C;
+      color: #FFFFFF;
+      box-shadow: 0 2px 6px rgba(194, 65, 12, 0.25);
+    }
+    .btn-pkg-klook:hover {
+      background: #9A3412;
+      transform: translateY(-1px);
+    }
+    .btn-pkg-trip {
+      background: #1E3A8A;
+      color: #FFFFFF;
+      box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25);
+    }
+    .btn-pkg-trip:hover {
+      background: #172554;
+      transform: translateY(-1px);
+    }
+    .cta-arrow {
+      font-size: 0.7rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .crafted-main-title {
+        font-size: 2.1rem;
+      }
+      .crafted-grid-container {
+        grid-template-columns: 1fr;
+      }
+      .crafted-card-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -2173,153 +2487,941 @@
     <!-- 🚘 【第 1 區塊】Klook 日本客製化包車一日遊 -->
     
     <!-- 🌟 【Travel Packages Crafted for You】(參考 Image 2 垂直大圖雜誌卡盒，多車子與景點美照) -->
-    <section class="crafted-packages-section">
+    <!-- 🌟 【Travel Packages Crafted for You 尊榮客製化包車名鑑】 -->
+    <section class="crafted-packages-section" id="sec-charter-trips">
       <div class="crafted-header-wrap">
-        <span class="crafted-tag-pill">TRAVEL PACKAGES</span>
+        <span class="crafted-tag-pill">TRAVEL PACKAGES ｜ 旅人の特等席</span>
         <h2 class="crafted-main-title">Travel Packages <em>Crafted for You</em></h2>
         <p class="crafted-main-desc">全日本客製化包車一日遊 ｜ 頂級 Toyota Alphard / Hiace 豪華座駕，資深華人司導到府接送，免搬行李自由漫遊</p>
       </div>
 
-      <div class="crafted-grid-6">
-        <!-- 卡片 1: 富士山五合目與河口湖 -->
-        <a href="https://www.klook.com/zh-TW/activity/18025-mount-fuji-classic-day-tour-tokyo/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="crafted-card-item">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="富士山河口湖包車" class="crafted-card-bg" />
-          <div class="crafted-card-scrim"></div>
-          <div class="crafted-card-body">
-            <div class="crafted-card-top">
-              <span class="crafted-duration-pill">1 Day Private Tour</span>
-              <span class="crafted-model-pill">Alphard 7人座</span>
-            </div>
-            <div class="crafted-card-bottom">
-              <h3 class="crafted-card-title">Explore Mount Fuji<br><span style="font-size:1.05rem; font-weight:600; opacity:0.9;">富士山 ＆ 河口湖秘境探索</span></h3>
-              <p class="crafted-card-summary">新倉山淺間公園遠眺五重塔富士絕景、忍野八海名水甘冽、河口湖大石公園花海漫步。</p>
-              <div class="crafted-card-foot">
-                <div class="crafted-price-wrap">
-                  <span class="crafted-price-sub">From / 每車</span>
-                  <span class="crafted-price-val">NT$ 5,200</span>
-                </div>
-                <span class="crafted-learn-btn">預約包車 ➔</span>
-              </div>
-            </div>
-          </div>
-        </a>
+      <!-- 🌟 地區篩選微膠囊導航列 -->
+      <div class="crafted-region-bar">
+        <button class="crafted-filter-btn active" onclick="filterCharterPackages('all', this)">
+          <span>🏆 全部精選行程 (20)</span>
+        </button>
+        <button class="crafted-filter-btn" onclick="filterCharterPackages('tokyo_fuji', this)">
+          <span>🗼 東京・富士五湖 (5)</span>
+        </button>
+        <button class="crafted-filter-btn" onclick="filterCharterPackages('kansai_kyoto', this)">
+          <span>⛩️ 關西・京都・大阪・奈良 (5)</span>
+        </button>
+        <button class="crafted-filter-btn" onclick="filterCharterPackages('hokkaido', this)">
+          <span>❄️ 北海道・美瑛・小樽 (4)</span>
+        </button>
+        <button class="crafted-filter-btn" onclick="filterCharterPackages('okinawa', this)">
+          <span>🌺 沖繩・本島全域 (3)</span>
+        </button>
+        <button class="crafted-filter-btn" onclick="filterCharterPackages('kyushu_chubu', this)">
+          <span>🌋 九州・中部・高山 (3)</span>
+        </button>
+      </div>
 
-        <!-- 卡片 2: 京都嵐山竹林與金閣千本鳥居 -->
-        <a href="https://www.klook.com/zh-TW/activity/1824-kyoto-day-tour-kyoto/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="crafted-card-item">
-          <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="京都嵐山包車" class="crafted-card-bg" />
-          <div class="crafted-card-scrim"></div>
-          <div class="crafted-card-body">
-            <div class="crafted-card-top">
-              <span class="crafted-duration-pill">1 Day Private Tour</span>
-              <span class="crafted-model-pill">Hiace 9人座</span>
-            </div>
-            <div class="crafted-card-bottom">
-              <h3 class="crafted-card-title">Kyoto Zen Whispers<br><span style="font-size:1.05rem; font-weight:600; opacity:0.9;">京都古都 ＆ 嵐山嵯峨野</span></h3>
-              <p class="crafted-card-summary">穿梭金閣寺水鏡倒影與嵯峨野竹林綠廊，伏見稻荷大社千本鳥居，免換電車專車到府接送。</p>
-              <div class="crafted-card-foot">
-                <div class="crafted-price-wrap">
-                  <span class="crafted-price-sub">From / 每車</span>
-                  <span class="crafted-price-val">NT$ 4,800</span>
-                </div>
-                <span class="crafted-learn-btn">預約包車 ➔</span>
-              </div>
-            </div>
-          </div>
-        </a>
+      <!-- 🌟 20 款精選包車行程排列網格 -->
+      <div class="crafted-grid-container" id="craftedPackagesGrid">
 
-        <!-- 卡片 3: 北海道富良野四季彩之丘與美瑛青池 -->
-        <a href="https://www.klook.com/zh-TW/activity/2874-furano-and-biei-day-tour-sapporo/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="crafted-card-item">
-          <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=800&q=80" alt="北海道富良野包車" class="crafted-card-bg" />
-          <div class="crafted-card-scrim"></div>
-          <div class="crafted-card-body">
-            <div class="crafted-card-top">
-              <span class="crafted-duration-pill">1 Day Private Tour</span>
-              <span class="crafted-model-pill">豪華商務休旅</span>
+        <div class="crafted-pkg-card" data-region="tokyo_fuji">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="富士山經典全景 ＆ 河口湖四季秘境一日遊" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">🗼 東京・富士五湖</span>
+              <span class="badge-duration">10 小時專車</span>
             </div>
-            <div class="crafted-card-bottom">
-              <h3 class="crafted-card-title">Hokkaido Flower Hills<br><span style="font-size:1.05rem; font-weight:600; opacity:0.9;">北海道 ＆ 富良野美瑛青池</span></h3>
-              <p class="crafted-card-summary">馳騁拼布之路與四季彩之丘七彩花毯，探訪白金青池如夢似幻琉璃水色與森林精靈露台。</p>
-              <div class="crafted-card-foot">
-                <div class="crafted-price-wrap">
-                  <span class="crafted-price-sub">From / 每車</span>
-                  <span class="crafted-price-val">NT$ 6,200</span>
-                </div>
-                <span class="crafted-learn-btn">預約包車 ➔</span>
-              </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 / Hiace 10人座</span>
             </div>
           </div>
-        </a>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">富士山經典全景 ＆ 河口湖四季秘境一日遊</h3>
+            <p class="crafted-card-sub">富士山五合目・新倉山淺間公園・忍野八海名水・大石公園花海</p>
+            <p class="crafted-card-narrative">避開擁擠巴士人潮，司導直達新倉山淺間神社遠眺五重塔與富士雪頂同框。漫步忍野八海甘甜泉池，大石公園湖畔薰衣草倒影，感受富士信仰極致靈氣。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">早晨專車赴新倉山淺間公園遠眺富士山五重塔</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">午後漫步忍野八海品嚐名泉豆腐與烤岩魚，河口湖大石公園散步</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">傍晚西湖療癒之里根場茅草屋看日落逆富士，舒適送返飯店</span></div>
+            </div>
 
-        <!-- 卡片 4: 沖繩 58 號公路與古宇利海之長橋 -->
-        <a href="https://www.klook.com/zh-TW/activity/1653-okinawa-day-tour-okinawa/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="crafted-card-item">
-          <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80" alt="沖繩古宇利包車" class="crafted-card-bg" />
-          <div class="crafted-card-scrim"></div>
-          <div class="crafted-card-body">
-            <div class="crafted-card-top">
-              <span class="crafted-duration-pill">1 Day Private Tour</span>
-              <span class="crafted-model-pill">海島敞篷/休旅</span>
-            </div>
-            <div class="crafted-card-bottom">
-              <h3 class="crafted-card-title">Okinawa Coastal Drive<br><span style="font-size:1.05rem; font-weight:600; opacity:0.9;">沖繩 58 號 ＆ 古宇利蔚藍大橋</span></h3>
-              <p class="crafted-card-summary">跨越古宇利跨海大橋迎風奔馳，直達美麗海水族館觀賞黑潮之海鯨鯊，萬座毛斷崖賞夕陽。</p>
-              <div class="crafted-card-foot">
-                <div class="crafted-price-wrap">
-                  <span class="crafted-price-sub">From / 每車</span>
-                  <span class="crafted-price-val">NT$ 4,500</span>
-                </div>
-                <span class="crafted-learn-btn">預約包車 ➔</span>
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
               </div>
+              <p class="hotel-title">秀峰閣 湖月 ｜ 全景逆富士私人露天風呂</p>
             </div>
-          </div>
-        </a>
 
-        <!-- 卡片 5: 九州阿蘇火山與黑川名湯 -->
-        <a href="https://www.klook.com/zh-TW/activity/1647-kurokawa-onsen-day-tour-fukuoka/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="crafted-card-item">
-          <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80" alt="九州阿蘇黑川包車" class="crafted-card-bg" />
-          <div class="crafted-card-scrim"></div>
-          <div class="crafted-card-body">
-            <div class="crafted-card-top">
-              <span class="crafted-duration-pill">1 Day Private Tour</span>
-              <span class="crafted-model-pill">Alphard 尊爵車</span>
-            </div>
-            <div class="crafted-card-bottom">
-              <h3 class="crafted-card-title">Kyushu Volcano & Onsen<br><span style="font-size:1.05rem; font-weight:600; opacity:0.9;">九州阿蘇 ＆ 黑川秘境溫泉</span></h3>
-              <p class="crafted-card-summary">登阿蘇草千里遼闊火山草原，大觀峰環景俯瞰阿蘇五岳，漫步江戶風情黑川溫泉秘湯街道。</p>
-              <div class="crafted-card-foot">
-                <div class="crafted-price-wrap">
-                  <span class="crafted-price-sub">From / 每車</span>
-                  <span class="crafted-price-val">NT$ 5,500</span>
-                </div>
-                <span class="crafted-learn-btn">預約包車 ➔</span>
-              </div>
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/activity/18025-mount-fuji-classic-day-tour-tokyo/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
             </div>
           </div>
-        </a>
+        </div>
+    
 
-        <!-- 卡片 6: 伊豆城崎海岸吊橋與箱根蘆之湖 -->
-        <a href="https://www.klook.com/zh-TW/activity/18025-mount-fuji-classic-day-tour-tokyo/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="crafted-card-item">
-          <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80" alt="伊豆箱根包車" class="crafted-card-bg" />
-          <div class="crafted-card-scrim"></div>
-          <div class="crafted-card-body">
-            <div class="crafted-card-top">
-              <span class="crafted-duration-pill">1 Day Private Tour</span>
-              <span class="crafted-model-pill">家庭舒適 7人車</span>
+        <div class="crafted-pkg-card" data-region="tokyo_fuji">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80" alt="箱根蘆之湖海賊船 ＆ 大湧谷黑玉子水上鳥居巡禮" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">🗼 東京・富士五湖</span>
+              <span class="badge-duration">10 小時專車</span>
             </div>
-            <div class="crafted-card-bottom">
-              <h3 class="crafted-card-title">Izu & Hakone Odyssey<br><span style="font-size:1.05rem; font-weight:600; opacity:0.9;">伊豆城崎 ＆ 箱根蘆之湖海賊船</span></h3>
-              <p class="crafted-card-summary">遠眺相模灣太平洋海景、走過城崎海岸驚險吊橋，搭乘箱根海賊船遠眺富士山水中鳥居。</p>
-              <div class="crafted-card-foot">
-                <div class="crafted-price-wrap">
-                  <span class="crafted-price-sub">From / 每車</span>
-                  <span class="crafted-price-val">NT$ 5,000</span>
-                </div>
-                <span class="crafted-learn-btn">預約包車 ➔</span>
-              </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 豪華旗艦</span>
             </div>
           </div>
-        </a>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">箱根蘆之湖海賊船 ＆ 大湧谷黑玉子水上鳥居巡禮</h3>
+            <p class="crafted-card-sub">箱根神社和平鳥居・蘆之湖海賊船・大湧谷地熱・強羅雕刻之森</p>
+            <p class="crafted-card-narrative">沿著箱根山路平穩馳騁，直達箱根神社水上和平鳥居避開排隊人潮。搭乘蘆之湖海賊船觀賞湖光倒影，大湧谷品嚐延壽七年黑玉子，私密專車愜意自在。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">專車抵達箱根神社水上鳥居參拜與湖畔漫步</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">搭乘蘆之湖海賊船、大湧谷搭纜車觀賞地熱噴氣煙霧</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">強羅雕刻之森美術館漫遊，傍晚回程送抵箱根或東京飯店</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Hakone&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">箱根 金乃竹 仙石原 ｜ 隱世竹林私人溫泉名宿</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%AE%B1%E6%A0%B9%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="tokyo_fuji">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="東京都會風雅客製遊 ｜ 銀座・淺草・SHIBUYA SKY" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">🗼 東京・市區客製</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 / Hiace 10人座</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">東京都會風雅客製遊 ｜ 銀座・淺草・SHIBUYA SKY</h3>
+            <p class="crafted-card-sub">淺草寺雷門・明治神宮森林・銀座奢華大道・SHIBUYA SKY高空夕陽</p>
+            <p class="crafted-card-narrative">東京全域客製包車，無需在擁擠地鐵搬運戰利品。司導到府接送，從江戶下町淺草雷門到原宿明治神宮，午後銀座購物名店，黃昏登頂SHIBUYA SKY俯瞰千萬燈海。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">晨間參拜淺草寺雷門與隅田川晴空塔拍照</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">明治神宮森林步道與表參道精品街、午後銀座米其林茶點</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">澀谷SHIBUYA SKY 360度露天展望台，司導專車送返飯店</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Tokyo&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">安縵東京 Aman Tokyo ｜ 都會凌空靜謐和風名邸</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%B8%82%E5%8D%80%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="tokyo_fuji">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80" alt="日光世界遺產東照宮 ＆ 中禪寺湖華嚴瀑布靈性之旅" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">🗼 關東・世界遺產</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 豪華旗艦</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">日光世界遺產東照宮 ＆ 中禪寺湖華嚴瀑布靈性之旅</h3>
+            <p class="crafted-card-sub">日光東照宮陽明門・中禪寺湖畔遊船・華嚴瀑布・伊呂波坂山道</p>
+            <p class="crafted-card-narrative">專車平穩征服伊呂波坂著名48彎髮夾彎。參拜金碧輝煌的德川幕府東照宮陽明門，聆聽日本三大名瀑華嚴瀑布百米飛瀉的轟鳴，中禪寺湖倒映日光連山神聖光影。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">抵達日光世界遺產東照宮、二荒山神社深度參拜</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">征服伊呂波坂景觀公路，抵達中禪寺湖畔品嚐在地名物湯波料理</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">搭乘電梯直下近距觀摩華嚴瀑布壯闊水氣，傍晚專車送回</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Nikko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">日光麗思卡爾頓 The Ritz-Carlton Nikko ｜ 中禪寺湖畔頂級露天溫泉</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E5%85%89%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="tokyo_fuji">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80" alt="鎌倉古都湘南海岸 ＆ 江之島海景修善寺溫泉遊" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">🗼 關東・湘南海岸</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 / Hiace 10人座</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">鎌倉古都湘南海岸 ＆ 江之島海景修善寺溫泉遊</h3>
+            <p class="crafted-card-sub">鎌倉高德院大佛・鶴岡八幡宮・江之電沿海平交道・江之島岩屋</p>
+            <p class="crafted-card-narrative">沿著國道134號海岸線一路向南，朝聖灌籃高手名場景鎌倉高校前平交道。漫步若宮大路鶴岡八幡宮，探訪鎌倉大佛與江之島夕陽富士絕景，盡享悠閒湘南海風。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">鎌倉高德院露天青銅大佛參拜、鶴岡八幡宮小町通散步</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">湘南海岸巡禮、鎌倉高校前平交道打卡，登上江之島燈塔</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">稚兒之淵岩屋遠眺相模灣落日與富士山剪影，專車送返</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Kamakura&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">鎌倉王子大飯店 ｜ 俯瞰由比濱碧海奢華海景客房</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E9%8E%8area%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="kansai_kyoto">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="京都洛東洛西千年古剎 ＆ 嵐山嵯峨野禪意漫步" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">⛩️ 關西・京都古都</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 豪華旗艦</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">京都洛東洛西千年古剎 ＆ 嵐山嵯峨野禪意漫步</h3>
+            <p class="crafted-card-sub">清水寺本堂舞台・金閣寺舍利殿・嵐山嵯峨野竹林・伏見稻荷千本鳥居</p>
+            <p class="crafted-card-narrative">司導專屬排定離峰動線，清晨第一時間漫步伏見稻荷千本鳥居朱紅隧道。直上清水寺清水舞台俯瞰古都全景，午後漫步嵐山竹林小徑與金閣寺鏡湖池金箔倒影。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">清晨避開人潮參訪伏見稻荷大社千本鳥居與清水寺二年坂</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">鹿苑寺金閣舍利殿賞鏡湖倒影，嵐山渡月橋天龍寺曹源池庭園</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">嵯峨野竹林小徑散步，傍晚祇園花見小路茶席，專車送返飯店</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Kyoto&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">虹夕諾雅 京都 HOSHINOYA Kyoto ｜ 嵐峽乘船專屬水邊私邸</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="kansai_kyoto">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=800&q=80" alt="奈良古都神鹿公園 ＆ 宇治天保百年抹茶茶席巡禮" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">⛩️ 關西・古都茶鄉</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 / Hiace 10人座</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">奈良古都神鹿公園 ＆ 宇治天保百年抹茶茶席巡禮</h3>
+            <p class="crafted-card-sub">東大寺盧舍那大佛・春日大社萬燈籠・宇治平等院鳳凰堂・天保百年老鋪抹茶</p>
+            <p class="crafted-card-narrative">奈良公園零距離餵食溫馴神鹿，步入世界最大木造建築東大寺大佛殿感受古都震撼。午後前往抹茶故鄉宇治，探訪日幣十圓硬幣上的國寶平等院鳳凰堂，品味濃抹茶芭菲。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">奈良公園漫步餵食神鹿，春日大社古老石燈籠林荫步道</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">東大寺大佛殿驚嘆木造建築極致，午後前往茶鄉宇治</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">參觀宇治平等院鳳凰堂水面倒影，伊藤久右衛門或中村藤吉茶席，送返飯店</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Nara&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">奈良 JW Marriott ｜ 融入古都歷史優雅奢華殿堂</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%A5%88%E8%89%AF%E5%AE%87%E6%B2%BB%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="kansai_kyoto">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80" alt="海之京都天橋立 ＆ 伊根舟屋水上聚落秘境包車" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">⛩️ 海之京都</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 豪華旗艦</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">海之京都天橋立 ＆ 伊根舟屋水上聚落秘境包車</h3>
+            <p class="crafted-card-sub">天橋立飛龍觀纜車・智恩寺文殊菩薩・伊根灣遊覽船餵海鷗・舟屋老街</p>
+            <p class="crafted-card-narrative">穿透京都後花園，抵達日本三景天橋立。在飛龍觀搭纜車以『股覗き』眺望沙洲如青龍騰雲，隨後前往日本威尼斯伊根舟屋，搭乘遊船餵海鷗，走進私人舟屋品嚐伊根滿開清酒。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">專車抵達天橋立搭乘空中吊椅登頂飛龍觀俯瞰沙洲</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">天橋立沙洲松林漫步、智恩寺，前往伊根灣搭乘觀光船餵海鷗</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">伊根舟屋群散步、向井酒造品嚐粉紅赤米清酒，舒適送返</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Miyazu&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">玄妙庵 Genmyoan ｜ 天橋立山頂全景溫泉旅館</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%A4%A9%E6%A9%8B%E7%AB%8B%E4%BC%8A%E6%A0%B9%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="kansai_kyoto">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1590559899731-a372a1464959?auto=format&fit=crop&w=800&q=80" alt="大阪都會名所 ＆ 神戶異人館六甲山千萬夜景巡禮" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">⛩️ 關西・大阪神戶</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 / Hiace 10人座</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">大阪都會名所 ＆ 神戶異人館六甲山千萬夜景巡禮</h3>
+            <p class="crafted-card-sub">大阪城天守閣・神戶北野異人館風見雞館・神戶港美利堅公園・六甲山夜景</p>
+            <p class="crafted-card-narrative">上午登臨豐臣秀吉大阪城天守閣，品味歷史巨石護城河。午後專車直奔神戶，走進明治歐風北野異人館街區，品嚐頂級神戶牛炭火鐵板燒，黃昏登上六甲山欣賞日本三大夜景。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">大阪城公園巨石天守閣參觀，黑門市場品嚐海鮮美食</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">專車直達神戶北野異人館風見雞館、萌黃之館漫步</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">神戶港美利堅公園看夕陽，登六甲山展望台俯瞰千萬美元夜景，送返飯店</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Osaka&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">大阪康萊德 Conrad Osaka ｜ 中之島高空水都極致景觀</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%A5%9E%E6%88%B6%E5%A4%A7%E9%98%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="kansai_kyoto">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="和歌山白濱海岸 ＆ 三段壁千疊敷圓月島溫泉一日遊" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">⛩️ 關西・和歌山</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 豪華旗艦</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">和歌山白濱海岸 ＆ 三段壁千疊敷圓月島溫泉一日遊</h3>
+            <p class="crafted-card-sub">和歌山白良濱白砂・千疊敷地質海蝕岩・三段壁洞窟海盜遺跡・圓月島落日</p>
+            <p class="crafted-card-narrative">沿著紀伊半島南下，來到關西第一度假勝地白濱。潔白石英砂白良濱令人心曠神怡，探訪千疊敷廣袤岩盤與三段壁地下36公尺熊野水軍海盜洞窟，傍晚靜賞圓月島海中落日。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">專車南下抵達和歌山白良濱海岸，踏浪漫步石英白砂</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">千疊敷海蝕地形驚嘆大自然鬼斧神工，三段壁洞窟電梯探秘</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">圓月島觀賞落日沉入天然海蝕洞奇景，品嚐新鮮九繪魚或送返溫泉飯店</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Shirahama&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">濱千鳥之湯 海舟 Kaisyu ｜ 臨海混浴露天溫泉名宿</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%99%BD%E6%BF%B1%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="hokkaido">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef4e?auto=format&fit=crop&w=800&q=80" alt="富良野七彩花海 ＆ 美瑛夢幻青池白鬚瀑布一日遊" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">❄️ 北海道・富良野</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 / Hiace 10人座</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">富良野七彩花海 ＆ 美瑛夢幻青池白鬚瀑布一日遊</h3>
+            <p class="crafted-card-sub">富田農場薰衣草・四季彩之丘拼布之路・美瑛白金青池・白鬚瀑布</p>
+            <p class="crafted-card-narrative">穿越北海道廣袤田園，司導直達富田農場品味薰衣草霜淇淋與七彩花毯。在美瑛白金青池看枯木矗立於鈷藍水面，白鬚瀑布自火山岩壁湧出鋁質藍光，純淨至極。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">富田農場漫步七彩花田、四季彩之丘搭拖拉機巡禮</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">美瑛拼布之路（Ken & Mary之樹、七星之樹），午餐享用富良野哈密瓜咖哩</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">白金青池沉醉水面倒影，欣賞白鬚瀑布鈷藍溪流，送返札幌或旭川飯店</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Furano&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">富良野寶亭留 Furano Hotel ｜ 藏身森林頂級法式美饌溫泉</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E8%89%AF%E9%87%8E%E7%BE%8E%E7%91%9B%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="hokkaido">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80" alt="小樽浪漫運河 ＆ 余市威士忌蒸餾所天狗山夜景包車" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">❄️ 北海道・小樽浪漫</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 豪華旗艦</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">小樽浪漫運河 ＆ 余市威士忌蒸餾所天狗山夜景包車</h3>
+            <p class="crafted-card-sub">小樽運河石造倉庫・北一硝子八音盒堂・NIKKA余市威士忌工場・天狗山纜車</p>
+            <p class="crafted-card-narrative">從札幌出發，走進大正浪漫的小樽運河。探訪小樽八音盒堂本館聆聽蒸氣鐘報時，下午驅車前往日本威尼斯余市蒸餾所品嚐得獎單一麥芽威士忌，黃昏登天狗山俯瞰小樽三大夜景。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">小樽運河石造倉庫漫步與拍照、堺町通北一硝子玻璃館</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">小樽音樂盒堂聆聽蒸氣鐘，前往余市蒸餾所參觀煤炭直火蒸餾工藝</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">搭乘天狗山纜車觀賞小樽灣璀璨百萬夜景，專車平穩送返</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Otaru&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">小樽 藏群 Kuramure ｜ 奢華全包式和風現代溫泉名宿</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%B0%8F%E6%A8%BD%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="hokkaido">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef4e?auto=format&fit=crop&w=800&q=80" alt="登別地獄谷 ＆ 洞爺湖環湖昭和新山名湯一日遊" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">❄️ 北海道・洞爺登別</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 / Hiace 10人座</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">登別地獄谷 ＆ 洞爺湖環湖昭和新山名湯一日遊</h3>
+            <p class="crafted-card-sub">登別地獄谷火山硫磺噴氣・昭和新山熊牧場・洞爺湖筒倉展望台・有珠山纜車</p>
+            <p class="crafted-card-narrative">直搗北海道最具震撼力的火山奇觀。走在登別地獄谷步道感受滾燙熱泉白煙升騰，午後前往昭和新山熊牧場餵食棕熊，登上筒倉展望台360度環視不凍湖洞爺湖水天一色。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">登別地獄谷鐵泉池步道漫步，感受大地心跳與硫磺白煙</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">有珠山纜車登頂眺望昭和新山與噴火灣，熊牧場互動體驗</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">洞爺湖筒倉展望台品嚐在地優格牛奶，送返洞爺湖或登別溫泉旅館</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Toyako&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">洞爺湖 乃之風度假酒店 ｜ 頂層無邊際天空露天溫泉</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%99%BB%E5%88%A5%E6%B4%9E%E7%88%BA%E6%B9%96%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="hokkaido">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef4e?auto=format&fit=crop&w=800&q=80" alt="函館百萬夜景 ＆ 五稜郭星形城郭朝市美饌之旅" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">❄️ 北海道・函館港灣</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 豪華旗艦</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">函館百萬夜景 ＆ 五稜郭星形城郭朝市美饌之旅</h3>
+            <p class="crafted-card-sub">函館朝市新鮮活烏賊・五稜郭塔俯瞰星形堡壘・八幡坂海景石板路・函館山夜景</p>
+            <p class="crafted-card-narrative">清晨探訪函館朝市體驗釣活烏賊刺身與海膽丼飯，登五稜郭塔鳥瞰日本第一座西洋星形要塞。走過直通蔚藍大海的八幡坂，傍晚專車直上海拔334公尺函館山，親睹雙曲弧線百萬鑽石夜景。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">函館朝市享用海鮮海膽丼，五稜郭塔登頂俯瞰巨大星形堡壘</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">元町西洋紅磚教堂建築群、八幡坂景觀斜坡漫步拍照</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">金森紅磚倉庫散步，傍晚專車上函館山眺望世界三大百萬夜景，送返飯店</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Hakodate&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">割烹旅館 若松 ｜ 百年津輕海峽海景懷石料理名宿</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%87%BD%E9%A4%A8%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="okinawa">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="沖繩北部全景 ｜ 美麗海水族館・古宇利島・萬座毛" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">🌺 沖繩・北部絕景</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 / Hiace 10人座</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">沖繩北部全景 ｜ 美麗海水族館・古宇利島・萬座毛</h3>
+            <p class="crafted-card-sub">黑潮之海巨大鯨鯊・古宇利跨海大橋心形岩・萬座毛象鼻海蝕崖</p>
+            <p class="crafted-card-narrative">沖繩最具代表性的絕景線路。沿著蔚藍58號海岸線向北，在美麗海水族館看巨大的鯨鯊與鬼蝠魟在藍光中優雅游弋，驅車跨過古宇利跨海大橋，品嚐名護本部町阿古豬與割烹無菜單料理。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">象鼻奇岩萬座毛遠眺東海海景，前往美麗海水族館觀賞黑潮之海餵食秀</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">驅車跨過近2公里古宇利跨海大橋，探訪心形岩與品嚐蝦蝦飯</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">本部町『割烹 本部』品嚐在地無菜單料理，專車舒適送返那霸或恩納度假飯店</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Onna&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">Halekulani Okinawa ｜ 恩納海岸極致五星天國之水度假村</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="okinawa">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="殘波岬燈塔 ＆ 美國村歐風夜景港川外人住宅文青一日遊" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">🌺 沖繩・中部悠閒</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 豪華旗艦</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">殘波岬燈塔 ＆ 美國村歐風夜景港川外人住宅文青一日遊</h3>
+            <p class="crafted-card-sub">殘波岬白色燈塔・港川外人住宅甜點散步・嘉手納美軍戰機觀景台・美國村摩天輪夜景</p>
+            <p class="crafted-card-narrative">專車漫遊沖繩最具異國風情的中部海岸。漫步殘波岬30公尺斷崖與白堊燈塔，走進港川美軍宿舍老屋品嚐oacac檸檬磅蛋糕，黃昏北谷美國村海濱落日步道，盡享美式復古風情。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">登上殘波岬燈塔遠眺湛藍東海斷崖，讀谷村傳統殘波燒陶瓷</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">港川外人住宅美軍老街品嚐手作可麗露與精品手沖咖啡</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">北谷美國村日落海灘漫步，欣賞摩天輪璀璨霓虹夜景，送返飯店</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Yomitan&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">虹夕諾雅 沖繩 HOSHINOYA Okinawa ｜ 讀谷村海角御城私人泳池</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4%E4%B8%AD%E9%83%A8%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="okinawa">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="玉泉洞琉球王國村 ＆ 瀨長島系滿魚市場海鮮巡禮" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">🌺 沖繩・南部秘境</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 / Hiace 10人座</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">玉泉洞琉球王國村 ＆ 瀨長島系滿魚市場海鮮巡禮</h3>
+            <p class="crafted-card-sub">三十萬年玉泉洞鐘乳石・齋場御嶽靈性御城・知念岬天海一線・系滿炙烤龍蝦與生蠔</p>
+            <p class="crafted-card-narrative">探訪沖繩最深沉的地質與歷史靈性。走入5公里長的玉泉洞鐘乳石地下迷宮，在知念岬眺望久高島神聖海域，中午系滿魚市場品嚐現烤龍蝦海膽與生蠔，午後瀨長島白色地中海階梯看飛機降落。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">參觀玉泉洞三十萬年鐘乳石巨觀、沖繩世界文化王國太鼓舞表演</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">知念岬公園270度太平洋全景，中午抵達系滿魚市場大啖現烤龍蝦海鮮</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">瀨長島Umikaji Terrace白色露台喝芒果冰沙看那霸機場飛機掠過，專車送返</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Nanjo&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">百名伽藍 Hyakuna Garan ｜ 沖繩南部隱世和琉風格天崖名宿</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4%E5%8D%97%E9%83%A8%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="kyushu_chubu">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=800&q=80" alt="白川鄉世界遺產合掌村 ＆ 飛驒高山三町老街一日遊" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">🌋 中部・昇龍道</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 豪華旗艦</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">白川鄉世界遺產合掌村 ＆ 飛驒高山三町老街一日遊</h3>
+            <p class="crafted-card-sub">白川鄉合掌造荻町城跡展望台・飛驒高山上三之町江戶古街・飛驒牛握壽司</p>
+            <p class="crafted-card-narrative">由名古屋或高山出發，深入日本阿爾卑斯秘境。登上荻町城跡俯瞰如童話繪本的白川鄉合掌造聚落，午後漫步高山上三之町黑色格子窗古街，品嚐入口即化的A5飛驒牛炙烤握壽司。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">專車抵達白川鄉合掌村登城跡展望台拍攝全景，參觀和田家百年合掌造內部</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">抵達高山市漫步上三之町江戶商人老街，品嚐飛驒牛串燒與地酒試飲</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">走過朱紅中橋，高山陣屋參觀江戶時代代官所，傍晚專車送抵名古屋或高山溫泉</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Takayama&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">本陣平野屋 花兆庵 ｜ 飛驒高山老街頂級傳統料理旅館</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%99%BD%E5%B7%9D%E9%84%89%E9%AB%98%E5%B1%B1%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="kyushu_chubu">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=800&q=80" alt="太宰府天滿宮 ＆ 由布院金鱗湖別府海地獄溫泉巡禮" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">🌋 九州・福岡大分</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 / Hiace 10人座</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">太宰府天滿宮 ＆ 由布院金鱗湖別府海地獄溫泉巡禮</h3>
+            <p class="crafted-card-sub">太宰府隈研吾星巴克與梅枝餅・由布院金鱗湖夢幻晨霧・別府海地獄鈷藍溫泉</p>
+            <p class="crafted-card-narrative">福岡出發暢遊九州溫泉雙冠王。太宰府天滿宮參拜學問之神與品嚐現烤梅枝餅，前往日本女性票選第一名湯由布院，金鱗湖畔看溫泉與冷泉交織的水煙，別府海地獄驚嘆鈷藍泉水。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">太宰府天滿宮參拜飛梅神木、太宰府隈研吾木構星巴克打卡</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">由布院湯之坪街道散步品嚐B-Speak蛋糕捲，漫步金鱗湖水上鳥居</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">別府海地獄參觀滾沸蔚藍溫泉與品嚐極樂饅頭，送返福岡或別府溫泉</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Yufu&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">由布院 玉之湯 Yamanotayu ｜ 雜木林間隱世百年三大名宿</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%94%B1%E5%B8%83%E9%99%A2%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="crafted-pkg-card" data-region="kyushu_chubu">
+          <div class="crafted-card-media">
+            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80" alt="熊本城天守閣 ＆ 阿蘇火山草千里黑川秘境溫泉一日遊" class="crafted-card-img" loading="lazy" />
+            <div class="crafted-card-overlay"></div>
+            <div class="crafted-badges-top">
+              <span class="badge-region">🌋 九州・熊本阿蘇</span>
+              <span class="badge-duration">10 小時專車</span>
+            </div>
+            <div class="crafted-badge-vehicle">
+              <span>🚐 Toyota Alphard 7人座 豪華旗艦</span>
+            </div>
+          </div>
+          <div class="crafted-card-main">
+            <h3 class="crafted-card-name">熊本城天守閣 ＆ 阿蘇火山草千里黑川秘境溫泉一日遊</h3>
+            <p class="crafted-card-sub">日本三大名城熊本城天守閣・阿蘇中岳活火山口煙霧・草千里之濱騎馬・黑川露天入湯</p>
+            <p class="crafted-card-narrative">親歷九州大地的雄渾狂野。登臨名將加藤清正建造的黑色熊本城天守閣，專車直上海拔千米的阿蘇火山口草千里之濱，看活火山白煙噴薄，午後前往深山幽谷黑川溫泉體驗露天入湯手形。</p>
+            
+            <div class="crafted-route-box">
+              <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">參觀熊本城天守閣與櫻之馬場城彩苑品嚐馬肉刺身與芥末蓮藕</span></div>
+              <div class="route-line-item"><span class="route-icon">☀️ 午</span><span class="route-txt">阿蘇火山全景展望台、草千里之濱火山草原漫步，近觀中岳火山口煙霧</span></div>
+              <div class="route-line-item"><span class="route-icon">🌄 夕</span><span class="route-txt">深入筑後川源頭黑川溫泉古街，享受溪流邊私人露天風呂，舒適送返</span></div>
+            </div>
+
+            <div class="crafted-hotel-box">
+              <div class="hotel-head">
+                <span class="hotel-tag">🏨 推薦奢華宿泊</span>
+                <a href="https://tw.trip.com/hotels/list?city=Minamioguni&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="hotel-link">查看空房 ❯</a>
+              </div>
+              <p class="hotel-title">黑川溫泉 山莊 竹ふえ Takefue ｜ 萬坪隱世竹林私人極上秘湯</p>
+            </div>
+
+            <div class="crafted-card-actions">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%86%8A%E6%9C%AC%E9%98%BF%E8%98%87%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-pkg-klook">
+                <span>Klook 尊榮包車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-pkg-trip">
+                <span>Trip.com 豪華專車預訂</span>
+                <span class="cta-arrow">❯</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    
       </div>
     </section>
+    <!-- 🌟 【Travel Packages Crafted for You 結束】 -->
 
     <section class="charter-section" id="sec-charter-trips" class="charter-section charter-section-tab-panel" style="display:block;">
       <div class="section-header-wrap">
@@ -2811,6 +3913,27 @@
       }
     }
     
-</script>
+
+    function filterCharterPackages(regionKey, btn) {
+      const btns = document.querySelectorAll('.crafted-filter-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.crafted-pkg-card');
+      cards.forEach(card => {
+        const reg = card.getAttribute('data-region');
+        if (regionKey === 'all' || reg === regionKey) {
+          card.style.display = 'flex';
+          card.style.opacity = '0';
+          setTimeout(() => {
+            card.style.opacity = '1';
+          }, 20);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+  </script>
 </body>
 </html>

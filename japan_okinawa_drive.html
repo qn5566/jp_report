@@ -2343,10 +2343,10 @@
       {
         id: "danbo_ramen_itoman",
         region: "south",
-        tier1: "stay", subCat: "winter", cat: "winter",
+        tier1: "food", subCat: "ramen", cat: "ramen",
         name: "暖暮拉麵 糸滿店 (免排隊秘境分店)",
         sub: "糸滿市 ｜ 九州第一位濃厚豚骨拉麵",
-        img: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+        img: "./images/danbo_ramen_okinawa.jpg",
         desc: "曾擊敗一蘭奪得九州拉麵冠軍！濃郁豚骨湯頭配上特製辣醬與博多極細麵，冬季暖胃極品。",
         mapcode: "232 485 798*12",
         parking: "專屬超大免費停車場 (免搶車位)",
@@ -2356,6 +2356,40 @@
         ctaText: "ToCoo! 租車自駕",
         ctaUrl: OKINAWA_RENTAL_AFF_URL,
         hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman"
+      },
+      {
+        id: "itoman_fish_market",
+        region: "south",
+        tier1: "food", subCat: "seafood", cat: "seafood",
+        name: "系滿魚市場 (糸満漁業協同組合)",
+        sub: "糸滿市 ｜ 現烤焗烤龍蝦與生蠔海鮮生魚片",
+        img: "./images/itoman_fish_market_lobster.jpg",
+        desc: "南部超人氣海鮮聖地！現烤大龍蝦搭配金黃濃郁明太子海膽醬、現剖生蠔、肥美海膽與多汁干貝串，百元銅板價即可大快朵頤。",
+        mapcode: "232 484 136*85",
+        parking: "道之驛系滿超大免費停車場 (500+車位)",
+        shade: "★★★★☆ (室內海鮮市場棚架 ｜ 附設戶外木桌用餐區)",
+        tips: "距離那霸機場僅 15 分鐘車程，適合抵達當天首站或回國前最後衝刺。焗烤龍蝦與生蠔每份約 500~1500 日圓，CP值極高！",
+        mapUrl: "https://maps.google.com/?q=糸満漁業協同組合+お魚センター",
+        ctaText: "ToCoo! 租車特惠",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman"
+      },
+      {
+        id: "kappo_motobu",
+        region: "north",
+        tier1: "food", subCat: "michelin", cat: "michelin",
+        name: "割烹 本部 (Kappo Motobu)",
+        sub: "本部町 ｜ 頂級在地無菜單料理・黑松露與極上旬味",
+        img: "./images/kappo_motobu_omakase.jpg",
+        desc: "本部町頂級在地割烹無菜單料理，嚴選沖繩本部牛、現採山原黑松露與當日近海捕獲名魚，將琉球食材以京都傳統懷石技藝極致呈現。",
+        mapcode: "485 540 812*33",
+        parking: "附設專用免費停車場",
+        shade: "★★★★★ (精緻和風板前座席 ｜ 沉靜私密包廂)",
+        tips: "全預約制無菜單料理，主廚依當日極上品量身定製，建議至少提早 2 週至 1 個月預訂，自駕前往水族館或恩納村極佳順遊動線。",
+        mapUrl: "https://maps.google.com/?q=割烹本部+Okinawa",
+        ctaText: "行程訂房比價",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu"
       }
     ];
 
@@ -2527,7 +2561,7 @@
         {
           day: "DAY 01",
           title: "海景大店 ｜ 旗艦商場與屋台",
-          img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80",
+          img: "./images/danbo_ramen_okinawa.jpg",
           stops: [
             { icon: "🛍️", text: "直奔 PARCO CITY 浦添 (直面海景旗艦大店、UNIQLO/Loft/無印良品)" },
             { icon: "🍜", text: "暖暮拉麵香濃豚骨拉麵" },
@@ -2538,7 +2572,7 @@
         {
           day: "DAY 02",
           title: "瘋狂血拚 ｜ 百噸水族館與頂級割烹",
-          img: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=400&q=80",
+          img: "./images/kappo_motobu_omakase.jpg",
           stops: [
             { icon: "🛍️", text: "永旺夢樂城來客夢 (血拚 5 小時+室內巨型水族缸)" },
             { icon: "👕", text: "美國村特色古著與潮流店" },
@@ -2549,7 +2583,7 @@
         {
           day: "DAY 03",
           title: "Outlet掃貨 ｜ 現烤龍蝦與機場提領",
-          img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80",
+          img: "./images/itoman_fish_market_lobster.jpg",
           stops: [
             { icon: "🛍️", text: "ASHIBINAA Outlet 精品採購" },
             { icon: "🦞", text: "系滿魚市場炭烤龍蝦與生蠔" },
