@@ -7454,83 +7454,14 @@
 .lang-check { font-size: 0.85rem !important; font-weight: 900 !important; color: #ED1A21 !important; }
 
 
-    /* 💜 紫藤花專屬卡片：淡淡的紫色背景 */
-    .tabi-card.theme-wisteria {
-      background: #FAF5FF !important;
-      border: 1.5px solid #E9D5FF !important;
-    }
-    .tabi-card.theme-wisteria .card-bloom-status-tag {
-      background: #9333EA !important;
-      color: #FFFFFF !important;
-    }
-    .tabi-card.theme-wisteria .btn-act-primary {
-      background: linear-gradient(135deg, #9333EA 0%, #7E22CE 100%) !important;
-      color: #FFFFFF !important;
-      border: none !important;
-    }
+    
+    /* ========================================================
+       🌟 10 大花季專屬按鈕配色規範 (官方色彩系統)
+       左邊（預約門票）：花色專屬淡淡柔和色
+       中間（訂房）＋ 右邊（包車）：一致高級淺灰／米色系
+       ======================================================== */
 
-    /* 🩵 粉蝶花專屬卡片：粉藍色背景 */
-    .tabi-card.theme-nemophila {
-      background: #F0F9FF !important;
-      border: 1.5px solid #BAE6FD !important;
-    }
-    .tabi-card.theme-nemophila .card-bloom-status-tag {
-      background: #0284C7 !important;
-      color: #FFFFFF !important;
-    }
-    .tabi-card.theme-nemophila .btn-act-primary {
-      background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%) !important;
-      color: #FFFFFF !important;
-      border: none !important;
-    }
-
-    /* 💠 繡球花專屬卡片：淺淺的紫色背景 */
-    .tabi-card.theme-hydrangea {
-      background: #F5F3FF !important;
-      border: 1.5px solid #DDD6FE !important;
-    }
-    .tabi-card.theme-hydrangea .card-bloom-status-tag {
-      background: #7C3AED !important;
-      color: #FFFFFF !important;
-    }
-    .tabi-card.theme-hydrangea .btn-act-primary {
-      background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%) !important;
-      color: #FFFFFF !important;
-      border: none !important;
-    }
-
-    /* 🍁 秋楓專屬卡片：溫潤秋楓琥珀紅葉色背景 */
-    .tabi-card.theme-momiji {
-      background: #FFF7ED !important;
-      border: 1.5px solid #FED7AA !important;
-    }
-    .tabi-card.theme-momiji .card-bloom-status-tag {
-      background: #EA580C !important;
-      color: #FFFFFF !important;
-    }
-    .tabi-card.theme-momiji .btn-act-primary {
-      background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%) !important;
-      color: #FFFFFF !important;
-      border: none !important;
-    }
-
-    /* 🍂 銀杏專屬卡片：金黃澄黃銀杏色背景 */
-    .tabi-card.theme-ginkgo {
-      background: #FEFCE8 !important;
-      border: 1.5px solid #FDE047 !important;
-    }
-    .tabi-card.theme-ginkgo .card-bloom-status-tag {
-      background: #CA8A04 !important;
-      color: #FFFFFF !important;
-    }
-    .tabi-card.theme-ginkgo .btn-act-primary {
-      background: linear-gradient(135deg, #CA8A04 0%, #A16207 100%) !important;
-      color: #FFFFFF !important;
-      border: none !important;
-    }
-
-  
-    /* 🌟 全站卡片操作列統一：一行三鍵絕不跳行、文字極簡、淡雅日系和風色彩 */
+    /* 基礎按鈕列與清透排版 */
     .card-action-bar {
       display: grid !important;
       grid-template-columns: 1fr 1fr 1fr !important;
@@ -7540,10 +7471,10 @@
       border-top: 1px solid #F1F5F9 !important;
     }
     .btn-act-clean {
-      padding: 8px 4px !important;
+      padding: 8px 3px !important;
       font-size: 0.78rem !important;
       font-weight: 700 !important;
-      border-radius: 8px !important;
+      border-radius: 7px !important;
       text-align: center !important;
       cursor: pointer !important;
       text-decoration: none !important;
@@ -7555,52 +7486,185 @@
       overflow: hidden !important;
       text-overflow: ellipsis !important;
       letter-spacing: 0.02em !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
     }
     .btn-act-clean:hover {
       transform: translateY(-1px) !important;
-    }
-    /* 主行動 (門票/教練)：沉穩墨黑 (Japanese Ink Black / Slate) */
-    .btn-act-primary {
-      background: #1E293B !important;
-      color: #FFFFFF !important;
-      border: 1px solid #1E293B !important;
-      box-shadow: 0 1px 3px rgba(30, 41, 59, 0.15) !important;
-      text-shadow: none !important;
-    }
-    .btn-act-primary:hover {
-      background: #0F172A !important;
-      border-color: #0F172A !important;
-      color: #FFFFFF !important;
-      box-shadow: 0 3px 8px rgba(15, 23, 42, 0.25) !important;
-    }
-    /* 次行動 (訂房)：純淨和紙米白 (Washi Sand / Warm Stone) */
-    .btn-act-secondary {
-      background: #FAF8F5 !important;
-      color: #334155 !important;
-      border: 1px solid #D6D0C4 !important;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
-      text-shadow: none !important;
-    }
-    .btn-act-secondary:hover {
-      background: #EFECE6 !important;
-      border-color: #B8B09F !important;
-      color: #0F172A !important;
-    }
-    /* 第三行動 (包車)：清透淺蔥霧灰 (Muted Asagi Mist) */
-    .btn-act-tertiary, .btn-act-mint {
-      background: #F1F5F9 !important;
-      color: #475569 !important;
-      border: 1px solid #CBD5E1 !important;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
-      text-shadow: none !important;
-    }
-    .btn-act-tertiary:hover, .btn-act-mint:hover {
-      background: #E2E8F0 !important;
-      border-color: #94A3B8 !important;
-      color: #1E293B !important;
+      filter: brightness(0.97) !important;
     }
 
-    /* ⛷️ 雪場卡片極簡雜誌風樣式優化 */
+    /* 1. 🌸 櫻花前線 (sakura) */
+    .tabi-card.theme-sakura .btn-act-primary,
+    .tabi-card:not([class*="theme-"]) .btn-act-primary {
+      background: #FADADD !important;
+      color: #9C5364 !important;
+      border: 1px solid #F3CCD3 !important;
+    }
+    .tabi-card.theme-sakura .btn-act-secondary,
+    .tabi-card.theme-sakura .btn-act-tertiary,
+    .tabi-card:not([class*="theme-"]) .btn-act-secondary,
+    .tabi-card:not([class*="theme-"]) .btn-act-tertiary {
+      background: #F4F1EA !important;
+      color: #5C574E !important;
+      border: 1px solid #E6E2D8 !important;
+    }
+
+    /* 2. 💜 紫藤瀑布 (wisteria) */
+    .tabi-card.theme-wisteria .btn-act-primary {
+      background: #E3DBE8 !important;
+      color: #6B5B7B !important;
+      border: 1px solid #D7CCE0 !important;
+    }
+    .tabi-card.theme-wisteria .btn-act-secondary,
+    .tabi-card.theme-wisteria .btn-act-tertiary {
+      background: #F2EFE9 !important;
+      color: #59554F !important;
+      border: 1px solid #E5E0D7 !important;
+    }
+
+    /* 3. 💙 粉蝶花海 (nemophila) */
+    .tabi-card.theme-nemophila .btn-act-primary {
+      background: #D2E4F0 !important;
+      color: #436780 !important;
+      border: 1px solid #C3D9E8 !important;
+    }
+    .tabi-card.theme-nemophila .btn-act-secondary,
+    .tabi-card.theme-nemophila .btn-act-tertiary {
+      background: #F0F2F3 !important;
+      color: #555D64 !important;
+      border: 1px solid #E0E4E7 !important;
+    }
+
+    /* 4. 🪻 繡球花季 (hydrangea) */
+    .tabi-card.theme-hydrangea .btn-act-primary {
+      background: #DFE5F2 !important;
+      color: #536383 !important;
+      border: 1px solid #D0D9EC !important;
+    }
+    .tabi-card.theme-hydrangea .btn-act-secondary,
+    .tabi-card.theme-hydrangea .btn-act-tertiary {
+      background: #F1F1ED !important;
+      color: #5B5D58 !important;
+      border: 1px solid #E2E2DC !important;
+    }
+
+    /* 5. 🍁 秋季楓紅 (momiji - 日間正常) */
+    .tabi-card.theme-momiji .btn-act-primary {
+      background: #FAD6C5 !important;
+      color: #9C533A !important;
+      border: 1px solid #F3C4AF !important;
+    }
+    .tabi-card.theme-momiji .btn-act-secondary,
+    .tabi-card.theme-momiji .btn-act-tertiary {
+      background: #F6F2EC !important;
+      color: #61574E !important;
+      border: 1px solid #E9E3D8 !important;
+    }
+
+    /* 6. 🍂 黃金銀杏 (ginkgo) */
+    .tabi-card.theme-ginkgo .btn-act-primary {
+      background: #F9ECC4 !important;
+      color: #8A7337 !important;
+      border: 1px solid #F0DFAD !important;
+    }
+    .tabi-card.theme-ginkgo .btn-act-secondary,
+    .tabi-card.theme-ginkgo .btn-act-tertiary {
+      background: #F7F4EB !important;
+      color: #625E50 !important;
+      border: 1px solid #EAE5D7 !important;
+    }
+
+    /* 7. 🪻 薰衣草 (lavender) */
+    .tabi-card.theme-lavender .btn-act-primary {
+      background: #DED7E5 !important;
+      color: #685777 !important;
+      border: 1px solid #D1C7DC !important;
+    }
+    .tabi-card.theme-lavender .btn-act-secondary,
+    .tabi-card.theme-lavender .btn-act-tertiary {
+      background: #F3EFEF !important;
+      color: #5C5558 !important;
+      border: 1px solid #E6E0E1 !important;
+    }
+
+    /* 8. 🌸 芝櫻花毯 (shibazakura) */
+    .tabi-card.theme-shibazakura .btn-act-primary {
+      background: #F8D7E0 !important;
+      color: #994E66 !important;
+      border: 1px solid #F0C5D2 !important;
+    }
+    .tabi-card.theme-shibazakura .btn-act-secondary,
+    .tabi-card.theme-shibazakura .btn-act-tertiary {
+      background: #F5F2ED !important;
+      color: #5D5852 !important;
+      border: 1px solid #E8E3DC !important;
+    }
+
+    /* 9. 💮 波斯菊/秋櫻 (cosmos) */
+    .tabi-card.theme-cosmos .btn-act-primary {
+      background: #F5DBDF !important;
+      color: #8F5561 !important;
+      border: 1px solid #EBC9CF !important;
+    }
+    .tabi-card.theme-cosmos .btn-act-secondary,
+    .tabi-card.theme-cosmos .btn-act-tertiary {
+      background: #F3F2EE !important;
+      color: #5A5A55 !important;
+      border: 1px solid #E5E3DD !important;
+    }
+
+    /* 10. 🌺 早春梅花 (plum / ume) */
+    .tabi-card.theme-plum .btn-act-primary,
+    .tabi-card.theme-ume .btn-act-primary {
+      background: #F8DCD7 !important;
+      color: #9E4F48 !important;
+      border: 1px solid #F1CAC3 !important;
+    }
+    .tabi-card.theme-plum .btn-act-secondary,
+    .tabi-card.theme-plum .btn-act-tertiary,
+    .tabi-card.theme-ume .btn-act-secondary,
+    .tabi-card.theme-ume .btn-act-tertiary {
+      background: #EFEFEF !important;
+      color: #555555 !important;
+      border: 1px solid #DDDDDD !important;
+    }
+
+    /* ❄️ 滑雪專屬 (snow) */
+    .tabi-card.theme-snow .btn-act-primary {
+      background: #E0F2FE !important;
+      color: #0369A1 !important;
+      border: 1px solid #BAE6FD !important;
+    }
+    .tabi-card.theme-snow .btn-act-secondary,
+    .tabi-card.theme-snow .btn-act-tertiary {
+      background: #F8FAFC !important;
+      color: #475569 !important;
+      border: 1px solid #E2E8F0 !important;
+    }
+
+    /* 🏮 夜楓專屬極黑卡牌 (僅限點選夜晚楓葉時啟動) */
+    .tabi-card.card-night-momiji {
+      background: #141722 !important;
+      border: 1.5px solid #881337 !important;
+    }
+    .tabi-card.card-night-momiji .btn-act-primary {
+      background: linear-gradient(135deg, #E11D48 0%, #BE123C 100%) !important;
+      color: #FFFFFF !important;
+      border: 1px solid #BE123C !important;
+      box-shadow: 0 2px 8px rgba(225, 29, 72, 0.4) !important;
+    }
+    .tabi-card.card-night-momiji .btn-act-secondary {
+      background: #1E2433 !important;
+      color: #E2E8F0 !important;
+      border: 1px solid #475569 !important;
+    }
+    .tabi-card.card-night-momiji .btn-act-tertiary {
+      background: #0F172A !important;
+      color: #CBD5E1 !important;
+      border: 1px solid #334155 !important;
+    }
+
+/* ⛷️ 雪場卡片極簡雜誌風樣式優化 */
     .snow-top-status-bar {
       display: flex;
       align-items: center;
@@ -28128,7 +28192,7 @@
         const isNight = ((item.theme === 'sakura' && currentSakuraFeature === 'night') || 
                             (item.theme === 'momiji' && currentMomijiFeature === 'night') || 
                             (spotDayNightState[item.id] === 'night'));
-        const isNightMomiji = (item.theme === 'momiji' && (item.hasNightLight || (item.nightHours && item.nightHours.length > 0) || (item.title && item.title.includes('夜楓'))));
+        const isNightMomiji = (item.theme === 'momiji' && (currentMomijiFeature === 'night' || spotDayNightState[item.id] === 'night'));
 
         const card = document.createElement('div');
         card.className = `tabi-card theme-${item.theme} ${isNight ? 'is-night-theme-card' : ''} ${isNightMomiji ? 'card-night-momiji' : ''}`;
@@ -28543,7 +28607,7 @@
             ` : `
               <div class="card-action-bar">
                 <a href="${klookFinalUrl}" target="_blank" class="btn-act-clean btn-act-primary" onclick="event.stopPropagation();">
-                  <span>${item.hasNightLight ? '夜間門票' : '預約門票'}</span>
+                  <span>${isNightMomiji ? '夜間門票' : '預約門票'}</span>
                 </a>
                 <a href="${bookingFinalUrl}" target="_blank" class="btn-act-clean btn-act-secondary" onclick="event.stopPropagation();">
                   <span>查看訂房</span>

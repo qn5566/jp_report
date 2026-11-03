@@ -554,75 +554,112 @@
       color: #64748B;
     }
 
+    /* 🌟 圖三規範：雜誌感無邊框三欄排版 (非卡片、無厚重按鈕、優雅文字連結) */
     .dream-three-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 36px;
+    }
+    @media (max-width: 900px) {
+      .dream-three-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
     }
     .dream-card-item {
+      display: flex;
+      flex-direction: column;
       position: relative;
-      border-radius: 12px;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+    .dream-thumb-wrap {
+      width: 100%;
+      height: 260px;
+      border-radius: 4px;
       overflow: hidden;
-      aspect-ratio: 3 / 4;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      background: #F1F5F9;
+      margin-bottom: 18px;
+      position: relative;
+      background: #E2E8F0;
     }
     .dream-card-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s ease;
     }
     .dream-card-item:hover .dream-card-img {
       transform: scale(1.05);
     }
-    .dream-card-scrim {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.8) 100%);
-    }
-    .dream-card-content {
-      position: absolute;
-      bottom: 24px;
-      left: 20px;
-      right: 20px;
-      text-align: center;
-      color: #FFFFFF;
-    }
     .dream-card-cat {
-      font-size: 0.72rem;
-      letter-spacing: 2px;
-      font-weight: 700;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: 0.68rem;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: #FCD34D;
-      margin-bottom: 6px;
-      display: block;
+      background: rgba(15, 23, 42, 0.85);
+      color: #FFFFFF;
+      padding: 3px 8px;
+      border-radius: 2px;
+      font-weight: 700;
     }
     .dream-card-name {
       font-family: var(--font-serif);
-      font-size: 1.45rem;
-      font-weight: 600;
-      line-height: 1.25;
-      margin-bottom: 14px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.35;
+      margin-bottom: 12px;
     }
-    .btn-dream-explore {
-      display: inline-block;
-      border: 1px solid rgba(255,255,255,0.7);
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(8px);
-      color: #FFFFFF;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 6px 18px;
-      border-radius: 4px;
+    .dream-card-desc {
+      font-size: 0.9rem;
+      color: #4B5563;
+      line-height: 1.75;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .editorial-readmore-link {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #1E3A8A;
       text-decoration: none;
-      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      transition: color 0.2s ease, transform 0.2s ease;
     }
-    .btn-dream-explore:hover {
-      background: #FFFFFF;
-      color: #0F172A;
+    .editorial-readmore-link:hover {
+      color: #C2410C;
+      transform: translateX(4px);
+    }
+
+    /* 行程安排：純文字淺色連結、嚴禁按鈕 */
+    .itinerary-subtle-links-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+      font-size: 0.82rem;
+    }
+    .subtle-booking-link {
+      color: #64748B;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .subtle-booking-link:hover {
+      color: #0284C7;
+    }
+    .link-dot-sep {
+      color: #CBD5E1;
     }
 
     /* 🌟 交錯排版區塊 (參照 Image 2 第四、五區塊 Find your perfect stay / Taste the best) */
@@ -1055,37 +1092,43 @@
 
         <div class="dream-three-grid">
           <!-- 欄位 1: 米其林/在地美饌 (Dining) -->
-          <div class="dream-card-item">
-            <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=600&q=80" alt="Kumano Beef Kaiseki" class="dream-card-img" />
-            <div class="dream-card-scrim"></div>
-            <div class="dream-card-content">
+          <article class="dream-card-item">
+            <div class="dream-thumb-wrap">
               <span class="dream-card-cat">MICHELIN DINING</span>
-              <h3 class="dream-card-name" id="art1_c1_title">Kumano Beef & Charcoal Hearth</h3>
-              <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-dream-explore">EXPLORE</a>
+              <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=600&q=80" alt="Kumano Beef Kaiseki" class="dream-card-img" />
             </div>
-          </div>
+            <h3 class="dream-card-name" id="art1_c1_title">Kumano Beef & Charcoal Hearth</h3>
+            <p class="dream-card-desc">嚴選紀州特產頂級黑毛熊野牛，以紀州備長炭慢火炙烤，佐以吉野川天然湧水釜飯與四季旬野菜。</p>
+            <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="editorial-readmore-link">
+              Read More ⟶
+            </a>
+          </article>
 
           <!-- 欄位 2: 景點極致探索 (Adventure) -->
-          <div class="dream-card-item">
-            <img src="./images/kumano_seigantoji_nachi.jpg" alt="Nachi Waterfall and Seigantoji Pagoda" class="dream-card-img" />
-            <div class="dream-card-scrim"></div>
-            <div class="dream-card-content">
+          <article class="dream-card-item">
+            <div class="dream-thumb-wrap">
               <span class="dream-card-cat">SACRED SIGHTSEEING</span>
-              <h3 class="dream-card-name" id="art1_c2_title">Nachi Falls & Primeval Shinto</h3>
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-dream-explore">EXPLORE</a>
+              <img src="./images/kumano_seigantoji_nachi.jpg" alt="Nachi Waterfall and Seigantoji Pagoda" class="dream-card-img" />
             </div>
-          </div>
+            <h3 class="dream-card-name" id="art1_c2_title">Nachi Falls & Primeval Shinto</h3>
+            <p class="dream-card-desc">落差 133 公尺的日本第一神聖名瀑，自古被視為神明本體，與青岸渡寺三重塔同框如幽玄畫卷。</p>
+            <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="editorial-readmore-link">
+              Read More ⟶
+            </a>
+          </article>
 
           <!-- 欄位 3: 推薦溫泉住宿 (Wellness) -->
-          <div class="dream-card-item">
-            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80" alt="Nakanoshima Hot Springs" class="dream-card-img" />
-            <div class="dream-card-scrim"></div>
-            <div class="dream-card-content">
+          <article class="dream-card-item">
+            <div class="dream-thumb-wrap">
               <span class="dream-card-cat">ONSEN & WELLNESS</span>
-              <h3 class="dream-card-name" id="art1_c3_title">Island Sanctuaries & Onsen</h3>
-              <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-dream-explore">EXPLORE</a>
+              <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80" alt="Nakanoshima Hot Springs" class="dream-card-img" />
             </div>
-          </div>
+            <h3 class="dream-card-name" id="art1_c3_title">Island Sanctuaries & Onsen</h3>
+            <p class="dream-card-desc">坐落於太平洋內灣孤島的名宿，乘專用接駁船登島，在海濤拍岸的露天紀州潮聞風呂中洗滌疲憊。</p>
+            <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="editorial-readmore-link">
+              Read More ⟶
+            </a>
+          </article>
         </div>
       </div>
 
@@ -1141,6 +1184,11 @@
           <div>
             <h3 class="day-name" id="art1_d1_title">Arrival & The Ancient Gate of Daimon-zaka</h3>
             <p class="day-desc" id="art1_d1_desc">Private transfer to Daimon-zaka cobblestone stone stairway. Ascend through 800-year-old Meoto Sugi cedar trees to Kumano Nachi Taisha and Nachi Primeval Falls.</p>
+            <div class="itinerary-subtle-links-bar">
+              <a href="japan_charter_rental.html" class="subtle-booking-link">🚗 私人專屬包車直達 ↗</a>
+              <span class="link-dot-sep">・</span>
+              <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="subtle-booking-link">🏨 預約周邊溫泉宿 ↗</a>
+            </div>
           </div>
         </div>
         <div class="blueprint-day-row">
@@ -1148,6 +1196,11 @@
           <div>
             <h3 class="day-name" id="art1_d2_title">Kumano Hongū Taisha & Healing Thermal Springs</h3>
             <p class="day-desc" id="art1_d2_desc">Hike along the Nakahechi trail into Hongū Taisha. Soak in the ancient thermal waters of Yunomine Onsen's Tsuboyu, the only World Heritage bath on earth.</p>
+            <div class="itinerary-subtle-links-bar">
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="subtle-booking-link">🎟️ 預約中邊路專人健行導覽 ↗</a>
+              <span class="link-dot-sep">・</span>
+              <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="subtle-booking-link">🏨 湯之峰溫泉名湯宿 ↗</a>
+            </div>
           </div>
         </div>
         <div class="blueprint-day-row">
@@ -1155,6 +1208,11 @@
           <div>
             <h3 class="day-name" id="art1_d3_title">Kumano River Sandanbo Sail & Pacific Retreat</h3>
             <p class="day-desc" id="art1_d3_desc">Board a traditional wooden Sandanbo sailboat drifting down the sacred Kumano River to Hayatama Taisha, concluding with coastal onsen overlooking the Pacific.</p>
+            <div class="itinerary-subtle-links-bar">
+              <a href="japan_charter_rental.html" class="subtle-booking-link">🚗 紀伊半島送機包車 ↗</a>
+              <span class="link-dot-sep">・</span>
+              <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="subtle-booking-link">🏨 勝浦灣太平洋景觀旅宿 ↗</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1306,6 +1364,30 @@
   </section>
 
   <!-- 全站頁尾 -->
+  
+  <!-- 🌟 品牌專區：官方 LOGO ＋ 中日英三語美麗詩意介紹 -->
+  <section class="brand-vision-box" style="max-width: 1080px; margin: 0 auto 80px; padding: 60px 48px; background: #111827; color: #FFFFFF; border-radius: 12px; display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: center;">
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #1F2937; border: 1.5px solid #374151; padding: 28px 20px; border-radius: 12px;">
+      <div style="width: 105px; height: 105px; border-radius: 50%; overflow: hidden; background: #FFFFFF; border: 3px solid #ED1A21; box-shadow: 0 4px 16px rgba(237, 26, 33, 0.35); margin-bottom: 12px; display: flex; align-items: center; justify-content: center;">
+        <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div style="font-family: var(--font-serif); font-size: 1.15rem; letter-spacing: 2px; color: #FFFFFF; font-weight: 800;">JAPAN TABI</div>
+      <div style="font-size: 0.8rem; color: #9CA3AF; letter-spacing: 1.5px; margin-top: 4px;">日旅報報 編輯部</div>
+      <div style="font-size: 0.72rem; color: #64748B;">ジャパン・タビ 編集室</div>
+    </div>
+    <div>
+      <h3 style="font-family: var(--font-serif); font-size: 2.1rem; font-weight: 800; line-height: 1.3; margin-bottom: 8px; color: #FFFFFF;">四季流轉，在日本的風物裡遇見彼此</h3>
+      <div style="font-family: var(--font-serif); font-size: 0.95rem; color: #CBD5E1; margin-bottom: 16px; font-style: italic;">うつろう四季、日本のかすかな息吹に巡り逢う。</div>
+      <p style="font-size: 0.92rem; color: #D1D5DB; line-height: 1.85; margin-bottom: 14px;">
+        「日旅報報 (JAPAN TABI)」創立的初心，源於對日本這片土地「物哀（Mono no Aware）」與四季風物的無限眷戀。我們拒絕流水線式的農場觀光文與匆忙打卡清單，堅持以雙腳丈量古道山徑、親嚐陶鍋白米冒出的甘甜蒸氣、在零下氣溫中守候富士的第一道御來光。
+      </p>
+      <p style="font-size: 0.92rem; color: #D1D5DB; line-height: 1.85; margin-bottom: 16px;">
+        我們深信，旅行是一場讓靈魂與四季時令同頻呼吸的深刻對話。透過真實的現場影像、可信賴的行前避雷筆記，以及一站式專屬的客製預約服務，日旅報報願成為你行囊裡最溫潤、最深度的行旅指引官。
+      </p>
+      <span style="font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; color: #FBBF24; display: block; line-height: 1.6;">“Seasons Drift, Journeys Align — Encountering Japan with You.”</span>
+    </div>
+  </section>
+
   <footer class="mag-footer">
     <div class="footer-logo">JAPAN TABI ｜ 日本旅遊報報</div>
     <p class="footer-note" id="footerNote">JAPAN TABI Masterclass Series explores sacred primeval heritage, cultural landscapes, culinary craftsmanship, and luxury sanctuaries across Japan.</p>
