@@ -7974,7 +7974,213 @@
       box-shadow: 0 2px 10px rgba(225, 29, 72, 0.35);
     }
 
-  </style>
+  
+    /* ========================================================
+       🌟 全站統一極致無縫 Header 規格 (保證各分頁零位移、零跳動)
+       ======================================================== */
+    .app-header {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 1000 !important;
+      background: rgba(250, 248, 245, 0.96) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border-bottom: 1px solid #E5E0D6 !important;
+      padding: 10px 32px !important;
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
+      align-items: center !important;
+      height: 72px !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+      box-sizing: border-box !important;
+    }
+    .header-left {
+      display: flex !important;
+      align-items: center !important;
+      justify-self: start !important;
+    }
+    .header-center {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      justify-self: center !important;
+    }
+    .header-right {
+      display: flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+      justify-self: end !important;
+    }
+    @media (max-width: 990px) {
+      .app-header {
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 12px 16px !important;
+      }
+      .header-left, .header-right {
+        justify-self: center !important;
+      }
+    }
+    .brand-wrap {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      text-decoration: none !important;
+      color: inherit !important;
+    }
+    .fuji-logo-box {
+      width: 50px !important;
+      height: 50px !important;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: #FFFFFF !important;
+      border: 2px solid #ED1A21 !important;
+      box-shadow: 0 4px 12px rgba(237, 26, 33, 0.18) !important;
+      overflow: hidden !important;
+      flex-shrink: 0 !important;
+      transition: transform 0.2s ease !important;
+    }
+    .brand-wrap:hover .fuji-logo-box {
+      transform: scale(1.05) !important;
+    }
+    .brand-tabi-logo, .fuji-logo-box img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
+    }
+    .brand-text {
+      display: flex !important;
+      flex-direction: column !important;
+      line-height: 1.15 !important;
+    }
+    .brand-text h1, .brand-title-wrap {
+      margin: 0 !important;
+      padding: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+    .brand-title-zh {
+      color: #094F8D !important;
+      font-family: 'Shippori Mincho', 'Noto Serif TC', serif !important;
+      font-weight: 900 !important;
+      letter-spacing: 2.5px !important;
+      font-size: 1.45rem !important;
+      display: inline-block !important;
+    }
+    .brand-sub-official-wrap {
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      margin-top: 2px !important;
+    }
+    .brand-title-en {
+      color: #ED1A21 !important;
+      font-family: 'Outfit', sans-serif !important;
+      font-size: 0.72rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 1.5px !important;
+    }
+    .brand-tag-official {
+      background: #ED1A21 !important;
+      color: #FFFFFF !important;
+      font-size: 0.62rem !important;
+      padding: 1px 6px !important;
+      border-radius: 4px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.5px !important;
+    }
+    .header-nav-link {
+      color: #475569 !important;
+      font-size: 0.86rem !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      padding: 6px 4px !important;
+      border-radius: 4px !important;
+      transition: color 0.2s ease !important;
+      letter-spacing: 0.5px !important;
+      display: inline-block !important;
+    }
+    .header-nav-link:hover {
+      color: #094F8D !important;
+    }
+    .header-nav-link.active {
+      color: #ED1A21 !important;
+      font-weight: 900 !important;
+      border-bottom: 2px solid #ED1A21 !important;
+    }
+    .header-lang-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      padding: 5px 12px !important;
+      border-radius: 20px !important;
+      border: 1px solid #CBD5E1 !important;
+      background: #FFFFFF !important;
+      color: #334155 !important;
+      font-size: 0.8rem !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
+    }
+    .header-lang-btn:hover {
+      background: #F8FAFC !important;
+      border-color: #94A3B8 !important;
+    }
+    .lang-selector-dropdown-wrap {
+      position: relative !important;
+    }
+    .lang-dropdown-menu {
+      display: none;
+      position: absolute !important;
+      top: 100% !important;
+      right: 0 !important;
+      margin-top: 8px !important;
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 12px !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+      padding: 8px !important;
+      min-width: 150px !important;
+      z-index: 2000 !important;
+    }
+    .lang-dropdown-menu.show {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 4px !important;
+    }
+    .lang-menu-opt {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      width: 100% !important;
+      padding: 8px 12px !important;
+      border: none !important;
+      background: transparent !important;
+      border-radius: 6px !important;
+      font-size: 0.82rem !important;
+      font-weight: 600 !important;
+      color: #334155 !important;
+      cursor: pointer !important;
+      text-align: left !important;
+      transition: background 0.15s ease !important;
+    }
+    .lang-menu-opt:hover {
+      background: #F1F5F9 !important;
+      color: #0F172A !important;
+    }
+    .lang-menu-opt.active {
+      background: #F8FAFC !important;
+      color: #ED1A21 !important;
+      font-weight: 800 !important;
+    }
+
+</style>
 </head>
 <body class="mode-spots">
 
@@ -7989,12 +8195,12 @@
   <canvas id="fx-canvas"></canvas>
 
     <!-- 頂部 Header：官方規格品牌識別 (中央品牌 ＆ 右側統一功能按鈕群) -->
-  <header class="app-header">
+    <header class="app-header">
     <div class="header-left">
       <!-- 左側平衡留白，保障中央品牌在視覺上精準居中 -->
     </div>
 
-    <!-- 🌟 官網正中間品牌標誌與文字排版 (54px 日之丸朱紅雙環 Logo，左右完全對齊) -->
+    <!-- 🌟 官網正中間品牌標誌與文字排版 (50px 官方雙環 Logo，精準居中對齊) -->
     <div class="header-center">
       <a href="tabi_news_preview.html" class="brand-wrap brand-centered" title="日旅報報 JAPAN TABI">
         <div class="fuji-logo-box">
@@ -8014,13 +8220,13 @@
 
     <!-- 🌟 頂部右側統一功能按鈕群 (純文字無外框無ICON ＋ 🌐 Language 保留外框與ICON) -->
     <div class="header-right">
-            <a href="japan_flight_deals.html" class="header-nav-link " title="Trip 機票即時比價與特惠航線">
+      <a href="japan_flight_deals.html" class="header-nav-link " title="Trip 機票即時比價與特惠航線">
         <span>查機票</span>
       </a>
       <a href="japan_charter_rental.html" class="header-nav-link " title="日本客製包車 ＆ 自駕租車指南">
         <span>包車/租車</span>
       </a>
-      <a href="japan_okinawa_drive.html" class="header-nav-link btn-nav-okinawa " title="沖繩海島不繞路自駕攻略">
+      <a href="japan_okinawa_drive.html" class="header-nav-link " title="沖繩海島不繞路自駕攻略">
         <span>沖繩自駕</span>
       </a>
       <a href="japan_inbound_rankings.html" class="header-nav-link " title="日本排行榜">
@@ -8217,7 +8423,7 @@
   <!-- 名所看板資訊列 (已移除精簡條列切換，全面採用圖文卡片呈現) -->
   <div class="view-mode-bar" style="margin-bottom: 8px;">
     <div style="font-size:0.88rem; font-weight:800; color:#334155; display:flex; align-items:center; gap:6px;">
-      <span>⛩️</span> <span id="spotsCountHint">即時精選名所</span>
+      <span id="spotsCountHint">即時精選名所</span>
     </div>
   </div>
 
@@ -27262,16 +27468,16 @@
         title: '賞花前線',
         feedSeason: 'sakura',
         subItems: [
-          { id: 'sakura_bloom', icon: '🌸', name: '櫻花前線', type: 'season', val: 'sakura' },
-          { id: 'fuji_wisteria', icon: '💜', name: '紫藤瀑布', type: 'season', val: 'wisteria' },
-          { id: 'nemophila_sea', icon: '💙', name: '粉蝶花海', type: 'season', val: 'nemophila' },
-          { id: 'hydrangea_season', icon: '🪻', name: '繡球花季', type: 'season', val: 'hydrangea' },
-          { id: 'momiji_view', icon: '🍁', name: '秋季楓紅', type: 'season', val: 'momiji' },
-          { id: 'ginkgo_gold', icon: '🍂', name: '黃金銀杏', type: 'season', val: 'ginkgo' },
-          { id: 'lavender_field', icon: '🪻', name: '薰衣草', type: 'season', val: 'lavender' },
-          { id: 'shibazakura_carpet', icon: '🌸', name: '芝櫻花毯', type: 'season', val: 'shibazakura' },
-          { id: 'cosmos_autumn', icon: '💮', name: '波斯菊/秋櫻', type: 'season', val: 'cosmos' },
-          { id: 'ume_spring', icon: '🌺', name: '早春梅花', type: 'season', val: 'ume' }
+          { id: 'sakura_bloom', icon: '', name: '櫻花前線', type: 'season', val: 'sakura' },
+          { id: 'fuji_wisteria', icon: '', name: '紫藤瀑布', type: 'season', val: 'wisteria' },
+          { id: 'nemophila_sea', icon: '', name: '粉蝶花海', type: 'season', val: 'nemophila' },
+          { id: 'hydrangea_season', icon: '', name: '繡球花季', type: 'season', val: 'hydrangea' },
+          { id: 'momiji_view', icon: '', name: '秋季楓紅', type: 'season', val: 'momiji' },
+          { id: 'ginkgo_gold', icon: '', name: '黃金銀杏', type: 'season', val: 'ginkgo' },
+          { id: 'lavender_field', icon: '', name: '薰衣草', type: 'season', val: 'lavender' },
+          { id: 'shibazakura_carpet', icon: '', name: '芝櫻花毯', type: 'season', val: 'shibazakura' },
+          { id: 'cosmos_autumn', icon: '', name: '波斯菊/秋櫻', type: 'season', val: 'cosmos' },
+          { id: 'ume_spring', icon: '', name: '早春梅花', type: 'season', val: 'ume' }
         ]
       },
       'snow': {
@@ -27364,7 +27570,6 @@
           <button class="sub-context-pill ${isActive ? 'active' : ''}" 
                   data-id="${item.id}" 
                   onclick="handleSubItemSelection('${item.id}', this)">
-            <span class="sub-pill-icon" style="margin-right: 4px;">${item.icon || ''}</span>
             <span class="sub-pill-name">${item.name}</span>
           </button>
         `;
@@ -27641,41 +27846,41 @@
         bar.style.display = 'flex';
         bar.innerHTML = `
           <button class="feature-filter-pill pill-wisteria ${currentWisteriaFeature === 'all' ? 'active' : ''}" onclick="selectWisteriaFeature('all', this)">
-            <span>💜 全部紫藤 (ALL)</span>
+            <span>全部紫藤 (ALL)</span>
           </button>
           <button class="feature-filter-pill pill-wisteria ${currentWisteriaFeature === 'night' ? 'active' : ''}" onclick="selectWisteriaFeature('night', this)">
-            <span>🏮 夜藤點燈</span>
+            <span>夜藤點燈</span>
           </button>
           <button class="feature-filter-pill pill-wisteria ${currentWisteriaFeature === 'ancient' ? 'active' : ''}" onclick="selectWisteriaFeature('ancient', this)">
-            <span>✨ 樹齡百年奇蹟大藤</span>
+            <span>樹齡百年奇蹟大藤</span>
           </button>
           <button class="feature-filter-pill pill-wisteria ${currentWisteriaFeature === 'tunnel' ? 'active' : ''}" onclick="selectWisteriaFeature('tunnel', this)">
-            <span>🟣 百米紫藤長廊</span>
+            <span>百米紫藤長廊</span>
           </button>
           <button class="feature-filter-pill pill-wisteria ${currentWisteriaFeature === 'white' ? 'active' : ''}" onclick="selectWisteriaFeature('white', this)">
-            <span>🤍 珍稀白藤・八重黑龍藤</span>
+            <span>珍稀白藤・八重黑龍藤</span>
           </button>
         `;
       } else if (activeTheme === 'nemophila') {
         bar.style.display = 'flex';
         bar.innerHTML = `
           <button class="feature-filter-pill pill-nemophila ${currentNemophilaFeature === 'all' ? 'active' : ''}" onclick="selectNemophilaFeature('all', this)">
-            <span>💙 全部粉蝶花 (ALL)</span>
+            <span>全部粉蝶花 (ALL)</span>
           </button>
           <button class="feature-filter-pill pill-nemophila ${currentNemophilaFeature === 'night' ? 'active' : ''}" onclick="selectNemophilaFeature('night', this)">
-            <span>🏮 夜間點燈 / 幻藍之夜</span>
+            <span>夜間點燈 / 幻藍之夜</span>
           </button>
           <button class="feature-filter-pill pill-nemophila ${currentNemophilaFeature === 'hill' ? 'active' : ''}" onclick="selectNemophilaFeature('hill', this)">
-            <span>🌊 蔚藍山丘花海</span>
+            <span>蔚藍山丘花海</span>
           </button>
           <button class="feature-filter-pill pill-nemophila ${currentNemophilaFeature === 'sunset' ? 'active' : ''}" onclick="selectNemophilaFeature('sunset', this)">
-            <span>🌅 海風夕陽花田</span>
+            <span>海風夕陽花田</span>
           </button>
           <button class="feature-filter-pill pill-nemophila ${currentNemophilaFeature === 'train' ? 'active' : ''}" onclick="selectNemophilaFeature('train', this)">
-            <span>🚂 觀光鐵道花丘</span>
+            <span>觀光鐵道花丘</span>
           </button>
           <button class="feature-filter-pill pill-nemophila ${currentNemophilaFeature === 'ferris' ? 'active' : ''}" onclick="selectNemophilaFeature('ferris', this)">
-            <span>🎡 摩天輪花海全景</span>
+            <span>摩天輪花海全景</span>
           </button>
         `;
       } else if (activeTheme === 'hydrangea') {
@@ -27701,19 +27906,19 @@
         bar.style.display = 'flex';
         bar.innerHTML = `
           <button class="feature-filter-pill pill-momiji ${currentMomijiFeature === 'all' ? 'active' : ''}" onclick="selectMomijiFeature('all', this)">
-            <span>🍁 全部紅葉名所 (ALL)</span>
+            <span>全部紅葉名所 (ALL)</span>
           </button>
           <button class="feature-filter-pill pill-momiji ${currentMomijiFeature === 'night' ? 'active' : ''}" onclick="selectMomijiFeature('night', this)">
-            <span>🏮 夜楓點燈</span>
+            <span>夜楓點燈</span>
           </button>
           <button class="feature-filter-pill pill-momiji ${currentMomijiFeature === 'temple' ? 'active' : ''}" onclick="selectMomijiFeature('temple', this)">
-            <span>⛩️ 寺廟庭園名楓</span>
+            <span>寺廟庭園名楓</span>
           </button>
           <button class="feature-filter-pill pill-momiji ${currentMomijiFeature === 'peak' ? 'active' : ''}" onclick="selectMomijiFeature('peak', this)">
-            <span>🍁 見頃火紅</span>
+            <span>見頃火紅</span>
           </button>
           <button class="feature-filter-pill pill-momiji ${currentMomijiFeature === 'gorge' ? 'active' : ''}" onclick="selectMomijiFeature('gorge', this)">
-            <span>🍂 溪谷峽谷絕景</span>
+            <span>溪谷峽谷絕景</span>
           </button>
         `;
       } else if (activeTheme === 'ginkgo') {
@@ -27724,19 +27929,19 @@
         bar.style.display = 'flex';
         bar.innerHTML = `
           <button class="feature-filter-pill pill-sakura ${currentSakuraFeature === 'all' ? 'active' : ''}" onclick="selectSakuraFeature('all', this)">
-            <span>🌸 全部櫻花 (ALL)</span>
+            <span>全部櫻花 (ALL)</span>
           </button>
           <button class="feature-filter-pill pill-sakura ${currentSakuraFeature === 'night' ? 'active' : ''}" onclick="selectSakuraFeature('night', this)">
-            <span>🏮 夜櫻點燈</span>
+            <span>夜櫻點燈</span>
           </button>
           <button class="feature-filter-pill pill-sakura ${currentSakuraFeature === 'full_bloom' ? 'active' : ''}" onclick="selectSakuraFeature('full_bloom', this)">
-            <span>🌸 滿開吹雪</span>
+            <span>滿開吹雪</span>
           </button>
           <button class="feature-filter-pill pill-sakura ${currentSakuraFeature === 'yaezakura' ? 'active' : ''}" onclick="selectSakuraFeature('yaezakura', this)">
-            <span>🌺 晚開八重櫻</span>
+            <span>晚開八重櫻</span>
           </button>
           <button class="feature-filter-pill pill-sakura ${currentSakuraFeature === 'yoshino' ? 'active' : ''}" onclick="selectSakuraFeature('yoshino', this)">
-            <span>🌿 染井吉野櫻</span>
+            <span>染井吉野櫻</span>
           </button>
         `;
       } else {
@@ -27812,31 +28017,31 @@
         bar.innerHTML = `
           <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
             <button class="region-pill ${currentSakuraRegion === 'all' ? 'active' : ''}" data-region="all" onclick="selectSakuraRegion('all', this)">
-              <span>🗾 全部${curLabel} (ALL)</span>
+              <span>全部${curLabel} (ALL)</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'kanto' ? 'active' : ''}" data-region="kanto" onclick="selectSakuraRegion('kanto', this)">
-              <span>🗼 東京・關東</span>
+              <span>東京・關東</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'kansai' ? 'active' : ''}" data-region="kansai" onclick="selectSakuraRegion('kansai', this)">
-              <span>🏯 京都・大阪・關西</span>
+              <span>京都・大阪・關西</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'tohoku' ? 'active' : ''}" data-region="tohoku" onclick="selectSakuraRegion('tohoku', this)">
-              <span>🌲 東北</span>
+              <span>東北</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'chubu' ? 'active' : ''}" data-region="chubu" onclick="selectSakuraRegion('chubu', this)">
-              <span>🗻 中部・北陸</span>
+              <span>中部・北陸</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'hokkaido' ? 'active' : ''}" data-region="hokkaido" onclick="selectSakuraRegion('hokkaido', this)">
-              <span>❄️ 北海道</span>
+              <span>北海道</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'chugoku' ? 'active' : ''}" data-region="chugoku" onclick="selectSakuraRegion('chugoku', this)">
-              <span>🌊 中國地區</span>
+              <span>中國地區</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'shikoku' ? 'active' : ''}" data-region="shikoku" onclick="selectSakuraRegion('shikoku', this)">
-              <span>🍊 四國</span>
+              <span>四國</span>
             </button>
             <button class="region-pill ${currentSakuraRegion === 'kyushu' ? 'active' : ''}" data-region="kyushu" onclick="selectSakuraRegion('kyushu', this)">
-              <span>🍜 九州</span>
+              <span>九州</span>
             </button>
           </div>
         `;
