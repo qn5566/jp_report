@@ -107,7 +107,7 @@
       align-items: center !important;
       justify-content: center !important;
       background: #FFFFFF !important;
-      border: 2.5px solid #ED1A21 !important;
+      border: none !important;
       box-shadow: 0 4px 14px rgba(237, 26, 33, 0.18) !important;
       overflow: hidden !important;
       flex-shrink: 0 !important;
@@ -914,7 +914,7 @@
   align-items: center !important;
   justify-content: center !important;
   background: #FFFFFF !important;
-  border: 2.5px solid #ED1A21 !important;
+  border: none !important;
   box-shadow: 0 4px 14px rgba(237, 26, 33, 0.18) !important;
   overflow: hidden !important;
   flex-shrink: 0 !important;
@@ -1559,11 +1559,11 @@
     /* 🌟 白金浮動旗艦卡盒 (參考 Travelly 頂部卡盒設計) */
     /* 🌟 現代極簡有機風格 ＆ 戶外探險美學 旗艦卡盒 (Organic Minimalism + Lifestyle Editorial) */
     .rental-flagship-card-luminous {
-      background: #FAF8F5;
+      background: url('./images/charter_rental_flagship_bg.jpg') center/cover no-repeat;
       border-radius: 22px;
       padding: 38px 44px;
-      box-shadow: 0 16px 45px -10px rgba(44, 38, 30, 0.08);
-      border: 1.5px solid #E6E1D7;
+      box-shadow: 0 16px 45px -10px rgba(40, 85, 125, 0.12);
+      border: 1.5px solid #C8DEF0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -2463,7 +2463,7 @@
       align-items: center !important;
       justify-content: center !important;
       background: #FFFFFF !important;
-      border: 2px solid #ED1A21 !important;
+      border: none !important;
       box-shadow: 0 4px 12px rgba(237, 26, 33, 0.18) !important;
       overflow: hidden !important;
       flex-shrink: 0 !important;
@@ -2735,59 +2735,7 @@
       </div>
     </div>
 
-    <!-- 🌟 【熱門目的地 Popular Destinations】(參考旅行雜誌旗艦版型，大圖橫幅卡牌) -->
-    <section class="charter-destinations-section">
-      <div class="dest-header-wrap">
-        <div>
-          <span class="dest-tag-pill">TOP DESTINATIONS</span>
-          <h2 class="dest-title">Popular Destinations ｜ 熱門自駕與包車勝地</h2>
-          <p class="dest-desc">精選全日本自駕公路與包車一日遊名所，馳騁海岸線與世界文化遺產。</p>
-        </div>
-        <a href="#sec-charter-trips" class="dest-view-all-link">瀏覽全日本所有包車路線 ➔</a>
-      </div>
-
-      <div class="dest-grid-4">
-        <!-- 目的地 1: 富士山・河口湖 -->
-        <a href="#sec-charter-trips" onclick="switchCharterRegion('kanto', document.querySelector('.charter-region-btn[data-region=\'kanto\']'))" class="dest-card-item">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80" alt="富士山河口湖" class="dest-card-img" />
-          <div class="dest-card-overlay">
-            <div class="dest-loc-badge">📍 富士山 ＆ 河口湖・箱根</div>
-            <div class="dest-loc-sub">東京出發 ｜ 6 條經典包車路線</div>
-          </div>
-          <span class="dest-card-arrow">➔</span>
-        </a>
-
-        <!-- 目的地 2: 京都古都・嵐山 -->
-        <a href="#sec-charter-trips" onclick="switchCharterRegion('kansai', document.querySelector('.charter-region-btn[data-region=\'kansai\']'))" class="dest-card-item">
-          <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80" alt="京都嵐山" class="dest-card-img" />
-          <div class="dest-card-overlay">
-            <div class="dest-loc-badge">📍 京都古都 ＆ 嵐山・宇治</div>
-            <div class="dest-loc-sub">關西出發 ｜ 4 條世界遺產路線</div>
-          </div>
-          <span class="dest-card-arrow">➔</span>
-        </a>
-
-        <!-- 目的地 3: 北海道・富良野美瑛 -->
-        <a href="#sec-charter-trips" onclick="switchCharterRegion('hokkaido', document.querySelector('.charter-region-btn[data-region=\'hokkaido\']'))" class="dest-card-item">
-          <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=700&q=80" alt="北海道富良野" class="dest-card-img" />
-          <div class="dest-card-overlay">
-            <div class="dest-loc-badge">📍 北海道 ＆ 富良野・美瑛小樽</div>
-            <div class="dest-loc-sub">札幌出發 ｜ 3 條雪見花海路線</div>
-          </div>
-          <span class="dest-card-arrow">➔</span>
-        </a>
-
-        <!-- 目的地 4: 沖繩海島・美麗海 -->
-        <a href="#sec-charter-trips" onclick="switchCharterRegion('okinawa', document.querySelector('.charter-region-btn[data-region=\'okinawa\']'))" class="dest-card-item">
-          <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=700&q=80" alt="沖繩美麗海" class="dest-card-img" />
-          <div class="dest-card-overlay">
-            <div class="dest-loc-badge">📍 沖繩海島 ＆ 58號蔚藍海岸</div>
-            <div class="dest-loc-sub">那霸出發 ｜ 古宇利水族館全日遊</div>
-          </div>
-          <span class="dest-card-arrow">➔</span>
-        </a>
-      </div>
-    </section>
+    
 
 
 
