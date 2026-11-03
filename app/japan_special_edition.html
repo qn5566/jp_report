@@ -4,27 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="./images/japan_tabi_logo.png">
-  <title>JAPAN TABI Masterclass ｜ 深度文化特輯 熊野古道與富士五湖</title>
+  <title>JAPAN TABI Masterclass ｜ 深度文化特輯探索</title>
 
-  <!-- Editorial Typographic Heritage -->
+  <!-- Editorial Typography: Kinfolk & Cereal Aesthetic -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&family=Shippori+Mincho:wght@400;600;700&family=Noto+Serif+TC:wght@400;600;900&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Serif+Thai:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;600;900&family=Noto+Serif+SC:wght@300;400;600;900&family=Noto+Serif+Thai:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-cream: #FAF8F5;
+      --bg-cream: #FFFFFF;
       --card-bg: #FFFFFF;
       --ink-black: #111827;
-      --slate-muted: #4B5563;
-      --border-sand: #E5E0D6;
+      --slate-muted: #64748B;
+      --border-sand: #F1F5F9;
+      --border-subtle: #E2E8F0;
       --sacred-moss: #1E3A2F;
       --fuji-indigo: #1E3A8A;
-      --fuji-cyan: #0284C7;
-      --vermilion: #C2410C;
       --gold-burnished: #92400E;
-      --stone-ash: #F3F1EC;
-      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', 'Shippori Mincho', Georgia, serif;
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', Georgia, serif;
       --font-kanji: 'Shippori Mincho', 'Noto Serif TC', serif;
       --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
@@ -39,28 +37,38 @@
       overflow-x: hidden;
     }
 
-    /* 🌟 全站統一官方規格 Header (中央品牌 ＆ 右側統一導航按鈕) */
+    /* 🌟 全站統一官方規格 Header */
     .app-header {
       position: sticky !important;
       top: 0 !important;
       z-index: 1000 !important;
-      background: rgba(250, 248, 245, 0.96) !important;
+      background: rgba(255, 255, 255, 0.96) !important;
       backdrop-filter: blur(16px) !important;
       -webkit-backdrop-filter: blur(16px) !important;
-      border-bottom: 1px solid #E5E0D6 !important;
-      padding: 10px 32px !important;
+      border-bottom: 1px solid var(--border-subtle) !important;
+      padding: 10px 36px !important;
       display: grid !important;
       grid-template-columns: 1fr auto 1fr !important;
       align-items: center !important;
       height: 72px !important;
     }
-
     .header-left-col {
       display: flex;
       align-items: center;
       gap: 12px;
     }
-
+    .brand-edition-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      color: #92400E;
+      background: #FEF3C7;
+      border: 1px solid #FDE68A;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
     .app-brand-center {
       display: flex !important;
       align-items: center !important;
@@ -70,12 +78,12 @@
       cursor: pointer !important;
     }
     .app-brand-logo-img {
-      width: 54px !important;
-      height: 54px !important;
+      width: 50px !important;
+      height: 50px !important;
       object-fit: contain !important;
       border-radius: 50% !important;
-      box-shadow: 0 4px 12px rgba(194, 65, 12, 0.15) !important;
-      border: 1.5px solid rgba(194, 65, 12, 0.3) !important;
+      box-shadow: 0 4px 12px rgba(194, 65, 12, 0.12) !important;
+      border: 1.5px solid rgba(194, 65, 12, 0.25) !important;
       flex-shrink: 0 !important;
     }
     .app-brand-text-wrap {
@@ -87,41 +95,29 @@
     }
     .brand-title-zh {
       font-family: 'Shippori Mincho', 'Noto Serif TC', serif !important;
-      font-size: 1.45rem !important;
+      font-size: 1.4rem !important;
       font-weight: 900 !important;
       letter-spacing: 3.5px !important;
       color: #111827 !important;
     }
     .brand-title-en {
-      font-size: 0.72rem !important;
+      font-size: 0.7rem !important;
       font-weight: 800 !important;
       letter-spacing: 2px !important;
       text-transform: uppercase !important;
       color: #92400E !important;
-    }
-    .brand-edition-tag {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 1.5px;
-      color: #C2410C;
-      border: 1px solid #C2410C;
-      padding: 2px 7px;
-      border-radius: 4px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-left: 8px;
     }
 
     .header-nav-right {
       display: flex !important;
       align-items: center !important;
       justify-content: flex-end !important;
-      gap: 20px !important;
+      gap: 22px !important;
     }
     .app-nav-link {
-      font-size: 0.92rem !important;
+      font-size: 0.9rem !important;
       font-weight: 600 !important;
-      color: #4B5563 !important;
+      color: #475569 !important;
       text-decoration: none !important;
       transition: color 0.2s ease !important;
       white-space: nowrap !important;
@@ -130,8 +126,10 @@
       color: #C2410C !important;
     }
     .app-nav-link.active {
-      color: #C2410C !important;
+      color: #0F172A !important;
       font-weight: 800 !important;
+      border-bottom: 2px solid #0F172A;
+      padding-bottom: 2px;
     }
 
     /* 全球語系下拉選單 */
@@ -142,28 +140,28 @@
       display: flex !important;
       align-items: center !important;
       gap: 6px !important;
-      background: #FFFFFF !important;
-      border: 1px solid #E5E0D6 !important;
+      background: #F8FAFC !important;
+      border: 1px solid var(--border-subtle) !important;
       border-radius: 20px !important;
       padding: 6px 14px !important;
-      font-size: 0.82rem !important;
+      font-size: 0.8rem !important;
       font-weight: 600 !important;
-      color: #374151 !important;
+      color: #334155 !important;
       cursor: pointer !important;
       transition: all 0.2s ease !important;
     }
     .btn-lang-selector:hover {
-      border-color: #C2410C !important;
-      background: #FFFBF7 !important;
+      border-color: #94A3B8 !important;
+      background: #FFFFFF !important;
     }
     .lang-dropdown-menu {
       position: absolute !important;
       top: calc(100% + 8px) !important;
       right: 0 !important;
       background: #FFFFFF !important;
-      border: 1px solid #E5E0D6 !important;
+      border: 1px solid var(--border-subtle) !important;
       border-radius: 12px !important;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08) !important;
       min-width: 160px !important;
       padding: 6px 0 !important;
       display: none;
@@ -177,350 +175,500 @@
       align-items: center !important;
       gap: 8px !important;
       padding: 9px 16px !important;
-      font-size: 0.85rem !important;
-      color: #374151 !important;
+      font-size: 0.82rem !important;
+      color: #334155 !important;
       text-decoration: none !important;
       cursor: pointer !important;
       transition: background 0.15s ease !important;
     }
     .lang-dropdown-item:hover {
-      background: #FAF8F5 !important;
+      background: #F8FAFC !important;
       color: #C2410C !important;
     }
 
-    /* 🌟 特輯切換標籤列 (MASTERCLASS VOL.01 / VOL.02) */
-    .edition-switcher-bar {
-      background: #F1ECE1;
-      border-bottom: 1px solid var(--border-sand);
-      padding: 14px 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 16px;
-      position: sticky;
-      top: 72px;
-      z-index: 99;
-      backdrop-filter: blur(10px);
-    }
-    .edition-tab-btn {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: #FFFFFF;
-      border: 1px solid var(--border-sand);
-      padding: 10px 24px;
-      border-radius: 9999px;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    }
-    .edition-tab-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      border-color: #CBD5E1;
-    }
-    .edition-tab-btn.active {
-      background: #111827;
-      color: #FFFFFF;
-      border-color: #111827;
-      box-shadow: 0 4px 14px rgba(17,24,39,0.25);
-    }
-    .edition-vol-badge {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: #92400E;
-      background: #FEF3C7;
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
-    .edition-tab-btn.active .edition-vol-badge {
-      background: #C2410C;
-      color: #FFFFFF;
-    }
-    .edition-tab-title {
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    /* 🌟 文章翻譯列 (7國語言切換按鈕) */
-    .article-trans-bar {
-      background: #FFFFFF;
-      border-bottom: 1px solid #EBE7DF;
-      padding: 12px 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    }
-    .article-trans-inner {
-      max-width: 1140px;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-    }
-    .trans-label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #4B5563;
-      letter-spacing: 0.5px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .trans-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .btn-trans-pill {
-      background: #F9FAFB;
-      border: 1px solid #E5E7EB;
-      padding: 6px 14px;
-      border-radius: 9999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #374151;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .btn-trans-pill:hover {
-      border-color: #9CA3AF;
-      background: #F3F4F6;
-    }
-    .btn-trans-pill.active {
-      background: #111827;
-      color: #FFFFFF;
-      border-color: #111827;
-      box-shadow: 0 2px 8px rgba(17,24,39,0.18);
-    }
-
-    /* Container */
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 60px 24px 120px;
-    }
-
-    /* Hero Cover Header */
-    .hero-header {
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto 60px;
-    }
-    .hero-pretitle {
-      font-size: 0.76rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--gold-burnished);
-      font-weight: 700;
-      margin-bottom: 20px;
+    /* ═════════════════════════════════════════════════
+       🌟 視圖 1: 圖一 CATALOG GRID VIEW (EXPLORE ALL OUR TRIPS)
+       ═════════════════════════════════════════════════ */
+    #catalogSection {
       display: block;
-    }
-    .hero-title {
-      font-family: var(--font-serif);
-      font-size: 3.8rem;
-      line-height: 1.15;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-      margin-bottom: 20px;
-      color: var(--sacred-moss);
-    }
-    #article2_view .hero-title {
-      color: var(--fuji-indigo);
-    }
-    .hero-kanji-sub {
-      font-family: var(--font-kanji);
-      font-size: 1.25rem;
-      letter-spacing: 6px;
-      color: #6B7280;
-      margin-bottom: 24px;
-      display: block;
-    }
-    .hero-lead-quote {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      font-style: italic;
-      color: #374151;
-      line-height: 1.6;
-      max-width: 820px;
-      margin: 0 auto 40px;
-      border-left: 2px solid var(--vermilion);
-      border-right: 2px solid var(--vermilion);
-      padding: 0 24px;
+      padding-bottom: 120px;
     }
 
-    .hero-featured-image {
+    /* 頂部全寬橫幅大圖 */
+    .catalog-hero-banner {
       width: 100%;
-      height: 560px;
-      border-radius: 8px;
+      height: 380px;
       overflow: hidden;
-      margin-bottom: 12px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      position: relative;
     }
-    .hero-featured-image img {
+    .catalog-hero-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .image-caption {
-      font-size: 0.8rem;
-      color: var(--slate-muted);
-      font-family: var(--font-serif);
-      font-style: italic;
-      text-align: center;
-      margin-bottom: 70px;
+    .catalog-hero-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.3) 100%);
     }
 
-    /* Longform Cultural Chronicle */
-    .chronicle-block {
-      max-width: 820px;
-      margin: 0 auto 80px;
+    .catalog-inner-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 60px 24px 0;
     }
-    .chronicle-block h2 {
+    .catalog-header-wrap {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+    .catalog-main-title {
       font-family: var(--font-serif);
-      font-size: 2.2rem;
-      color: var(--sacred-moss);
-      margin: 40px 0 20px;
+      font-size: 3.2rem;
       font-weight: 600;
+      color: #0F172A;
       letter-spacing: -0.5px;
-    }
-    #article2_view .chronicle-block h2 {
-      color: var(--fuji-indigo);
-    }
-    .chronicle-block p {
-      margin-bottom: 24px;
-      font-size: 1.08rem;
-      color: #374151;
-      line-height: 1.9;
-    }
-    .historical-inset {
-      background: var(--stone-ash);
-      border-left: 3px solid var(--gold-burnished);
-      padding: 28px 32px;
-      margin: 40px 0;
-      border-radius: 0 8px 8px 0;
-    }
-    .historical-inset h4 {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      color: var(--gold-burnished);
+      line-height: 1.2;
       margin-bottom: 12px;
     }
+    .catalog-sub-desc {
+      font-size: 1.05rem;
+      color: #64748B;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
 
-    /* Card Grids */
-    .section-eyebrow {
-      text-align: center;
-      font-size: 0.72rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold-burnished);
-      font-weight: 700;
-      margin-bottom: 8px;
-      display: block;
-    }
-    .section-main-title {
-      font-family: var(--font-serif);
-      font-size: 2.5rem;
-      text-align: center;
-      color: var(--sacred-moss);
-      margin-bottom: 48px;
-      font-weight: 600;
-    }
-    #article2_view .section-main-title {
-      color: var(--fuji-indigo);
-    }
-    .card-grid {
+    /* 3 欄垂直直式大圖卡片網格 (參照 Image 1) */
+    .trips-card-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 32px;
-      margin-bottom: 90px;
     }
-    .editorial-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-sand);
-      border-radius: 8px;
+    .trip-card-item {
+      position: relative;
+      border-radius: 16px;
       overflow: hidden;
+      aspect-ratio: 3 / 4;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: block;
+      text-decoration: none;
+      background: #F1F5F9;
+    }
+    .trip-card-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.14);
+    }
+    .trip-card-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .trip-card-item:hover .trip-card-bg-img {
+      transform: scale(1.06);
+    }
+    .trip-card-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.85) 100%);
+    }
+
+    /* 左上角精緻白色藥丸標籤 */
+    .trip-card-top-pill {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      color: #0F172A;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* 卡片底部內容 */
+    .trip-card-bottom-info {
+      position: absolute;
+      bottom: 22px;
+      left: 22px;
+      right: 22px;
       display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      justify-content: space-between;
+      align-items: flex-end;
+      color: #FFFFFF;
     }
-    .editorial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px rgba(0,0,0,0.06);
+    .trip-card-text-wrap {
+      flex: 1;
+      padding-right: 14px;
     }
-    .card-photo-wrap {
+    .trip-card-volume {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #FCD34D;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .trip-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 4px;
+      color: #FFFFFF;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .trip-card-meta {
+      font-size: 0.78rem;
+      color: #E2E8F0;
+      opacity: 0.9;
+    }
+    .trip-card-action-btn {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      border-bottom: 1px solid rgba(255,255,255,0.6);
+      padding-bottom: 2px;
+    }
+
+    /* ═════════════════════════════════════════════════
+       🌟 視圖 2: 圖二 ARTICLE READER VIEW (KINFOLK / CEREAL 雜誌排版)
+       ═════════════════════════════════════════════════ */
+    #readerSection {
+      display: none;
+      padding-bottom: 120px;
+    }
+
+    /* 返回所有行程按鈕條 */
+    .reader-back-bar {
+      max-width: 1080px;
+      margin: 28px auto 16px;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-back-catalog {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      padding: 8px 18px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-back-catalog:hover {
+      background: #F8FAFC;
+      border-color: #94A3B8;
+      color: #0F172A;
+    }
+
+    /* 7 國語言切換列 */
+    .reader-trans-bar {
+      background: #F8FAFC;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 24px;
+      margin-bottom: 40px;
+    }
+    .reader-trans-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .trans-prompt-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #475569;
+      letter-spacing: 0.5px;
+    }
+    .trans-pills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn-trans-choice {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-trans-choice:hover {
+      border-color: #94A3B8;
+      background: #F1F5F9;
+    }
+    .btn-trans-choice.active {
+      background: #0F172A;
+      color: #FFFFFF;
+      border-color: #0F172A;
+      box-shadow: 0 2px 8px rgba(15,23,42,0.18);
+    }
+
+    .article-master-wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 頂部全景沉浸封面大圖 (參照 Image 2 頂部) */
+    .article-hero-cover {
       position: relative;
       width: 100%;
-      height: 250px;
+      height: 480px;
+      border-radius: 12px;
       overflow: hidden;
+      margin-bottom: 70px;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.08);
     }
-    .card-photo-wrap img {
+    .article-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .article-hero-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.3) 100%);
+    }
+    .article-hero-title-box {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      right: 40px;
+      color: #FFFFFF;
+    }
+    .article-hero-vol {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #FCD34D;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .article-hero-heading {
+      font-family: var(--font-serif);
+      font-size: 3.4rem;
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .article-hero-subquote {
+      font-size: 1.05rem;
+      color: #F1F5F9;
+      font-weight: 300;
+      max-width: 760px;
+      line-height: 1.6;
+      opacity: 0.92;
+    }
+
+    /* 🌟 非對稱排版：左文右圖 (參照 Image 2 第二區塊 Sunny Lake National Park) */
+    .editorial-asymmetry-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+    .asymmetry-text-col {
+      padding-right: 16px;
+    }
+    .asymmetry-pretitle {
+      font-size: 0.75rem;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--gold-burnished);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .asymmetry-title {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      line-height: 1.25;
+      font-weight: 600;
+      color: #0F172A;
+      margin-bottom: 20px;
+    }
+    .asymmetry-body {
+      font-size: 1.02rem;
+      color: #475569;
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+    .asymmetry-img-col {
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+    }
+    .asymmetry-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 🌟 3 欄夢想探索卡片 (參照 Image 2 第三區塊 Plan Your Dream Adventure) */
+    .dream-plan-section {
+      margin-bottom: 100px;
+    }
+    .dream-plan-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .dream-plan-title {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #0F172A;
+      margin-bottom: 10px;
+    }
+    .dream-plan-desc {
+      font-size: 0.95rem;
+      color: #64748B;
+    }
+
+    .dream-three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .dream-card-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      background: #F1F5F9;
+    }
+    .dream-card-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    .editorial-card:hover .card-photo-wrap img {
-      transform: scale(1.04);
+    .dream-card-item:hover .dream-card-img {
+      transform: scale(1.05);
     }
-    .card-badge {
+    .dream-card-scrim {
       position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(255, 255, 255, 0.95);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      padding: 4px 10px;
-      text-transform: uppercase;
-      color: var(--ink-black);
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.8) 100%);
     }
-    .card-content {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
+    .dream-card-content {
+      position: absolute;
+      bottom: 24px;
+      left: 20px;
+      right: 20px;
+      text-align: center;
+      color: #FFFFFF;
     }
-    .card-subline {
+    .dream-card-cat {
       font-size: 0.72rem;
       letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--vermilion);
       font-weight: 700;
-      margin-bottom: 8px;
+      text-transform: uppercase;
+      color: #FCD34D;
+      margin-bottom: 6px;
+      display: block;
     }
-    .card-headline {
+    .dream-card-name {
       font-family: var(--font-serif);
       font-size: 1.45rem;
-      line-height: 1.3;
-      margin-bottom: 12px;
-      color: var(--ink-black);
       font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 14px;
     }
-    .card-narrative {
-      font-size: 0.92rem;
-      color: var(--slate-muted);
-      line-height: 1.65;
-      margin-bottom: 20px;
-      flex: 1;
+    .btn-dream-explore {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.2s ease;
     }
-    .card-meta-box {
-      border-top: 1px solid var(--border-sand);
-      padding-top: 14px;
+    .btn-dream-explore:hover {
+      background: #FFFFFF;
+      color: #0F172A;
+    }
+
+    /* 🌟 交錯排版區塊 (參照 Image 2 第四、五區塊 Find your perfect stay / Taste the best) */
+    .story-alternating-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    .story-row-reverse {
+      direction: rtl;
+    }
+    .story-row-reverse > * {
+      direction: ltr;
+    }
+    .story-img-frame {
+      width: 100%;
+      height: 380px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+    }
+    .story-frame-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .story-text-frame {
+      padding: 0 16px;
+    }
+    .story-section-title {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #0F172A;
+      line-height: 1.25;
       margin-bottom: 16px;
-      font-size: 0.78rem;
-      color: #6B7280;
     }
-    .card-action-link {
+    .story-section-desc {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .btn-story-text-cta {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -528,169 +676,157 @@
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--gold-burnished);
+      color: #0F172A;
       text-decoration: none;
+      border-bottom: 1.5px solid #0F172A;
+      padding-bottom: 2px;
       transition: color 0.2s ease;
     }
-    .card-action-link:hover {
-      color: var(--vermilion);
+    .btn-story-text-cta:hover {
+      color: #C2410C;
+      border-color: #C2410C;
     }
 
-    /* Chauffeur & Flight Concierge Hub */
-    .chauffeur-hub {
-      background: #111827;
+    /* 尊榮專車模組 */
+    .magazine-chauffeur-box {
+      background: #0F172A;
       color: #FFFFFF;
-      padding: 60px 48px;
-      border-radius: 8px;
+      border-radius: 16px;
+      padding: 56px 48px;
       margin: 80px 0;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 1fr;
       gap: 48px;
       align-items: center;
     }
-    .chauffeur-tag {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #FBBF24;
+    .chf-badge {
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
       font-weight: 700;
+      text-transform: uppercase;
+      color: #FCD34D;
       margin-bottom: 12px;
       display: block;
     }
-    .chauffeur-title {
+    .chf-heading {
       font-family: var(--font-serif);
-      font-size: 2.4rem;
-      line-height: 1.2;
-      margin-bottom: 16px;
+      font-size: 2.3rem;
       font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 16px;
     }
-    .chauffeur-desc {
+    .chf-summary {
       font-size: 0.94rem;
-      color: #9CA3AF;
-      line-height: 1.7;
+      color: #94A3B8;
+      line-height: 1.75;
       margin-bottom: 24px;
     }
-    .chauffeur-features {
+    .chf-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       font-size: 0.85rem;
-      color: #D1D5DB;
+      color: #CBD5E1;
     }
-    .chauffeur-booking-cta {
-      background: #1F2937;
-      border: 1px solid #374151;
-      padding: 36px;
-      border-radius: 6px;
+    .chf-cta-box {
+      background: #1E293B;
+      border: 1px solid #334155;
+      padding: 32px;
+      border-radius: 12px;
       text-align: center;
     }
-    .btn-chauffeur-gold {
+    .btn-chf-gold {
       display: block;
       width: 100%;
-      background: #D97706;
+      background: #C2410C;
       color: #FFFFFF;
-      padding: 14px 20px;
+      padding: 13px 20px;
       font-size: 0.82rem;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 6px;
       margin-bottom: 12px;
       transition: background 0.2s ease;
     }
-    .btn-chauffeur-gold:hover {
-      background: #B45309;
+    .btn-chf-gold:hover {
+      background: #9A3412;
     }
-    .btn-chauffeur-outline {
+    .btn-chf-ghost {
       display: block;
       width: 100%;
       background: transparent;
-      border: 1px solid #4B5563;
-      color: #E5E7EB;
-      padding: 12px 20px;
+      border: 1px solid #64748B;
+      color: #E2E8F0;
+      padding: 11px 20px;
       font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 6px;
       transition: all 0.2s ease;
     }
-    .btn-chauffeur-outline:hover {
-      border-color: #9CA3AF;
+    .btn-chf-ghost:hover {
+      border-color: #CBD5E1;
       color: #FFFFFF;
     }
 
-    /* Itinerary Timeline Blueprint */
-    .itinerary-system {
-      background: #FFFFFF;
-      border: 1px solid var(--border-sand);
-      border-radius: 8px;
-      padding: 48px;
-      margin-bottom: 90px;
+    /* 行程藍圖 Blueprint */
+    .blueprint-system-wrap {
+      background: #F8FAFC;
+      border-radius: 16px;
+      padding: 50px 40px;
+      margin-bottom: 80px;
+      border: 1px solid var(--border-subtle);
     }
-    .itinerary-header-wrap {
+    .blueprint-title-wrap {
       text-align: center;
-      margin-bottom: 40px;
-    }
-    .itinerary-selector {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
       margin-bottom: 36px;
     }
-    .itinerary-badge-nav {
-      font-size: 0.76rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 8px 18px;
-      border: 1px solid var(--border-sand);
-      background: var(--bg-cream);
-      font-weight: 700;
-      cursor: pointer;
-      border-radius: 9999px;
+    .blueprint-main-title {
+      font-family: var(--font-serif);
+      font-size: 2.3rem;
+      font-weight: 600;
+      color: #0F172A;
     }
-    .itinerary-badge-nav.active {
-      background: var(--ink-black);
-      color: #FFFFFF;
-      border-color: var(--ink-black);
-    }
-    .itinerary-stage {
+    .blueprint-day-row {
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 36px;
-      border-bottom: 1px solid var(--border-sand);
-      padding: 28px 0;
+      grid-template-columns: 160px 1fr;
+      gap: 32px;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 24px 0;
     }
-    .itinerary-stage:last-child {
+    .blueprint-day-row:last-child {
       border-bottom: none;
     }
-    .stage-time-tag {
+    .day-tag {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #C2410C;
+    }
+    .day-name {
       font-family: var(--font-serif);
       font-size: 1.3rem;
       font-weight: 600;
-      color: var(--gold-burnished);
-    }
-    .stage-title {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
+      color: #0F172A;
       margin-bottom: 8px;
-      font-weight: 600;
     }
-    .stage-desc {
+    .day-desc {
       font-size: 0.94rem;
-      color: #4B5563;
-      line-height: 1.7;
+      color: #475569;
+      line-height: 1.75;
     }
 
-    /* Unified Footer */
+    /* 頁尾 */
     .mag-footer {
-      border-top: 1px solid var(--border-sand);
-      padding: 60px 48px;
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 24px;
       text-align: center;
-      background: #FAF8F5;
+      background: #FFFFFF;
     }
     .footer-logo {
       font-family: var(--font-serif);
@@ -699,11 +835,11 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 12px;
-      color: #111827;
+      color: #0F172A;
     }
     .footer-note {
       font-size: 0.82rem;
-      color: #6B7280;
+      color: #64748B;
       max-width: 600px;
       margin: 0 auto 24px;
       line-height: 1.6;
@@ -716,18 +852,22 @@
     .footer-links a {
       font-size: 0.82rem;
       font-weight: 600;
-      color: #4B5563;
+      color: #475569;
       text-decoration: none;
     }
     .footer-links a:hover {
       color: #C2410C;
     }
 
-    @media (max-width: 900px) {
-      .card-grid { grid-template-columns: 1fr; }
-      .chauffeur-hub { grid-template-columns: 1fr; }
-      .itinerary-stage { grid-template-columns: 1fr; }
-      .hero-title { font-size: 2.6rem; }
+    @media (max-width: 860px) {
+      .trips-card-grid { grid-template-columns: 1fr; }
+      .editorial-asymmetry-row { grid-template-columns: 1fr; }
+      .dream-three-grid { grid-template-columns: 1fr; }
+      .story-alternating-row { grid-template-columns: 1fr; }
+      .story-row-reverse { direction: ltr; }
+      .magazine-chauffeur-box { grid-template-columns: 1fr; }
+      .blueprint-day-row { grid-template-columns: 1fr; }
+      .article-hero-heading { font-size: 2.2rem; }
       .app-header {
         grid-template-columns: auto 1fr;
         padding: 8px 16px !important;
@@ -739,7 +879,7 @@
 </head>
 <body>
 
-  <!-- 🌟 全站統一頂部導航列 -->
+  <!-- 🌟 全站統一 Header -->
   <header class="app-header">
     <div class="header-left-col">
       <span class="brand-edition-tag">SPECIAL ISSUE</span>
@@ -760,7 +900,7 @@
       <a href="japan_inbound_rankings.html" class="app-nav-link">日本排行</a>
       <a href="japan_special_edition.html" class="app-nav-link active">深度文章</a>
 
-      <!-- 🌐 官方統一語言切換選單 -->
+      <!-- 🌐 全球語系下拉選單 -->
       <div class="lang-dropdown-wrapper" id="langSelectorWrap">
         <button class="btn-lang-selector" id="langDropdownTrigger" onclick="toggleLangDropdown(event)">
           <span>🌐</span>
@@ -780,1085 +920,395 @@
     </div>
   </header>
 
-  <!-- 🌟 特輯期數切換 Bar (Vol. 01 熊野古道 vs Vol. 02 富士五湖・本栖湖) -->
-  <div class="edition-switcher-bar">
-    <button class="edition-tab-btn active" id="tabBtnArticle1" onclick="switchArticle(1, this)">
-      <span class="edition-vol-badge">VOL. 01</span>
-      <span class="edition-tab-title">熊野古道 ｜ 甦醒重生之徑與原始迷霧</span>
-    </button>
-    <button class="edition-tab-btn" id="tabBtnArticle2" onclick="switchArticle(2, this)">
-      <span class="edition-vol-badge">VOL. 02</span>
-      <span class="edition-tab-title">富士五湖 ｜ 本栖湖神聖逆富士與森之焚火</span>
-    </button>
-  </div>
+  <!-- ═════════════════════════════════════════════════
+       🌟 區塊 1: 圖一 CATALOG GRID VIEW (文章卡片排列)
+       ═════════════════════════════════════════════════ -->
+  <section id="catalogSection">
+    <!-- 頂部全寬橫幅大圖 -->
+    <div class="catalog-hero-banner">
+      <img src="./images/special_edition_banner.jpg" alt="Japan Winter Juhyo Mountain Panorama" class="catalog-hero-img" />
+      <div class="catalog-hero-scrim"></div>
+    </div>
 
-  <!-- 🌟 文章多語言翻譯工具列 (置於文章卡牌之上) -->
-  <div class="article-trans-bar">
-    <div class="article-trans-inner">
-      <span class="trans-label" id="articleTransPrompt">🌐 文章多語言切換 Article Translation:</span>
-      <div class="trans-pills" id="articleTransPills">
-        <button class="btn-trans-pill active" data-lang="en" onclick="switchArticleLang('en', this)">🇺🇸 English</button>
-        <button class="btn-trans-pill" data-lang="zh-tw" onclick="switchArticleLang('zh-tw', this)">🇹🇼 繁體中文</button>
-        <button class="btn-trans-pill" data-lang="zh-cn" onclick="switchArticleLang('zh-cn', this)">🇨🇳 简体中文</button>
-        <button class="btn-trans-pill" data-lang="vi" onclick="switchArticleLang('vi', this)">🇻🇳 Tiếng Việt</button>
-        <button class="btn-trans-pill" data-lang="th" onclick="switchArticleLang('th', this)">🇹🇭 ภาษาไทย</button>
-        <button class="btn-trans-pill" data-lang="hi" onclick="switchArticleLang('hi', this)">🇮🇳 हिन्दी</button>
-        <button class="btn-trans-pill" data-lang="es" onclick="switchArticleLang('es', this)">🇪🇸 Español</button>
+    <div class="catalog-inner-container">
+      <div class="catalog-header-wrap">
+        <h1 class="catalog-main-title">Explore All Our Trips</h1>
+        <p class="catalog-sub-desc">Every journey is carefully crafted to bring your travel dreams to life.</p>
+      </div>
+
+      <!-- 垂直大圖卡片排列網格 (3 欄直式卡片，文字很少，純淨歐美 Slow Travel 風格) -->
+      <div class="trips-card-grid">
+        
+        <!-- 卡片 1: 熊野古道 -->
+        <div class="trip-card-item" onclick="openArticle(1)">
+          <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="Kumano Kodo" class="trip-card-bg-img" />
+          <div class="trip-card-scrim"></div>
+          <span class="trip-card-top-pill">Kumano Kodō, Wakayama</span>
+          <div class="trip-card-bottom-info">
+            <div class="trip-card-text-wrap">
+              <span class="trip-card-volume">VOL. 01 ｜ MASTERCLASS</span>
+              <h3 class="trip-card-title">The Path of Rebirth & Primeval Mists</h3>
+              <p class="trip-card-meta">3 Days, 2 Nights ｜ Sacred Pilgrimage</p>
+            </div>
+            <span class="trip-card-action-btn">Read Story →</span>
+          </div>
+        </div>
+
+        <!-- 卡片 2: 富士五湖與本栖湖 -->
+        <div class="trip-card-item" onclick="openArticle(2)">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Mount Fuji and Motosu" class="trip-card-bg-img" />
+          <div class="trip-card-scrim"></div>
+          <span class="trip-card-top-pill">Fuji Five Lakes, Yamanashi</span>
+          <div class="trip-card-bottom-info">
+            <div class="trip-card-text-wrap">
+              <span class="trip-card-volume">VOL. 02 ｜ MASTERCLASS</span>
+              <h3 class="trip-card-title">The Sacred Mirror & Highland Fire</h3>
+              <p class="trip-card-meta">3 Days, 2 Nights ｜ Glacial Reflections</p>
+            </div>
+            <span class="trip-card-action-btn">Read Story →</span>
+          </div>
+        </div>
+
+        <!-- 卡片 3: 屋久島 (預覽即將發布) -->
+        <div class="trip-card-item" onclick="openArticle(1)">
+          <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80" alt="Yakushima Ancient Cedars" class="trip-card-bg-img" />
+          <div class="trip-card-scrim"></div>
+          <span class="trip-card-top-pill">Yakushima, Kagoshima</span>
+          <div class="trip-card-bottom-info">
+            <div class="trip-card-text-wrap">
+              <span class="trip-card-volume">VOL. 03 ｜ COMING SOON</span>
+              <h3 class="trip-card-title">Primeval Cedars & Waterfalls</h3>
+              <p class="trip-card-meta">4 Days, 3 Nights ｜ Moss Forest Sanctuary</p>
+            </div>
+            <span class="trip-card-action-btn">Preview →</span>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- 🌟 視圖 1: 第一篇文章 熊野古道 (Kumano Kodō) -->
-  <main id="article1_view" style="display: block;">
-
-
-  <!-- Top Magazine Nav -->
-  <header class="mag-nav">
-    <a href="#" class="mag-logo">
-      <span>JAPAN TABI</span>
-      <span class="mag-tag">Vol. 01 Masterclass</span>
-    </a>
-    <div style="font-size: 0.78rem; font-family: var(--font-serif); font-style: italic; color: #6B7280;">
-      Sacred Geography & Living Heritage
+  <!-- ═════════════════════════════════════════════════
+       🌟 區塊 2: 圖二 ARTICLE READER VIEW (單篇深度文章雜誌化排版)
+       ═════════════════════════════════════════════════ -->
+  <section id="readerSection">
+    
+    <!-- 返回按鈕條 -->
+    <div class="reader-back-bar">
+      <button class="btn-back-catalog" onclick="backToCatalog()">
+        <span>❮ Back to All Trips</span>
+      </button>
+      <div style="font-size: 0.8rem; color: #64748B; font-weight: 600;">
+        <span id="activeArticleVolLabel">VOL. 01 ｜ MASTERCLASS</span>
+      </div>
     </div>
-  </header>
 
-  <div class="container">
-
-    <!-- Hero Header -->
-    <header class="hero-header">
-      <span class="hero-pretitle">UNESCO World Heritage Spiritual Route</span>
-      <h1 class="hero-title">Kumano Kodō: The Path of Rebirth & Primeval Mists</h1>
-      <span class="hero-kanji-sub">熊野古道 ｜ 蟻の熊野詣と甦りの聖地</span>
-      <p class="hero-lead-quote">
-        "Over a thousand years of moss-covered cobblestone, steep cedar roots, and sacred watercourses—where emperors walked barefoot beside mountain ascetics, shedding their worldly sins in the primeval forest."
-      </p>
-
-      <div class="hero-featured-image">
-        <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1400&q=80" alt="Daimon-zaka Cobblestone Steps, Kumano Kodo" />
+    <!-- 7 國語言切換列 (置於文章卡片之上) -->
+    <div class="reader-trans-bar">
+      <div class="reader-trans-inner">
+        <span class="trans-prompt-label">🌐 Article Translation / 多語言閱讀:</span>
+        <div class="trans-pills-wrap">
+          <button class="btn-trans-choice active" data-lang="en" onclick="setArticleLang('en', this)">🇺🇸 English</button>
+          <button class="btn-trans-choice" data-lang="zh-tw" onclick="setArticleLang('zh-tw', this)">🇹🇼 繁體中文</button>
+          <button class="btn-trans-choice" data-lang="zh-cn" onclick="setArticleLang('zh-cn', this)">🇨🇳 简体中文</button>
+          <button class="btn-trans-choice" data-lang="vi" onclick="setArticleLang('vi', this)">🇻🇳 Tiếng Việt</button>
+          <button class="btn-trans-choice" data-lang="th" onclick="setArticleLang('th', this)">🇹🇭 ภาษาไทย</button>
+          <button class="btn-trans-choice" data-lang="hi" onclick="setArticleLang('hi', this)">🇮🇳 हिन्दी</button>
+          <button class="btn-trans-choice" data-lang="es" onclick="setArticleLang('es', this)">🇪🇸 Español</button>
+        </div>
       </div>
-      <div class="image-caption">Daimon-zaka: The 600-meter ancient stone stairway flanked by 800-year-old Meoto-sugi cedars, Wakayama Prefecture.</div>
-    </header>
+    </div>
 
-    <!-- Cultural & Historical Chronicle -->
-    <article class="chronicle-block">
-      <h2>The Emperor’s Mud: The Legend of Ari-no-Kumano-Mōde</h2>
-      <p>
-        In the golden twilight of the Heian period (794–1185 AD), Kyoto’s imperial aristocracy became obsessed with a concept that terrified their gilded courts: *Mappō*, the prophesied Buddhist apocalypse in which the dharma would decay and souls would wander endlessly without salvation. To escape this fate, retired emperors, court ladies, and cloistered sovereigns undertook what was considered the most grueling physical penance in the realm—the *Kumano Gokō* (Imperial Pilgrimages to Kumano).
-      </p>
-      <p>
-        From Emperor Uda in 907 AD to Emperor Go-Shirakawa—who made the tortuous 600-kilometer round trip across the Kii mountain spine thirty-four separate times—royalty discarded their lacquered carriages, shedding aristocratic rank to trek barefoot through mud, swollen rivers, and leech-infested ravines. So ceaseless was the line of pilgrims marching single-file through the primeval rainforest that chroniclers marvelled at the sight, coining the immortal phrase **Ari-no-Kumano-mōde**—"The pilgrimage of marching ants."
-      </p>
-
-      <div class="story-inset">
-        <div class="story-inset-title">Philosophical Concept: Kishikaisei (起死回生)</div>
-        <h4>The Shinto-Buddhist Syncretism of "Rebirth"</h4>
-        <p>
-          Unlike Western pilgrimages that commemorate a single saint’s historical footsteps, Kumano Kodō was designed as an allegorical death and reincarnation. The rugged mountains represented the Buddhist Pure Land of the afterlife (Fudaraku). When an ascetic climbed the razor-edge ridges of the Nakahechi trail and plunged into the thermal sulfur of Yunomine, they were considered to have ritually died; emerging at Kumano Hongū Taisha, they were reborn into the world purified.
-        </p>
+    <!-- 🌟 文章 1: 熊野古道 (Kumano Kodō) 內容主體 -->
+    <article id="article1_content" class="article-master-wrap" style="display: block;">
+      
+      <!-- 頂部沉浸式大圖 (Image 2 頂部 Explore Sunny Lake 風格) -->
+      <div class="article-hero-cover">
+        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80" alt="Kumano Kodo Daimonzaka" class="article-hero-img" />
+        <div class="article-hero-scrim"></div>
+        <div class="article-hero-title-box">
+          <span class="article-hero-vol" id="art1_vol">UNESCO WORLD HERITAGE PILGRIMAGE</span>
+          <h1 class="article-hero-heading" id="art1_title">Explore Kumano Kodō</h1>
+          <p class="article-hero-subquote" id="art1_quote">“Where ancient moss cobblestones and millennium cedar roots guide pilgrims into sacred primeval mists, shedding worldly sorrows in watercourses.”</p>
+        </div>
       </div>
 
-      <h2>The Legend of Oguri Hangan & The Seven-Shift Springs</h2>
-      <p>
-        Nowhere is this regenerative folklore more tangible than at Yunomine Onsen. Local legend recalls the fourteenth-century warrior Oguri Hangan, who was poisoned by his prospective father-in-law, his body rotting and reduced to a sightless, limbless husk known as a *gaki* (hungry ghost). His devoted lover Terute-hime placed his withered body into a wooden cart, hauling him hundreds of miles along the rocky Kumano trail.
-      </p>
-      <p>
-        Upon reaching Yunomine, the local Yamabushi mountain monks submerged Oguri in the bubbling sulfur pools of **Tsuboyu**. After forty-nine days of thermal immersion in water that shifted color seven times a day, the toxins purged from his marrow, his sight returned, and his skin was restored to health. To this day, pilgrims submerge their aching muscles in the very same stone cabin, breathing in vapors that have sustained travelers for 1,800 unbroken years.
-      </p>
-    </article>
-
-    <!-- Section 1: Three Michelin & Master Dining Alignments -->
-    <section>
-      <div class="section-eyebrow">Gastronomy & Micro-Terroir</div>
-      <h2 class="section-header-title">The Three Master Culinary Hearthstones</h2>
-
-      <div class="trio-grid">
-        <!-- Michelin Card 1 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80" alt="Villa AIDA Wakayama Farm" />
-            <span class="card-badge">Michelin 2-Star & Green Star</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Agri-Gastronomy ｜ Iwade City</span>
-            <h3 class="card-headline">Villa AIDA</h3>
-            <p class="card-narrative">
-              Chef Kanji Kobayashi harvests over 100 organic botanical and vegetable varieties minutes before guests sit down. A poetic dialogue between the micro-terroir of the Ki River valley, cold-pressed citrus oils, and wild game.
-            </p>
-            <div class="card-meta-box">
-              <strong>Signature:</strong> 30-Vegetable Mosaic with Kuroshio Salt & Citrus<br>
-              <strong>Access:</strong> 40 mins private drive from Wakayama Station
-            </div>
-            <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Reserve Chauffeur to Venue</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Michelin Card 2 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80" alt="Yamabushi Soba Hai-an" />
-            <span class="card-badge">Michelin Bib Gourmand</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Heritage Mountain Soba ｜ Tanabe Hongū</span>
-            <h3 class="card-headline">Yamabushi Soba Ogamian</h3>
-            <p class="card-narrative">
-              Owned and operated by a consecrated Yamabushi mountain monk along the Nakahechi trail. Hand-ground heirloom buckwheat cultivated in high-altitude volcanic terraces, kneaded with holy spring runoff and served in rustic monastic tranquility.
-            </p>
-            <div class="card-meta-box">
-              <strong>Signature:</strong> Juwari Stone-Ground Soba & Tempura Bracken<br>
-              <strong>Access:</strong> Directly alongside the Kumano Hongū trail corridor
-            </div>
-            <a href="#" class="card-action-link">
-              <span>View Pilgrim Tasting Hours</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Master Card 3 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=700&q=80" alt="Katsuura Port Bluefin Tuna Feast" />
-            <span class="card-badge">Harbor Master Kaiseki</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Pacific Kuroshio Harvest ｜ Nachi-Katsuura</span>
-            <h3 class="card-headline">Katsuura Ryotei Takeshi</h3>
-            <p class="card-narrative">
-              Sourcing non-frozen, longline Pacific bluefin tuna directly from the morning auction bells at Katsuura Harbor. Multi-course seasonal kaiseki celebrating cedar-smoked tuna loin, Kumano beef sukiyaki, and local mountain wasabi.
-            </p>
-            <div class="card-meta-box">
-              <strong>Signature:</strong> 7-Cut Fresh Otoro & Chutoro Tasting Plate<br>
-              <strong>Access:</strong> 3-min walk from JR Kii-Katsuura Station
-            </div>
-            <a href="#" class="card-action-link">
-              <span>Reserve Evening Seating</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
+      <!-- 非對稱區塊：左文右圖 (Image 2 第二區塊風格) -->
+      <div class="editorial-asymmetry-row">
+        <div class="asymmetry-text-col">
+          <span class="asymmetry-pretitle" id="art1_hist_pre">Sacred History & Rebirth</span>
+          <h2 class="asymmetry-title" id="art1_hist_title">The Emperor's Mud: Ari-no-Kumano-Mōde</h2>
+          <p class="asymmetry-body" id="art1_hist_p">For over a thousand years, Japanese emperors, aristocrats, and wandering commoners have walked barefoot through the primeval forests of the Kii Peninsula. They journeyed in endless processions so densely packed they were likened to lines of ants (Ari-no-Kumano-Mōde), seeking spiritual purification and profound inner rebirth.</p>
+          <a href="#art1_blueprint" class="btn-story-text-cta">Explore Itinerary Blueprint →</a>
+        </div>
+        <div class="asymmetry-img-col">
+          <img src="https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=800&q=80" alt="Kumano Trail" class="asymmetry-img" />
+        </div>
       </div>
-    </section>
 
-    <!-- Section 2: Three Distinctive Cultural Rites -->
-    <section>
-      <div class="section-eyebrow">Living Ethnography</div>
-      <h2 class="section-header-title">The Three Sacred Cultural Immersions</h2>
+      <!-- 三欄夢想規劃卡片：米其林美饌、極致探索、推薦溫泉住宿 (Image 2 第三區塊 Plan Your Dream Adventure 風格) -->
+      <div class="dream-plan-section">
+        <div class="dream-plan-header">
+          <h2 class="dream-plan-title" id="art1_plan_title">Plan Your Dream Adventure At Kumano Kodō</h2>
+          <p class="dream-plan-desc" id="art1_plan_desc">Curated three-pillar experiences crafted for discerning international travelers.</p>
+        </div>
 
-      <div class="trio-grid">
-        <!-- Culture 1 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1498084393753-b411b2d26b34?auto=format&fit=crop&w=700&q=80" alt="Heian Costume Pilgrimage" />
-            <span class="card-badge">Heian Court Living Rite</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Daimon-zaka Heritage Center</span>
-            <h3 class="card-headline">Heian Aristocratic Silk Robes</h3>
-            <p class="card-narrative">
-              Don the 1,000-year-old multilayered silk *Ichimegasa* travelling garments and woven veiled hats once worn by Heian nobility, climbing the mossy stairs toward Nachi Taisha accompanied by hereditary guides.
-            </p>
-            <div class="card-meta-box">
-              <strong>Duration:</strong> 2 Hours ｜ Photo & Stair Walk Included<br>
-              <strong>Location:</strong> Base of Daimon-zaka Stairway
+        <div class="dream-three-grid">
+          <!-- 欄位 1: 米其林/在地美饌 (Dining) -->
+          <div class="dream-card-item">
+            <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=600&q=80" alt="Kumano Beef Kaiseki" class="dream-card-img" />
+            <div class="dream-card-scrim"></div>
+            <div class="dream-card-content">
+              <span class="dream-card-cat">MICHELIN DINING</span>
+              <h3 class="dream-card-name" id="art1_c1_title">Kumano Beef & Charcoal Hearth</h3>
+              <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-dream-explore">EXPLORE</a>
             </div>
-            <a href="https://www.klook.com" target="_blank" class="card-action-link">
-              <span>Reserve Costume Experience</span>
-              <span>➔</span>
-            </a>
           </div>
-        </article>
 
-        <!-- Culture 2 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80" alt="Traditional Kumano River Boat Tour" />
-            <span class="card-badge">UNESCO Water Route</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Kumano River Pilgrimage</span>
-            <h3 class="card-headline">The Wooden Boat Passage</h3>
-            <p class="card-narrative">
-              Float down the emerald gorge of the Kumano River in a handcrafted flat-bottom wooden boat. Guides sing ancient folkloric boat chants echoing off limestone cliffs toward Kumano Hayatama Taisha.
-            </p>
-            <div class="card-meta-box">
-              <strong>Duration:</strong> 90 Minutes ｜ 16 km Sacred Downstream Drift<br>
-              <strong>Boarding:</strong> Dorokyo Water Center / Kawabune Depot
+          <!-- 欄位 2: 景點極致探索 (Adventure) -->
+          <div class="dream-card-item">
+            <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=600&q=80" alt="Nachi Waterfall Shinto" class="dream-card-img" />
+            <div class="dream-card-scrim"></div>
+            <div class="dream-card-content">
+              <span class="dream-card-cat">SACRED SIGHTSEEING</span>
+              <h3 class="dream-card-name" id="art1_c2_title">Nachi Falls & Primeval Shinto</h3>
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-dream-explore">EXPLORE</a>
             </div>
-            <a href="https://www.klook.com" target="_blank" class="card-action-link">
-              <span>Book Wooden River Boat</span>
-              <span>➔</span>
-            </a>
           </div>
-        </article>
 
-        <!-- Culture 3 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80" alt="Tsuboyu Yunomine Onsen" />
-            <span class="card-badge">World Heritage River Bath</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Yunomine 1,800-Year Heritage</span>
-            <h3 class="card-headline">Tsuboyu Purification Bath</h3>
-            <p class="card-narrative">
-              The world's only hot spring bath registered as a UNESCO World Heritage site. A rustic wooden cabin enclosing a natural stone tub in the riverbed, limited to 30-minute private ablution sessions.
-            </p>
-            <div class="card-meta-box">
-              <strong>Mineral Type:</strong> Pure Sulfur / Sodium Bicarbonate<br>
-              <strong>Protocol:</strong> First-come, first-served token system at kiosk
+          <!-- 欄位 3: 推薦溫泉住宿 (Wellness) -->
+          <div class="dream-card-item">
+            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80" alt="Nakanoshima Hot Springs" class="dream-card-img" />
+            <div class="dream-card-scrim"></div>
+            <div class="dream-card-content">
+              <span class="dream-card-cat">ONSEN & WELLNESS</span>
+              <h3 class="dream-card-name" id="art1_c3_title">Island Sanctuaries & Onsen</h3>
+              <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-dream-explore">EXPLORE</a>
             </div>
-            <a href="#" class="card-action-link">
-              <span>Review Purification Etiquette</span>
-              <span>➔</span>
-            </a>
           </div>
-        </article>
+        </div>
       </div>
-    </section>
 
-    <!-- Section 3: Three Master Ryokans & Luxury Resorts -->
-    <section>
-      <div class="section-eyebrow">Sanctuaries of Slumber</div>
-      <h2 class="section-header-title">The Three Exceptional Mountain & Coastal Retreats</h2>
-
-      <div class="trio-grid">
-        <!-- Resort 1 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=700&q=80" alt="Hotel Kawakyu Shirahama Palace" />
-            <span class="card-badge">Architectural Marvel</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Nanki-Shirahama Coast</span>
-            <h3 class="card-headline">Hotel Kawakyu</h3>
-            <p class="card-narrative">
-              A private coastal palace created by master artisans worldwide, boasting 22-carat gold leaf ceilings and Dali original lithographs. Sprawling royal ocean suites with private open-air hot spring baths overlooking the Pacific.
-            </p>
-            <div class="card-meta-box">
-              <strong>Amenities:</strong> King Suite ｜ Private Onsen ｜ Michelin Buffet<br>
-              <strong>Drive:</strong> 15 mins from Nanki-Shirahama Airport (SHM)
-            </div>
-            <a href="https://tw.trip.com/hotels/list?city=Shirahama&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Check Royal Suite Availability</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Resort 2 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80" alt="Hotel Urashima Boki-do Cave Onsen" />
-            <span class="card-badge">Primeval Cave Bathing</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Nachi-Katsuura Peninsula</span>
-            <h3 class="card-headline">Hotel Urashima (Boki-dō)</h3>
-            <p class="card-narrative">
-              Reached via private ferry skiff across the bay. Its crown jewel is the *Boki-dō* cave bath—a natural cavern eroded by Pacific waves where thermal sulfur waters steam while surf crashes directly beneath your feet.
-            </p>
-            <div class="card-meta-box">
-              <strong>Amenities:</strong> 6 Unique Hot Springs ｜ Ocean Clifftop Lounge<br>
-              <strong>Drive:</strong> 5 mins private shuttle from Katsuura Harbor
-            </div>
-            <a href="https://tw.trip.com/hotels/list?city=Nachikatsuura&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Reserve Oceanfront Room</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Resort 3 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80" alt="Ryokan Adumaya Yunomine Onsen" />
-            <span class="card-badge">Historic Timber Sanctuary</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Yunomine Ravine Village</span>
-            <h3 class="card-headline">Ryokan Adumaya</h3>
-            <p class="card-narrative">
-              Founded during the late Edo period, this wooden temple-style ryokan features untreated Japanese cypress (hinoki) baths fed by gravity springheads. Savor onsen-steamed wild boar hotpot and morning porridge boiled in thermal waters.
-            </p>
-            <div class="card-meta-box">
-              <strong>Amenities:</strong> Hinoki Baths ｜ Private Dining ｜ Free-flow Sulfur<br>
-              <strong>Drive:</strong> 10 mins from Kumano Hongū Taisha
-            </div>
-            <a href="https://tw.trip.com/hotels/list?city=Tanabe&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Check Timber Ryokan Availability</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
+      <!-- 交錯排版區塊 1: 左圖右文 Find your perfect stay (Image 2 第四區塊風格) -->
+      <div class="story-alternating-row">
+        <div class="story-img-frame">
+          <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=800&q=80" alt="Hot Spring Sanctuary" class="story-frame-img" />
+        </div>
+        <div class="story-text-frame">
+          <h2 class="story-section-title" id="art1_stay_title">Find your perfect stay</h2>
+          <p class="story-section-desc" id="art1_stay_desc">Kumano Kodō offers secluded island ryokans and historic mountain retreats where natural sulfuric thermal waters soothe exhausted pilgrims after days on cedar stone paths.</p>
+          <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-story-text-cta">Explore Sanctuaries →</a>
+        </div>
       </div>
-    </section>
 
-    <!-- Professional Private Chauffeur & Flight Module -->
-    <section>
-      <div class="chauffeur-hub">
+      <!-- 交錯排版區塊 2: 左文右圖 Taste the best of Kumano (Image 2 第五區塊風格) -->
+      <div class="story-alternating-row story-row-reverse">
+        <div class="story-img-frame">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Charcoal Cuisine" class="story-frame-img" />
+        </div>
+        <div class="story-text-frame">
+          <h2 class="story-section-title" id="art1_taste_title">Taste the culinary heritage</h2>
+          <p class="story-section-desc" id="art1_taste_desc">Savor A5 Kumano Wagyu seared over white Kishu Binchōtan charcoal, local Mehari-zushi wrapped in pickled mustard leaves, and fresh Pacific red sea bream.</p>
+          <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-story-text-cta">Explore Culinary →</a>
+        </div>
+      </div>
+
+      <!-- 尊榮包車專屬模組 -->
+      <div class="magazine-chauffeur-box">
         <div>
-          <span style="font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:#F59E0B; font-weight:700;">Zero-Fatigue Mountain Transit</span>
-          <h3>Traverse the Kii Sacred Ridges in Flawless Comfort</h3>
-          <p class="chauffeur-desc">
-            The narrow, hairpin curves of the Ryujin and Totsukawa skylines can be taxing for international drivers. Secure an executive Toyota Alphard or luxury HiAce with professional bilingual mountain chauffeurs from Kansai International Airport (KIX) or Shirahama.
-          </p>
-          <ul class="chauffeur-features">
-            <li>Door-to-door luggage transfers between distant Shukubo mountain temples</li>
-            <li>Direct pick-up from KIX / Shirahama Airport with guaranteed mountain passes</li>
-            <li>Custom flexible halts at remote roadside shrines and panoramic ridges</li>
+          <span class="chf-badge">BESPOKE CHAUFFEUR & TRANSIT</span>
+          <h2 class="chf-heading">Explore the Sacred Trails in Complete Serenity</h2>
+          <p class="chf-summary">Traverse mountain passes and remote thermal villages in our private Toyota Alphard fleet with multilingual chauffeurs and luggage forwarding.</p>
+          <ul class="chf-list">
+            <li>✔ Toyota Alphard 7-Seater / Hiace 10-Seater Executive Fleet</li>
+            <li>✔ Door-to-door luggage transit between mountain ryokans</li>
+            <li>✔ Private airport transfers from Kansai (KIX) & Nanki-Shirahama</li>
           </ul>
         </div>
-        <div class="chauffeur-booking-cta">
-          <!-- Direct Deep Link Flights -->
-          <a href="https://tw.trip.com/flights/taipei-to-osaka?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-chauffeur-gold">
-            ✈️ Compare Direct Osaka (KIX) Flights ➔
-          </a>
-          <!-- Direct Deep Link Private Car Rental -->
-          <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-chauffeur-outline">
-            🚗 Book Private Chauffeur / SUV Rental ➔
-          </a>
+        <div class="chf-cta-box">
+          <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%86%8A%E9%87%8E%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-chf-gold">Book Private Chauffeur</a>
+          <a href="japan_charter_rental.html" class="btn-chf-ghost">View Fleet & Details</a>
         </div>
       </div>
-    </section>
 
-    <!-- Section 4: Rigorous 1-Day, 2-Day, 3-Day Curated Itinerary Blueprint -->
-    <section>
-      <div class="section-eyebrow">Strategic Master Route</div>
-      <h2 class="section-header-title">The Curated 1, 2, & 3-Day Pilgrimage Blueprint</h2>
-
-      <div class="itinerary-system">
-        <div class="itinerary-selector">
-          <span class="itinerary-badge-nav">Structured Expedition Blueprint (1 to 3 Days)</span>
+      <!-- 1~3 日行程藍圖 -->
+      <div class="blueprint-system-wrap" id="art1_blueprint">
+        <div class="blueprint-title-wrap">
+          <h2 class="blueprint-main-title">Curated 1, 2, & 3-Day Pilgrimage Blueprint</h2>
         </div>
-
-        <!-- Day 1 -->
-        <div class="itinerary-stage">
-          <div class="stage-time">Day 01<br><span style="font-size:0.75rem; color:#6B7280; font-family:var(--font-sans);">The Initiation</span></div>
-          <div class="stage-body">
-            <h5>Osaka (KIX) ➔ Tanabe Gateway ➔ Takahara "Village in the Clouds"</h5>
-            <p>
-              Board your private charter from Kansai Airport or Tanabe Station. Ascend to Takijiri-oji—the sacred portal separating the human realm from the divine mountain spine. Hike the steep cedar root staircase to Takahara hamlet (approx. 2.5 hours, 3.7 km). Witness twilight settling over the Hatenashi range before an organic seasonal dinner at your cliffside lodge.
-            </p>
+        <div class="blueprint-day-row">
+          <div class="day-tag">DAY 01</div>
+          <div>
+            <h3 class="day-name">Arrival & The Ancient Gate of Daimon-zaka</h3>
+            <p class="day-desc">Private transfer to Daimon-zaka cobblestone stone stairway. Ascend through 800-year-old Meoto Sugi cedar trees to Kumano Nachi Taisha and Nachi Primeval Falls.</p>
           </div>
         </div>
-
-        <!-- Day 2 -->
-        <div class="itinerary-stage">
-          <div class="stage-time">Day 02<br><span style="font-size:0.75rem; color:#6B7280; font-family:var(--font-sans);">The Grand Sanctuaries</span></div>
-          <div class="stage-body">
-            <h5>Hosshinmon-oji ➔ Kumano Hongū Taisha ➔ Yunomine Tsuboyu Rebirth</h5>
-            <p>
-              Morning transfer to Hosshinmon-oji. Walk the downhill gravel ridge through traditional tea farms to the monumental Kumano Hongū Taisha and the 34-meter Oyunohara Torii. Refuel with Michelin Bib Gourmand soba at Yamabushi Soba Ogamian. Late afternoon transition to Yunomine Onsen for your 30-minute private mineral soak at Tsuboyu. Evening kaiseki at Ryokan Adumaya.
-            </p>
+        <div class="blueprint-day-row">
+          <div class="day-tag">DAY 02</div>
+          <div>
+            <h3 class="day-name">Kumano Hongū Taisha & Healing Thermal Springs</h3>
+            <p class="day-desc">Hike along the Nakahechi trail into Hongū Taisha. Soak in the ancient thermal waters of Yunomine Onsen's Tsuboyu, the only World Heritage bath on earth.</p>
           </div>
         </div>
-
-        <!-- Day 3 -->
-        <div class="itinerary-stage">
-          <div class="stage-time">Day 03<br><span style="font-size:0.75rem; color:#6B7280; font-family:var(--font-sans);">The Thunderous Veil</span></div>
-          <div class="stage-body">
-            <h5>Wooden River Boat ➔ Daimon-zaka Silk Walk ➔ Nachi Falls & Katsuura Harbor</h5>
-            <p>
-              Board the 90-minute traditional wooden river skiff down the Kumano river gorges to Kumano Hayatama Taisha. Chauffeur transit to Daimon-zaka; don traditional Heian garments to ascend to Kumano Nachi Taisha and the 133-meter primeval Nachi Waterfall. Conclude the pilgrimage at Katsuura harbor savoring line-caught Pacific bluefin tuna before your coastal express return.
-            </p>
+        <div class="blueprint-day-row">
+          <div class="day-tag">DAY 03</div>
+          <div>
+            <h3 class="day-name">Kumano River Sandanbo Sail & Pacific Retreat</h3>
+            <p class="day-desc">Board a traditional wooden Sandanbo sailboat drifting down the sacred Kumano River to Hayatama Taisha, concluding with coastal onsen overlooking the Pacific.</p>
           </div>
         </div>
       </div>
-    </section>
 
-  </div>
-
-  <!-- Editorial Colophon Footer -->
-  
-
-
-  </main>
-
-  <!-- 🌟 視圖 2: 第二篇文章 富士五湖與本栖湖 (Mount Fuji & Motosu) -->
-  <main id="article2_view" style="display: none;">
-
-
-  <!-- Top Magazine Nav -->
-  <header class="mag-nav">
-    <a href="#" class="mag-logo">
-      <span>JAPAN TABI</span>
-      <span class="mag-tag">Vol. 02 Masterclass</span>
-    </a>
-    <div style="font-size: 0.78rem; font-family: var(--font-serif); font-style: italic; color: #6B7280;">
-      Alpine Wilderness, Terroir & Sacred Volcanoes
-    </div>
-  </header>
-
-  <div class="container">
-
-    <!-- Hero Header -->
-    <header class="hero-header">
-      <span class="hero-pretitle">The Sacred Mountain & Lakeside Campfires</span>
-      <h1 class="hero-title">Mount Fuji & Motosu: The Sacred Mirror & Highland Fire</h1>
-      <span class="hero-kanji-sub">富士五湖 ｜ 本栖湖の逆さ富士と森の焚き火</span>
-      <p class="hero-lead-quote">
-        "From the fevered white-robed ascetics of the Edo Fujikō to modern open-air lakeside campfires—tracing how Japan’s sacred volcano transformed from an object of trembling awe into the world's most contemplative wilderness refuge."
-      </p>
-
-      <div class="hero-featured-image">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80" alt="Lake Motosu Inverted Fuji Morning Reflection" />
-      </div>
-      <div class="image-caption">Lake Motosu at 05:40 AM: The crisp glass mirror capturing the iconic Sakasafuji, immortalized on Japan's 1,000-yen banknote.</div>
-    </header>
-
-    <!-- Cultural & Historical Chronicle -->
-    <article class="chronicle-block">
-      <h2>From Terror to Worship: The Birth of the Fujikō Cult</h2>
-      <p>
-        For centuries, Mount Fuji was not viewed as a serene landscape postcard, but as a violent, incandescent deity capable of drowning entire provinces in molten rock and volcanic ash. Following the cataclysmic Jōgan eruption of 864 AD—which poured lava across primeval valleys and gave birth to the labyrinthine Aokigahara Forest—the Imperial Court recognized Fuji as the embodiment of Asama no Okami (Konohanasakuya-hime), building sacred shrines at its foot to pacify the earth’s fury.
-      </p>
-      <p>
-        By the Edo period (1603–1867), this dread evolved into a widespread cultural phenomenon known as **Fujikō (富士講)**. Led by ascetic masters like Kakugyō, who meditated standing for years inside freezing lava caverns, ordinary townspeople formed mutual-aid pilgrimage guilds. Dressed in unbleached white linen robes (*Shiro-shōzoku*), chanting *"Rokkon Shōjō"* (Purification of the Six Senses), tens of thousands traveled along the Tokaido road on foot, lodging in thatched pilgrim inns (*Oshi*) in Fujiyoshida before scaling the summit to witness *Goraikō*—the rebirth of the sun.
-      </p>
-
-      <div class="story-inset">
-        <div class="story-inset-title">Historical Evolution: The Shift in Travel Philosophy</div>
-        <h4>How Japanese Wanderers Redefined Fuji Travel</h4>
-        <p>
-          In feudal times, approaching Fuji was a matter of spiritual survival and purification. In modern Japan, however, the pilgrimage has pivoted toward slow deceleration. Instead of hurried peak-bagging, today’s discerning travelers practice "Lakeside Campfire Solitude" and "Vanlife Stillness." By perching on the secluded western shore of Lake Motosu—free from neon signage and commercial tour buses—they kindle fragrant larch logs, boil mountain coffee in cast-iron kettles, and watch the mountain's changing silhouette from dawn to starlight.
-        </p>
-      </div>
-
-      <h2>What Global Travelers Can Experience Today</h2>
-      <p>
-        For international explorers seeking more than fleeting snapshot tourism, the Fuji Five Lakes region offers an incomparable sensory convergence: navigating subterranean ice tunnels formed twelve centuries ago, tasting Michelin-starred game roasted over binchōtan charcoal, soaking in outdoor cedar baths infused with volcanic minerals, and cruising silent emerald waters at first light.
-      </p>
     </article>
 
-    <!-- Section 1: Three Michelin & Master Dining Alignments -->
-    <section>
-      <div class="section-eyebrow">Gastronomy & Highland Terroir</div>
-      <h2 class="section-header-title">The Three Master Culinary Hearthstones</h2>
-
-      <div class="trio-grid">
-        <!-- Michelin Card 1 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80" alt="Restaurant TOYOSHIMA Kawaguchiko" />
-            <span class="card-badge">Michelin 1-Star ｜ French Terroir</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Hunter Gastronomy ｜ Kawaguchiko</span>
-            <h3 class="card-headline">Restaurant TOYOSHIMA</h3>
-            <p class="card-narrative">
-              Chef Koji Toyoshima holds a licensed hunter's permit, stalking wild venison and duck through Fuji’s high ridges. French technique meets Yamanashi forest flora, paired with rare boutique Koshu valley biodynamic wines.
-            </p>
-            <div class="card-meta-box">
-              <strong>Signature:</strong> Charcoal-Charred Ezo Shika Deer with Wild Pineberry Glaze<br>
-              <strong>Location:</strong> 10 mins private drive from Kawaguchiko Station
-            </div>
-            <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Book Chauffeur to TOYOSHIMA</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Michelin Card 2 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80" alt="Soba Dokoro Ishihara Kawaguchiko" />
-            <span class="card-badge">Michelin Recommended ｜ Soba</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Alpine Spring Soba ｜ Fujiyoshida</span>
-            <h3 class="card-headline">Soba Dokoro Ishihara</h3>
-            <p class="card-narrative">
-              Heirloom buckwheat hand-ground in stone mills, kneaded exclusively with sub-zero glacial meltwater filtered through volcanic basalt for eighty years. Served alongside crispy mountain wild yam tempura.
-            </p>
-            <div class="card-meta-box">
-              <strong>Signature:</strong> 100% Juwari Soba with Fresh Grated Shizuoka Wasabi<br>
-              <strong>Location:</strong> Fujiyoshida Historic Temple Quarter
-            </div>
-            <a href="#" class="card-action-link">
-              <span>View Soba Tasting Hours</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Master Card 3 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=700&q=80" alt="Konansou Kaiseki Dining" />
-            <span class="card-badge">Master Kaiseki ｜ Lakefront</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Seasonal Kaiseki ｜ Lake Kawaguchi</span>
-            <h3 class="card-headline">Ryokan Konansou Kaiseki</h3>
-            <p class="card-narrative">
-              Executive multi-course banquet showcasing crimson Kai salmon trout raised in pure glacial springs, Koshu wine-fed beef simmered in sweet soy reduction, and Matsutake broth served in earthen teapots.
-            </p>
-            <div class="card-meta-box">
-              <strong>Signature:</strong> Koshu Wagyu Sukiyaki with Volcanic Basalt Mineral Pot<br>
-              <strong>Location:</strong> Lake Kawaguchi Onsen Pier
-            </div>
-            <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Reserve Kaiseki Dining Seat</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
+    <!-- 🌟 文章 2: 富士五湖與本栖湖 (Mount Fuji & Motosu) 內容主體 -->
+    <article id="article2_content" class="article-master-wrap" style="display: none;">
+      
+      <!-- 頂部沉浸式大圖 -->
+      <div class="article-hero-cover">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80" alt="Mount Fuji and Lake Motosu" class="article-hero-img" />
+        <div class="article-hero-scrim"></div>
+        <div class="article-hero-title-box">
+          <span class="article-hero-vol">UNESCO WORLD HERITAGE CULTURAL SANCTUARY</span>
+          <h1 class="article-hero-heading" id="art2_title">Explore Mount Fuji & Motosu</h1>
+          <p class="article-hero-subquote" id="art2_quote">“Where glacial mirrored waters of Motosu reflect the immortal symmetry of Fuji, and the scent of crackling timber meets the sacred highland chill.”</p>
+        </div>
       </div>
-    </section>
 
-    <!-- Section 2: Three Klook Cultural & Outdoor Experiences -->
-    <section>
-      <div class="section-eyebrow">Living Adventures</div>
-      <h2 class="section-header-title">The Three Must-Experience Cultural Journeys</h2>
-
-      <div class="trio-grid">
-        <!-- Culture 1 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80" alt="Aokigahara Cave Ice Exploration" />
-            <span class="card-badge">Volcanic Spelunking</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Subterranean Expedition</span>
-            <h3 class="card-headline">Aokigahara & Lava Ice Caves</h3>
-            <p class="card-narrative">
-              Descend into Fugaku Wind Cave and Narusawa Ice Cave equipped with helmets and headlamps. Walk through towering stalagmites of natural permafrost ice created by 1,200-year-old lava flows.
-            </p>
-            <div class="card-meta-box">
-              <strong>Duration:</strong> 3.5 Hours ｜ Guided Naturalist Spelunking<br>
-              <strong>Highlights:</strong> Sub-zero ice chambers & moss sea primeval trail
-            </div>
-            <a href="https://www.klook.com/zh-TW/search/result/?query=%E9%9D%92%E6%9C%A8%E5%8E%9F%E6%A8%B9%E6%B5%B7%20%E5%86%B0%E7%A9%B4&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="card-action-link">
-              <span>Book Klook Ice Cave Tour</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Culture 2 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1498084393753-b411b2d26b34?auto=format&fit=crop&w=700&q=80" alt="Lake Motosu Morning Canoe" />
-            <span class="card-badge">Alpine Lake Immersion</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Lake Motosu Dawn Paddle</span>
-            <h3 class="card-headline">Sunrise Canoe: Chasing Sakasafuji</h3>
-            <p class="card-narrative">
-              Glide across the transparent waters of Lake Motosu in handcrafted cedar canoes at dawn. Watch Mount Fuji's snowcap turn flamingo pink, perfectly reflected on the untouched water.
-            </p>
-            <div class="card-meta-box">
-              <strong>Duration:</strong> 2 Hours ｜ Includes Wetsuit & French Press Coffee<br>
-              <strong>Highlights:</strong> 100% serene, motor-boat-free waters
-            </div>
-            <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%9C%AC%E6%A0%96%E6%B9%96%20%E7%8D%A8%E6%9C%A8%E8%88%9F&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="card-action-link">
-              <span>Book Klook Dawn Canoe</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Culture 3 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=700&q=80" alt="Fujisan Hongu Sengen Taisha Katana Rite" />
-            <span class="card-badge">Shinto Spiritual Rite</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Sacred Head Shrine</span>
-            <h3 class="card-headline">Sengen Taisha Shinto Purification</h3>
-            <p class="card-narrative">
-              Enter the inner sanctum of the head shrine governing all 1,300 Asama shrines. Witness sacred Kagura dances, receive wooden amulets inscribed by Shinto priests, and inspect ancient samurai swords.
-            </p>
-            <div class="card-meta-box">
-              <strong>Duration:</strong> 90 Minutes ｜ Priest Private Guided Access<br>
-              <strong>Highlights:</strong> Wakutama Pond glacial springs & ancient cedar gates
-            </div>
-            <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E5%A3%AB%E5%B1%B1%E6%B7%BA%E9%96%93%E5%A4%A7%E7%A4%BE&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="card-action-link">
-              <span>Book Klook Shinto Experience</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
+      <!-- 非對稱區塊：左文右圖 (Image 2 第二區塊風格) -->
+      <div class="editorial-asymmetry-row">
+        <div class="asymmetry-text-col">
+          <span class="asymmetry-pretitle" id="art2_hist_pre">From Terror to Worship</span>
+          <h2 class="asymmetry-title" id="art2_hist_title">The Birth of the Fujikō Cult</h2>
+          <p class="asymmetry-body" id="art2_hist_p">For over a thousand years, Mount Fuji was viewed not as a picturesque backdrop, but as an active volcano breathing devastating wrath. In the Edo Period, ascetics transformed primal fear into deep spiritual veneration, giving birth to the Fujikō pilgrimage around the Five Glacial Lakes.</p>
+          <a href="#art2_blueprint" class="btn-story-text-cta">Explore Itinerary Blueprint →</a>
+        </div>
+        <div class="asymmetry-img-col">
+          <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80" alt="Lake Motosu Inverted Fuji" class="asymmetry-img" />
+        </div>
       </div>
-    </section>
 
-    <!-- Section 3: Three 5-Star Luxury Resorts -->
-    <section>
-      <div class="section-eyebrow">Highland Sanctuaries</div>
-      <h2 class="section-header-title">The Three Five-Star Architectural Resorts</h2>
+      <!-- 三欄夢想規劃卡片：米其林美饌、極致探索、推薦溫泉住宿 (Image 2 第三區塊風格) -->
+      <div class="dream-plan-section">
+        <div class="dream-plan-header">
+          <h2 class="dream-plan-title" id="art2_plan_title">Plan Your Dream Adventure At Mount Fuji</h2>
+          <p class="dream-plan-desc" id="art2_plan_desc">Curated three-pillar experiences crafted for discerning international travelers.</p>
+        </div>
 
-      <div class="trio-grid">
-        <!-- Resort 1 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80" alt="Hoshinoya Fuji Glamping Resort" />
-            <span class="card-badge">Glamping Pinnacle</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Minimalist Concrete Cabins</span>
-            <h3 class="card-headline">Hoshinoya Fuji</h3>
-            <p class="card-narrative">
-              Japan's first luxury glamping resort. Concrete minimalist cubes cut into a red pine forest, with expansive balcony terraces featuring outdoor fireplaces looking straight at Mount Fuji across Lake Kawaguchi.
-            </p>
-            <div class="card-meta-box">
-              <strong>Amenities:</strong> Campfire Cloud Terrace ｜ Dutch Oven Master Dining<br>
-              <strong>Perks:</strong> Complimentary backpack, headlamp & forest binoculars
+        <div class="dream-three-grid">
+          <!-- 欄位 1: 米其林/在地美饌 (Dining) -->
+          <div class="dream-card-item">
+            <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=600&q=80" alt="French Hunter Gastronomy" class="dream-card-img" />
+            <div class="dream-card-scrim"></div>
+            <div class="dream-card-content">
+              <span class="dream-card-cat">MICHELIN GASTRONOMY</span>
+              <h3 class="dream-card-name" id="art2_c1_title">Restaurant TOYOSHIMA & Hōtō</h3>
+              <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-dream-explore">EXPLORE</a>
             </div>
-            <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Reserve Glamping Cabin</span>
-              <span>➔</span>
-            </a>
           </div>
-        </article>
 
-        <!-- Resort 2 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=700&q=80" alt="The Garden Resort & Condominium" />
-            <span class="card-badge">Designer Villa</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Modernist White Haven</span>
-            <h3 class="card-headline">The Garden Resort & Villa</h3>
-            <p class="card-narrative">
-              Pristine architectural villas designed by avant-garde Japanese architects. Double-height floor-to-ceiling glass pavilions opening onto private manicured lawns framing uninterrupted volcanic peak horizons.
-            </p>
-            <div class="card-meta-box">
-              <strong>Amenities:</strong> Full Designer Kitchen ｜ Private Terrace BBQ Grills<br>
-              <strong>Location:</strong> 8 mins walk from Kawaguchiko Station
+          <!-- 欄位 2: 景點極致探索 (Adventure) -->
+          <div class="dream-card-item">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Sunrise Canoe on Lake Motosu" class="dream-card-img" />
+            <div class="dream-card-scrim"></div>
+            <div class="dream-card-content">
+              <span class="dream-card-cat">OUTDOOR ADVENTURE</span>
+              <h3 class="dream-card-name" id="art2_c2_title">Sunrise Canoe & Ice Caves</h3>
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E5%A3%AB%E5%B1%B1%E7%8D%A8%E6%9C%A8%E8%88%9F&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-dream-explore">EXPLORE</a>
             </div>
-            <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Check Villa Availability</span>
-              <span>➔</span>
-            </a>
           </div>
-        </article>
 
-        <!-- Resort 3 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=700&q=80" alt="Fuji View Hotel" />
-            <span class="card-badge">Historic Grandeur</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Classic Lakeside Estate</span>
-            <h3 class="card-headline">Fuji View Hotel</h3>
-            <p class="card-narrative">
-              Founded in 1936, this storied grand hotel sits in a sprawling 30,000-square-meter Japanese garden. Offers classic European service, traditional onsen baths, and sweeping dual vistas over the volcano and lake.
-            </p>
-            <div class="card-meta-box">
-              <strong>Amenities:</strong> Private Garden Paths ｜ Natural Basalt Thermal Spring<br>
-              <strong>Highlights:</strong> 300 cherry blossom trees planted along property grounds
+          <!-- 欄位 3: 推薦溫泉住宿 (Wellness) -->
+          <div class="dream-card-item">
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=600&q=80" alt="Hoshinoya Fuji Glamping" class="dream-card-img" />
+            <div class="dream-card-scrim"></div>
+            <div class="dream-card-content">
+              <span class="dream-card-cat">FIVE-STAR RESORT</span>
+              <h3 class="dream-card-name" id="art2_c3_title">HOSHINOYA & Kozantei Ubuya</h3>
+              <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-dream-explore">EXPLORE</a>
             </div>
-            <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Reserve Panoramic Room</span>
-              <span>➔</span>
-            </a>
           </div>
-        </article>
+        </div>
       </div>
-    </section>
 
-    <!-- Section 4: Three Historic Onsen Ryokans (Kaiseki & Thermal Baths) -->
-    <section>
-      <div class="section-eyebrow">Sacred Springs & Kaiseki</div>
-      <h2 class="section-header-title">The Three Onsen Ryokan Sanctuaries</h2>
-
-      <div class="trio-grid">
-        <!-- Ryokan 1 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80" alt="Ubuya Ryokan Mount Fuji" />
-            <span class="card-badge">Unrivaled Peak View</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Lake Kawaguchi First Row</span>
-            <h3 class="card-headline">Kozantei Ubuya</h3>
-            <p class="card-narrative">
-              Known as "The Ryokan for Celebrating Life." Every single tatami room and private open-air bath directly faces Mount Fuji across the water. Multi-course seasonal kaiseki served in private dining suites.
-            </p>
-            <div class="card-meta-box">
-              <strong>Onsen Type:</strong> Calcium & Sodium Sulfate Healing Springs<br>
-              <strong>Specialty:</strong> In-room multi-dish A5 Kuroge Wagyu shabu-shabu
-            </div>
-            <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Check Ubuya Room Availability</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Ryokan 2 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80" alt="Fuji Onsenji Yumedono" />
-            <span class="card-badge">Imperial Palace Design</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Private Garden Baths</span>
-            <h3 class="card-headline">Fuji Onsenji Yumedono</h3>
-            <p class="card-narrative">
-              Inspired by the ancient Nara-era Yumedono (Hall of Dreams). Private luxury suites feature secluded Japanese rock gardens and oversized private onsen baths carved from whole river rocks.
-            </p>
-            <div class="card-meta-box">
-              <strong>Onsen Type:</strong> Alkaline Hypotonic High Spring<br>
-              <strong>Specialty:</strong> Traditional Koshu multi-course imperial banquet
-            </div>
-            <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Reserve Suite with Private Onsen</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Ryokan 3 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80" alt="Bessho Sasa Ryokan" />
-            <span class="card-badge">Highland Tatami Haven</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Kaneyamaen Upper Floors</span>
-            <h3 class="card-headline">Bessho Sasa</h3>
-            <p class="card-narrative">
-              An exclusive VIP sanctuary on the upper floors of Hotel Kaneyamaen. Featuring sprawling Japanese gardens, evening taiko drum performances, and private cedar baths framing twilight views of Fuji.
-            </p>
-            <div class="card-meta-box">
-              <strong>Onsen Type:</strong> Deep Subterranean Basalt Thermal Waters<br>
-              <strong>Specialty:</strong> Exclusive lounge serving artisanal sake and matcha
-            </div>
-            <a href="https://tw.trip.com/hotels/list?city=Fujiyoshida&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="card-action-link">
-              <span>Check Bessho Sasa Availability</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
+      <!-- 交錯排版區塊 1: 左圖右文 Find your perfect stay (Image 2 第四區塊風格) -->
+      <div class="story-alternating-row">
+        <div class="story-img-frame">
+          <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=800&q=80" alt="Fuji Hot Spring Ryokan" class="story-frame-img" />
+        </div>
+        <div class="story-text-frame">
+          <h2 class="story-section-title" id="art2_stay_title">Find your perfect stay</h2>
+          <p class="story-section-desc" id="art2_stay_desc">From architectural glamping cabins perched in red pine forests at HOSHINOYA Fuji to private open-air onsen on the shore of Lake Kawaguchi reflecting the morning inverted Fuji.</p>
+          <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-story-text-cta">Explore Sanctuaries →</a>
+        </div>
       </div>
-    </section>
 
-    <!-- Section 5: Three Historic Streets & Thermal Hotspots -->
-    <section>
-      <div class="section-eyebrow">Heritage & Old Streets</div>
-      <h2 class="section-header-title">The Three Historic Springs & Preserved Quarters</h2>
-
-      <div class="trio-grid">
-        <!-- Historic 1 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80" alt="Saiko Iyashi no Sato Nenba" />
-            <span class="card-badge">Thatch Village ｜ Crafts</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Restored Gassho Hamlets</span>
-            <h3 class="card-headline">Saiko Iyashi-no-Sato Nenba</h3>
-            <p class="card-narrative">
-              Twenty preserved thatched-roof farmhouses along Lake Saiko. Wander past wooden waterwheels, purchase hand-woven silk fabrics, and try soba-kneading or incense-making workshops.
-            </p>
-            <div class="card-meta-box">
-              <strong>Highlights:</strong> Soba shops, pottery kilns, vintage kimono dressing<br>
-              <strong>Vibe:</strong> Traditional mountain hamlet with direct volcano view
-            </div>
-            <a href="#" class="card-action-link">
-              <span>Village Guide & Map</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Historic 2 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=700&q=80" alt="Fujiyoshida Honcho Street" />
-            <span class="card-badge">Pilgrim Quarter ｜ Showa Vibe</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Fujiyoshida Monzenmachi</span>
-            <h3 class="card-headline">Honchō-dori & Oshi Residences</h3>
-            <p class="card-narrative">
-              The historic avenue that welcomed Edo-period pilgrims. Framed by vintage Showa shop signboards, lantern-lit alleys, traditional teahouses, and preserved 400-year-old pilgrim lodgings (*Oshi*).
-            </p>
-            <div class="card-meta-box">
-              <strong>Highlights:</strong> Kanadorii Torii Gate, Old Silk Weaving Studios, Tea Shops<br>
-              <strong>Vibe:</strong> Cinematic street photography capital of Japan
-            </div>
-            <a href="#" class="card-action-link">
-              <span>Explore Historic Quarter</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Historic 3 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=700&q=80" alt="Fuji Yurari Hot Spring" />
-            <span class="card-badge">Thermal Park ｜ 16 Springs</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Narusawa Volcanic Springs</span>
-            <h3 class="card-headline">Fuji Chōbō no Yu: YURARI</h3>
-            <p class="card-narrative">
-              A comprehensive open-air day-use thermal park featuring sixteen distinct baths, including fragrant cypress tubs, cave baths, and carbonated pools looking straight at Mount Fuji’s northern wall.
-            </p>
-            <div class="card-meta-box">
-              <strong>Bath Types:</strong> Basalt Caves, Panoramic Tubs, Thermal Steam Saunas<br>
-              <strong>Location:</strong> Next to Narusawa Roadside Station
-            </div>
-            <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E5%A3%AB%E7%9C%BA%E6%9C%9B%E4%B9%8B%E6%B9%AF&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="card-action-link">
-              <span>Get Klook Yurari Pass</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
+      <!-- 交錯排版區塊 2: 左文右圖 Taste the best of Fuji (Image 2 第五區塊風格) -->
+      <div class="story-alternating-row story-row-reverse">
+        <div class="story-img-frame">
+          <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80" alt="Yakiniku & Hunter Cuisine" class="story-frame-img" />
+        </div>
+        <div class="story-text-frame">
+          <h2 class="story-section-title" id="art2_taste_title">Taste the highland hearth</h2>
+          <p class="story-section-desc" id="art2_taste_desc">Experience wild game French gastronomy paired with Koshu valley biodynamic wines, simmering iron pots of pumpkin Hōtō noodles, and prime charcoal-grilled Kōshū beef.</p>
+          <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-story-text-cta">Explore Culinary →</a>
+        </div>
       </div>
-    </section>
 
-    <!-- Section 6: Three Must-Eat Master Yakiniku (Japanese Wagyu BBQ) -->
-    <section>
-      <div class="section-eyebrow">Sizzling Embers & Wagyu</div>
-      <h2 class="section-header-title">The Three Must-Visit Yakiniku Institutions</h2>
-
-      <div class="trio-grid">
-        <!-- BBQ 1 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80" alt="Yakiniku Ryuho Kawaguchiko" />
-            <span class="card-badge">Single-Carcass Buying</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Koshu Kuroge Wagyu ｜ Kawaguchiko</span>
-            <h3 class="card-headline">Yakiniku Ryūhō</h3>
-            <p class="card-narrative">
-              Beloved by local foodies for sourcing entire heads of certified Yamanashi Koshu Kuroge Wagyu. Rich marbling seared over natural charcoal embers, served with sweet garlic tare dipping sauce.
-            </p>
-            <div class="card-meta-box">
-              <strong>Must-Order:</strong> Thick-Cut Prime Harami (Skirt Steak) & Sirloin Cuts<br>
-              <strong>Pro-Tip:</strong> Arrive by 17:30 to avoid long dinner lines
-            </div>
-            <a href="#" class="card-action-link">
-              <span>View Meat Cuts & Menu</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- BBQ 2 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80" alt="Sumibi Yakiniku Roppaku" />
-            <span class="card-badge">Fuji Basalt Grilling</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Charcoal & Lava Stone ｜ Fujiyoshida</span>
-            <h3 class="card-headline">Sumibi Yakiniku Roppaku</h3>
-            <p class="card-narrative">
-              Meat is seared directly over volcanic basalt lava plates and Kishu Binchōtan charcoal, ensuring radiant infrared heat seals in sweet juices without scorching delicate fats.
-            </p>
-            <div class="card-meta-box">
-              <strong>Must-Order:</strong> Diamond-Cut Salted Wagyu Tongue & Marbled Kalbi<br>
-              <strong>Atmosphere:</strong> Traditional sunken kotatsu seating with private tables
-            </div>
-            <a href="#" class="card-action-link">
-              <span>Reserve Table Seating</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- BBQ 3 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=700&q=80" alt="Koshu Gyu Ittetsu" />
-            <span class="card-badge">Certified A5 Master</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">A5 Koshu Beef ｜ Lake South</span>
-            <h3 class="card-headline">Kōshū Gyū Ittetsu</h3>
-            <p class="card-narrative">
-              Dedicated exclusively to certified A5 Koshu beef raised on local mountain grain and wine feed. Features rare tender cuts like Misuji (top blade) and Tomosankaku (tri-tip) served with fresh grated wasabi.
-            </p>
-            <div class="card-meta-box">
-              <strong>Must-Order:</strong> Chef’s Omakase 5-Cut Wagyu Tasting Platter<br>
-              <strong>Pairing:</strong> Local Katsunuma red wine by the glass
-            </div>
-            <a href="#" class="card-action-link">
-              <span>Check Yakiniku Reservation</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Section 7: Three Surrounding Destination Extensions -->
-    <section>
-      <div class="section-eyebrow">Extended Horizons</div>
-      <h2 class="section-header-title">The Three Destination Extension Cards</h2>
-
-      <div class="trio-grid">
-        <!-- Extension 1 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80" alt="Chureito Pagoda Arakurayama Sengen Park" />
-            <span class="card-badge">Iconic Landmark</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Fujiyoshida Heights</span>
-            <h3 class="card-headline">Arakurayama Sengen Park</h3>
-            <p class="card-narrative">
-              Climb the 398 stone stairs to the iconic red Chureito Pagoda. Provides the quintessential view framing the five-story pagoda, springtime cherry blossoms, and Mount Fuji's snowy summit.
-            </p>
-            <div class="card-meta-box">
-              <strong>Best Time:</strong> 06:30 AM to catch golden morning light<br>
-              <strong>Access:</strong> 10-min walk from Shimo-Yoshida Station
-            </div>
-            <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%96%B0%E5%80%89%E5%B1%B1%E6%B7%BA%E9%96%93%E5%85%AC%E5%9C%92&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="card-action-link">
-              <span>Klook Tour Shuttle</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Extension 2 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=700&q=80" alt="Oshino Hakkai Glacial Springs" />
-            <span class="card-badge">Natural Monument</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Glacial Spring Sanctuaries</span>
-            <h3 class="card-headline">Oshino Hakkai (Eight Springs)</h3>
-            <p class="card-narrative">
-              Eight emerald ponds fed by Fuji's melting snow, filtered through subterranean lava layers for eighty years. The water is so transparent you can see trout swimming through deep submerged caverns.
-            </p>
-            <div class="card-meta-box">
-              <strong>Must-Try:</strong> Fresh-roasted kusamochi (mugwort mochi) & cold spring tasting<br>
-              <strong>Access:</strong> 20 mins private drive from Lake Kawaguchi
-            </div>
-            <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%BF%8D%E9%87%8E%E5%85%AB%E6%B5%B7&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="card-action-link">
-              <span>Klook Oshino Guide</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Extension 3 -->
-        <article class="trio-card">
-          <div class="card-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=700&q=80" alt="Oishi Park Lake Kawaguchi Flowers" />
-            <span class="card-badge">Botanical Promenade</span>
-          </div>
-          <div class="card-content">
-            <span class="card-subline">Northern Lake Promenade</span>
-            <h3 class="card-headline">Oishi Park & Natural Living Center</h3>
-            <p class="card-narrative">
-              A 350-meter lakeside flower carpet blooming with purple lavender in summer, crimson kochia bushes in autumn, and white snowscapes in winter, set against the lake and volcano.
-            </p>
-            <div class="card-meta-box">
-              <strong>Highlights:</strong> Handcrafted blueberry soft-serve ice cream & glass artisan shops<br>
-              <strong>Access:</strong> Terminal stop of Kawaguchiko Retro Sightseeing Bus
-            </div>
-            <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%A4%A7%E7%9F%B3%E5%85%AC%E5%9C%92&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="card-action-link">
-              <span>Klook Sightseeing Pass</span>
-              <span>➔</span>
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Professional Private Chauffeur & Flight Module -->
-    <section>
-      <div class="chauffeur-hub">
+      <!-- 尊榮包車專屬模組 -->
+      <div class="magazine-chauffeur-box">
         <div>
-          <span style="font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:#38BDF8; font-weight:700;">Zero-Stress Alpine Navigation</span>
-          <h3>Explore the Fuji Five Lakes in Luxury Comfort</h3>
-          <p class="chauffeur-desc">
-            Navigating rural mountain highways, finding quiet camping spots, and coordinating luggage between resorts can be exhausting on public buses. Reserve a luxury Toyota Alphard or private SUV with English-speaking drivers directly from Haneda (HND) or Narita (NRT).
-          </p>
-          <ul class="chauffeur-features">
-            <li>Direct pickup from Tokyo hotels / Haneda & Narita International Airports</li>
-            <li>Spacious luggage space for camping gear, cameras, and winter equipment</li>
-            <li>Customized flexible route including early morning sunrise photography halts</li>
+          <span class="chf-badge">BESPOKE CHAUFFEUR & CONCIERGE</span>
+          <h2 class="chf-heading">Explore Fuji Five Lakes in Private Luxury</h2>
+          <p class="chf-summary">Seamless private transfers from Tokyo or Haneda airport straight to your highland resort with experienced multilingual chauffeurs.</p>
+          <ul class="chf-list">
+            <li>✔ Toyota Alphard Executive 7-Seater / Hiace 10-Seater</li>
+            <li>✔ Customized itinerary across all five lakes & Motosu sunrise</li>
+            <li>✔ On-board Wi-Fi, mineral water, and luggage handling</li>
           </ul>
         </div>
-        <div class="chauffeur-booking-cta">
-          <!-- Direct Deep Link Flights -->
-          <a href="https://tw.trip.com/flights/taipei-to-tokyo?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-chauffeur-gold">
-            ✈️ Compare Tokyo (HND/NRT) Flights ➔
-          </a>
-          <!-- Direct Deep Link Private Car Rental -->
-          <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="btn-chauffeur-outline">
-            🚗 Book Private Fuji Chauffeur / SUV ➔
-          </a>
+        <div class="chf-cta-box">
+          <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E5%A3%AB%E5%B1%B1%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-chf-gold">Book Private Chauffeur</a>
+          <a href="japan_charter_rental.html" class="btn-chf-ghost">View Fleet & Details</a>
         </div>
       </div>
-    </section>
 
-    <!-- Section 8: Rigorous 1-Day, 2-Day, 3-Day Curated Itinerary Blueprint -->
-    <section>
-      <div class="section-eyebrow">Strategic Master Route</div>
-      <h2 class="section-header-title">The Curated 1, 2, & 3-Day Highland Blueprint</h2>
-
-      <div class="itinerary-system">
-        <div class="itinerary-selector">
-          <span class="itinerary-badge-nav">Structured Expedition Blueprint (1 to 3 Days)</span>
+      <!-- 1~3 日行程藍圖 -->
+      <div class="blueprint-system-wrap" id="art2_blueprint">
+        <div class="blueprint-title-wrap">
+          <h2 class="blueprint-main-title">Curated 1, 2, & 3-Day Highland Blueprint</h2>
         </div>
-
-        <!-- Day 1 -->
-        <div class="itinerary-stage">
-          <div class="stage-time">Day 01<br><span style="font-size:0.75rem; color:#6B7280; font-family:var(--font-sans);">The Arrival</span></div>
-          <div class="stage-body">
-            <h5>Tokyo (HND/NRT) ➔ Arakurayama Sengen Park ➔ Lake Kawaguchi Hot Spring Check-in</h5>
-            <p>
-              Depart Tokyo via private chauffeur or express train. Stop at Arakurayama Sengen Park for midday views of Chureito Pagoda. Enjoy handmade buckwheat soba at Soba Dokoro Ishihara. Afternoon check-in at Kozantei Ubuya or Hoshinoya Fuji. Soak in a private open-air bath facing Mount Fuji followed by an in-room Wagyu kaiseki dinner.
-            </p>
+        <div class="blueprint-day-row">
+          <div class="day-tag">DAY 01</div>
+          <div>
+            <h3 class="day-name">Arrival & The Arakurayama Pagoda View</h3>
+            <p class="day-desc">Private transfer from Tokyo to Arakurayama Sengen Park for the iconic five-story pagoda view. Check into your lakefront ryokan for private open-air onsen.</p>
           </div>
         </div>
-
-        <!-- Day 2 -->
-        <div class="itinerary-stage">
-          <div class="stage-time">Day 02<br><span style="font-size:0.75rem; color:#6B7280; font-family:var(--font-sans);">Primeval Woods</span></div>
-          <div class="stage-body">
-            <h5>Lake Motosu Sunrise Canoe ➔ Aokigahara Ice Caves ➔ Yakiniku Feast</h5>
-            <p>
-              Early 05:30 AM transfer to Lake Motosu for a serene sunrise canoe session catching the Sakasafuji reflection. Warm up with artisan pour-over coffee. Midday spelunking inside Fugaku Wind Cave and Narusawa Ice Cave with naturalist guides. Conclude the evening with an A5 Koshu Wagyu charcoal barbecue at Sumibi Yakiniku Roppaku.
-            </p>
+        <div class="blueprint-day-row">
+          <div class="day-tag">DAY 02</div>
+          <div>
+            <h3 class="day-name">Lake Motosu Dawn & Aokigahara Lava Caves</h3>
+            <p class="day-desc">Sunrise canoe expedition on Lake Motosu capturing the thousand-yen banknote inverted Fuji. Afternoon exploration of ancient ice caves and dinner at Restaurant TOYOSHIMA.</p>
           </div>
         </div>
-
-        <!-- Day 3 -->
-        <div class="itinerary-stage">
-          <div class="stage-time">Day 03<br><span style="font-size:0.75rem; color:#6B7280; font-family:var(--font-sans);">The Heritage</span></div>
-          <div class="stage-body">
-            <h5>Oshino Hakkai Glacial Ponds ➔ Saiko Thatched Hamlet ➔ Tokyo Return</h5>
-            <p>
-              Stroll through Oshino Hakkai’s clear glacial ponds and taste grilled mugwort mochi. Visit Saiko Iyashi-no-Sato Nenba to explore traditional thatched-roof artisan workshops. Enjoy lunch at Restaurant TOYOSHIMA before your private chauffeur return to downtown Tokyo or airport terminals.
-            </p>
+        <div class="blueprint-day-row">
+          <div class="day-tag">DAY 03</div>
+          <div>
+            <h3 class="day-name">Oshino Hakkai Springs & Sengen Taisha Purification</h3>
+            <p class="day-desc">Morning walk through Oshino Hakkai’s eight crystal spring ponds. Traditional purification prayer at Kitaguchi Hongū Fuji Sengen Jinja before smooth return to Tokyo.</p>
           </div>
         </div>
       </div>
-    </section>
 
-  </div>
+    </article>
 
-  <!-- Editorial Colophon Footer -->
-  
+  </section>
 
-
-  </main>
-
-  <!-- 🌟 全站統一頁尾 -->
+  <!-- 全站頁尾 -->
   <footer class="mag-footer">
     <div class="footer-logo">JAPAN TABI ｜ 日本旅遊報報</div>
-    <p class="footer-note">JAPAN TABI Masterclass Series explores the primeval sacred heritage, cultural landscapes, culinary craftsmanship, and luxury sanctuaries across Japan.</p>
+    <p class="footer-note">JAPAN TABI Masterclass Series explores sacred primeval heritage, cultural landscapes, culinary craftsmanship, and luxury sanctuaries across Japan.</p>
     <div class="footer-links">
       <a href="tabi_news_preview.html">首頁</a>
       <a href="japan_flight_deals.html">查機票</a>
@@ -1869,7 +1319,7 @@
   </footer>
 
   <script>
-    let currentVol = 1;
+    let activeVol = 1;
     let currentLang = 'en';
 
     {
@@ -2372,129 +1822,86 @@
       }
     }
 
-    // 🌟 切換特輯文章 (Vol. 01 vs Vol. 02)
-    function switchArticle(volNum, btn) {
-      currentVol = volNum;
-      document.querySelectorAll('.edition-tab-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
+    // 🌟 打開特定文章閱讀器 (從圖一卡片點入圖二)
+    function openArticle(volNum) {
+      activeVol = volNum;
+      document.getElementById('catalogSection').style.display = 'none';
+      document.getElementById('readerSection').style.display = 'block';
 
-      const v1 = document.getElementById('article1_view');
-      const v2 = document.getElementById('article2_view');
+      const art1 = document.getElementById('article1_content');
+      const art2 = document.getElementById('article2_content');
+      const lbl = document.getElementById('activeArticleVolLabel');
 
       if (volNum === 1) {
-        v1.style.display = 'block';
-        v2.style.display = 'none';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        art1.style.display = 'block';
+        art2.style.display = 'none';
+        if (lbl) lbl.textContent = 'VOL. 01 ｜ KUMANO KODŌ MASTERCLASS';
       } else {
-        v1.style.display = 'none';
-        v2.style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        art1.style.display = 'none';
+        art2.style.display = 'block';
+        if (lbl) lbl.textContent = 'VOL. 02 ｜ MOUNT FUJI & MOTOSU MASTERCLASS';
       }
+
+      // 套用當前語言
+      applyTranslations(currentLang);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // 🌟 多語言即時切換引擎
-    function switchArticleLang(langKey, btn) {
+    // 🌟 返回圖一卡片列表
+    function backToCatalog() {
+      document.getElementById('catalogSection').style.display = 'block';
+      document.getElementById('readerSection').style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 🌟 多語言即時切換引擎 (支援 7 國語言)
+    function setArticleLang(langKey, btn) {
       currentLang = langKey;
-      document.querySelectorAll('#articleTransPills .btn-trans-pill').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.btn-trans-choice').forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
 
-      const data = ARTICLE_TRANSLATIONS[langKey] || ARTICLE_TRANSLATIONS['en'];
+      applyTranslations(langKey);
+    }
 
-      // 更新全站品牌與標題
+    function applyTranslations(langKey) {
+      const d = ARTICLE_TRANSLATIONS[langKey] || ARTICLE_TRANSLATIONS['en'];
+
+      // 更新 Header 品牌
       const brandZh = document.getElementById('brandTitleZh');
       const brandEn = document.getElementById('brandTitleEn');
-      if (brandZh) brandZh.textContent = data.brandTitleZh;
-      if (brandEn) brandEn.textContent = data.brandTitleEn;
+      if (brandZh) brandZh.textContent = d.brandTitleZh;
+      if (brandEn) brandEn.textContent = d.brandTitleEn;
 
       // 更新 Article 1 欄位
-      const safeSetText = (id, txt) => {
+      const safeSet = (id, txt) => {
         const el = document.getElementById(id);
         if (el && txt) el.textContent = txt;
       };
-      const safeSetHtml = (id, html) => {
-        const el = document.getElementById(id);
-        if (el && html) el.innerHTML = html;
+
+      safeSet('art1_title', d.title);
+      safeSet('art1_quote', d.quote);
+      safeSet('art1_hist_pre', d.pretitle);
+      safeSet('art1_hist_title', d.h2_1);
+      safeSet('art1_hist_p', d.p1);
+      safeSet('art1_plan_title', d.sec1Title);
+      safeSet('art1_c1_title', d.c1_sub);
+      safeSet('art1_c2_title', d.cu1_sub);
+      safeSet('art1_c3_title', d.r1_sub);
+      safeSet('art1_stay_title', d.sec3Title);
+      safeSet('art1_stay_desc', d.r1_desc);
+      safeSet('art1_taste_title', d.sec1Title);
+      safeSet('art1_taste_desc', d.c1_desc);
+
+      // 同步更新語言標籤
+      const currentLbl = document.getElementById('currentLangLabel');
+      const mapNames = {
+        'en': 'English', 'zh-tw': '繁體中文', 'zh-cn': '简体中文',
+        'vi': 'Tiếng Việt', 'th': 'ภาษาไทย', 'hi': 'हिन्दी', 'es': 'Español'
       };
-
-      safeSetText('artPretitle', data.pretitle);
-      safeSetText('artTitle', data.title);
-      safeSetText('artKanjiSub', data.kanjiSub);
-      safeSetText('artLeadQuote', data.quote);
-      safeSetText('artImgCaption', data.caption);
-      safeSetText('artH2_1', data.h2_1);
-      safeSetText('artP1', data.p1);
-      safeSetText('artP2', data.p2);
-      safeSetText('artInsetPre', data.insetPre);
-      safeSetText('artInsetTitle', data.insetTitle);
-      safeSetText('artInsetP', data.insetP);
-      safeSetText('artH2_2', data.h2_2);
-      safeSetText('artP3', data.p3);
-      safeSetText('artP4', data.p4);
-
-      safeSetText('sec1Eyebrow', data.sec1Eyebrow);
-      safeSetText('sec1Title', data.sec1Title);
-      safeSetText('c1_sub', data.c1_sub);
-      safeSetText('c1_desc', data.c1_desc);
-      safeSetHtml('c1_meta', data.c1_meta);
-      safeSetText('c2_sub', data.c2_sub);
-      safeSetText('c2_desc', data.c2_desc);
-      safeSetHtml('c2_meta', data.c2_meta);
-      safeSetText('c3_sub', data.c3_sub);
-      safeSetText('c3_desc', data.c3_desc);
-      safeSetHtml('c3_meta', data.c3_meta);
-
-      safeSetText('sec2Eyebrow', data.sec2Eyebrow);
-      safeSetText('sec2Title', data.sec2Title);
-      safeSetText('cu1_sub', data.cu1_sub);
-      safeSetText('cu1_desc', data.cu1_desc);
-      safeSetHtml('cu1_meta', data.cu1_meta);
-      safeSetText('cu2_sub', data.cu2_sub);
-      safeSetText('cu2_desc', data.cu2_desc);
-      safeSetHtml('cu2_meta', data.cu2_meta);
-      safeSetText('cu3_sub', data.cu3_sub);
-      safeSetText('cu3_desc', data.cu3_desc);
-      safeSetHtml('cu3_meta', data.cu3_meta);
-
-      safeSetText('sec3Eyebrow', data.sec3Eyebrow);
-      safeSetText('sec3Title', data.sec3Title);
-      safeSetText('r1_sub', data.r1_sub);
-      safeSetText('r1_desc', data.r1_desc);
-      safeSetHtml('r1_meta', data.r1_meta);
-      safeSetText('r2_sub', data.r2_sub);
-      safeSetText('r2_desc', data.r2_desc);
-      safeSetHtml('r2_meta', data.r2_meta);
-      safeSetText('r3_sub', data.r3_sub);
-      safeSetText('r3_desc', data.r3_desc);
-      safeSetHtml('r3_meta', data.r3_meta);
-
-      safeSetText('chfTag', data.chfTag);
-      safeSetText('chfTitle', data.chfTitle);
-      safeSetText('chfDesc', data.chfDesc);
-      safeSetText('chfL1', data.chfL1);
-      safeSetText('chfL2', data.chfL2);
-      safeSetText('chfL3', data.chfL3);
-      safeSetText('btnFlightCta', data.btnFlight);
-      safeSetText('btnCarCta', data.btnCar);
-
-      safeSetText('planEyebrow', data.planEyebrow);
-      safeSetText('planTitle', data.planTitle);
-      safeSetText('planBadge', data.planBadge);
-      if (data.d1_time) safeSetHtml('d1_time', `${data.d1_time}<br><span style="font-size:0.75rem; color:#6B7280; font-family:var(--font-sans);">${data.d1_sub}</span>`);
-      safeSetText('d1_title', data.d1_title);
-      safeSetText('d1_desc', data.d1_desc);
-      if (data.d2_time) safeSetHtml('d2_time', `${data.d2_time}<br><span style="font-size:0.75rem; color:#6B7280; font-family:var(--font-sans);">${data.d2_sub}</span>`);
-      safeSetText('d2_title', data.d2_title);
-      safeSetText('d2_desc', data.d2_desc);
-      if (data.d3_time) safeSetHtml('d3_time', `${data.d3_time}<br><span style="font-size:0.75rem; color:#6B7280; font-family:var(--font-sans);">${data.d3_sub}</span>`);
-      safeSetText('d3_title', data.d3_title);
-      safeSetText('d3_desc', data.d3_desc);
-
-      // 同步更新全球選單當前標籤
-      const lbl = document.getElementById('currentLangLabel');
-      if (lbl) lbl.textContent = btn ? btn.textContent.replace(/[^一-龥a-zA-Z\s]/g, '').trim() : langKey;
+      if (currentLbl && mapNames[langKey]) currentLbl.textContent = mapNames[langKey];
     }
 
-    // 頂部全球語言下拉選單開關
+    // 頂部全球語系下拉
     function toggleLangDropdown(e) {
       if (e) e.stopPropagation();
       const menu = document.getElementById('langDropdownMenu');
@@ -2507,11 +1914,8 @@
       const menu = document.getElementById('langDropdownMenu');
       if (menu) menu.classList.remove('show');
 
-      // 觸發文章語言切換
-      const targetPill = document.querySelector(`#articleTransPills .btn-trans-pill[data-lang="${langKey}"]`);
-      if (targetPill) {
-        switchArticleLang(langKey, targetPill);
-      }
+      const pill = document.querySelector(`.btn-trans-choice[data-lang="${langKey}"]`);
+      setArticleLang(langKey, pill);
     }
 
     window.addEventListener('click', function(e) {
