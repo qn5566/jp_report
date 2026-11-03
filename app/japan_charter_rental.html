@@ -860,137 +860,544 @@
     }
 
     
-    /* 🌟 全站統一極致日系 Header (與 tabi_news_preview.html 100% 嚴格一致) */
-    .app-header {
-      position: sticky !important;
-      top: 0 !important;
-      z-index: 1000 !important;
-      background: rgba(250, 248, 245, 0.96) !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
-      border-bottom: 1px solid #E5E0D6 !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
-      padding: 10px 32px !important;
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
+    
+/* 🌟 全站統一極致日系 Header (絕對居中，3-column CSS Grid) */
+.app-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(250, 248, 245, 0.96) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid #E5E0D6 !important;
+  padding: 10px 32px !important;
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  gap: 16px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+}
+.header-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: start !important;
+}
+.header-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  justify-self: center !important;
+}
+.header-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: end !important;
+  gap: 12px !important;
+  flex-wrap: nowrap !important;
+}
+
+/* 🌟 日之丸朱紅雙環 Logo (54px) */
+.brand-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.fuji-logo-box {
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #FFFFFF !important;
+  border: 2.5px solid #ED1A21 !important;
+  box-shadow: 0 4px 14px rgba(237, 26, 33, 0.18) !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.brand-wrap:hover .fuji-logo-box {
+  transform: scale(1.06) !important;
+  box-shadow: 0 6px 18px rgba(237, 26, 33, 0.28) !important;
+}
+.brand-tabi-logo, .fuji-logo-box img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 50% !important;
+}
+.brand-text h1 {
+  font-size: 1.55rem !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.3px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  line-height: 1.15 !important;
+}
+.brand-title-zh {
+  color: #094F8D !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.2px !important;
+  font-size: 1.55rem !important;
+}
+.brand-sub-official-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 3px !important;
+}
+.brand-title-en {
+  color: #ED1A21 !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+}
+.brand-tag-official {
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  background: #ED1A21 !important;
+  color: #FFFFFF !important;
+  padding: 2px 7px !important;
+  border-radius: 4px !important;
+  letter-spacing: 0.05em !important;
+  box-shadow: 0 2px 6px rgba(237, 26, 33, 0.28) !important;
+}
+
+/* 🌟 頂部選單按鈕：純文字無外框、無ICON、純淨日系排版 */
+.header-nav-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 9px !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  white-space: nowrap !important;
+  transition: all 0.18s ease !important;
+  letter-spacing: 0.02em !important;
+}
+.header-nav-link:hover {
+  color: #ED1A21 !important;
+  background: rgba(237, 26, 33, 0.05) !important;
+  transform: translateY(-1px) !important;
+}
+.header-nav-link.active {
+  color: #ED1A21 !important;
+  font-weight: 800 !important;
+}
+.header-nav-link.btn-nav-okinawa:hover {
+  color: #0284C7 !important;
+  background: rgba(2, 132, 199, 0.06) !important;
+}
+.header-nav-link.btn-nav-okinawa.active {
+  color: #0284C7 !important;
+  font-weight: 800 !important;
+}
+
+/* 🌐 前台多國語言切換器 (保留外框與地球 ICON) */
+.lang-selector-dropdown-wrap {
+  position: relative !important;
+  display: inline-block !important;
+  margin-left: 2px !important;
+}
+.header-lang-btn,
+#langDropdownTrigger {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  padding: 0 13px !important;
+  height: 33px !important;
+  line-height: 33px !important;
+  border-radius: 999px !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #CBD5E1 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+}
+.header-lang-btn:hover,
+#langDropdownTrigger:hover {
+  border-color: #94A3B8 !important;
+  background: #F8FAFC !important;
+  color: #0F172A !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06) !important;
+}
+.lang-arrow {
+  font-size: 0.68rem !important;
+  color: #94A3B8 !important;
+  transition: transform 0.2s ease !important;
+  margin-left: 2px !important;
+}
+.lang-selector-dropdown-wrap.open .lang-arrow {
+  transform: rotate(180deg) !important;
+}
+.lang-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  right: 0 !important;
+  min-width: 195px !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 16px !important;
+  padding: 6px !important;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.14), 0 3px 8px rgba(0,0,0,0.04) !important;
+  display: none !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  z-index: 10005 !important;
+  animation: langFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+@keyframes langFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.lang-selector-dropdown-wrap.open .lang-dropdown-menu {
+  display: flex !important;
+}
+.lang-menu-opt {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 9px 12px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+  text-align: left !important;
+}
+.lang-menu-opt:hover {
+  background: #F1F5F9 !important;
+  color: #0F172A !important;
+}
+.lang-menu-opt.active {
+  background: #FEF2F2 !important;
+  color: #ED1A21 !important;
+}
+.lang-flag { font-size: 1.05rem !important; line-height: 1 !important; }
+.lang-name { flex: 1 !important; }
+.lang-check { font-size: 0.85rem !important; font-weight: 900 !important; color: #ED1A21 !important; }
+
+
+
+  
+    /* 🌟 簡約雙模式卡片專屬樣式 (告別密集按鈕與 ICON 疲勞，呼吸感充足) */
+    .dual-mode-banner-wrap {
+      margin: -50px auto 36px auto;
+      position: relative;
+      z-index: 10;
+      max-width: 1240px;
     }
-    .header-left {
-      display: none !important;
+    .dual-mode-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
-    .header-center {
-      display: flex !important;
-      align-items: center !important;
+    .mode-card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .brand-wrap {
-      display: flex !important;
-      align-items: center !important;
-      gap: 12px !important;
-      text-decoration: none !important;
-      color: inherit !important;
-      cursor: pointer !important;
+    .mode-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
     }
-    .fuji-logo-box {
-      width: 42px !important;
-      height: 42px !important;
-      border-radius: 50% !important;
-      overflow: hidden !important;
-      border: 2px solid #ED1A21 !important;
-      background: #FFFFFF !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      box-shadow: 0 4px 12px rgba(237, 26, 33, 0.22) !important;
-      flex-shrink: 0 !important;
+    .mode-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #E0F2FE;
+      color: #0369A1;
+      margin-bottom: 12px;
+      width: fit-content;
     }
-    .brand-tabi-logo {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
+    .mode-badge-charter {
+      background: #FFEDD5;
+      color: #C2410C;
     }
-    .brand-text {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      justify-content: center !important;
-      gap: 2px !important;
+    .mode-title {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #0F172A;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
     }
-    .brand-title-zh {
-      font-size: 1.3rem !important;
-      font-weight: 900 !important;
-      color: #094F8D !important;
-      letter-spacing: 0.04em !important;
-      line-height: 1.1 !important;
-      margin: 0 !important;
+    .mode-subtitle {
+      font-size: 0.88rem;
+      color: #64748B;
+      font-weight: 600;
+      margin-bottom: 18px;
     }
-    .brand-sub-official-wrap {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 6px !important;
-      margin-top: 2px !important;
+    .mode-points {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    .brand-title-en {
-      font-size: 0.65rem !important;
-      font-weight: 800 !important;
-      color: #ED1A21 !important;
-      letter-spacing: 0.08em !important;
+    .mode-points li {
+      font-size: 0.86rem;
+      color: #334155;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 18px;
     }
-    .brand-tag-official {
-      font-size: 0.58rem !important;
-      font-weight: 800 !important;
-      background: #ED1A21 !important;
-      color: #FFFFFF !important;
-      padding: 1px 6px !important;
-      border-radius: 3px !important;
-      letter-spacing: 0.04em !important;
+    .mode-points li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      color: #0284C7;
+      font-weight: 900;
+      font-size: 1.1rem;
+      line-height: 1;
     }
-    .header-right {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-      gap: 7px !important;
-      flex-wrap: nowrap !important;
+    .mode-card-charter .mode-points li::before {
+      color: #EA580C;
     }
-    .header-util-btn {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 4px !important;
-      padding: 0 11px !important;
-      height: 33px !important;
-      line-height: 33px !important;
-      border-radius: 17px !important;
-      font-size: 0.77rem !important;
-      font-weight: 700 !important;
-      color: #334155 !important;
-      text-decoration: none !important;
-      background: #FFFFFF !important;
-      border: 1px solid #CBD5E1 !important;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-      white-space: nowrap !important;
-      flex-shrink: 0 !important;
-      letter-spacing: 0.02em !important;
-      box-sizing: border-box !important;
+    .mode-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    .header-util-btn:hover {
-      background: #F8FAFC !important;
-      border-color: #94A3B8 !important;
-      color: #0F172A !important;
-      transform: translateY(-1px) !important;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06) !important;
+    .mode-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      border: none;
+      letter-spacing: 0.02em;
+    }
+    .mode-btn-primary {
+      background: #0284C7;
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+    }
+    .mode-btn-primary:hover {
+      background: #0369A1;
+      transform: translateY(-1px);
+    }
+    .mode-btn-charter {
+      background: #EA580C;
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.3);
+    }
+    .mode-btn-charter:hover {
+      background: #C2410C;
+      transform: translateY(-1px);
+    }
+    .mode-btn-sub {
+      background: #F1F5F9;
+      color: #475569;
+    }
+    .mode-btn-sub:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+
+    /* 🚨 核心安全報警與事故 SOP 樣式 */
+    .emergency-law-alert {
+      background: #FEF2F2;
+      border: 1.5px solid #FCA5A5;
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .emergency-law-badge {
+      background: #DC2626;
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+    .emergency-law-text {
+      font-size: 0.88rem;
+      color: #991B1B;
+      line-height: 1.6;
+    }
+
+    .emergency-step-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .emergency-step-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .step-num-pill {
+      font-size: 0.72rem;
+      font-weight: 900;
+      color: #0284C7;
+      background: #E0F2FE;
+      padding: 3px 8px;
+      border-radius: 6px;
+      width: fit-content;
+      margin-bottom: 10px;
+    }
+    .emergency-step-card.step-critical .step-num-pill {
+      color: #DC2626;
+      background: #FEE2E2;
+    }
+    .emergency-step-title {
+      font-size: 1.02rem;
+      font-weight: 900;
+      color: #0F172A;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .emergency-step-desc {
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* 🛡️ 租車保險手風琴 Accordion */
+    .qa-accordion-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .qa-item {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    .qa-item.active {
+      border-color: #0284C7;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08);
+    }
+    .qa-header {
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      background: #FFFFFF;
+    }
+    .qa-item.active .qa-header {
+      background: #F8FAFC;
+    }
+    .qa-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #1E293B;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .qa-tag-badge {
+      font-size: 0.7rem;
+      font-weight: 900;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #E2E8F0;
+      color: #334155;
+    }
+    .qa-arrow {
+      font-size: 0.85rem;
+      font-weight: 900;
+      color: #64748B;
+      transition: transform 0.2s ease;
+    }
+    .qa-item.active .qa-arrow {
+      transform: rotate(180deg);
+      color: #0284C7;
+    }
+    .qa-body {
+      padding: 0 22px 20px 22px;
+      font-size: 0.86rem;
+      color: #475569;
+      line-height: 1.7;
+      display: none;
+      background: #F8FAFC;
+      border-top: 1px solid #F1F5F9;
+    }
+    .qa-item.active .qa-body {
+      display: block;
+    }
+    .qa-highlight-box {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 10px 0;
+      font-size: 0.84rem;
+    }
+
+    @media (max-width: 900px) {
+      .dual-mode-grid { grid-template-columns: 1fr; }
+      .emergency-step-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .emergency-step-grid { grid-template-columns: 1fr; }
     }
 
   </style>
 </head>
 <body>
 
-    <header class="app-header">
+      <header class="app-header">
     <div class="header-left">
       <!-- 左側平衡留白，保障中央品牌在視覺上精準居中 -->
     </div>
 
-    <!-- 正中間品牌標誌與文字 -->
+    <!-- 🌟 官網正中間品牌標誌與文字排版 (54px 日之丸朱紅雙環 Logo，左右完全對齊) -->
     <div class="header-center">
       <a href="tabi_news_preview.html" class="brand-wrap brand-centered" title="日旅報報 JAPAN TABI">
         <div class="fuji-logo-box">
@@ -1008,20 +1415,48 @@
       </a>
     </div>
 
-    <!-- 頂部右側統一功能按鈕群 -->
-            <div class="header-right">
-      <a href="japan_flight_deals.html" class="header-util-btn " title="Trip 機票即時比價與特惠航線">
-        <span>✈️ 查機票</span>
+    <!-- 🌟 頂部右側統一功能按鈕群 (純文字無外框無ICON ＋ 🌐 Language 保留外框與ICON) -->
+    <div class="header-right">
+            <a href="japan_flight_deals.html" class="header-nav-link " title="Trip 機票即時比價與特惠航線">
+        <span>查機票</span>
       </a>
-      <a href="japan_charter_rental.html" class="header-util-btn active" title="日本客製包車 ＆ 自駕租車指南">
-        <span>🚗 包車/租車</span>
+      <a href="japan_charter_rental.html" class="header-nav-link active" title="日本客製包車 ＆ 自駕租車指南">
+        <span>包車/租車</span>
       </a>
-      <a href="japan_okinawa_drive.html" class="header-util-btn btn-nav-okinawa " title="沖繩海島不繞路自駕攻略">
-        <span>🌺 沖繩自駕</span>
+      <a href="japan_okinawa_drive.html" class="header-nav-link btn-nav-okinawa " title="沖繩海島不繞路自駕攻略">
+        <span>沖繩自駕</span>
       </a>
-      <a href="japan_inbound_rankings.html" class="header-util-btn " title="日本排行榜">
-        <span>🏆 日本排行</span>
+      <a href="japan_inbound_rankings.html" class="header-nav-link " title="日本排行榜">
+        <span>日本排行</span>
       </a>
+      <a href="japan_special_edition.html" class="header-nav-link " title="深度文章・高質感日本文化與戶外誌">
+        <span>深度文章</span>
+      </a>
+
+      <!-- 🌐 前台多國語言切換器 (Language Selector) -->
+      <div class="lang-selector-wrap" id="langSelectorWrap">
+        <button type="button" class="lang-btn-current" onclick="toggleLangDropdown(event)" aria-label="切換語系">
+          <span>🌐</span>
+          <span id="currentLangLabel">繁體中文</span>
+          <span class="lang-arrow">▾</span>
+        </button>
+        <div class="lang-dropdown-menu" id="langDropdownMenu">
+          <div class="lang-opt-item active" onclick="selectSiteLanguage('zh-TW', '繁體中文', event)">
+            <span class="lang-opt-flag">🇹🇼</span>
+            <span class="lang-opt-name">繁體中文 (台灣)</span>
+          </div>
+          <div class="lang-opt-item" onclick="selectSiteLanguage('en', 'English', event)">
+            <span class="lang-opt-flag">🇺🇸</span>
+            <span class="lang-opt-name">English</span>
+          </div>
+          <div class="lang-opt-item" onclick="selectSiteLanguage('ja', '日本語', event)">
+            <span class="lang-opt-flag">🇯🇵</span>
+            <span class="lang-opt-name">日本語</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     </div>
   </header>
 
@@ -1037,31 +1472,46 @@
 
   <main class="charter-page-container">
 
-    <!-- 🌟 圖二 Wanderly 浮動疊加卡盒 (比照排行榜風格) -->
-    <div class="charter-floating-card-wrap">
-      <div class="charter-floating-card">
-        <div class="charter-tabs-bar" id="charterTabsBar">
-          <a href="#sec-charter-trips" class="charter-tab-btn active" onclick="switchCharterTab(this)">
-            <span class="tab-main-text">🚘 客製包車一日遊</span>
-            <span class="tab-sub-text">專屬中文司機</span>
-          </a>
-          <a href="#sec-etc-pass" class="charter-tab-btn" onclick="switchCharterTab(this)">
-            <span class="tab-main-text">🛣️ 高速 ETC PASS</span>
-            <span class="tab-sub-text">外國人周遊券</span>
-          </a>
-          <a href="#sec-car-rental" class="charter-tab-btn" onclick="switchCharterTab(this)">
-            <span class="tab-main-text">🚗 租車自駕比價</span>
-            <span class="tab-sub-text">獨家免自負額</span>
-          </a>
-          <a href="#sec-airport-transfer" class="charter-tab-btn" onclick="switchCharterTab(this)">
-            <span class="tab-main-text">✈️ 24H 機場接送</span>
-            <span class="tab-sub-text">專車直達飯店</span>
-          </a>
-          <a href="#sec-driving-sop" class="charter-tab-btn" onclick="switchCharterTab(this)">
-            <span class="tab-main-text">📘 自駕交規保險</span>
-            <span class="tab-sub-text">譯本加油常規</span>
-          </a>
+    <!-- 🌟 簡約雙模式引導卡片 (告別密集小按鈕與 ICON 疲勞，按鈕4-8字，高呼吸感) -->
+    <div class="dual-mode-banner-wrap">
+      <div class="dual-mode-grid">
+        
+        <!-- 模式 1: 自駕租車比價 -->
+        <div class="mode-card mode-card-rental">
+          <div>
+            <span class="mode-badge">SELF-DRIVE ｜ 自駕比價</span>
+            <h3 class="mode-title">日本租車自駕比價</h3>
+            <p class="mode-subtitle">全中文預訂・各大新幹線機場取車・安心自負額免除</p>
+            <ul class="mode-points">
+              <li>收錄 Toyota、Nissan、Times、Orix 30+ 租車公司即時比價</li>
+              <li>支援台灣駕照正本 ＋ 監理所日文譯本取車，車載中文導航</li>
+              <li>支援加購外國人專用高速 ETC Pass，長途行程省過路費 30%~50%</li>
+            </ul>
+          </div>
+          <div class="mode-actions">
+            <a href="https://afflink.one/s/FruK8" target="_blank" rel="noopener noreferrer" class="mode-btn mode-btn-primary">前往 ToCoo! 預約</a>
+            <a href="#sec-driving-sop" class="mode-btn mode-btn-sub">查看自駕保險</a>
+          </div>
         </div>
+
+        <!-- 模式 2: 客製包車一日遊 -->
+        <div class="mode-card mode-card-charter">
+          <div>
+            <span class="mode-badge mode-badge-charter">FAMILY & VIP ｜ 親子包車</span>
+            <h3 class="mode-title">客製包車一日遊</h3>
+            <p class="mode-subtitle">專屬中文司導・飯店到府直達・家庭長輩出遊首選</p>
+            <ul class="mode-points">
+              <li>8~10 小時自訂行程，富士山/京都/北海道自由排定不停靠推銷店</li>
+              <li>大件行李隨車直載，免拉行李爬坡轉乘擠電車，長輩幼兒零負擔</li>
+              <li>7~14 人座阿爾法/海獅豪華保母車，提供合法綠牌認證與安全座椅</li>
+            </ul>
+          </div>
+          <div class="mode-actions">
+            <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" rel="noopener noreferrer" class="mode-btn mode-btn-charter">預約中文包車</a>
+            <a href="#sec-charter-trips" class="mode-btn mode-btn-sub">瀏覽精選行程</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -1487,6 +1937,14 @@
       }
     }
 
+
+    function toggleRentalQa(el) {
+      const item = el.closest('.qa-item');
+      if (item) {
+        item.classList.toggle('active');
+      }
+    }
+    
 </script>
 </body>
 </html>

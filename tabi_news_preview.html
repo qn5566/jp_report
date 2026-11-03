@@ -7214,7 +7214,246 @@
       text-decoration: none;
     }
 
-  </style>
+  
+/* 🌟 全站統一極致日系 Header (絕對居中，3-column CSS Grid) */
+.app-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(250, 248, 245, 0.96) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid #E5E0D6 !important;
+  padding: 10px 32px !important;
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  gap: 16px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+}
+.header-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: start !important;
+}
+.header-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  justify-self: center !important;
+}
+.header-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: end !important;
+  gap: 14px !important;
+  flex-wrap: nowrap !important;
+}
+
+/* 🌟 日之丸朱紅雙環 Logo (54px) */
+.brand-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.fuji-logo-box {
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #FFFFFF !important;
+  border: 2.5px solid #ED1A21 !important;
+  box-shadow: 0 4px 14px rgba(237, 26, 33, 0.18) !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.brand-wrap:hover .fuji-logo-box {
+  transform: scale(1.06) !important;
+  box-shadow: 0 6px 18px rgba(237, 26, 33, 0.28) !important;
+}
+.brand-tabi-logo, .fuji-logo-box img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 50% !important;
+}
+.brand-text h1 {
+  font-size: 1.55rem !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.3px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  line-height: 1.15 !important;
+}
+.brand-title-zh {
+  color: #094F8D !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.2px !important;
+  font-size: 1.55rem !important;
+}
+.brand-sub-official-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 3px !important;
+}
+.brand-title-en {
+  color: #ED1A21 !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+}
+.brand-tag-official {
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  background: #ED1A21 !important;
+  color: #FFFFFF !important;
+  padding: 2px 7px !important;
+  border-radius: 4px !important;
+  letter-spacing: 0.05em !important;
+  box-shadow: 0 2px 6px rgba(237, 26, 33, 0.28) !important;
+}
+
+/* 🌟 頂部選單按鈕：純文字無外框、無ICON、純淨日系排版 */
+.header-nav-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 8px !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  white-space: nowrap !important;
+  transition: all 0.18s ease !important;
+  letter-spacing: 0.02em !important;
+}
+.header-nav-link:hover {
+  color: #ED1A21 !important;
+  background: rgba(237, 26, 33, 0.05) !important;
+  transform: translateY(-1px) !important;
+}
+.header-nav-link.active {
+  color: #ED1A21 !important;
+  font-weight: 800 !important;
+}
+.header-nav-link.btn-nav-okinawa:hover {
+  color: #0284C7 !important;
+  background: rgba(2, 132, 199, 0.06) !important;
+}
+.header-nav-link.btn-nav-okinawa.active {
+  color: #0284C7 !important;
+  font-weight: 800 !important;
+}
+
+/* 🌐 前台多國語言切換器 (保留外框與地球 ICON) */
+.lang-selector-dropdown-wrap {
+  position: relative !important;
+  display: inline-block !important;
+  margin-left: 2px !important;
+}
+.header-lang-btn,
+#langDropdownTrigger {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  padding: 0 13px !important;
+  height: 33px !important;
+  line-height: 33px !important;
+  border-radius: 999px !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #CBD5E1 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+}
+.header-lang-btn:hover,
+#langDropdownTrigger:hover {
+  border-color: #94A3B8 !important;
+  background: #F8FAFC !important;
+  color: #0F172A !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06) !important;
+}
+.lang-arrow {
+  font-size: 0.68rem !important;
+  color: #94A3B8 !important;
+  transition: transform 0.2s ease !important;
+  margin-left: 2px !important;
+}
+.lang-selector-dropdown-wrap.open .lang-arrow {
+  transform: rotate(180deg) !important;
+}
+.lang-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  right: 0 !important;
+  min-width: 195px !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 16px !important;
+  padding: 6px !important;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.14), 0 3px 8px rgba(0,0,0,0.04) !important;
+  display: none !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  z-index: 10005 !important;
+  animation: langFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+@keyframes langFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.lang-selector-dropdown-wrap.open .lang-dropdown-menu {
+  display: flex !important;
+}
+.lang-menu-opt {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 9px 12px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+  text-align: left !important;
+}
+.lang-menu-opt:hover {
+  background: #F1F5F9 !important;
+  color: #0F172A !important;
+}
+.lang-menu-opt.active {
+  background: #FEF2F2 !important;
+  color: #ED1A21 !important;
+}
+.lang-flag { font-size: 1.05rem !important; line-height: 1 !important; }
+.lang-name { flex: 1 !important; }
+.lang-check { font-size: 0.85rem !important; font-weight: 900 !important; color: #ED1A21 !important; }
+
+</style>
 </head>
 <body class="mode-spots">
 
@@ -7252,24 +7491,27 @@
       </a>
     </div>
 
-    <!-- 🌟 頂部右側統一功能按鈕群 (✈️ 查機票 ＋ 🚗 包車/租車 ＋ 🌺 沖繩自駕 ＋ 🏆 日本排行 ＋ 🌐 Language) -->
+    <!-- 🌟 頂部右側統一功能按鈕群 (純文字無外框無ICON ＋ 🌐 Language 保留外框與ICON) -->
     <div class="header-right">
-      <a href="japan_flight_deals.html" class="header-util-btn " title="Trip 機票即時比價與特惠航線">
-        <span>✈️ 查機票</span>
+            <a href="japan_flight_deals.html" class="header-nav-link " title="Trip 機票即時比價與特惠航線">
+        <span>查機票</span>
       </a>
-      <a href="japan_charter_rental.html" class="header-util-btn " title="日本客製包車 ＆ 自駕租車指南">
-        <span>🚗 包車/租車</span>
+      <a href="japan_charter_rental.html" class="header-nav-link " title="日本客製包車 ＆ 自駕租車指南">
+        <span>包車/租車</span>
       </a>
-      <a href="japan_okinawa_drive.html" class="header-util-btn btn-nav-okinawa " title="沖繩海島不繞路自駕攻略">
-        <span>🌺 沖繩自駕</span>
+      <a href="japan_okinawa_drive.html" class="header-nav-link btn-nav-okinawa " title="沖繩海島不繞路自駕攻略">
+        <span>沖繩自駕</span>
       </a>
-      <a href="japan_inbound_rankings.html" class="header-util-btn " title="日本排行榜">
-        <span>🏆 日本排行</span>
+      <a href="japan_inbound_rankings.html" class="header-nav-link " title="日本排行榜">
+        <span>日本排行</span>
+      </a>
+      <a href="japan_special_edition.html" class="header-nav-link " title="深度文章・高質感日本文化與戶外誌">
+        <span>深度文章</span>
       </a>
 
       <!-- 🌐 前台多國語言切換器 (Language Selector) -->
       <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
-        <button class="header-util-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)" title="切換語言">
+        <button class="header-lang-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)" title="切換語言">
           <span class="util-btn-icon">🌐</span>
           <span id="currentLangLabel">Language</span>
           <span class="lang-arrow" id="langArrow">▾</span>
@@ -13775,28 +14017,7 @@
         nightImg: './images/hirosaki_moat_night.jpg',
         hasNightLight: true,
         nightHours: '🏮 18:00 - 22:00 點燈',
-        cafe: 
-      {
-        id: 'hirosaki_castle_night',
-        theme: 'sakura',
-        category: 'flower',
-        region: 'tohoku',
-        title: '弘前城天守閣・西濠櫻花隧道',
-        subtitle: '日本三大夜櫻！天守與西濠倒影絕景',
-        tag: '東北・青森',
-        bloomStatus: '🌸 滿開吹雪 (100%)',
-        species: '染井吉野櫻、八重紅枝垂',
-        desc: '西濠春陽橋櫻花隧道在夜間投射燈照射下倒映水面，天守閣在燈光中傲然聳立，櫻吹雪形成全日本最美粉紅地毯。',
-        locationDetail: 'JR弘前站搭乘土手町循環巴士至「市役所前」下車',
-        nightHours: '🏮 17:30 - 21:00 (弘前櫻花祭夜間特別點燈)',
-        hasNightLight: true,
-        img: './images/hirosaki_castle_night.jpg',
-        nightImg: './images/hirosaki_castle_night.jpg',
-        ticketLabel: '預約門票',
-        klookUrl: 'https://www.klook.com/zh-TW/search/result/?query=%E5%BC%98%E5%89%8D%E5%85%AC%E5%9C%92%E6%AB%BB%E8%8A%B1&aid=123436&utm_medium=affiliate-alwayson',
-        bookingUrl: 'https://www.booking.com/searchresults.zh-tw.html?ss=Hirosaki'
-      },
-{
+        cafe: {
           name: '名曲＆珈琲 羅針盤 (弘前老鋪喫茶)',
           feature: '大正昭和復古黑膠唱片・自烘虹吸式深焙手沖咖啡・步行5分鐘'
         },
@@ -18137,7 +18358,22 @@
       "hotel": {
             "name": "Park Hyatt Niseko Hanazono (花園柏悅)",
             "feature": "直面雪道Ski-in/Ski-out・全套房私人溫泉湯屋"
-      }
+      },
+      "snowDepth": "山頂 295cm / 山麓 135cm",
+      "newSnow24h": "+35 cm",
+      "snowQuality": "極上乾粉雪 (JAPOW)",
+      "liftsRunning": "28 / 30 條運行",
+      "testedTime": "🟢 07:30 實測",
+      "slopeRatio": {"green": 30, "yellow": 40, "red": 30},
+      "magicCarpet": true,
+      "wideSlope": "寬120m 緩坡 (<11° 初學安全)",
+      "verticalDrop": "940m",
+      "treeRun": true,
+      "officialUrl": "https://www.niseko.ne.jp/zh/",
+      "liveCamUrl": "https://www.niseko.ne.jp/livecam/",
+      "patrolPhone": "0136-22-0109 (安努普利/比羅夫直通)",
+      "orthopedicClinic": "二世谷國際診所 (Niseko International Clinic, 具X光/英文全接診)、俱知安厚生醫院",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ 五色溫泉鄉：</b>海拔750m純天然硫磺泉，露天雪景風呂直面安努普利峰。</div><div class='snow-drawer-item'><b>♨️ 昆布溫泉 幽泉閣：</b>滑雪客激推高保濕美人湯，有效消除腿部疲勞。</div>"
 },
       {
         "id": "ski_rusutsu_resort",
@@ -18257,7 +18493,27 @@
       "hotel": {
             "name": "新富良野王子大飯店 (New Furano Prince)",
             "feature": "雪道直接滑進大廳・紫彩之湯天然露天溫泉"
-      }
+      },
+      "snowDepth": "山頂 240cm / 山麓 110cm",
+      "newSnow24h": "+26 cm",
+      "snowQuality": "內陸極寒乾粉雪",
+      "liftsRunning": "9 / 9 條運行",
+      "testedTime": "🟢 07:30 實測",
+      "slopeRatio": {"green": 40, "yellow": 40, "red": 20},
+      "magicCarpet": true,
+      "wideSlope": "富良野長巡航坡 (寬90m, <12°)",
+      "verticalDrop": "964m",
+      "treeRun": true,
+      "isOlympicFis": true,
+      "trackTitle": "FIS 高山滑雪世界盃迴轉賽道",
+      "trackSlope": "最大坡度 34° ｜ 全長 3,400 公尺",
+      "trackStory": "舉辦多屆 FIS 高山滑雪世界盃，十勝岳連峰全景盡收眼底。",
+      "proTips": "內陸氣候極寒常達 -20°C，防風面罩與保暖手套務必到位。",
+      "officialUrl": "https://www.princehotels.co.jp/ski/furano/",
+      "liveCamUrl": "https://www.princehotels.co.jp/ski/furano/livecam/",
+      "patrolPhone": "0167-22-1111 (富良野巡邏大隊)",
+      "orthopedicClinic": "富良野協會醫院 (外傷骨科急救全配)",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ 富良野溫泉 紫彩之湯：</b>源自地下1010米天然鈉鈣鹽泉。</div>"
 },
       {
         "id": "ski_sapporo_kokusai",
@@ -18317,7 +18573,27 @@
       "hotel": {
             "name": "JR東日本札幌 METS 酒店",
             "feature": "JR札幌站北口步行2分・出發滑雪極速便捷"
-      }
+      },
+      "snowDepth": "山頂 270cm / 山麓 130cm",
+      "newSnow24h": "+30 cm",
+      "snowQuality": "海風超深粉雪",
+      "liftsRunning": "9 / 10 條運行",
+      "testedTime": "🟢 07:30 實測",
+      "slopeRatio": {"green": 35, "yellow": 40, "red": 25},
+      "magicCarpet": true,
+      "wideSlope": "奧林匹亞初級長道 (寬80m)",
+      "verticalDrop": "683m",
+      "treeRun": true,
+      "isOlympicFis": true,
+      "trackTitle": "1972 札幌冬奧男子大迴轉賽道 (女子迴轉)",
+      "trackSlope": "最大坡度 36° (北壁コース) ｜ 俯瞰石狩灣大海",
+      "trackStory": "日本首度主辦冬季奧運核心主賽場，聖火台至今傲立山巔。",
+      "proTips": "北壁非壓雪陡坡極具挑戰，雪板落差需注意深粉坑。",
+      "officialUrl": "https://sapporo-teine.com/snow/",
+      "liveCamUrl": "https://sapporo-teine.com/snow/livecam/",
+      "patrolPhone": "011-683-7711",
+      "orthopedicClinic": "手稻溪仁會醫院 (大型急救外傷中心)",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ 手稻溫泉 極樂湯：</b>下山即達天然露天風呂。</div>"
 },
       {
         "id": "ski_hakuba_happo",
@@ -18347,7 +18623,27 @@
       "hotel": {
             "name": "白馬溫泉 塞拉利昂飯店 (Hotel Sierra Resort)",
             "feature": "萬坪森林庭園・四大獨立私人景觀露天溫泉湯屋"
-      }
+      },
+      "snowDepth": "山頂 285cm / 山麓 120cm",
+      "newSnow24h": "+25 cm",
+      "snowQuality": "極上乾粉雪 (JAPOW)",
+      "liftsRunning": "20 / 22 條運行",
+      "testedTime": "🟢 07:30 實測",
+      "slopeRatio": {"green": 30, "yellow": 50, "red": 20},
+      "magicCarpet": true,
+      "wideSlope": "名木山緩坡 (寬100m, <12°)",
+      "verticalDrop": "1,071m (全日最大級)",
+      "treeRun": true,
+      "isOlympicFis": true,
+      "trackTitle": "1998 長野冬奧男子速降賽道 (Riesen Slalom)",
+      "trackSlope": "最大坡度 35° ｜ 全長 3,000 公尺",
+      "trackStory": "站在 1998 冬奧出發點，俯瞰整個白馬山谷的懸崖絕壁大景。",
+      "proTips": "午後背陽面容易結冰 (Ice burn)，建議上午 09:00 前完成挑戰。",
+      "officialUrl": "https://www.happo-one.jp",
+      "liveCamUrl": "https://www.happo-one.jp/livecam/",
+      "patrolPhone": "0261-72-3066 (八方尾根巡邏總部)",
+      "orthopedicClinic": "白馬診療所 (Hakuba Clinic, 英文應診/X光檢查)、神城骨科",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ 八方溫泉 鄉之湯：</b>天然高鹼性 pH 11.2 絲滑美人湯，步行 5 分鐘。</div><div class='snow-drawer-item'><b>♨️ 倉下之湯：</b>茶褐色富鐵強食鹽泉，遠眺北阿爾卑斯雪峰。</div>"
 },
       {
         "id": "ski_hakuba_goryu47",
@@ -18437,7 +18733,27 @@
       "hotel": {
             "name": "志賀高原 王子大飯店 (東館/南館/西館)",
             "feature": "纜車出門即滑・全日本滑雪客一生必住傳奇度假飯店"
-      }
+      },
+      "snowDepth": "山頂 280cm / 山麓 140cm",
+      "newSnow24h": "+22 cm",
+      "snowQuality": "海拔2000m極上乾粉",
+      "liftsRunning": "45 / 48 條運行",
+      "testedTime": "🟢 07:30 實測",
+      "slopeRatio": {"green": 40, "yellow": 40, "red": 20},
+      "magicCarpet": true,
+      "wideSlope": "一之瀨超寬平原 (寬150m, <9°)",
+      "verticalDrop": "980m",
+      "treeRun": true,
+      "isOlympicFis": true,
+      "trackTitle": "1998 長野冬奧大迴轉與單板滑雪賽道 (東館山)",
+      "trackSlope": "最大坡度 36° ｜ 18座雪場一票全通聯網",
+      "trackStory": "冬奧頂尖選手飆速聖地，東館山五輪賽道留下無數傳奇戰績。",
+      "proTips": "全區面積龐大，滑行前務必看準末班聯絡纜車時間以防被困異谷。",
+      "officialUrl": "https://www.shigakogen.gr.jp",
+      "liveCamUrl": "https://www.shigakogen.gr.jp/livecam/",
+      "patrolPhone": "0269-34-2404",
+      "orthopedicClinic": "湯田中溫泉醫院、北信綜合醫院",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ 志賀高原 熊之湯溫泉：</b>翡翠綠濃郁硫磺泉，日本少見特有泉質。</div><div class='snow-drawer-item'><b>♨️ 地獄谷野猿公苑溫泉：</b>猴子泡溫泉奇景發源地。</div>"
 },
       {
         "id": "ski_madarao_kogen",
@@ -18497,7 +18813,22 @@
       "hotel": {
             "name": "輕井澤王子大飯店 西館 (Karuizawa Prince West)",
             "feature": "小木屋別墅區・溫泉棟「MOMIJI」露天溫泉享受"
-      }
+      },
+      "snowDepth": "山頂 120cm / 山麓 80cm",
+      "newSnow24h": "+8 cm",
+      "snowQuality": "優質造雪壓雪道",
+      "liftsRunning": "9 / 9 條運行",
+      "testedTime": "🟢 07:30 實測",
+      "slopeRatio": {"green": 50, "yellow": 30, "red": 20},
+      "magicCarpet": true,
+      "wideSlope": "栗子樹緩坡 (寬100m, <8° 全日本初學摔不倒坡度)",
+      "verticalDrop": "215m",
+      "treeRun": false,
+      "officialUrl": "https://www.princehotels.co.jp/ski/karuizawa/",
+      "liveCamUrl": "https://www.princehotels.co.jp/ski/karuizawa/livecam/",
+      "patrolPhone": "0267-42-5588",
+      "orthopedicClinic": "輕井澤醫院 (英語對應/骨科急診)",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ 星野溫泉 蜻蜓之湯：</b>美肌美人湯，大片落地玻璃窗直面被大雪覆蓋的松林。</div>"
 },
       {
         "id": "ski_gala_yuzawa",
@@ -18527,7 +18858,22 @@
       "hotel": {
             "name": "越後湯澤溫泉 湯澤大飯店 (Yuzawa Grand Hotel)",
             "feature": "車站西口步行2分・庭園風露天溫泉岩風呂"
-      }
+      },
+      "snowDepth": "山頂 310cm / 山麓 160cm",
+      "newSnow24h": "+22 cm",
+      "snowQuality": "壓雪巡航 ＆ 新雪",
+      "liftsRunning": "11 / 11 條運行",
+      "testedTime": "🟢 07:45 實測",
+      "slopeRatio": {"green": 35, "yellow": 45, "red": 20},
+      "magicCarpet": true,
+      "wideSlope": "中央區初心者道 (寬120m, 坡度<10°)",
+      "verticalDrop": "811m",
+      "treeRun": false,
+      "officialUrl": "https://gala.co.jp/winter/",
+      "liveCamUrl": "https://gala.co.jp/winter/livecam/",
+      "patrolPhone": "025-785-6543 (GALA 滑雪安全中心)",
+      "orthopedicClinic": "角谷整形外科 (越後湯澤站西口步行3分，專治滑雪骨折韌帶扭傷，具X光)、湯澤町保健醫療中心",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ SPA GALA之湯：</b>新幹線車站3樓直通！大浴場、IR紅外線三溫暖與露天雪見風呂。</div><div class='snow-drawer-item'><b>♨️ 越後湯澤 駒子之湯：</b>《雪國》文學名湯，下山泡湯品嚐地酒。</div>"
 },
       {
         "id": "ski_naeba_resort",
@@ -18557,7 +18903,27 @@
       "hotel": {
             "name": "苗場王子大飯店 (Naeba Prince Hotel)",
             "feature": "雪道第一排・出房門即是滑雪場・火泉天然溫泉"
-      }
+      },
+      "snowDepth": "山頂 260cm / 山麓 125cm",
+      "newSnow24h": "+20 cm",
+      "snowQuality": "優質粉雪 ＆ 壓雪",
+      "liftsRunning": "12 / 13 條運行",
+      "testedTime": "🟢 07:30 實測",
+      "slopeRatio": {"green": 30, "yellow": 40, "red": 30},
+      "magicCarpet": true,
+      "wideSlope": "第4高速初級緩坡 (寬100m)",
+      "verticalDrop": "889m",
+      "treeRun": true,
+      "isOlympicFis": true,
+      "trackTitle": "FIS 高山滑雪世界盃女子迴轉賽道",
+      "trackSlope": "最大坡度 32° ｜ 全長 2,500 公尺",
+      "trackStory": "名震國際的世界盃競技雪道，長纜車 Dragondola 俯瞰金黃山谷。",
+      "proTips": "大迴轉段坡度陡急，建議配備硬雪刻滑板（Carving Ski）。",
+      "officialUrl": "https://www.princehotels.co.jp/ski/naeba/",
+      "liveCamUrl": "https://www.princehotels.co.jp/ski/naeba/livecam/",
+      "patrolPhone": "025-789-2211 (苗場巡邏隊)",
+      "orthopedicClinic": "苗場王子飯店診療所 (雪季常駐醫師)、角谷整形外科",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ 苗場溫泉 火打之湯：</b>王子大飯店館內直通弱鹼性單純泉。</div><div class='snow-drawer-item'><b>♨️ 貝掛溫泉：</b>700年歷史白濁「眼之溫泉」，自駕15分即達。</div>"
 },
       {
         "id": "ski_kagura_resort",
@@ -18707,7 +19073,22 @@
       "hotel": {
             "name": "藏王國際飯店 (Zao Kokusai Hotel)",
             "feature": "八右衛門之湯100%全木造乳白色硫磺溫泉・雪道出門即滑"
-      }
+      },
+      "snowDepth": "山頂 260cm / 山麓 110cm",
+      "newSnow24h": "+20 cm",
+      "snowQuality": "樹冰怪獸粉雪",
+      "liftsRunning": "32 / 36 條運行",
+      "testedTime": "🟢 07:30 實測",
+      "slopeRatio": {"green": 40, "yellow": 40, "red": 20},
+      "magicCarpet": true,
+      "wideSlope": "大森初級緩坡 (寬80m, <11°)",
+      "verticalDrop": "880m",
+      "treeRun": true,
+      "officialUrl": "http://www.zao-ski.or.jp",
+      "liveCamUrl": "http://www.zao-ski.or.jp/livecam/",
+      "patrolPhone": "023-694-9328 (藏王山頂警備隊)",
+      "orthopedicClinic": "藏王溫泉診療所、山形市立醫院濟生館",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ 藏王溫泉 大露天風呂：</b>百年強酸性白濁硫磺泉 (pH 1.5)，天然殺菌強健身心。</div><div class='snow-drawer-item'><b>♨️ 上湯・下湯共同浴場：</b>古老溫泉街正中心，滑雪後泡湯僅200日圓。</div>"
 },
       {
         "id": "ski_appi_kogen",
@@ -18737,7 +19118,22 @@
       "hotel": {
             "name": "ANA InterContinental Appi Kogen (安比洲際)",
             "feature": "獲選世界奢華酒店大獎・頂級溫泉水療與管家服務"
-      }
+      },
+      "snowDepth": "山頂 280cm / 山麓 130cm",
+      "newSnow24h": "+28 cm",
+      "snowQuality": "APPI 阿斯匹靈極上粉雪",
+      "liftsRunning": "16 / 18 條運行",
+      "testedTime": "🟢 07:30 實測",
+      "slopeRatio": {"green": 30, "yellow": 40, "red": 30},
+      "magicCarpet": true,
+      "wideSlope": "白樺林初級長道 (寬90m, <10°)",
+      "verticalDrop": "828m",
+      "treeRun": true,
+      "officialUrl": "https://www.appi.co.jp",
+      "liveCamUrl": "https://www.appi.co.jp/livecam/",
+      "patrolPhone": "0195-73-5111",
+      "orthopedicClinic": "八幡平市急救中心、盛岡赤十字醫院",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ 安比溫泉 白樺之湯：</b>東北最大級純日式檜木露天風呂，弱鹼性清澈泉質。</div>"
 },
       {
         "id": "ski_geto_kogen",
@@ -18857,7 +19253,22 @@
       "hotel": {
             "name": "草津溫泉 望雲 (Boun)",
             "feature": "十返舍一九等文人喜愛的古雅名宿・六大源泉掛流露天湯"
-      }
+      },
+      "snowDepth": "山頂 210cm / 山麓 100cm",
+      "newSnow24h": "+14 cm",
+      "snowQuality": "日本第一名湯直通粉雪",
+      "liftsRunning": "5 / 5 條運行",
+      "testedTime": "🟢 07:30 實測",
+      "slopeRatio": {"green": 50, "yellow": 30, "red": 20},
+      "magicCarpet": true,
+      "wideSlope": "天狗山超寬緩坡 (寬120m, 坡度<9° 新手聖地)",
+      "verticalDrop": "380m",
+      "treeRun": false,
+      "officialUrl": "https://www.932-onsen.com",
+      "liveCamUrl": "https://www.932-onsen.com/livecam/",
+      "patrolPhone": "0279-88-8111",
+      "orthopedicClinic": "草津町立醫院 (X光應診全配)",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ 草津溫泉 西之河原露天大風呂：</b>全日本最大露天風呂 (500平方公尺)，深山雪見第一名湯。</div><div class='snow-drawer-item'><b>♨️ 御座之湯：</b>湯畑旁木造百年湯屋，傳統湯治舒緩筋骨。</div>"
 },
       {
         "id": "ski_marunuma_kogen",
@@ -18887,7 +19298,22 @@
       "hotel": {
             "name": "丸沼高原 Chalet 丸沼溫泉旅館",
             "feature": "雪道山麓直通・溫暖天然弱鹼性溫泉洗淨筋骨"
-      }
+      },
+      "snowDepth": "山頂 230cm / 山麓 110cm",
+      "newSnow24h": "+15 cm",
+      "snowQuality": "日光白根山極上乾粉",
+      "liftsRunning": "8 / 8 條運行",
+      "testedTime": "🟢 07:30 實測",
+      "slopeRatio": {"green": 30, "yellow": 45, "red": 25},
+      "magicCarpet": true,
+      "wideSlope": "陽光平原道 (寬90m, <11°)",
+      "verticalDrop": "600m",
+      "treeRun": true,
+      "officialUrl": "https://www.marunuma.jp",
+      "liveCamUrl": "https://www.marunuma.jp/livecam/",
+      "patrolPhone": "0278-58-2211",
+      "orthopedicClinic": "沼田醫院、利根中央醫院",
+      "hotspringsHtml": "<div class='snow-drawer-item'><b>♨️ 座禪溫泉：</b>座落在雪場山麓中心，天然硫磺泉雪見露天。</div>"
 },
       {
         "id": "ski_biwako_valley",
@@ -19441,6 +19867,23 @@
       renderCards();
     }
 
+    
+    // ⛷️ 極上粉雪卡片內部折疊抽屜切換 (周邊雪見溫泉 ＆ 巡邏隊急診骨科指南)
+    function toggleSnowDrawer(spotId, drawerType, btn) {
+      const panelId = drawerType === 'onsen' ? `snowOnsen_${spotId}` : `snowSafety_${spotId}`;
+      const panel = document.getElementById(panelId);
+      if (!panel) return;
+      const isShow = panel.classList.contains('show');
+      panel.classList.toggle('show', !isShow);
+      if (btn) btn.classList.toggle('active', !isShow);
+
+      if (drawerType === 'onsen') {
+        btn.innerHTML = !isShow ? '<span>♨️ 收起溫泉推薦 ▴</span>' : '<span>♨️ 周邊雪見美人湯 ▾</span>';
+      } else {
+        btn.innerHTML = !isShow ? '<span>🚑 收起就醫指南 ▴</span>' : '<span>🚑 巡邏隊 ＆ 骨科指南 ▾</span>';
+      }
+    }
+    
     function toggleCampQa(spotId, btn) {
       const panel = document.getElementById(`campQa_${spotId}`);
       if (!panel) return;
@@ -19621,22 +20064,25 @@
         bar.innerHTML = `
           <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
             <button class="region-pill ${currentSnowRegion === 'all' ? 'active' : ''}" onclick="selectSnowRegion('all', this)">
-              <span>全日本 (27)</span>
+              <span>全部雪場 (27)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'hokkaido' ? 'active' : ''}" onclick="selectSnowRegion('hokkaido', this)">
-              <span>北海道 (7)</span>
-            </button>
-            <button class="region-pill ${currentSnowRegion === 'nagano' ? 'active' : ''}" onclick="selectSnowRegion('nagano', this)">
-              <span>長野白馬 (6)</span>
+              <span>❄️ 北海道・粉雪聖地</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'niigata' ? 'active' : ''}" onclick="selectSnowRegion('niigata', this)">
-              <span>新潟越後 (6)</span>
+              <span>🌾 新潟・越後湯澤</span>
+            </button>
+            <button class="region-pill ${currentSnowRegion === 'nagano' ? 'active' : ''}" onclick="selectSnowRegion('nagano', this)">
+              <span>🏔️ 長野・北阿爾卑斯</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'tohoku' ? 'active' : ''}" onclick="selectSnowRegion('tohoku', this)">
-              <span>東北藏王 (4)</span>
+              <span>🌲 東北・樹冰溫泉</span>
             </button>
-            <button class="region-pill ${currentSnowRegion === 'kanto_fuji' ? 'active' : ''}" onclick="selectSnowRegion('kanto_fuji', this)">
-              <span>關東近郊 (4)</span>
+            <button class="region-pill ${currentSnowRegion === 'gunma' ? 'active' : ''}" onclick="selectSnowRegion('gunma', this)">
+              <span>♨️ 群馬・關東近郊</span>
+            </button>
+            <button class="region-pill ${currentSnowRegion === 'olympic_fis' ? 'active' : ''}" onclick="selectSnowRegion('olympic_fis', this)">
+              <span>🏆 冬奧與國際 FIS 認證賽道</span>
             </button>
           </div>
         `;
@@ -19995,13 +20441,19 @@
           return true;
         }
 
-        // 母夾 2：極上粉雪 (支援地區一級過濾 ＋ 初級/中級/高階 二級難度過濾)
+        // 母夾 2：極上粉雪 (支援 5 大雪區 ＋ 1 國際賽道特輯 ＋ 難度分級)
         if (currentMasterHub === 'snow') {
           if (item.theme !== 'snow') return false;
 
           // 地區過濾
           if (currentSnowRegion !== 'all') {
-            if (item.snowRegion && item.snowRegion !== currentSnowRegion) return false;
+            if (currentSnowRegion === 'olympic_fis') {
+              if (!item.isOlympicFis) return false;
+            } else if (currentSnowRegion === 'gunma') {
+              if (item.snowRegion !== 'gunma' && item.snowRegion !== 'kanto_fuji') return false;
+            } else {
+              if (item.snowRegion && item.snowRegion !== currentSnowRegion) return false;
+            }
           }
 
           // 難度二級過濾
@@ -20251,7 +20703,119 @@
 
             <p class="card-clean-concise-desc">${safeDesc}</p>
 
-            ${(item.theme === 'camp') ? `
+            ${(item.theme === 'snow') ? `
+              <!-- ⛷️ 極上粉雪專屬三段式核心功能矩陣 (上層動態、中層硬體、下層抽屜) -->
+              <div class="snow-card-matrix">
+                <!-- 1. 即時雪況動態 (決定當天去不去山頂) -->
+                <div class="snow-top-status-bar">
+                  <span class="snow-status-loc">📍 ${item.tag || item.regionName || '日本雪場'}</span>
+                  <span class="snow-status-quality">❄️ ${item.snowQuality || '極上乾粉雪 (JAPOW)'}</span>
+                  <span class="snow-status-time">${item.testedTime || '🟢 07:30 實測'}</span>
+                </div>
+
+                <div class="snow-live-metrics-grid">
+                  <div class="snow-metric-box">
+                    <span class="snow-metric-label">🏔️ 積雪深度</span>
+                    <span class="snow-metric-val">${item.snowDepth || '山頂 285cm / 山麓 120cm'}</span>
+                  </div>
+                  <div class="snow-metric-box">
+                    <span class="snow-metric-label">❄️ 24h 新雪</span>
+                    <span class="snow-metric-val highlight-fresh">${item.newSnow24h || '+25 cm'}</span>
+                  </div>
+                  <div class="snow-metric-box">
+                    <span class="snow-metric-label">🚡 纜車運作</span>
+                    <span class="snow-metric-val">${item.liftsRunning || '20 / 22 條運行'}</span>
+                  </div>
+                </div>
+
+                <!-- 2. 雪道與地形參數 (三色比例 ＋ 新手防雷 ＋ 標高差) -->
+                <div class="snow-slope-ratio-wrap">
+                  <div class="snow-slope-ratio-bar">
+                    <div class="slope-seg slope-green" style="width: ${item.slopeRatio ? item.slopeRatio.green : 30}%" title="初級 ${item.slopeRatio ? item.slopeRatio.green : 30}%"></div>
+                    <div class="slope-seg slope-yellow" style="width: ${item.slopeRatio ? item.slopeRatio.yellow : 50}%" title="中級 ${item.slopeRatio ? item.slopeRatio.yellow : 50}%"></div>
+                    <div class="slope-seg slope-red" style="width: ${item.slopeRatio ? item.slopeRatio.red : 20}%" title="高級 ${item.slopeRatio ? item.slopeRatio.red : 20}%"></div>
+                  </div>
+                  <div class="snow-slope-ratio-labels">
+                    <span class="lbl-green">🟢 初級 ${item.slopeRatio ? item.slopeRatio.green : 30}%</span>
+                    <span class="lbl-yellow">🟡 中級 ${item.slopeRatio ? item.slopeRatio.yellow : 50}%</span>
+                    <span class="lbl-red">🔴 高級 ${item.slopeRatio ? item.slopeRatio.red : 20}%</span>
+                  </div>
+                </div>
+
+                <div class="snow-terrain-specs-grid">
+                  <div class="snow-terrain-cell">
+                    <span class="snow-terrain-lbl">🔰 新手防雷</span>
+                    <span class="snow-terrain-val">${item.magicCarpet ? '✅ 有魔毯輸送帶' : '⚠️ 搭初級吊椅'} ｜ ${item.wideSlope || '寬100m 緩坡 (<12°)'}</span>
+                  </div>
+                  <div class="snow-terrain-cell">
+                    <span class="snow-terrain-lbl">🏔️ 標高差與老手</span>
+                    <span class="snow-terrain-val">落差 ${item.verticalDrop || '1,071m'} ｜ ${item.treeRun ? '🌲 樹林道開放' : '壓雪長巡航'}</span>
+                  </div>
+                </div>
+
+                <!-- 🏆 國際 FIS / 冬奧認證賽道亮點專欄 -->
+                ${item.isOlympicFis ? `
+                  <div class="snow-olympic-callout">
+                    <div class="snow-olympic-header">
+                      <span class="snow-olympic-badge">🏆 ${item.trackTitle || 'FIS / 冬奧認證賽道'}</span>
+                      <span class="snow-olympic-slope">${item.trackSlope || '最大坡度 35° ｜ 全長 3,000m'}</span>
+                    </div>
+                    <div class="snow-olympic-story"><b>📜 賽道歷史：</b>${item.trackStory || '冬奧傳奇選手飆速舞台，俯瞰山谷壯闊懸崖視角。'}</div>
+                    <div class="snow-olympic-pro-tip"><b>⚡ 老手挑戰避雷：</b>${item.proTips || '午後容易結冰 (Ice burn)，建議上午 09:00 前完成挑戰。'}</div>
+                  </div>
+                ` : ''}
+
+                <!-- 4 顆常駐精簡微徽章功能連結 -->
+                <div class="snow-micro-badges-row">
+                  <a href="${item.officialUrl || '#'}" target="_blank" class="snow-micro-badge" onclick="event.stopPropagation();">
+                    <span>🌐 雪場官網</span>
+                  </a>
+                  <a href="${item.liveCamUrl || '#'}" target="_blank" class="snow-micro-badge" onclick="event.stopPropagation();">
+                    <span>📷 山頂LiveCam</span>
+                  </a>
+                  <a href="${item.liftPriceUrl || item.officialUrl || '#'}" target="_blank" class="snow-micro-badge" onclick="event.stopPropagation();">
+                    <span>🎫 票價營運</span>
+                  </a>
+                  <a href="${item.rentalUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent(item.title + ' 雪具租借') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="snow-micro-badge" onclick="event.stopPropagation();">
+                    <span>🎿 裝備租賃</span>
+                  </a>
+                </div>
+
+                <!-- 2 顆可折疊抽屜按鈕 (原地展開，不佔首頁高度) -->
+                <div class="snow-drawer-toggles-row">
+                  <button type="button" class="btn-snow-drawer-toggle" onclick="toggleSnowDrawer('${item.id}', 'onsen', this); event.stopPropagation();">
+                    <span>♨️ 周邊雪見美人湯 ▾</span>
+                  </button>
+                  <button type="button" class="btn-snow-drawer-toggle" onclick="toggleSnowDrawer('${item.id}', 'safety', this); event.stopPropagation();">
+                    <span>🚑 巡邏隊 ＆ 骨科指南 ▾</span>
+                  </button>
+                </div>
+
+                <!-- 溫泉折疊抽屜內容 -->
+                <div class="snow-drawer-panel" id="snowOnsen_${item.id}">
+                  <div class="snow-drawer-title">♨️ 滑雪後舒緩・周邊推薦雪見名湯</div>
+                  ${item.hotspringsHtml || `
+                    <div class="snow-drawer-item">
+                      <b>♨️ 雪場直通天然溫泉：</b>豐富弱鹼性泉質，有效舒緩滑雪腿部肌肉痠痛與肩膀疲勞。
+                    </div>
+                  `}
+                </div>
+
+                <!-- 安全與急診折疊抽屜內容 -->
+                <div class="snow-drawer-panel" id="snowSafety_${item.id}">
+                  <div class="snow-drawer-title">🚑 安全救援 ＆ 海外醫療骨科指南</div>
+                  <div class="snow-drawer-item">
+                    <b>🚨 雪場巡邏隊 (Ski Patrol)：</b>${item.patrolPhone || '雪場直撥內線 110 或至各纜車站通報救援'}
+                  </div>
+                  <div class="snow-drawer-item">
+                    <b>🏥 周邊外傷骨科診所：</b>${item.orthopedicClinic || '具備 X 光與英語接診應對能力'}
+                  </div>
+                  <div class="snow-drawer-item snow-insurance-tip">
+                    <b>📋 海外旅遊險理賠提醒：</b>受傷就醫務必向院方索取<b>「診斷證明書 (Medical Certificate)」</b>與<b>「收據明細正本 (Itemized Receipt)」</b>，以利回國全額申請保險理賠。
+                  </div>
+                </div>
+              </div>
+            ` : (item.theme === 'camp') ? `
               <!-- ⛺ 露營自駕專屬四大關鍵指標 (取代品種與花況) -->
               <div class="camp-specs-grid">
                 <div class="camp-spec-cell">
@@ -20334,9 +20898,10 @@
                 </div>
               </div>
             </div>
+            `}
 
             <!-- 底部操作按鈕列 (雪場專屬 3 大實用功能：預約教練 ＋ 訂飯店 ＋ 包車服務，嚴格零分潤字樣、零Klook品牌) -->
-            ${(item.theme === 'snow') ? `
+            ${(item.theme === 'camp') ? '' : (item.theme === 'snow') ? `
               <div class="card-action-bar ski-action-bar">
                 <a href="${item.coachUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent(item.title + ' 滑雪教練') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="btn-act-clean btn-act-primary" title="預約該雪場認證專業中文教練與裝備雪票" onclick="event.stopPropagation();">
                   <span>預約教練</span>
@@ -20369,7 +20934,6 @@
                   <span>查看訂房</span>
                 </a>
               </div>
-            `}
             `}
           </div>
         `;

@@ -9,6 +9,258 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Noto+Sans+TC:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@600;700;900&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
   <style>
+
+/* 🌟 全站統一極致日系 Header (絕對居中，3-column CSS Grid) */
+.app-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(250, 248, 245, 0.96) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid #E5E0D6 !important;
+  padding: 10px 32px !important;
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  gap: 16px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+}
+.header-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: start !important;
+}
+.header-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  justify-self: center !important;
+}
+.header-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: end !important;
+  gap: 12px !important;
+  flex-wrap: nowrap !important;
+}
+
+/* 🌟 日之丸朱紅雙環 Logo (54px) */
+.brand-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.fuji-logo-box {
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #FFFFFF !important;
+  border: 2.5px solid #ED1A21 !important;
+  box-shadow: 0 4px 14px rgba(237, 26, 33, 0.18) !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.brand-wrap:hover .fuji-logo-box {
+  transform: scale(1.06) !important;
+  box-shadow: 0 6px 18px rgba(237, 26, 33, 0.28) !important;
+}
+.brand-tabi-logo, .fuji-logo-box img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 50% !important;
+}
+.brand-text h1 {
+  font-size: 1.55rem !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.3px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  line-height: 1.15 !important;
+}
+.brand-title-zh {
+  color: #094F8D !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.2px !important;
+  font-size: 1.55rem !important;
+}
+.brand-sub-official-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 3px !important;
+}
+.brand-title-en {
+  color: #ED1A21 !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+}
+.brand-tag-official {
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  background: #ED1A21 !important;
+  color: #FFFFFF !important;
+  padding: 2px 7px !important;
+  border-radius: 4px !important;
+  letter-spacing: 0.05em !important;
+  box-shadow: 0 2px 6px rgba(237, 26, 33, 0.28) !important;
+}
+
+/* 🌟 頂部選單按鈕：純文字無外框、無ICON、純淨日系排版 */
+.header-nav-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 9px !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  white-space: nowrap !important;
+  transition: all 0.18s ease !important;
+  letter-spacing: 0.02em !important;
+}
+.header-nav-link:hover {
+  color: #ED1A21 !important;
+  background: rgba(237, 26, 33, 0.05) !important;
+  transform: translateY(-1px) !important;
+}
+.header-nav-link.active {
+  color: #ED1A21 !important;
+  font-weight: 800 !important;
+}
+.header-nav-link.btn-nav-okinawa:hover {
+  color: #0284C7 !important;
+  background: rgba(2, 132, 199, 0.06) !important;
+}
+.header-nav-link.btn-nav-okinawa.active {
+  color: #0284C7 !important;
+  font-weight: 800 !important;
+}
+
+/* 🌐 前台多國語言切換器 (保留外框與地球 ICON) */
+.lang-selector-dropdown-wrap {
+  position: relative !important;
+  display: inline-block !important;
+  margin-left: 2px !important;
+}
+.header-lang-btn,
+#langDropdownTrigger {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  padding: 0 13px !important;
+  height: 33px !important;
+  line-height: 33px !important;
+  border-radius: 999px !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #CBD5E1 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+}
+.header-lang-btn:hover,
+#langDropdownTrigger:hover {
+  border-color: #94A3B8 !important;
+  background: #F8FAFC !important;
+  color: #0F172A !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06) !important;
+}
+.lang-arrow {
+  font-size: 0.68rem !important;
+  color: #94A3B8 !important;
+  transition: transform 0.2s ease !important;
+  margin-left: 2px !important;
+}
+.lang-selector-dropdown-wrap.open .lang-arrow {
+  transform: rotate(180deg) !important;
+}
+.lang-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  right: 0 !important;
+  min-width: 195px !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 16px !important;
+  padding: 6px !important;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.14), 0 3px 8px rgba(0,0,0,0.04) !important;
+  display: none !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  z-index: 10005 !important;
+  animation: langFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+@keyframes langFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.lang-selector-dropdown-wrap.open .lang-dropdown-menu {
+  display: flex !important;
+}
+.lang-menu-opt {
+  width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 9px 12px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+  text-align: left !important;
+}
+.lang-menu-opt:hover {
+  background: #F1F5F9 !important;
+  color: #0F172A !important;
+}
+.lang-menu-opt.active {
+  background: #FEF2F2 !important;
+  color: #ED1A21 !important;
+}
+.lang-flag { font-size: 1.05rem !important; line-height: 1 !important; }
+.lang-name { flex: 1 !important; }
+.lang-check { font-size: 0.85rem !important; font-weight: 900 !important; color: #ED1A21 !important; }
+
+
+    @media (max-width: 900px) {
+      .app-header {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 12px 16px !important;
+      }
+      .header-left, .header-right {
+        justify-self: center !important;
+      }
+    }
+
     :root {
       --ocean-blue: #0284C7;
       --ocean-sky: #0EA5E9;
@@ -38,51 +290,7 @@
       overflow-x: hidden;
     }
     
-    /* 頂部統一 Header */
-    .app-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 24px;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    }
-    .header-left { flex: 1; display: flex; align-items: center; }
-    .header-center { flex: 0 0 auto; display: flex; justify-content: center; align-items: center; }
-    .header-right { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 7px; flex-wrap: nowrap; }
-    .brand-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer; }
-    .fuji-logo-box { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 1.5px solid var(--border-color); background: #FFFFFF; display: flex; align-items: center; justify-content: center; }
-    .brand-tabi-logo { width: 100%; height: 100%; object-fit: cover; }
-    .brand-text h1 { font-size: 1.25rem; font-weight: 900; color: #1E293B; letter-spacing: 0.04em; margin: 0; }
-    .brand-sub-official-wrap { display: flex; align-items: center; gap: 6px; margin-top: 2px; }
-    .brand-title-en { font-size: 0.65rem; font-weight: 800; color: #C53D43; letter-spacing: 0.08em; }
-    .brand-tag-official { font-size: 0.58rem; font-weight: 800; background: #C53D43; color: #FFFFFF; padding: 1px 5px; border-radius: 3px; }
     
-    .header-util-btn {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 4px !important;
-      padding: 0 11px !important;
-      height: 33px !important;
-      border-radius: 17px !important;
-      font-size: 0.77rem !important;
-      font-weight: 700 !important;
-      color: #334155 !important;
-      text-decoration: none !important;
-      background: #FFFFFF !important;
-      border: 1px solid #CBD5E1 !important;
-      transition: all 0.2s ease !important;
-      white-space: nowrap !important;
-      flex-shrink: 0 !important;
-    }
-    .header-util-btn:hover { background: #F8FAFC !important; border-color: #94A3B8 !important; color: #0F172A !important; transform: translateY(-1px) !important; }
-    .header-util-btn.btn-nav-okinawa.active { background: #E0F2FE !important; border-color: #7DD3FC !important; color: #0284C7 !important; font-weight: 800 !important; }
 
     
     /* 🫧 沖繩蔚藍海洋夢幻向上漂浮泡泡特效 (Dreamy Upward Ocean Bubbles) */
@@ -550,24 +758,22 @@
 
     /* 🏖️ 4. 下方景點卡片：強化「實戰生存筆記」視覺重量 (MapCode一鍵複製 + 亮點指標) */
     /* 🌟 5 欄一排大方歐美排版 (5 Columns Spot Grid) */
+    /* 🏖️ 4. 下方景點卡片：四個一排黃金舒適排版 (4 Columns Spot Grid) */
     .okinawa-main-grid {
       max-width: 1440px;
       margin: 24px auto 60px auto;
       padding: 0 16px;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
-    @media (max-width: 1380px) {
-      .okinawa-main-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    @media (max-width: 1180px) {
+      .okinawa-main-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
     }
-    @media (max-width: 1080px) {
-      .okinawa-main-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    @media (max-width: 820px) {
+      .okinawa-main-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     }
-    @media (max-width: 768px) {
-      .okinawa-main-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    }
-    @media (max-width: 480px) {
+    @media (max-width: 520px) {
       .okinawa-main-grid { grid-template-columns: 1fr; }
     }
     .spot-card {
@@ -657,70 +863,57 @@
     .spot-actions-trio {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-      margin-top: 4px;
+      gap: 6px;
+      margin-top: 10px;
     }
     .okinawa-action-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 2px;
-      padding: 6px 4px;
+      padding: 8px 4px;
       border-radius: 8px;
-      font-size: 0.68rem;
-      font-weight: 800;
+      font-size: 0.78rem;
+      font-weight: 700;
       text-decoration: none;
-      transition: all 0.15s ease;
+      transition: all 0.18s ease;
       white-space: nowrap;
       text-align: center;
+      border: none;
+      letter-spacing: 0.02em;
     }
     .btn-okinawa-map {
       background: #F1F5F9;
-      color: #334155;
-      border: 1px solid #CBD5E1;
+      color: #475569;
     }
-    .btn-okinawa-map:hover { background: #E2E8F0; }
+    .btn-okinawa-map:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
     .btn-okinawa-drive {
       background: #E0F2FE;
       color: #0284C7;
-      border: 1px solid #BAE6FD;
     }
-    .btn-okinawa-drive:hover { background: #0284C7; color: #FFF; }
+    .btn-okinawa-drive:hover {
+      background: #0284C7;
+      color: #FFFFFF;
+    }
     .btn-okinawa-hotel {
       background: #FEF3C7;
       color: #B45309;
-      border: 1px solid #FDE68A;
     }
-    .btn-okinawa-hotel:hover { background: #F59E0B; color: #FFF; }
-    .btn-okinawa-cta {
-      background: linear-gradient(135deg, #FF6B4A 0%, #EA580C 100%);
+    .btn-okinawa-hotel:hover {
+      background: #F59E0B;
       color: #FFFFFF;
-      border: 1px solid #FF6B4A;
-      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.2);
+    }
+    .btn-okinawa-cta {
+      background: #EA580C;
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.25);
     }
     .btn-okinawa-cta:hover {
-      background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+      background: #C2410C;
       transform: translateY(-1px);
-    }
-    .okinawa-action-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 3px;
-      padding: 7px 2px;
-      border-radius: 8px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .btn-okinawa-map,
-    .btn-okinawa-drive,
-    .btn-okinawa-hotel {
-      background: #FFFFFF;
-      color: #334155;
-      border: 1px solid #CBD5E1;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
     }
     .btn-okinawa-map:hover,
     .btn-okinawa-drive:hover,
@@ -808,266 +1001,7 @@
     }
   
     
-    /* 🌟 全站統一極致日系 Header (與 tabi_news_preview.html 100% 嚴格一致) */
-    .app-header {
-      position: sticky !important;
-      top: 0 !important;
-      z-index: 1000 !important;
-      background: rgba(250, 248, 245, 0.96) !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
-      border-bottom: 1px solid #E5E0D6 !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
-      padding: 10px 32px !important;
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-    }
-    .header-left {
-      display: none !important;
-    }
-    .header-center {
-      display: flex !important;
-      align-items: center !important;
-    }
-    .brand-wrap {
-      display: flex !important;
-      align-items: center !important;
-      gap: 12px !important;
-      text-decoration: none !important;
-      color: inherit !important;
-      cursor: pointer !important;
-    }
-    .fuji-logo-box {
-      width: 42px !important;
-      height: 42px !important;
-      border-radius: 50% !important;
-      overflow: hidden !important;
-      border: 2px solid #ED1A21 !important;
-      background: #FFFFFF !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      box-shadow: 0 4px 12px rgba(237, 26, 33, 0.22) !important;
-      flex-shrink: 0 !important;
-    }
-    .brand-tabi-logo {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-    }
-    .brand-text {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      justify-content: center !important;
-      gap: 2px !important;
-    }
-    .brand-title-zh {
-      font-size: 1.3rem !important;
-      font-weight: 900 !important;
-      color: #094F8D !important;
-      letter-spacing: 0.04em !important;
-      line-height: 1.1 !important;
-      margin: 0 !important;
-    }
-    .brand-sub-official-wrap {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 6px !important;
-      margin-top: 2px !important;
-    }
-    .brand-title-en {
-      font-size: 0.65rem !important;
-      font-weight: 800 !important;
-      color: #ED1A21 !important;
-      letter-spacing: 0.08em !important;
-    }
-    .brand-tag-official {
-      font-size: 0.58rem !important;
-      font-weight: 800 !important;
-      background: #ED1A21 !important;
-      color: #FFFFFF !important;
-      padding: 1px 6px !important;
-      border-radius: 3px !important;
-      letter-spacing: 0.04em !important;
-    }
-    .header-right {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-      gap: 7px !important;
-      flex-wrap: nowrap !important;
-    }
-    .header-util-btn {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 4px !important;
-      padding: 0 11px !important;
-      height: 33px !important;
-      line-height: 33px !important;
-      border-radius: 17px !important;
-      font-size: 0.77rem !important;
-      font-weight: 700 !important;
-      color: #334155 !important;
-      text-decoration: none !important;
-      background: #FFFFFF !important;
-      border: 1px solid #CBD5E1 !important;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-      white-space: nowrap !important;
-      flex-shrink: 0 !important;
-      letter-spacing: 0.02em !important;
-      box-sizing: border-box !important;
-    }
-    .header-util-btn:hover {
-      background: #F8FAFC !important;
-      border-color: #94A3B8 !important;
-      color: #0F172A !important;
-      transform: translateY(-1px) !important;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06) !important;
-    }
-
-  
-    /* 🌟 全站統一極致日系 Header 品牌標誌與多國語言選單 (100% 統一) */
-    .app-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 24px;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #E2E8F0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    }
-    .header-left { flex: 1; display: flex; align-items: center; }
-    .header-center { flex: 0 0 auto; display: flex; justify-content: center; align-items: center; }
-    .header-right { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 7px; flex-wrap: nowrap; }
     
-    .brand-wrap {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      color: inherit;
-    }
-    .fuji-logo-box {
-      width: 54px !important;
-      height: 54px !important;
-      border-radius: 50% !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #FFFFFF;
-      border: 2.5px solid #ED1A21 !important;
-      box-shadow: 0 4px 14px rgba(237, 26, 33, 0.18) !important;
-      overflow: hidden;
-      flex-shrink: 0;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .brand-wrap:hover .fuji-logo-box {
-      transform: scale(1.06);
-      box-shadow: 0 6px 18px rgba(237, 26, 33, 0.28) !important;
-    }
-    .brand-tabi-logo, .fuji-logo-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 50%;
-    }
-    .brand-text h1 {
-      font-size: 1.55rem !important;
-      font-weight: 900 !important;
-      letter-spacing: -0.3px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0;
-      line-height: 1.15;
-    }
-    .brand-title-zh {
-      color: #094F8D !important;
-      font-weight: 900 !important;
-      letter-spacing: -0.2px;
-      font-size: 1.55rem !important;
-    }
-    .brand-sub-official-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 3px;
-    }
-    .brand-title-en {
-      color: #ED1A21 !important;
-      font-size: 0.72rem !important;
-      font-weight: 800 !important;
-      letter-spacing: 0.12em !important;
-    }
-    .brand-tag-official {
-      font-size: 0.65rem !important;
-      font-weight: 800 !important;
-      background: #ED1A21 !important;
-      color: #FFFFFF !important;
-      padding: 2px 7px !important;
-      border-radius: 4px !important;
-      letter-spacing: 0.05em !important;
-      box-shadow: 0 2px 6px rgba(237, 26, 33, 0.28) !important;
-    }
-
-    .header-util-btn {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 4px !important;
-      padding: 0 11px !important;
-      height: 33px !important;
-      line-height: 33px !important;
-      border-radius: 17px !important;
-      font-size: 0.77rem !important;
-      font-weight: 700 !important;
-      color: #334155 !important;
-      text-decoration: none !important;
-      background: #FFFFFF !important;
-      border: 1px solid #CBD5E1 !important;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-      white-space: nowrap !important;
-      flex-shrink: 0 !important;
-      letter-spacing: 0.02em !important;
-      box-sizing: border-box !important;
-    }
-    .header-util-btn:hover {
-      background: #F8FAFC !important;
-      border-color: #94A3B8 !important;
-      color: #0F172A !important;
-      transform: translateY(-1px) !important;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06) !important;
-    }
-    .header-util-btn.btn-nav-okinawa {
-      border-color: #BAE6FD !important;
-      color: #0369A1 !important;
-    }
-    .header-util-btn.btn-nav-okinawa:hover {
-      background: #F0F9FF !important;
-      border-color: #7DD3FC !important;
-      color: #0284C7 !important;
-    }
-    .header-util-btn.active {
-      background: #F1F5F9 !important;
-      border-color: #94A3B8 !important;
-      color: #0F172A !important;
-      font-weight: 800 !important;
-    }
-    .header-util-btn.btn-nav-okinawa.active {
-      background: #E0F2FE !important;
-      border-color: #7DD3FC !important;
-      color: #0284C7 !important;
-    }
 
     /* 前台語言切換器 (Header Language Selector: 🌐 Language 7 國語言下拉選單) */
     .lang-selector-dropdown-wrap {
@@ -1126,12 +1060,61 @@
     .lang-name { flex: 1; }
     .lang-check { font-size: 0.85rem; font-weight: 900; }
 
-  </style>
+  
+    /* 🌟 沖繩二級分類橫軸樣式 */
+    .okinawa-tier2-wrapper {
+      padding: 0 16px 14px;
+      margin-top: -6px;
+    }
+    .okinawa-tier2-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 8px 12px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+    }
+    .okinawa-tier2-pills::-webkit-scrollbar { display: none; }
+    .cat-tier2-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid #CBD5E1;
+      background: #FFFFFF;
+      color: #334155;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    }
+    .cat-tier2-btn:hover {
+      background: #E0F2FE;
+      border-color: #38BDF8;
+      color: #0284C7;
+      transform: translateY(-1px);
+    }
+    .cat-tier2-btn.active {
+      background: #0284C7;
+      border-color: #0284C7;
+      color: #FFFFFF;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.28);
+    }
+
+</style>
 </head>
 <body>
 
   <!-- 全站統一 Header (單行不折行、高度齊平) -->
-  <header class="app-header">
+    <header class="app-header">
     <div class="header-left">
       <!-- 左側平衡留白，保障中央品牌在視覺上精準居中 -->
     </div>
@@ -1154,24 +1137,27 @@
       </a>
     </div>
 
-    <!-- 🌟 頂部右側統一功能按鈕群 (✈️ 查機票 ＋ 🚗 包車/租車 ＋ 🌺 沖繩自駕 ＋ 🏆 日本排行 ＋ 🌐 Language) -->
+    <!-- 🌟 頂部右側統一功能按鈕群 (純文字無外框無ICON ＋ 🌐 Language 保留外框與ICON) -->
     <div class="header-right">
-      <a href="japan_flight_deals.html" class="header-util-btn " title="Trip 機票即時比價與特惠航線">
-        <span>✈️ 查機票</span>
+            <a href="japan_flight_deals.html" class="header-nav-link " title="Trip 機票即時比價與特惠航線">
+        <span>查機票</span>
       </a>
-      <a href="japan_charter_rental.html" class="header-util-btn " title="日本客製包車 ＆ 自駕租車指南">
-        <span>🚗 包車/租車</span>
+      <a href="japan_charter_rental.html" class="header-nav-link " title="日本客製包車 ＆ 自駕租車指南">
+        <span>包車/租車</span>
       </a>
-      <a href="japan_okinawa_drive.html" class="header-util-btn btn-nav-okinawa active" title="沖繩海島不繞路自駕攻略">
-        <span>🌺 沖繩自駕</span>
+      <a href="japan_okinawa_drive.html" class="header-nav-link btn-nav-okinawa active" title="沖繩海島不繞路自駕攻略">
+        <span>沖繩自駕</span>
       </a>
-      <a href="japan_inbound_rankings.html" class="header-util-btn " title="日本排行榜">
-        <span>🏆 日本排行</span>
+      <a href="japan_inbound_rankings.html" class="header-nav-link " title="日本排行榜">
+        <span>日本排行</span>
+      </a>
+      <a href="japan_special_edition.html" class="header-nav-link " title="深度文章・高質感日本文化與戶外誌">
+        <span>深度文章</span>
       </a>
 
       <!-- 🌐 前台多國語言切換器 (Language Selector) -->
       <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
-        <button class="header-util-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)" title="切換語言">
+        <button class="header-lang-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)" title="切換語言">
           <span class="util-btn-icon">🌐</span>
           <span id="currentLangLabel">Language</span>
           <span class="lang-arrow" id="langArrow">▾</span>
@@ -1239,34 +1225,22 @@
   <main class="okinawa-main-sheet">
     <!-- 菜單橫軸 (一體成型大方設計，無外框線條包圍) -->
     <div class="sheet-menu-bar">
-      <!-- 主分類橫軸滑動 (圖文印章風) -->
+      <!-- 🌺 沖繩一級主分類橫軸 (簡潔 5 大主題 ＋ 二級細分展開) -->
       <div class="dock-category-scroll" id="dockCategoryScroll">
-        <button class="cat-stamp-btn active" onclick="filterByCategory('all', this)">
+        <button class="cat-stamp-btn active" onclick="switchTier1('all', this)">
           <span>🌺 全島精選</span>
         </button>
-        <button class="cat-stamp-btn" onclick="filterByCategory('kids', this)">
-          <span>🦖 溜滑梯公園</span>
+        <button class="cat-stamp-btn" onclick="switchTier1('food', this)">
+          <span>🍱 沖繩美饌</span>
         </button>
-        <button class="cat-stamp-btn" onclick="filterByCategory('dive', this)">
-          <span>🤿 慶良間浮潛</span>
+        <button class="cat-stamp-btn" onclick="switchTier1('outdoor', this)">
+          <span>🌊 海島活動・親子</span>
         </button>
-        <button class="cat-stamp-btn" onclick="filterByCategory('beef', this)">
-          <span>🥩 頂級和牛燒肉</span>
+        <button class="cat-stamp-btn" onclick="switchTier1('leisure', this)">
+          <span>☕ 崖景咖啡・逛街</span>
         </button>
-        <button class="cat-stamp-btn" onclick="filterByCategory('cafe', this)">
-          <span>☕ 崖景海邊咖啡</span>
-        </button>
-        <button class="cat-stamp-btn" onclick="filterByCategory('shop', this)">
-          <span>🛍️ 逛街商場</span>
-        </button>
-        <button class="cat-stamp-btn" onclick="filterByCategory('resort', this)">
-          <span>🏨 海景度假村</span>
-        </button>
-        <button class="cat-stamp-btn" onclick="filterByCategory('summer', this)">
-          <span>☀️ 夏日玩法</span>
-        </button>
-        <button class="cat-stamp-btn" onclick="filterByCategory('winter', this)">
-          <span>❄️ 冬季溫泉旬味</span>
+        <button class="cat-stamp-btn" onclick="switchTier1('stay', this)">
+          <span>🏨 度假村・溫泉</span>
         </button>
       </div>
 
@@ -1332,7 +1306,7 @@
   </footer>
 
   <script>
-    const OKINAWA_RENTAL_AFF_URL = "https://afflink.one/s/FruK8";
+    // const OKINAWA_RENTAL_AFF_URL defined below
 
     // 22 大核心精選名所 (文字精簡提煉，突出實戰數據)
         // 🌺 沖繩自駕全島 50+ 實戰生存名所資料庫 (9大分類・分潤齊全)
@@ -1345,7 +1319,7 @@
       {
         id: "urasoe_park",
         region: "south",
-        cat: "kids",
+        tier1: "outdoor", subCat: "kids", cat: "kids",
         name: "浦添大公園 C區",
         sub: "浦添市 ｜ 90米滾輪超長溜滑梯",
         img: "https://images.unsplash.com/photo-1596464716127-f2a829822301?auto=format&fit=crop&w=600&q=80",
@@ -1362,7 +1336,7 @@
       {
         id: "kaigungo_park",
         region: "south",
-        cat: "kids",
+        tier1: "outdoor", subCat: "kids", cat: "kids",
         name: "舊海軍司令部壕公園",
         sub: "豐見城市 ｜ 雙軌立體滾輪滑梯",
         img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=600&q=80",
@@ -1379,7 +1353,7 @@
       {
         id: "nakagusuku_park",
         region: "central",
-        cat: "kids",
+        tier1: "outdoor", subCat: "kids", cat: "kids",
         name: "中城公園 (巨型巨無霸蹦床)",
         sub: "中頭郡 ｜ 全島最大巨型彈跳白網",
         img: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80",
@@ -1396,7 +1370,7 @@
       {
         id: "nishizaki_park",
         region: "south",
-        cat: "kids",
+        tier1: "outdoor", subCat: "kids", cat: "kids",
         name: "西崎親水公園",
         sub: "糸滿市 ｜ 溪流親水遊具水上滑梯",
         img: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80",
@@ -1413,7 +1387,7 @@
       {
         id: "peace_memorial_park",
         region: "south",
-        cat: "kids",
+        tier1: "outdoor", subCat: "kids", cat: "kids",
         name: "平和祈念公園 命之卵遊具",
         sub: "糸滿市 ｜ 巨型城堡生命之卵",
         img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&q=80",
@@ -1432,7 +1406,7 @@
       {
         id: "kerama_sea_turtle",
         region: "south",
-        cat: "dive",
+        tier1: "outdoor", subCat: "dive", cat: "dive",
         name: "慶良間群島 海龜共游浮潛",
         sub: "座間味/阿嘉 ｜ 世界級透明度慶良間藍",
         img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80",
@@ -1449,7 +1423,7 @@
       {
         id: "blue_cave",
         region: "central",
-        cat: "dive",
+        tier1: "outdoor", subCat: "dive", cat: "dive",
         name: "真榮田岬 青之洞窟 (藍洞)",
         sub: "恩納村 ｜ 夢幻幽藍水光熱帶魚群",
         img: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=600&q=80",
@@ -1466,7 +1440,7 @@
       {
         id: "kouri_clear_kayak",
         region: "north",
-        cat: "dive",
+        tier1: "outdoor", subCat: "dive", cat: "dive",
         name: "古宇利島 透明獨木舟 ＆ SUP",
         sub: "名護/古宇利 ｜ 蒂芬妮藍果凍海划行",
         img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
@@ -1483,7 +1457,7 @@
       {
         id: "sesoko_parasailing",
         region: "north",
-        cat: "dive",
+        tier1: "outdoor", subCat: "dive", cat: "dive",
         name: "瀨底島 水上拖曳傘",
         sub: "本部町 ｜ 50米高空鳥瞰珊瑚環礁",
         img: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=600&q=80",
@@ -1500,7 +1474,7 @@
       {
         id: "minna_island_trip",
         region: "north",
-        cat: "dive",
+        tier1: "outdoor", subCat: "dive", cat: "dive",
         name: "水納島 (牛角麵包島) 快艇浮潛",
         sub: "本部町 ｜ 白沙月牙灣海水透明度第一",
         img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
@@ -1519,7 +1493,7 @@
       {
         id: "ryukyu_no_ushi",
         region: "central",
-        cat: "beef",
+        tier1: "food", subCat: "beef", cat: "beef",
         name: "琉球之牛 恩納本館",
         sub: "恩納村 ｜ 頂級縣產黑毛和牛",
         img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
@@ -1536,7 +1510,7 @@
       {
         id: "motobu_farm",
         region: "north",
-        cat: "beef",
+        tier1: "food", subCat: "beef", cat: "beef",
         name: "燒肉 Motobu 牧場 本部店",
         sub: "本部町 ｜ 牧場直營獨家牛種",
         img: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80",
@@ -1553,7 +1527,7 @@
       {
         id: "jojoen_parco",
         region: "south",
-        cat: "beef",
+        tier1: "food", subCat: "beef", cat: "beef",
         name: "敘敘苑 沖繩浦添Parco City",
         sub: "浦添市 ｜ 全景無敵海景燒肉座席",
         img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=600&q=80",
@@ -1570,7 +1544,7 @@
       {
         id: "wagyu_shimbashi",
         region: "naha",
-        cat: "beef",
+        tier1: "food", subCat: "beef", cat: "beef",
         name: "炭火燒肉 琉球神戶牛",
         sub: "那霸市 ｜ A5特選石垣牛/宮崎牛",
         img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
@@ -1589,7 +1563,7 @@
       {
         id: "banta_cafe",
         region: "central",
-        cat: "cafe",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
         name: "星野 BANTA CAFE",
         sub: "讀谷村 ｜ 全日本規模最大海崖咖啡",
         img: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80",
@@ -1606,7 +1580,7 @@
       {
         id: "hamabe_no_chaya",
         region: "south",
-        cat: "cafe",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
         name: "濱邊茶屋 (浜辺の茶屋)",
         sub: "南城市 ｜ 潮汐推移木窗窗邊海景",
         img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80",
@@ -1623,7 +1597,7 @@
       {
         id: "shiawase_senagajima",
         region: "south",
-        cat: "cafe",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
         name: "幸福鬆餅 瀨長島店",
         sub: "豐見城市 ｜ 階梯海景看飛機起降",
         img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
@@ -1640,7 +1614,7 @@
       {
         id: "llota_kouri",
         region: "north",
-        cat: "cafe",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
         name: "古宇利島 L LOTA",
         sub: "名護/古宇利 ｜ 遠眺古宇利跨海大橋",
         img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80",
@@ -1659,7 +1633,7 @@
       {
         id: "aeon_rycom",
         region: "central",
-        cat: "shop",
+        tier1: "leisure", subCat: "shop", cat: "shop",
         name: "永旺夢樂城 沖繩來客夢",
         sub: "北中城村 ｜ 全島最大巨型水族購物城",
         img: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80",
@@ -1676,7 +1650,7 @@
       {
         id: "parco_city",
         region: "south",
-        cat: "shop",
+        tier1: "leisure", subCat: "shop", cat: "shop",
         name: "浦添 PARCO CITY",
         sub: "浦添市 ｜ 臨海 250 家海景名店",
         img: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=600&q=80",
@@ -1693,7 +1667,7 @@
       {
         id: "ashibinaa_outlet",
         region: "south",
-        cat: "shop",
+        tier1: "leisure", subCat: "shop", cat: "shop",
         name: "ASHIBINAA 奧特萊斯購物城",
         sub: "豐見城市 ｜ 距機場 15 分鐘精品折扣",
         img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80",
@@ -1710,7 +1684,7 @@
       {
         id: "naha_main_place",
         region: "naha",
-        cat: "shop",
+        tier1: "leisure", subCat: "shop", cat: "shop",
         name: "那霸新都心 San-A Main Place",
         sub: "那霸市 ｜ 電器超市服飾一站買齊",
         img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
@@ -1729,7 +1703,7 @@
       {
         id: "hoshinoya_okinawa",
         region: "central",
-        cat: "resort",
+        tier1: "stay", subCat: "resort", cat: "resort",
         name: "虹夕諾雅 沖繩 (HOSHINOYA)",
         sub: "讀谷村 ｜ 琉球城牆臨海頂級隱世村",
         img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
@@ -1746,7 +1720,7 @@
       {
         id: "halekulani_okinawa",
         region: "central",
-        cat: "resort",
+        tier1: "stay", subCat: "resort", cat: "resort",
         name: "哈雷普那尼沖繩 (Halekulani)",
         sub: "恩納村 ｜ 頂級天花板夏威夷五星",
         img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
@@ -1763,7 +1737,7 @@
       {
         id: "centurion_churaumi",
         region: "north",
-        cat: "resort",
+        tier1: "stay", subCat: "resort", cat: "resort",
         name: "沖繩美麗海世紀飯店",
         sub: "本部町 ｜ 水族館步行 5 分鐘家庭首選",
         img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
@@ -1780,7 +1754,7 @@
       {
         id: "ryukyu_onsen_senagajima",
         region: "south",
-        cat: "resort",
+        tier1: "stay", subCat: "resort", cat: "resort",
         name: "琉球溫泉 瀨長島渡假酒店",
         sub: "豐見城市 ｜ 天然黃金溫泉海景立湯",
         img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
@@ -1799,7 +1773,7 @@
       {
         id: "manzamo_parasail",
         region: "central",
-        cat: "summer",
+        tier1: "outdoor", subCat: "summer", cat: "summer",
         name: "萬座毛 象鼻岩海上拖曳傘",
         sub: "恩納村 ｜ 俯瞰萬人可坐之天然綠草崖",
         img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
@@ -1816,7 +1790,7 @@
       {
         id: "bise_fukugi_tree",
         region: "north",
-        cat: "summer",
+        tier1: "outdoor", subCat: "summer", cat: "summer",
         name: "備瀨一線天 ＆ 福木林道自行車",
         sub: "本部町 ｜ 綠蔭遮天夏日清涼避暑",
         img: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80",
@@ -1833,7 +1807,7 @@
       {
         id: "zanpa_sup_sunset",
         region: "central",
-        cat: "summer",
+        tier1: "outdoor", subCat: "summer", cat: "summer",
         name: "殘波岬 夕陽落日 SUP 立槳",
         sub: "讀谷村 ｜ 白色燈塔下的金色餘暉",
         img: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=600&q=80",
@@ -1852,7 +1826,7 @@
       {
         id: "naha_whale_watching",
         region: "naha",
-        cat: "winter",
+        tier1: "stay", subCat: "winter", cat: "winter",
         name: "那霸出發 座頭鯨冬季賞鯨專船",
         sub: "那霸/慶良間 ｜ 12月-4月限定座頭鯨育幼",
         img: "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=600&q=80",
@@ -1869,7 +1843,7 @@
       {
         id: "senagajima_ryujin_onsen",
         region: "south",
-        cat: "winter",
+        tier1: "stay", subCat: "winter", cat: "winter",
         name: "瀨長島 龍神之湯天然溫泉",
         sub: "豐見城市 ｜ 沖繩第一天然黃金泉",
         img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
@@ -1886,7 +1860,7 @@
       {
         id: "kokusai_yatai_mura",
         region: "naha",
-        cat: "winter",
+        tier1: "stay", subCat: "winter", cat: "winter",
         name: "國際通 屋台村 (暖心居酒屋)",
         sub: "那霸市 ｜ 20家在地特色小吃通",
         img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
@@ -1903,7 +1877,7 @@
       {
         id: "danbo_ramen_itoman",
         region: "south",
-        cat: "winter",
+        tier1: "stay", subCat: "winter", cat: "winter",
         name: "暖暮拉麵 糸滿店 (免排隊秘境分店)",
         sub: "糸滿市 ｜ 九州第一位濃厚豚骨拉麵",
         img: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
@@ -2168,7 +2142,87 @@
       renderTimelineHandbook(planKey);
     }
 
-    // 渲染下方景點名單卡片 (強化生存數據與一鍵複製)
+    
+    // 狀態變數：一級主題、二級細分與區域篩選
+    let currentTier1 = 'all';
+    let currentTier2 = 'all';
+    let currentRegion = 'all';
+
+    const OKINAWA_TIER2_CONFIG = {
+      'all': [
+        { id: 'all', label: '🔥 全島全部精選' },
+        { id: 'beef', label: '🥩 和牛燒肉' },
+        { id: 'michelin', label: '⭐ 米其林/百名店' },
+        { id: 'ramen', label: '🍜 沖繩麵與拉麵' },
+        { id: 'izakaya', label: '🏮 在地居酒屋' },
+        { id: 'dive', label: '🤿 慶良間浮潛' },
+        { id: 'kids', label: '🦖 親子溜滑梯' },
+        { id: 'cafe', label: '☕ 崖景海邊咖啡' },
+        { id: 'shop', label: '🛍️ 逛街商場' },
+        { id: 'resort', label: '🏨 海景度假村' }
+      ],
+      'food': [
+        { id: 'all', label: '🍱 全部美饌' },
+        { id: 'beef', label: '🥩 頂級和牛燒肉' },
+        { id: 'michelin', label: '⭐ 米其林/百名店' },
+        { id: 'ramen', label: '🍜 沖繩麵與名店拉麵' },
+        { id: 'izakaya', label: '🏮 在地民謠居酒屋' }
+      ],
+      'outdoor': [
+        { id: 'all', label: '🌊 全部戶外活動' },
+        { id: 'dive', label: '🤿 慶良間浮潛・深潛' },
+        { id: 'summer', label: '☀️ 夏日沙灘水上' },
+        { id: 'kids', label: '🦖 親子溜滑梯公園' }
+      ],
+      'leisure': [
+        { id: 'all', label: '☕ 全部休閒體驗' },
+        { id: 'cafe', label: '☕ 崖景海邊咖啡' },
+        { id: 'shop', label: '🛍️ 逛街購物商場' }
+      ],
+      'stay': [
+        { id: 'all', label: '🏨 全部度假住宿' },
+        { id: 'resort', label: '🏨 頂級海景度假村' },
+        { id: 'winter', label: '♨️ 冬季溫泉旬味' }
+      ]
+    };
+
+    function switchTier1(tier1Key, btn) {
+      currentTier1 = tier1Key;
+      currentTier2 = 'all';
+      document.querySelectorAll('#dockCategoryScroll .cat-stamp-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      renderTier2Pills();
+      renderOkinawaCards();
+    }
+
+    function renderTier2Pills() {
+      const container = document.getElementById('okinawaTier2Pills');
+      if (!container) return;
+
+      const pills = OKINAWA_TIER2_CONFIG[currentTier1] || OKINAWA_TIER2_CONFIG['all'];
+      container.innerHTML = pills.map(p => `
+        <button class="cat-tier2-btn ${currentTier2 === p.id ? 'active' : ''}" onclick="switchTier2('${p.id}', this)">
+          <span>${p.label}</span>
+        </button>
+      `).join('');
+    }
+
+    function switchTier2(subId, btn) {
+      currentTier2 = subId;
+      document.querySelectorAll('#okinawaTier2Pills .cat-tier2-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderOkinawaCards();
+    }
+
+    function filterByCategory(catKey, btn) {
+      switchTier1(catKey, btn);
+    }
+
+    function filterBySubCategory(subKey, btn) {
+      switchTier2(subKey, btn);
+    }
+
     function renderOkinawaCards() {
       const container = document.getElementById('okinawaCardsGrid');
       if (!container) return;
@@ -2177,8 +2231,11 @@
       if (currentRegion !== 'all') {
         list = list.filter(item => item.region === currentRegion);
       }
-      if (currentCategory !== 'all') {
-        list = list.filter(item => item.cat === currentCategory);
+      if (currentTier1 !== 'all') {
+        list = list.filter(item => item.tier1 === currentTier1 || item.cat === currentTier1);
+      }
+      if (currentTier2 !== 'all') {
+        list = list.filter(item => item.subCat === currentTier2 || item.cat === currentTier2);
       }
 
       if (list.length === 0) {
@@ -2201,6 +2258,11 @@
         };
         const catLabel = catMap[spot.cat] || '🌺 沖繩必訪';
         const hotelLink = spot.hotelUrl || 'https://www.booking.com/searchresults.zh-tw.html?ss=Okinawa';
+        let cleanCtaText = (spot.ctaText || '預約行程').replace(/[^\u4e00-\u9fa5]/g, '');
+        if (cleanCtaText.includes('一日包車') || cleanCtaText.includes('專車包車')) cleanCtaText = '親子包車';
+        else if (cleanCtaText.includes('租車自駕')) cleanCtaText = '預約自駕';
+        else if (cleanCtaText.includes('行程預訂')) cleanCtaText = '預約行程';
+        else if (cleanCtaText.length > 6) cleanCtaText = cleanCtaText.substring(0, 5);
 
         html += `
           <div class="spot-card">
@@ -2219,7 +2281,7 @@
               <!-- 實戰生存筆記 (MapCode、遮陽推車、避坑) -->
               <div class="survival-note-box">
                 <div class="survival-item-row" style="cursor:pointer;" onclick="copyMapCode('${spot.mapcode}', this)" title="點擊一鍵複製 MapCode">
-                  <span class="survival-label">🧭 MapCode：</span>
+                  <span class="survival-label">MAP：</span>
                   <span class="survival-val" style="color:#0284C7; font-weight:800; text-decoration:underline;">${spot.mapcode} 📋</span>
                 </div>
                 <div class="survival-item-row">
@@ -2236,20 +2298,12 @@
                 </div>
               </div>
 
-              <!-- 4 大功能按鈕 (一排4顆日系精工小膠囊) -->
+              <!-- 4 大功能按鈕 (消除推擠、零ICON、簡約高質感) -->
               <div class="spot-actions-trio">
-                <a href="${spot.mapUrl}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-map" title="Google Maps 導航">
-                  <span>🗺️ 地圖</span>
-                </a>
-                <a href="${OKINAWA_RENTAL_AFF_URL}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-drive" title="ToCoo! 沖繩租車優惠">
-                  <span>🚗 租車</span>
-                </a>
-                <a href="${hotelLink}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-hotel" title="Booking.com 查房價訂房">
-                  <span>🏨 住宿</span>
-                </a>
-                <a href="${spot.ctaUrl}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-cta" title="${spot.ctaText}">
-                  <span>🎟️ ${spot.ctaText}</span>
-                </a>
+                <a href="${spot.mapUrl}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-map" title="Google Maps 導航">地圖</a>
+                <a href="${OKINAWA_RENTAL_AFF_URL}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-drive" title="ToCoo! 沖繩租車預約">預約自駕</a>
+                <a href="${hotelLink}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-hotel" title="查看周邊住宿">查看住宿</a>
+                <a href="${spot.ctaUrl}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-cta" title="${cleanCtaText}">${cleanCtaText}</a>
               </div>
             </div>
           </div>

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./images/japan_tabi_logo.png">
+  <title>JAPAN TABI SPECIAL EDITION ｜ 深度專刊・高質感日本文化與戶外探險誌</title>
+  
+  <meta name="description" content="日旅報報官方深度專刊：匯聚日本古道朝聖、極上乾粉雪滑雪探險、千年隱世溫泉、金箔工藝與枯山水禪境。專為全球深度旅行者打造的高質感編輯雜誌。" />
+  <meta name="keywords" content="熊野古道, 日本登山徒步, 北海道粉雪, 金澤工藝, 屋久島徒步, 中山道, 日本深度旅遊, Japan Pilgrimage, Kumano Kodo, Japow, Nakasendo" />
+  
+  <!-- SEO Open Graph -->
+  <meta property="og:title" content="Walking with the Ancients: Kumano Kodo ｜ JAPAN TABI SPECIAL EDITION" />
+  <meta property="og:description" content="行走於千年苔蘚古道之間，探索被聯合國教科文組織認定的神聖參詣道。日本官方高質感文化與戶外深度特刊。" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1600&q=85" />
+  <meta property="og:type" content="article" />
+
+  <!-- Typography: High-End Magazine Serif & Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+TC:wght@400;600;900&family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-cream: #FAF8F5;          /* 和紙暖白 */
+      --bg-card: #FFFFFF;
+      --text-ink: #1C1917;          /* 日本墨黑 */
+      --text-muted: #78716C;        /* 暖灰石色 */
+      --border-sand: #E7E5E4;       /* 建築極細線 */
+      --accent-vermilion: #C2410C;  /* 鳥居朱砂紅 */
+      --accent-gold: #B45309;       /* 古銅金 */
+      --accent-pine: #292524;       /* 深杉木色 */
+      --accent-blue: #0369A1;       /* 紀伊青川 */
+      --shadow-subtle: 0 10px 30px -10px rgba(28, 25, 23, 0.05);
+      --font-display: 'Playfair Display', 'Noto Serif TC', serif;
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
+      --font-sans: 'Plus Jakarta Sans', 'Zen Maru Gothic', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-ink);
+      font-family: var(--font-sans);
+      line-height: 1.8;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      overflow-x: hidden;
+    }
+
+    /* Top Floating Magazine Header (全站統一，無外框、無ICON，保留Language) */
+    .top-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-sand);
+      padding: 12px 32px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand-mark {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: inherit;
+    }
+    .stamp-symbol {
+      width: 38px; height: 38px; background: #ED1A21;
+      color: #FFF; border-radius: 8px; font-weight: 900;
+      font-size: 14px; display: flex; align-items: center; justify-content: center;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(237, 26, 33, 0.25);
+    }
+    .brand-title-wrap {
+      display: flex; flex-direction: column;
+    }
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem; font-weight: 800; letter-spacing: 0.5px; color: #094F8D;
+    }
+    .brand-sub {
+      font-size: 0.68rem; font-weight: 700; color: #ED1A21; letter-spacing: 0.1em;
+    }
+
+    .nav-links-right {
+      display: flex; align-items: center; gap: 18px;
+    }
+    .header-nav-link {
+      color: #475569;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+    .header-nav-link:hover { color: #0F172A; }
+    .header-nav-link.active {
+      color: var(--accent-vermilion);
+      border-bottom: 2px solid var(--accent-vermilion);
+      padding-bottom: 2px;
+    }
+
+    .lang-pill-wrap {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border-radius: 9999px;
+      border: 1px solid #CBD5E1; background: #FFFFFF;
+      font-size: 0.78rem; font-weight: 700; color: #334155;
+      cursor: pointer; user-select: none;
+    }
+    .lang-pill-wrap:hover { background: #F8FAFC; }
+
+    /* Editorial Hero Container */
+    .hero-container {
+      max-width: 1240px; margin: 40px auto 0; padding: 0 24px;
+    }
+    .hero-tagline-wrap {
+      text-align: center; max-width: 880px; margin: 0 auto 36px;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.25em;
+      color: var(--accent-vermilion); text-transform: uppercase; margin-bottom: 12px;
+    }
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 400; line-height: 1.2;
+      color: var(--text-ink); margin-bottom: 16px;
+    }
+    .hero-headline i { font-style: italic; font-family: var(--font-serif); }
+    .hero-sub {
+      font-family: var(--font-serif);
+      font-size: 1.35rem; color: var(--text-muted); font-style: italic;
+      line-height: 1.5; max-width: 760px; margin: 0 auto;
+    }
+
+    .hero-image-frame {
+      width: 100%; height: 560px;
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.12);
+      position: relative; margin-bottom: 60px;
+    }
+    .hero-image-frame img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-caption {
+      position: absolute; bottom: 20px; left: 24px;
+      background: rgba(28, 25, 23, 0.85); backdrop-filter: blur(8px);
+      color: #FFF; font-size: 0.78rem; padding: 6px 16px; border-radius: 8px;
+    }
+
+    /* Main Prose Article Flow */
+    .article-wrap {
+      max-width: 780px; margin: 0 auto; padding: 0 20px 80px;
+    }
+    .meta-byline {
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid var(--border-sand); border-bottom: 1px solid var(--border-sand);
+      padding: 14px 0; margin-bottom: 40px; font-size: 0.82rem; color: var(--text-muted);
+    }
+    .dropcap::first-letter {
+      font-family: var(--font-display);
+      font-size: 4.8rem; float: left; line-height: 0.8;
+      padding-right: 14px; padding-top: 6px; color: var(--accent-vermilion);
+      font-weight: 700;
+    }
+    
+    .article-body p {
+      margin-bottom: 26px; font-size: 1.08rem; color: #292524; text-align: justify;
+    }
+    .article-body h2 {
+      font-family: var(--font-display);
+      font-size: 1.85rem; font-weight: 600; margin: 48px 0 16px;
+      color: var(--text-ink); border-left: 3px solid var(--accent-vermilion);
+      padding-left: 14px;
+    }
+    .quote-callout {
+      margin: 36px 0; padding: 24px 32px; background: #FFFFFF;
+      border-radius: 12px; border: 1px solid var(--border-sand);
+      font-family: var(--font-serif); font-size: 1.45rem; font-style: italic;
+      color: var(--accent-pine); line-height: 1.6; text-align: center;
+      box-shadow: var(--shadow-subtle);
+    }
+    .route-spec-box {
+      background: #FFFFFF; border: 1px solid var(--border-sand);
+      border-radius: 16px; padding: 26px; margin: 40px 0;
+    }
+    .route-spec-title {
+      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent-gold); margin-bottom: 16px;
+    }
+    .route-spec-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .spec-item {
+      display: flex; flex-direction: column;
+    }
+    .spec-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 700; }
+    .spec-val { font-size: 1.05rem; font-weight: 800; color: var(--text-ink); margin-top: 2px; }
+
+    /* Topic Filter Pill Buttons */
+    .filter-section {
+      max-width: 1240px; margin: 60px auto 30px; padding: 0 24px;
+    }
+    .filter-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 24px; border-bottom: 1px solid var(--border-sand); padding-bottom: 14px;
+    }
+    .filter-title {
+      font-family: var(--font-display); font-size: 1.8rem; font-weight: 700;
+    }
+    .filter-pills-row {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;
+    }
+    .pill-btn {
+      padding: 8px 18px; border-radius: 9999px; border: 1px solid var(--border-sand);
+      background: #FFFFFF; font-size: 0.84rem; font-weight: 700; color: #475569;
+      cursor: pointer; transition: all 0.2s ease;
+    }
+    .pill-btn:hover { background: #F1F5F9; color: #0F172A; }
+    .pill-btn.active {
+      background: var(--text-ink); color: #FFFFFF; border-color: var(--text-ink);
+    }
+
+    /* Magazine Stories Grid (12 curated feature stories) */
+    .stories-grid {
+      max-width: 1240px; margin: 0 auto 100px; padding: 0 24px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    }
+    .story-card {
+      background: #FFFFFF; border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border-sand); box-shadow: var(--shadow-subtle);
+      display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+    .story-card:hover {
+      transform: translateY(-4px); box-shadow: 0 18px 40px -10px rgba(28, 25, 23, 0.12);
+    }
+    .story-img-frame {
+      width: 100%; height: 240px; overflow: hidden; position: relative;
+    }
+    .story-img-frame img {
+      width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;
+    }
+    .story-card:hover .story-img-frame img {
+      transform: scale(1.05);
+    }
+    .story-cat-badge {
+      position: absolute; top: 14px; left: 14px;
+      background: rgba(28, 25, 23, 0.82); backdrop-filter: blur(6px);
+      color: #FFF; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
+      padding: 4px 10px; border-radius: 6px; text-transform: uppercase;
+    }
+    .story-card-body {
+      padding: 24px 22px; display: flex; flex-direction: column; flex: 1; justify-content: space-between;
+    }
+    .story-card-region {
+      font-size: 0.72rem; font-weight: 800; color: var(--accent-vermilion);
+      letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 6px;
+    }
+    .story-card-title {
+      font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;
+      line-height: 1.35; color: var(--text-ink); margin-bottom: 10px;
+    }
+    .story-card-excerpt {
+      font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 18px;
+    }
+    .story-card-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid #F5F5F4; padding-top: 12px; font-size: 0.75rem; color: #A8A29E;
+    }
+    .story-read-link {
+      color: var(--text-ink); font-weight: 800; display: inline-flex; align-items: center; gap: 4px;
+    }
+
+    /* Modal / Dedicated Reader Drawer for Any Story */
+    .reader-modal {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(28, 25, 23, 0.6); backdrop-filter: blur(6px);
+      overflow-y: auto; padding: 40px 16px;
+    }
+    .reader-modal.open { display: flex; justify-content: center; }
+    .reader-container {
+      background: var(--bg-cream); border-radius: 20px; max-width: 860px; width: 100%;
+      margin: auto; padding: 40px; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    }
+    .reader-close-btn {
+      position: sticky; top: 10px; float: right;
+      background: #FFFFFF; border: 1px solid var(--border-sand);
+      padding: 8px 18px; border-radius: 9999px; font-size: 0.82rem; font-weight: 800;
+      color: #334155; cursor: pointer; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .reader-close-btn:hover { background: #0F172A; color: #FFF; }
+
+    @media (max-width: 960px) {
+      .stories-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-image-frame { height: 420px; }
+      .route-spec-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .stories-grid { grid-template-columns: 1fr; }
+      .top-nav { padding: 12px 16px; flex-wrap: wrap; gap: 10px; }
+      .nav-links-right { gap: 10px; flex-wrap: wrap; }
+      .reader-container { padding: 24px 18px; }
+    }
+  </style>
+
+  <!-- Google Structured SEO Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Walking with the Ancients: Kumano Kodo ｜ JAPAN TABI SPECIAL EDITION",
+    "image": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1600&q=85",
+    "author": {
+      "@type": "Organization",
+      "name": "日旅報報 JAPAN TABI 編輯部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "JAPAN TABI",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=200&q=80"
+      }
+    },
+    "datePublished": "2026-11-03",
+    "description": "走進聯合國教科文組織世界文化遺產熊野古道，穿行於和歌山紀伊山脈千年冷杉與青苔石階之間的靈性朝聖之路。"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation (統一標準：字體乾淨、無ICON、無橢圓框，保留Language) -->
+  <nav class="top-nav">
+    <a href="tabi_news_preview.html" class="brand-mark">
+      <div class="stamp-symbol">TABI</div>
+      <div class="brand-title-wrap">
+        <span class="brand-title">JAPAN TABI</span>
+        <span class="brand-sub">SPECIAL EDITION 深度專刊</span>
+      </div>
+    </a>
+    
+    <div class="nav-links-right">
+      <a href="tabi_news_preview.html" class="header-nav-link">首頁</a>
+      <a href="japan_flight_deals.html" class="header-nav-link">查機票</a>
+      <a href="japan_charter_rental.html" class="header-nav-link">包車/租車</a>
+      <a href="japan_okinawa_drive.html" class="header-nav-link">沖繩自駕</a>
+      <a href="japan_inbound_rankings.html" class="header-nav-link">日本排行</a>
+      <a href="japan_special_edition.html" class="header-nav-link active">深度文章</a>
+
+      <!-- 🌐 前台多國語言切換器 -->
+      <div class="lang-pill-wrap" onclick="toggleSpecialLang()">
+        <span>🌐</span>
+        <span id="specialCurrentLang">繁體中文</span>
+        <span>▾</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Editorial Hero Section (第一篇代表作：Kumano Kodo 熊野古道) -->
+  <header class="hero-container">
+    <div class="hero-tagline-wrap">
+      <div class="hero-eyebrow" id="heroEyebrow">UNESCO DUAL PILGRIMAGE ｜ 和歌山・紀伊山脈</div>
+      <h1 class="hero-headline" id="heroHeadline">Walking with the Ancients: <i>Kumano Kodo</i></h1>
+      <p class="hero-sub" id="heroSub">
+        「穿越千年冷杉與青苔石階，這是一場在古老神明呼吸之間尋獲心靈新生的徒步朝聖。」
+      </p>
+    </div>
+
+    <div class="hero-image-frame">
+      <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1600&q=85" alt="Kumano Kodo Ancient Trail">
+      <div class="hero-caption" id="heroCaption">📍 和歌山・熊野古道 中邊路 (Nakahechi) ｜ 拍攝於大門坂冷杉林道</div>
+    </div>
+  </header>
+
+  <!-- Full Editorial Prose: Kumano Kodo -->
+  <main class="article-wrap">
+    <div class="meta-byline">
+      <span>文 / JAPAN TABI 文化與探險特派員</span>
+      <span>閱讀時間：約 8 分鐘 ｜ 更新於 2026 年秋</span>
+    </div>
+
+    <div class="article-body">
+      <p class="dropcap" id="articleP1">
+        在日本紀伊半島深處，被霧氣繚繞的層疊山巒被尊稱為「神靈棲息之所」。熊野古道（Kumano Kodo）與西班牙的聖地牙哥朝聖之路（Camino de Santiago），是世界上唯二被聯合國教科文組織（UNESCO）共同認證為世界文化遺產的古道朝聖之路。千百年來，從平安時代的退位天皇、貴族武士，乃至尋常布衣百姓，皆懷抱著生死輪迴與心靈救贖的渴望，徒步跋涉數百公里來到此處。
+      </p>
+
+      <div class="quote-callout" id="articleQuote">
+        「踏上熊野古道，並非單純征服山巒的旅程，而是一場讓靈魂徹底歸零、在自然神道與佛教共生中重獲新生的儀式。」
+      </div>
+
+      <h2 id="articleH2_1">大門坂與青苔巨木的呼吸</h2>
+      <p id="articleP2">
+        由大門坂（Daimon-zaka）邁入中邊路的旅人，首先會被兩側聳入雲霄的樹齡八百年夫婦杉所震撼。這段鋪設於平安時代的鵝卵石階梯共有 267 階，常年浸潤在太平洋升騰而起的潮濕水氣中，翠綠的厚苔覆蓋石面，宛如歲月沉積的翠玉。每邁出一步，腳下木質手杖敲擊石板的空靈聲響，彷彿與千年前朝聖者的足跡重疊共振。
+      </p>
+
+      <!-- 熊野三山行程關鍵參數框 -->
+      <div class="route-spec-box">
+        <div class="route-spec-title">EXPLORATION METRICS ｜ 熊野古道中邊路徒步核心參數</div>
+        <div class="route-spec-grid">
+          <div class="spec-item">
+            <span class="spec-label">經典健行距離</span>
+            <span class="spec-val">38.4 km (3天2夜)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">累計爬升落差</span>
+            <span class="spec-val">+1,420 m / -1,380 m</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">最佳徒步季節</span>
+            <span class="spec-val">4月~5月新綠 / 10月~11月秋葉</span>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="articleH2_2">熊野那智大社與落差 133 公尺的飛瀑</h2>
+      <p id="articleP3">
+        當石階穿過層層杉林，那智原始林深處傳來震撼山谷的水流轟鳴——那正是日本落差第一的「那智瀑布（Nachi Falls）」。落差達 133 公尺的飛瀑從懸崖直瀉而下，水氣氤氳形成永久彩虹。朱紅色的三重塔巍然矗立於瀑布前，將神道教的自然崇拜與佛教淨土思想交融得淋漓盡致。在此飲下一口源自瀑布的延命長壽水，旅途的疲憊在山風吹拂下一掃而空。
+      </p>
+
+      <h2 id="articleH2_3">湯之峰溫泉：千年前朝聖者的湯治之所</h2>
+      <p id="articleP4">
+        完成一日長途跋涉後，旅人最渴望的莫過於抵達擁有 1,800 年歷史的「湯之峰溫泉（Yunomine Onsen）」。這座隱匿在溪谷中的古老溫泉，相傳是古代朝聖者在參拜熊野本宮大社前，舉行「湯垢離（熱水淨身除垢）」儀式的神聖之地。世界遺產名錄中唯一的公共天然浴池「壺湯（Tsuboyu）」，泉水顏色一天會隨日光神秘轉變七次，沉浸於略帶硫磺香氣的乳白泉水中，筋骨與思緒同時得到了最純粹的撫慰。
+      </p>
+    </div>
+  </main>
+
+  <!-- Editorial Collection Filter & Grid (12 curated stories) -->
+  <section class="filter-section">
+    <div class="filter-header">
+      <div>
+        <div class="hero-eyebrow">CURATED EDITORIAL ARCHIVE</div>
+        <h2 class="filter-title">探索全日本深度探險誌</h2>
+      </div>
+      <div style="font-size:0.84rem; color:var(--text-muted); font-weight:600;">共收錄 12 篇主題深度專刊</div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-pills-row" id="filterPillsRow">
+      <button class="pill-btn active" onclick="filterStories('all', this)">全部深度專刊</button>
+      <button class="pill-btn" onclick="filterStories('pilgrimage', this)">古道與靈性健行</button>
+      <button class="pill-btn" onclick="filterStories('snow', this)">粉雪野雪與高山</button>
+      <button class="pill-btn" onclick="filterStories('artisan', this)">百年工藝與禪宗美學</button>
+      <button class="pill-btn" onclick="filterStories('onsen', this)">秘湯溫泉與風土料理</button>
+    </div>
+  </section>
+
+  <!-- Stories Grid -->
+  <section class="stories-grid" id="storiesGrid">
+    <!-- Populated dynamically via JS -->
+  </section>
+
+  <!-- Full Reader Modal Drawer -->
+  <div class="reader-modal" id="readerModal">
+    <div class="reader-container">
+      <button class="reader-close-btn" onclick="closeReaderModal()">← 返回專刊列表 (Close)</button>
+      <div id="readerContent"></div>
+    </div>
+  </div>
+
+  <script>
+    // 12 篇跨語言深度文章資料庫 (EN / 繁中 / JA)
+    const SPECIAL_STORIES = [
+      {
+        id: 'kumano',
+        cat: 'pilgrimage',
+        region: '和歌山・紀伊山脈',
+        title: {
+          'zh-TW': '行走於神明呼吸之間：熊野古道千年生死輪迴朝聖之路',
+          'en': 'Walking with the Ancients: Kumano Kodo Dual Pilgrimage',
+          'ja': '神々の息吹を歩く：熊野古道・千年の生死輪廻の巡礼道'
+        },
+        excerpt: {
+          'zh-TW': '聯合國教科文組織世界文化遺產，穿行於大門坂冷杉古林、那智飛瀑與湯之峰千古秘湯。',
+          'en': 'UNESCO dual-pilgrimage route traversing moss-covered stone stairs, 800-year-old cedars, and ancient onsen.',
+          'ja': 'ユネスコ世界文化遺産。大門坂の苔むした石畳、那智の大滝、そして日本最古の湯の峰温泉を辿る。'
+        },
+        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80',
+        author: 'JAPAN TABI 探險特派員',
+        readTime: '8 min'
+      },
+      {
+        id: 'japow',
+        cat: 'snow',
+        region: '北海道・二世谷 ＆ 旭岳',
+        title: {
+          'zh-TW': '極上乾粉雪的物理學：北海道 Asahidake 野雪與野性白界',
+          'en': 'The Science of Japow: Hokkaido Wild Powder in Asahidake',
+          'ja': 'JAPOWの物理学：北海道・大雪山旭岳の極上パウダースノー'
+        },
+        excerpt: {
+          'zh-TW': '含水量僅 5% 的世界最輕粉雪，深入活火山荒野，揭開滑雪玩家一生追逐的無重力漂浮感。',
+          'en': 'Ultra-dry 5% moisture powder snow on an active smoking volcano. The Holy Grail of backcountry freeriders.',
+          'ja': '含水率わずか5%の究極のパウダースノー。活火山の噴煙を背に滑る、バックカントリーの聖地。'
+        },
+        img: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=800&q=80',
+        author: '雪嶺探勘組',
+        readTime: '10 min'
+      },
+      {
+        id: 'yakushima',
+        cat: 'pilgrimage',
+        region: '鹿兒島・屋久島',
+        title: {
+          'zh-TW': '魔法森林的七千年呼吸：屋久島繩文杉與幽靈之森',
+          'en': 'The 7,000-Year Breath: Yakushima Ancient Moss Wilderness',
+          'ja': '太古の森の呼吸：屋久島・縄文杉と白谷雲水峡の苔むす森'
+        },
+        excerpt: {
+          'zh-TW': '宮崎駿《魔法公主》靈感發源地，年降雨量世界之冠，步入被七千種苔蘚擁抱的原始杉林。',
+          'en': 'The inspiration for Princess Mononoke. A temperate rainforest home to 7,000-year-old ancient cryptomeria trees.',
+          'ja': 'もののけ姫の舞台。月に35日雨が降ると言われる森で、樹齢数千年の巨木と対峙する。'
+        },
+        img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+        author: '自然生態攝影師',
+        readTime: '9 min'
+      },
+      {
+        id: 'kanazawa',
+        cat: 'artisan',
+        region: '石川・金澤',
+        title: {
+          'zh-TW': '加賀百萬石的榮光：金澤一萬分之一毫米的金箔工藝美學',
+          'en': 'Shimmer of Kaga: Kanazawa 1/10,000mm Gold Leaf Masters',
+          'ja': '加賀百万石の極み：金沢・薄さ1万分の1ミリの金箔職人美学'
+        },
+        excerpt: {
+          'zh-TW': '供應日本 99% 金箔的北陸古都，走訪東茶屋街職人作坊，探索江戶茶道與枯淡幽玄之境。',
+          'en': 'Producing 99% of Japan gold leaf. An intimate look into artisan ateliers of Higashi Chaya and samurai tea culture.',
+          'ja': '日本の金箔生産の99%を誇る城下町。東茶屋街の職人技と武家茶道に息づく美の神髄。'
+        },
+        img: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80',
+        author: '傳統工藝研究家',
+        readTime: '7 min'
+      },
+      {
+        id: 'nakasendo',
+        cat: 'pilgrimage',
+        region: '長野 ＆ 岐阜・木曾路',
+        title: {
+          'zh-TW': '江戶五街道時光凝結：中山道妻籠宿至馬籠宿的宿場漫行',
+          'en': 'Walking the Edo Highway: Nakasendo Trail from Magome to Tsumago',
+          'ja': '江戸の時間を歩く：木曽路・中山道・馬籠宿から妻籠宿へ'
+        },
+        excerpt: {
+          'zh-TW': '禁止電線杆與現代霓虹的歷史宿場街，穿行於檜木古橋與水車水聲之間，體驗真正的時光倒流。',
+          'en': 'Cobblestone post towns preserved without modern power lines. Hike through misty cedar forests and mountain passes.',
+          'ja': '電柱を排し往時の面影を守り続ける宿場町。石畳を歩き、木曽五木の香りに包まれる旅。'
+        },
+        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80',
+        author: '古道文化特派員',
+        readTime: '8 min'
+      },
+      {
+        id: 'fujiclimb',
+        cat: 'snow',
+        region: '山梨 ＆ 靜岡・富士山',
+        title: {
+          'zh-TW': '聖岳孤寂破曉：御殿場砂走與富士山靈峰修驗古徑',
+          'en': 'Sacred Solitude: Mount Fuji Pilgrimage & The Volcanic Subashiri',
+          'ja': '霊峰の夜明け：富士山修験の古道と御殿場大砂走り'
+        },
+        excerpt: {
+          'zh-TW': '避開大眾觀光喧囂，沿著古老修驗者足跡踏過火山黑礫，在 3,776 公尺雲海之巔迎候御來光。',
+          'en': 'Treading the footsteps of ancient ascetic monks up volcanic ash. Experiencing the sacred sunrise above the clouds.',
+          'ja': '観光客の喧騒を離れ、修験者が歩んだ古道を辿る。標高3,776メートルの雲海で迎える御来光。'
+        },
+        img: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=800&q=80',
+        author: '高山嚮導員',
+        readTime: '11 min'
+      },
+      {
+        id: 'kyotozen',
+        cat: 'artisan',
+        region: '京都・大德寺 ＆ 龍安寺',
+        title: {
+          'zh-TW': '無一物中無盡藏：京都大德寺非公開茶室與枯山水禪境',
+          'en': 'The Void of Infinite Space: Kyoto Zen Dry Gardens of Daitoku-ji',
+          'ja': '無一物中無尽蔵：京都大徳寺・非公開茶室と枯山水の禅境'
+        },
+        excerpt: {
+          'zh-TW': '十五顆白砂石組何以隱喻浩瀚宇宙？走進一休宗純與千利休的冥想庭園，聽白砂流水之聲。',
+          'en': 'Deciphering fifteen stones in raked gravel. An architectural voyage into Sen no Rikyu’s concept of Wabi-sabi.',
+          'ja': '白砂に配された十五の石が語る宇宙。千利休の侘び寂びの思想が息づく静寂の庭園。'
+        },
+        img: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80',
+        author: '建築美學評論員',
+        readTime: '9 min'
+      },
+      {
+        id: 'kurokawa',
+        cat: 'onsen',
+        region: '熊本・黑川溫泉',
+        title: {
+          'zh-TW': '一國一旅館的溪谷哲學：黑川溫泉三十軒入湯手形野湯巡禮',
+          'en': 'The Valley as One Inn: Kurokawa Onsen Secret Thermal Bathing',
+          'ja': '街全体が一つの宿：黒川温泉・入湯手形で巡る露天風呂の哲学'
+        },
+        excerpt: {
+          'zh-TW': '三十家溫泉旅館合力打造整座山林的「共同體景觀」，竹林野溪露天風呂與赤松柴火的極致放鬆。',
+          'en': 'A communal sanctuary of 30 ryokans sharing cedar pass tokens. Forest stream baths carved into bedrock.',
+          'ja': '三十軒の宿が一つになって里山景観を守る。杉木立の露天風呂と湯けむりに癒される。'
+        },
+        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
+        author: '溫泉旅宿評論家',
+        readTime: '8 min'
+      },
+      {
+        id: 'shikoku88',
+        cat: 'pilgrimage',
+        region: '四國四縣・遍路道',
+        title: {
+          'zh-TW': '一泊一飯同伴二人：四國 88 靈場 1,200 公里步行圓融之道',
+          'en': 'Dogyo Ninin: The 1,200km Shikoku 88 Sacred Temple Circuit',
+          'ja': '同行二人：四国八十八ヶ所・1,200キロを歩くお遍路の旅'
+        },
+        excerpt: {
+          'zh-TW': '戴上菅笠、手執金剛杖，與弘法大師同行的千年長征。在當地居民的「御接待」溫暖中體悟謙卑。',
+          'en': 'Walking alongside the spiritual essence of Kobo Daishi. The heartwarming culture of Osettai hospitality across Shikoku.',
+          'ja': '弘法大師と共に歩む巡礼の道。地元の人々の温かなお接待に触れ、心の荷を下ろす旅。'
+        },
+        img: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80',
+        author: '民俗宗教特派員',
+        readTime: '12 min'
+      },
+      {
+        id: 'setouchi',
+        cat: 'artisan',
+        region: '瀨戶內海・直島 ＆ 豐島',
+        title: {
+          'zh-TW': '海風中的當代地中美術館：安藤忠雄與瀨戶內海的詩意對話',
+          'en': 'Subterranean Modernism: Tadao Ando & The Seto Inland Sea Islands',
+          'ja': '海風とコンクリートの対話：安藤忠雄と瀬戸内アートの島々'
+        },
+        excerpt: {
+          'zh-TW': '將整座美術館埋入地下的地中美術館，莫內睡蓮與自然天光的日落共舞，島嶼重生的奇蹟之境。',
+          'en': 'Museums sunk into earth to preserve island skylines. Monet Water Lilies bathed in ever-changing natural daylight.',
+          'ja': '島の景観を守るため地中に埋められた美術館。モネの睡蓮が自然光の中で輝く奇跡の空間。'
+        },
+        img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+        author: '當代藝術策展人',
+        readTime: '9 min'
+      },
+      {
+        id: 'shirakami',
+        cat: 'snow',
+        region: '青森 ＆ 秋田・白神山地',
+        title: {
+          'zh-TW': '世界最大原生態山毛櫸林：白神山地 Matagi 獵人的冬季古道',
+          'en': 'The Primeval Beech Kingdom: Shirakami Sanchi Winter Wilderness',
+          'ja': '世界最大級のブナ原生林：白神山地・マタギの森と冬の静寂'
+        },
+        excerpt: {
+          'zh-TW': '八千年未經人類破壞的純淨森林，追隨傳統獵人「又鬼（Matagi）」的智慧，傾聽雪落山林之音。',
+          'en': 'Eight thousand years of pristine European beech forest. The ancient animist survival codes of the Matagi hunters.',
+          'ja': '8,000年間人の手が加わっていない世界遺産。マタギの精神が息づく白銀の原生林を巡る。'
+        },
+        img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+        author: '極地生態探險員',
+        readTime: '10 min'
+      },
+      {
+        id: 'niigatasake',
+        cat: 'onsen',
+        region: '新潟・魚沼 ＆ 南魚沼',
+        title: {
+          'zh-TW': '極寒大雪中的生命釀造：新潟越後天然雪室熟成地酒傳奇',
+          'en': 'Born from Freezing Blizzards: Niigata Snow Cellar Terroir Sake',
+          'ja': '豪雪が育む奇跡の雫：新潟・雪室熟成と越淡麗の地酒物語'
+        },
+        excerpt: {
+          'zh-TW': '利用三公尺厚雪天然保溫 0 度熟成的「雪室酒」，新潟純淨融雪軟水如何造就最淡麗辛口的清酒之魂。',
+          'en': 'Aging craft sake at 0 degrees Celsius inside three meters of natural snow. The purity of mineral snowmelt.',
+          'ja': '三メートルの雪で冷やされた雪室で眠る日本酒。雪解けの超軟水が生み出す究極の淡麗辛口。'
+        },
+        img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80',
+        author: '唎酒師特派組',
+        readTime: '8 min'
+      }
+    ];
+
+    let currentStoryLang = 'zh-TW';
+    let currentStoryFilter = 'all';
+
+    function renderStoriesGrid() {
+      const container = document.getElementById('storiesGrid');
+      if (!container) return;
+
+      let list = SPECIAL_STORIES;
+      if (currentStoryFilter !== 'all') {
+        list = list.filter(s => s.cat === currentStoryFilter);
+      }
+
+      let html = '';
+      list.forEach(story => {
+        const title = story.title[currentStoryLang] || story.title['zh-TW'];
+        const excerpt = story.excerpt[currentStoryLang] || story.excerpt['zh-TW'];
+        const catMap = {
+          pilgrimage: '古道朝聖',
+          snow: '粉雪高山',
+          artisan: '工藝美學',
+          onsen: '秘湯風土'
+        };
+        const catLabel = catMap[story.cat] || '深度特刊';
+
+        html += `
+          <article class="story-card" onclick="openStoryReader('${story.id}')">
+            <div class="story-img-frame">
+              <img src="${story.img}" alt="${title}" loading="lazy">
+              <span class="story-cat-badge">${catLabel}</span>
+            </div>
+            <div class="story-card-body">
+              <div>
+                <div class="story-card-region">${story.region}</div>
+                <h3 class="story-card-title">${title}</h3>
+                <p class="story-card-excerpt">${excerpt}</p>
+              </div>
+              <div class="story-card-footer">
+                <span>⏱️ ${story.readTime} ｜ ${story.author}</span>
+                <span class="story-read-link">閱讀全文 ➔</span>
+              </div>
+            </div>
+          </article>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function filterStories(cat, btn) {
+      currentStoryFilter = cat;
+      document.querySelectorAll('.filter-pills-row .pill-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderStoriesGrid();
+    }
+
+    function toggleSpecialLang() {
+      if (currentStoryLang === 'zh-TW') {
+        currentStoryLang = 'en';
+        document.getElementById('specialCurrentLang').textContent = 'English';
+      } else if (currentStoryLang === 'en') {
+        currentStoryLang = 'ja';
+        document.getElementById('specialCurrentLang').textContent = '日本語';
+      } else {
+        currentStoryLang = 'zh-TW';
+        document.getElementById('specialCurrentLang').textContent = '繁體中文';
+      }
+      renderStoriesGrid();
+    }
+
+    function openStoryReader(storyId) {
+      const story = SPECIAL_STORIES.find(s => s.id === storyId);
+      if (!story) return;
+
+      const title = story.title[currentStoryLang] || story.title['zh-TW'];
+      const excerpt = story.excerpt[currentStoryLang] || story.excerpt['zh-TW'];
+
+      const contentBox = document.getElementById('readerContent');
+      contentBox.innerHTML = `
+        <div style="font-size:0.78rem; font-weight:800; color:var(--accent-vermilion); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:8px;">${story.region}</div>
+        <h2 style="font-family:var(--font-display); font-size:2.2rem; font-weight:700; line-height:1.2; margin-bottom:14px; color:var(--text-ink);">${title}</h2>
+        <div style="font-size:0.82rem; color:var(--text-muted); border-bottom:1px solid var(--border-sand); padding-bottom:12px; margin-bottom:24px;">
+          特派員撰稿 ｜ 閱讀預估時間：${story.readTime} ｜ 官方世界遺產與深度探險專題
+        </div>
+        <div style="width:100%; height:380px; border-radius:14px; overflow:hidden; margin-bottom:28px;">
+          <img src="${story.img}" alt="${title}" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div style="font-size:1.1rem; line-height:1.8; color:#292524;">
+          <p style="margin-bottom:20px; font-weight:600; color:var(--accent-gold); font-size:1.2rem;">${excerpt}</p>
+          <p style="margin-bottom:20px;">
+            在歷史沉澱千百年的日本風土之中，隱藏著無數超越時間尺度的景致與人類精神追求。每一段山徑古道、每一滴經過數月雪室熟成的地酒，都在述說著人與自然共生和解的古老哲學。
+          </p>
+          <p style="margin-bottom:20px;">
+            來到這裡的旅人，不再只是快節奏的打卡觀光，而是透過腳步的節奏、呼吸的調整，重新找回心靈的安定感。從清晨林間的第一縷晨曦，到黃昏時分遠方古鐘的悠揚共鳴，皆為生命留下了最深沉的印記。
+          </p>
+          <div style="background:#FFF; border:1px solid var(--border-sand); border-radius:12px; padding:20px; margin:24px 0;">
+            <b style="color:var(--accent-vermilion);">💡 特派員深度建議：</b><br>
+            建議預留 2~3 天完整時間，避開主要假日人潮。可安排入住在地百年宿坊或家族經營溫泉旅館，品嚐以當地泉水栽培的旬之野菜，獲得最純粹的文化浸潤體驗。
+          </div>
+        </div>
+      `;
+
+      document.getElementById('readerModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeReaderModal() {
+      document.getElementById('readerModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // 點擊背景關閉
+    document.getElementById('readerModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeReaderModal();
+      }
+    });
+
+    // 初始化渲染
+    renderStoriesGrid();
+  </script>
+</body>
+</html>
