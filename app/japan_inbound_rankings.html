@@ -1236,37 +1236,65 @@
       white-space: nowrap;
       letter-spacing: 0.02em;
     }
-    /* 🍵 頂級日系輔助按鈕 (地圖・包車・飯店)：純淨和紙白底、細緻灰邊、沉穩墨灰文字，極致和諧耐看 */
-    .btn-action-map,
-    .btn-action-charter,
+    /* 🌊 鐮倉海邊專屬四色行動按鈕規範 (嚴格依照用戶色票標準) */
+    .btn-action-map {
+      background: #FFF7EB !important;
+      color: #7D6236 !important;
+      border: 1px solid #FFECCF !important;
+      font-weight: 700 !important;
+      box-shadow: 0 1px 2px rgba(125, 98, 54, 0.06) !important;
+    }
+    .btn-action-map:hover {
+      background: #FFF0DB !important;
+      color: #614B27 !important;
+      border-color: #FED7A5 !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 3px 6px rgba(125, 98, 54, 0.12) !important;
+    }
+
+    .btn-action-charter {
+      background: #FFECCF !important;
+      color: #6E5328 !important;
+      border: 1px solid #E8D0AF !important;
+      font-weight: 700 !important;
+      box-shadow: 0 1px 2px rgba(110, 83, 40, 0.06) !important;
+    }
+    .btn-action-charter:hover {
+      background: #FFE2B8 !important;
+      color: #56401D !important;
+      border-color: #DFC19B !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 3px 6px rgba(110, 83, 40, 0.12) !important;
+    }
+
     .btn-action-hotel {
-      background: #FFFFFF;
-      color: #334155;
-      border: 1px solid #E2E8F0;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+      background: #CAD8E6 !important;
+      color: #344F68 !important;
+      border: 1px solid #A2C6D8 !important;
+      font-weight: 700 !important;
+      box-shadow: 0 1px 2px rgba(52, 79, 104, 0.06) !important;
     }
-    .btn-action-map:hover,
-    .btn-action-charter:hover,
     .btn-action-hotel:hover {
-      background: #F8FAFC;
-      border-color: #CBD5E1;
-      color: #0F172A;
-      transform: translateY(-1px);
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+      background: #BACFDF !important;
+      color: #24394D !important;
+      border-color: #8FB7CB !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 3px 6px rgba(52, 79, 104, 0.12) !important;
     }
-    /* 🎟️ 核心預約呼籲行動按鈕 (Primary CTA)：正統日系茜紅漸層白字、微光暈 */
+
     .btn-action-book {
-      background: linear-gradient(135deg, #C53D43 0%, #A82429 100%);
+      background: #78A3C5 !important;
       color: #FFFFFF !important;
-      border: 1px solid rgba(168, 36, 41, 0.25);
-      font-weight: 700;
-      box-shadow: 0 2px 6px rgba(197, 61, 67, 0.25);
+      border: 1px solid #618EAF !important;
+      font-weight: 700 !important;
+      box-shadow: 0 2px 6px rgba(120, 163, 197, 0.28) !important;
     }
     .btn-action-book:hover {
-      background: linear-gradient(135deg, #D44349 0%, #B5282E 100%);
+      background: #6494B9 !important;
       color: #FFFFFF !important;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(197, 61, 67, 0.35);
+      border-color: #507D9E !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 4px 12px rgba(120, 163, 197, 0.40) !important;
     }
 
     /* 🏅 第四名起 4 欄精緻網格 (4 Columns Per Row) */
@@ -1970,43 +1998,43 @@
       <div class="rank-floating-card">
         <div class="rank-tabs-bar" id="rankTabsBar">
           <button class="rank-tab-btn active" data-cat="gourmet" onclick="switchCategory('gourmet', this)">
-            <span class="tab-main-text">🥩 米其林・和牛</span>
+            <span class="tab-main-text">米其林・和牛</span>
             <span class="tab-sub-text">頂級板前割烹</span>
           </button>
           <button class="rank-tab-btn" data-cat="culture" onclick="switchCategory('culture', this)">
-            <span class="tab-main-text">🍵 茶道・宇治抹茶</span>
+            <span class="tab-main-text">茶道・宇治抹茶</span>
             <span class="tab-sub-text">老舖町家點茶</span>
           </button>
           <button class="rank-tab-btn" data-cat="budo" onclick="switchCategory('budo', this)">
-            <span class="tab-main-text">🎌 日本文化體驗</span>
+            <span class="tab-main-text">日本文化體驗</span>
             <span class="tab-sub-text">國技・武道・幽玄雅藝</span>
           </button>
           <button class="rank-tab-btn" data-cat="snow" onclick="switchCategory('snow', this)">
-            <span class="tab-main-text">♨️ 雪見名湯百選</span>
+            <span class="tab-main-text">雪見名湯百選</span>
             <span class="tab-sub-text">秘湯一泊二食</span>
           </button>
           <button class="rank-tab-btn" data-cat="sports" onclick="switchCategory('sports', this)">
-            <span class="tab-main-text">⚾ 甲子園・花火</span>
+            <span class="tab-main-text">甲子園・花火</span>
             <span class="tab-sub-text">盛典賽事狂歡</span>
           </button>
           <button class="rank-tab-btn" data-cat="fuji" onclick="switchCategory('fuji', this)">
-            <span class="tab-main-text">🌌 世界遺產夜景</span>
+            <span class="tab-main-text">世界遺產夜景</span>
             <span class="tab-sub-text">千萬美景眺望</span>
           </button>
         </div>
       </div>
         <!-- 全日本地區快捷篩選列 -->
         <div class="rank-region-filter-bar" id="rankRegionFilterBar">
-          <div class="region-label-tag">📍 地區快篩：</div>
-          <button class="rank-region-btn active" data-region="all" onclick="switchRankRegion('all', this)">🗾 全日本 (ALL)</button>
-          <button class="rank-region-btn" data-region="kanto" onclick="switchRankRegion('kanto', this)">🗼 東京・關東</button>
-          <button class="rank-region-btn" data-region="kansai" onclick="switchRankRegion('kansai', this)">🏯 京都・大阪・關西</button>
-          <button class="rank-region-btn" data-region="hokkaido" onclick="switchRankRegion('hokkaido', this)">❄️ 北海道</button>
-          <button class="rank-region-btn" data-region="okinawa" onclick="switchRankRegion('okinawa', this)">🌺 沖繩海島</button>
-          <button class="rank-region-btn" data-region="chubu" onclick="switchRankRegion('chubu', this)">🍁 中部・北陸</button>
-          <button class="rank-region-btn" data-region="kyushu" onclick="switchRankRegion('kyushu', this)">🍜 九州・福岡</button>
-          <button class="rank-region-btn" data-region="tohoku" onclick="switchRankRegion('tohoku', this)">🌲 東北六縣</button>
-          <button class="rank-region-btn" data-region="shikoku" onclick="switchRankRegion('shikoku', this)">🌊 瀨戶內・四國</button>
+          <div class="region-label-tag">地區快篩：</div>
+          <button class="rank-region-btn active" data-region="all" onclick="switchRankRegion('all', this)">全日本 (ALL)</button>
+          <button class="rank-region-btn" data-region="kanto" onclick="switchRankRegion('kanto', this)">東京・關東</button>
+          <button class="rank-region-btn" data-region="kansai" onclick="switchRankRegion('kansai', this)">京都・大阪・關西</button>
+          <button class="rank-region-btn" data-region="hokkaido" onclick="switchRankRegion('hokkaido', this)">北海道</button>
+          <button class="rank-region-btn" data-region="okinawa" onclick="switchRankRegion('okinawa', this)">沖繩海島</button>
+          <button class="rank-region-btn" data-region="chubu" onclick="switchRankRegion('chubu', this)">中部・北陸</button>
+          <button class="rank-region-btn" data-region="kyushu" onclick="switchRankRegion('kyushu', this)">九州・福岡</button>
+          <button class="rank-region-btn" data-region="tohoku" onclick="switchRankRegion('tohoku', this)">東北六縣</button>
+          <button class="rank-region-btn" data-region="shikoku" onclick="switchRankRegion('shikoku', this)">瀨戶內・四國</button>
         </div>
     </div>
 
@@ -2179,19 +2207,19 @@
         bar.style.display = 'flex';
         bar.innerHTML = `
           <button class="dining-capsule-btn active" onclick="filterSubItems('all', this)">
-            <span>✨ 全部名店 (27)</span>
+            <span>全部名店 (50)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('sushi_kappo', this)">
-            <span>🍣 壽司之神與板前割烹 (6)</span>
+            <span>壽司之神與板前割烹 (10)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('wagyu_yakiniku', this)">
-            <span>🥩 頂級黑毛和牛・壽喜燒與燒肉 (6)</span>
+            <span>頂級黑毛和牛・壽喜燒與燒肉 (10)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('views_finedining', this)">
-            <span>🌃 高空景觀與約會首選 (6)</span>
+            <span>高空景觀與約會首選 (10)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('accessible_stars', this)">
-            <span>🍵 私房名廚摘星入門 (6)</span>
+            <span>私房名廚摘星入門 (10)</span>
           </button>
         `;
       } else if (catKey === 'snow') {
@@ -2199,44 +2227,44 @@
         bar.style.display = 'flex';
         bar.innerHTML = `
           <button class="dining-capsule-btn active" onclick="filterSubItems('all', this)">
-            <span>♨️ 全部名湯 (27)</span>
+            <span>全部名湯 (50)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('snow_secret', this)">
-            <span>❄️ 夢幻雪見秘湯 (7)</span>
+            <span>夢幻雪見秘湯 (10)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('fuji_view', this)">
-            <span>🗻 富士湖景私人露天 (6)</span>
+            <span>富士湖景私人露天 (10)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('historic_street', this)">
-            <span>🏯 百年歷史古街巡禮 (5)</span>
+            <span>百年歷史古街巡禮 (10)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('forest_creek', this)">
-            <span>🌿 森林溪谷野天風呂 (6)</span>
+            <span>森林溪谷野天風呂 (10)</span>
           </button>
         `;
       } else if (catKey === 'budo') {
         bar.style.display = 'flex';
         bar.innerHTML = `
           <button class="dining-capsule-btn active" onclick="filterSubItems('all', this)">
-            <span>🎌 全部文化體驗 (26)</span>
+            <span>全部文化體驗 (50)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('sumo_shinto', this)">
-            <span>🤼 大相撲觀戰 ＆ 部屋晨練 (4)</span>
+            <span>大相撲觀戰 ＆ 部屋晨練 (8)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('iaido_sword', this)">
-            <span>⚔️ 居合拔刀 ＆ 刀匠鍛造 (5)</span>
+            <span>居合拔刀 ＆ 刀匠鍛造 (8)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('tea_geisha', this)">
-            <span>🍵 町家點茶 ＆ 料亭藝妓席 (5)</span>
+            <span>町家點茶 ＆ 料亭藝妓席 (8)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('kabuki_noh', this)">
-            <span>🎭 歌舞伎一幕見 ＆ 傳統能樂 (4)</span>
+            <span>歌舞伎一幕見 ＆ 傳統能樂 (8)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('shugendo_nature', this)">
-            <span>⛩️ 深山修驗道 ＆ 宿坊瀑布淨身 (4)</span>
+            <span>深山修驗道 ＆ 宿坊瀑布淨身 (9)</span>
           </button>
           <button class="dining-capsule-btn" onclick="filterSubItems('culinary_craft', this)">
-            <span>🍣 手打蕎麥・壽司日料廚藝 (4)</span>
+            <span>手打蕎麥・壽司日料廚藝 (9)</span>
           </button>
         `;
       } else {
@@ -2311,7 +2339,7 @@
       top3.forEach((it, idx) => {
         const rankNum = idx + 1;
         const badgeClass = rankNum === 1 ? 'badge-no1' : (rankNum === 2 ? 'badge-no2' : 'badge-no3');
-        const badgeLabel = rankNum === 1 ? '👑 No. 01 殿堂冠軍' : (rankNum === 2 ? '🥈 No. 02 權威亞軍' : '🥉 No. 03 極上季軍');
+        const badgeLabel = rankNum === 1 ? 'No. 01 殿堂冠軍' : (rankNum === 2 ? 'No. 02 權威亞軍' : 'No. 03 極上季軍');
         const dishes = getRecommendedDishes(it, currentCategory);
         const dishesHtml = dishes.map(d => `<span class="dish-pill">${d}</span>`).join('');
         
@@ -2353,16 +2381,16 @@
               <!-- 4 大核心功能按鈕 (地圖 / Klook包車 / Booking飯店 / 預約) -->
               <div class="card-actions-trio">
                 <a href="${mapUrl}" target="_blank" class="action-btn-item btn-action-map" title="Google Maps 導航">
-                  <span>🗺️ 地圖</span>
+                  <span>地圖</span>
                 </a>
                 <a href="${charterUrl}" target="_blank" class="action-btn-item btn-action-charter" title="Klook 客製包車一日遊串接">
-                  <span>🚗 包車</span>
+                  <span>包車</span>
                 </a>
                 <a href="${hotelUrl}" target="_blank" class="action-btn-item btn-action-hotel" title="Booking.com 周邊飯店訂房">
-                  <span>🏨 飯店</span>
+                  <span>飯店</span>
                 </a>
                 <a href="${bookUrl}" target="_blank" class="action-btn-item btn-action-book" title="席位預約與指引">
-                  <span>🎟️ 預約</span>
+                  <span>預約</span>
                 </a>
               </div>
             </div>
@@ -2412,16 +2440,16 @@
               <div style="padding:0 14px 14px 14px;">
                 <div class="rank-4col-actions">
                   <a href="${mapUrl}" target="_blank" class="action-btn-item btn-action-map" title="Google Maps 導航">
-                    <span>🗺️ 地圖</span>
+                    <span>地圖</span>
                   </a>
                   <a href="${charterUrl}" target="_blank" class="action-btn-item btn-action-charter" title="Klook 包車">
-                    <span>🚗 包車</span>
+                    <span>包車</span>
                   </a>
                   <a href="${hotelUrl}" target="_blank" class="action-btn-item btn-action-hotel" title="Booking 訂房">
-                    <span>🏨 飯店</span>
+                    <span>飯店</span>
                   </a>
                   <a href="${bookUrl}" target="_blank" class="action-btn-item btn-action-book" title="預約席位">
-                    <span>🎟️ 預約</span>
+                    <span>預約</span>
                   </a>
                 </div>
               </div>
