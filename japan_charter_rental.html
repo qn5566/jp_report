@@ -212,9 +212,9 @@
       height: 400px;
       border-radius: 0;
       overflow: hidden;
-      background-image: url('./images/charter_hero_snow_mountains.jpg');
+      background-image: url('./images/charter_hero_fuji_camper.jpg');
       background-size: cover;
-      background-position: center 30%;
+      background-position: center 65%;
       margin-bottom: 0;
       border-bottom: 1px solid rgba(226, 232, 240, 0.4);
     }
@@ -1559,7 +1559,7 @@
     /* 🌟 白金浮動旗艦卡盒 (參考 Travelly 頂部卡盒設計) */
     /* 🌟 現代極簡有機風格 ＆ 戶外探險美學 旗艦卡盒 (Organic Minimalism + Lifestyle Editorial) */
     .rental-flagship-card-luminous {
-      background: url('./images/charter_rental_flagship_bg.jpg') center/cover no-repeat;
+      background: url('./images/charter_rental_flagship_bg.jpg') center / cover no-repeat;
       border-radius: 22px;
       padding: 38px 44px;
       box-shadow: 0 16px 45px -10px rgba(40, 85, 125, 0.12);
@@ -2340,47 +2340,44 @@
     }
 
     /* 雙預訂按鈕 */
+    /* 🏷️ 純文字無外框行動連結 (依用戶要求：文字就好，不要有按鈕外匡) */
     .crafted-card-actions {
       margin-top: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+      padding-top: 10px;
     }
     .btn-pkg-klook, .btn-pkg-trip {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 4px;
-      padding: 11px 8px;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      font-weight: 700;
+      padding: 4px 0;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      font-size: 0.86rem;
+      font-weight: 800;
       text-decoration: none;
-      transition: all 0.2s ease;
-      text-align: center;
+      transition: color 0.2s ease, transform 0.2s ease;
+      letter-spacing: 0.02em;
     }
     .btn-pkg-klook {
-      background: #1E293B;
-      color: #FFFFFF !important;
-      border: 1px solid #1E293B;
-      box-shadow: 0 1px 3px rgba(30, 41, 59, 0.15);
+      color: #1E293B !important;
     }
     .btn-pkg-klook:hover {
-      background: #0F172A;
-      transform: translateY(-1px);
-      box-shadow: 0 3px 8px rgba(15, 23, 42, 0.25);
+      color: #0F172A !important;
+      text-decoration: underline;
+      transform: translateX(2px);
     }
     .btn-pkg-trip {
-      background: #FFFFFF;
-      color: #1E293B !important;
-      border: 1.5px solid #CBD5E1;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+      color: #475569 !important;
     }
     .btn-pkg-trip:hover {
-      background: #F8FAFC;
-      border-color: #94A3B8;
-      transform: translateY(-1px);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+      color: #1E293B !important;
+      text-decoration: underline;
+      transform: translateX(2px);
     }
     .cta-arrow {
       font-size: 0.7rem;

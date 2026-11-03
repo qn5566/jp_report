@@ -138,155 +138,188 @@
       text-decoration: none;
     }
 
-    /* 🌟 圖一規範：文章頂部返回條與語言導航 */
-    .article-top-subnav {
-      max-width: 1140px;
-      margin: 24px auto 20px;
+    /* ════════════════════════════════════════════════════════════════
+       🌟 深度名鑑文章統一頂部規範 (Standardized Article Header Spec v1.0)
+       適用於未來數百篇深度名鑑文章：返回列 + 7語翻譯列 + 沉浸式封面標題
+       ════════════════════════════════════════════════════════════════ */
+    .reader-back-bar {
+      max-width: 1080px;
+      margin: 28px auto 16px;
       padding: 0 24px;
       display: flex;
-      flex-direction: column;
-      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
     }
-    .back-btn-pill {
+    .btn-back-catalog {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 6px;
-      width: fit-content;
-      padding: 8px 22px;
-      border-radius: 9999px;
-      border: 1.5px solid #CBD5E1;
-      background: #FFFFFF;
-      color: #334155;
-      font-size: 0.88rem;
+      gap: 8px;
+      font-size: 0.85rem;
       font-weight: 700;
+      color: #334155;
+      background: #FFFFFF;
+      border: 1.5px solid #CBD5E1;
+      padding: 8px 20px;
+      border-radius: 9999px;
+      cursor: pointer;
       text-decoration: none;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
       transition: all 0.2s ease;
     }
-    .back-btn-pill:hover {
+    .btn-back-catalog:hover {
       background: #F8FAFC;
       border-color: #94A3B8;
       color: #0F172A;
       transform: translateY(-1px);
     }
-    .article-trans-bar-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 10px 0;
-      border-top: 1px solid #E2E8F0;
+    .article-vol-badge {
+      font-size: 0.8rem;
+      color: #64748B;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
-    .article-trans-title {
-      font-size: 0.85rem;
+
+    /* 統一 7 國語言切換列 (全寬淺灰底條 + 1080px 兩端對齊) */
+    .reader-trans-bar {
+      background: #F8FAFC;
+      border-top: 1px solid #E2E8F0;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 12px 24px;
+      margin-bottom: 36px;
+    }
+    .reader-trans-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .trans-prompt-label {
+      font-size: 0.84rem;
       font-weight: 800;
       color: #1E3A8A;
+      letter-spacing: 0.3px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
-    .trans-pills-cluster {
+    .trans-pills-wrap {
       display: flex;
-      align-items: center;
       flex-wrap: wrap;
+      align-items: center;
       gap: 8px;
     }
-    .trans-pill-opt {
+    .btn-trans-choice {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      padding: 6px 14px;
+      border-radius: 9999px;
       font-size: 0.78rem;
       font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 20px;
-      border: 1px solid #E2E8F0;
-      background: #FFFFFF;
-      color: #475569;
+      color: #334155;
       cursor: pointer;
       text-decoration: none;
       transition: all 0.2s ease;
     }
-    .trans-pill-opt:hover {
+    .btn-trans-choice:hover {
       border-color: #94A3B8;
       background: #F1F5F9;
     }
-    .trans-pill-opt.active {
-      background: #1E293B;
+    .btn-trans-choice.active {
+      background: #0F172A;
       color: #FFFFFF;
-      border-color: #1E293B;
+      border-color: #0F172A;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.18);
     }
 
-    /* 容器 */
-    .container {
-      max-width: 1140px;
+    /* 統一文章主容器 (固定 1080px) */
+    .container,
+    .article-master-wrap {
+      max-width: 1080px;
       margin: 0 auto;
       padding: 0 24px 100px;
     }
 
-    /* 🌟 圖二規範：大底圖沉浸式封面，文字直接呈現在底圖之上 */
+    /* 統一頂部沉浸式封面大圖與標題引言區塊 */
+    .article-hero-cover,
     .hero-banner-overlay-wrap {
       position: relative;
       width: 100%;
-      height: 580px;
-      border-radius: 12px;
+      height: 500px;
+      border-radius: 14px;
       overflow: hidden;
-      margin-bottom: 70px;
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+      margin-bottom: 64px;
+      box-shadow: 0 20px 44px rgba(15, 23, 42, 0.12);
     }
     @media (max-width: 768px) {
-      .hero-banner-overlay-wrap { height: 460px; }
+      .article-hero-cover,
+      .hero-banner-overlay-wrap { height: 420px; }
     }
+    .article-hero-img,
     .hero-banner-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(1.02);
+      transform: scale(1.01);
       transition: transform 1.2s ease;
     }
+    .article-hero-scrim,
     .hero-banner-scrim {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.6) 42%, rgba(15, 23, 42, 0.15) 100%);
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.45) 48%, rgba(15, 23, 42, 0.15) 100%);
     }
+    .article-hero-title-box,
     .hero-banner-text-box {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 50px 48px;
+      padding: 44px 44px;
       color: #FFFFFF;
       max-width: 960px;
     }
     @media (max-width: 768px) {
-      .hero-banner-text-box { padding: 30px 24px; }
+      .article-hero-title-box,
+      .hero-banner-text-box { padding: 28px 24px; }
     }
+    .article-hero-vol,
     .hero-pretitle-gold {
-      font-size: 0.78rem;
-      letter-spacing: 4px;
+      font-size: 0.76rem;
+      letter-spacing: 3.5px;
       text-transform: uppercase;
       color: #FBBF24;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: block;
     }
+    .article-hero-heading,
     .hero-title-white {
       font-family: var(--font-serif);
-      font-size: 3.2rem;
-      line-height: 1.2;
+      font-size: 2.85rem;
+      line-height: 1.22;
       font-weight: 900;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       color: #FFFFFF;
-      letter-spacing: -0.5px;
-      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+      letter-spacing: -0.3px;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
     }
     @media (max-width: 768px) {
-      .hero-title-white { font-size: 2.1rem; }
+      .article-hero-heading,
+      .hero-title-white { font-size: 2.0rem; }
     }
+    .article-hero-subquote,
     .hero-quote-white {
       font-family: var(--font-serif);
-      font-size: 1.15rem;
+      font-size: 1.08rem;
       font-style: italic;
       color: rgba(255, 255, 255, 0.92);
-      line-height: 1.75;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      max-width: 820px;
+      line-height: 1.7;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     }
 
     /* 左右雜誌圖文版型 (文化典故) */
@@ -938,36 +971,46 @@
     </div>
   </header>
 
-  <!-- 🌟 2. 圖一規範：文章頂部返回條與 7 國語言閱讀選擇列 -->
-  <div class="article-top-subnav">
-    <a href="japan_special_edition.html" class="back-btn-pill">
-      ❮ Back to All Trips
+  <!-- ════════════════════════════════════════════════════════════════
+       🌟 深度名鑑文章統一頂部規範 (Standardized Article Header Spec v1.0)
+       1. 頂部返回列與期刊編號 (.reader-back-bar)
+       2. 全寬 7 國語言切換列 (.reader-trans-bar)
+       3. 1080px 沉浸式封面與標題引言 (.article-hero-cover)
+       ════════════════════════════════════════════════════════════════ -->
+  <div class="reader-back-bar">
+    <a href="japan_special_edition.html" class="btn-back-catalog">
+      <span>❮ 返回深度名鑑總覽 ｜ Back to All Trips</span>
     </a>
+    <div class="article-vol-badge">
+      <span id="activeArticleVolLabel">VOL. 02 ｜ MOUNT FUJI & MOTOSU MASTERCLASS</span>
+    </div>
+  </div>
 
-    <div class="article-trans-bar-row">
-      <span class="article-trans-title">🌐 Article Translation / 多語言閱讀:</span>
-      <div class="trans-pills-cluster">
-        <a href="japan_special_edition.html?lang=en&art=2" class="trans-pill-opt">🇺🇸 English</a>
-        <a href="japan_special_edition_fuji.html" class="trans-pill-opt active">🇹🇼 繁體中文</a>
-        <a href="japan_special_edition.html?lang=zh-cn&art=2" class="trans-pill-opt">🇨🇳 简体中文</a>
-        <a href="japan_special_edition.html?lang=vi&art=2" class="trans-pill-opt">🇻🇳 Tiếng Việt</a>
-        <a href="japan_special_edition.html?lang=th&art=2" class="trans-pill-opt">🇹🇭 ภาษาไทย</a>
-        <a href="japan_special_edition.html?lang=hi&art=2" class="trans-pill-opt">🇮🇳 हिन्दी</a>
-        <a href="japan_special_edition.html?lang=es&art=2" class="trans-pill-opt">🇪🇸 Español</a>
+  <div class="reader-trans-bar">
+    <div class="reader-trans-inner">
+      <span class="trans-prompt-label">🌐 Article Translation / 多語言閱讀:</span>
+      <div class="trans-pills-wrap">
+        <button type="button" class="btn-trans-choice" data-lang="en" onclick="setArticleLang('en', this)">🇺🇸 English</button>
+        <button type="button" class="btn-trans-choice active" data-lang="zh-tw" onclick="setArticleLang('zh-tw', this)">🇹🇼 繁體中文</button>
+        <button type="button" class="btn-trans-choice" data-lang="zh-cn" onclick="setArticleLang('zh-cn', this)">🇨🇳 简体中文</button>
+        <button type="button" class="btn-trans-choice" data-lang="vi" onclick="setArticleLang('vi', this)">🇻🇳 Tiếng Việt</button>
+        <button type="button" class="btn-trans-choice" data-lang="th" onclick="setArticleLang('th', this)">🇹🇭 ภาษาไทย</button>
+        <button type="button" class="btn-trans-choice" data-lang="hi" onclick="setArticleLang('hi', this)">🇮🇳 हिन्दी</button>
+        <button type="button" class="btn-trans-choice" data-lang="es" onclick="setArticleLang('es', this)">🇪🇸 Español</button>
       </div>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container article-master-wrap">
 
-    <!-- 🌟 3. 圖二規範：沉浸式底圖封面，標題與引言直接呈現在底圖之上 -->
-    <div class="hero-banner-overlay-wrap">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80" alt="Lake Motosu Inverted Mount Fuji" class="hero-banner-img" />
-      <div class="hero-banner-scrim"></div>
-      <div class="hero-banner-text-box">
-        <span class="hero-pretitle-gold">UNESCO WORLD HERITAGE CULTURAL SANCTUARY</span>
-        <h1 class="hero-title-white">富士五湖與本栖湖：神聖逆富士、山野柴火與深山靜謐</h1>
-        <p class="hero-quote-white">
+    <!-- 3. 統一規範：沉浸式底圖封面，標題與引言直接呈現在底圖之上 -->
+    <div class="article-hero-cover hero-banner-overlay-wrap">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80" alt="Lake Motosu Inverted Mount Fuji" class="article-hero-img hero-banner-img" />
+      <div class="article-hero-scrim hero-banner-scrim"></div>
+      <div class="article-hero-title-box hero-banner-text-box">
+        <span class="article-hero-vol hero-pretitle-gold" id="fuji_vol">UNESCO WORLD HERITAGE CULTURAL SANCTUARY</span>
+        <h1 class="article-hero-heading hero-title-white" id="fuji_title">富士五湖與本栖湖：神聖逆富士、山野柴火與深山靜謐</h1>
+        <p class="article-hero-subquote hero-quote-white" id="fuji_quote">
           「當本栖湖如鏡的冰川倒影上映現神聖對稱的靈峰逆富士，山野柴火的清香在靜謐晨曦中飄散——這是一場讓心靈褪去塵囂、回歸純粹的靈性隱逸之旅。」
         </p>
       </div>
@@ -979,12 +1022,12 @@
         <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80" alt="Fujiko Pilgrimage History" />
       </div>
       <div class="spread-text">
-        <span class="section-eyebrow">HISTORICAL PERSPECTIVE</span>
-        <h3>從恐懼到敬畏：富士講的誕生</h3>
-        <p>
+        <span class="section-eyebrow" id="fuji_hist_pre">HISTORICAL PERSPECTIVE</span>
+        <h3 id="fuji_hist_title">從恐懼到敬畏：富士講的誕生</h3>
+        <p id="fuji_hist_p1">
           在古代日本，富士山並非浪漫明信片上的美景，而是一座噴吐黑煙與滾燙熔岩的「怒火之神」。古人為了平息神祇之怒，於山腳設立淺間神社進行遠拜。
         </p>
-        <p>
+        <p id="fuji_hist_p2">
           直到江戶時代，修行者長谷川角行於本栖湖畔洞窟苦修，開創了名震全日本的「富士講」。千千萬萬的庶民身披白衣，在晨光中踏上本栖湖畔，尋求洗滌罪孽後的起死回生。
         </p>
         <a href="#itinerary" class="action-link">查看 3 日靈性漫步路線 ➔</a>
@@ -1169,6 +1212,83 @@
 
 
   <script>
+    const FUJI_PAGE_TRANSLATIONS = {
+      'zh-tw': {
+        title: '富士五湖與本栖湖：神聖逆富士、山野柴火與深山靜謐',
+        quote: '「當本栖湖如鏡的冰川倒影上映現神聖對稱的靈峰逆富士，山野柴火的清香在靜謐晨曦中飄散——這是一場讓心靈褪去塵囂、回歸純粹的靈性隱逸之旅。」',
+        histPre: 'HISTORICAL PERSPECTIVE ｜ 歷史與信仰考據',
+        histTitle: '從恐懼到敬畏：富士講的誕生',
+        histP1: '在古代日本，富士山並非浪漫明信片上的美景，而是一座噴吐黑煙與滾燙熔岩的「怒火之神」。古人為了平息神祇之怒，於山腳設立淺間神社進行遠拜。',
+        histP2: '直到江戶時代，修行者長谷川角行於本栖湖畔洞窟苦修，開創了名震全日本的「富士講」。千千萬萬的庶民身披白衣，在晨光中踏上本栖湖畔，尋求洗滌罪孽後的起死回生。'
+      },
+      'zh-cn': {
+        title: '富士五湖与本栖湖：神圣逆富士、山野柴火与深山静谧',
+        quote: '“当本栖湖如镜的冰川倒影上映现神圣对称的灵峰逆富士，山野柴火的清香在静谧晨曦中飘散——这是一场让心灵褪去尘嚣、回归纯粹的灵性隐逸之旅。”',
+        histPre: 'HISTORICAL PERSPECTIVE ｜ 历史与信仰考据',
+        histTitle: '从恐惧到敬畏：富士讲的诞生',
+        histP1: '在古代日本，富士山并非浪漫明信片上的美景，而是一座喷吐黑烟与滚烫熔岩的“怒火之神”。古人为了平息神祇之怒，于山脚设立浅间神社进行远拜。',
+        histP2: '直到江户时代，修行者长谷川角行于本栖湖畔洞窟苦修，开创了名震全日本的“富士讲”。千千万万的庶民身披白衣，在晨光中踏上本栖湖畔，寻求洗涤罪孽后的起死回生。'
+      },
+      'en': {
+        title: 'Explore Mount Fuji & Lake Motosu: Sacred Mirror & Highland Hearth',
+        quote: '“Where glacial mirrored waters of Motosu reflect the immortal symmetry of Fuji, and the scent of crackling timber meets the sacred highland chill.”',
+        histPre: 'HISTORICAL PERSPECTIVE',
+        histTitle: 'From Terror to Worship: The Birth of the Fujikō Cult',
+        histP1: 'In ancient Japan, Mount Fuji was not merely a picturesque postcard view, but an active volcano breathing black smoke and molten lava. Ancient worshippers established Sengen Shrines at its foothills to appease the deity from afar.',
+        histP2: 'In the Edo period, ascetic Hasegawa Kakugyō meditated in lava caves beside Lake Motosu, founding the renowned Fujikō pilgrimage. Dressed in pure white robes, countless pilgrims walked these shores at dawn seeking spiritual rebirth.'
+      },
+      'vi': {
+        title: 'Khám Phá Ngũ Hồ Núi Phú Sĩ & Hồ Motosu: Mặt Gương Thiêng Liêng',
+        quote: '“Nơi làn nước băng giá phẳng lặng như gương của hồ Motosu phản chiếu hình bóng Núi Phú Sĩ đối xứng vĩnh cửu giữa làn sương sớm tĩnh lặng.”',
+        histPre: 'GÓC NHÌN LỊCH SỬ & TÍN NGƯỠNG',
+        histTitle: 'Từ Nỗi Sợ Hãi Đến Lòng Tôn Kính: Sự Ra Đời Của Fujikō',
+        histP1: 'Trong thời cổ đại Nhật Bản, Núi Phú Sĩ từng là một ngọn núi lửa dữ dội. Người xưa đã lập các đền Sengen dưới chân núi để cầu nguyện bình an.',
+        histP2: 'Đến thời kỳ Edo, nhà tu hành Hasegawa Kakugyō đã tu luyện trong hang động bên hồ Motosu, khai sáng tín ngưỡng hành hương Fujikō nổi tiếng khắp Nhật Bản.'
+      },
+      'th': {
+        title: 'สำรวจทะเลสาบทั้งห้าแห่งภูเขาไฟฟูจิและทะเลสาบโมโตสุ',
+        quote: '“ที่ซึ่งผืนน้ำใสราวกระจกของทะเลสาบโมโตสุสะท้อนภาพฟูจิกลับหัวอันศักดิ์สิทธิ์ และกลิ่นฟืนอบอุ่นผสานกับสายลมยามเช้าอันเงียบสงบ”',
+        histPre: 'มุมมองประวัติศาสตร์และจิตวิญญาณ',
+        histTitle: 'จากความยำเกรงสู่การสักการะ: กำเนิดลัทธิฟูจิโค',
+        histP1: 'ในอดีตกาล ภูเขาไฟฟูจิถูกมองว่าเป็นเทพเจ้าแห่งเปลวเพลิงที่ทรงพลัง ชาวญี่ปุ่นโบราณจึงสร้างศาลเจ้าเซ็นเก็นขึ้นที่เชิงเขาเพื่อบูชาจากระยะไกล',
+        histP2: 'กระทั่งยุคเอโดะ นักพรตฮาเซกาวะ คาคุเกียว ได้บำเพ็ญเพียรในถ้ำริมทะเลสาบโมโตสุ ก่อเกิดเป็นเส้นทางแสวงบุญฟูจิโคที่ผู้คนสวมชุดขาวเดินทางมาชำระล้างจิตใจ'
+      },
+      'hi': {
+        title: 'माउंट फ़ूजी की पाँच झीलें और मोटोसू झील: पवित्र दर्पण और शांत प्रकृति',
+        quote: '“जहाँ मोटोसू झील का शांत दर्पण जैसा जल माउंट फ़ूजी की पवित्र समरूपता को प्रतिबिंबित करता है और आत्मा को असीम शांति प्रदान करता है।”',
+        histPre: 'ऐतिहासिक और आध्यात्मिक दृष्टिकोण',
+        histTitle: 'भय से श्रद्धा तक: फ़ूजीको तीर्थयात्रा का जन्म',
+        histP1: 'प्राचीन जापान में माउंट फ़ूजी को एक जागृत ज्वालामुखी देवता के रूप में पूजा जाता था और तलहटी में सेनगेन मंदिर स्थापित किए गए थे।',
+        histP2: 'ईदो काल में तपस्वी हासेगावा काकुग्यो ने मोटोसू झील की गुफाओं में साधना कर प्रसिद्ध फ़ूजीको तीर्थयात्रा परंपरा की शुरुआत की।'
+      },
+      'es': {
+        title: 'Cinco Lagos del Monte Fuji y Lago Motosu: Espejo Sagrado y Calma Alpina',
+        quote: '“Donde las aguas glaciares de Motosu reflejan la simetría inmortal del Monte Fuji, y el aroma a leña se funde con la serenidad del amanecer.”',
+        histPre: 'PERSPECTIVA HISTÓRICA Y ESPIRITUAL',
+        histTitle: 'Del Temor a la Veneración: El Nacimiento del Culto Fujikō',
+        histP1: 'En el Japón antiguo, el Monte Fuji era temido como un dios de fuego volcánico. Los antiguos erigieron santuarios Sengen en sus laderas para venerarlo desde la distancia.',
+        histP2: 'En el período Edo, el asceta Hasegawa Kakugyō meditó en las cuevas junto al lago Motosu, fundando la peregrinación Fujikō que atrajo a miles de peregrinos vestidos de blanco.'
+      }
+    };
+
+    function setArticleLang(langKey, btn) {
+      const k = (langKey || 'zh-tw').toLowerCase();
+      document.querySelectorAll('.btn-trans-choice').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-lang') === k);
+      });
+      const d = FUJI_PAGE_TRANSLATIONS[k] || FUJI_PAGE_TRANSLATIONS['zh-tw'];
+      const setEl = (id, txt) => {
+        const el = document.getElementById(id);
+        if (el && txt) el.textContent = txt;
+      };
+      setEl('fuji_title', d.title);
+      setEl('fuji_quote', d.quote);
+      setEl('fuji_hist_pre', d.histPre);
+      setEl('fuji_hist_title', d.histTitle);
+      setEl('fuji_hist_p1', d.histP1);
+      setEl('fuji_hist_p2', d.histP2);
+    }
+
     function toggleLangDropdown(event) {
       if (event) event.stopPropagation();
       const menu = document.getElementById('langDropdownMenu');
