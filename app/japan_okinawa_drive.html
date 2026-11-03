@@ -1111,163 +1111,107 @@
 
 
     /* ✈️ 那霸機場接送 ＆ 行李直送專屬區塊樣式 */
+    /* ✈️ 那霸機場直通接送 ＆ 行李直送 (極致精巧緊湊樣式，高度大幅縮減) */
     .okinawa-airport-luggage-section {
-      margin: 32px 0 36px 0;
+      margin: 16px 0 20px 0;
       background: #FFFFFF;
       border: 1.5px solid #E2E8F0;
-      border-radius: 20px;
-      padding: 32px 36px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
     }
-    .service-strip-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 24px;
-      border-bottom: 1px solid #F1F5F9;
-      padding-bottom: 20px;
-    }
-    .service-strip-pill {
-      font-size: 0.74rem;
-      font-weight: 800;
-      color: #0284C7;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      display: inline-block;
-      margin-bottom: 4px;
-    }
-    .service-strip-title {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #0F172A;
-      margin-bottom: 4px;
-    }
-    .service-strip-desc {
-      font-size: 0.88rem;
-      color: #64748B;
-      margin: 0;
-      max-width: 680px;
-      line-height: 1.6;
-    }
-    .service-strip-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .btn-service-primary {
-      padding: 10px 20px;
-      background: #0284C7;
-      color: #FFF;
-      font-size: 0.84rem;
-      font-weight: 800;
-      border-radius: 10px;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .btn-service-primary:hover {
-      background: #0369A1;
-      transform: translateY(-2px);
-    }
-    .btn-service-secondary {
-      padding: 10px 20px;
-      background: #EFF6FF;
-      color: #1D4ED8;
-      border: 1px solid #BFDBFE;
-      font-size: 0.84rem;
-      font-weight: 800;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .btn-service-secondary:hover {
-      background: #DBEAFE;
-      transform: translateY(-2px);
-    }
-    .service-dual-grid {
+    .service-compact-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 12px;
     }
     @media (max-width: 768px) {
-      .service-dual-grid { grid-template-columns: 1fr; }
+      .service-compact-row { grid-template-columns: 1fr; }
     }
-    .service-card-item {
+    .service-compact-card {
       background: #F8FAFC;
       border: 1px solid #E2E8F0;
-      border-radius: 16px;
-      padding: 24px;
+      border-radius: 12px;
+      padding: 10px 14px;
       display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .service-card-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    }
-    .service-card-top {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
-    }
-    .service-card-icon {
-      font-size: 1.8rem;
-    }
-    .service-card-badge {
-      font-size: 0.72rem;
-      font-weight: 800;
-      background: #E0F2FE;
-      color: #0284C7;
-      padding: 3px 10px;
-      border-radius: 9999px;
-    }
-    .service-card-heading {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: #0F172A;
-      margin-bottom: 8px;
-    }
-    .service-card-p {
-      font-size: 0.86rem;
-      color: #64748B;
-      line-height: 1.6;
-      margin-bottom: 18px;
-      flex-grow: 1;
-    }
-    .service-card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 14px;
-      border-top: 1px dashed #CBD5E1;
-    }
-    .service-price-tag {
-      font-size: 0.78rem;
-      color: #475569;
-      font-weight: 700;
-    }
-    .btn-service-card {
-      font-size: 0.8rem;
-      font-weight: 800;
-      color: #0284C7;
+      gap: 12px;
       text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 8px;
-      background: #FFFFFF;
-      border: 1px solid #BAE6FD;
       transition: all 0.2s ease;
     }
-    .btn-service-card:hover {
+    .service-compact-card:hover {
+      background: #FFFFFF;
+      border-color: #0284C7;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.1);
+    }
+    .service-compact-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .service-compact-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .service-compact-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+    }
+    .service-compact-title {
+      font-size: 0.94rem;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .service-compact-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      background: #E0F2FE;
+      color: #0284C7;
+      padding: 2px 7px;
+      border-radius: 9999px;
+    }
+    .service-compact-desc {
+      font-size: 0.78rem;
+      color: #64748B;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.4;
+    }
+    .service-compact-btn {
+      padding: 6px 13px;
       background: #0284C7;
       color: #FFFFFF;
+      font-size: 0.76rem;
+      font-weight: 800;
+      border-radius: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+    .service-compact-card:hover .service-compact-btn {
+      background: #0369A1;
+    }
+    .service-compact-card.card-luggage:hover {
+      border-color: #0D9488;
+      box-shadow: 0 6px 18px rgba(13, 148, 136, 0.1);
+    }
+    .service-compact-card.card-luggage .service-compact-tag {
+      background: #CCFBF1;
+      color: #0D9488;
+    }
+    .service-compact-card.card-luggage .service-compact-btn {
+      background: #0D9488;
+    }
+    .service-compact-card.card-luggage:hover .service-compact-btn {
+      background: #0F766E;
     }
 
-    /* 🌊 沖繩租車自駕安全手冊專區樣式 (海洋大自然冒險配色) */
     .okinawa-driving-sop-section {
       margin: 36px 0 40px 0;
     }
@@ -1603,47 +1547,34 @@
   </section>
 
     <!-- ✈️ 專屬模組 1: 那霸機場 24H 專車接送 ＆ 行李當日直送飯店服務 (Klook 連串分潤，高轉換大方雙卡) -->
+    <!-- ✈️ 專屬模組 1: 那霸機場專車接送 ＆ 行李當日直送 (精巧極簡雙卡，大幅縮小高度不佔版面) -->
     <section class="okinawa-airport-luggage-section" id="sec-airport-luggage">
-      <div class="service-strip-header">
-        <div>
-          <span class="service-strip-pill">AIRPORT & LUGGAGE SERVICES ｜ 那霸機場直通飯店</span>
-          <h3 class="service-strip-title">那霸機場專車接送 ＆ 行李當日直送飯店</h3>
-          <p class="service-strip-desc">紅眼航班免拉行李擠電車、多人多行李家庭首選！落地出關雙手空空直奔景點，傍晚入住行李已送達房間。</p>
-        </div>
-        <div class="service-strip-actions">
-          <a href="https://www.klook.com/zh-TW/airport-transfers/service/oka-naha-airport/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-service-primary">預約機場專車接送 ➔</a>
-          <a href="https://www.klook.com/zh-TW/activity/6134-okinawa-airport-luggage-services-naha/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-service-secondary">預約行李當日直送 ➔</a>
-        </div>
-      </div>
+      <div class="service-compact-row">
+        <!-- 服務 1: 機場專車接送 -->
+        <a href="https://www.klook.com/zh-TW/airport-transfers/service/oka-naha-airport/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="service-compact-card card-car" title="預約那霸機場專車接送">
+          <span class="service-compact-icon">🚗</span>
+          <div class="service-compact-info">
+            <div class="service-compact-head">
+              <span class="service-compact-title">那霸機場專車接送</span>
+              <span class="service-compact-tag">24H 舉牌接機</span>
+            </div>
+            <p class="service-compact-desc">直達市區・恩納海景飯店或水族館，免轉乘擠單軌</p>
+          </div>
+          <span class="service-compact-btn">預約專車 ➔</span>
+        </a>
 
-      <div class="service-dual-grid">
-        <!-- 服務卡 1: 機場專車接送 -->
-        <div class="service-card-item">
-          <div class="service-card-top">
-            <span class="service-card-icon">🚗</span>
-            <span class="service-card-badge">24H 全天候接送</span>
+        <!-- 服務 2: 行李當日直送 -->
+        <a href="https://www.klook.com/zh-TW/activity/6134-okinawa-airport-luggage-services-naha/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="service-compact-card card-luggage" title="預約那霸機場行李當日直送飯店">
+          <span class="service-compact-icon">🧳</span>
+          <div class="service-compact-info">
+            <div class="service-compact-head">
+              <span class="service-compact-title">行李當日直送飯店</span>
+              <span class="service-compact-tag">雙手空空輕鬆玩</span>
+            </div>
+            <p class="service-compact-desc">機場出關交付行李，傍晚直送全島飯店前台</p>
           </div>
-          <h4 class="service-card-heading">那霸機場 ⇋ 市區・恩納・名護 專車接送</h4>
-          <p class="service-card-p">專屬中文司導舉牌接機，班機延誤免費等候 90 分鐘。7~10人座阿爾法/海獅豪華座駕，直達恩納海景飯店或北部水族館，免轉乘擠單軌！</p>
-          <div class="service-card-footer">
-            <span class="service-price-tag">直達各大飯店 ｜ 即時確認</span>
-            <a href="https://www.klook.com/zh-TW/airport-transfers/service/oka-naha-airport/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-service-card">立即預約專車 ➔</a>
-          </div>
-        </div>
-
-        <!-- 服務卡 2: 行李當日直送飯店 -->
-        <div class="service-card-item">
-          <div class="service-card-top">
-            <span class="service-card-icon">🧳</span>
-            <span class="service-card-badge">雙手空空輕鬆玩</span>
-          </div>
-          <h4 class="service-card-heading">那霸機場 ⇋ 沖繩全島飯店 行李當日直送</h4>
-          <p class="service-card-p">早上 09:00 前在那霸機場出境大廳交付行李，傍晚 18:00 前直接配送至恩納村、美國村或市區飯店前台；回程亦可由飯店直送機場！</p>
-          <div class="service-card-footer">
-            <span class="service-price-tag">大件行李直送 ｜ 免費即時追蹤</span>
-            <a href="https://www.klook.com/zh-TW/activity/6134-okinawa-airport-luggage-services-naha/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-service-card">預約行李託運 ➔</a>
-          </div>
-        </div>
+          <span class="service-compact-btn">預約託運 ➔</span>
+        </a>
       </div>
     </section>
 
