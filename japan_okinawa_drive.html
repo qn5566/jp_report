@@ -1109,6 +1109,356 @@
       box-shadow: 0 2px 8px rgba(2, 132, 199, 0.28);
     }
 
+
+    /* ✈️ 那霸機場接送 ＆ 行李直送專屬區塊樣式 */
+    .okinawa-airport-luggage-section {
+      margin: 32px 0 36px 0;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 32px 36px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+    .service-strip-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #F1F5F9;
+      padding-bottom: 20px;
+    }
+    .service-strip-pill {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #0284C7;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .service-strip-title {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #0F172A;
+      margin-bottom: 4px;
+    }
+    .service-strip-desc {
+      font-size: 0.88rem;
+      color: #64748B;
+      margin: 0;
+      max-width: 680px;
+      line-height: 1.6;
+    }
+    .service-strip-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-service-primary {
+      padding: 10px 20px;
+      background: #0284C7;
+      color: #FFF;
+      font-size: 0.84rem;
+      font-weight: 800;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-service-primary:hover {
+      background: #0369A1;
+      transform: translateY(-2px);
+    }
+    .btn-service-secondary {
+      padding: 10px 20px;
+      background: #EFF6FF;
+      color: #1D4ED8;
+      border: 1px solid #BFDBFE;
+      font-size: 0.84rem;
+      font-weight: 800;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-service-secondary:hover {
+      background: #DBEAFE;
+      transform: translateY(-2px);
+    }
+    .service-dual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .service-dual-grid { grid-template-columns: 1fr; }
+    }
+    .service-card-item {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .service-card-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+    .service-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .service-card-icon {
+      font-size: 1.8rem;
+    }
+    .service-card-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      background: #E0F2FE;
+      color: #0284C7;
+      padding: 3px 10px;
+      border-radius: 9999px;
+    }
+    .service-card-heading {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 8px;
+    }
+    .service-card-p {
+      font-size: 0.86rem;
+      color: #64748B;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+    .service-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px dashed #CBD5E1;
+    }
+    .service-price-tag {
+      font-size: 0.78rem;
+      color: #475569;
+      font-weight: 700;
+    }
+    .btn-service-card {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #0284C7;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: #FFFFFF;
+      border: 1px solid #BAE6FD;
+      transition: all 0.2s ease;
+    }
+    .btn-service-card:hover {
+      background: #0284C7;
+      color: #FFFFFF;
+    }
+
+    /* 🌊 沖繩租車自駕安全手冊專區樣式 (海洋大自然冒險配色) */
+    .okinawa-driving-sop-section {
+      margin: 36px 0 40px 0;
+    }
+    .okinawa-sop-container {
+      background: linear-gradient(135deg, #0284C7 0%, #0369A1 45%, #0D9488 100%);
+      border-radius: 24px;
+      padding: 38px 36px;
+      color: #FFFFFF;
+      box-shadow: 0 20px 50px rgba(2, 132, 199, 0.22);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+    }
+    .okinawa-sop-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 20px;
+    }
+    .okinawa-sop-pill {
+      font-size: 0.74rem;
+      font-weight: 800;
+      background: #F59E0B;
+      color: #0F172A;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      display: inline-block;
+      margin-bottom: 8px;
+      letter-spacing: 0.08em;
+    }
+    .okinawa-sop-title {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .okinawa-sop-desc {
+      font-size: 0.9rem;
+      color: #E0F2FE;
+      margin: 0;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+    .okinawa-sop-btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-sop-tocoo {
+      padding: 10px 18px;
+      background: #FFFFFF;
+      color: #0284C7;
+      font-size: 0.82rem;
+      font-weight: 800;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+    }
+    .btn-sop-tocoo:hover {
+      background: #F8FAFC;
+      transform: translateY(-2px);
+    }
+    .btn-sop-klook {
+      padding: 10px 18px;
+      background: linear-gradient(135deg, #FF5B00 0%, #EA580C 100%);
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 800;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+      transition: all 0.2s ease;
+    }
+    .btn-sop-klook:hover {
+      background: linear-gradient(135deg, #FF6A1A 0%, #C2410C 100%);
+      transform: translateY(-2px);
+    }
+    .btn-sop-sim {
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 800;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.2s ease;
+    }
+    .btn-sop-sim:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+    .okinawa-sop-alert {
+      background: #FFFBEB;
+      border: 2px solid #F59E0B;
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.12);
+    }
+    .okinawa-sop-alert-badge {
+      background: #EA580C;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+    .okinawa-sop-alert-text {
+      font-size: 0.88rem;
+      color: #78350F;
+      line-height: 1.7;
+    }
+    .okinawa-sop-alert-text b {
+      color: #9A3412;
+    }
+    .okinawa-sop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .okinawa-sop-card {
+      background: #FFFFFF;
+      border: 1.5px solid #BAE6FD;
+      border-radius: 16px;
+      padding: 24px 22px;
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08);
+      transition: transform 0.2s ease;
+    }
+    .okinawa-sop-card:hover {
+      transform: translateY(-2px);
+    }
+    .sop-card-tag {
+      color: #0284C7;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .sop-card-h4 {
+      font-size: 1.12rem;
+      font-weight: 900;
+      color: #0F172A;
+      margin-bottom: 10px;
+    }
+    .sop-card-p {
+      font-size: 0.85rem;
+      color: #334155;
+      line-height: 1.65;
+    }
+    .sop-card-tip {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      padding: 8px 10px;
+      border-radius: 6px;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: #991B1B;
+      line-height: 1.5;
+    }
+    .okinawa-sop-rescue-box {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      border-radius: 12px;
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .sop-rescue-text {
+      font-size: 0.88rem;
+      color: #FFFFFF;
+      line-height: 1.6;
+    }
+    .sop-rescue-text b {
+      color: #FEF08A;
+    }
+
 </style>
 </head>
 <body>
@@ -1223,6 +1573,188 @@
 
   <!-- 🧭 2. 一體成型大圓角覆蓋主容器 (Seamless Unified Sheet - 參考首頁設計) -->
   <main class="okinawa-main-sheet">
+
+  <!-- 📅 3. 拯救「5天4夜行程算盤」：時光軸連環手帳 (Timeline Card) -->
+  <section class="timeline-handbook-section">
+    <div class="handbook-card-main">
+      <div class="handbook-header">
+        <div class="handbook-title-box">
+          <h3><span>📅</span> 沖繩不繞路自駕時光手帳</h3>
+          <p>依地理順行規劃，告別南來北往無效折返，後座小孩不哭鬧！</p>
+        </div>
+        <div class="plan-switch-pills">
+          <button class="plan-chip-btn active" onclick="switchItineraryPlan('family', this)">👨‍👩‍👧 親子放電 5 日</button>
+          <button class="plan-chip-btn" onclick="switchItineraryPlan('senior', this)">👴 孝親長輩 4 日</button>
+          <button class="plan-chip-btn" onclick="switchItineraryPlan('dive', this)">🤿 浮潛冒險 4 日</button>
+          <button class="plan-chip-btn" onclick="switchItineraryPlan('shopping', this)">🛍️ 購物美食 3 日</button>
+        </div>
+      </div>
+
+      <!-- 💡 客群專屬貼心提醒 (Pro-Tips) -->
+      <div class="itinerary-protip-box" id="itineraryProTipBox">
+        <span class="protip-icon">💡</span>
+        <span class="protip-text" id="itineraryProTipText">小提醒：日本自駕 6 歲以下幼兒依法必須租用安全座椅，建議預先向租車公司預約。</span>
+      </div>
+
+      <div class="timeline-cards-row"<div class="timeline-cards-row" id="itineraryTimelineRow">
+        <!-- JS 動態生成帶圖片的時光軸卡片 -->
+      </div>
+    </div>
+  </section>
+
+    <!-- ✈️ 專屬模組 1: 那霸機場 24H 專車接送 ＆ 行李當日直送飯店服務 (Klook 連串分潤，高轉換大方雙卡) -->
+    <section class="okinawa-airport-luggage-section" id="sec-airport-luggage">
+      <div class="service-strip-header">
+        <div>
+          <span class="service-strip-pill">AIRPORT & LUGGAGE SERVICES ｜ 那霸機場直通飯店</span>
+          <h3 class="service-strip-title">那霸機場專車接送 ＆ 行李當日直送飯店</h3>
+          <p class="service-strip-desc">紅眼航班免拉行李擠電車、多人多行李家庭首選！落地出關雙手空空直奔景點，傍晚入住行李已送達房間。</p>
+        </div>
+        <div class="service-strip-actions">
+          <a href="https://www.klook.com/zh-TW/airport-transfers/service/oka-naha-airport/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-service-primary">預約機場專車接送 ➔</a>
+          <a href="https://www.klook.com/zh-TW/activity/6134-okinawa-airport-luggage-services-naha/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-service-secondary">預約行李當日直送 ➔</a>
+        </div>
+      </div>
+
+      <div class="service-dual-grid">
+        <!-- 服務卡 1: 機場專車接送 -->
+        <div class="service-card-item">
+          <div class="service-card-top">
+            <span class="service-card-icon">🚗</span>
+            <span class="service-card-badge">24H 全天候接送</span>
+          </div>
+          <h4 class="service-card-heading">那霸機場 ⇋ 市區・恩納・名護 專車接送</h4>
+          <p class="service-card-p">專屬中文司導舉牌接機，班機延誤免費等候 90 分鐘。7~10人座阿爾法/海獅豪華座駕，直達恩納海景飯店或北部水族館，免轉乘擠單軌！</p>
+          <div class="service-card-footer">
+            <span class="service-price-tag">直達各大飯店 ｜ 即時確認</span>
+            <a href="https://www.klook.com/zh-TW/airport-transfers/service/oka-naha-airport/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-service-card">立即預約專車 ➔</a>
+          </div>
+        </div>
+
+        <!-- 服務卡 2: 行李當日直送飯店 -->
+        <div class="service-card-item">
+          <div class="service-card-top">
+            <span class="service-card-icon">🧳</span>
+            <span class="service-card-badge">雙手空空輕鬆玩</span>
+          </div>
+          <h4 class="service-card-heading">那霸機場 ⇋ 沖繩全島飯店 行李當日直送</h4>
+          <p class="service-card-p">早上 09:00 前在那霸機場出境大廳交付行李，傍晚 18:00 前直接配送至恩納村、美國村或市區飯店前台；回程亦可由飯店直送機場！</p>
+          <div class="service-card-footer">
+            <span class="service-price-tag">大件行李直送 ｜ 免費即時追蹤</span>
+            <a href="https://www.klook.com/zh-TW/activity/6134-okinawa-airport-luggage-services-naha/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-service-card">預約行李託運 ➔</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🚙 專屬模組 2: 沖繩租車自駕安全手冊與救援專區 (海島大自然冒險配色、高專業信賴感) -->
+    <section class="okinawa-driving-sop-section" id="sec-okinawa-rental-guide">
+      <div class="okinawa-sop-container">
+        
+        <div class="okinawa-sop-header">
+          <div>
+            <div class="okinawa-sop-pill">
+              🏝️ OKINAWA ROAD TRIP GUIDE ｜ 沖繩自駕安全防護手冊
+            </div>
+            <h3 class="okinawa-sop-title">沖繩租車自駕注意、保險理賠 ＆ 緊急救援完整指南</h3>
+            <p class="okinawa-sop-desc">馳騁沖繩 58 號濱海公路前必讀隨身手冊！涵蓋正本駕照規定、取還車錄影SOP、CDW/NOC保險、擦撞報警鐵則與爆胎失竊應變</p>
+          </div>
+          <div class="okinawa-sop-btn-group">
+            <a href="https://afflink.one/s/FruK8" target="_blank" class="btn-sop-tocoo">前往 ToCoo! 租車比價</a>
+            <a href="https://www.klook.com/zh-TW/car-rentals/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-sop-klook">Klook 租車比價</a>
+            <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E7%B6%B2%E5%8D%A1+%E9%80%9A%E8%A9%B1&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-sop-sim">可打電話網卡/eSIM</a>
+          </div>
+        </div>
+
+        <!-- 🚨 法律強制性警示卡 -->
+        <div class="okinawa-sop-alert">
+          <div class="okinawa-sop-alert-badge">⚠️ 法律強制規定</div>
+          <div class="okinawa-sop-alert-text">
+            <b>【小擦撞未報警，保險依法全額不予理賠】</b><br>
+            依據日本《道路交通法》第 72 條規定，不論車損多輕微（例如倒車擦撞牆角、刮傷後視鏡、自撞電線桿），<b>駕駛人均負有立即通報警察之法定義務</b>。<br>
+            若未於事故現場立即撥打 110 報警取得<b>「交通事故證明編號」</b>而逕自離去，依法視同「肇事逃逸（当て逃げ）」，<b>所有購買之 CDW、NOC 及信用卡旅遊不便險依法完全失效，所有修復費用與營業損失全由駕駛人承擔</b>！
+          </div>
+        </div>
+
+        <!-- 6 大核心自駕手冊模組 -->
+        <div class="okinawa-sop-grid">
+          <!-- 模組 1: 必備證件 -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 01 ｜ 證件審查</div>
+            <h4 class="sop-card-h4">必備 3 樣正本證件</h4>
+            <div class="sop-card-p">
+              • <b>台灣護照正本</b>（有效期內）。<br>
+              • <b>台灣駕照正本</b>（過期請務必至監理所更換新版）。<br>
+              • <b>監理所核發之「日文譯本正本」</b>（紙本正本）。<br>
+              <div class="sop-card-tip">
+                ⚠️ <b>國際駕照 (IDP) 在日本完全無效！</b>日本依雙邊協定僅承認「台灣駕照正本 ＋ 日文譯本」，持國際駕照會被門市拒絕出車。
+              </div>
+            </div>
+          </div>
+
+          <!-- 模組 2: 取還車 SOP -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 02 ｜ 取還流程</div>
+            <h4 class="sop-card-h4">取車交車 ＆ 加油還車 SOP</h4>
+            <div class="sop-card-p">
+              • <b>交車 360 度錄影存證</b>：取車時會同店員以手機錄影車身刮痕、輪框磨損、擋風玻璃小石痕，避免還車糾紛。<br>
+              • <b>滿油還車（満タン返却）</b>：還車前務必於門市 5 公里內的正規加油站加滿指定油品（紅色 Regular），並<b>妥善保留加油收據</b>供店員查驗時間。
+            </div>
+          </div>
+
+          <!-- 模組 3: 保險 CDW vs NOC -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 03 ｜ 保險剖析</div>
+            <h4 class="sop-card-h4">CDW 免責與 NOC 營業損失</h4>
+            <div class="sop-card-p">
+              • <b>CDW (免責補償)</b>：免除物損與車損的自負額（約 5~10 萬日圓）。<br>
+              • <b>NOC (營業損失)</b>：車輛進廠維修期間租車公司的營業補償（自力開回賠 2 萬日圓，需拖吊賠 5 萬日圓）。<br>
+              • <b>最佳解法</b>：預訂時加購<b>全額全險（CDW + NOC 雙免除）</b>，達成真正的 0 自負額無痛安心自駕。
+            </div>
+          </div>
+
+          <!-- 模組 4: 兒童安全座椅 -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 04 ｜ 幼兒法規</div>
+            <h4 class="sop-card-h4">未滿 6 歲強制兒童汽座</h4>
+            <div class="sop-card-p">
+              • 依日本道路交通法，<b>未滿 6 歲幼兒乘車依法強制安裝兒童安全座椅</b>。<br>
+              • 租車公司若發現有幼童隨行但未預約安裝汽座，<b>依法有權直接拒絕出車</b>！<br>
+              • 分類：嬰兒提籃 (0~1歲)、幼兒座椅 (1~4歲)、學童增高墊 (4歲以上)。
+            </div>
+          </div>
+
+          <!-- 模組 5: 爆胎與失竊 -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 05 ｜ 爆胎失竊</div>
+            <h4 class="sop-card-h4">輪胎破損與車內物品遭竊</h4>
+            <div class="sop-card-p">
+              • <b>行駛爆胎</b>：切換危險燈靠邊停，放置三角反光牌於車後 50m，撥打保險救援卡上的 JAF 救援專線。<br>
+              • <b>物品遭竊</b>：在景點或海灘切勿留護照或現金於車內；若遭破窗竊盜，立即撥打 110 取得<b>「盜難證明 (Tounan Shomei)」</b>以利申請旅遊不便險。
+            </div>
+          </div>
+
+          <!-- 模組 6: 緊急電話與通話網卡 -->
+          <div class="okinawa-sop-card">
+            <div class="sop-card-tag">MODULE 06 ｜ 通訊聯絡</div>
+            <h4 class="sop-card-h4">緊急聯絡與必備通話網卡</h4>
+            <div class="sop-card-p">
+              • <b>警察 110 ｜ 救護 119 ｜ JAF 救援 #8139</b><br>
+              • <b>台灣駐那霸辦事處急難救助電話</b>：090-1942-1107（24H）<br>
+              • <b>強烈建議</b>：自駕請務必備妥<b>「可打電話的日本 SIM / eSIM 網卡」</b>（撥打 110/119 與救援無法靠純上網卡！）。
+            </div>
+          </div>
+        </div>
+
+        <div class="okinawa-sop-rescue-box">
+          <div class="sop-rescue-text">
+            <b>💡 事故現場不會日文怎麼辦？</b> 先說：「<b>Tourist, English please.</b>」並朗讀身旁最近電線桿或公車站牌上的綠色地名編號。
+          </div>
+          <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E7%B6%B2%E5%8D%A1+%E9%80%9A%E8%A9%B1&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-rescue-action">預約可打電話日本網卡 ➔</a>
+        </div>
+      </div>
+    </section>
+
     <!-- 菜單橫軸 (一體成型大方設計，無外框線條包圍) -->
     <div class="sheet-menu-bar">
       <!-- 🌺 沖繩一級主分類橫軸 (簡潔 5 大主題 ＋ 二級細分展開) -->
@@ -1258,36 +1790,13 @@
           <div class="region-menu-item" onclick="selectRegion('south', '南部：系滿・Outlet', this)">🛍️ 南部：系滿・Outlet</div>
           <div class="region-menu-item" onclick="selectRegion('naha', '那霸：國際通・首里', this)">🏮 那霸：國際通・首里</div>
         </div>
+
+    <!-- 🏷️ 二級細分標籤微膠囊列 (直接位於分類橫軸下方、卡片正上方) -->
+    <div class="okinawa-tier2-pills" id="okinawaTier2Pills"></div>
       </div>
     </div>
 
-  <!-- 📅 3. 拯救「5天4夜行程算盤」：時光軸連環手帳 (Timeline Card) -->
-  <section class="timeline-handbook-section">
-    <div class="handbook-card-main">
-      <div class="handbook-header">
-        <div class="handbook-title-box">
-          <h3><span>📅</span> 沖繩不繞路自駕時光手帳</h3>
-          <p>依地理順行規劃，告別南來北往無效折返，後座小孩不哭鬧！</p>
-        </div>
-        <div class="plan-switch-pills">
-          <button class="plan-chip-btn active" onclick="switchItineraryPlan('family', this)">👨‍👩‍👧 親子放電 5 日</button>
-          <button class="plan-chip-btn" onclick="switchItineraryPlan('senior', this)">👴 孝親長輩 4 日</button>
-          <button class="plan-chip-btn" onclick="switchItineraryPlan('dive', this)">🤿 浮潛冒險 4 日</button>
-          <button class="plan-chip-btn" onclick="switchItineraryPlan('shopping', this)">🛍️ 購物美食 3 日</button>
-        </div>
-      </div>
-
-      <!-- 💡 客群專屬貼心提醒 (Pro-Tips) -->
-      <div class="itinerary-protip-box" id="itineraryProTipBox">
-        <span class="protip-icon">💡</span>
-        <span class="protip-text" id="itineraryProTipText">小提醒：日本自駕 6 歲以下幼兒依法必須租用安全座椅，建議預先向租車公司預約。</span>
-      </div>
-
-      <div class="timeline-cards-row"<div class="timeline-cards-row" id="itineraryTimelineRow">
-        <!-- JS 動態生成帶圖片的時光軸卡片 -->
-      </div>
-    </div>
-  </section>
+  
 
   <!-- 🏖️ 4. 下方景點卡片：強化「實戰生存筆記」視覺重量 -->
   <main class="okinawa-main-grid" id="okinawaCardsGrid">

@@ -1,802 +1,882 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="./images/japan_tabi_logo.png">
-  <title>JAPAN TABI SPECIAL EDITION ｜ 深度專刊・高質感日本文化與戶外探險誌</title>
-  
-  <meta name="description" content="日旅報報官方深度專刊：匯聚日本古道朝聖、極上乾粉雪滑雪探險、千年隱世溫泉、金箔工藝與枯山水禪境。專為全球深度旅行者打造的高質感編輯雜誌。" />
-  <meta name="keywords" content="熊野古道, 日本登山徒步, 北海道粉雪, 金澤工藝, 屋久島徒步, 中山道, 日本深度旅遊, Japan Pilgrimage, Kumano Kodo, Japow, Nakasendo" />
-  
-  <!-- SEO Open Graph -->
-  <meta property="og:title" content="Walking with the Ancients: Kumano Kodo ｜ JAPAN TABI SPECIAL EDITION" />
-  <meta property="og:description" content="行走於千年苔蘚古道之間，探索被聯合國教科文組織認定的神聖參詣道。日本官方高質感文化與戶外深度特刊。" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1600&q=85" />
-  <meta property="og:type" content="article" />
+  <title>Editorial Special Issues ｜ JAPAN TABI 深度專題名鑑</title>
 
-  <!-- Typography: High-End Magazine Serif & Sans -->
+  <!-- Google Fonts: Editorial High-End Serif & Clean Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+TC:wght@400;600;900&family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+TC:wght@400;600;900&family=Noto+Serif+JP:wght@400;600;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-cream: #FAF8F5;          /* 和紙暖白 */
-      --bg-card: #FFFFFF;
-      --text-ink: #1C1917;          /* 日本墨黑 */
-      --text-muted: #78716C;        /* 暖灰石色 */
-      --border-sand: #E7E5E4;       /* 建築極細線 */
-      --accent-vermilion: #C2410C;  /* 鳥居朱砂紅 */
-      --accent-gold: #B45309;       /* 古銅金 */
-      --accent-pine: #292524;       /* 深杉木色 */
-      --accent-blue: #0369A1;       /* 紀伊青川 */
-      --shadow-subtle: 0 10px 30px -10px rgba(28, 25, 23, 0.05);
-      --font-display: 'Playfair Display', 'Noto Serif TC', serif;
-      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', serif;
-      --font-sans: 'Plus Jakarta Sans', 'Zen Maru Gothic', sans-serif;
+      --bg-cream: #FAF8F5;
+      --card-bg: #FFFFFF;
+      --ink-charcoal: #1C1917;
+      --text-sub: #78716C;
+      --border-sand: #E7E5E4;
+      --earth-gold: #B45309;
+      --sacred-moss: #29432B;
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', 'Noto Serif JP', serif;
+      --font-display: 'Playfair Display', 'Noto Serif TC', 'Noto Serif JP', serif;
+      --font-sans: 'Outfit', sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-    
     body {
       background-color: var(--bg-cream);
-      color: var(--text-ink);
+      color: var(--ink-charcoal);
       font-family: var(--font-sans);
-      line-height: 1.8;
-      font-size: 16px;
-      letter-spacing: -0.01em;
-      overflow-x: hidden;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Top Floating Magazine Header (全站統一，無外框、無ICON，保留Language) */
-    .top-nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(250, 248, 245, 0.95);
-      backdrop-filter: blur(14px);
+    /* Magazine Top Header (全站統一單行標籤 ＋ 語系切換) */
+    .mag-header {
       border-bottom: 1px solid var(--border-sand);
-      padding: 12px 32px;
-      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(250, 248, 245, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
     }
-    .brand-mark {
-      display: flex; align-items: center; gap: 12px;
-      text-decoration: none; color: inherit;
+    .mag-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
-    .stamp-symbol {
-      width: 38px; height: 38px; background: #ED1A21;
-      color: #FFF; border-radius: 8px; font-weight: 900;
-      font-size: 14px; display: flex; align-items: center; justify-content: center;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 8px rgba(237, 26, 33, 0.25);
-    }
-    .brand-title-wrap {
-      display: flex; flex-direction: column;
-    }
-    .brand-title {
+    .mag-logo {
       font-family: var(--font-display);
-      font-size: 1.15rem; font-weight: 800; letter-spacing: 0.5px; color: #094F8D;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--ink-charcoal);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .brand-sub {
-      font-size: 0.68rem; font-weight: 700; color: #ED1A21; letter-spacing: 0.1em;
+    .mag-issue-tag {
+      font-size: 0.72rem;
+      font-family: var(--font-sans);
+      letter-spacing: 1.2px;
+      color: var(--earth-gold);
+      border: 1px solid var(--earth-gold);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 700;
     }
 
-    .nav-links-right {
-      display: flex; align-items: center; gap: 18px;
+    /* 頂部全站導航列 (乾淨無外框、無ICON) */
+    .header-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
     }
-    .header-nav-link {
-      color: #475569;
-      font-size: 0.88rem;
+    .header-nav-links a {
+      font-size: 0.86rem;
       font-weight: 700;
+      color: #44403C;
       text-decoration: none;
-      transition: color 0.15s ease;
+      transition: color 0.2s ease;
+    }
+    .header-nav-links a:hover,
+    .header-nav-links a.active {
+      color: #B45309;
+    }
+
+    /* 語系切換器 */
+    .mag-lang-picker {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-sand);
+      padding: 3px;
+      border-radius: 9999px;
+    }
+    .btn-lang-pill {
+      background: transparent;
+      border: none;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      color: #78716C;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-lang-pill:hover {
+      color: #1C1917;
+    }
+    .btn-lang-pill.active {
+      background: #1C1917;
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    /* 🌊 雜誌首頁 Hero Banner (參考 Travel Packages / Crafted for You) */
+    .packages-hero {
+      position: relative;
+      width: 100%;
+      min-height: 440px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 90px 24px 80px;
+      background: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      color: #FFFFFF;
+      overflow: hidden;
+    }
+    .packages-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.65) 100%);
+    }
+    .packages-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .packages-hero-title {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    .packages-hero-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+    }
+    .packages-hero-sub {
+      font-size: 1.05rem;
+      color: #E2E8F0;
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 0 auto;
+      font-weight: 400;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    /* 🖼️ 3 欄直式雜誌卡片網格 (6張卡片) */
+    .packages-grid-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    @media (max-width: 960px) {
+      .packages-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .packages-hero-title { font-size: 2.8rem; }
+    }
+    @media (max-width: 600px) {
+      .packages-grid { grid-template-columns: 1fr; }
+      .packages-hero { padding: 60px 20px; min-height: 360px; }
+      .packages-hero-title { font-size: 2.2rem; }
+    }
+
+    .package-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      color: #FFFFFF;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .package-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+    }
+    .package-card-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1;
+    }
+    .package-card:hover .package-card-bg {
+      transform: scale(1.06);
+    }
+    .package-card-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.35) 40%, rgba(15, 23, 42, 0.92) 100%);
+      z-index: 2;
+    }
+    .card-top-badge {
+      position: relative;
+      z-index: 3;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(8px);
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .card-bottom-content {
+      position: relative;
+      z-index: 3;
+    }
+    .card-issue-title {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+    .card-issue-blurb {
+      font-size: 0.82rem;
+      color: #CBD5E1;
+      line-height: 1.55;
+      margin-bottom: 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .card-price-box {
+      display: flex;
+      flex-direction: column;
+    }
+    .card-price-label {
+      font-size: 0.68rem;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .card-price-val {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+    .btn-learn-more {
+      background: #FFFFFF;
+      color: #0F172A;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      transition: all 0.2s ease;
       white-space: nowrap;
     }
-    .header-nav-link:hover { color: #0F172A; }
-    .header-nav-link.active {
-      color: var(--accent-vermilion);
-      border-bottom: 2px solid var(--accent-vermilion);
-      padding-bottom: 2px;
+    .package-card:hover .btn-learn-more {
+      background: #F8FAFC;
+      transform: scale(1.04);
     }
 
-    .lang-pill-wrap {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 6px 12px; border-radius: 9999px;
-      border: 1px solid #CBD5E1; background: #FFFFFF;
-      font-size: 0.78rem; font-weight: 700; color: #334155;
-      cursor: pointer; user-select: none;
+    /* 📖 單篇完整文章檢視器 (Article Reader View) */
+    .article-reader-view {
+      display: none;
     }
-    .lang-pill-wrap:hover { background: #F8FAFC; }
-
-    /* Editorial Hero Container */
-    .hero-container {
-      max-width: 1240px; margin: 40px auto 0; padding: 0 24px;
+    .reader-back-bar {
+      max-width: 1080px;
+      margin: 20px auto 0;
+      padding: 0 24px;
     }
-    .hero-tagline-wrap {
-      text-align: center; max-width: 880px; margin: 0 auto 36px;
-    }
-    .hero-eyebrow {
-      font-family: var(--font-sans);
-      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.25em;
-      color: var(--accent-vermilion); text-transform: uppercase; margin-bottom: 12px;
-    }
-    .hero-headline {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-      font-weight: 400; line-height: 1.2;
-      color: var(--text-ink); margin-bottom: 16px;
-    }
-    .hero-headline i { font-style: italic; font-family: var(--font-serif); }
-    .hero-sub {
-      font-family: var(--font-serif);
-      font-size: 1.35rem; color: var(--text-muted); font-style: italic;
-      line-height: 1.5; max-width: 760px; margin: 0 auto;
-    }
-
-    .hero-image-frame {
-      width: 100%; height: 560px;
-      border-radius: 20px; overflow: hidden;
-      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.12);
-      position: relative; margin-bottom: 60px;
-    }
-    .hero-image-frame img {
-      width: 100%; height: 100%; object-fit: cover;
-    }
-    .hero-caption {
-      position: absolute; bottom: 20px; left: 24px;
-      background: rgba(28, 25, 23, 0.85); backdrop-filter: blur(8px);
-      color: #FFF; font-size: 0.78rem; padding: 6px 16px; border-radius: 8px;
-    }
-
-    /* Main Prose Article Flow */
-    .article-wrap {
-      max-width: 780px; margin: 0 auto; padding: 0 20px 80px;
-    }
-    .meta-byline {
-      display: flex; justify-content: space-between; align-items: center;
-      border-top: 1px solid var(--border-sand); border-bottom: 1px solid var(--border-sand);
-      padding: 14px 0; margin-bottom: 40px; font-size: 0.82rem; color: var(--text-muted);
-    }
-    .dropcap::first-letter {
-      font-family: var(--font-display);
-      font-size: 4.8rem; float: left; line-height: 0.8;
-      padding-right: 14px; padding-top: 6px; color: var(--accent-vermilion);
+    .btn-back-to-catalog {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-sand);
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
       font-weight: 700;
-    }
-    
-    .article-body p {
-      margin-bottom: 26px; font-size: 1.08rem; color: #292524; text-align: justify;
-    }
-    .article-body h2 {
-      font-family: var(--font-display);
-      font-size: 1.85rem; font-weight: 600; margin: 48px 0 16px;
-      color: var(--text-ink); border-left: 3px solid var(--accent-vermilion);
-      padding-left: 14px;
-    }
-    .quote-callout {
-      margin: 36px 0; padding: 24px 32px; background: #FFFFFF;
-      border-radius: 12px; border: 1px solid var(--border-sand);
-      font-family: var(--font-serif); font-size: 1.45rem; font-style: italic;
-      color: var(--accent-pine); line-height: 1.6; text-align: center;
-      box-shadow: var(--shadow-subtle);
-    }
-    .route-spec-box {
-      background: #FFFFFF; border: 1px solid var(--border-sand);
-      border-radius: 16px; padding: 26px; margin: 40px 0;
-    }
-    .route-spec-title {
-      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--accent-gold); margin-bottom: 16px;
-    }
-    .route-spec-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-    }
-    .spec-item {
-      display: flex; flex-direction: column;
-    }
-    .spec-label { font-size: 0.72rem; color: var(--text-muted); font-weight: 700; }
-    .spec-val { font-size: 1.05rem; font-weight: 800; color: var(--text-ink); margin-top: 2px; }
-
-    /* Topic Filter Pill Buttons */
-    .filter-section {
-      max-width: 1240px; margin: 60px auto 30px; padding: 0 24px;
-    }
-    .filter-header {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      margin-bottom: 24px; border-bottom: 1px solid var(--border-sand); padding-bottom: 14px;
-    }
-    .filter-title {
-      font-family: var(--font-display); font-size: 1.8rem; font-weight: 700;
-    }
-    .filter-pills-row {
-      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;
-    }
-    .pill-btn {
-      padding: 8px 18px; border-radius: 9999px; border: 1px solid var(--border-sand);
-      background: #FFFFFF; font-size: 0.84rem; font-weight: 700; color: #475569;
-      cursor: pointer; transition: all 0.2s ease;
-    }
-    .pill-btn:hover { background: #F1F5F9; color: #0F172A; }
-    .pill-btn.active {
-      background: var(--text-ink); color: #FFFFFF; border-color: var(--text-ink);
-    }
-
-    /* Magazine Stories Grid (12 curated feature stories) */
-    .stories-grid {
-      max-width: 1240px; margin: 0 auto 100px; padding: 0 24px;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
-    }
-    .story-card {
-      background: #FFFFFF; border-radius: 16px; overflow: hidden;
-      border: 1px solid var(--border-sand); box-shadow: var(--shadow-subtle);
-      display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease;
+      color: #44403C;
       cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
     }
-    .story-card:hover {
-      transform: translateY(-4px); box-shadow: 0 18px 40px -10px rgba(28, 25, 23, 0.12);
-    }
-    .story-img-frame {
-      width: 100%; height: 240px; overflow: hidden; position: relative;
-    }
-    .story-img-frame img {
-      width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;
-    }
-    .story-card:hover .story-img-frame img {
-      transform: scale(1.05);
-    }
-    .story-cat-badge {
-      position: absolute; top: 14px; left: 14px;
-      background: rgba(28, 25, 23, 0.82); backdrop-filter: blur(6px);
-      color: #FFF; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
-      padding: 4px 10px; border-radius: 6px; text-transform: uppercase;
-    }
-    .story-card-body {
-      padding: 24px 22px; display: flex; flex-direction: column; flex: 1; justify-content: space-between;
-    }
-    .story-card-region {
-      font-size: 0.72rem; font-weight: 800; color: var(--accent-vermilion);
-      letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 6px;
-    }
-    .story-card-title {
-      font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;
-      line-height: 1.35; color: var(--text-ink); margin-bottom: 10px;
-    }
-    .story-card-excerpt {
-      font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 18px;
-    }
-    .story-card-footer {
-      display: flex; justify-content: space-between; align-items: center;
-      border-top: 1px solid #F5F5F4; padding-top: 12px; font-size: 0.75rem; color: #A8A29E;
-    }
-    .story-read-link {
-      color: var(--text-ink); font-weight: 800; display: inline-flex; align-items: center; gap: 4px;
+    .btn-back-to-catalog:hover {
+      background: #F5F5F4;
+      color: #000;
+      transform: translateX(-2px);
     }
 
-    /* Modal / Dedicated Reader Drawer for Any Story */
-    .reader-modal {
-      display: none; position: fixed; inset: 0; z-index: 200;
-      background: rgba(28, 25, 23, 0.6); backdrop-filter: blur(6px);
-      overflow-y: auto; padding: 40px 16px;
+    /* 雜誌排版樣式 */
+    .article-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 40px 24px 100px;
     }
-    .reader-modal.open { display: flex; justify-content: center; }
-    .reader-container {
-      background: var(--bg-cream); border-radius: 20px; max-width: 860px; width: 100%;
-      margin: auto; padding: 40px; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    .hero-editorial {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 60px;
     }
-    .reader-close-btn {
-      position: sticky; top: 10px; float: right;
-      background: #FFFFFF; border: 1px solid var(--border-sand);
-      padding: 8px 18px; border-radius: 9999px; font-size: 0.82rem; font-weight: 800;
-      color: #334155; cursor: pointer; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    .hero-meta {
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--earth-gold);
+      margin-bottom: 16px;
+      font-weight: 600;
     }
-    .reader-close-btn:hover { background: #0F172A; color: #FFF; }
-
-    @media (max-width: 960px) {
-      .stories-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-image-frame { height: 420px; }
-      .route-spec-grid { grid-template-columns: 1fr; }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 3.4rem;
+      line-height: 1.15;
+      font-weight: 400;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
     }
-    @media (max-width: 640px) {
-      .stories-grid { grid-template-columns: 1fr; }
-      .top-nav { padding: 12px 16px; flex-wrap: wrap; gap: 10px; }
-      .nav-links-right { gap: 10px; flex-wrap: wrap; }
-      .reader-container { padding: 24px 18px; }
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--text-sub);
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+    .hero-lead-photo {
+      width: 100%;
+      height: 520px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 14px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+    }
+    .hero-lead-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .photo-caption {
+      font-size: 0.74rem;
+      color: var(--text-sub);
+      font-family: var(--font-serif);
+      font-style: italic;
+      text-align: center;
+    }
+    .essay-section {
+      max-width: 760px;
+      margin: 50px auto 80px;
+    }
+    .essay-section p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #292524;
+      margin-bottom: 24px;
+    }
+    .essay-section p:first-of-type::first-letter {
+      font-family: var(--font-display);
+      font-size: 3.8rem;
+      float: left;
+      line-height: 0.8;
+      padding-right: 12px;
+      padding-top: 4px;
+      color: var(--earth-gold);
+    }
+    .section-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--earth-gold);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .section-headline {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 36px;
+    }
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 32px;
+      margin-bottom: 80px;
+    }
+    .mag-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-sand);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      transition: transform 0.25s ease;
+    }
+    .mag-card:hover {
+      transform: translateY(-4px);
+    }
+    .card-photo {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+    .card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(28, 25, 23, 0.85);
+      color: #FFF;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .card-subtext {
+      font-size: 0.78rem;
+      color: var(--earth-gold);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .card-footer-btn {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-sand);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-reserve {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink-charcoal);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-reserve:hover {
+      color: var(--earth-gold);
+    }
+    .timeline-container {
+      background: #FFFFFF;
+      border: 1px solid var(--border-sand);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 80px;
+    }
+    .itinerary-day {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px dashed var(--border-sand);
+    }
+    .itinerary-day:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .day-marker {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--sacred-moss);
+    }
+    .day-content h4 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .day-content p {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.65;
+    }
+    .trip-affiliate-box {
+      background: linear-gradient(135deg, #1C1917 0%, #292524 100%);
+      color: #FFF;
+      border-radius: 16px;
+      padding: 48px;
+      margin-bottom: 80px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .trip-affiliate-box { grid-template-columns: 1fr; padding: 32px 24px; }
+      .itinerary-day { grid-template-columns: 1fr; gap: 8px; }
+    }
+    .affiliate-heading {
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .affiliate-desc {
+      font-size: 0.88rem;
+      color: #D6D3D1;
+      line-height: 1.6;
+    }
+    .affiliate-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-trip-action {
+      background: var(--earth-gold);
+      color: #FFF;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+    }
+    .btn-trip-action:hover {
+      background: #92400e;
+    }
+    .btn-trip-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-trip-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .mag-footer {
+      border-top: 1px solid var(--border-sand);
+      padding: 50px 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-sub);
     }
   </style>
-
-  <!-- Google Structured SEO Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Walking with the Ancients: Kumano Kodo ｜ JAPAN TABI SPECIAL EDITION",
-    "image": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1600&q=85",
-    "author": {
-      "@type": "Organization",
-      "name": "日旅報報 JAPAN TABI 編輯部"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "JAPAN TABI",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=200&q=80"
-      }
-    },
-    "datePublished": "2026-11-03",
-    "description": "走進聯合國教科文組織世界文化遺產熊野古道，穿行於和歌山紀伊山脈千年冷杉與青苔石階之間的靈性朝聖之路。"
-  }
-  </script>
 </head>
 <body>
 
-  <!-- Top Sticky Navigation (統一標準：字體乾淨、無ICON、無橢圓框，保留Language) -->
-  <nav class="top-nav">
-    <a href="tabi_news_preview.html" class="brand-mark">
-      <div class="stamp-symbol">TABI</div>
-      <div class="brand-title-wrap">
-        <span class="brand-title">JAPAN TABI</span>
-        <span class="brand-sub">SPECIAL EDITION 深度專刊</span>
-      </div>
-    </a>
-    
-    <div class="nav-links-right">
-      <a href="tabi_news_preview.html" class="header-nav-link">首頁</a>
-      <a href="japan_flight_deals.html" class="header-nav-link">查機票</a>
-      <a href="japan_charter_rental.html" class="header-nav-link">包車/租車</a>
-      <a href="japan_okinawa_drive.html" class="header-nav-link">沖繩自駕</a>
-      <a href="japan_inbound_rankings.html" class="header-nav-link">日本排行</a>
-      <a href="japan_special_edition.html" class="header-nav-link active">深度文章</a>
-
-      <!-- 🌐 前台多國語言切換器 -->
-      <div class="lang-pill-wrap" onclick="toggleSpecialLang()">
-        <span>🌐</span>
-        <span id="specialCurrentLang">繁體中文</span>
-        <span>▾</span>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Editorial Hero Section (第一篇代表作：Kumano Kodo 熊野古道) -->
-  <header class="hero-container">
-    <div class="hero-tagline-wrap">
-      <div class="hero-eyebrow" id="heroEyebrow">UNESCO DUAL PILGRIMAGE ｜ 和歌山・紀伊山脈</div>
-      <h1 class="hero-headline" id="heroHeadline">Walking with the Ancients: <i>Kumano Kodo</i></h1>
-      <p class="hero-sub" id="heroSub">
-        「穿越千年冷杉與青苔石階，這是一場在古老神明呼吸之間尋獲心靈新生的徒步朝聖。」
-      </p>
+  <!-- Top Global Navigation Header -->
+  <header class="mag-header">
+    <div class="mag-logo-group">
+      <a href="tabi_news_preview.html" class="mag-logo">
+        <span>JAPAN TABI</span>
+      </a>
+      <span class="mag-issue-tag" id="headerTag">SPECIAL ISSUE</span>
     </div>
 
-    <div class="hero-image-frame">
-      <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1600&q=85" alt="Kumano Kodo Ancient Trail">
-      <div class="hero-caption" id="heroCaption">📍 和歌山・熊野古道 中邊路 (Nakahechi) ｜ 拍攝於大門坂冷杉林道</div>
+    <!-- 全站頂部導航連結 -->
+    <nav class="header-nav-links">
+      <a href="tabi_news_preview.html#sec-flights">查機票</a>
+      <a href="japan_charter_rental.html">包車/租車</a>
+      <a href="japan_okinawa_drive.html">沖繩自駕</a>
+      <a href="japan_inbound_rankings.html">日本排行</a>
+      <a href="japan_special_edition.html" class="active">深度文章</a>
+    </nav>
+
+    <!-- 語系切換器 (全站翻譯) -->
+    <div class="mag-lang-picker">
+      <button class="btn-lang-pill active" data-lang="en" onclick="switchMagazineLang('en', this)">EN</button>
+      <button class="btn-lang-pill" data-lang="zh" onclick="switchMagazineLang('zh', this)">繁體中文</button>
+      <button class="btn-lang-pill" data-lang="ja" onclick="switchMagazineLang('ja', this)">日本語</button>
     </div>
   </header>
 
-  <!-- Full Editorial Prose: Kumano Kodo -->
-  <main class="article-wrap">
-    <div class="meta-byline">
-      <span>文 / JAPAN TABI 文化與探險特派員</span>
-      <span>閱讀時間：約 8 分鐘 ｜ 更新於 2026 年秋</span>
-    </div>
-
-    <div class="article-body">
-      <p class="dropcap" id="articleP1">
-        在日本紀伊半島深處，被霧氣繚繞的層疊山巒被尊稱為「神靈棲息之所」。熊野古道（Kumano Kodo）與西班牙的聖地牙哥朝聖之路（Camino de Santiago），是世界上唯二被聯合國教科文組織（UNESCO）共同認證為世界文化遺產的古道朝聖之路。千百年來，從平安時代的退位天皇、貴族武士，乃至尋常布衣百姓，皆懷抱著生死輪迴與心靈救贖的渴望，徒步跋涉數百公里來到此處。
-      </p>
-
-      <div class="quote-callout" id="articleQuote">
-        「踏上熊野古道，並非單純征服山巒的旅程，而是一場讓靈魂徹底歸零、在自然神道與佛教共生中重獲新生的儀式。」
+  <!-- ============================================== -->
+  <!-- 🌟 視圖 1: 專題目錄主頁 (Travel Packages Grid) -->
+  <!-- ============================================== -->
+  <main id="catalogView">
+    <!-- Hero Banner (參考 Travel Packages / Crafted for You) -->
+    <section class="packages-hero">
+      <div class="packages-hero-content">
+        <h1 class="packages-hero-title" id="catalogHeroTitle">Travel Packages<br><em>Crafted for You</em></h1>
+        <p class="packages-hero-sub" id="catalogHeroSub">Discover stunning destinations, unique experiences, and custom itineraries that make your travel dreams real.</p>
       </div>
+    </section>
 
-      <h2 id="articleH2_1">大門坂與青苔巨木的呼吸</h2>
-      <p id="articleP2">
-        由大門坂（Daimon-zaka）邁入中邊路的旅人，首先會被兩側聳入雲霄的樹齡八百年夫婦杉所震撼。這段鋪設於平安時代的鵝卵石階梯共有 267 階，常年浸潤在太平洋升騰而起的潮濕水氣中，翠綠的厚苔覆蓋石面，宛如歲月沉積的翠玉。每邁出一步，腳下木質手杖敲擊石板的空靈聲響，彷彿與千年前朝聖者的足跡重疊共振。
-      </p>
-
-      <!-- 熊野三山行程關鍵參數框 -->
-      <div class="route-spec-box">
-        <div class="route-spec-title">EXPLORATION METRICS ｜ 熊野古道中邊路徒步核心參數</div>
-        <div class="route-spec-grid">
-          <div class="spec-item">
-            <span class="spec-label">經典健行距離</span>
-            <span class="spec-val">38.4 km (3天2夜)</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">累計爬升落差</span>
-            <span class="spec-val">+1,420 m / -1,380 m</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">最佳徒步季節</span>
-            <span class="spec-val">4月~5月新綠 / 10月~11月秋葉</span>
-          </div>
-        </div>
+    <!-- 3 欄 6 卡片直式雜誌網格 -->
+    <section class="packages-grid-container">
+      <div class="packages-grid" id="packagesGrid">
+        <!-- JS 動態生成 6 大專題卡片 -->
       </div>
-
-      <h2 id="articleH2_2">熊野那智大社與落差 133 公尺的飛瀑</h2>
-      <p id="articleP3">
-        當石階穿過層層杉林，那智原始林深處傳來震撼山谷的水流轟鳴——那正是日本落差第一的「那智瀑布（Nachi Falls）」。落差達 133 公尺的飛瀑從懸崖直瀉而下，水氣氤氳形成永久彩虹。朱紅色的三重塔巍然矗立於瀑布前，將神道教的自然崇拜與佛教淨土思想交融得淋漓盡致。在此飲下一口源自瀑布的延命長壽水，旅途的疲憊在山風吹拂下一掃而空。
-      </p>
-
-      <h2 id="articleH2_3">湯之峰溫泉：千年前朝聖者的湯治之所</h2>
-      <p id="articleP4">
-        完成一日長途跋涉後，旅人最渴望的莫過於抵達擁有 1,800 年歷史的「湯之峰溫泉（Yunomine Onsen）」。這座隱匿在溪谷中的古老溫泉，相傳是古代朝聖者在參拜熊野本宮大社前，舉行「湯垢離（熱水淨身除垢）」儀式的神聖之地。世界遺產名錄中唯一的公共天然浴池「壺湯（Tsuboyu）」，泉水顏色一天會隨日光神秘轉變七次，沉浸於略帶硫磺香氣的乳白泉水中，筋骨與思緒同時得到了最純粹的撫慰。
-      </p>
-    </div>
+    </section>
   </main>
 
-  <!-- Editorial Collection Filter & Grid (12 curated stories) -->
-  <section class="filter-section">
-    <div class="filter-header">
-      <div>
-        <div class="hero-eyebrow">CURATED EDITORIAL ARCHIVE</div>
-        <h2 class="filter-title">探索全日本深度探險誌</h2>
-      </div>
-      <div style="font-size:0.84rem; color:var(--text-muted); font-weight:600;">共收錄 12 篇主題深度專刊</div>
+  <!-- ============================================== -->
+  <!-- 📖 視圖 2: 單篇深入文章檢視器 (Article Reader View) -->
+  <!-- ============================================== -->
+  <div id="articleReaderView" class="article-reader-view">
+    <div class="reader-back-bar">
+      <button class="btn-back-to-catalog" onclick="showCatalogView()">
+        <span>←</span> <span id="backToCatalogText">Back to Special Issues</span>
+      </button>
     </div>
 
-    <!-- Filter Buttons -->
-    <div class="filter-pills-row" id="filterPillsRow">
-      <button class="pill-btn active" onclick="filterStories('all', this)">全部深度專刊</button>
-      <button class="pill-btn" onclick="filterStories('pilgrimage', this)">古道與靈性健行</button>
-      <button class="pill-btn" onclick="filterStories('snow', this)">粉雪野雪與高山</button>
-      <button class="pill-btn" onclick="filterStories('artisan', this)">百年工藝與禪宗美學</button>
-      <button class="pill-btn" onclick="filterStories('onsen', this)">秘湯溫泉與風土料理</button>
-    </div>
-  </section>
-
-  <!-- Stories Grid -->
-  <section class="stories-grid" id="storiesGrid">
-    <!-- Populated dynamically via JS -->
-  </section>
-
-  <!-- Full Reader Modal Drawer -->
-  <div class="reader-modal" id="readerModal">
-    <div class="reader-container">
-      <button class="reader-close-btn" onclick="closeReaderModal()">← 返回專刊列表 (Close)</button>
-      <div id="readerContent"></div>
+    <div class="article-container" id="articleDynamicContent">
+      <!-- JS 動態渲染選定文章內容 -->
     </div>
   </div>
 
+  <footer class="mag-footer">
+    <p id="footerCopyright">© 2026 JAPAN TABI NEWS ｜ Editorial Special Issue Series.</p>
+  </footer>
+
   <script>
-    // 12 篇跨語言深度文章資料庫 (EN / 繁中 / JA)
-    const SPECIAL_STORIES = [
-      {
-        id: 'kumano',
-        cat: 'pilgrimage',
-        region: '和歌山・紀伊山脈',
-        title: {
-          'zh-TW': '行走於神明呼吸之間：熊野古道千年生死輪迴朝聖之路',
-          'en': 'Walking with the Ancients: Kumano Kodo Dual Pilgrimage',
-          'ja': '神々の息吹を歩く：熊野古道・千年の生死輪廻の巡礼道'
-        },
-        excerpt: {
-          'zh-TW': '聯合國教科文組織世界文化遺產，穿行於大門坂冷杉古林、那智飛瀑與湯之峰千古秘湯。',
-          'en': 'UNESCO dual-pilgrimage route traversing moss-covered stone stairs, 800-year-old cedars, and ancient onsen.',
-          'ja': 'ユネスコ世界文化遺産。大門坂の苔むした石畳、那智の大滝、そして日本最古の湯の峰温泉を辿る。'
-        },
-        img: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80',
-        author: 'JAPAN TABI 探險特派員',
-        readTime: '8 min'
+    const MAG_DATA = {"issues": [{"id": "kumano", "issueNo": "Issue No. 01", "tag": "5 Days Pilgrimage", "price": "$680", "coverImg": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80", "en": {"title": "Kumano Kodō", "fullTitle": "Kumano Kodō: Walking the Sacred Path", "meta": "World Heritage Pilgrimage ｜ Forest Therapy", "subtitle": "“A thousand years of mist, moss-carpeted stone staircases, and the ancient cedar spirits of the Kii Peninsula.”", "leadImg": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=80", "leadCaption": "Daimon-zaka cobblestone staircase lined with centuries-old cryptomeria cedars, Wakayama.", "blurb": "We offer more than just trips. We craft journeys that immerse you in the sacred culture and thousand-year pilgrimage history.", "p1": "For over a millennium, emperors, aristocrats, and wandering monks have journeyed from the imperial capital of Kyoto to the mist-shrouded peaks of Kumano. The Kumano Kodō is not merely a mountain trail; it is an open-air temple carved by human devotion into the primeval temperate rainforests of the Kii Peninsula.", "p2": "Under the canopy of giant cryptomeria cedars, raindrops collect on bright emerald moss. Each stone step, worn smooth by centuries of straw-sandaled pilgrims, echoes with the quiet conviction that physical exhaustion is the true precursor to spiritual renewal.", "diningEyebrow": "Local Terroir & Soba", "diningTitle": "Hearthside Dining & Pilgrimage Flavors", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "Charcoal Wood-Fire", "title": "Ryokan Yoshino Charcoal Hearth", "sub": "Wagyu & Mountain Vegetables ｜ Hongu", "desc": "Local wild boar hot pot, sweet river char grilled over white Binchotan charcoal, and foraged wild fiddleheads.", "loc": "Kumano Hongu", "btn": "Reserve Table ➔", "url": "https://tw.trip.com/hotels/list?city=Tanabe&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, {"photo": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80", "badge": "Heritage Soba", "title": "Sanshiro Teuchi Soba", "sub": "100% Stone-Ground Buckwheat", "desc": "Hand-cut cold zaru soba served with mountain wasabi and local spring water from sacred Kumano headwaters.", "loc": "Nachi Waterfall Route", "btn": "Explore Spot ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80", "badge": "Historic Roastery", "title": "Kumano Coffee Roastery", "sub": "Single Origin Pour-over ｜ Katsuura", "desc": "Artisan coffee brewed with cedar-aged spring water, overlooking the Pacific fishing harbour of Katsuura.", "loc": "Katsuura Port", "btn": "View Menu ➔", "url": "#"}], "planEyebrow": "Curated 3-Day Pilgrimage Blueprint", "planTitle": "Kumano Kodō Nakahechi Route", "days": [{"day": "Day 01", "title": "Tanabe to Takijiri-oji: Entering the Sacred Forest", "desc": "Depart Osaka/Kyoto by Kuroshio Express. Begin trek at Takijiri-oji, the ancient threshold where mortal realm yields to holy ground. Ascent through giant roots to Takahara ridge."}, {"day": "Day 02", "title": "Hosshinmon-oji to Kumano Hongu Taisha", "desc": "Walk along gentle ridge trails dotted with tea plantations. Arrive at Kumano Hongu Taisha and marvel at Oyunohara, the towering 34-meter Torii gate rising from river sandbars."}, {"day": "Day 03", "title": "Daimon-zaka & Nachi Primeval Waterfall", "desc": "Descend the monumental Daimon-zaka stone staircase beneath 800-year-old cedars to Seiganto-ji's vermilion pagoda framing the 133-meter Nachi Falls."}], "affiliateTitle": "Plan Your Kumano Pilgrimage", "affiliateDesc": "Reserve Osaka/KIX direct flights and book private Kyoto-Kii charter vehicles or express train passes with instant confirmation.", "flightBtn": "✈️ Search Osaka (KIX) Flights ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-osaka?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 Book Kii Peninsula Private Van ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "zh": {"title": "熊野古道", "fullTitle": "熊野古道：千年靈性朝聖巡禮 ｜ JAPAN TABI 深度名鑑", "meta": "世界文化遺產朝聖 ｜ 森林療癒之道", "subtitle": "「千年的山嵐雲霧、青苔石階與紀伊半島的巨木靈魂。」", "leadImg": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=80", "leadCaption": "和歌山大門坂石階古道，兩側聳立數百年樹齡的夫婦杉巨木群。", "blurb": "超越一般走馬看花，我們為您淬鍊出浸潤千年神聖靈性與靈山朝聖文化的非凡旅程。", "p1": "一千多年來，從平安時代的皇族貴族到跋涉萬里的僧侶信眾，無數心靈沿著這條山徑走向紀伊半島深處。熊野古道不單單是一條登山健行步道，更是一座深植於溫帶原始雨林之中的露天神殿。", "p2": "在參天古杉的綠蔭之下，雨露凝結在青翠苔蘚上。每一步被草鞋摩擦光滑的石階，都在無聲訴說著古老信念：身體的極限跋涉，正是靈魂煥然新生的必經洗禮。", "diningEyebrow": "風土旬味 ＆ 山海割烹", "diningTitle": "地爐柴燒 ＆ 朝聖地道美味", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "紀州備長炭燒", "title": "吉野山莊 地爐炭火會席", "sub": "熊野牛 ＆ 山林旬菜 ｜ 本宮", "desc": "在古民家地爐邊享用備長炭慢烤溪魚、自產香菇與特選熊野黑毛和牛陶板燒。", "loc": "熊野本宮", "btn": "預約席位 ➔", "url": "https://tw.trip.com/hotels/list?city=Tanabe&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, {"photo": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80", "badge": "傳承手打蕎麥", "title": "三四郎 手打十割蕎麥", "sub": "100% 石臼挽蕎麥 ｜ 那智山", "desc": "以熊野深山靈泉手擀現煮的十割冰鎮蕎麥麵，沾佐辛香現磨生山葵與獨門醬汁。", "loc": "那智大瀑布步道", "btn": "查看地點 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80", "badge": "海港烘焙工坊", "title": "熊野自家烘焙所", "sub": "單品手沖咖啡 ｜ 勝浦港", "desc": "眺望勝浦黑潮金槍魚漁港，以雪松天然泉水萃取的單品深焙咖啡。", "loc": "勝浦漁港", "btn": "瀏覽菜單 ➔", "url": "#"}], "planEyebrow": "精選 3 日朝聖藍圖", "planTitle": "熊野古道中邊路行旅", "days": [{"day": "Day 01", "title": "田邊出發至瀧尻王子：踏入神明國度", "desc": "搭乘黑潮特急由關西機場抵達田邊，於瀧尻王子起步，穿過巨大的樟樹樹根，抵達高原「霧之里」眺望層疊山嵐。"}, {"day": "Day 02", "title": "發心門王子至熊野本宮大社", "desc": "沿著茶園與梯田的幽靜山稜步道漫步，抵達熊野信仰中心本宮大社，並於大齋原參拜高達34公尺的全日本第一大鳥居。"}, {"day": "Day 03", "title": "大門坂古杉步道 ＆ 那智神秘大瀑布", "desc": "漫步走過大門坂數百年石階，抵達青岸渡寺紅色三重塔，遠眺落差133米直衝深潭的神聖那智大瀑布。"}], "affiliateTitle": "啟程規劃您的熊野靈性之旅", "affiliateDesc": "即刻比價預訂大阪關西機場 (KIX) 直航班機，並預約專屬專車接送或紀伊半島包車。", "flightBtn": "✈️ 查詢大阪 (KIX) 最優機票 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-osaka?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 預約紀伊半島專屬包車 ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "ja": {"title": "熊野古道", "fullTitle": "熊野古道：神仏宿る祈りの道 ｜ JAPAN TABI 特集", "meta": "世界文化遺産巡礼 ｜ 森林セラピーロード", "subtitle": "「千年の霧、苔生す石畳、そして紀伊半島の巨木が語る悠久の記憶。」", "leadImg": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=80", "leadCaption": "和歌山県・大門坂。樹齢数百年の夫婦杉が立ち並ぶ荘厳な石畳古道。", "blurb": "単なる観光を超えて、千年の祈りと深遠なる巡礼文化に身を委ねる極上の旅路を創造します。", "p1": "千年以上もの昔から、平安の皇族から名もなき旅人に至るまで、人々は救いを求めて紀伊山地の奥深くへと歩みを進めました。熊野古道は単なる山道ではなく、原生林の中に拓かれた天然の神殿です。", "p2": "巨杉が覆う静寂のなか、雨露が鮮やかな青苔を濡らします。無数のわらじによって磨かれた石段を踏みしめるとき、身体の疲労こそが心の再生をもたらすのだと実感させられます。", "diningEyebrow": "風土と美味", "diningTitle": "囲炉裏料理と巡礼の味わい", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "備長炭炭火焼", "title": "吉野山荘 囲炉裏会席", "sub": "熊野牛と山菜の饗宴 ｜ 本宮", "desc": "紀州備長炭でじっくり焼き上げる天然川魚と、特選熊野牛の陶板焼きを古民家で堪能。", "loc": "熊野本宮", "btn": "お席を予約 ➔", "url": "https://tw.trip.com/hotels/list?city=Tanabe&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, {"photo": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80", "badge": "伝統の手打ち蕎麦", "title": "手打蕎麦 三四郎", "sub": "石臼挽き十割蕎麦 ｜ 那智山", "desc": "熊野の名水で打つ挽きたて十割蕎麦。本わさびと出汁が香る極上の一杯。", "loc": "那智の滝参道", "btn": "場所を見る ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80", "badge": "港町の珈琲焙煎所", "title": "熊野珈琲ロースタリー", "sub": "シングルオリジン ｜ 勝浦港", "desc": "太平洋を望む港町で、名水を用いて丁寧にハンドドリップされる自家焙煎珈琲。", "loc": "勝浦港", "btn": "メニュー ➔", "url": "#"}], "planEyebrow": "厳選 3 日間モデルコース", "planTitle": "熊野古道 中辺路の旅路", "days": [{"day": "Day 01", "title": "田辺から滝尻王子へ：聖域への第一歩", "desc": "関西空港から特急くろしお号で田辺へ。神域の入口とされる滝尻王子から高原の霧の里へ登り、連なる山々を望む。"}, {"day": "Day 02", "title": "発心門王子から熊野本宮大社へ", "desc": "茶畑が広がる穏やかな尾根道を抜け、熊野信仰の中心地・本宮大社へ。大斎原の日本最大の大鳥居に参拝。"}, {"day": "Day 03", "title": "大門坂の巨杉並木と那智大滝", "desc": "樹齢800年の杉並木が続く大門坂を下り、青岸渡寺の三重塔と落差133mの神聖な那智大滝を望む。"}], "affiliateTitle": "熊野巡礼の旅を計画する", "affiliateDesc": "関西国際空港 (KIX) 直行便を予約し、紀伊半島を快適に巡る専用車・ハイヤーを手配。", "flightBtn": "✈️ 大阪 (KIX) 行きフライトを検索 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-osaka?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 紀伊半島専用ハイヤーを予約 ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}}, {"id": "fuji", "issueNo": "Issue No. 02", "tag": "3 Days Wilderness", "price": "$520", "coverImg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", "en": {"title": "Mount Fuji & Motosu", "fullTitle": "Mount Fuji & Motosu: Whispering Pines & Inverted Reflections", "meta": "Alpine Reflections ｜ Wilderness Glamping", "subtitle": "“Waking at dawn by the edge of Lake Motosu to witness the timeless symmetrical mirror of Mount Fuji in crisp alpine stillness.”", "leadImg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80", "leadCaption": "The iconic inverted Fuji reflection (Sakasafuji) mirrored on the crystal glass surface of Lake Motosu.", "blurb": "Experience pure alpine wilderness and vanlife glamping right where the 1,000-yen note view of Mount Fuji was born.", "p1": "While millions view Mount Fuji from crowded observation towers, true quietude resides along its western foothills. Here, Lake Motosu—the deepest of the Fuji Five Lakes—remains untouched by modern high-rises. In winter and late autumn, cold air descends from the caldera, settling the lake surface into a mirror that immortalized the 1,000-yen note view.", "p2": "Glamping and vanlife have quietly redefined luxury here: roaring pine campfires, single-origin kettle brews, and cedar hot tubs where steam dissipates directly into star-dense mountain skies.", "diningEyebrow": "Terroir & Forest Dining", "diningTitle": "Campfire Hearth & Lakeside Gastronomy", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "Wild Game Wood-Fire", "title": "Hoshinoya Fuji Forest Hearth", "sub": "Dutch Oven Gastronomy ｜ Kawaguchiko", "desc": "Gourmet venison, wild boar, and foraged forest mushrooms cooked over blazing charcoal embers under master outdoor chefs.", "loc": "Fujikawaguchiko", "btn": "Reserve Deck ➔", "url": "https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, {"photo": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80", "badge": "Heritage Hot Pot", "title": "Hōtō Fudō (Higashiko)", "sub": "Traditional Iron Kettle Stew", "desc": "Hand-rolled flat wheat ribbons simmered in rich pumpkin miso broth inside heavy cast-iron pots, comforting travelers since Sengoku times.", "loc": "Lakefront Route", "btn": "Explore Location ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80", "badge": "Artisan Alpine Brew", "title": "Cisco Coffee & Roastery", "sub": "San Francisco Roasts ｜ Lake Walk", "desc": "Third-wave pour-overs, freshly baked Boston cream pies, and oversized glass panels framing snowy summit vistas across cedar woods.", "loc": "Kawaguchiko South", "btn": "Cafe Menu ➔", "url": "#"}], "planEyebrow": "Curated 3-Day Alpine Blueprint", "planTitle": "Fuji Wilderness Journey", "days": [{"day": "Day 01", "title": "Tokyo to Lake Kawaguchi: Forest Check-in", "desc": "Scenic morning express from Shinjuku or private airport transfer. Check into an eco-glamping retreat, attend an afternoon campfire coffee workshop, and stargaze under silent skies."}, {"day": "Day 02", "title": "Lake Motosu Sunrise & Lava Caverns", "desc": "05:30 AM departure to Kouan Camp on Lake Motosu for the classic inverted reflection. Midday guided exploration through ancient mossy volcanic lava ice caves with naturalists."}, {"day": "Day 03", "title": "Fujiyoshida Sengen Shrine & Open-Air Onsen", "desc": "Ascend the lantern-lined stone avenue to Kitaguchi Hongu Fuji Sengen Shrine. Conclude with private cypress baths overlooking Mount Fuji before departing toward Tokyo."}], "affiliateTitle": "Embark on Your Fuji Alpine Journey", "affiliateDesc": "Secure Tokyo flights and reserve four-wheel-drive campervans or chauffeured luxury SUVs directly to the lakeshore.", "flightBtn": "✈️ Search Tokyo Flights ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-tokyo?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 Book Fuji 4WD / Private Van ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "zh": {"title": "富士山本栖湖", "fullTitle": "富士山本栖湖：松籟清波逆富士 ｜ JAPAN TABI 深度名鑑", "meta": "高原湖泊倒影 ｜ 奢華露營野奢體驗", "subtitle": "「清晨破曉在靜謐無波的本栖湖畔甦醒，屏息凝視水面上千圓紙鈔的純粹逆富士倒影。」", "leadImg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80", "leadCaption": "倒映在清澈如鏡本栖湖水面上的傳奇絕景「逆富士 (Sakasafuji)」。", "blurb": "遠離觀光人潮，深入千圓日幣圖案誕生地，在松林柴火香氣與滿天星空下享受極致野奢度假。", "p1": "當成千上萬的遊客湧向擁擠的觀景台時，真正的純粹寧靜隱藏在富士山西側山麓。本栖湖是富士五湖中最深的一座，至今保留著不受過度商業開發破壞的高原原生自然。在秋冬清冽的空氣中，平靜無波的湖面如同一面巨大明鏡，完美倒映出印在千圓日幣紙鈔背面的經典神聖靈峰。", "p2": "野奢露營與休旅自駕在這裡重新定義了現代奢華：劈啪作響的松木篝火、手沖單品咖啡的醇厚香氣，以及露天雪松溫泉浴桶中冉冉升起的蒸氣，在萬籟俱寂的銀河夜空下消散。", "diningEyebrow": "湖畔野宴 ＆ 在地風土", "diningTitle": "營火鑄鐵鍋 ＆ 湖畔林間美食", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "林間柴火野味", "title": "虹夕諾雅 富士林間廚房", "sub": "荷蘭鑄鐵鍋野宴 ｜ 河口湖", "desc": "在戶外主廚引導下，於炭火餘燼上慢火烹調頂級鹿肉、野豬肉與當季森林採集蕈菇。", "loc": "富士河口湖", "btn": "預約露台席 ➔", "url": "https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, {"photo": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80", "badge": "百年鐵鍋名物", "title": "不動茶屋 餺飥麵 (東湖店)", "sub": "傳統鑄鐵鍋燉煮平麵", "desc": "自日本戰國武田信軍隊傳承至今，厚重鐵鍋內以甜南瓜味噌高湯煨煮的手擀厚實平麵。", "loc": "湖畔公路", "btn": "探索地點 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80", "badge": "高山精品烘焙", "title": "Cisco 舊金山咖啡館", "sub": "美式第三波手沖 ｜ 湖畔散策", "desc": "透過整面落地大玻璃窗欣賞白雪皚皚的富士山，品嚐現烤波士頓奶油派與深焙單品手沖。", "loc": "河口湖南岸", "btn": "咖啡菜單 ➔", "url": "#"}], "planEyebrow": "精選 3 日高原自駕藍圖", "planTitle": "富士山麓野奢秘境巡禮", "days": [{"day": "Day 01", "title": "東京出發至河口湖：森林入住", "desc": "由新宿搭乘富士回遊特急或成田機場專車直達，入住林間野奢渡假村，午後體驗松木營火手沖咖啡工作坊，夜觀滿天繁星。"}, {"day": "Day 02", "title": "本栖湖破曉逆富士 ＆ 青木原樹海火山熔岩冰穴", "desc": "清晨 05:30 前往浩庵露營地捕捉經典逆富士倒影；午後由專業高山嚮導帶領，穿過苔蘚茂密的青木原森林，深入神秘的地下冰穴探秘。"}, {"day": "Day 03", "title": "北口本宮富士淺間神社 ＆ 露天眺望溫泉", "desc": "漫步走過參天巨木與石燈籠林立的淺間神社參道，在眺望富士山白雪山頂的私人檜木露天風呂中舒緩身心，滿載而歸。"}], "affiliateTitle": "啟程探索您的富士高山旅程", "affiliateDesc": "預訂東京直飛優惠機票，並預約適合山路行駛的 4WD 休旅露營車或尊榮商務包車。", "flightBtn": "✈️ 查詢東京最優機票 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-tokyo?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 預約富士山專車 / 4WD 休旅 ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "ja": {"title": "富士山本栖湖", "fullTitle": "富士山本栖湖：逆さ富士と森の静寂 ｜ JAPAN TABI 特集", "meta": "高原の鏡面絶景 ｜ グランピング＆ネイチャートリップ", "subtitle": "「夜明けの静まり返る本栖湖畔で目覚め、千円札に描かれた完璧な逆さ富士と対峙する。」", "leadImg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80", "leadCaption": "クリスタルガラスのように透き通る本栖湖の湖面に映る名峰「逆さ富士」。", "blurb": "千円札の原風景が息づく静謐の湖畔へ。焚き火の温もりと満天の星に包まれる極上の山岳体験。", "p1": "多くの観光客で賑わう展望台を離れ、富士山の西麓へ向かうと、そこには手つかずの自然が広がっています。富士五湖で最も深い本栖湖は、現在も現代的な高層建築がなく、秋冬の凛とした空気の中で湖面は巨大な鏡となり、千円札の図案となった荘厳な富士を映し出します。", "p2": "松の薪が爆ぜる焚き火の音、薫り高いハンドドリップ珈琲、そして夜空に立ち上る檜風呂の湯気。静寂に包まれた時間こそが、旅人にとって最高の贅沢です。", "diningEyebrow": "森の食卓と地元の恵み", "diningTitle": "ダッチオーブン料理と湖畔のガストロノミー", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "ジビエ薪火料理", "title": "星のや富士 フォレストキッチン", "sub": "ダッチオーブンディナー ｜ 河口湖", "desc": "アウトドアシェフとともに楽しむ、特選鹿肉や猪肉、森のキノコを使った豪快な焚き火グリル料理。", "loc": "富士河口湖", "btn": "テラス席予約 ➔", "url": "https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, {"photo": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80", "badge": "伝統の鉄鍋名物", "title": "ほうとう不動 (東恋路店)", "sub": "自家製平打ち麺の味噌仕立て", "desc": "武田信玄の陣中食として伝わる、南瓜と野菜の旨味が溶け込んだ熱々の鉄鍋ほうとう。", "loc": "湖畔ロード", "btn": "場所を見る ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80", "badge": "サードウェーブ", "title": "Cisco コーヒー＆ロースタリー", "sub": "サンフランシスコ発 ｜ 湖畔散策", "desc": "大きなガラス窓から雪化粧した富士山を望み、焼きたてのボストンクリームパイと浅煎り珈琲を。", "loc": "河口湖南岸", "btn": "カフェメニュー ➔", "url": "#"}], "planEyebrow": "厳選 3 日間モデルコース", "planTitle": "富士・本栖湖ネイチャートリップ", "days": [{"day": "Day 01", "title": "東京から河口湖へ：森のリトリートへチェックイン", "desc": "新宿から直通特急または専用車で湖畔へ。グランピング施設にチェックインし、焚き火珈琲ワークショップに参加。夜は静寂の星空を眺める。"}, {"day": "Day 02", "title": "本栖湖の日の出と青木ヶ原樹海の溶岩洞窟", "desc": "朝05:30に本栖湖浩庵キャンプ場へ向かい逆さ富士を撮影。日中はネイチャーガイドとともに青木ヶ原樹海と神秘の富岳風穴を探検。"}, {"day": "Day 03", "title": "北口本宮冨士浅間神社と絶景露天風呂", "desc": "巨木が立ち並ぶ荘厳な浅間神社を参拝。富士山を間近に望む貸切露天風呂で温まり、心地よい余韻とともに帰路へ。"}], "affiliateTitle": "富士山の旅を計画する", "affiliateDesc": "東京行きフライトを予約し、高原ドライブに最適な4WD車や専用ハイヤーを手配。", "flightBtn": "✈️ 東京行きフライトを検索 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-tokyo?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 富士山4WDレンタカー・ハイヤーを予約 ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}}, {"id": "okinawa", "issueNo": "Issue No. 03", "tag": "4 Days Road Trip", "price": "$480", "coverImg": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80", "en": {"title": "Route 58 Odyssey", "fullTitle": "Okinawa Route 58: Along the Emerald Horizon", "meta": "Subtropical Archipelago ｜ Coastal Road Trip", "subtitle": "“From Naha’s historic port to the wild prehistoric rainforests of Yanbaru—unfurling Okinawa’s greatest coastal highway.”", "leadImg": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1200&q=80", "leadCaption": "Cruising across Kouri Ocean Bridge above 30-meter visibility turquoise lagoons.", "blurb": "Roll down the windows and chase cobalt-to-turquoise sea gradients along Japan’s premier subtropical drive.", "p1": "Route 58 is more than a roadway; it is the poetic lifeline of the Ryukyu Islands. Stretching northward along the west coast, every turn unveils gradient shifts between cobalt deeps and brilliant aquamarine shoals. Driving with the windows down means inhaling salt air laced with the perfume of blooming hibiscus and wild banyan leaves.", "p2": "Beyond resort strips lies true island slowness: roadside stalls offering cold brown sugar shaved ice, artisan pottery villages firing clay in ascending wood kilns, and seaside terraces where Motobu Wagyu steaks sizzle over charcoal at dusk.", "diningEyebrow": "Island Flavors & Roasters", "diningTitle": "Seaside Farm Tables & Coastal Roasts", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "Pasture Direct Wagyu", "title": "Yakiniku Motobu Farm", "sub": "Single-Estate Motobu Wagyu ｜ Nago", "desc": "Cattle raised on fermented beer mash in northern hills. Melt-in-your-mouth sirloins served with local sea salt and fresh island shallots.", "loc": "Motobu Peninsula", "btn": "Check Tables ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=700&q=80", "badge": "Ocean Panoramic View", "title": "Cafe Doka Doka (Onna)", "sub": "Pottery Gallery & Wood-Fired Pizza", "desc": "Perched high on Onna’s clifftops, serving artisanal thin-crust pizzas on hand-thrown Ryukyu pottery with direct sunset panoramas.", "loc": "Onna Coastline", "btn": "Terrace Map ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&q=80", "badge": "Third-Wave Roastery", "title": "ZHYVAGO Coffee Works", "sub": "West Coast Heritage ｜ Chatan Seawall", "desc": "Industrial-chic coastal espresso bar where surfers, travelers, and locals watch Pacific waves roll in over double-shot cold brews.", "loc": "Chatan Seawall", "btn": "View Menu ➔", "url": "#"}], "planEyebrow": "Curated 3-Day Coastal Blueprint", "planTitle": "The Route 58 Coastal Drive", "days": [{"day": "Day 01", "title": "Naha Airport to Yomitan Pottery Village & Onna Coast", "desc": "Pick up your rental vehicle at Naha. Drive north along 58 to Yachimun no Sato pottery village. Settle into a coastal luxury retreat along Cape Manzamo for sunset cocktails."}, {"day": "Day 02", "title": "Kouri Ocean Bridge & Bise Fukugi Tree Village", "desc": "Cross the monumental 1,960-meter Kouri Bridge over emerald lagoons. Savor garlic butter shrimp wagon platters before wandering the quiet mossy alleys of Bise village."}, {"day": "Day 03", "title": "Cape Hedo & Yanbaru UNESCO Primeval Forest", "desc": "Reach the northernmost tip of Okinawa Island where dramatic limestone crags clash with turbulent ocean swells. Hike elevated boardwalks through ancient subtropical cycad groves."}], "affiliateTitle": "Drive Okinawa's Emerald Highway", "affiliateDesc": "Book direct flights to Naha (OKA) and reserve open-top convertibles or spacious family minivans with zero insurance deductible.", "flightBtn": "✈️ Compare Naha (OKA) Flights ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-okinawa?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 Book Okinawa Rental Car ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "zh": {"title": "沖繩 58 號公路", "fullTitle": "沖繩 58 號公路：追逐翡翠綠海平線 ｜ JAPAN TABI 深度名鑑", "meta": "亞熱帶海島自駕 ｜ 西海岸蔚藍巡禮", "subtitle": "「從那霸古老港灣直奔山原世界遺產原始雨林——展開沖繩最壯麗的蔚藍濱海自駕傳奇。」", "leadImg": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1200&q=80", "leadCaption": "橫跨清澈度高達 30 公尺翡翠綠潟湖的古宇利跨海大橋。", "blurb": "搖下車窗，深吸帶著扶桑花香的溫暖海風，沿著全日本最美西海岸體驗自在島嶼時光。", "p1": "58 號公路不只是一條公路，更是琉球群島的詩意動脈。沿著西海岸向北奔馳，每一個彎道都揭示出深藍外海與寶石翡翠綠潟湖的漸變交融。搖下車窗，空氣中滿是鹹鹹的海鹽香氣，交織著盛開扶桑花與海風野榕樹葉的清新。", "p2": "越過度假飯店聚集帶，真正的海島慢生活便悄然開展：路旁販售沁涼黑糖刨冰的古樸木亭、陶藝村落裡柴燒登窯飄出的裊裊輕煙，以及黃昏時分在懸崖露台上滋滋作響的本部牛和牛炭火燒肉。", "diningEyebrow": "海島風土 ＆ 濱海咖啡", "diningTitle": "產地直送料理 ＆ 斷崖日落餐桌", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "牧場直營和牛", "title": "燒肉 本部牧場 (名護)", "sub": "單一牧場本部牛 ｜ 名護市", "desc": "以發酵啤酒糟飼育的頂級黑毛和牛，入口即化的雪花沙朗佐以沖繩海鹽與島青蔥。", "loc": "本部半島", "btn": "確認席位 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=700&q=80", "badge": "斷崖全景夕陽", "title": "土花土花 藝廊咖啡 (恩納)", "sub": "陶藝工坊 ＆ 柴燒披薩", "desc": "高踞恩納村斷崖之上，以手工窯燒琉球陶盤盛裝薄脆現烤披薩，直面落日熔金的太平洋全景。", "loc": "恩納西海岸", "btn": "露台地圖 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&q=80", "badge": "西岸風格烘焙", "title": "ZHYVAGO 咖啡工坊", "sub": "美式復古工業風 ｜ 北谷海堤", "desc": "坐落於北谷海堤邊的工業風精品濃縮咖啡吧，衝浪客與旅人在此手捧冰滴咖啡凝望浪花。", "loc": "北谷美國村", "btn": "查看菜單 ➔", "url": "#"}], "planEyebrow": "精選 3 日濱海自駕藍圖", "planTitle": "沖繩 58 號公路自駕行紀", "days": [{"day": "Day 01", "title": "那霸機場至讀谷村陶藝村 ＆ 恩納海岸線", "desc": "於那霸取車後沿 58 號公路北上，探訪讀谷村「壺屋燒」陶藝登窯，傍晚入住萬座毛周邊海景奢華度假村享用落日調酒。"}, {"day": "Day 02", "title": "古宇利跨海大橋 ＆ 備瀨福木林道踏浪", "desc": "駕車飛馳於長達 1,960 公尺的古宇利大橋，俯瞰果凍般透明的碧藍海域；品嚐蒜香奶油蝦飯，午後漫步綠意盎然的備瀨福木百年古道。"}, {"day": "Day 03", "title": "邊戶岬 ＆ 山原 UNESCO 國立公園原始雨林", "desc": "抵達沖繩本島最北端的邊戶岬，觀賞驚濤駭浪拍打石灰岩斷崖的磅礡氣勢；隨後深入山原亞熱帶雨林高空步道，探尋山原秧雞的蹤跡。"}], "affiliateTitle": "自駕奔馳於沖繩翡翠綠公路", "affiliateDesc": "立即比價預訂飛往那霸 (OKA) 的優惠機票，並預約敞篷跑車或全險 0 自負額的寬敞家庭休旅車。", "flightBtn": "✈️ 查詢那霸 (OKA) 最優機票 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-okinawa?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 預約沖繩租車自駕 (0自負額) ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "ja": {"title": "沖縄 58号線", "fullTitle": "沖縄 国道58号線：エメラルドの水平線 ｜ JAPAN TABI 特集", "meta": "亜熱帯アイランドドライブ ｜ 西海岸の青の巡礼", "subtitle": "「那覇の港からやんばるの世界自然遺産の原生林へ。沖縄随一の海岸線を駆け抜ける。」", "leadImg": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1200&q=80", "leadCaption": "透明度30mのエメラルドグリーンに輝く海を渡る古宇利大橋。", "blurb": "窓を開けて潮風を浴びながら、コバルトブルーからエメラルドへと移ろう極上の海辺をゆく。", "p1": "国道58号線は単なる道路ではなく、琉球列島の詩的な生命線です。西海岸沿いに北へ向かうと、コバルトの深海と眩しいターコイズブルーの浅瀬が織りなすグラデーションが広がります。窓を開ければ、ハイビスカスと潮風の香りが心地よく吹き抜けます。", "p2": "リゾートホテルの先には、真の島時間が待っています。素朴な黒糖かき氷の売店、登り窯から煙が立ちのぼるやちむんの里、そして黄昏時に炭火で焼かれる本部牛ステーキの香ばしい煙。", "diningEyebrow": "島の恵みとロースタリー", "diningTitle": "産地直送の贅とシーサイドカフェ", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "牧場直営和牛", "title": "焼肉 もとぶ牧場", "sub": "もとぶ牛一頭買い ｜ 名護市", "desc": "ビール粕飼料で育つ極上の黒毛和牛。口の中でとろけるサーロインを屋我地島の塩と島らっきょうで。", "loc": "本部半島", "btn": "空席確認 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=700&q=80", "badge": "絶景パノラマ", "title": "カフェ土花土花 (恩納)", "sub": "やちむんギャラリー＆窯焼きピザ", "desc": "恩納村の高台から夕日を一望。手作りのやちむんプレートで供される香ばしい石窯ピザを堪能。", "loc": "恩納西海岸", "btn": "テラス情報 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&q=80", "badge": "西海岸スタイル", "title": "ZHYVAGO コーヒーワークス", "sub": "アメリカンレトロ ｜ 北谷海岸通り", "desc": "北谷のシーウォール沿いに佇むインダストリアル調カフェ。波の音を聴きながらコールドブリューを。", "loc": "北谷アメリカンビレッジ", "btn": "メニュー ➔", "url": "#"}], "planEyebrow": "厳選 3 日間モデルコース", "planTitle": "国道58号線 シーサイドドライブ", "days": [{"day": "Day 01", "title": "那覇から読谷村やちむんの里・恩納村へ", "desc": "那覇空港でレンタカーを受け取り北上。読谷村の登り窯を巡り、夕方は万座毛近くのリゾートホテルでサンセットカクテルを。"}, {"day": "Day 02", "title": "古宇利大橋と備瀬のフクギ並木", "desc": "全長1,960mの古宇利大橋を渡り絶景の海を体感。名物のガーリックシュリンプを味わい、木漏れ日揺れる備瀬のフクギ並木を散策。"}, {"day": "Day 03", "title": "辺戸岬とやんばる世界自然遺産の森", "desc": "沖縄本島最北端の辺戸岬で荒波が打ち寄せる断崖絶壁を見学。やんばるの森の遊歩道を歩き、太古の自然の息吹を感じる。"}], "affiliateTitle": "沖縄エメラルドドライブに出発する", "affiliateDesc": "那覇 (OKA) 行き航空券を予約し、オープンカーや安心の免責補償付きファミリーミニバンを手配。", "flightBtn": "✈️ 那覇行き航空券を検索 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-okinawa?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 沖縄レンタカーを予約 ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}}, {"id": "niseko", "issueNo": "Issue No. 04", "tag": "5 Days Ski Safari", "price": "$890", "coverImg": "https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=800&q=80", "en": {"title": "Niseko Untamed", "fullTitle": "Niseko: Chasing Pure Japanese Powder Snow", "meta": "Hokkaido Powder Paradise ｜ Alpine Thermal Living", "subtitle": "“Deep powder runs through silver birch glades, rewarded each twilight by scalding outdoor volcanic onsens.”", "leadImg": "https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=1200&q=80", "leadCaption": "Mount Yotei rising majestically across the powder-covered volcanic ridges of Niseko United.", "blurb": "Immerse in Hokkaido’s legendary JAPOW snowfields, fireside robata dining, and hidden cedar speakeasies.", "p1": "Every winter, arctic winds howling from Siberia sweep across the Sea of Japan, absorbing moisture before slamming into the volcanic peaks of Hokkaido. The result is the world's driest, most effortless powder snow—colloquially celebrated across ski culture as 'JAPOW.'", "p2": "In Niseko, skiing is a holistic ritual. Floating weightlessly through tree runs gives way to fireside omakase feasts, where fresh hairy crab, sea urchin from cold northern currents, and smoky single malts replenish tired muscles.", "diningEyebrow": "Après-Ski Gastronomy", "diningTitle": "Hearthside Dining & Alpine Izakayas", "diningCards": [{"photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=700&q=80", "badge": "Michelin Recommended Omakase", "title": "Sushi Shin by Miyakawa", "sub": "Three-Star Heritage ｜ Hirafu Village", "desc": "Showcasing the pinnacle of Edomae craft using Hokkaido Botan shrimp, cold-water king crab, and aged tuna paired with warm red-vinegar rice.", "loc": "Niseko Hirafu", "btn": "Reserve Seat ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80", "badge": "Wood-Fire Robata", "title": "The Barn by Odin", "sub": "Hokkaido Bistro ｜ Traditional Barn", "desc": "Inspired by traditional Hokkaido farm architecture, serving sizzling Shiraoi beef steaks and fondue alongside crisp local microbrews.", "loc": "Lower Hirafu", "btn": "Explore Bistro ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80", "badge": "Hidden Speakeasy", "title": "Bar Gyu+ (The Fridge Door)", "sub": "Artisanal Cocktails & Rare Whiskeys", "desc": "Enter through a vintage red Coca-Cola refrigerator door submerged in snow into an intimate jazz haven overlooking floodlit birch trees.", "loc": "Hirafu Center", "btn": "Bar Hours ➔", "url": "#"}], "planEyebrow": "Curated 3-Day Powder Blueprint", "planTitle": "The Hokkaido Snow Safari", "days": [{"day": "Day 01", "title": "Sapporo New Chitose to Niseko Hirafu", "desc": "Direct ski shuttle or private 4WD transfer from Chitose. Check in to ski-in/ski-out lodge. Equipment fitting and night skiing under luminous floodlights."}, {"day": "Day 02", "title": "First Tracks at Hanazono & Backcountry Gates", "desc": "08:30 AM first chair at Hanazono. Drop into deep powder bowls and birch trees. Afternoon soak in natural sulfur springs at Goshiki Onsen."}, {"day": "Day 03", "title": "Otaru Coastal Port Feast & Canal Walk", "desc": "Scenic morning drive down to Otaru port. Savor sea urchin bowls (Uni-don) at Sankaku Market and stroll the snow-covered historic gas-lit canal."}], "affiliateTitle": "Plan Your Ultimate Ski Expedition", "affiliateDesc": "Secure Sapporo (CTS) winter flights and book private airport ski-vans with roof boxes and studded snow tires.", "flightBtn": "✈️ Compare Sapporo (CTS) Flights ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-sapporo?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 Book 4WD Snow-Tire Van ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "zh": {"title": "北海道二世谷", "fullTitle": "北海道二世谷：極致粉雪與火山名湯 ｜ JAPAN TABI 深度名鑑", "meta": "北海道粉雪天堂 ｜ 溫泉滑雪野奢生活", "subtitle": "「在白樺樹林間感受失重飄浮的頂級粉雪，黃昏在雪山白煙蒸騰的露天秘湯洗去一身疲憊。」", "leadImg": "https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=1200&q=80", "leadCaption": "羊蹄山聳立在二世谷連峰白雪皚皚的山脊之後，宛如北海道富士。", "blurb": "體驗全世界滑雪者夢寐以求的極乾粉雪 JAPOW，在壁爐爐火前品嚐頂級生海膽與單一麥芽威士忌。", "p1": "每年冬天，來自西伯利亞的刺骨寒流掠過日本海，飽吸水氣後撞上北海道西側的火山峰巒。造就了全世界濕度最低、最輕盈無阻力的極致粉雪——在國際滑雪圈被奉為傳奇的「JAPOW (Japan Powder)」。", "p2": "在二世谷，滑雪是一場全方位的身心盛宴。在樹林鬆雪間飄然穿梭之後，等待著你的是溫暖的板前割烹與爐端燒，鮮甜的毛蟹、冷水域特產馬糞海膽與煙燻威士忌，重新喚醒每一寸疲憊的肌肉。", "diningEyebrow": "滑雪後微醺 ＆ 北國旬味", "diningTitle": "地爐料理 ＆ 雪國隱密酒吧", "diningCards": [{"photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=700&q=80", "badge": "米其林三星血統", "title": "鮨 心 (Sushi Shin)", "sub": "宮川主廚監製 ｜ 比羅夫村", "desc": "江戶前傳統工藝的巔峰之作，使用北海道牡丹蝦、鱈場蟹與熟成野生鮪魚佐以赤醋溫飯。", "loc": "二世谷比羅夫", "btn": "預約席位 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80", "badge": "柴燒爐端法餐", "title": "The Barn by Odin", "sub": "北歐傳統穀倉造型餐廳", "desc": "以北海道傳統農莊木構穀倉為靈感，供應滋滋作響的白老和牛牛排與熱騰騰起司鍋。", "loc": "下比羅夫", "btn": "探索餐廳 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80", "badge": "雪地冰箱秘門", "title": "Bar Gyu+ (冰箱門酒吧)", "sub": "手工調酒 ＆ 珍稀威士忌", "desc": "穿過掩映在白雪下的老式紅色可口可樂冰箱門，進入這座放著爵士樂、直面白樺雪景的私密酒吧。", "loc": "比羅夫中央街", "btn": "營業時間 ➔", "url": "#"}], "planEyebrow": "精選 3 日北國粉雪藍圖", "planTitle": "北海道極致粉雪巡禮", "days": [{"day": "Day 01", "title": "新千歲機場至二世谷比羅夫滑雪場", "desc": "搭乘專屬雪場巴士或包車直達比羅夫，入住直通雪道 (Ski-in/Ski-out) 的奢華木屋，租借專業粉雪板，體驗夜滑燈光雪道。"}, {"day": "Day 02", "title": "花園滑雪場初雪 ＆ 五色溫泉野湯", "desc": "清晨搭乘花園雪場第一班纜車搶攻無痕野雪碗狀雪道；午後前往隱匿於山坳間的五色溫泉，浸泡在天然硫磺乳白溫泉中。"}, {"day": "Day 03", "title": "小樽海港海鮮盛宴 ＆ 雪景運河漫步", "desc": "下山沿著海岸線前往小樽，在三角市場大啖澎湃爆滿的生海膽鮭魚卵丼，午後漫步在煤氣燈閃爍的雪景小樽運河畔。"}], "affiliateTitle": "規劃您的北海道極致滑雪行", "affiliateDesc": "預訂札幌新千歲 (CTS) 直飛航班，並安排具備雪胎、車頂雪板架的 4WD 商務專車機場接送。", "flightBtn": "✈️ 查詢札幌 (CTS) 最優機票 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-sapporo?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 預約 4WD 雪地專用包車 ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "ja": {"title": "北海道ニセコ", "fullTitle": "ニセコ：世界を魅了する極上JAPOW ｜ JAPAN TABI 特集", "meta": "パウダースノーパラダイス ｜ 雪山温泉ライフ", "subtitle": "「白樺の森を滑り抜ける浮遊感のあと、雪見の露天風呂で温まる至福のトワイライト。」", "leadImg": "https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=1200&q=80", "leadCaption": "ニセコユナイテッドの雪尾根の向こうに聳え立つ、秀麗なる蝦夷富士・羊蹄山。", "blurb": "世界中のスキーヤーが憧れる奇跡の粉雪と、暖炉が揺れる隠れ家バーで味わう至高の冬時間。", "p1": "冬、シベリアからの寒気団が日本海を渡り、湿気を蓄えて北海道西部の山々に衝突します。その結果生まれるのが、世界で最も軽くシルキーな奇跡の雪――スキー文化で「JAPOW」と称賛される極上パウダースノーです。", "p2": "ニセコでのスキーは五感すべてで愉しむ儀式です。ツリーランの浮遊感に酔いしれた後は、毛蟹や濃厚な雲丹、スモーキーなウイスキーとともに炉端焼きに舌鼓を打ちます。", "diningEyebrow": "アフタースキーの美食", "diningTitle": "炉端割烹と隠れ家バー", "diningCards": [{"photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=700&q=80", "badge": "三ツ星の系譜", "title": "鮨 心 by 宮川", "sub": "伝統の江戸前鮨 ｜ ヒラフビレッジ", "desc": "北海道産のボタンエビ、タラバガニ、熟成マグロを赤酢のシャリとともに握る極上の江戸前鮨。", "loc": "ニセコヒラフ", "btn": "席を予約 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80", "badge": "伝統バーンスタイル", "title": "The Barn by Odin", "sub": "北海道ビストロ ｜ 伝統木造納屋", "desc": "伝統的な納屋建築に着想を得たビストロ。熱々の白老牛ステーキやチーズフォンデュを地ビールとともに。", "loc": "下ヒラフ", "btn": "レストランを見る ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80", "badge": "隠し扉のバー", "title": "Bar Gyu+ (冷蔵庫の扉)", "sub": "クラフトカクテル＆ウイスキー", "desc": "雪に埋もれた赤いコカコーラ冷蔵庫の扉を開けると広がる、ライトアップされた白樺を望むジャズバー。", "loc": "ヒラフセンター", "btn": "営業時間 ➔", "url": "#"}], "planEyebrow": "厳選 3 日間モデルコース", "planTitle": "北海道スノーサファリ", "days": [{"day": "Day 01", "title": "新千歳空港からニセコヒラフへ", "desc": "空港から直行スキータクシーでヒラフへ。スキーイン・スキーアウト可能なロッジにチェックインし、ナイターを満喫。"}, {"day": "Day 02", "title": "花園ファーストトラックと五色温泉", "desc": "朝一番のリフトでノートラックのパウダーボウルへドロップイン。午後は山奥の秘湯・五色温泉の硫黄泉で筋肉を解きほぐす。"}, {"day": "Day 03", "title": "小樽港の海鮮丼と運河散策", "desc": "海岸沿いをドライブして小樽へ。三角市場で溢れんばかりのウニ丼を味わい、ガス灯灯る雪の小樽運河を散策。"}], "affiliateTitle": "ニセコスキートリップを計画する", "affiliateDesc": "札幌 (CTS) 行き航空券を予約し、スタッドレスタイヤ完備の4WDハイヤーを手配。", "flightBtn": "✈️ 札幌行き航空券を検索 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-sapporo?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 4WDスノーハイヤーを予約 ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}}, {"id": "kyushu", "issueNo": "Issue No. 05", "tag": "3 Days Scenic Rail", "price": "$590", "coverImg": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80", "en": {"title": "Kyushu by Rail", "fullTitle": "Kyushu by Rail: The Emerald Forest Odyssey", "meta": "Heritage Railway ｜ Volcanic Thermal Valleys", "subtitle": "“Aboard Eiji Mitooka’s legendary vintage green express, gliding through river gorges into Yufuin’s morning mists.”", "leadImg": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80", "leadCaption": "The Yufuin no Mori crossing the Jion Falls bridge amid dense mountain gorges, Oita Prefecture.", "blurb": "Embark on a romantic journey across volcanic valleys aboard Japan’s most celebrated designer sightseeing trains.", "p1": "Rail travel in Kyushu transcends mere transportation—it is a romantic art form. Conceived by industrial designer Eiji Mitooka, the polished metallic emerald livery of the Yufuin no Mori express harmonizes effortlessly with the cedars and misty river ravines of Oita Prefecture.", "p2": "Stepping aboard reveals warm timber parquet floors, brass handrails, and floor-to-ceiling panoramic windows framing soaring volcanic cascades. Enjoying a bento packed with Bungo Wagyu beef and yuzu pepper ice cream as the train sways toward Mount Yufu is pure slow-travel bliss.", "diningEyebrow": "Local Delicacies & Tea Houses", "diningTitle": "Artisan Ryokan Dining & Forest Roasters", "diningCards": [{"photo": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=80", "badge": "Top Ryokan Dining", "title": "Kamenoi Bessou: Yurari", "sub": "Centuries-old Forest Hearth ｜ Kinrin Lake", "desc": "Seasonal kaiseki celebrating Bungo river char, simmered winter mountain vegetables, and wild matsutake broth inside private thatched-roof chambers.", "loc": "Kinrin Lake Precinct", "btn": "Check Availability ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=700&q=80", "badge": "Lakefront Morning Cafe", "title": "Cafe La Ruche", "sub": "Bakery & Lake Terrace View", "desc": "Warm croissants and siphon coffee served on an outdoor timber dock as natural geothermal steam rises over the morning lake surface.", "loc": "Lake Kinrin", "btn": "Cafe Gallery ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80", "badge": "Geothermal Kitchen", "title": "Jigoku Mushi Kobo (Kannawa)", "sub": "Ancient Steam Cooking ｜ Beppu", "desc": "Place baskets of local pork, prawns, sweet potatoes, and eggs directly into boiling volcanic steam chambers operating since the Edo era.", "loc": "Beppu Onsen", "btn": "Steam Kitchen Guide ➔", "url": "#"}], "planEyebrow": "Curated 3-Day Rail Blueprint", "planTitle": "The Kyushu Scenic Express", "days": [{"day": "Day 01", "title": "Hakata to Yufuin via Yufuin no Mori", "desc": "Board the 09:17 AM scenic service from Hakata Station. Enjoy the commemorative onboard bento and view Jion Falls. Stroll Yunotsubo High Street and check into a private hot spring ryokan."}, {"day": "Day 02", "title": "Kinrin Lake Morning Steam & Transit to Beppu", "desc": "Catch the ethereal early mist on Lake Kinrin at 07:00 AM. Take the midday local scenic rail to Beppu to explore the volcanic 'Hells' (Jigoku) and steam-cooked seafood."}, {"day": "Day 03", "title": "Aso Boy! Express Across the Caldera", "desc": "Board the panoramic 'Aso Boy!' train ascending the rim of Mount Aso volcano. Take in sweeping grasslands and grazing cattle before returning to Kumamoto or Fukuoka."}], "affiliateTitle": "Embark on Your Kyushu Rail Journey", "affiliateDesc": "Secure Fukuoka (FUK) direct flights and reserve your official JR Kyushu Rail Pass or private station transfers.", "flightBtn": "✈️ Compare Fukuoka (FUK) Flights ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-fukuoka?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚂 JR Kyushu Rail Pass & Transfers ➔", "carUrl": "https://tw.trip.com/trains?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "zh": {"title": "九州觀光鐵道", "fullTitle": "九州觀光鐵道：翠綠森林與溫泉之詩 ｜ JAPAN TABI 深度名鑑", "meta": "經典設計鐵道 ｜ 火山溫泉山谷漫遊", "subtitle": "「搭乘水戶岡銳治筆下的傳奇翡翠綠觀光列車，穿行於溪谷瀑布間，駛入由布院的晨霧。」", "leadImg": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80", "leadCaption": "由布院之森列車穿過大分縣深山峽谷與慈恩瀑布鐵橋。", "blurb": "搭乘全日本最負盛名的觀光設計列車，沉醉於森林原木車廂、溫泉旅館會席與金鱗湖晨霧。", "p1": "在九州，搭乘鐵道旅行不僅僅是移動，更是一場溫柔浪漫的藝術行禮。由工業設計大師水戶岡銳治操刀的「由布院之森」號列車，其溫潤的金屬翠綠色塗裝，與大分縣蒼翠的雪松山林與水氣蒸騰的溪谷完美融為一體。", "p2": "走進車廂，映入眼簾的是溫暖的實木拼接地板、復古黃銅把手以及迎面撲來的原木清香。手捧一份精緻的豐後牛便當與柚子胡椒冰淇淋，倚著高挑全景車窗，任由列車徐徐駛向由布岳山麓，這便是慢活旅行的極致享受。", "diningEyebrow": "溫泉鄉風土 ＆ 湖畔茶室", "diningTitle": "名門溫泉會席 ＆ 地獄蒸天然料理", "diningCards": [{"photo": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=80", "badge": "御三家頂級會席", "title": "龜之井別莊：湯之岳庵", "sub": "百年草葺老舖 ｜ 金鱗湖畔", "desc": "在金鱗湖畔的數百年老舖旅館中，品嚐炭火慢烤的豐後牛、川魚與當季山林野菜會席料理。", "loc": "金鱗湖畔", "btn": "確認預訂 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=700&q=80", "badge": "湖畔晨霧咖啡", "title": "Cafe La Ruche", "sub": "手作烘焙 ＆ 湖畔木棧台露台", "desc": "在清晨金鱗湖溫泉蒸氣瀰漫的水面旁，於露天木棧道上品嚐剛出爐的酥脆可頌與虹吸咖啡。", "loc": "金鱗湖", "btn": "藝廊咖啡 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80", "badge": "地熱古法蒸煮", "title": "地獄蒸工房 鐵輪", "sub": "百年天然地熱高溫蒸氣 ｜ 別府", "desc": "親手將裝滿九州黑豚、海鮮、紅薯與雞蛋的竹簍放入自江戶時代運作至今的沸騰溫泉蒸氣釜中蒸熟。", "loc": "別府溫泉", "btn": "蒸食指南 ➔", "url": "#"}], "planEyebrow": "精選 3 日觀光鐵道藍圖", "planTitle": "九州翠綠森林鐵道行紀", "days": [{"day": "Day 01", "title": "博多出發搭乘由布院之森前往由布院", "desc": "搭乘上午 09:17 由博多出發的由布院之森號，品嚐車廂特製紀念便當，眺望慈恩瀑布；抵達後漫步湯之坪街道，入住頂級私人溫泉旅館。"}, {"day": "Day 02", "title": "金鱗湖晨霧幻境 ＆ 轉乘至別府地獄溫泉", "desc": "清晨 07:00 欣賞金鱗湖如夢似幻的水面溫泉晨霧；午後搭乘地方鐵道前往別府，探索咕嘟沸騰的「海地獄」並體驗地熱海鮮蒸食。"}, {"day": "Day 03", "title": "搭乘「阿蘇男孩！」全景列車穿越火山巨型破火山口", "desc": "換乘擁有全景觀景車廂的「阿蘇男孩！」號，登上阿蘇火山邊緣，眺望一望無際的千里濱高原與放牧牛群，返回熊本或福岡。"}], "affiliateTitle": "啟程規劃您的九州鐵道之旅", "affiliateDesc": "即刻預訂福岡 (FUK) 優惠機票，並預購 JR 九州鐵路電子周遊券或車站專車接送。", "flightBtn": "✈️ 查詢福岡 (FUK) 最優機票 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-fukuoka?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚂 預約 JR 九州鐵路周遊券 ➔", "carUrl": "https://tw.trip.com/trains?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "ja": {"title": "九州観光列車", "fullTitle": "九州鉄道紀行：エメラルドの森と温泉の詩 ｜ JAPAN TABI 特集", "meta": "名作デザイン列車 ｜ 火山と名湯の谷をゆく", "subtitle": "「水戸岡鋭治氏が描いたエメラルドグリーンの名列車に乗り、渓谷を抜けて朝霧の由布院へ。」", "leadImg": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80", "leadCaption": "大分県・慈恩の滝の鉄橋を渡る「特急 ゆふいんの森」号。", "blurb": "木の温もりに包まれるクラシックな車窓から、雄大な由布岳と湯けむり立ちのぼる温泉郷を旅する。", "p1": "九州の鉄道の旅は単なる移動ではなく、浪漫あふれる総合芸術です。インダストリアルデザイナー水戸岡鋭治氏が手がけたメタリックグリーンの「ゆふいんの森」号は、大分の杉木立や深い渓谷の緑と見事に調和します。", "p2": "車内に足を踏み入れれば、温かみのある木製フローリング、真鍮の手すり、そして大きなハイデッカー車窓が迎えてくれます。豊後牛の特製弁当と柚子胡椒アイスを味わいながら由布岳の麓へと揺られる時間は、至福のスロートラベルそのものです。", "diningEyebrow": "湯の里の美味と茶房", "diningTitle": "名門旅館の会席と地獄蒸し料理", "diningCards": [{"photo": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=80", "badge": "御三家の味", "title": "亀の井別荘 湯の岳庵", "sub": "金鱗湖畔の草庵 ｜ 由布院", "desc": "金鱗湖のほとりに佇む名門旅館で、炭火で焼く豊後牛や川魚、旬の山の幸をいただく贅沢な会席。", "loc": "金鱗湖畔", "btn": "空席確認 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=700&q=80", "badge": "湖畔のテラス", "title": "カフェ・ラ・リューシュ", "sub": "焼きたてパン ｜ 金鱗湖ビュー", "desc": "朝霧たなびく金鱗湖を望むウッドデッキで、焼きたてクロワッサンとサイフォン珈琲を味わう清々しい朝。", "loc": "金鱗湖", "btn": "ギャラリー ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80", "badge": "天然蒸気調理", "title": "地獄蒸し工房 鉄輪", "sub": "江戸時代からの地熱釜 ｜ 別府", "desc": "別府温泉の熱気溢れる蒸気釜で、新鮮な豚肉や魚介、旬の野菜を蒸し上げる伝統のヘルシー料理。", "loc": "別府温泉", "btn": "地獄蒸し案内 ➔", "url": "#"}], "planEyebrow": "厳選 3 日間モデルコース", "planTitle": "九州観光列車 グリーントリップ", "days": [{"day": "Day 01", "title": "博多から「ゆふいんの森」で由布院へ", "desc": "博多駅を午前出発。記念弁当を味わいながら慈恩の滝を車窓から眺め、由布院到着後は湯の坪街道を散策して名旅館へ。"}, {"day": "Day 02", "title": "金鱗湖の朝霧と別府地獄めぐり", "desc": "早朝07:00に幻想的な金鱗湖の朝霧を鑑賞。午後は列車で別府へ移動し、湯けむり立ちのぼる海地獄と地獄蒸し体験を満喫。"}, {"day": "Day 03", "title": "「あそぼーい！」号で阿蘇カルデラを横断", "desc": "パノラマシートを備えた人気観光列車に乗り、雄大な阿蘇五岳と草千里の緑を車窓に眺めながら熊本・福岡へ。"}], "affiliateTitle": "九州列車の旅を計画する", "affiliateDesc": "福岡 (FUK) 行き航空券を予約し、JR九州レールパスや専用車送迎を手配。", "flightBtn": "✈️ 福岡行き航空券を検索 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-fukuoka?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚂 JR九州レールパスを予約 ➔", "carUrl": "https://tw.trip.com/trains?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}}, {"id": "kyoto", "issueNo": "Issue No. 06", "tag": "3 Days Zen Heritage", "price": "$420", "coverImg": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80", "en": {"title": "Kyoto Zen Whispers", "fullTitle": "Kyoto Arashiyama & Sagano: Bamboo Whispers & Zen Sanctuaries", "meta": "Millennial Ancient Capital ｜ Sagano Bamboo & Zen", "subtitle": "“Wander through towering green bamboo groves at dawn and experience seasonal matcha in secluded moss temple courtyards.”", "leadImg": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80", "leadCaption": "Sunlight filtering through the Sagano Bamboo Forest in early morning stillness, Kyoto.", "blurb": "Discover ancient stone temples, emerald moss gardens, and historic tea masters nestled in the hills of western Kyoto.", "p1": "Before the morning rickshaws arrive at Togetsukyo Bridge, Arashiyama belongs only to the wind whispering through towering emerald stalks. In Sagano, ancient sub-temples of Tenryu-ji reveal the distilled essence of Japanese aesthetics: raked gravel ripples, weeping maples dipping toward koi ponds, and cedar tatami halls opening onto timeless rock gardens.", "p2": "Here, time slows to the rhythm of single water droplets falling from a bamboo bamboo fountain. Sipping whisked ceremonial Uji matcha alongside seasonal wagashi confections invites profound inner stillness.", "diningEyebrow": "Zen Gastronomy & Matcha", "diningTitle": "Shojin Ryori & Machiya Tea Houses", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "Temple Shojin Cuisine", "title": "Tenryu-ji Shigetsu", "sub": "Michelin Bib Gourmand ｜ Inside Temple", "desc": "Authentic Zen Buddhist vegetarian cuisine served on vermilion lacquerware overlooking the UNESCO Sogenchi garden.", "loc": "Tenryu-ji Grounds", "btn": "Reserve Shojin ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80", "badge": "Centuries-Old Yudofu", "title": "Saga Yudofu Sagano", "sub": "Artisan Soft Tofu in Garden", "desc": "Silken handmade Kyoto tofu simmered in kelp dashi with delicate dipping sauce, surrounded by bamboo garden groves.", "loc": "Sagano Road", "btn": "Explore Garden ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80", "badge": "Third-Wave Roastery", "title": "% Arabica Kyoto Arashiyama", "sub": "Specialty Espresso ｜ Oi River", "desc": "Iconic glass-fronted espresso bar set directly on the banks of the Oi River, framed by mountains and graceful wooden skiffs.", "loc": "Togetsukyo Riverbank", "btn": "Cafe View ➔", "url": "#"}], "planEyebrow": "Curated 3-Day Zen Blueprint", "planTitle": "Kyoto Arashiyama & Ancient Capital Walk", "days": [{"day": "Day 01", "title": "Kyoto Station to Arashiyama & Sagano Bamboo Grove", "desc": "Arrive early morning at the Sagano Bamboo Forest before crowds gather. Walk to Okochi Sanso Villa for ceremonial green tea and sweeping city panoramas."}, {"day": "Day 02", "title": "Tenryu-ji Sogenchi Garden & Sagano Romantic Train", "desc": "Contemplate the 700-year-old Zen pond garden at Tenryu-ji. Board the open-air Sagano Torokko train weaving along the dramatic Hozugawa River gorge."}, {"day": "Day 03", "title": "Otagi Nenbutsu-ji & Gion Geisha District Evening Walk", "desc": "Visit Otagi Nenbutsu-ji’s 1,200 whimsical moss-covered stone rakan statues. Transit to Gion for an evening walk along lantern-lit preservation alleys."}], "affiliateTitle": "Embark on Your Kyoto Zen Journey", "affiliateDesc": "Book Kansai (KIX) flights and reserve comfortable Kyoto private chartered day tours or heritage machiya stays.", "flightBtn": "✈️ Search Osaka/Kyoto (KIX) Flights ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-osaka?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 Book Kyoto Heritage Charter Car ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "zh": {"title": "京都嵐山嵯峨野", "fullTitle": "京都嵐山嵯峨野：竹林微風與禪院茶席 ｜ JAPAN TABI 深度名鑑", "meta": "千年古都世界遺產 ｜ 嵯峨野竹林與禪境名園", "subtitle": "「清晨漫步於翠綠參天的嵯峨野竹林小徑，在幽靜的苔蘚禪院中品味一碗手刷宇治抹茶。」", "leadImg": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80", "leadCaption": "清晨破曉時分，金色陽光透過嵯峨野竹林枝葉灑落石板小徑。", "blurb": "探訪西方洛西山麓的古寺名園、翠綠苔庭與百年茶道大師茶席，沉澱心靈雜念。", "p1": "在清晨人力車尚未行駛於渡月橋之前，嵐山唯有微風穿過翠綠高聳竹梢的沙沙低語。在嵯峨野，天龍寺與座落於山林間的諸多禪院，展現了日本侘寂美學的極致精粹：耙梳整齊的白砂波紋、斜映在錦鯉池中的垂枝紅楓，以及面朝永恆枯山水庭園開敞的榻榻米殿堂。", "p2": "在這裡，時光隨著添水（竹製水筒）規律清脆的敲擊聲而放緩節奏。在禪院緣側捧起一碗剛手筅點拂好的微苦翠綠宇治濃茶，搭配季節生和菓子，在清涼空氣中洗滌一切凡塵紛擾。", "diningEyebrow": "禪院精進 ＆ 百年湯豆腐", "diningTitle": "世界遺產寺院料理 ＆ 町家茶室", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "米其林必比登", "title": "天龍寺 篩月 (Shigetsu)", "sub": "世界遺產曹源池畔 ｜ 寺院精進料理", "desc": "在天龍寺庭園內，以朱紅漆器盛裝五味五色四季旬鮮的純素正統禪宗精進料理。", "loc": "天龍寺境內", "btn": "預約精進料理 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80", "badge": "百年庭園湯豆腐", "title": "嵯峨野 湯豆腐", "sub": "手工絹豆腐 ｜ 日本庭園席", "desc": "以利尻昆布高湯溫熱的手工柔滑京都豆腐，沾裹特調醬汁與細切九條蔥，窗外是竹林庭院。", "loc": "嵯峨野小徑", "btn": "探索庭園 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80", "badge": "大堰川畔名店", "title": "% Arabica 京都嵐山", "sub": "單品精品義式 ｜ 渡月橋畔", "desc": "座落於大堰川旁的極簡全玻璃咖啡館，手握招牌拿鐵遠眺嵐山山林倒影與遊船搖曳。", "loc": "渡月橋水岸", "btn": "咖啡景觀 ➔", "url": "#"}], "planEyebrow": "精選 3 日古都禪意藍圖", "planTitle": "京都嵐山古都人文行紀", "days": [{"day": "Day 01", "title": "京都車站至嵐山竹林小徑 ＆ 大河內山莊", "desc": "清晨前往無人之境的嵯峨野竹林漫步，造訪一代影星大河內傳次郎耗費三十年營造的庭園，在山頂茶室品茗俯瞰京都市全景。"}, {"day": "Day 02", "title": "天龍寺曹源池庭園 ＆ 嵯峨野觀光小火車", "desc": "在擁七百年歷史的天龍寺曹源池畔冥想；隨後搭乘沿保津川峽谷蜿蜒行駛的復古嵯峨野 Torokko 小火車，體驗山谷壯闊美景。"}, {"day": "Day 03", "title": "愛宕念佛寺千二百羅漢 ＆ 祇園花見小路夜遊", "desc": "造訪被苔蘚覆蓋、神態各異的 1,200 尊石雕羅漢群；午後返回京都市區，於傍晚漫步在花見小路與白川石疊路的紅燈籠古韻中。"}], "affiliateTitle": "啟程規劃您的京都禪意之旅", "affiliateDesc": "預訂大阪關西機場直航班機，並預約京都專屬中文包車一日遊或傳統百年町家住宿。", "flightBtn": "✈️ 查詢大阪/京都最優機票 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-osaka?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 預約京都古都專屬包車 ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}, "ja": {"title": "京都嵐山嵯峨野", "fullTitle": "京都嵐山嵯峨野：竹林の静寂と禅寺の茶席 ｜ JAPAN TABI 特集", "meta": "千年の古都 ｜ 嵯峨野の竹林と名庭巡礼", "subtitle": "「早朝の嵯峨野竹林の小径を抜け、苔寺の静けさのなかで抹茶を一服いただく。」", "leadImg": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80", "leadCaption": "朝の光が差し込む嵯峨野の竹林の小径。嵐山の静寂が広がる。", "blurb": "洛西の山裾に佇む古刹、緑深き苔庭、そして伝統の茶道が紡ぎ出す究極のわびさび。", "p1": "渡月橋に観光客の喧騒が訪れる前の早朝、嵐山は竹梢を渡る風の音だけに包まれます。嵯峨野の天龍寺をはじめとする禅寺には、砂紋が描かれた庭、池に映る紅葉、そして静寂の枯山水という日本の美の真髄が凝縮されています。", "p2": "鹿威しの心地よい音が静けさを際立たせる中、縁側で点てたばかりの宇治抹茶と季節の和菓子を味わうひとときは、日々の喧騒を忘れさせてくれる至福のひとときです。", "diningEyebrow": "寺院料理と老舗の味", "diningTitle": "精進料理と町家茶室の美味", "diningCards": [{"photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80", "badge": "ミシュラン認定", "title": "天龍寺 篩月", "sub": "世界遺産曹源池庭園 ｜ 精進料理", "desc": "天龍寺の境内にある篩月で、四季の野菜や豆類を伝統の技で仕立てた本格的な禅寺の精進料理。", "loc": "天龍寺境内", "btn": "精進料理を予約 ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80", "badge": "名物湯どうふ", "title": "嵯峨野 湯どうふ", "sub": "自家製絹ごし豆腐 ｜ 日本庭園", "desc": "利尻昆布の出汁で温める滑らかな手作り豆腐を、竹林庭園を眺めながらいただく贅沢。", "loc": "嵯峨野小道", "btn": "庭園を見る ➔", "url": "#"}, {"photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=700&q=80", "badge": "桂川の絶景カフェ", "title": "% Arabica 京都嵐山", "sub": "スペシャルティエスプレッソ", "desc": "大堰川のほとりに佇むガラス張りのカフェ。嵐山を望みながら本格ラテを味わう格別の時間。", "loc": "渡月橋畔", "btn": "カフェ情報 ➔", "url": "#"}], "planEyebrow": "厳選 3 日間モデルコース", "planTitle": "京都嵐山 禅の旅路", "days": [{"day": "Day 01", "title": "京都駅から嵐山竹林と大河内山荘へ", "desc": "静かな早朝の嵯峨野竹林を散策し、大河内山荘の名庭へ。山頂の茶席から京都市街を一望する。"}, {"day": "Day 02", "title": "天龍寺曹源池庭園と嵯峨野トロッコ列車", "desc": "天龍寺で700年の歴史を持つ名庭を鑑賞したのち、保津川渓谷を縫うように走るトロッコ列車に乗車。"}, {"day": "Day 03", "title": "愛宕念仏寺の千二百羅漢と祇園の夕景", "desc": "苔生す1,200体のユーモラスな石仏を巡り、午後は祇園花見小路の石畳をそぞろ歩き。"}], "affiliateTitle": "京都への旅を計画する", "affiliateDesc": "関西国際空港行きフライトを予約し、古都巡りに最適な専用車や伝統の京町家を手配。", "flightBtn": "✈️ 大阪・京都行きフライトを検索 ➔", "flightUrl": "https://tw.trip.com/flights/taipei-to-osaka?Allianceid=9507030&SID=325761227&trip_sub3=D20272275", "carBtn": "🚗 京都専用ハイヤーを予約 ➔", "carUrl": "https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"}}]};
+
+    let currentLang = 'en';
+    let currentArticleId = null;
+
+    const UI_TRANSLATIONS = {
+      en: {
+        headerTag: 'SPECIAL ISSUE',
+        heroTitle: 'Travel Packages<br><em>Crafted for You</em>',
+        heroSub: 'Discover stunning destinations, unique experiences, and custom itineraries that make your travel dreams real.',
+        fromPrice: 'From',
+        perPack: '/person',
+        learnMore: 'Learn More',
+        backToCatalog: 'Back to Special Issues',
+        footerCopy: '© 2026 JAPAN TABI NEWS ｜ Editorial Special Issue Series.'
       },
-      {
-        id: 'japow',
-        cat: 'snow',
-        region: '北海道・二世谷 ＆ 旭岳',
-        title: {
-          'zh-TW': '極上乾粉雪的物理學：北海道 Asahidake 野雪與野性白界',
-          'en': 'The Science of Japow: Hokkaido Wild Powder in Asahidake',
-          'ja': 'JAPOWの物理学：北海道・大雪山旭岳の極上パウダースノー'
-        },
-        excerpt: {
-          'zh-TW': '含水量僅 5% 的世界最輕粉雪，深入活火山荒野，揭開滑雪玩家一生追逐的無重力漂浮感。',
-          'en': 'Ultra-dry 5% moisture powder snow on an active smoking volcano. The Holy Grail of backcountry freeriders.',
-          'ja': '含水率わずか5%の究極のパウダースノー。活火山の噴煙を背に滑る、バックカントリーの聖地。'
-        },
-        img: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=800&q=80',
-        author: '雪嶺探勘組',
-        readTime: '10 min'
+      zh: {
+        headerTag: '深度專刊特輯',
+        heroTitle: '日本深度專題<br><em>為您量身策劃</em>',
+        heroSub: '探索神聖靈性山道、粉雪天堂、蔚藍亞熱帶海島與設計鐵道，開啟最觸動人心的日本深旅行。',
+        fromPrice: '起價',
+        perPack: '/人',
+        learnMore: '閱讀專題',
+        backToCatalog: '← 返回專題目錄',
+        footerCopy: '© 2026 日旅報報 JAPAN TABI ｜ 日本深度專刊系列.'
       },
-      {
-        id: 'yakushima',
-        cat: 'pilgrimage',
-        region: '鹿兒島・屋久島',
-        title: {
-          'zh-TW': '魔法森林的七千年呼吸：屋久島繩文杉與幽靈之森',
-          'en': 'The 7,000-Year Breath: Yakushima Ancient Moss Wilderness',
-          'ja': '太古の森の呼吸：屋久島・縄文杉と白谷雲水峡の苔むす森'
-        },
-        excerpt: {
-          'zh-TW': '宮崎駿《魔法公主》靈感發源地，年降雨量世界之冠，步入被七千種苔蘚擁抱的原始杉林。',
-          'en': 'The inspiration for Princess Mononoke. A temperate rainforest home to 7,000-year-old ancient cryptomeria trees.',
-          'ja': 'もののけ姫の舞台。月に35日雨が降ると言われる森で、樹齢数千年の巨木と対峙する。'
-        },
-        img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
-        author: '自然生態攝影師',
-        readTime: '9 min'
-      },
-      {
-        id: 'kanazawa',
-        cat: 'artisan',
-        region: '石川・金澤',
-        title: {
-          'zh-TW': '加賀百萬石的榮光：金澤一萬分之一毫米的金箔工藝美學',
-          'en': 'Shimmer of Kaga: Kanazawa 1/10,000mm Gold Leaf Masters',
-          'ja': '加賀百万石の極み：金沢・薄さ1万分の1ミリの金箔職人美学'
-        },
-        excerpt: {
-          'zh-TW': '供應日本 99% 金箔的北陸古都，走訪東茶屋街職人作坊，探索江戶茶道與枯淡幽玄之境。',
-          'en': 'Producing 99% of Japan gold leaf. An intimate look into artisan ateliers of Higashi Chaya and samurai tea culture.',
-          'ja': '日本の金箔生産の99%を誇る城下町。東茶屋街の職人技と武家茶道に息づく美の神髄。'
-        },
-        img: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80',
-        author: '傳統工藝研究家',
-        readTime: '7 min'
-      },
-      {
-        id: 'nakasendo',
-        cat: 'pilgrimage',
-        region: '長野 ＆ 岐阜・木曾路',
-        title: {
-          'zh-TW': '江戶五街道時光凝結：中山道妻籠宿至馬籠宿的宿場漫行',
-          'en': 'Walking the Edo Highway: Nakasendo Trail from Magome to Tsumago',
-          'ja': '江戸の時間を歩く：木曽路・中山道・馬籠宿から妻籠宿へ'
-        },
-        excerpt: {
-          'zh-TW': '禁止電線杆與現代霓虹的歷史宿場街，穿行於檜木古橋與水車水聲之間，體驗真正的時光倒流。',
-          'en': 'Cobblestone post towns preserved without modern power lines. Hike through misty cedar forests and mountain passes.',
-          'ja': '電柱を排し往時の面影を守り続ける宿場町。石畳を歩き、木曽五木の香りに包まれる旅。'
-        },
-        img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80',
-        author: '古道文化特派員',
-        readTime: '8 min'
-      },
-      {
-        id: 'fujiclimb',
-        cat: 'snow',
-        region: '山梨 ＆ 靜岡・富士山',
-        title: {
-          'zh-TW': '聖岳孤寂破曉：御殿場砂走與富士山靈峰修驗古徑',
-          'en': 'Sacred Solitude: Mount Fuji Pilgrimage & The Volcanic Subashiri',
-          'ja': '霊峰の夜明け：富士山修験の古道と御殿場大砂走り'
-        },
-        excerpt: {
-          'zh-TW': '避開大眾觀光喧囂，沿著古老修驗者足跡踏過火山黑礫，在 3,776 公尺雲海之巔迎候御來光。',
-          'en': 'Treading the footsteps of ancient ascetic monks up volcanic ash. Experiencing the sacred sunrise above the clouds.',
-          'ja': '観光客の喧騒を離れ、修験者が歩んだ古道を辿る。標高3,776メートルの雲海で迎える御来光。'
-        },
-        img: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?auto=format&fit=crop&w=800&q=80',
-        author: '高山嚮導員',
-        readTime: '11 min'
-      },
-      {
-        id: 'kyotozen',
-        cat: 'artisan',
-        region: '京都・大德寺 ＆ 龍安寺',
-        title: {
-          'zh-TW': '無一物中無盡藏：京都大德寺非公開茶室與枯山水禪境',
-          'en': 'The Void of Infinite Space: Kyoto Zen Dry Gardens of Daitoku-ji',
-          'ja': '無一物中無尽蔵：京都大徳寺・非公開茶室と枯山水の禅境'
-        },
-        excerpt: {
-          'zh-TW': '十五顆白砂石組何以隱喻浩瀚宇宙？走進一休宗純與千利休的冥想庭園，聽白砂流水之聲。',
-          'en': 'Deciphering fifteen stones in raked gravel. An architectural voyage into Sen no Rikyu’s concept of Wabi-sabi.',
-          'ja': '白砂に配された十五の石が語る宇宙。千利休の侘び寂びの思想が息づく静寂の庭園。'
-        },
-        img: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80',
-        author: '建築美學評論員',
-        readTime: '9 min'
-      },
-      {
-        id: 'kurokawa',
-        cat: 'onsen',
-        region: '熊本・黑川溫泉',
-        title: {
-          'zh-TW': '一國一旅館的溪谷哲學：黑川溫泉三十軒入湯手形野湯巡禮',
-          'en': 'The Valley as One Inn: Kurokawa Onsen Secret Thermal Bathing',
-          'ja': '街全体が一つの宿：黒川温泉・入湯手形で巡る露天風呂の哲学'
-        },
-        excerpt: {
-          'zh-TW': '三十家溫泉旅館合力打造整座山林的「共同體景觀」，竹林野溪露天風呂與赤松柴火的極致放鬆。',
-          'en': 'A communal sanctuary of 30 ryokans sharing cedar pass tokens. Forest stream baths carved into bedrock.',
-          'ja': '三十軒の宿が一つになって里山景観を守る。杉木立の露天風呂と湯けむりに癒される。'
-        },
-        img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
-        author: '溫泉旅宿評論家',
-        readTime: '8 min'
-      },
-      {
-        id: 'shikoku88',
-        cat: 'pilgrimage',
-        region: '四國四縣・遍路道',
-        title: {
-          'zh-TW': '一泊一飯同伴二人：四國 88 靈場 1,200 公里步行圓融之道',
-          'en': 'Dogyo Ninin: The 1,200km Shikoku 88 Sacred Temple Circuit',
-          'ja': '同行二人：四国八十八ヶ所・1,200キロを歩くお遍路の旅'
-        },
-        excerpt: {
-          'zh-TW': '戴上菅笠、手執金剛杖，與弘法大師同行的千年長征。在當地居民的「御接待」溫暖中體悟謙卑。',
-          'en': 'Walking alongside the spiritual essence of Kobo Daishi. The heartwarming culture of Osettai hospitality across Shikoku.',
-          'ja': '弘法大師と共に歩む巡礼の道。地元の人々の温かなお接待に触れ、心の荷を下ろす旅。'
-        },
-        img: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80',
-        author: '民俗宗教特派員',
-        readTime: '12 min'
-      },
-      {
-        id: 'setouchi',
-        cat: 'artisan',
-        region: '瀨戶內海・直島 ＆ 豐島',
-        title: {
-          'zh-TW': '海風中的當代地中美術館：安藤忠雄與瀨戶內海的詩意對話',
-          'en': 'Subterranean Modernism: Tadao Ando & The Seto Inland Sea Islands',
-          'ja': '海風とコンクリートの対話：安藤忠雄と瀬戸内アートの島々'
-        },
-        excerpt: {
-          'zh-TW': '將整座美術館埋入地下的地中美術館，莫內睡蓮與自然天光的日落共舞，島嶼重生的奇蹟之境。',
-          'en': 'Museums sunk into earth to preserve island skylines. Monet Water Lilies bathed in ever-changing natural daylight.',
-          'ja': '島の景観を守るため地中に埋められた美術館。モネの睡蓮が自然光の中で輝く奇跡の空間。'
-        },
-        img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-        author: '當代藝術策展人',
-        readTime: '9 min'
-      },
-      {
-        id: 'shirakami',
-        cat: 'snow',
-        region: '青森 ＆ 秋田・白神山地',
-        title: {
-          'zh-TW': '世界最大原生態山毛櫸林：白神山地 Matagi 獵人的冬季古道',
-          'en': 'The Primeval Beech Kingdom: Shirakami Sanchi Winter Wilderness',
-          'ja': '世界最大級のブナ原生林：白神山地・マタギの森と冬の静寂'
-        },
-        excerpt: {
-          'zh-TW': '八千年未經人類破壞的純淨森林，追隨傳統獵人「又鬼（Matagi）」的智慧，傾聽雪落山林之音。',
-          'en': 'Eight thousand years of pristine European beech forest. The ancient animist survival codes of the Matagi hunters.',
-          'ja': '8,000年間人の手が加わっていない世界遺産。マタギの精神が息づく白銀の原生林を巡る。'
-        },
-        img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
-        author: '極地生態探險員',
-        readTime: '10 min'
-      },
-      {
-        id: 'niigatasake',
-        cat: 'onsen',
-        region: '新潟・魚沼 ＆ 南魚沼',
-        title: {
-          'zh-TW': '極寒大雪中的生命釀造：新潟越後天然雪室熟成地酒傳奇',
-          'en': 'Born from Freezing Blizzards: Niigata Snow Cellar Terroir Sake',
-          'ja': '豪雪が育む奇跡の雫：新潟・雪室熟成と越淡麗の地酒物語'
-        },
-        excerpt: {
-          'zh-TW': '利用三公尺厚雪天然保溫 0 度熟成的「雪室酒」，新潟純淨融雪軟水如何造就最淡麗辛口的清酒之魂。',
-          'en': 'Aging craft sake at 0 degrees Celsius inside three meters of natural snow. The purity of mineral snowmelt.',
-          'ja': '三メートルの雪で冷やされた雪室で眠る日本酒。雪解けの超軟水が生み出す究極の淡麗辛口。'
-        },
-        img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80',
-        author: '唎酒師特派組',
-        readTime: '8 min'
+      ja: {
+        headerTag: '特別編集号',
+        heroTitle: '日本の深淵を巡る<br><em>極上の旅物語</em>',
+        heroSub: '太古の巡礼路、世界屈指のパウダースノー、美ら海ドライブ、そして名作列車。五感を揺さぶる旅へ。',
+        fromPrice: '目安',
+        perPack: '/名様',
+        learnMore: '記事を読む',
+        backToCatalog: '← 特集一覧に戻る',
+        footerCopy: '© 2026 日旅報報 JAPAN TABI ｜ 特集マガジンシリーズ.'
       }
-    ];
+    };
 
-    let currentStoryLang = 'zh-TW';
-    let currentStoryFilter = 'all';
+    function switchMagazineLang(langKey, btn) {
+      currentLang = langKey;
+      document.querySelectorAll('.btn-lang-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
 
-    function renderStoriesGrid() {
-      const container = document.getElementById('storiesGrid');
+      const ui = UI_TRANSLATIONS[langKey] || UI_TRANSLATIONS['en'];
+      
+      // Update catalog header & hero
+      const hTag = document.getElementById('headerTag');
+      if (hTag) hTag.textContent = ui.headerTag;
+      const hTitle = document.getElementById('catalogHeroTitle');
+      if (hTitle) hTitle.innerHTML = ui.heroTitle;
+      const hSub = document.getElementById('catalogHeroSub');
+      if (hSub) hSub.textContent = ui.heroSub;
+      const bText = document.getElementById('backToCatalogText');
+      if (bText) bText.textContent = ui.backToCatalog;
+      const fCopy = document.getElementById('footerCopyright');
+      if (fCopy) fCopy.textContent = ui.footerCopy;
+
+      // Re-render current view
+      renderCatalogGrid();
+      if (currentArticleId) {
+        renderArticleContent(currentArticleId);
+      }
+    }
+
+    function renderCatalogGrid() {
+      const grid = document.getElementById('packagesGrid');
+      if (!grid) return;
+
+      const ui = UI_TRANSLATIONS[currentLang] || UI_TRANSLATIONS['en'];
+      grid.innerHTML = MAG_DATA.issues.map(iss => {
+        const loc = iss[currentLang] || iss['en'];
+        return `
+          <div class="package-card" onclick="openArticleReader('${iss.id}')">
+            <img src="${iss.coverImg}" alt="${loc.title}" class="package-card-bg" loading="lazy">
+            <div class="package-card-scrim"></div>
+
+            <div class="card-top-badge">${iss.tag}</div>
+
+            <div class="card-bottom-content">
+              <h3 class="card-issue-title">${loc.title}</h3>
+              <p class="card-issue-blurb">${loc.blurb}</p>
+
+              <div class="card-footer-row">
+                <div class="card-price-box">
+                  <span class="card-price-label">${ui.fromPrice}</span>
+                  <span class="card-price-val">${iss.price} <small style="font-size:0.72rem; font-weight:500;">${ui.perPack}</small></span>
+                </div>
+                <button class="btn-learn-more" onclick="openArticleReader('${iss.id}'); event.stopPropagation();">
+                  ${ui.learnMore}
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openArticleReader(issueId) {
+      currentArticleId = issueId;
+      document.getElementById('catalogView').style.display = 'none';
+      const reader = document.getElementById('articleReaderView');
+      reader.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      renderArticleContent(issueId);
+    }
+
+    function showCatalogView() {
+      currentArticleId = null;
+      document.getElementById('articleReaderView').style.display = 'none';
+      document.getElementById('catalogView').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderArticleContent(issueId) {
+      const issue = MAG_DATA.issues.find(i => i.id === issueId);
+      if (!issue) return;
+      const data = issue[currentLang] || issue['en'];
+
+      const container = document.getElementById('articleDynamicContent');
       if (!container) return;
 
-      let list = SPECIAL_STORIES;
-      if (currentStoryFilter !== 'all') {
-        list = list.filter(s => s.cat === currentStoryFilter);
-      }
-
-      let html = '';
-      list.forEach(story => {
-        const title = story.title[currentStoryLang] || story.title['zh-TW'];
-        const excerpt = story.excerpt[currentStoryLang] || story.excerpt['zh-TW'];
-        const catMap = {
-          pilgrimage: '古道朝聖',
-          snow: '粉雪高山',
-          artisan: '工藝美學',
-          onsen: '秘湯風土'
-        };
-        const catLabel = catMap[story.cat] || '深度特刊';
-
-        html += `
-          <article class="story-card" onclick="openStoryReader('${story.id}')">
-            <div class="story-img-frame">
-              <img src="${story.img}" alt="${title}" loading="lazy">
-              <span class="story-cat-badge">${catLabel}</span>
-            </div>
-            <div class="story-card-body">
-              <div>
-                <div class="story-card-region">${story.region}</div>
-                <h3 class="story-card-title">${title}</h3>
-                <p class="story-card-excerpt">${excerpt}</p>
-              </div>
-              <div class="story-card-footer">
-                <span>⏱️ ${story.readTime} ｜ ${story.author}</span>
-                <span class="story-read-link">閱讀全文 ➔</span>
-              </div>
-            </div>
-          </article>
-        `;
-      });
-
-      container.innerHTML = html;
-    }
-
-    function filterStories(cat, btn) {
-      currentStoryFilter = cat;
-      document.querySelectorAll('.filter-pills-row .pill-btn').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-      renderStoriesGrid();
-    }
-
-    function toggleSpecialLang() {
-      if (currentStoryLang === 'zh-TW') {
-        currentStoryLang = 'en';
-        document.getElementById('specialCurrentLang').textContent = 'English';
-      } else if (currentStoryLang === 'en') {
-        currentStoryLang = 'ja';
-        document.getElementById('specialCurrentLang').textContent = '日本語';
-      } else {
-        currentStoryLang = 'zh-TW';
-        document.getElementById('specialCurrentLang').textContent = '繁體中文';
-      }
-      renderStoriesGrid();
-    }
-
-    function openStoryReader(storyId) {
-      const story = SPECIAL_STORIES.find(s => s.id === storyId);
-      if (!story) return;
-
-      const title = story.title[currentStoryLang] || story.title['zh-TW'];
-      const excerpt = story.excerpt[currentStoryLang] || story.excerpt['zh-TW'];
-
-      const contentBox = document.getElementById('readerContent');
-      contentBox.innerHTML = `
-        <div style="font-size:0.78rem; font-weight:800; color:var(--accent-vermilion); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:8px;">${story.region}</div>
-        <h2 style="font-family:var(--font-display); font-size:2.2rem; font-weight:700; line-height:1.2; margin-bottom:14px; color:var(--text-ink);">${title}</h2>
-        <div style="font-size:0.82rem; color:var(--text-muted); border-bottom:1px solid var(--border-sand); padding-bottom:12px; margin-bottom:24px;">
-          特派員撰稿 ｜ 閱讀預估時間：${story.readTime} ｜ 官方世界遺產與深度探險專題
-        </div>
-        <div style="width:100%; height:380px; border-radius:14px; overflow:hidden; margin-bottom:28px;">
-          <img src="${story.img}" alt="${title}" style="width:100%; height:100%; object-fit:cover;">
-        </div>
-        <div style="font-size:1.1rem; line-height:1.8; color:#292524;">
-          <p style="margin-bottom:20px; font-weight:600; color:var(--accent-gold); font-size:1.2rem;">${excerpt}</p>
-          <p style="margin-bottom:20px;">
-            在歷史沉澱千百年的日本風土之中，隱藏著無數超越時間尺度的景致與人類精神追求。每一段山徑古道、每一滴經過數月雪室熟成的地酒，都在述說著人與自然共生和解的古老哲學。
-          </p>
-          <p style="margin-bottom:20px;">
-            來到這裡的旅人，不再只是快節奏的打卡觀光，而是透過腳步的節奏、呼吸的調整，重新找回心靈的安定感。從清晨林間的第一縷晨曦，到黃昏時分遠方古鐘的悠揚共鳴，皆為生命留下了最深沉的印記。
-          </p>
-          <div style="background:#FFF; border:1px solid var(--border-sand); border-radius:12px; padding:20px; margin:24px 0;">
-            <b style="color:var(--accent-vermilion);">💡 特派員深度建議：</b><br>
-            建議預留 2~3 天完整時間，避開主要假日人潮。可安排入住在地百年宿坊或家族經營溫泉旅館，品嚐以當地泉水栽培的旬之野菜，獲得最純粹的文化浸潤體驗。
+      container.innerHTML = `
+        <header class="hero-editorial">
+          <div class="hero-meta">${data.meta}</div>
+          <h1 class="hero-title">${data.fullTitle}</h1>
+          <p class="hero-subtitle">${data.subtitle}</p>
+          <div class="hero-lead-photo">
+            <img src="${data.leadImg}" alt="${data.fullTitle}" />
           </div>
-        </div>
+          <div class="photo-caption">${data.leadCaption}</div>
+        </header>
+
+        <article class="essay-section">
+          <p>${data.p1}</p>
+          <p>${data.p2}</p>
+        </article>
+
+        <section>
+          <div class="section-eyebrow">${data.diningEyebrow}</div>
+          <h2 class="section-headline">${data.diningTitle}</h2>
+          <div class="cards-row">
+            ${data.diningCards.map(c => `
+              <article class="mag-card">
+                <div class="card-photo">
+                  <img src="${c.photo}" alt="${c.title}" />
+                  <span class="card-badge">${c.badge}</span>
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">${c.title}</h3>
+                  <div class="card-subtext">${c.sub}</div>
+                  <p class="card-desc">${c.desc}</p>
+                  <div class="card-footer-btn">
+                    <span style="font-size:0.75rem; color:#78716C;">${c.loc}</span>
+                    <a href="${c.url || '#'}" target="_blank" class="btn-reserve">${c.btn}</a>
+                  </div>
+                </div>
+              </article>
+            `).join('')}
+          </div>
+        </section>
+
+        <section>
+          <div class="section-eyebrow">${data.planEyebrow}</div>
+          <h2 class="section-headline">${data.planTitle}</h2>
+          <div class="timeline-container">
+            ${data.days.map(d => `
+              <div class="itinerary-day">
+                <div class="day-marker">${d.day}</div>
+                <div class="day-content">
+                  <h4>${d.title}</h4>
+                  <p>${d.desc}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+
+        <section>
+          <div class="trip-affiliate-box">
+            <div>
+              <h2 class="affiliate-heading">${data.affiliateTitle}</h2>
+              <p class="affiliate-desc">${data.affiliateDesc}</p>
+            </div>
+            <div class="affiliate-actions">
+              <a href="${data.flightUrl}" target="_blank" class="btn-trip-action">${data.flightBtn}</a>
+              <a href="${data.carUrl}" target="_blank" class="btn-trip-action btn-trip-secondary">${data.carBtn}</a>
+            </div>
+          </div>
+        </section>
       `;
-
-      document.getElementById('readerModal').classList.add('open');
-      document.body.style.overflow = 'hidden';
     }
 
-    function closeReaderModal() {
-      document.getElementById('readerModal').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    // 點擊背景關閉
-    document.getElementById('readerModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeReaderModal();
-      }
+    // 初始化渲染目錄
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCatalogGrid();
     });
-
-    // 初始化渲染
-    renderStoriesGrid();
   </script>
 </body>
 </html>

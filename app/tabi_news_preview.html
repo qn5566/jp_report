@@ -7453,7 +7453,83 @@
 .lang-name { flex: 1 !important; }
 .lang-check { font-size: 0.85rem !important; font-weight: 900 !important; color: #ED1A21 !important; }
 
-</style>
+
+    /* 💜 紫藤花專屬卡片：淡淡的紫色背景 */
+    .tabi-card.theme-wisteria {
+      background: #FAF5FF !important;
+      border: 1.5px solid #E9D5FF !important;
+    }
+    .tabi-card.theme-wisteria .card-bloom-status-tag {
+      background: #9333EA !important;
+      color: #FFFFFF !important;
+    }
+    .tabi-card.theme-wisteria .btn-act-primary {
+      background: linear-gradient(135deg, #9333EA 0%, #7E22CE 100%) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+    }
+
+    /* 🩵 粉蝶花專屬卡片：粉藍色背景 */
+    .tabi-card.theme-nemophila {
+      background: #F0F9FF !important;
+      border: 1.5px solid #BAE6FD !important;
+    }
+    .tabi-card.theme-nemophila .card-bloom-status-tag {
+      background: #0284C7 !important;
+      color: #FFFFFF !important;
+    }
+    .tabi-card.theme-nemophila .btn-act-primary {
+      background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+    }
+
+    /* 💠 繡球花專屬卡片：淺淺的紫色背景 */
+    .tabi-card.theme-hydrangea {
+      background: #F5F3FF !important;
+      border: 1.5px solid #DDD6FE !important;
+    }
+    .tabi-card.theme-hydrangea .card-bloom-status-tag {
+      background: #7C3AED !important;
+      color: #FFFFFF !important;
+    }
+    .tabi-card.theme-hydrangea .btn-act-primary {
+      background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+    }
+
+    /* 🍁 秋楓專屬卡片：溫潤秋楓琥珀紅葉色背景 */
+    .tabi-card.theme-momiji {
+      background: #FFF7ED !important;
+      border: 1.5px solid #FED7AA !important;
+    }
+    .tabi-card.theme-momiji .card-bloom-status-tag {
+      background: #EA580C !important;
+      color: #FFFFFF !important;
+    }
+    .tabi-card.theme-momiji .btn-act-primary {
+      background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+    }
+
+    /* 🍂 銀杏專屬卡片：金黃澄黃銀杏色背景 */
+    .tabi-card.theme-ginkgo {
+      background: #FEFCE8 !important;
+      border: 1.5px solid #FDE047 !important;
+    }
+    .tabi-card.theme-ginkgo .card-bloom-status-tag {
+      background: #CA8A04 !important;
+      color: #FFFFFF !important;
+    }
+    .tabi-card.theme-ginkgo .btn-act-primary {
+      background: linear-gradient(135deg, #CA8A04 0%, #A16207 100%) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+    }
+
+  </style>
 </head>
 <body class="mode-spots">
 
@@ -13602,6 +13678,989 @@
     // 22+ 景點資料庫
     // 24+ 全日本四季名所・官方觀測與特派員資料庫
     const SPOTS_DATABASE = [
+
+      {
+            "id": "ashikaga_fuji",
+            "theme": "wisteria",
+            "category": "flower",
+            "region": "kanto",
+            "title": "足利花卉公園 大藤盛典",
+            "subtitle": "樹齡160年奇蹟大藤！CNN評選世界夢幻旅行地",
+            "tag": "櫪木・足利市",
+            "bloomStatus": "💜 盛開見頃 (100%)",
+            "species": "大藤・白藤・八重黑龍藤 (350株)",
+            "hasNightLight": true,
+            "nightHours": "🏮 17:30 - 20:30 (紫藤花瀑光影倒影點燈)",
+            "nightImg": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=700&q=80",
+            "desc": "千坪大藤架垂下宛如《阿凡達》靈魂之樹般壯麗的紫色瀑布，夜間燈光映射水池如夢似幻。",
+            "locationDetail": "JR 兩毛線「足利花卉公園站」徒步 3 分鐘即達",
+            "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "預約紫藤花入場券",
+            "klookUrl": "https://www.klook.com/zh-TW/activity/3978-ashikaga-flower-park-ticket-tokyo/?aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Ashikaga&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%B6%B3%E5%88%A9%E8%8A%B1%E5%8D%89%E5%85%AC%E5%9C%92%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "kawachi_fuji",
+            "theme": "wisteria",
+            "category": "flower",
+            "region": "kyushu",
+            "title": "福岡 河內藤園",
+            "subtitle": "全日本最美紫藤穹頂隧道！22種紫藤交織彩虹",
+            "tag": "福岡・北九州市",
+            "bloomStatus": "💜 滿開極致 (100%)",
+            "species": "野田長藤・口紅藤・八重藤 (110米雙隧道)",
+            "hasNightLight": false,
+            "desc": "CNN評選「日本最美場所31選」，110米紫藤隧道自深紫、粉紅漸變至純白，震撼心靈。",
+            "locationDetail": "JR 八幡站搭乘預約制免費接駁巴士約 20 分鐘",
+            "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "預約河內藤園門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%B3%E5%85%A7%E8%97%A4%E5%9C%92&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kitakyushu&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%A6%8F%E5%B2%A1%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "kameido_fuji",
+            "theme": "wisteria",
+            "category": "flower",
+            "region": "kanto",
+            "title": "東京 龜戶天神社",
+            "subtitle": "江戶名所百景！朱紅太鼓橋倒映紫色花瀑",
+            "tag": "東京・江東區",
+            "bloomStatus": "💜 見頃火熱 (100%)",
+            "species": "幽雅野田藤 (50株花棚)",
+            "hasNightLight": true,
+            "nightHours": "🏮 日落至 21:00 (心字池與晴空塔同框點燈)",
+            "desc": "自江戶時代即為東京賞藤首席名勝，心字池畔紫藤花穗垂落水面，背景襯托晴空塔現代輪廓。",
+            "locationDetail": "JR 總武線「龜戶站」北口步行 15 分鐘",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "參拜指南與門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E7%B4%AB%E8%97%A4&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Tokyo&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "byodoin_fuji",
+            "theme": "wisteria",
+            "category": "flower",
+            "region": "kansai",
+            "title": "京都 宇治平等院",
+            "subtitle": "樹齡280年藤棚！鳳凰堂與紫藤相映世界遺產",
+            "tag": "京都・宇治市",
+            "bloomStatus": "💜 盛開見頃 (100%)",
+            "species": "野田藤 (花穗長達1米)",
+            "hasNightLight": false,
+            "desc": "阿字池畔的百年古藤花穗垂落達一公尺，與十圓硬幣上的國寶鳳凰堂同框，優雅絕倫。",
+            "locationDetail": "JR 宇治站步行 10 分鐘 ｜ 京阪宇治站步行 10 分鐘",
+            "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "平等院參觀券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%B9%B3%E7%AD%89%E9%99%A2&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Uji&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "kasuga_fuji",
+            "theme": "wisteria",
+            "category": "flower",
+            "region": "kansai",
+            "title": "奈良 春日大社神苑萬葉植物園",
+            "subtitle": "藤之社盛典！20品種200株藤花下垂觸地",
+            "tag": "奈良・奈良市",
+            "bloomStatus": "💜 滿開綻放 (100%)",
+            "species": "砂ずりの藤・八重黑龍藤",
+            "hasNightLight": false,
+            "desc": "春日大社以「藤紋」為社紋，神苑內「砂ずりの藤」花穗垂至沙地，淡雅清香引人駐足。",
+            "locationDetail": "近鐵奈良站轉搭公車至「春日大社本殿」步行即達",
+            "img": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "預約神苑參觀券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%98%A5%E6%97%A5%E5%A4%A7%E7%A4%BE&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Nara&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A5%88%E8%89%AF%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "byakugo_fuji",
+            "theme": "wisteria",
+            "category": "flower",
+            "region": "kansai",
+            "title": "兵庫 白毫寺 九尺藤",
+            "subtitle": "長達120米九尺藤花棚！初夏夜間彩虹點燈",
+            "tag": "兵庫・丹波市",
+            "bloomStatus": "💜 見頃盛開 (100%)",
+            "species": "九尺藤 (最長花穗達 180cm)",
+            "hasNightLight": true,
+            "nightHours": "🏮 18:30 - 21:00 (LED五彩漸層夜間點燈)",
+            "desc": "關西第一九尺藤名剎！花穗幾乎觸及遊人額頭，夜間以紫、藍、綠五彩LED點亮夜空震撼無比。",
+            "locationDetail": "JR 福知山線「市島站」轉乘計程車約 8 分鐘",
+            "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "白毫寺入山券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%85%B5%E5%BA%AB%E7%A7%81%E6%88%BF%E6%99%AF%E9%BB%9E&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Tamba&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%97%9C%E8%A5%BF%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "mandaraji_fuji",
+            "theme": "wisteria",
+            "category": "flower",
+            "region": "chubu",
+            "title": "愛知 曼陀羅寺公園",
+            "subtitle": "尾張古剎藤花祭！12品種60株紫藤牡丹同放",
+            "tag": "愛知・江南市",
+            "bloomStatus": "💜 盛開見頃 (100%)",
+            "species": "紫紅藤・白藤・八重黑龍藤",
+            "hasNightLight": true,
+            "nightHours": "🏮 18:30 - 21:00 (紫藤露台燈光祭)",
+            "desc": "14世紀尾張名剎，4,700平方公尺的紫藤棚架下香氣四溢，與園內200株牡丹競艷。",
+            "locationDetail": "名鐵犬山線「江南站」轉乘名鐵巴士約 15 分鐘",
+            "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "公園參觀指南",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%90%8D%E5%8F%A4%E5%B1%8B%E7%B4%AB%E8%97%A4&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Nagoya&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "ushijima_fuji",
+            "theme": "wisteria",
+            "category": "flower",
+            "region": "kanto",
+            "title": "埼玉 牛島之藤 (藤花園)",
+            "subtitle": "樹齡1200年國家特別天然紀念物！千年老藤奇蹟",
+            "tag": "埼玉・春日部市",
+            "bloomStatus": "💜 滿開極盛 (100%)",
+            "species": "牛島巨木野田藤 (藤棚面積700平方公尺)",
+            "hasNightLight": false,
+            "desc": "平安時代弘法大師親手栽種傳說，藤棚根周圍達 4 公尺，花穗最長達 2 公尺宛若仙境。",
+            "locationDetail": "東武野田線「藤之牛島站」步行 10 分鐘",
+            "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "藤花園預約門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%90%A6%E7%8E%89%E7%B4%AB%E8%97%A4&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Saitama&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "osaka_nodafuji",
+            "theme": "wisteria",
+            "category": "flower",
+            "region": "kansai",
+            "title": "大阪 野田藤 潮江春日神社",
+            "subtitle": "野田藤發祥地！大阪市區歷史藤花散步道",
+            "tag": "大阪・福島區",
+            "bloomStatus": "💜 見頃盛開 (100%)",
+            "species": "野田藤原種",
+            "hasNightLight": true,
+            "nightHours": "🏮 日落至 20:30 (下福島公園藤棚夜間點燈)",
+            "desc": "自古與吉野櫻、高雄紅葉並稱「三大名木」的野田藤發祥地，市區交通極度便利。",
+            "locationDetail": "JR 環狀線「野田站」步行 5 分鐘",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "大阪野田藤散策",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A4%A7%E9%98%AA%E7%B4%AB%E8%97%A4&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Osaka&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A4%A7%E9%98%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "shizuoka_rengeji",
+            "theme": "wisteria",
+            "category": "flower",
+            "region": "chubu",
+            "title": "靜岡 蓮華寺池公園",
+            "subtitle": "湖畔巨型紫藤花棚！夕陽波光粼粼相映",
+            "tag": "靜岡・藤枝市",
+            "bloomStatus": "💜 盛開見頃 (100%)",
+            "species": "20多種約250株紫藤",
+            "hasNightLight": true,
+            "nightHours": "🏮 18:30 - 21:00 (池畔噴水與紫藤光雕)",
+            "desc": "靜岡「藤之里」藤枝市的象徵，長達 500 公尺的池畔紫藤花廊與湖面倒影交織動人景致。",
+            "locationDetail": "JR 東海道本線「藤枝站」轉乘巴士約 10 分鐘",
+            "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "蓮華寺公園指南",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%9D%9C%E5%B2%A1%E6%97%85%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Shizuoka&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%9D%9C%E5%B2%A1%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "hitachi_nemophila",
+            "theme": "nemophila",
+            "category": "flower",
+            "region": "kanto",
+            "title": "茨城 國營常陸海濱公園",
+            "subtitle": "見晴之丘 530萬株純藍粉蝶花！與青空太平洋相融",
+            "tag": "茨城・常陸那珂市",
+            "bloomStatus": "🩵 盛開花海 (100%)",
+            "species": "琉璃唐草 (530萬株天空藍花毯)",
+            "hasNightLight": false,
+            "desc": "全日本公認此生必看絕景！漫山遍野的純藍粉蝶花與無垠藍天、湛藍太平洋海天一色。",
+            "locationDetail": "JR 常磐線「勝田站」東口搭乘直達巴士約 15 分鐘",
+            "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "預約粉蝶花季門票",
+            "klookUrl": "https://www.klook.com/zh-TW/activity/3979-hitachi-seaside-park-day-tour-tokyo/?aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Mito&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%9C%8B%E7%87%9F%E5%B8%B8%E9%99%B8%E6%B5%B7%E6%BF%B8%E5%85%AC%E5%9C%92%20%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "maishima_nemophila",
+            "theme": "nemophila",
+            "category": "flower",
+            "region": "kansai",
+            "title": "大阪 舞洲海濱 海風花之丘",
+            "subtitle": "100萬株粉蝶花海！直面大阪灣璀璨夕陽",
+            "tag": "大阪・此花區",
+            "bloomStatus": "🩵 滿開見頃 (100%)",
+            "species": "粉蝶花海 ＋ 舞洲夕陽絕景",
+            "hasNightLight": false,
+            "desc": "關西規模最大粉蝶花祭！面積廣達 4.4 公頃，碧藍花海與大阪灣海風、金黃落日交融。",
+            "locationDetail": "JR 櫻島站轉乘北港觀光巴士至「Hotel Lodge 舞洲」",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "預約舞洲海濱門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%88%9E%E6%B4%B2%E7%B2%89%E8%9D%B6%E8%8A%B1&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Osaka&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A4%A7%E9%98%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "yamanakako_nemophila",
+            "theme": "nemophila",
+            "category": "flower",
+            "region": "chubu",
+            "title": "山梨 山中湖花之都公園",
+            "subtitle": "富士山為背景！30萬株純藍粉蝶花高山絕景",
+            "tag": "山梨・山中湖村",
+            "bloomStatus": "🩵 盛開綻放 (100%)",
+            "species": "初夏粉蝶花 ＋ 雄偉富士山全景",
+            "hasNightLight": false,
+            "desc": "標高 1,000 公尺高原花田，澄澈藍天下的富士山雪峰與腳下藍色粉蝶花浪相映成趣。",
+            "locationDetail": "富士急行線「富士山站」搭乘巴士約 30 分鐘",
+            "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "花之都公園入場券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E5%A3%AB%E5%B1%B1%E8%8A%B1%E4%B9%8B%E9%83%BD%E5%85%AC%E5%9C%92&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Yamanakako&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E5%A3%AB%E5%B1%B1%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "showa_nemophila",
+            "theme": "nemophila",
+            "category": "flower",
+            "region": "kanto",
+            "title": "東京 國營昭和紀念公園",
+            "subtitle": "花之小丘藍色地毯！草地野餐悠閒首選",
+            "tag": "東京・立川市",
+            "bloomStatus": "🩵 見頃極致 (100%)",
+            "species": "琉璃唐草 (原野花田坡道)",
+            "hasNightLight": false,
+            "desc": "立川車站出站直達，綠意草坪上的粉蝶花田如同傾倒的藍天，可租腳踏車漫遊騎行。",
+            "locationDetail": "JR 青梅線「西立川站」步行 2 分鐘直達",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "昭和紀念公園門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%98%AD%E5%92%8C%E7%B4%80%E5%BF%B5%E5%85%AC%E5%9C%92&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Tachikawa&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "sanuki_nemophila",
+            "theme": "nemophila",
+            "category": "flower",
+            "region": "shikoku",
+            "title": "香川 國營讚岐滿濃公園",
+            "subtitle": "四國最大規模！35萬株青空粉蝶花毯",
+            "tag": "香川・滿濃町",
+            "bloomStatus": "🩵 盛開花海 (100%)",
+            "species": "青空之丘粉蝶花毯",
+            "hasNightLight": false,
+            "desc": "四國首屈一指的國營公園，隨山丘起伏蔓延的 35 萬株純藍粉蝶花，視野開闊療癒人心。",
+            "locationDetail": "JR 琴平站轉乘接駁巴士約 15 分鐘",
+            "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "讚岐滿濃公園券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%9B%9B%E5%9C%8B%E6%97%85%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kotohira&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%9B%9B%E5%9C%8B%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "moricoro_nemophila",
+            "theme": "nemophila",
+            "category": "flower",
+            "region": "chubu",
+            "title": "愛知 愛・地球博紀念公園 (吉卜力公園旁)",
+            "subtitle": "吉卜力公園大草坪旁！20萬株夢幻粉蝶花坡",
+            "tag": "愛知・長久手市",
+            "bloomStatus": "🩵 滿開綻放 (100%)",
+            "species": "琉璃唐草 ＋ 綠意自然森林",
+            "hasNightLight": false,
+            "desc": "造訪吉卜力公園時必訪的賞花名所，大草坪斜坡上鋪滿天空藍粉蝶花，宛如走入宮崎駿童話。",
+            "locationDetail": "磁浮列車 Linimo「愛・地球博記念公園站」直達",
+            "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "預約吉卜力公園行程",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%90%89%E5%8D%9C%E5%8A%9B%E5%85%AC%E5%9C%92&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Nagoya&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "uminonakamichi_nemophila",
+            "theme": "nemophila",
+            "category": "flower",
+            "region": "kyushu",
+            "title": "福岡 海之中道海濱公園",
+            "subtitle": "120萬株粉蝶花！博多灣海天一色無邊際花毯",
+            "tag": "福岡・福岡市",
+            "bloomStatus": "🩵 盛開見頃 (100%)",
+            "species": "花之丘 120萬株琉璃唐草",
+            "hasNightLight": false,
+            "desc": "九州最知名粉蝶花海，微風吹拂下藍色花浪此起彼伏，可租乘自行車漫遊海濱森林。",
+            "locationDetail": "JR 香椎線「海之中道站」出站即達",
+            "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "海之中道公園門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%B5%B7%E4%B9%8B%E4%B8%AD%E9%81%93&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Fukuoka&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%A6%8F%E5%B2%A1%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "sera_nemophila",
+            "theme": "nemophila",
+            "category": "flower",
+            "region": "other",
+            "title": "廣島 世羅高原花之森",
+            "subtitle": "海拔500米天空之丘！20萬株粉蝶花與英式庭園",
+            "tag": "廣島・世羅町",
+            "bloomStatus": "🩵 盛開花海 (100%)",
+            "species": "高原琉璃唐草花毯",
+            "hasNightLight": false,
+            "desc": "涼爽高原微風吹拂，藍色花海與西洋玫瑰、初夏綠意交織成如莫內畫作般的浪漫景致。",
+            "locationDetail": "山陽自動車道「三原久井IC」開車約 40 分鐘",
+            "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "世羅高原入場券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%B8%96%E7%BE%85%E9%AB%98%E5%8E%9F&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Hiroshima&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%BB%A3%E5%B3%B6%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "musashi_nemophila",
+            "theme": "nemophila",
+            "category": "flower",
+            "region": "kanto",
+            "title": "埼玉 國營武藏丘陵森林公園",
+            "subtitle": "東京巨蛋65倍大！森林步道與西口粉蝶花田",
+            "tag": "埼玉・滑川町",
+            "bloomStatus": "🩵 盛開滿開 (100%)",
+            "species": "西口花田 10萬株粉蝶花",
+            "hasNightLight": false,
+            "desc": "關東巨大森林綠洲，西口花田的起伏斜坡鋪滿純藍粉蝶花，最適合春日健行與家庭野餐。",
+            "locationDetail": "東武東上線「森林公園站」搭乘直達巴士",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "武藏森林公園門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%90%A6%E7%8E%89%E6%97%85%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Saitama&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "awaji_nemophila",
+            "theme": "nemophila",
+            "category": "flower",
+            "region": "kansai",
+            "title": "兵庫 淡路島淡路夢舞台",
+            "subtitle": "安藤忠雄建築 ＋ 百段苑海景粉蝶花盛放",
+            "tag": "兵庫・淡路市",
+            "bloomStatus": "🩵 滿開綻放 (100%)",
+            "species": "百段苑階梯狀粉蝶花海",
+            "hasNightLight": false,
+            "desc": "清水混凝土幾何階梯花園「百段苑」開滿粉蝶花，眺望大阪灣蔚藍海天一色，建築與自然絕妙共鳴。",
+            "locationDetail": "JR 舞子站搭乘高速巴士至「淡路夢舞台前」直達",
+            "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "淡路夢舞台入場",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%B7%A1%E8%B7%AF%E5%B3%B6&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Awaji&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%A5%9E%E6%88%B6%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "meigetsuin_hydrangea",
+            "theme": "hydrangea",
+            "category": "flower",
+            "region": "kanto",
+            "title": "神奈川 鎌倉明月院",
+            "subtitle": "日本第一「紫陽花寺」！純藍姬繡球參道盛開",
+            "tag": "神奈川・鎌倉市",
+            "bloomStatus": "💠 盛開見頃 (100%)",
+            "species": "明月院藍 (姬繡球 2,500株)",
+            "hasNightLight": false,
+            "desc": "全日本最具代表性的紫陽花名剎，參道兩側被2500株純粹幽藍的姬繡球團團包圍，深邃迷人。",
+            "locationDetail": "JR 橫須賀線「北鎌倉站」徒步 10 分鐘",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "鎌倉明月院參觀指南",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%8E%8Internal%E6%98%8E%E6%9C%88%E9%99%A2&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kamakura&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%8E%8C%E5%80%89%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "hasedera_hydrangea",
+            "theme": "hydrangea",
+            "category": "flower",
+            "region": "kanto",
+            "title": "神奈川 鎌倉長谷寺",
+            "subtitle": "眺望相模灣紫陽花小徑！40種2500株繽紛盛開",
+            "tag": "神奈川・鎌倉市",
+            "bloomStatus": "💠 見頃極致 (100%)",
+            "species": "長谷之祈・長谷之潮等 40品種",
+            "hasNightLight": false,
+            "desc": "沿著觀音山斜坡「繡球花小徑」漫步，五彩斑斕的花海與相模灣蔚藍海岸相映，絕景無雙。",
+            "locationDetail": "江之島電鐵「長谷站」步行 5 分鐘",
+            "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "長谷寺入山整理券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%8E%8C%E5%80%89%E9%95%B7%E8%B0%B7%E5%AF%BA&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kamakura&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%8E%8C%E5%80%89%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "mimurotoji_hydrangea",
+            "theme": "hydrangea",
+            "category": "flower",
+            "region": "kansai",
+            "title": "京都 宇治三室戶寺",
+            "subtitle": "關西第一紫陽花寺！兩萬株花海中尋覓愛心繡球",
+            "tag": "京都・宇治市",
+            "bloomStatus": "💠 盛開見頃 (100%)",
+            "species": "西洋繡球・額繡球・柏葉繡球 (50種2萬株)",
+            "hasNightLight": true,
+            "nightHours": "🏮 週六日 19:00 - 21:00 (紫陽花園夢幻點燈)",
+            "desc": "廣達 5,000 坪的繡球花園如杉木林下的彩色海洋，傳說找到愛心形狀繡球花能帶來戀愛良緣。",
+            "locationDetail": "京阪宇治線「三室戶站」步行 15 分鐘",
+            "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "三室戶寺參拜門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%B8%89%E5%AE%A4%E6%88%B6%E5%AF%BA&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Uji&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "katahara_hydrangea",
+            "theme": "hydrangea",
+            "category": "flower",
+            "region": "chubu",
+            "title": "愛知 形原溫泉紫陽花之里",
+            "subtitle": "5萬株繡球花湖畔！夜間賞螢火蟲與花燈",
+            "tag": "愛知・蒲郡市",
+            "bloomStatus": "💠 見頃火熱 (100%)",
+            "species": "形原補陀池畔 5萬株紫陽花",
+            "hasNightLight": true,
+            "nightHours": "🏮 日落至 21:00 (夜間點燈 ＆ 源氏螢火蟲現蹤)",
+            "desc": "東海地區最大規模！環繞補陀池的 5 萬株紫陽花齊放，初夏夜間還可觀賞野生螢火蟲在花叢漫舞。",
+            "locationDetail": "名鐵蒲郡線「形原站」轉乘計程車約 5 分鐘",
+            "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "形原溫泉門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%BD%A2%E5%8E%9F%E6%BA%AB%E6%B3%89&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Gamagori&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "hakusan_hydrangea",
+            "theme": "hydrangea",
+            "category": "flower",
+            "region": "kanto",
+            "title": "東京 白山神社 ＆ 白山公園",
+            "subtitle": "文京繡球花祭！3,000株紫陽花與富士塚古跡",
+            "tag": "東京・文京區",
+            "bloomStatus": "💠 盛開見頃 (100%)",
+            "species": "境內與富士塚 3,000株紫陽花",
+            "hasNightLight": false,
+            "desc": "東京文京花之五大祭之一，神社境內平日不開放的「白山富士塚」在繡球花祭期間特別公開。",
+            "locationDetail": "都營三田線「白山站」步行 3 分鐘",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "白山神社參拜指南",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E7%B9%A1%E7%90%83%E8%8A%B1&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Tokyo&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "kobe_forest_hydrangea",
+            "theme": "hydrangea",
+            "category": "flower",
+            "region": "kansai",
+            "title": "兵庫 神戶市立森林植物園",
+            "subtitle": "全日本最多品種！350種5萬株世界紫陽花森林",
+            "tag": "兵庫・神戶市",
+            "bloomStatus": "💠 滿開盛宴 (100%)",
+            "species": "摩耶紅額・七段花等世界原種350種",
+            "hasNightLight": false,
+            "desc": "被譽為「紫陽花之森」，座落六甲山原始森林中，曾被認為滅絕的夢幻名花「七段花」在此重生。",
+            "locationDetail": "神戶電鐵「北鈴蘭台站」搭乘免費接駁巴士約 10 分鐘",
+            "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "神戶森林植物園門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%A5%9E%E6%88%B6%E6%97%85%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kobe&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%A5%9E%E6%88%B6%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "shimoda_hydrangea",
+            "theme": "hydrangea",
+            "category": "flower",
+            "region": "chubu",
+            "title": "靜岡 伊豆下田公園",
+            "subtitle": "全日本第一規模！300萬株紫陽花覆蓋整座海灣山丘",
+            "tag": "靜岡・下田市",
+            "bloomStatus": "💠 壯麗盛開 (100%)",
+            "species": "下田海灣山丘 300萬株紫陽花萬花筒",
+            "hasNightLight": false,
+            "desc": "整座山頭被 300 萬株繽紛紫陽花完全覆蓋，登頂遠眺伊豆下田港灣海景，氣勢磅礡無可匹敵。",
+            "locationDetail": "伊豆急行線「伊豆急下田站」步行 20 分鐘",
+            "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "下田公園紫陽花祭",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BC%8A%E8%B1%86%E4%B8%8B%E7%94%B0&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Shimoda&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BC%8A%E8%B1%86%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "yoshimine_hydrangea",
+            "theme": "hydrangea",
+            "category": "flower",
+            "region": "kansai",
+            "title": "京都 善峯寺 白山名園",
+            "subtitle": "西山高空眺望京都全景！萬株紫陽花斜坡秘境",
+            "tag": "京都・西京區",
+            "bloomStatus": "💠 盛開見頃 (100%)",
+            "species": "白山紫陽花苑 (萬株各色繡球)",
+            "hasNightLight": false,
+            "desc": "座落西山半山腰的千年古寺，萬株紫陽花隨斜坡層疊盛開，遠處可鳥瞰整個京都市區與比叡山。",
+            "locationDetail": "JR 向日町站搭乘阪急巴士至「善峯寺」步行 8 分鐘",
+            "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "善峯寺參拜指南",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%E7%A7%98%E5%A2%83&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kyoto&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "unshoji_hydrangea",
+            "theme": "hydrangea",
+            "category": "flower",
+            "region": "tohoku",
+            "title": "秋田 男鹿雲昌寺",
+            "subtitle": "死前必去世界絕景！副住持15年手植純藍花海",
+            "tag": "秋田・男鹿市",
+            "bloomStatus": "💠 滿開極致 (100%)",
+            "species": "青色紫陽花 (1,500株株距密植)",
+            "hasNightLight": true,
+            "nightHours": "🏮 18:45 - 21:00 (死前必訪青色幻想點燈)",
+            "desc": "副住持歷時15年以單一品種插枝培育，滿山如海浪般的純藍紫陽花直面日本海，撼動人心。",
+            "locationDetail": "JR 男鹿線「男鹿站」轉搭計程車或觀光巴士約 20 分鐘",
+            "img": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "雲昌寺入場門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%A7%8B%E7%94%B0%E6%97%85%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Akita&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E5%8C%97%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "yatadera_hydrangea",
+            "theme": "hydrangea",
+            "category": "flower",
+            "region": "kansai",
+            "title": "奈良 矢田寺 (金剛山寺)",
+            "subtitle": "大和紫陽花之寺！60種萬株石佛地藏步道",
+            "tag": "奈良・大和郡山市",
+            "bloomStatus": "💠 盛開見頃 (100%)",
+            "species": "本坊庭園與地藏步道 60種萬株",
+            "hasNightLight": false,
+            "desc": "自古被尊稱為「紫陽花寺」，雨水沾濕石階兩旁的微笑地藏菩薩，五彩繡球花在松杉下靜靜綻放。",
+            "locationDetail": "近鐵郡山站搭乘季節直達巴士至「矢田寺」",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "矢田寺入山券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A5%88%E8%89%AF%E7%B4%AB%E9%99%BD%E8%8A%B1&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Nara&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A5%88%E8%89%AF%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "kiyomizu_momiji",
+            "theme": "momiji",
+            "category": "flower",
+            "region": "kansai",
+            "title": "京都 清水寺 斷崖夜楓",
+            "subtitle": "清水舞台懸空萬株楓海！秋季夜間藍色雷射觀音光束",
+            "tag": "京都・東山區",
+            "bloomStatus": "🍁 見頃火紅 (100%)",
+            "species": "千株伊呂波楓・古木山紅葉",
+            "hasNightLight": true,
+            "nightHours": "🏮 17:30 - 21:00 (夜楓特別拝觀・藍色觀音慈光)",
+            "nightImg": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80",
+            "desc": "國寶清水舞台自斷崖突出，俯瞰錦繡如火的錦雲溪楓海。夜間自境內射出的藍色慈光劃破夜空。",
+            "locationDetail": "京阪電車「清水五條站」步行 20 分鐘",
+            "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "清水寺預約門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%B8%85%E6%B0%B4%E5%AF%BA&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kyoto&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "eikando_momiji",
+            "theme": "momiji",
+            "category": "flower",
+            "region": "kansai",
+            "title": "京都 永觀堂 禪林寺",
+            "subtitle": "「紅葉之永觀堂」！3000株楓葉倒映放生池絕景",
+            "tag": "京都・左京區",
+            "bloomStatus": "🍁 盛紅極致 (100%)",
+            "species": "3,000株伊呂波楓・迴廊倒影",
+            "hasNightLight": true,
+            "nightHours": "🏮 17:30 - 20:30 (放生池夜楓倒影特別點燈)",
+            "nightImg": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+            "desc": "自古即被譽為「秋天當屬永觀堂」，沿多寶塔與木造臥龍廊漫步，池泉倒映火紅楓葉如夢似幻。",
+            "locationDetail": "京都市營地下鐵「蹴上站」步行 15 分鐘",
+            "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "永觀堂夜楓門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%B0%B8%E8%A7%80%E5%A0%82&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kyoto&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "tofukuji_momiji",
+            "theme": "momiji",
+            "category": "flower",
+            "region": "kansai",
+            "title": "京都 東福寺 通天橋",
+            "subtitle": "通天橋眺望洗玉澗！萬株洗玉澗紅葉雲海震撼",
+            "tag": "京都・東山區",
+            "bloomStatus": "🍁 見頃盛開 (100%)",
+            "species": "三葉楓 (通天紅葉)",
+            "hasNightLight": false,
+            "desc": "京都最壯觀的紅葉峽谷！站在通天橋上遠眺洗玉澗，兩千株黃紅相間的三葉楓如波濤雲海。",
+            "locationDetail": "JR・京阪電車「東福寺站」步行 10 分鐘",
+            "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "東福寺參拜券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E7%A6%8F%E5%AF%BA&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kyoto&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "kawaguchiko_momiji",
+            "theme": "momiji",
+            "category": "flower",
+            "region": "chubu",
+            "title": "山梨 河口湖紅葉迴廊",
+            "subtitle": "富士山雪冠 ＋ 60株百年巨木夜間紅葉點燈",
+            "tag": "山梨・富士河口湖町",
+            "bloomStatus": "🍁 見頃火紅 (100%)",
+            "species": "百年古木伊呂波楓 (150米天然迴廊)",
+            "hasNightLight": true,
+            "nightHours": "🏮 16:30 - 21:30 (河口湖畔夜楓光雕盛典)",
+            "nightImg": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80",
+            "desc": "落葉鋪滿河道的紅色地毯，沿迴廊漫步即可眺望白雪積冠的富士山，是全日本最具代表性的秋日名信片景致。",
+            "locationDetail": "富士急行線「河口湖站」搭乘河口湖周遊巴士約 20 分鐘",
+            "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "河口湖賞楓一日遊",
+            "klookUrl": "https://www.klook.com/zh-TW/activity/3977-mount-fuji-classic-route-day-tour-tokyo/?aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Fujikawaguchiko&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%AF%8C%E5%A3%AB%E5%B1%B1%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "korankei_momiji",
+            "theme": "momiji",
+            "category": "flower",
+            "region": "chubu",
+            "title": "愛知 豐田香嵐溪",
+            "subtitle": "日本屈指可數紅葉聖地！4,000株楓樹倒映巴川水波",
+            "tag": "愛知・豐田市",
+            "bloomStatus": "🍁 見頃盛開 (100%)",
+            "species": "11種約4,000株楓樹 (待月橋朱紅點綴)",
+            "hasNightLight": true,
+            "nightHours": "🏮 日落至 21:00 (整座飯盛山金色燈光投射)",
+            "nightImg": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80",
+            "desc": "自寬永年間香積寺三榮和尚一株株親植，入夜後整座飯盛山披上金色燈光，巴川水面波光瀲灩震撼無比。",
+            "locationDetail": "名鐵豐田線「淨水站」搭乘直達名鐵巴士約 60 分鐘",
+            "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "香嵐溪賞楓專車",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%A6%99%E5%B5%90%E6%BA%AA&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Toyota&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "rikugien_momiji",
+            "theme": "momiji",
+            "category": "flower",
+            "region": "kanto",
+            "title": "東京 六義園 回遊大名庭園",
+            "subtitle": "江戶代表回遊式山水！朱紅楓葉池泉夜間燈光秀",
+            "tag": "東京・文京區",
+            "bloomStatus": "🍁 見頃極致 (100%)",
+            "species": "約400株伊呂波楓・銀杏",
+            "hasNightLight": true,
+            "nightHours": "🏮 18:00 - 20:30 (庭園秋之夜楓特別觀覽)",
+            "nightImg": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=700&q=80",
+            "desc": "江戶第五代將軍德川綱吉側用人柳澤吉保花費7年營造，水波中倒映的朱紅山紅葉在夜間燈光下宛如仙境。",
+            "locationDetail": "JR 山手線「駒込站」步行 7 分鐘",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "六義園夜楓券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%85%AD%E7%BE%A9%E5%9C%92&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Tokyo&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "minoh_momiji",
+            "theme": "momiji",
+            "category": "flower",
+            "region": "kansai",
+            "title": "大阪 箕面大瀑布 箕面公園",
+            "subtitle": "落差33米飛瀑 ＋ 火紅楓海！品嚐現炸楓葉天婦羅",
+            "tag": "大阪・箕面市",
+            "bloomStatus": "🍁 盛紅見頃 (100%)",
+            "species": "野生山紅葉 (瀑布溪谷步道)",
+            "hasNightLight": true,
+            "nightHours": "🏮 日落至 21:00 (大瀑布周邊秋季彩燈點亮)",
+            "desc": "入選日本瀑布百選，沿著溪谷步道健行，兩側楓紅如火焰燃燒，溪畔老舖販售炸至香脆的甜味「紅葉天婦羅」。",
+            "locationDetail": "阪急箕面線「箕面站」沿步道步行約 40 分鐘即達瀑布",
+            "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "箕面公園散策",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%AE%95%E9%9D%A2%E5%A4%A7%E7%80%91%E5%B8%83&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Osaka&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A4%A7%E9%98%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "jozankei_momiji",
+            "theme": "momiji",
+            "category": "flower",
+            "region": "hokkaido",
+            "title": "北海道 定山溪溫泉 豐平峽",
+            "subtitle": "二見吊橋峽谷紅葉！溪流露天溫泉與秋日水庫絕景",
+            "tag": "北海道・札幌市",
+            "bloomStatus": "🍁 見頃極致 (100%)",
+            "species": "蝦夷板屋・ナナカマド花楸樹",
+            "hasNightLight": true,
+            "nightHours": "🏮 18:00 - 21:00 (定山溪萬燈會光之森點燈)",
+            "desc": "札幌後花園！豐平川兩岸峭壁被金黃與火紅落葉林覆蓋，搭乘電氣巴士前往豐平峽水庫，景致壯麗直擊心靈。",
+            "locationDetail": "JR 札幌站搭乘「定山溪湯Toku巴士」約 60 分鐘",
+            "img": "https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "定山溪溫泉日遊",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%AE%9A%E5%B1%B1%E6%BA%AA&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Jozankei&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9C%AD%E5%B9%8C%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "oirase_momiji",
+            "theme": "momiji",
+            "category": "flower",
+            "region": "tohoku",
+            "title": "青森 奧入瀨溪流 ＆ 十和田湖",
+            "subtitle": "日本第一清流峽谷！阿修羅之流與金紅落葉闊葉林",
+            "tag": "青森・十和田市",
+            "bloomStatus": "🍁 盛紅極盛 (100%)",
+            "species": "日本山毛櫸・桂樹・楓樹純林",
+            "hasNightLight": false,
+            "desc": "青苔奇石間奔騰的十四道瀑布，金黃山毛櫸與鮮紅楓葉在陽光穿透下灑落水面，純淨芬多精洗滌身心。",
+            "locationDetail": "JR 八戶站或青森站搭乘 JR 巴士至「燒山」或「子之口」",
+            "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "奧入瀨溪流包車",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Towada&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E5%8C%97%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "nikko_momiji",
+            "theme": "momiji",
+            "category": "flower",
+            "region": "kanto",
+            "title": "栃木 日光中禪寺湖 ＆ 伊呂波山道",
+            "subtitle": "明智平纜車眺望華嚴瀑布全景！山道蜿蜒紅葉大道",
+            "tag": "栃木・日光市",
+            "bloomStatus": "🍁 見頃火紅 (100%)",
+            "species": "高山七竈・羽毛楓・日光山王林",
+            "hasNightLight": true,
+            "nightHours": "🏮 17:00 - 20:00 (中禪寺湖畔英國大使館別墅夜間點燈)",
+            "desc": "日光名物「伊呂波坂」48個急轉彎被漫山紅葉層層包夾，明智平纜車頂峰俯瞰中禪寺湖與百米華嚴瀑布。",
+            "locationDetail": "東武日光站搭乘東武巴士至「中禪寺溫泉」約 45 分鐘",
+            "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "日光周遊周遊券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E5%85%89&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Nikko&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E5%85%89%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "gaien_ginkgo",
+            "theme": "ginkgo",
+            "category": "flower",
+            "region": "kanto",
+            "title": "東京 明治神宮外苑銀杏大道",
+            "subtitle": "300米純金隧道！146株金黃銀杏齊放",
+            "tag": "東京・港區",
+            "bloomStatus": "🍂 純金見頃 (100%)",
+            "species": "高聳圓錐形修剪金黃銀杏樹群",
+            "hasNightLight": true,
+            "nightHours": "🏮 16:30 - 19:30 (秋日純金銀杏夜間燈光盛典)",
+            "desc": "自青山通至聖德紀念繪畫館，兩側146株高大銀杏落葉鋪就整面金色地毯，Shake Shack露台座無虛席。",
+            "locationDetail": "東京地鐵「外苑前站」或「青山一丁目站」步行 3 分鐘",
+            "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "預約銀杏露天茶座",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE%E5%A4%96%E8%8B%91&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Tokyo&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "showa_ginkgo",
+            "theme": "ginkgo",
+            "category": "flower",
+            "region": "kanto",
+            "title": "東京 國營昭和紀念公園 銀杏並木",
+            "subtitle": "立川運河倒映兩側！200米金黃銀杏運河大道",
+            "tag": "東京・立川市",
+            "bloomStatus": "🍂 純金極盛 (100%)",
+            "species": "106株修剪銀杏並木 ＋ 運河倒影",
+            "hasNightLight": true,
+            "nightHours": "🏮 16:30 - 20:30 (秋之夜金黃銀杏光雕節)",
+            "desc": "運河水面上漂浮著金黃落葉，兩側銀杏排列整齊劃一，租台腳踏車迎著秋風騎行，浪漫至極。",
+            "locationDetail": "JR 青梅線「西立川站」步行 2 分鐘直達",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "昭和紀念公園門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%98%AD%E5%92%8C%E7%B4%80%E5%BF%B5%E5%85%AC%E5%9C%92&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Tachikawa&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "todai_ginkgo",
+            "theme": "ginkgo",
+            "category": "flower",
+            "region": "kanto",
+            "title": "東京 東京大學本鄉校區",
+            "subtitle": "百年哥德歷史建築 ＋ 安田講堂前純金巨木銀杏",
+            "tag": "東京・文京區",
+            "bloomStatus": "🍂 金黃見頃 (100%)",
+            "species": "百年東大銀杏並木 ＆ 正門大道",
+            "hasNightLight": false,
+            "desc": "東京大學校徽上的銀杏葉！歷史悠久的赤門與安田講堂被純金落葉溫柔包圍，洋溢濃郁學術文藝氣息。",
+            "locationDetail": "東京地鐵丸之內線「本鄉三丁目站」步行 8 分鐘",
+            "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "東大漫步校園行",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E9%8A%80%E6%9D%8F&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Tokyo&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E4%BA%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "nishihonganji_ginkgo",
+            "theme": "ginkgo",
+            "category": "flower",
+            "region": "kansai",
+            "title": "京都 西本願寺 水吹銀杏",
+            "subtitle": "樹齡400年天然紀念物！倒生巨傘遮天蔽日",
+            "tag": "京都・下京區",
+            "bloomStatus": "🍂 純金見頃 (100%)",
+            "species": "「逆さ銀杏」京都市指定天然紀念物",
+            "hasNightLight": false,
+            "desc": "相傳在江戶時代大火時曾噴水保護御影堂的傳奇神木，枝椏橫向生長如一把金黃巨傘，蔚為壯觀。",
+            "locationDetail": "JR 京都站步行約 15 分鐘",
+            "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "西本願寺參拜指南",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E8%A5%BF%E6%9C%AC%E9%A1%98%E5%AF%BA&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kyoto&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "sobue_ginkgo",
+            "theme": "ginkgo",
+            "category": "flower",
+            "region": "chubu",
+            "title": "愛知 稻澤市 祖父江銀杏之里",
+            "subtitle": "全日本食用銀杏第一名產地！一萬株純金燦爛小鎮",
+            "tag": "愛知・稻澤市",
+            "bloomStatus": "🍂 純金極盛 (100%)",
+            "species": "祖父江金黃銀杏林 (10,000株)",
+            "hasNightLight": true,
+            "nightHours": "🏮 17:00 - 21:00 (祐專寺周邊夜間金黃燈光節)",
+            "desc": "整座小鎮種滿一萬多株百年銀杏，秋日宛如被純金浸染，現場可品嚐剛烘烤出爐的翡翠色香濃銀杏果。",
+            "locationDetail": "名鐵尾西線「山崎站」出站即達金黃銀杏林",
+            "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "祖父江銀杏祭導覽",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%90%8D%E5%8F%A4%E5%B1%8B%E9%8A%80%E6%9D%8F&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Nagoya&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "tarumizu_ginkgo",
+            "theme": "ginkgo",
+            "category": "flower",
+            "region": "kyushu",
+            "title": "鹿兒島 垂水千本銀杏園",
+            "subtitle": "私房秘境！夫妻耗時30年親手開墾千株金色山丘",
+            "tag": "鹿兒島・垂水市",
+            "bloomStatus": "🍂 純金見頃 (100%)",
+            "species": "千本銀杏金色之丘 (1,200株)",
+            "hasNightLight": true,
+            "nightHours": "🏮 18:00 - 21:00 (秋夜千本銀杏特別點燈)",
+            "desc": "榮獲日本「手作之鄉」大獎！由一對退休夫妻將荒山開闢成千株銀杏林，陽光穿透樹梢灑下滿山金箔。",
+            "locationDetail": "鹿兒島機場開車約 60 分鐘 ｜ 垂水港搭車約 12 分鐘",
+            "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "垂水千本銀杏指南",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%B9%BF%E5%85%92%E5%B3%B6%E6%97%85%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kagoshima&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E9%B9%BF%E5%85%92%E5%B3%B6%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "kumamoto_ginkgo",
+            "theme": "ginkgo",
+            "category": "flower",
+            "region": "kyushu",
+            "title": "熊本 熊本城大銀杏",
+            "subtitle": "加藤清正親手栽種！「銀杏城」天守閣前純金坐標",
+            "tag": "熊本・熊本市",
+            "bloomStatus": "🍂 滿開金黃 (100%)",
+            "species": "熊本城傳奇大銀杏 (樹齡400年以上)",
+            "hasNightLight": true,
+            "nightHours": "🏮 日落至 21:00 (天守閣與大銀杏夜間共同點燈)",
+            "desc": "築城名將加藤清正親植，「城內銀杏樹長至天守閣高時便會有戰事發生」的傳奇，天守黑白與金黃相映壯麗。",
+            "locationDetail": "熊本市電「熊本城・市役所前站」步行 5 分鐘",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "預約熊本城門票",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%86%8A%E6%9C%AC%E5%9F%8E&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Kumamoto&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%86%8A%E6%9C%AC%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "shingu_ginkgo",
+            "theme": "ginkgo",
+            "category": "flower",
+            "region": "tohoku",
+            "title": "福島 喜多方 新宮熊野神社",
+            "subtitle": "國寶長床44根巨柱！800年大銀杏金色落葉厚地毯",
+            "tag": "福島・喜多方市",
+            "bloomStatus": "🍂 純金盛極 (100%)",
+            "species": "大銀杏 (樹高30m・周圍8.1m・樹齡800年)",
+            "hasNightLight": true,
+            "nightHours": "🏮 17:30 - 19:30 (長床寢殿造夜間神秘點燈)",
+            "desc": "平安時代寢殿造「長床」44根粗大圓木柱下，鋪滿一整片十公分厚的純金銀杏地毯，莊嚴純淨宛如淨土。",
+            "locationDetail": "JR 磐越西線「喜多方站」轉搭計程車約 10 分鐘",
+            "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "新宮熊野神社參拜券",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E7%A6%8F%E5%B3%B6%E6%97%85%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Aizuwakamatsu&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%9D%B1%E5%8C%97%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "makino_ginkgo",
+            "theme": "ginkgo",
+            "category": "flower",
+            "region": "kansai",
+            "title": "滋賀 槙野水杉水庫並木道",
+            "subtitle": "2.4公里500株直通雲霄！純金巨木林道絕景",
+            "tag": "滋賀・高島市",
+            "bloomStatus": "🍂 純金見頃 (100%)",
+            "species": "500株水杉巨木並木 (純金紅褐色交織)",
+            "hasNightLight": false,
+            "desc": "入選日本街路樹百景！筆直延伸 2.4 公里的水杉與銀杏樹群在初冬染成通透純金，被譽為「日本最美公路」。",
+            "locationDetail": "JR 湖西線「槙野站」搭乘高島市社區巴士約 6 分鐘",
+            "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "滋賀琵琶湖自駕包車",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E6%BB%8B%E8%B3%80%E6%B0%B4%E6%9D%89%E4%B8%A6%E6%9C%A8&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Shiga&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E4%BA%AC%E9%83%BD%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      },
+      {
+            "id": "midosuji_ginkgo",
+            "theme": "ginkgo",
+            "category": "flower",
+            "region": "kansai",
+            "title": "大阪 御堂筋銀杏並木大道",
+            "subtitle": "4公里橫貫市中心！800株銀杏都市夜間金黃燈光秀",
+            "tag": "大阪・中央區",
+            "bloomStatus": "🍂 金黃見頃 (100%)",
+            "species": "御堂筋 4公里 800株金黃銀杏並木",
+            "hasNightLight": true,
+            "nightHours": "🏮 17:00 - 23:00 (大阪・光之饗宴世界最大彩燈)",
+            "desc": "自梅田一路延伸至難波的 4 公里銀杏林蔭道，被列為近代都市景觀遺產，夜間化身金黃璀璨夢幻光廊。",
+            "locationDetail": "大阪地鐵御堂筋線「本町站」或「心齋橋站」出站即達",
+            "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80",
+            "ticketLabel": "御堂筋散策指南",
+            "klookUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A4%A7%E9%98%AA%E5%85%89%E4%B9%8B%E9%A5%97%E5%AE%B4&aid=123436&utm_medium=affiliate-alwayson",
+            "bookingUrl": "https://www.booking.com/searchresults.zh-tw.html?ss=Osaka&aid=2422002",
+            "charterUrl": "https://www.klook.com/zh-TW/search/result/?query=%E5%A4%A7%E9%98%AA%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson"
+      }
+,
+
       // 🌸 全日本 8 大地區 80 經典櫻花名所 (各區 10 處)
       {
         id: 'meguro_sakura',
@@ -19791,9 +20850,9 @@
         feedSeason: 'sakura',
         subItems: [
           { id: 'sakura_bloom', icon: '', name: '櫻花', type: 'season', val: 'sakura' },
-          { id: 'fuji_wisteria', icon: '', name: '紫藤花', type: 'spot_id', val: 'ashikaga_fuji' },
-          { id: 'nemophila_sea', icon: '', name: '粉蝶花', type: 'spot_id', val: 'hitachi_flower' },
-          { id: 'hydrangea_season', icon: '', name: '繡球花', type: 'spot_id', val: 'hydrangea_flower' },
+          { id: 'fuji_wisteria', icon: '', name: '紫藤花', type: 'season', val: 'wisteria' },
+          { id: 'nemophila_sea', icon: '', name: '粉蝶花', type: 'season', val: 'nemophila' },
+          { id: 'hydrangea_season', icon: '', name: '繡球花', type: 'season', val: 'hydrangea' },
           { id: 'momiji_view', icon: '', name: '秋楓', type: 'season', val: 'momiji' },
           { id: 'ginkgo_gold', icon: '', name: '銀杏', type: 'season', val: 'ginkgo' }
         ]
@@ -20566,7 +21625,7 @@
                             (spotDayNightState[item.id] === 'night'));
 
         const card = document.createElement('div');
-        card.className = `tabi-card ${isNight ? 'is-night-theme-card' : ''}`;
+        card.className = `tabi-card theme-${item.theme} ${isNight ? 'is-night-theme-card' : ''}`;
         card.id = `spot-card-${item.id}`;
         card.setAttribute('data-spot-id', item.id);
 
@@ -20630,8 +21689,16 @@
           statusTagText = item.snowDepth || item.species || '❄️ 天然粉雪積雪中';
         } else if (item.theme === 'camp') {
           statusTagText = item.siteStatus || item.viewRating || '⛺ 絕景露營席位';
+        } else if (item.theme === 'wisteria') {
+          statusTagText = item.bloomStatus || '💜 盛開見頃 (100%)';
+        } else if (item.theme === 'nemophila') {
+          statusTagText = item.bloomStatus || '🩵 盛開花海 (100%)';
+        } else if (item.theme === 'hydrangea') {
+          statusTagText = item.bloomStatus || '💠 見頃盛開 (100%)';
         } else if (item.theme === 'momiji') {
           statusTagText = item.bloomStatus || '🍁 見頃火紅 (100%)';
+        } else if (item.theme === 'ginkgo') {
+          statusTagText = item.bloomStatus || '🍂 純金見頃 (100%)';
         } else if (item.theme === 'sakura') {
           statusTagText = item.bloomStatus || '🌸 滿開 (100%)';
         } else {
@@ -20649,6 +21716,29 @@
           metaRowContent = `
             <span class="meta-tag-pill">⛺ 營地：${item.campTypeInfo ? item.campTypeInfo.split('｜')[0].trim() : (item.siteStatus || '絕景露營')}</span>
             <span class="meta-tag-pill">🛣️ 交通：${item.navInfo || item.locationDetail || '自駕導航直達'}</span>
+          `;
+        } else if (item.theme === 'wisteria') {
+          metaRowContent = `
+            <span class="meta-tag-pill">💜 特色：${item.species || '樹齡160年奇蹟大藤'}</span>
+            <span class="meta-tag-pill">🚇 交通：${item.locationDetail || '鄰近車站步行即達'}</span>
+            ${item.hasNightLight ? `<span class="meta-tag-pill" style="color:#7E22CE; background:#FAF5FF; border-color:#E9D5FF;">${item.nightHours || '🏮 夜間紫藤光影點燈'}</span>` : ''}
+          `;
+        } else if (item.theme === 'nemophila') {
+          metaRowContent = `
+            <span class="meta-tag-pill">🩵 特色：${item.species || '琉璃唐草530萬株純藍花毯'}</span>
+            <span class="meta-tag-pill">🚇 交通：${item.locationDetail || '直達接駁巴士即達'}</span>
+          `;
+        } else if (item.theme === 'hydrangea') {
+          metaRowContent = `
+            <span class="meta-tag-pill">💠 特色：${item.species || '明月院藍姬繡球2,500株'}</span>
+            <span class="meta-tag-pill">🚇 交通：${item.locationDetail || '古道步行即達'}</span>
+            ${item.hasNightLight ? `<span class="meta-tag-pill" style="color:#6D28D9; background:#F5F3FF; border-color:#DDD6FE;">${item.nightHours || '🏮 夜間紫陽花點燈'}</span>` : ''}
+          `;
+        } else if (item.theme === 'ginkgo') {
+          metaRowContent = `
+            <span class="meta-tag-pill">🍂 特色：${item.species || '300米純金大道・百年修剪並木'}</span>
+            <span class="meta-tag-pill">🚇 交通：${item.locationDetail || '地鐵出站即達'}</span>
+            ${item.hasNightLight ? `<span class="meta-tag-pill" style="color:#854D0E; background:#FEFCE8; border-color:#FEF08A;">${item.nightHours || '🏮 16:30 - 19:30 銀杏夜間彩燈'}</span>` : ''}
           `;
         } else if (item.theme === 'momiji') {
           metaRowContent = `
@@ -20928,10 +22018,26 @@
             ` : `
               <div class="card-action-bar">
                 <a href="${klookFinalUrl}" target="_blank" class="btn-act-clean btn-act-primary" onclick="event.stopPropagation();">
-                  <span>${item.ticketLabel || (item.theme === 'sakura' ? '預約門票' : '預定行程')}</span>
+                  <span>${item.ticketLabel || (
+                    item.theme === 'wisteria' ? '預約紫藤花門票' :
+                    item.theme === 'nemophila' ? '預約花海門票' :
+                    item.theme === 'hydrangea' ? '預約古寺門票' :
+                    item.theme === 'momiji' ? (item.hasNightLight ? '夜楓點燈門票' : '預約賞楓門票') :
+                    item.theme === 'ginkgo' ? '金黃大道散策' :
+                    item.theme === 'sakura' ? (item.hasNightLight ? '夜櫻點燈門票' : '預約賞櫻門票') : '預定行程'
+                  )}</span>
                 </a>
                 <a href="${bookingFinalUrl}" target="_blank" class="btn-act-clean btn-act-secondary" onclick="event.stopPropagation();">
-                  <span>查看訂房</span>
+                  <span>${item.theme === 'momiji' ? '預訂溫泉旅館' : item.theme === 'hydrangea' ? '預訂周邊溫泉' : '查看訂房'}</span>
+                </a>
+                <a href="${item.charterUrl || 'japan_charter_rental.html'}" target="_blank" class="btn-act-clean btn-act-mint" onclick="event.stopPropagation();" title="包車一日遊直達景點">
+                  <span>${
+                    item.theme === 'wisteria' ? '包車賞藤' :
+                    item.theme === 'nemophila' ? '包車賞花' :
+                    item.theme === 'hydrangea' ? '包車漫遊' :
+                    item.theme === 'momiji' ? '包車賞楓' :
+                    item.theme === 'ginkgo' ? '包車賞銀杏' : '包車直達'
+                  }</span>
                 </a>
               </div>
             `}
