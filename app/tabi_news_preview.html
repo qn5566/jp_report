@@ -361,7 +361,7 @@
 
     #fx-canvas {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      pointer-events: none; z-index: 2;
+      pointer-events: none; z-index: 9999;
     }
 
     .web-container {
@@ -1321,7 +1321,7 @@
 
     #fx-canvas {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      pointer-events: none; z-index: 2;
+      pointer-events: none; z-index: 9999;
     }
 
     .web-container {
@@ -7761,7 +7761,156 @@
       font-size: 0.76rem;
     }
 
-</style>
+
+    /* 各大花季依照花朵配色之優雅淺色背景 (Japanese Botanical Hues) */
+    body.mode-sakura {
+      background: linear-gradient(165deg, #FFF5F7 0%, #FEEFF3 45%, #FDE6EC 85%, #FFF7FA 100%) !important;
+      background-attachment: fixed;
+    }
+    body.mode-wisteria {
+      background: linear-gradient(165deg, #FAF5FF 0%, #F4EEFC 45%, #ECE4FA 85%, #FAF5FF 100%) !important;
+      background-attachment: fixed;
+    }
+    body.mode-wisteria .app-header {
+      background: rgba(250, 245, 255, 0.96) !important;
+      border-bottom-color: #E9D5FF !important;
+    }
+    body.mode-wisteria .community-feed-section {
+      background: linear-gradient(135deg, #FAF5FF 0%, #F3E8FF 50%, #FAF5FF 100%) !important;
+      border: 1.5px solid #D8B4FE !important;
+      box-shadow: 0 6px 24px rgba(192, 132, 252, 0.12) !important;
+    }
+    body.mode-nemophila {
+      background: linear-gradient(165deg, #F0F9FF 0%, #E2F2FE 45%, #D6EDFC 85%, #F0F9FF 100%) !important;
+      background-attachment: fixed;
+    }
+    body.mode-nemophila .app-header {
+      background: rgba(240, 249, 255, 0.96) !important;
+      border-bottom-color: #BAE6FD !important;
+    }
+    body.mode-hydrangea {
+      background: linear-gradient(165deg, #F4F6FD 0%, #E9EDFB 45%, #DFE5FA 85%, #F4F6FD 100%) !important;
+      background-attachment: fixed;
+    }
+    body.mode-hydrangea .app-header {
+      background: rgba(244, 246, 253, 0.96) !important;
+      border-bottom-color: #C7D2FE !important;
+    }
+    body.mode-lavender {
+      background: linear-gradient(165deg, #FBF7FD 0%, #F3ECF9 45%, #EBE1F5 85%, #FBF7FD 100%) !important;
+      background-attachment: fixed;
+    }
+    body.mode-shibazakura {
+      background: linear-gradient(165deg, #FFF1F6 0%, #FEE2ED 45%, #FDD2E2 85%, #FFF1F6 100%) !important;
+      background-attachment: fixed;
+    }
+    body.mode-momiji {
+      background: linear-gradient(165deg, #FFF7F2 0%, #FDF0E5 45%, #F8E4D5 85%, #FFF7F2 100%) !important;
+      background-attachment: fixed;
+    }
+    body.mode-ginkgo {
+      background: linear-gradient(165deg, #FFFDF0 0%, #FEF9E0 45%, #FDF3CD 85%, #FFFDF0 100%) !important;
+      background-attachment: fixed;
+    }
+
+    /* 夜楓專屬極黑暗黑美學卡牌 (Distinct Midnight Momiji Card) */
+    .tabi-card.card-night-momiji {
+      background: #141722 !important;
+      border: 1.5px solid #881337 !important;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 16px rgba(225, 29, 72, 0.22) !important;
+      color: #F1F5F9 !important;
+      position: relative;
+    }
+    .tabi-card.card-night-momiji .card-body {
+      background: #141722 !important;
+    }
+    .tabi-card.card-night-momiji .card-title-header h3 {
+      color: #FFFFFF !important;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    }
+    .tabi-card.card-night-momiji .card-subtitle-line {
+      color: #CBD5E1 !important;
+    }
+    .tabi-card.card-night-momiji .card-clean-concise-desc {
+      color: #94A3B8 !important;
+    }
+    .tabi-card.card-night-momiji .card-floating-badge {
+      background: rgba(225, 29, 72, 0.95) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 8px rgba(225, 29, 72, 0.4);
+    }
+    .tabi-card.card-night-momiji .card-bloom-status-tag {
+      background: linear-gradient(135deg, #881337 0%, #4C0519 100%) !important;
+      color: #FECDD3 !important;
+      border: 1px solid #BE123C !important;
+    }
+    .tabi-card.card-night-momiji .spot-meta-pill {
+      background: #1E2433 !important;
+      border-color: #334155 !important;
+      color: #CBD5E1 !important;
+    }
+    .tabi-card.card-night-momiji .metrics-trio-box {
+      background: #181E2C !important;
+      border: 1px solid #334155 !important;
+    }
+    .tabi-card.card-night-momiji .metric-cell-label {
+      color: #94A3B8 !important;
+    }
+    .tabi-card.card-night-momiji .metric-cell-val {
+      color: #F8FAFC !important;
+    }
+    .tabi-card.card-night-momiji .spot-cafe-card {
+      background: #181E2C !important;
+      border-color: #334155 !important;
+    }
+    .tabi-card.card-night-momiji .cafe-name {
+      color: #F1F5F9 !important;
+    }
+    .tabi-card.card-night-momiji .cafe-feature {
+      color: #94A3B8 !important;
+    }
+    .tabi-card.card-night-momiji .night-lighting-alert-bar {
+      background: linear-gradient(135deg, #4C0519 0%, #1E1218 100%) !important;
+      border-color: #BE123C !important;
+      color: #FDA4AF !important;
+    }
+    .tabi-card.card-night-momiji .btn-act-primary {
+      background: linear-gradient(135deg, #E11D48 0%, #BE123C 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 3px 12px rgba(225, 29, 72, 0.35) !important;
+    }
+    .tabi-card.card-night-momiji .btn-act-secondary {
+      background: #1E2433 !important;
+      border-color: #475569 !important;
+      color: #E2E8F0 !important;
+    }
+    .tabi-card.card-night-momiji .btn-act-booking {
+      background: #1E293B !important;
+      border-color: #334155 !important;
+      color: #F1F5F9 !important;
+    }
+    .tabi-card.card-night-momiji .btn-act-charter {
+      background: #0F172A !important;
+      border-color: #334155 !important;
+      color: #F1F5F9 !important;
+    }
+    .night-momiji-special-pill {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid #E11D48;
+      color: #FECDD3;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(225, 29, 72, 0.35);
+    }
+
+  </style>
 </head>
 <body class="mode-spots">
 
@@ -26954,7 +27103,7 @@
     "hasNightLight": false
   }];
 
-    let currentSeason = 'spots';
+    let currentSeason = 'sakura';
     let currentRegion = 'all';
     let currentCategory = 'all';
 
@@ -27184,6 +27333,12 @@
       } else if (item.id === 'hydrangea_season' || item.val === 'hydrangea') {
         currentSeason = 'hydrangea';
         document.body.className = 'mode-hydrangea';
+      } else if (item.id === 'lavender_field' || item.val === 'lavender') {
+        currentSeason = 'lavender';
+        document.body.className = 'mode-lavender';
+      } else if (item.id === 'shibazakura_carpet' || item.val === 'shibazakura') {
+        currentSeason = 'shibazakura';
+        document.body.className = 'mode-shibazakura';
       } else if (item.id === 'momiji_view' || item.val === 'momiji') {
         currentSeason = 'momiji';
         document.body.className = 'mode-momiji';
@@ -27973,9 +28128,10 @@
         const isNight = ((item.theme === 'sakura' && currentSakuraFeature === 'night') || 
                             (item.theme === 'momiji' && currentMomijiFeature === 'night') || 
                             (spotDayNightState[item.id] === 'night'));
+        const isNightMomiji = (item.theme === 'momiji' && (item.hasNightLight || (item.nightHours && item.nightHours.length > 0) || (item.title && item.title.includes('夜楓'))));
 
         const card = document.createElement('div');
-        card.className = `tabi-card theme-${item.theme} ${isNight ? 'is-night-theme-card' : ''}`;
+        card.className = `tabi-card theme-${item.theme} ${isNight ? 'is-night-theme-card' : ''} ${isNightMomiji ? 'card-night-momiji' : ''}`;
         card.id = `spot-card-${item.id}`;
         card.setAttribute('data-spot-id', item.id);
 
@@ -29593,21 +29749,31 @@
       particles = [];
       fireworks = [];
 
-      let count = 24;
-      if (currentSeason === 'sakura') count = 65;
-      else if (currentSeason === 'wisteria') count = 75; // 💜 紫藤瀑布曼妙紫花飄落
-      else if (currentSeason === 'nemophila') count = 70; // 💙 粉蝶花海藍紫粉橘花片
-      else if (currentSeason === 'hydrangea') count = 60; // 💙 繡球花瓣
-      else if (currentSeason === 'snow') count = 85; // ❄️ 漫天晶瑩 JAPOW 天然乾粉雪
-      else if (currentSeason === 'momiji') count = 46;
-      else if (currentSeason === 'ginkgo') count = 38;
+      let count = 22;
+      if (currentSeason === 'sakura') count = 28; // 🌸 溫柔淡粉飄舞 (大幅減少避免疲勞)
+      else if (currentSeason === 'wisteria') count = 24; // 💜 紫藤瀑布淡紫飄花 (減少密度)
+      else if (currentSeason === 'nemophila') count = 24; // 💙 粉蝶花海粉藍花片
+      else if (currentSeason === 'hydrangea') count = 22; // 🪻 繡球花紫藍花瓣
+      else if (currentSeason === 'lavender') count = 22; // 🪻 薰衣草紫花
+      else if (currentSeason === 'shibazakura') count = 22; // 🌸 芝櫻淡粉
+      else if (currentSeason === 'snow') count = 45; // ❄️ 漫天晶瑩 JAPOW 輕盈粉雪
+      else if (currentSeason === 'momiji') count = 20; // 🍁 丹楓落葉
+      else if (currentSeason === 'ginkgo') count = 18; // 🍂 黃金銀杏
       else if (currentSeason === 'spots') count = 0;
 
       // 🌸 櫻花：粉粉淺淺淡雅粉彩
       const sakuraColors = ['#FFE4EB', '#FFD1DC', '#FFC1D0', '#FFB5C5', '#FFAEC0', '#FFF0F5'];
-      const wisteriaColors = ['#9333EA', '#A855F7', '#C084FC', '#7E22CE', '#D8B4FE', '#E9D5FF', '#6B21A8'];
+      // 💜 紫藤：優雅溫潤淡紫彩
+      const wisteriaColors = ['#E9D5FF', '#D8B4FE', '#C084FC', '#F3E8FF', '#A855F7'];
       // 💙 粉蝶花：淺淺藍藍溫柔小花瓣
-      const nemophilaColors = ['#E0F2FE', '#BAE6FD', '#7DD3FC', '#93C5FD', '#EBF5FF'];
+      const nemophilaColors = ['#E0F2FE', '#BAE6FD', '#7DD3FC', '#93C5FD', '#F0F9FF'];
+      // 🪻 繡球花：淺淡青紫粉花瓣
+      const hydrangeaColors = ['#C7D2FE', '#DDD6FE', '#BAE6FD', '#E0E7FF', '#93C5FD'];
+      // 🪻 薰衣草：淡雅紫金
+      const lavenderColors = ['#E9D5FF', '#D8B4FE', '#C084FC', '#F5EEFD'];
+      // 🌸 芝櫻：柔嫩品粉
+      const shibazakuraColors = ['#FCE7F3', '#FBCFE8', '#F472B6', '#FDA4AF'];
+      // 🍁 丹楓：秋色落葉
       const momijiColors = ['#DC2626', '#EA580C', '#B91C1C', '#C2410C', '#991B1B', '#E11D48'];
 
       for (let i = 0; i < count; i++) {
@@ -29620,6 +29786,12 @@
           particleColor = wisteriaColors[i % wisteriaColors.length];
         } else if (currentSeason === 'nemophila') {
           particleColor = nemophilaColors[i % nemophilaColors.length];
+        } else if (currentSeason === 'hydrangea') {
+          particleColor = hydrangeaColors[i % hydrangeaColors.length];
+        } else if (currentSeason === 'lavender') {
+          particleColor = lavenderColors[i % lavenderColors.length];
+        } else if (currentSeason === 'shibazakura') {
+          particleColor = shibazakuraColors[i % shibazakuraColors.length];
         } else if (isMomiji) {
           particleColor = momijiColors[i % momijiColors.length];
         } else if (isSnowFlurry) {
@@ -30067,6 +30239,7 @@
       renderDynamicRegionBar();
       renderDynamicFilter();
       renderCards();
+      initCanvasFX();
     });
 
 

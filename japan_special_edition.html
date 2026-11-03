@@ -932,8 +932,8 @@
 
     <div class="catalog-inner-container">
       <div class="catalog-header-wrap">
-        <h1 class="catalog-main-title">Explore All Our Trips</h1>
-        <p class="catalog-sub-desc">Every journey is carefully crafted to bring your travel dreams to life.</p>
+        <h1 class="catalog-main-title" id="catalogMainTitle">Explore All Our Trips</h1>
+        <p class="catalog-sub-desc" id="catalogSubDesc">Every journey is carefully crafted to bring your travel dreams to life.</p>
       </div>
 
       <!-- 垂直大圖卡片排列網格 (3 欄直式卡片，文字很少，純淨歐美 Slow Travel 風格) -->
@@ -1008,8 +1008,8 @@
       <div class="reader-trans-inner">
         <span class="trans-prompt-label">🌐 Article Translation / 多語言閱讀:</span>
         <div class="trans-pills-wrap">
-          <button class="btn-trans-choice active" data-lang="en" onclick="setArticleLang('en', this)">🇺🇸 English</button>
-          <button class="btn-trans-choice" data-lang="zh-tw" onclick="setArticleLang('zh-tw', this)">🇹🇼 繁體中文</button>
+          <button class="btn-trans-choice" data-lang="en" onclick="setArticleLang('en', this)">🇺🇸 English</button>
+          <button class="btn-trans-choice active" data-lang="zh-tw" onclick="setArticleLang('zh-tw', this)">🇹🇼 繁體中文</button>
           <button class="btn-trans-choice" data-lang="zh-cn" onclick="setArticleLang('zh-cn', this)">🇨🇳 简体中文</button>
           <button class="btn-trans-choice" data-lang="vi" onclick="setArticleLang('vi', this)">🇻🇳 Tiếng Việt</button>
           <button class="btn-trans-choice" data-lang="th" onclick="setArticleLang('th', this)">🇹🇭 ภาษาไทย</button>
@@ -1042,7 +1042,7 @@
           <a href="#art1_blueprint" class="btn-story-text-cta">Explore Itinerary Blueprint →</a>
         </div>
         <div class="asymmetry-img-col">
-          <img src="https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=800&q=80" alt="Kumano Trail" class="asymmetry-img" />
+          <img src="./images/kumano_seigantoji_nachi.jpg" alt="Kumano Nachisan Seigantoji Pagoda and Nachi Waterfall" class="asymmetry-img" />
         </div>
       </div>
 
@@ -1067,7 +1067,7 @@
 
           <!-- 欄位 2: 景點極致探索 (Adventure) -->
           <div class="dream-card-item">
-            <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=600&q=80" alt="Nachi Waterfall Shinto" class="dream-card-img" />
+            <img src="./images/kumano_seigantoji_nachi.jpg" alt="Nachi Waterfall and Seigantoji Pagoda" class="dream-card-img" />
             <div class="dream-card-scrim"></div>
             <div class="dream-card-content">
               <span class="dream-card-cat">SACRED SIGHTSEEING</span>
@@ -1116,17 +1116,17 @@
       <!-- 尊榮包車專屬模組 -->
       <div class="magazine-chauffeur-box">
         <div>
-          <span class="chf-badge">BESPOKE CHAUFFEUR & TRANSIT</span>
-          <h2 class="chf-heading">Explore the Sacred Trails in Complete Serenity</h2>
-          <p class="chf-summary">Traverse mountain passes and remote thermal villages in our private Toyota Alphard fleet with multilingual chauffeurs and luggage forwarding.</p>
+          <span class="chf-badge" id="art1_chf_badge">BESPOKE CHAUFFEUR & TRANSIT</span>
+          <h2 class="chf-heading" id="art1_chf_title">Explore the Sacred Trails in Complete Serenity</h2>
+          <p class="chf-summary" id="art1_chf_desc">Traverse mountain passes and remote thermal villages in our private Toyota Alphard fleet with multilingual chauffeurs and luggage forwarding.</p>
           <ul class="chf-list">
-            <li>✔ Toyota Alphard 7-Seater / Hiace 10-Seater Executive Fleet</li>
-            <li>✔ Door-to-door luggage transit between mountain ryokans</li>
-            <li>✔ Private airport transfers from Kansai (KIX) & Nanki-Shirahama</li>
+            <li id="art1_chf_l1">✔ Toyota Alphard 7-Seater / Hiace 10-Seater Executive Fleet</li>
+            <li id="art1_chf_l2">✔ Door-to-door luggage transit between mountain ryokans</li>
+            <li id="art1_chf_l3">✔ Private airport transfers from Kansai (KIX) & Nanki-Shirahama</li>
           </ul>
         </div>
         <div class="chf-cta-box">
-          <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%86%8A%E9%87%8E%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-chf-gold">Book Private Chauffeur</a>
+          <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%86%8A%E9%87%8E%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="btn-chf-gold" id="art1_chf_btn">Book Private Chauffeur</a>
           <a href="japan_charter_rental.html" class="btn-chf-ghost">View Fleet & Details</a>
         </div>
       </div>
@@ -1134,27 +1134,27 @@
       <!-- 1~3 日行程藍圖 -->
       <div class="blueprint-system-wrap" id="art1_blueprint">
         <div class="blueprint-title-wrap">
-          <h2 class="blueprint-main-title">Curated 1, 2, & 3-Day Pilgrimage Blueprint</h2>
+          <h2 class="blueprint-main-title" id="art1_bp_title">Curated 1, 2, & 3-Day Pilgrimage Blueprint</h2>
         </div>
         <div class="blueprint-day-row">
           <div class="day-tag">DAY 01</div>
           <div>
-            <h3 class="day-name">Arrival & The Ancient Gate of Daimon-zaka</h3>
-            <p class="day-desc">Private transfer to Daimon-zaka cobblestone stone stairway. Ascend through 800-year-old Meoto Sugi cedar trees to Kumano Nachi Taisha and Nachi Primeval Falls.</p>
+            <h3 class="day-name" id="art1_d1_title">Arrival & The Ancient Gate of Daimon-zaka</h3>
+            <p class="day-desc" id="art1_d1_desc">Private transfer to Daimon-zaka cobblestone stone stairway. Ascend through 800-year-old Meoto Sugi cedar trees to Kumano Nachi Taisha and Nachi Primeval Falls.</p>
           </div>
         </div>
         <div class="blueprint-day-row">
           <div class="day-tag">DAY 02</div>
           <div>
-            <h3 class="day-name">Kumano Hongū Taisha & Healing Thermal Springs</h3>
-            <p class="day-desc">Hike along the Nakahechi trail into Hongū Taisha. Soak in the ancient thermal waters of Yunomine Onsen's Tsuboyu, the only World Heritage bath on earth.</p>
+            <h3 class="day-name" id="art1_d2_title">Kumano Hongū Taisha & Healing Thermal Springs</h3>
+            <p class="day-desc" id="art1_d2_desc">Hike along the Nakahechi trail into Hongū Taisha. Soak in the ancient thermal waters of Yunomine Onsen's Tsuboyu, the only World Heritage bath on earth.</p>
           </div>
         </div>
         <div class="blueprint-day-row">
           <div class="day-tag">DAY 03</div>
           <div>
-            <h3 class="day-name">Kumano River Sandanbo Sail & Pacific Retreat</h3>
-            <p class="day-desc">Board a traditional wooden Sandanbo sailboat drifting down the sacred Kumano River to Hayatama Taisha, concluding with coastal onsen overlooking the Pacific.</p>
+            <h3 class="day-name" id="art1_d3_title">Kumano River Sandanbo Sail & Pacific Retreat</h3>
+            <p class="day-desc" id="art1_d3_desc">Board a traditional wooden Sandanbo sailboat drifting down the sacred Kumano River to Hayatama Taisha, concluding with coastal onsen overlooking the Pacific.</p>
           </div>
         </div>
       </div>
@@ -1308,7 +1308,7 @@
   <!-- 全站頁尾 -->
   <footer class="mag-footer">
     <div class="footer-logo">JAPAN TABI ｜ 日本旅遊報報</div>
-    <p class="footer-note">JAPAN TABI Masterclass Series explores sacred primeval heritage, cultural landscapes, culinary craftsmanship, and luxury sanctuaries across Japan.</p>
+    <p class="footer-note" id="footerNote">JAPAN TABI Masterclass Series explores sacred primeval heritage, cultural landscapes, culinary craftsmanship, and luxury sanctuaries across Japan.</p>
     <div class="footer-links">
       <a href="tabi_news_preview.html">首頁</a>
       <a href="japan_flight_deals.html">查機票</a>
@@ -1320,9 +1320,126 @@
 
   <script>
     let activeVol = 1;
-    let currentLang = 'en';
+    let currentLang = 'zh-tw';
 
-    {
+    
+    // 🗻 文章 2 (富士五湖與本栖湖) 7 國多語言字典
+    const FUJI_TRANSLATIONS = {
+      'zh-tw': {
+        title: '富士五湖與本栖湖：神聖鏡面與高原之火',
+        quote: '「本栖湖如鏡水面映照著永恆對稱的逆富士，柴火劈啪的溫暖氣息與神聖高原清冽空氣交織。」',
+        pretitle: '從敬畏天災到靈性崇拜',
+        h2_1: '富士講信仰與五湖冰川聖域',
+        p1: '一千多年來，富士山曾被視為隨時噴薄毀滅怒火的活火山。江戶時代修驗行者將對大自然的恐懼轉化為深邃的靈性崇拜，誕生了環繞五大冰川湖泊的「富士講」朝聖之路。',
+        planTitle: '規劃您的富士山極致探索之旅',
+        planDesc: '為全球品味行家量身定制的三大經典支柱體驗。',
+        c1_sub: '米其林法式野味 ＆ 鄉土餺飥麵',
+        c2_sub: '本栖湖朝霧獨木舟 ＆ 熔岩冰穴',
+        c3_sub: '虹夕諾雅富士 ＆ 湖山亭產屋',
+        stayTitle: '尋覓您的隱世奢華宿坊',
+        stayDesc: '從坐落於紅松森林中的虹夕諾雅建築露營木屋，到河口湖畔直面清晨逆富士的私人露天風呂溫泉旅館。',
+        tasteTitle: '品味高原爐火極致饗宴',
+        tasteDesc: '品嚐搭配甲州天然葡萄酒的法式野味獵人割烹、熱氣蒸騰的鐵鍋南瓜餺飥麵，以及頂級甲州炭火燒肉。'
+      },
+      'zh-cn': {
+        title: '富士五湖与本栖湖：神圣镜面与高原之火',
+        quote: '“本栖湖如镜水面映照着永恒对称的逆富士，柴火劈啪的温暖气息与神圣高原清冽空气交织。”',
+        pretitle: '从敬畏天灾到灵性崇拜',
+        h2_1: '富士讲信仰与五湖冰川圣域',
+        p1: '一千多年来，富士山曾被视为随时喷薄毁灭怒火的活火山。江户时代修验行者将对大自然的恐惧转化为深邃的灵性崇拜，诞生了环绕五大冰川湖泊的“富士讲”朝圣之路。',
+        planTitle: '规划您的富士山极致探索之旅',
+        planDesc: '为全球品位行家量身定制的三大经典支柱体验。',
+        c1_sub: '米其林法式野味 ＆ 乡土餺飥面',
+        c2_sub: '本栖湖朝雾独木舟 ＆ 熔岩冰穴',
+        c3_sub: '虹夕诺雅富士 ＆ 湖山亭产屋',
+        stayTitle: '寻觅您的隐世奢华宿坊',
+        stayDesc: '从坐落于红松森林中的虹夕诺雅建筑露营木屋，到河口湖畔直面清晨逆富士的私人露天风吕温泉旅馆。',
+        tasteTitle: '品味高原炉火极致盛宴',
+        tasteDesc: '品尝搭配甲州天然葡萄酒的法式野味猎人割烹、热气蒸腾的铁锅南瓜餺飥面，以及顶级甲州炭火烧肉。'
+      },
+      'en': {
+        title: 'Explore Mount Fuji & Motosu',
+        quote: '“Where glacial mirrored waters of Motosu reflect the immortal symmetry of Fuji, and the scent of crackling timber meets the sacred highland chill.”',
+        pretitle: 'From Terror to Worship',
+        h2_1: 'The Birth of the Fujikō Cult',
+        p1: 'For over a thousand years, Mount Fuji was viewed not as a picturesque backdrop, but as an active volcano breathing devastating wrath. In the Edo Period, ascetics transformed primal fear into deep spiritual veneration, giving birth to the Fujikō pilgrimage around the Five Glacial Lakes.',
+        planTitle: 'Plan Your Dream Adventure At Mount Fuji',
+        planDesc: 'Curated three-pillar experiences crafted for discerning international travelers.',
+        c1_sub: 'Restaurant TOYOSHIMA & Hōtō',
+        c2_sub: 'Sunrise Canoe & Ice Caves',
+        c3_sub: 'HOSHINOYA & Kozantei Ubuya',
+        stayTitle: 'Find your perfect stay',
+        stayDesc: 'From architectural glamping cabins perched in red pine forests at HOSHINOYA Fuji to private open-air onsen on the shore of Lake Kawaguchi reflecting the morning inverted Fuji.',
+        tasteTitle: 'Taste the highland hearth',
+        tasteDesc: 'Experience wild game French gastronomy paired with Koshu valley biodynamic wines, simmering iron pots of pumpkin Hōtō noodles, and prime charcoal-grilled Kōshū beef.'
+      },
+      'vi': {
+        title: 'Khám phá Ngũ Hồ Núi Phú Sĩ & Hồ Motosu',
+        quote: '“Nơi làn nước băng giá phẳng lặng như gương của Motosu phản chiếu hình bóng Núi Phú Sĩ đối xứng vĩnh cửu.”',
+        pretitle: 'Từ Nỗi Sợ Hãi Đến Tín Ngưỡng Linh Thiêng',
+        h2_1: 'Sự Ra Đời Của Tín Ngưỡng Fujikō',
+        p1: 'Trong hơn một nghìn năm, Núi Phú Sĩ là ngọn núi lửa hung hãn. Vào thời kỳ Edo, các nhà tu hành đã biến nỗi sợ hãi nguyên thủy thành lòng tôn kính tâm linh sâu sắc.',
+        planTitle: 'Lên Kế Hoạch Cho Chuyến Phiêu Lưu Núi Phú Sĩ',
+        planDesc: 'Trải nghiệm ba trụ cột đặc sắc dành cho du khách quốc tế tinh tế.',
+        c1_sub: 'Ẩm thực Pháp TOYOSHIMA & Mì Hōtō',
+        c2_sub: 'Chèo thuyền bình minh & Hang động băng',
+        c3_sub: 'HOSHINOYA & Kozantei Ubuya',
+        stayTitle: 'Tìm Nơi Nghỉ Dưỡng Hoàn Hảo',
+        stayDesc: 'Từ các căn cabin cắm trại sang trọng giữa rừng thông đỏ tại HOSHINOYA đến các suối khoáng nóng ngoài trời hướng thẳng Núi Phú Sĩ.',
+        tasteTitle: 'Thưởng Thức Hương Vị Vùng Cao',
+        tasteDesc: 'Thưởng thức ẩm thực Pháp kết hợp rượu vang thung lũng Koshu và mì Hōtō bí đỏ nóng hổi.'
+      },
+      'th': {
+        title: 'สำรวจทะเลสาบทั้งห้าแห่งภูเขาไฟฟูจิและโมโตสุ',
+        quote: '“ที่ซึ่งผืนน้ำสะท้อนภาพภูเขาไฟฟูจิกลับหัวอันงดงามเหนือกาลเวลา และกลิ่นฟืนอบอุ่นผสานกับไอเย็นบนที่ราบสูงศักดิ์สิทธิ์”',
+        pretitle: 'จากความยำเกรงสู่การสักการะอันศักดิ์สิทธิ์',
+        h2_1: 'กำเนิดลัทธิแสวงบุญฟูจิโค',
+        p1: 'ตลอดเวลากว่าพันปี ภูเขาไฟฟูจิเคยถูกมองว่าเป็นภูเขาไฟที่เกรี้ยวกราด ในยุคเอโดะ นักบวชได้เปลี่ยนความกลัวเป็นความเลื่อมใสในจิตวิญญาณอย่างลึกซึ้ง',
+        planTitle: 'วางแผนการเดินทางในฝันของคุณที่ภูเขาไฟฟูจิ',
+        planDesc: 'ประสบการณ์ 3 มิติระดับพรีเมียมที่รังสรรค์ขึ้นเพื่อนักเดินทางระดับโลก',
+        c1_sub: 'ร้านอาหาร TOYOSHIMA & บะหมี่โฮโต',
+        c2_sub: 'พายเรือแคนูยามเช้า & ถ้ำน้ำแข็ง',
+        c3_sub: 'โฮชิโนะยะ ฟูจิ & โคซันเท อุบุยะ',
+        stayTitle: 'ค้นหาที่พักผ่อนในฝันของคุณ',
+        stayDesc: 'ตั้งแต่แกลมปิ้งหรูหรากลางป่าสนแดงที่ HOSHINOYA ไปจนถึงออนเซ็นกลางแจ้งริมทะเลสาบคาวากุจิโกะ',
+        tasteTitle: 'ลิ้มรสเสน่ห์อาหารแห่งที่ราบสูง',
+        tasteDesc: 'สัมผัสอาหารฝรั่งเศสสไตล์ธรรมชาติคู่กับไวน์โคชู และหม้อไฟบะหมี่โฮโตฟักทองร้อนกรุ่น'
+      },
+      'hi': {
+        title: 'माउंट फ़ूजी और मोटोसू झील का अन्वेषण करें',
+        quote: '“जहाँ मोटोसू का शांत बर्फीला पानी फ़ूजी के शाश्वत प्रतिबिंब को दर्शाता है, और पवित्र शीतलता शांति देती है।”',
+        pretitle: 'भय से भक्ति की ओर',
+        h2_1: 'फ़ूजीको तीर्थयात्रा की उत्पत्ति',
+        p1: 'एक हजार से अधिक वर्षों तक, माउंट फ़ूजी को एक प्रचंड ज्वालामुखी के रूप में देखा जाता था। ईदो काल में तपस्वियों ने इसे आध्यात्मिक श्रद्धा में बदल दिया।',
+        planTitle: 'माउंट फ़ूजी पर अपनी स्वप्निल यात्रा की योजना बनाएं',
+        planDesc: 'वैश्विक यात्रियों के लिए तीन स्तंभों पर आधारित विशेष अनुभव।',
+        c1_sub: 'रेस्टोरेंट तोयोशिमा और होटो नूडल्स',
+        c2_sub: 'सूर्योदय कैनो और प्राचीन बर्फ की गुफाएं',
+        c3_sub: 'होशिनोया फ़ूजी और कोज़ांतेई उबुया',
+        stayTitle: 'अपने आदर्श प्रवास का चयन करें',
+        stayDesc: 'चीड़ के जंगलों में शानदार ग्लैम्पिंग केबिन से लेकर कवागुची झील के किनारे निजी ऑनसेन तक।',
+        tasteTitle: 'पहाड़ी व्यंजनों का आनंद लें',
+        tasteDesc: 'कोशू वाइन के साथ फ्रेंच गैस्ट्रोनॉमी और पारंपरिक कद्दू होटो नूडल्स का अनुभव करें।'
+      },
+      'es': {
+        title: 'Explore los Cinco Lagos del Monte Fuji y Motosu',
+        quote: '“Donde las aguas glaciares de Motosu reflejan la simetría inmortal del Fuji, y el aroma a leña se funde con el aire sagrado de la montaña.”',
+        pretitle: 'Del Terror a la Devoción Sagrada',
+        h2_1: 'El Nacimiento de la Peregrinación Fujikō',
+        p1: 'Durante más de mil años, el Monte Fuji fue temido como un volcán furioso. En el período Edo, los ascetas transformaron ese temor en profunda veneración espiritual.',
+        planTitle: 'Planifique su Aventura en el Monte Fuji',
+        planDesc: 'Experiencias cuidadosamente seleccionadas para viajeros globales exigentes.',
+        c1_sub: 'Restaurante TOYOSHIMA y Fideos Hōtō',
+        c2_sub: 'Canoa al Amanecer y Cuevas de Hielo',
+        c3_sub: 'HOSHINOYA Fuji y Kozantei Ubuya',
+        stayTitle: 'Encuentre su Refugio Perfecto',
+        stayDesc: 'Desde cabañas de glamping arquitectónico en bosques de pinos rojos en HOSHINOYA hasta baños termales privados frente al lago Kawaguchi.',
+        tasteTitle: 'Saboree la Gastronomía del Altiplano',
+        tasteDesc: 'Deguste gastronomía francesa maridada con vinos biodinámicos del valle de Koshu y cazuelas humeantes de fideos Hōtō de calabaza.'
+      }
+    };
+
+    const ARTICLE_TRANSLATIONS = {
       'en': {
         pretitle: "UNESCO World Heritage Spiritual Route",
         title: "Kumano Kodō: The Path of Rebirth & Primeval Mists",
@@ -1394,7 +1511,7 @@
         ft1: "© 2026 JAPAN TABI NEWS ｜ Special Master Edition: The Sacred Trails of Kumano.",
         ft2: "Curated with architectural precision and field-tested ethnography for discerning global travelers."
       },
-      'zh-TW': {
+      'zh-tw': {
         pretitle: "聯合國教科文組織世界文化遺產・靈性朝聖巡禮",
         title: "熊野古道：起死回生之道與太古雲霧",
         kanjiSub: "熊野古道 ｜ 蟻の熊野詣と甦りの聖地",
@@ -1465,7 +1582,7 @@
         ft1: "© 2026 JAPAN TABI NEWS ｜ 熊野古道神聖朝聖特別名鑑",
         ft2: "專為全球品味旅人打造，結合建築精確度與深度田野民族誌的日本文化巡禮。"
       },
-      'zh-CN': {
+      'zh-cn': {
         pretitle: "联合国教科文组织世界文化遗产・灵性朝圣巡礼",
         title: "熊野古道：起死回生之道与太古云雾",
         kanjiSub: "熊野古道 ｜ 蟻の熊野詣と甦りの聖地",
@@ -1820,7 +1937,7 @@
         ft1: "© 2026 JAPAN TABI NEWS ｜ Edición Especial Maestra: Los Senderos Sagrados de Kumano.",
         ft2: "Diseñado con rigor arquitectónico y etnografía de campo para viajeros exigentes de todo el mundo."
       }
-    }
+    };
 
     // 🌟 打開特定文章閱讀器 (從圖一卡片點入圖二)
     function openArticle(volNum) {
@@ -1863,27 +1980,30 @@
       applyTranslations(langKey);
     }
 
-    function applyTranslations(langKey) {
-      const d = ARTICLE_TRANSLATIONS[langKey] || ARTICLE_TRANSLATIONS['en'];
+        function applyTranslations(langKey) {
+      const k = (langKey || 'zh-tw').toLowerCase();
+      const d = ARTICLE_TRANSLATIONS[k] || 
+                ARTICLE_TRANSLATIONS[langKey] || 
+                ARTICLE_TRANSLATIONS['zh-tw'] || 
+                ARTICLE_TRANSLATIONS['en'];
 
-      // 更新 Header 品牌
-      const brandZh = document.getElementById('brandTitleZh');
-      const brandEn = document.getElementById('brandTitleEn');
-      if (brandZh) brandZh.textContent = d.brandTitleZh;
-      if (brandEn) brandEn.textContent = d.brandTitleEn;
-
-      // 更新 Article 1 欄位
       const safeSet = (id, txt) => {
         const el = document.getElementById(id);
         if (el && txt) el.textContent = txt;
       };
 
+      // Header Brand
+      if (d.brandTitleZh) safeSet('brandTitleZh', d.brandTitleZh);
+      if (d.brandTitleEn) safeSet('brandTitleEn', d.brandTitleEn);
+
+      // Article 1 (Kumano Kodō)
       safeSet('art1_title', d.title);
       safeSet('art1_quote', d.quote);
       safeSet('art1_hist_pre', d.pretitle);
       safeSet('art1_hist_title', d.h2_1);
       safeSet('art1_hist_p', d.p1);
-      safeSet('art1_plan_title', d.sec1Title);
+      safeSet('art1_plan_title', d.planTitle || d.sec1Title);
+      safeSet('art1_plan_desc', d.planEyebrow || d.sec1Eyebrow);
       safeSet('art1_c1_title', d.c1_sub);
       safeSet('art1_c2_title', d.cu1_sub);
       safeSet('art1_c3_title', d.r1_sub);
@@ -1892,13 +2012,71 @@
       safeSet('art1_taste_title', d.sec1Title);
       safeSet('art1_taste_desc', d.c1_desc);
 
-      // 同步更新語言標籤
+      // Chauffeur box
+      safeSet('art1_chf_badge', d.chfTag);
+      safeSet('art1_chf_title', d.chfTitle);
+      safeSet('art1_chf_desc', d.chfDesc);
+      safeSet('art1_chf_l1', d.chfL1);
+      safeSet('art1_chf_l2', d.chfL2);
+      safeSet('art1_chf_l3', d.chfL3);
+
+      // 1~3 Day Blueprint
+      safeSet('art1_bp_title', d.planTitle);
+      safeSet('art1_d1_title', d.d1_title);
+      safeSet('art1_d1_desc', d.d1_desc);
+      safeSet('art1_d2_title', d.d2_title);
+      safeSet('art1_d2_desc', d.d2_desc);
+      safeSet('art1_d3_title', d.d3_title);
+      safeSet('art1_d3_desc', d.d3_desc);
+
+      // Article 2 (Mount Fuji & Motosu)
+      if (typeof FUJI_TRANSLATIONS !== 'undefined') {
+        const dFuji = FUJI_TRANSLATIONS[k] || FUJI_TRANSLATIONS['zh-tw'] || FUJI_TRANSLATIONS['en'];
+        if (dFuji) {
+          safeSet('art2_title', dFuji.title);
+          safeSet('art2_quote', dFuji.quote);
+          safeSet('art2_hist_pre', dFuji.pretitle);
+          safeSet('art2_hist_title', dFuji.h2_1);
+          safeSet('art2_hist_p', dFuji.p1);
+          safeSet('art2_plan_title', dFuji.planTitle);
+          safeSet('art2_plan_desc', dFuji.planDesc);
+          safeSet('art2_c1_title', dFuji.c1_sub);
+          safeSet('art2_c2_title', dFuji.c2_sub);
+          safeSet('art2_c3_title', dFuji.c3_sub);
+          safeSet('art2_stay_title', dFuji.stayTitle);
+          safeSet('art2_stay_desc', dFuji.stayDesc);
+          safeSet('art2_taste_title', dFuji.tasteTitle);
+          safeSet('art2_taste_desc', dFuji.tasteDesc);
+        }
+      }
+
+      // Catalog View Titles
+      const catalogMap = {
+        'zh-tw': { title: '探索全日本深度名鑑', desc: '為全球頂級品味旅人精心打造的每一趟文化、自然與心靈之旅。' },
+        'zh-cn': { title: '探索全日本深度名鉴', desc: '为全球顶级品位旅人精心打造的每一趟文化、自然与心灵之旅。' },
+        'en': { title: 'Explore All Our Trips', desc: 'Every journey is carefully crafted to bring your travel dreams to life.' },
+        'vi': { title: 'Khám Phá Các Hành Trình Của Chúng Tôi', desc: 'Mỗi hành trình đều được thiết kế tỉ mỉ để biến giấc mơ du lịch của bạn thành hiện thực.' },
+        'th': { title: 'สำรวจการเดินทางทั้งหมดของเรา', desc: 'ทุกการเดินทางได้รับการรังสรรค์ขึ้นอย่างพิถีพิถันเพื่อเติมเต็มความฝันในการเดินทางของคุณ' },
+        'hi': { title: 'हमारी सभी यात्राओं का अन्वेषण करें', desc: 'हर यात्रा आपके यात्रा के सपनों को जीवंत करने के लिए सावधानीपूर्वक तैयार की गई है।' },
+        'es': { title: 'Explore Todos Nuestros Viajes', desc: 'Cada viaje está cuidadosamente diseñado para hacer realidad sus sueños de viaje.' }
+      };
+      const cat = catalogMap[k] || catalogMap['zh-tw'];
+      safeSet('catalogMainTitle', cat.title);
+      safeSet('catalogSubDesc', cat.desc);
+
+      // Footer
+      if (d.ft2) safeSet('footerNote', d.ft2);
+
+      // 同步更新語言標籤與當前選中 pill
       const currentLbl = document.getElementById('currentLangLabel');
       const mapNames = {
         'en': 'English', 'zh-tw': '繁體中文', 'zh-cn': '简体中文',
         'vi': 'Tiếng Việt', 'th': 'ภาษาไทย', 'hi': 'हिन्दी', 'es': 'Español'
       };
-      if (currentLbl && mapNames[langKey]) currentLbl.textContent = mapNames[langKey];
+      if (currentLbl && mapNames[k]) currentLbl.textContent = mapNames[k];
+      document.querySelectorAll('.btn-trans-choice').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-lang') === k);
+      });
     }
 
     // 頂部全球語系下拉
