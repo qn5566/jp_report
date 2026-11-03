@@ -7529,7 +7529,239 @@
       border: none !important;
     }
 
-  </style>
+  
+    /* 🌟 全站卡片操作列統一：一行三鍵絕不跳行、文字極簡、淡雅日系和風色彩 */
+    .card-action-bar {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr 1fr !important;
+      gap: 6px !important;
+      margin-top: auto !important;
+      padding-top: 10px !important;
+      border-top: 1px solid #F1F5F9 !important;
+    }
+    .btn-act-clean {
+      padding: 8px 4px !important;
+      font-size: 0.78rem !important;
+      font-weight: 700 !important;
+      border-radius: 8px !important;
+      text-align: center !important;
+      cursor: pointer !important;
+      text-decoration: none !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.2s ease !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      letter-spacing: 0.02em !important;
+    }
+    .btn-act-clean:hover {
+      transform: translateY(-1px) !important;
+    }
+    /* 主行動 (門票/教練)：沉穩墨黑 (Japanese Ink Black / Slate) */
+    .btn-act-primary {
+      background: #1E293B !important;
+      color: #FFFFFF !important;
+      border: 1px solid #1E293B !important;
+      box-shadow: 0 1px 3px rgba(30, 41, 59, 0.15) !important;
+      text-shadow: none !important;
+    }
+    .btn-act-primary:hover {
+      background: #0F172A !important;
+      border-color: #0F172A !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 3px 8px rgba(15, 23, 42, 0.25) !important;
+    }
+    /* 次行動 (訂房)：純淨和紙米白 (Washi Sand / Warm Stone) */
+    .btn-act-secondary {
+      background: #FAF8F5 !important;
+      color: #334155 !important;
+      border: 1px solid #D6D0C4 !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+      text-shadow: none !important;
+    }
+    .btn-act-secondary:hover {
+      background: #EFECE6 !important;
+      border-color: #B8B09F !important;
+      color: #0F172A !important;
+    }
+    /* 第三行動 (包車)：清透淺蔥霧灰 (Muted Asagi Mist) */
+    .btn-act-tertiary, .btn-act-mint {
+      background: #F1F5F9 !important;
+      color: #475569 !important;
+      border: 1px solid #CBD5E1 !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+      text-shadow: none !important;
+    }
+    .btn-act-tertiary:hover, .btn-act-mint:hover {
+      background: #E2E8F0 !important;
+      border-color: #94A3B8 !important;
+      color: #1E293B !important;
+    }
+
+    /* ⛷️ 雪場卡片極簡雜誌風樣式優化 */
+    .snow-top-status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 10px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      margin-bottom: 10px;
+      color: #475569;
+    }
+    .snow-status-loc {
+      font-weight: 700;
+      color: #1E293B;
+    }
+    .snow-status-quality {
+      font-weight: 600;
+      color: #0284C7;
+    }
+    .snow-status-time {
+      font-size: 0.7rem;
+      color: #64748B;
+    }
+    .snow-live-metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .snow-metric-box {
+      background: #FAF8F5;
+      border: 1px solid #EAE6DF;
+      border-radius: 8px;
+      padding: 8px 6px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .snow-metric-label {
+      font-size: 0.68rem;
+      color: #64748B;
+      font-weight: 600;
+    }
+    .snow-metric-val {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #1E293B;
+    }
+    .snow-metric-val.highlight-fresh {
+      color: #0284C7;
+    }
+    .snow-slope-ratio-wrap {
+      margin-bottom: 10px;
+    }
+    .snow-slope-ratio-bar {
+      height: 6px;
+      border-radius: 999px;
+      display: flex;
+      overflow: hidden;
+      background: #E2E8F0;
+      margin-bottom: 4px;
+    }
+    .slope-seg.slope-green { background: #10B981; }
+    .slope-seg.slope-yellow { background: #3B82F6; }
+    .slope-seg.slope-red { background: #1E293B; }
+    .snow-slope-ratio-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #64748B;
+    }
+    .snow-terrain-specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      margin-bottom: 10px;
+      font-size: 0.72rem;
+    }
+    .snow-terrain-lbl {
+      display: block;
+      font-weight: 700;
+      color: #475569;
+      margin-bottom: 2px;
+    }
+    .snow-terrain-val {
+      color: #1E293B;
+      font-weight: 600;
+    }
+    .snow-clean-links-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .snow-clean-link {
+      flex: 1;
+      text-align: center;
+      padding: 5px 6px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #334155;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .snow-clean-link:hover {
+      background: #F1F5F9;
+      color: #0F172A;
+      border-color: #94A3B8;
+    }
+    .snow-drawer-toggles-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .btn-snow-drawer-toggle {
+      flex: 1;
+      padding: 6px 8px;
+      background: #FAF8F5;
+      border: 1px solid #D6D0C4;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-snow-drawer-toggle:hover {
+      background: #EFECE6;
+      color: #1E293B;
+    }
+    .snow-drawer-panel {
+      display: none;
+      background: #FAF8F5;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 8px;
+      font-size: 0.72rem;
+      line-height: 1.6;
+      color: #334155;
+    }
+    .snow-drawer-panel.show {
+      display: block;
+    }
+    .snow-drawer-title {
+      font-weight: 700;
+      color: #1E293B;
+      margin-bottom: 6px;
+      font-size: 0.76rem;
+    }
+
+</style>
 </head>
 <body class="mode-spots">
 
@@ -19889,8 +20121,8 @@
         }
       },
       {
-        id: 'gala_snow',
-        theme: 'snow',
+        id: 'gala_snow_legacy',
+        theme: 'spots',
         category: 'ski',
         region: 'niigata',
         title: 'GALA 湯澤滑雪度假村',
@@ -20202,8 +20434,8 @@
         }
       },
       {
-        id: 'niseko_snow',
-        theme: 'snow',
+        id: 'niseko_snow_legacy',
+        theme: 'spots',
         category: 'ski',
         region: 'hokkaido',
         title: '北海道・二世谷比羅夫滑雪場',
@@ -20389,8 +20621,8 @@
         }
       },
       {
-        id: 'hakuba_snow',
-        theme: 'snow',
+        id: 'hakuba_snow_legacy',
+        theme: 'spots',
         category: 'ski',
         region: 'tohoku',
         title: '長野・白馬八方尾根滑雪場',
@@ -20623,7 +20855,7 @@
       },
       {
         id: 'shirakawago_snow',
-        theme: 'snow',
+        theme: 'spots',
         category: 'ski',
         region: 'tohoku',
         title: '岐阜・白川鄉合掌村',
@@ -20696,8 +20928,8 @@
         }
       },
       {
-        id: 'zao_snow_monster',
-        theme: 'snow',
+        id: 'zao_snow_legacy',
+        theme: 'spots',
         category: 'ski',
         region: 'tohoku',
         title: '山形・藏王溫泉樹冰與粉雪',
@@ -26882,6 +27114,11 @@
       currentSubItemId = config.subItems[0].id;
       if (config.subItems[0].type === 'season') {
         currentSeason = config.subItems[0].val;
+      } else if (hubKey === 'snow') {
+        currentSeason = 'snow';
+        currentSnowLevel = 'all';
+        currentSnowRegion = 'all';
+        document.body.className = 'mode-snow';
       }
 
       renderSubContextPills();
@@ -26963,6 +27200,8 @@
         currentCampType = item.val;
       } else if (item.type === 'snow_level') {
         currentSnowLevel = item.val;
+        currentSeason = 'snow';
+        document.body.className = 'mode-snow';
       } else if (item.type === 'portal') {
         if (window[item.val]) {
           window[item.val]();
@@ -27317,25 +27556,25 @@
         bar.innerHTML = `
           <div class="region-pills-scroll" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch;">
             <button class="region-pill ${currentSnowRegion === 'all' ? 'active' : ''}" onclick="selectSnowRegion('all', this)">
-              <span>全部雪場 (27)</span>
+              <span>全日本雪場 (27)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'hokkaido' ? 'active' : ''}" onclick="selectSnowRegion('hokkaido', this)">
-              <span>❄️ 北海道・粉雪聖地</span>
+              <span>❄️ 北海道 (7)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'niigata' ? 'active' : ''}" onclick="selectSnowRegion('niigata', this)">
-              <span>🌾 新潟・越後湯澤</span>
+              <span>🌾 新潟・湯澤 (6)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'nagano' ? 'active' : ''}" onclick="selectSnowRegion('nagano', this)">
-              <span>🏔️ 長野・北阿爾卑斯</span>
+              <span>🏔️ 長野・白馬 (6)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'tohoku' ? 'active' : ''}" onclick="selectSnowRegion('tohoku', this)">
-              <span>🌲 東北・樹冰溫泉</span>
+              <span>🌲 東北・藏王 (4)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'gunma' ? 'active' : ''}" onclick="selectSnowRegion('gunma', this)">
-              <span>♨️ 群馬・關東近郊</span>
+              <span>♨️ 富士・關東 (4)</span>
             </button>
             <button class="region-pill ${currentSnowRegion === 'olympic_fis' ? 'active' : ''}" onclick="selectSnowRegion('olympic_fis', this)">
-              <span>🏆 冬奧與國際 FIS 認證賽道</span>
+              <span>🏆 冬奧FIS賽道 (6)</span>
             </button>
           </div>
         `;
@@ -27622,13 +27861,13 @@
             } else if (currentSnowRegion === 'gunma') {
               if (item.snowRegion !== 'gunma' && item.snowRegion !== 'kanto_fuji') return false;
             } else {
-              if (item.snowRegion && item.snowRegion !== currentSnowRegion) return false;
+              if (item.snowRegion !== currentSnowRegion) return false;
             }
           }
 
           // 難度二級過濾
           if (currentSnowLevel !== 'all') {
-            if (item.skiLevel && item.skiLevel !== currentSnowLevel) return false;
+            if (item.skiLevel !== currentSnowLevel) return false;
           }
 
           return true;
@@ -27937,31 +28176,32 @@
             <p class="card-clean-concise-desc">${safeDesc}</p>
 
             ${(item.theme === 'snow') ? `
-              <!-- ⛷️ 極上粉雪專屬三段式核心功能矩陣 (上層動態、中層硬體、下層抽屜) -->
+              <!-- ⛷️ 極上粉雪 現代極簡雜誌風指標卡片 (去除刺眼廣告感、無多餘emoji、呼吸感充沛) -->
               <div class="snow-card-matrix">
-                <!-- 1. 即時雪況動態 (決定當天去不去山頂) -->
+                <!-- 1. 雪場即時狀態列 (極簡淨白標籤) -->
                 <div class="snow-top-status-bar">
-                  <span class="snow-status-loc">📍 ${item.tag || item.regionName || '日本雪場'}</span>
-                  <span class="snow-status-quality">❄️ ${item.snowQuality || '極上乾粉雪 (JAPOW)'}</span>
-                  <span class="snow-status-time">${item.testedTime || '🟢 07:30 實測'}</span>
+                  <span class="snow-status-loc">${item.tag || item.regionName || '日本雪場'}</span>
+                  <span class="snow-status-quality">JAPOW 乾粉雪</span>
+                  <span class="snow-status-time">${item.testedTime ? item.testedTime.replace('🟢', '').trim() : '07:30 實測'}</span>
                 </div>
 
+                <!-- 2. 三大核心即時數值 (大字清晰、呼吸感排版) -->
                 <div class="snow-live-metrics-grid">
                   <div class="snow-metric-box">
-                    <span class="snow-metric-label">🏔️ 積雪深度</span>
-                    <span class="snow-metric-val">${item.snowDepth || '山頂 285cm / 山麓 120cm'}</span>
+                    <span class="snow-metric-label">積雪深度</span>
+                    <span class="snow-metric-val">${item.snowDepth ? item.snowDepth.replace('山頂', '').split('/')[0].trim() : '290cm'}</span>
                   </div>
                   <div class="snow-metric-box">
-                    <span class="snow-metric-label">❄️ 24h 新雪</span>
-                    <span class="snow-metric-val highlight-fresh">${item.newSnow24h || '+25 cm'}</span>
+                    <span class="snow-metric-label">24h 新雪</span>
+                    <span class="snow-metric-val highlight-fresh">${item.newSnow24h || '+25cm'}</span>
                   </div>
                   <div class="snow-metric-box">
-                    <span class="snow-metric-label">🚡 纜車運作</span>
-                    <span class="snow-metric-val">${item.liftsRunning || '20 / 22 條運行'}</span>
+                    <span class="snow-metric-label">纜車運行</span>
+                    <span class="snow-metric-val">${item.liftsRunning ? item.liftsRunning.replace('條運行', '').trim() : '全線開'}</span>
                   </div>
                 </div>
 
-                <!-- 2. 雪道與地形參數 (三色比例 ＋ 新手防雷 ＋ 標高差) -->
+                <!-- 3. 雪道難度比例條 (日系沉穩三色，無冗餘圖示) -->
                 <div class="snow-slope-ratio-wrap">
                   <div class="snow-slope-ratio-bar">
                     <div class="slope-seg slope-green" style="width: ${item.slopeRatio ? item.slopeRatio.green : 30}%" title="初級 ${item.slopeRatio ? item.slopeRatio.green : 30}%"></div>
@@ -27969,82 +28209,68 @@
                     <div class="slope-seg slope-red" style="width: ${item.slopeRatio ? item.slopeRatio.red : 20}%" title="高級 ${item.slopeRatio ? item.slopeRatio.red : 20}%"></div>
                   </div>
                   <div class="snow-slope-ratio-labels">
-                    <span class="lbl-green">🟢 初級 ${item.slopeRatio ? item.slopeRatio.green : 30}%</span>
-                    <span class="lbl-yellow">🟡 中級 ${item.slopeRatio ? item.slopeRatio.yellow : 50}%</span>
-                    <span class="lbl-red">🔴 高級 ${item.slopeRatio ? item.slopeRatio.red : 20}%</span>
+                    <span class="lbl-green">初級 ${item.slopeRatio ? item.slopeRatio.green : 30}%</span>
+                    <span class="lbl-yellow">中級 ${item.slopeRatio ? item.slopeRatio.yellow : 50}%</span>
+                    <span class="lbl-red">高級 ${item.slopeRatio ? item.slopeRatio.red : 20}%</span>
                   </div>
                 </div>
 
+                <!-- 4. 地形特色要點 (兩欄極簡膠囊) -->
                 <div class="snow-terrain-specs-grid">
                   <div class="snow-terrain-cell">
-                    <span class="snow-terrain-lbl">🔰 新手防雷</span>
-                    <span class="snow-terrain-val">${item.magicCarpet ? '✅ 有魔毯輸送帶' : '⚠️ 搭初級吊椅'} ｜ ${item.wideSlope || '寬100m 緩坡 (<12°)'}</span>
+                    <span class="snow-terrain-lbl">初學友好</span>
+                    <span class="snow-terrain-val">${item.magicCarpet ? '魔毯輸送帶' : '緩坡吊椅'} ｜ ${item.wideSlope ? item.wideSlope.replace(/<[^>]+>/g, '').split('(')[0].trim() : '寬敞緩坡'}</span>
                   </div>
                   <div class="snow-terrain-cell">
-                    <span class="snow-terrain-lbl">🏔️ 標高差與老手</span>
-                    <span class="snow-terrain-val">落差 ${item.verticalDrop || '1,071m'} ｜ ${item.treeRun ? '🌲 樹林道開放' : '壓雪長巡航'}</span>
+                    <span class="snow-terrain-lbl">老手野雪</span>
+                    <span class="snow-terrain-val">標高差 ${item.verticalDrop || '1,000m'} ｜ ${item.treeRun ? '樹林野雪' : '長距巡航'}</span>
                   </div>
                 </div>
 
-                <!-- 🏆 國際 FIS / 冬奧認證賽道亮點專欄 -->
-                ${item.isOlympicFis ? `
-                  <div class="snow-olympic-callout">
-                    <div class="snow-olympic-header">
-                      <span class="snow-olympic-badge">🏆 ${item.trackTitle || 'FIS / 冬奧認證賽道'}</span>
-                      <span class="snow-olympic-slope">${item.trackSlope || '最大坡度 35° ｜ 全長 3,000m'}</span>
-                    </div>
-                    <div class="snow-olympic-story"><b>📜 賽道歷史：</b>${item.trackStory || '冬奧傳奇選手飆速舞台，俯瞰山谷壯闊懸崖視角。'}</div>
-                    <div class="snow-olympic-pro-tip"><b>⚡ 老手挑戰避雷：</b>${item.proTips || '午後容易結冰 (Ice burn)，建議上午 09:00 前完成挑戰。'}</div>
-                  </div>
-                ` : ''}
-
-                <!-- 4 顆常駐精簡微徽章功能連結 -->
-                <div class="snow-micro-badges-row">
-                  <a href="${item.officialUrl || '#'}" target="_blank" class="snow-micro-badge" onclick="event.stopPropagation();">
-                    <span>🌐 雪場官網</span>
+                <!-- 5. 官方與LiveCam快捷連結 (極簡文字連結) -->
+                <div class="snow-clean-links-row">
+                  <a href="${item.officialUrl || '#'}" target="_blank" class="snow-clean-link" onclick="event.stopPropagation();">
+                    雪場官網 ↗
                   </a>
-                  <a href="${item.liveCamUrl || '#'}" target="_blank" class="snow-micro-badge" onclick="event.stopPropagation();">
-                    <span>📷 山頂LiveCam</span>
+                  <a href="${item.liveCamUrl || '#'}" target="_blank" class="snow-clean-link" onclick="event.stopPropagation();">
+                    即時 LiveCam ↗
                   </a>
-                  <a href="${item.liftPriceUrl || item.officialUrl || '#'}" target="_blank" class="snow-micro-badge" onclick="event.stopPropagation();">
-                    <span>🎫 票價營運</span>
-                  </a>
-                  <a href="${item.rentalUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent(item.title + ' 雪具租借') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="snow-micro-badge" onclick="event.stopPropagation();">
-                    <span>🎿 裝備租賃</span>
+                  <a href="${item.rentalUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent(item.title + ' 雪具租借') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="snow-clean-link" onclick="event.stopPropagation();">
+                    裝備租賃 ↗
                   </a>
                 </div>
 
-                <!-- 2 顆可折疊抽屜按鈕 (原地展開，不佔首頁高度) -->
+                <!-- 6. 折疊抽屜按鈕 (極簡淡雅邊框膠囊，預設折疊) -->
                 <div class="snow-drawer-toggles-row">
                   <button type="button" class="btn-snow-drawer-toggle" onclick="toggleSnowDrawer('${item.id}', 'onsen', this); event.stopPropagation();">
-                    <span>♨️ 周邊雪見美人湯 ▾</span>
+                    <span>雪見溫泉 ▾</span>
                   </button>
                   <button type="button" class="btn-snow-drawer-toggle" onclick="toggleSnowDrawer('${item.id}', 'safety', this); event.stopPropagation();">
-                    <span>🚑 巡邏隊 ＆ 骨科指南 ▾</span>
+                    <span>醫療救護 ▾</span>
                   </button>
                 </div>
 
-                <!-- 溫泉折疊抽屜內容 -->
+                <!-- 溫泉折疊抽屜內容 (預設折疊隱藏) -->
                 <div class="snow-drawer-panel" id="snowOnsen_${item.id}">
-                  <div class="snow-drawer-title">♨️ 滑雪後舒緩・周邊推薦雪見名湯</div>
+                  <div class="snow-drawer-title">滑雪舒緩・周邊雪見名湯</div>
                   ${item.hotspringsHtml || `
                     <div class="snow-drawer-item">
-                      <b>♨️ 雪場直通天然溫泉：</b>豐富弱鹼性泉質，有效舒緩滑雪腿部肌肉痠痛與肩膀疲勞。
+                      <b>雪場直通天然溫泉：</b>弱鹼性泉質，有效舒緩腿部肌肉痠痛與肩膀疲勞。
                     </div>
                   `}
                 </div>
 
-                <!-- 安全與急診折疊抽屜內容 -->
+                <!-- 安全急診折疊抽屜內容 (預設折疊隱藏) -->
                 <div class="snow-drawer-panel" id="snowSafety_${item.id}">
-                  <div class="snow-drawer-title">🚑 安全救援 ＆ 海外醫療骨科指南</div>
+                  <div class="snow-drawer-title">安全救援 ＆ 海外醫療指南</div>
                   <div class="snow-drawer-item">
-                    <b>🚨 雪場巡邏隊 (Ski Patrol)：</b>${item.patrolPhone || '雪場直撥內線 110 或至各纜車站通報救援'}
+                    <b>雪場巡邏隊：</b>${item.patrolPhone || '雪場直撥內線 110 或至各纜車站通報救援'}
                   </div>
                   <div class="snow-drawer-item">
-                    <b>🏥 周邊外傷骨科診所：</b>${item.orthopedicClinic || '具備 X 光與英語接診應對能力'}
+                    <b>外傷骨科診所：</b>${item.orthopedicClinic || '具備 X 光與英語接診應對能力'}
                   </div>
                   <div class="snow-drawer-item snow-insurance-tip">
-                    <b>📋 海外旅遊險理賠提醒：</b>受傷就醫務必向院方索取<b>「診斷證明書 (Medical Certificate)」</b>與<b>「收據明細正本 (Itemized Receipt)」</b>，以利回國全額申請保險理賠。
+                    <b>保險理賠提醒：</b>受傷就醫務必索取<b>「診斷證明書」</b>與<b>「收據明細正本」</b>，以利回國申請理賠。
                   </div>
                 </div>
               </div>
@@ -28133,62 +28359,41 @@
             </div>
             `}
 
-            <!-- 底部操作按鈕列 (雪場專屬 3 大實用功能：預約教練 ＋ 訂飯店 ＋ 包車服務，嚴格零分潤字樣、零Klook品牌) -->
+            <!-- 底部操作按鈕列 (精簡 4 字以內、一行三鍵絕不折行、淡雅日系和風配色) -->
             ${(item.theme === 'camp') ? '' : (item.theme === 'snow') ? `
               <div class="card-action-bar ski-action-bar">
-                <a href="${item.coachUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent(item.title + ' 滑雪教練') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="btn-act-clean btn-act-primary" title="預約該雪場認證專業中文教練與裝備雪票" onclick="event.stopPropagation();">
+                <a href="${item.coachUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent(item.title + ' 滑雪教練') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="btn-act-clean btn-act-primary" title="預約該雪場認證專業中文教練" onclick="event.stopPropagation();">
                   <span>預約教練</span>
                 </a>
-                <a href="${item.hotelUrl || ('https://www.booking.com/searchresults.zh-tw.html?ss=' + encodeURIComponent(item.title) + '&aid=2422002')}" target="_blank" class="btn-act-clean btn-act-secondary" title="預訂雪場周邊Ski-in/Ski-out飯店與溫泉旅館" onclick="event.stopPropagation();">
-                  <span>預訂飯店</span>
+                <a href="${item.hotelUrl || ('https://www.booking.com/searchresults.zh-tw.html?ss=' + encodeURIComponent(item.title) + '&aid=2422002')}" target="_blank" class="btn-act-clean btn-act-secondary" title="預訂雪場周邊飯店與溫泉旅館" onclick="event.stopPropagation();">
+                  <span>雪場住宿</span>
                 </a>
-                <a href="${item.charterUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent((item.regionName || item.tag || '日本') + ' 滑雪包車') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="btn-act-clean btn-act-mint" title="預約機場/市區直達雪場私人中文包車" onclick="event.stopPropagation();">
-                  <span>包車服務</span>
+                <a href="${item.charterUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent((item.regionName || item.tag || '日本') + ' 滑雪包車') + '&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="btn-act-clean btn-act-tertiary" title="預約機場/市區直達雪場包車" onclick="event.stopPropagation();">
+                  <span>專車包車</span>
                 </a>
               </div>
             ` : (item.category === 'hanabi' || item.theme === 'hanabi') ? `
               <div class="card-action-bar hanabi-action-bar">
-                <a href="${item.yukataUrl || 'https://www.klook.com/zh-TW/search/result/?query=%E6%B5%B4%E8%A1%A3%E9%AB%94%E9%A9%97&aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" class="btn-act-clean btn-act-secondary" title="預約花火祭典浴衣方案" onclick="event.stopPropagation();">
-                  <span>浴衣預約</span>
+                <a href="${item.yukataUrl || 'https://www.klook.com/zh-TW/search/result/?query=%E6%B5%B4%E8%A1%A3%E9%AB%94%E9%A9%97&aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" class="btn-act-clean btn-act-secondary" title="預約浴衣" onclick="event.stopPropagation();">
+                  <span>浴衣體驗</span>
                 </a>
                 <a href="${item.houseboatUrl || klookFinalUrl}" target="_blank" class="btn-act-clean btn-act-primary" title="預約觀覽席或屋形船" onclick="event.stopPropagation();">
-                  <span>預約觀覽席</span>
+                  <span>觀覽席票</span>
                 </a>
-                <a href="${bookingFinalUrl}" target="_blank" class="btn-act-clean btn-act-secondary" title="預約周邊住宿免深夜趕車" onclick="event.stopPropagation();">
+                <a href="${bookingFinalUrl}" target="_blank" class="btn-act-clean btn-act-secondary" title="預約周邊住宿" onclick="event.stopPropagation();">
                   <span>查看訂房</span>
                 </a>
               </div>
             ` : `
               <div class="card-action-bar">
                 <a href="${klookFinalUrl}" target="_blank" class="btn-act-clean btn-act-primary" onclick="event.stopPropagation();">
-                  <span>${item.ticketLabel || (
-                    item.theme === 'wisteria' ? '預約紫藤花門票' :
-                    item.theme === 'nemophila' ? '預約花海門票' :
-                    item.theme === 'hydrangea' ? '預約古寺門票' :
-                    item.theme === 'momiji' ? (item.hasNightLight ? '夜楓點燈門票' : '預約賞楓門票') :
-                    item.theme === 'ginkgo' ? '金黃大道散策' :
-                    item.theme === 'lavender' ? '預約薰衣草行程' :
-                    item.theme === 'shibazakura' ? '預約芝櫻門票' :
-                    item.theme === 'cosmos' ? '波斯菊花海門票' :
-                    item.theme === 'ume' ? '預約梅林門票' :
-                    item.theme === 'sakura' ? (item.hasNightLight ? '夜櫻點燈門票' : '預約賞櫻門票') : '預定行程'
-                  )}</span>
+                  <span>${item.hasNightLight ? '夜間門票' : '預約門票'}</span>
                 </a>
                 <a href="${bookingFinalUrl}" target="_blank" class="btn-act-clean btn-act-secondary" onclick="event.stopPropagation();">
-                  <span>${item.theme === 'momiji' ? '預訂溫泉旅館' : item.theme === 'hydrangea' ? '預訂周邊溫泉' : '查看訂房'}</span>
+                  <span>查看訂房</span>
                 </a>
-                <a href="${item.charterUrl || 'japan_charter_rental.html'}" target="_blank" class="btn-act-clean btn-act-mint" onclick="event.stopPropagation();" title="包車一日遊直達景點">
-                  <span>${
-                    item.theme === 'wisteria' ? '包車賞藤' :
-                    item.theme === 'nemophila' ? '包車賞花' :
-                    item.theme === 'hydrangea' ? '包車漫遊' :
-                    item.theme === 'momiji' ? '包車賞楓' :
-                    item.theme === 'ginkgo' ? '包車賞銀杏' :
-                    item.theme === 'lavender' ? '包車賞薰衣草' :
-                    item.theme === 'shibazakura' ? '包車賞芝櫻' :
-                    item.theme === 'cosmos' ? '包車賞波斯菊' :
-                    item.theme === 'ume' ? '包車賞梅花' : '包車直達'
-                  }</span>
+                <a href="${item.charterUrl || 'japan_charter_rental.html'}" target="_blank" class="btn-act-clean btn-act-tertiary" onclick="event.stopPropagation();" title="包車一日遊直達景點">
+                  <span>包車直達</span>
                 </a>
               </div>
             `}

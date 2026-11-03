@@ -253,21 +253,23 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
     .hero-title {
-      font-family: var(--font-serif);
-      font-size: 2.35rem;
-      font-weight: 900;
+      font-family: 'Cormorant Garamond', 'Shippori Mincho', 'Noto Serif TC', serif;
+      font-size: 2.85rem;
+      font-weight: 600;
       color: #FFFFFF;
-      letter-spacing: 1.5px;
-      line-height: 1.25;
-      margin-bottom: 6px;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75), 0 1px 4px rgba(0, 0, 0, 0.9);
+      letter-spacing: 1px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.65);
     }
     .hero-subtitle {
-      font-size: 0.95rem;
-      color: #FFFFFF;
-      font-weight: 600;
-      line-height: 1.5;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      font-family: 'Shippori Mincho', 'Noto Serif TC', serif;
+      font-size: 1.05rem;
+      color: #F8FAFC;
+      font-weight: 500;
+      letter-spacing: 3px;
+      line-height: 1.6;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
     }
 
     /* 🌟 圖二 Wanderly 浮動疊加卡盒 (比照排行榜風格) */
@@ -1174,46 +1176,46 @@
       flex-wrap: wrap;
     }
     .btn-flagship-tocoo {
-      background: #0284C7;
-      color: #FFFFFF;
+      background: #1E293B;
+      color: #FFFFFF !important;
       font-size: 0.92rem;
-      font-weight: 800;
+      font-weight: 700;
       padding: 13px 22px;
       border-radius: 10px;
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      box-shadow: 0 2px 8px rgba(30, 41, 59, 0.2);
       transition: all 0.2s ease;
       white-space: nowrap;
-      border: none;
+      border: 1px solid #1E293B;
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
     .btn-flagship-tocoo:hover {
-      background: #0369A1;
+      background: #0F172A;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.3);
     }
     .btn-flagship-klook {
-      background: linear-gradient(135deg, #FF5B00 0%, #EA580C 100%);
-      color: #FFFFFF;
+      background: #1E3A2F;
+      color: #FFFFFF !important;
       font-size: 0.92rem;
-      font-weight: 800;
+      font-weight: 700;
       padding: 13px 22px;
       border-radius: 10px;
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+      box-shadow: 0 2px 8px rgba(30, 58, 47, 0.2);
       transition: all 0.2s ease;
       white-space: nowrap;
-      border: none;
+      border: 1px solid #1E3A2F;
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
     .btn-flagship-klook:hover {
-      background: linear-gradient(135deg, #FF6A1A 0%, #C2410C 100%);
+      background: #142820;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(234, 88, 12, 0.5);
+      box-shadow: 0 4px 14px rgba(20, 40, 32, 0.3);
     }
     /* 🌟 查看自駕注意和保險 (高對比清楚有機雜誌風按鈕，徹底解決文字反白看不到問題) */
     .btn-flagship-guide {
@@ -2117,21 +2119,27 @@
     /* 篩選膠囊 */
     .crafted-region-bar {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 40px;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 36px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 6px 12px;
     }
     .crafted-filter-btn {
+      white-space: nowrap;
+      flex-shrink: 0;
       background: #FFFFFF;
       border: 1px solid #E2E8F0;
-      padding: 9px 18px;
+      padding: 8px 16px;
       border-radius: 9999px;
-      font-size: 0.88rem;
-      font-weight: 600;
+      font-size: 0.84rem;
+      font-weight: 700;
       color: #334155;
       cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     }
     .crafted-filter-btn:hover {
@@ -2348,22 +2356,27 @@
       text-align: center;
     }
     .btn-pkg-klook {
-      background: #C2410C;
-      color: #FFFFFF;
-      box-shadow: 0 2px 6px rgba(194, 65, 12, 0.25);
+      background: #1E293B;
+      color: #FFFFFF !important;
+      border: 1px solid #1E293B;
+      box-shadow: 0 1px 3px rgba(30, 41, 59, 0.15);
     }
     .btn-pkg-klook:hover {
-      background: #9A3412;
+      background: #0F172A;
       transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(15, 23, 42, 0.25);
     }
     .btn-pkg-trip {
-      background: #1E3A8A;
-      color: #FFFFFF;
-      box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25);
+      background: #FFFFFF;
+      color: #1E293B !important;
+      border: 1.5px solid #CBD5E1;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     }
     .btn-pkg-trip:hover {
-      background: #172554;
+      background: #F8FAFC;
+      border-color: #94A3B8;
       transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
     }
     .cta-arrow {
       font-size: 0.7rem;
@@ -2459,9 +2472,9 @@
   <div class="hero-banner">
     <div class="hero-banner-scrim"></div>
     <div class="hero-banner-content">
-      <span class="hero-tag-badge">🌲 EXPLORE • DISCOVER • ROAD TRIP IN JAPAN</span>
+      <span class="hero-tag-badge">ROAD TRIP ｜ 日本包車自駕官方指引</span>
       <h1 class="hero-title">Your Next Adventure Starts Here</h1>
-      <p class="hero-subtitle">日本客製包車 ＆ 自駕租車全指南 ｜ 中文司導一日遊・全國高速 ETC PASS・30+ 租車巨頭即時比價</p>
+      <p class="hero-subtitle">專屬司導到府接送 ｜ 自由探索全日本絕景</p>
     </div>
   </div>
 
@@ -2592,28 +2605,28 @@
       <div class="crafted-header-wrap">
         <span class="crafted-tag-pill">TRAVEL PACKAGES ｜ 旅人の特等席</span>
         <h2 class="crafted-main-title">Travel Packages <em>Crafted for You</em></h2>
-        <p class="crafted-main-desc">全日本客製化包車一日遊 ｜ 頂級 Toyota Alphard / Hiace 豪華座駕，資深華人司導到府接送，免搬行李自由漫遊</p>
+        <p class="crafted-main-desc">頂級豪華座駕 ｜ 華人司導到府接送 ｜ 免搬行李自在暢遊</p>
       </div>
 
       <!-- 🌟 地區篩選微膠囊導航列 -->
       <div class="crafted-region-bar">
         <button class="crafted-filter-btn active" onclick="filterCharterPackages('all', this)">
-          <span>🏆 全部精選行程 (20)</span>
+          <span>🏆 全部 (20)</span>
         </button>
         <button class="crafted-filter-btn" onclick="filterCharterPackages('tokyo_fuji', this)">
-          <span>🗼 東京・富士五湖 (5)</span>
+          <span>🗼 東京・富士 (5)</span>
         </button>
         <button class="crafted-filter-btn" onclick="filterCharterPackages('kansai_kyoto', this)">
-          <span>⛩️ 關西・京都・大阪・奈良 (5)</span>
+          <span>⛩️ 關西・京都 (5)</span>
         </button>
         <button class="crafted-filter-btn" onclick="filterCharterPackages('hokkaido', this)">
-          <span>❄️ 北海道・美瑛・小樽 (4)</span>
+          <span>❄️ 北海道 (4)</span>
         </button>
         <button class="crafted-filter-btn" onclick="filterCharterPackages('okinawa', this)">
-          <span>🌺 沖繩・本島全域 (3)</span>
+          <span>🌺 沖繩 (3)</span>
         </button>
         <button class="crafted-filter-btn" onclick="filterCharterPackages('kyushu_chubu', this)">
-          <span>🌋 九州・中部・高山 (3)</span>
+          <span>🌋 九州・中部 (3)</span>
         </button>
       </div>
 
@@ -2635,7 +2648,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">富士山經典全景 ＆ 河口湖四季秘境一日遊</h3>
             <p class="crafted-card-sub">富士山五合目・新倉山淺間公園・忍野八海名水・大石公園花海</p>
-            <p class="crafted-card-narrative">避開擁擠巴士人潮，司導直達新倉山淺間神社遠眺五重塔與富士雪頂同框。漫步忍野八海甘甜泉池，大石公園湖畔薰衣草倒影，感受富士信仰極致靈氣。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">早晨專車赴新倉山淺間公園遠眺富士山五重塔</span></div>
@@ -2680,7 +2692,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">箱根蘆之湖海賊船 ＆ 大湧谷黑玉子水上鳥居巡禮</h3>
             <p class="crafted-card-sub">箱根神社和平鳥居・蘆之湖海賊船・大湧谷地熱・強羅雕刻之森</p>
-            <p class="crafted-card-narrative">沿著箱根山路平穩馳騁，直達箱根神社水上和平鳥居避開排隊人潮。搭乘蘆之湖海賊船觀賞湖光倒影，大湧谷品嚐延壽七年黑玉子，私密專車愜意自在。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">專車抵達箱根神社水上鳥居參拜與湖畔漫步</span></div>
@@ -2725,7 +2736,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">東京都會風雅客製遊 ｜ 銀座・淺草・SHIBUYA SKY</h3>
             <p class="crafted-card-sub">淺草寺雷門・明治神宮森林・銀座奢華大道・SHIBUYA SKY高空夕陽</p>
-            <p class="crafted-card-narrative">東京全域客製包車，無需在擁擠地鐵搬運戰利品。司導到府接送，從江戶下町淺草雷門到原宿明治神宮，午後銀座購物名店，黃昏登頂SHIBUYA SKY俯瞰千萬燈海。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">晨間參拜淺草寺雷門與隅田川晴空塔拍照</span></div>
@@ -2770,7 +2780,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">日光世界遺產東照宮 ＆ 中禪寺湖華嚴瀑布靈性之旅</h3>
             <p class="crafted-card-sub">日光東照宮陽明門・中禪寺湖畔遊船・華嚴瀑布・伊呂波坂山道</p>
-            <p class="crafted-card-narrative">專車平穩征服伊呂波坂著名48彎髮夾彎。參拜金碧輝煌的德川幕府東照宮陽明門，聆聽日本三大名瀑華嚴瀑布百米飛瀉的轟鳴，中禪寺湖倒映日光連山神聖光影。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">抵達日光世界遺產東照宮、二荒山神社深度參拜</span></div>
@@ -2815,7 +2824,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">鎌倉古都湘南海岸 ＆ 江之島海景修善寺溫泉遊</h3>
             <p class="crafted-card-sub">鎌倉高德院大佛・鶴岡八幡宮・江之電沿海平交道・江之島岩屋</p>
-            <p class="crafted-card-narrative">沿著國道134號海岸線一路向南，朝聖灌籃高手名場景鎌倉高校前平交道。漫步若宮大路鶴岡八幡宮，探訪鎌倉大佛與江之島夕陽富士絕景，盡享悠閒湘南海風。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">鎌倉高德院露天青銅大佛參拜、鶴岡八幡宮小町通散步</span></div>
@@ -2860,7 +2868,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">京都洛東洛西千年古剎 ＆ 嵐山嵯峨野禪意漫步</h3>
             <p class="crafted-card-sub">清水寺本堂舞台・金閣寺舍利殿・嵐山嵯峨野竹林・伏見稻荷千本鳥居</p>
-            <p class="crafted-card-narrative">司導專屬排定離峰動線，清晨第一時間漫步伏見稻荷千本鳥居朱紅隧道。直上清水寺清水舞台俯瞰古都全景，午後漫步嵐山竹林小徑與金閣寺鏡湖池金箔倒影。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">清晨避開人潮參訪伏見稻荷大社千本鳥居與清水寺二年坂</span></div>
@@ -2905,7 +2912,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">奈良古都神鹿公園 ＆ 宇治天保百年抹茶茶席巡禮</h3>
             <p class="crafted-card-sub">東大寺盧舍那大佛・春日大社萬燈籠・宇治平等院鳳凰堂・天保百年老鋪抹茶</p>
-            <p class="crafted-card-narrative">奈良公園零距離餵食溫馴神鹿，步入世界最大木造建築東大寺大佛殿感受古都震撼。午後前往抹茶故鄉宇治，探訪日幣十圓硬幣上的國寶平等院鳳凰堂，品味濃抹茶芭菲。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">奈良公園漫步餵食神鹿，春日大社古老石燈籠林荫步道</span></div>
@@ -2950,7 +2956,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">海之京都天橋立 ＆ 伊根舟屋水上聚落秘境包車</h3>
             <p class="crafted-card-sub">天橋立飛龍觀纜車・智恩寺文殊菩薩・伊根灣遊覽船餵海鷗・舟屋老街</p>
-            <p class="crafted-card-narrative">穿透京都後花園，抵達日本三景天橋立。在飛龍觀搭纜車以『股覗き』眺望沙洲如青龍騰雲，隨後前往日本威尼斯伊根舟屋，搭乘遊船餵海鷗，走進私人舟屋品嚐伊根滿開清酒。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">專車抵達天橋立搭乘空中吊椅登頂飛龍觀俯瞰沙洲</span></div>
@@ -2995,7 +3000,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">大阪都會名所 ＆ 神戶異人館六甲山千萬夜景巡禮</h3>
             <p class="crafted-card-sub">大阪城天守閣・神戶北野異人館風見雞館・神戶港美利堅公園・六甲山夜景</p>
-            <p class="crafted-card-narrative">上午登臨豐臣秀吉大阪城天守閣，品味歷史巨石護城河。午後專車直奔神戶，走進明治歐風北野異人館街區，品嚐頂級神戶牛炭火鐵板燒，黃昏登上六甲山欣賞日本三大夜景。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">大阪城公園巨石天守閣參觀，黑門市場品嚐海鮮美食</span></div>
@@ -3040,7 +3044,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">和歌山白濱海岸 ＆ 三段壁千疊敷圓月島溫泉一日遊</h3>
             <p class="crafted-card-sub">和歌山白良濱白砂・千疊敷地質海蝕岩・三段壁洞窟海盜遺跡・圓月島落日</p>
-            <p class="crafted-card-narrative">沿著紀伊半島南下，來到關西第一度假勝地白濱。潔白石英砂白良濱令人心曠神怡，探訪千疊敷廣袤岩盤與三段壁地下36公尺熊野水軍海盜洞窟，傍晚靜賞圓月島海中落日。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">專車南下抵達和歌山白良濱海岸，踏浪漫步石英白砂</span></div>
@@ -3085,7 +3088,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">富良野七彩花海 ＆ 美瑛夢幻青池白鬚瀑布一日遊</h3>
             <p class="crafted-card-sub">富田農場薰衣草・四季彩之丘拼布之路・美瑛白金青池・白鬚瀑布</p>
-            <p class="crafted-card-narrative">穿越北海道廣袤田園，司導直達富田農場品味薰衣草霜淇淋與七彩花毯。在美瑛白金青池看枯木矗立於鈷藍水面，白鬚瀑布自火山岩壁湧出鋁質藍光，純淨至極。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">富田農場漫步七彩花田、四季彩之丘搭拖拉機巡禮</span></div>
@@ -3130,7 +3132,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">小樽浪漫運河 ＆ 余市威士忌蒸餾所天狗山夜景包車</h3>
             <p class="crafted-card-sub">小樽運河石造倉庫・北一硝子八音盒堂・NIKKA余市威士忌工場・天狗山纜車</p>
-            <p class="crafted-card-narrative">從札幌出發，走進大正浪漫的小樽運河。探訪小樽八音盒堂本館聆聽蒸氣鐘報時，下午驅車前往日本威尼斯余市蒸餾所品嚐得獎單一麥芽威士忌，黃昏登天狗山俯瞰小樽三大夜景。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">小樽運河石造倉庫漫步與拍照、堺町通北一硝子玻璃館</span></div>
@@ -3175,7 +3176,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">登別地獄谷 ＆ 洞爺湖環湖昭和新山名湯一日遊</h3>
             <p class="crafted-card-sub">登別地獄谷火山硫磺噴氣・昭和新山熊牧場・洞爺湖筒倉展望台・有珠山纜車</p>
-            <p class="crafted-card-narrative">直搗北海道最具震撼力的火山奇觀。走在登別地獄谷步道感受滾燙熱泉白煙升騰，午後前往昭和新山熊牧場餵食棕熊，登上筒倉展望台360度環視不凍湖洞爺湖水天一色。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">登別地獄谷鐵泉池步道漫步，感受大地心跳與硫磺白煙</span></div>
@@ -3220,7 +3220,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">函館百萬夜景 ＆ 五稜郭星形城郭朝市美饌之旅</h3>
             <p class="crafted-card-sub">函館朝市新鮮活烏賊・五稜郭塔俯瞰星形堡壘・八幡坂海景石板路・函館山夜景</p>
-            <p class="crafted-card-narrative">清晨探訪函館朝市體驗釣活烏賊刺身與海膽丼飯，登五稜郭塔鳥瞰日本第一座西洋星形要塞。走過直通蔚藍大海的八幡坂，傍晚專車直上海拔334公尺函館山，親睹雙曲弧線百萬鑽石夜景。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">函館朝市享用海鮮海膽丼，五稜郭塔登頂俯瞰巨大星形堡壘</span></div>
@@ -3265,7 +3264,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">沖繩北部全景 ｜ 美麗海水族館・古宇利島・萬座毛</h3>
             <p class="crafted-card-sub">黑潮之海巨大鯨鯊・古宇利跨海大橋心形岩・萬座毛象鼻海蝕崖</p>
-            <p class="crafted-card-narrative">沖繩最具代表性的絕景線路。沿著蔚藍58號海岸線向北，在美麗海水族館看巨大的鯨鯊與鬼蝠魟在藍光中優雅游弋，驅車跨過古宇利跨海大橋，品嚐名護本部町阿古豬與割烹無菜單料理。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">象鼻奇岩萬座毛遠眺東海海景，前往美麗海水族館觀賞黑潮之海餵食秀</span></div>
@@ -3310,7 +3308,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">殘波岬燈塔 ＆ 美國村歐風夜景港川外人住宅文青一日遊</h3>
             <p class="crafted-card-sub">殘波岬白色燈塔・港川外人住宅甜點散步・嘉手納美軍戰機觀景台・美國村摩天輪夜景</p>
-            <p class="crafted-card-narrative">專車漫遊沖繩最具異國風情的中部海岸。漫步殘波岬30公尺斷崖與白堊燈塔，走進港川美軍宿舍老屋品嚐oacac檸檬磅蛋糕，黃昏北谷美國村海濱落日步道，盡享美式復古風情。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">登上殘波岬燈塔遠眺湛藍東海斷崖，讀谷村傳統殘波燒陶瓷</span></div>
@@ -3355,7 +3352,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">玉泉洞琉球王國村 ＆ 瀨長島系滿魚市場海鮮巡禮</h3>
             <p class="crafted-card-sub">三十萬年玉泉洞鐘乳石・齋場御嶽靈性御城・知念岬天海一線・系滿炙烤龍蝦與生蠔</p>
-            <p class="crafted-card-narrative">探訪沖繩最深沉的地質與歷史靈性。走入5公里長的玉泉洞鐘乳石地下迷宮，在知念岬眺望久高島神聖海域，中午系滿魚市場品嚐現烤龍蝦海膽與生蠔，午後瀨長島白色地中海階梯看飛機降落。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">參觀玉泉洞三十萬年鐘乳石巨觀、沖繩世界文化王國太鼓舞表演</span></div>
@@ -3400,7 +3396,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">白川鄉世界遺產合掌村 ＆ 飛驒高山三町老街一日遊</h3>
             <p class="crafted-card-sub">白川鄉合掌造荻町城跡展望台・飛驒高山上三之町江戶古街・飛驒牛握壽司</p>
-            <p class="crafted-card-narrative">由名古屋或高山出發，深入日本阿爾卑斯秘境。登上荻町城跡俯瞰如童話繪本的白川鄉合掌造聚落，午後漫步高山上三之町黑色格子窗古街，品嚐入口即化的A5飛驒牛炙烤握壽司。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">專車抵達白川鄉合掌村登城跡展望台拍攝全景，參觀和田家百年合掌造內部</span></div>
@@ -3445,7 +3440,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">太宰府天滿宮 ＆ 由布院金鱗湖別府海地獄溫泉巡禮</h3>
             <p class="crafted-card-sub">太宰府隈研吾星巴克與梅枝餅・由布院金鱗湖夢幻晨霧・別府海地獄鈷藍溫泉</p>
-            <p class="crafted-card-narrative">福岡出發暢遊九州溫泉雙冠王。太宰府天滿宮參拜學問之神與品嚐現烤梅枝餅，前往日本女性票選第一名湯由布院，金鱗湖畔看溫泉與冷泉交織的水煙，別府海地獄驚嘆鈷藍泉水。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">太宰府天滿宮參拜飛梅神木、太宰府隈研吾木構星巴克打卡</span></div>
@@ -3490,7 +3484,6 @@
           <div class="crafted-card-main">
             <h3 class="crafted-card-name">熊本城天守閣 ＆ 阿蘇火山草千里黑川秘境溫泉一日遊</h3>
             <p class="crafted-card-sub">日本三大名城熊本城天守閣・阿蘇中岳活火山口煙霧・草千里之濱騎馬・黑川露天入湯</p>
-            <p class="crafted-card-narrative">親歷九州大地的雄渾狂野。登臨名將加藤清正建造的黑色熊本城天守閣，專車直上海拔千米的阿蘇火山口草千里之濱，看活火山白煙噴薄，午後前往深山幽谷黑川溫泉體驗露天入湯手形。</p>
             
             <div class="crafted-route-box">
               <div class="route-line-item"><span class="route-icon">🌅 朝</span><span class="route-txt">參觀熊本城天守閣與櫻之馬場城彩苑品嚐馬肉刺身與芥末蓮藕</span></div>
