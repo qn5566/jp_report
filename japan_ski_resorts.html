@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本極上滑雪場名鑑 ｜ 全國雪況即時速報 - 日本報報</title>
+<style>
+:root{--bg:#F8F9FB;--blue:#3A6B9B;--orange:#E28743;--ice:#E3EEF8;--ink:#222222;--sub:#666666}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Serif JP","Source Han Serif TC","Hiragino Mincho ProN","Songti TC",serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+
+/* Hero */
+.hero{position:relative;height:75vh;max-height:750px;min-height:480px;overflow:hidden;color:#fff;background:linear-gradient(160deg,#6d9bc7,#3A6B9B 60%,#27476a)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,40,70,.45),rgba(20,40,70,.1) 55%,rgba(20,40,70,.35));z-index:1}
+.back-link{position:absolute;z-index:5;left:20px;top:18px;background:rgba(255,255,255,.9);color:var(--blue);border:2px solid var(--blue);border-radius:999px;padding:5px 16px;font-weight:800;font-size:.9rem}
+.back-link:hover{background:var(--ice)}
+.hero-vert{position:absolute;z-index:2;right:7vw;top:10vh;writing-mode:vertical-rl;font-size:clamp(1.1rem,2.6vw,1.9rem);letter-spacing:.3em;text-shadow:0 2px 10px rgba(0,0,0,.5);border-right:2px solid rgba(255,255,255,.7);padding-right:14px}
+.hero-text{position:relative;z-index:2;padding:14vh 6vw 0;max-width:820px}
+.hero-stamp{display:inline-block;border:2px solid #fff;border-radius:6px;padding:2px 12px;letter-spacing:.2em;transform:rotate(-3deg);font-size:.85rem}
+.hero h1{margin-top:16px;font-size:clamp(1.8rem,4.8vw,3.4rem);line-height:1.3;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.hero p{margin-top:12px;font-size:clamp(.9rem,1.8vw,1.15rem);text-shadow:0 1px 8px rgba(0,0,0,.55)}
+.scroll-hint{position:absolute;z-index:3;left:50%;bottom:80px;transform:translateX(-50%);font-weight:700;letter-spacing:.15em;font-size:.85rem;text-align:center;animation:bob 1.8s ease-in-out infinite;white-space:nowrap}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+.wave{position:absolute;z-index:4;left:0;bottom:-1px;width:100%;height:80px;display:block}
+.flake{position:absolute;z-index:2;opacity:.8;animation:fall 7s linear infinite;font-size:18px}
+@keyframes fall{from{transform:translateY(-30px)}to{transform:translateY(80vh)}}
+
+/* Alert bar */
+.alert-bar{max-width:1280px;margin:-10px auto 0;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.alert-card{background:var(--ice);border:2px solid var(--blue);border-radius:14px;padding:12px 16px;box-shadow:3px 3px 0 var(--blue)}
+.alert-card small{color:var(--sub);display:block}
+.alert-card b{color:var(--blue)}
+.alert-card .num{color:var(--orange);font-weight:900}
+
+/* Filters */
+.filters{max-width:1280px;margin:18px auto 0;padding:0 20px}
+.row{display:flex;gap:10px;overflow-x:auto;padding:6px 2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.row::-webkit-scrollbar{display:none}
+.pill{flex:0 0 auto;border:2px solid var(--blue);background:#fff;color:var(--blue);font:inherit;font-weight:700;padding:7px 18px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.2s}
+.pill:hover{background:var(--ice)}
+.lv .pill.active{background:var(--blue);color:#fff}
+.rg .pill{border-color:var(--orange);color:var(--orange)}
+.rg .pill:hover{background:#fdf0e5}
+.rg .pill.active{background:var(--orange);color:#fff}
+.divider{max-width:1280px;margin:10px auto;padding:0 20px;color:var(--blue);opacity:.6;letter-spacing:.4em;text-align:center}
+
+/* Cards */
+.grid{max-width:1280px;margin:0 auto;padding:10px 20px 70px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border:2px solid var(--ink);border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 var(--blue);display:flex;flex-direction:column}
+.c-img{position:relative;aspect-ratio:16/10;background:linear-gradient(160deg,#cfe0f1,#8fb2d4)}
+.c-img img{width:100%;height:100%;object-fit:cover;display:block}
+.c-region{position:absolute;left:10px;top:10px;background:var(--orange);color:#fff;font-weight:700;font-size:.8rem;padding:2px 12px;border-radius:6px}
+.c-snow{position:absolute;right:10px;top:10px;background:rgba(227,238,248,.95);color:var(--blue);font-weight:700;font-size:.78rem;padding:3px 10px;border-radius:8px;border:1.5px solid var(--blue)}
+.c-body{padding:16px;flex:1}
+.c-body h3{font-size:1.2rem;color:var(--blue)}
+.c-body .names{color:var(--sub);font-size:.82rem;margin-bottom:6px}
+.c-hl{font-weight:700;margin-bottom:10px}
+.bar{display:flex;height:12px;border-radius:999px;overflow:hidden;border:1.5px solid var(--ink);margin:4px 0}
+.bar i{display:block}
+.bar .e{background:#6cbf84}.bar .m{background:#3A6B9B}.bar .h{background:#222}
+.legend{font-size:.75rem;color:var(--sub);margin-bottom:8px}
+.transit{background:var(--ice);border-radius:10px;padding:8px 12px;font-size:.88rem;margin:8px 0}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{border:1.5px solid var(--blue);color:var(--blue);border-radius:6px;padding:1px 10px;font-size:.78rem;font-weight:700}
+.c-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px 16px}
+.c-actions button,.c-actions a{border:2px solid var(--blue);background:#fff;color:var(--blue);border-radius:999px;padding:7px 6px;font:inherit;font-size:.82rem;font-weight:800;text-align:center;cursor:pointer}
+.c-actions .wide{grid-column:1/-1}
+.c-actions .cam{background:var(--blue);color:#fff}
+.c-actions a:hover,.c-actions button:hover{background:var(--ice)}
+.c-actions .cam:hover{background:#2c5580}
+.empty{grid-column:1/-1;text-align:center;color:var(--sub);padding:40px}
+.note{max-width:1280px;margin:0 auto;padding:0 20px 40px;font-size:.8rem;color:var(--sub);text-align:center}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:1000;background:rgba(20,30,45,.75);display:none;align-items:center;justify-content:center;padding:16px}
+.modal.open{display:flex}
+.modal-box{background:#fff;border:2px solid var(--ink);border-radius:16px;width:min(960px,100%);padding:14px}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px}
+.modal-head button{border:2px solid var(--ink);background:var(--orange);color:#fff;border-radius:999px;font:inherit;font-weight:800;padding:4px 16px;cursor:pointer}
+.ratio{position:relative;padding-top:56.25%;background:#000;border-radius:10px;overflow:hidden}
+.ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.nocam{position:absolute;inset:0;display:grid;place-items:center;color:#fff;text-align:center;padding:20px}
+body.lock{overflow:hidden}
+
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){
+  .hero{height:68vh}
+  .hero-vert{right:4vw;top:8vh;font-size:1rem}
+  .hero-text{padding-top:12vh;padding-right:18vw}
+  .alert-bar{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img id="heroImg" src="https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=1920&q=80" alt="白雪覆蓋的雪山" onerror="this.style.display='none'">
+  <a href="index.html" class="back-link">← 返回首頁</a>
+  <span class="flake" style="left:12%;animation-delay:0s">❄️</span>
+  <span class="flake" style="left:35%;animation-delay:2s;font-size:14px">❄️</span>
+  <span class="flake" style="left:58%;animation-delay:4s">❄️</span>
+  <span class="flake" style="left:80%;animation-delay:1s;font-size:22px">❄️</span>
+  <div class="hero-vert">雪が降った。白銀の世界へ、滑り出そう。</div>
+  <div class="hero-text">
+    <span class="hero-stamp">SNOW MOOK 2026</span>
+    <h1>日本極上滑雪場名鑑 ｜ 全國雪況即時速報</h1>
+    <p>粉雪天堂・初學友善緩坡・中文教練・即時 WebCam 與 Ski-in/Ski-out 住宿全收錄</p>
+  </div>
+  <div class="scroll-hint">SCROLL DOWN ↓ 探索 27 大極上雪場</div>
+  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#F8F9FB" d="M0 80V48C120 20 200 8 300 30s170 40 270 12S760 0 860 22s190 46 290 20 200-34 290-6V80z"/>
+  </svg>
+</header>
+
+<section class="alert-bar" aria-label="今日降雪速報">
+  <div class="alert-card"><small>❄️ 今日降雪王</small><b>二世谷</b>（24h 新雪 <span class="num">+35cm</span>）</div>
+  <div class="alert-card"><small>🎿 積雪深度王</small><b>喜樂樂</b>（山頂積雪 <span class="num">295cm</span>）</div>
+  <div class="alert-card"><small>☀️ 晴空適合初學</small><b>富士天神山滑雪場</b>（初學緩坡晴天率 <span class="num">85%</span>）</div>
+</section>
+
+<section class="filters">
+  <div class="row lv" id="levelRow">
+    <button class="pill active" data-level="all">全部難度</button>
+    <button class="pill" data-level="beginner">🔰 初級新手</button>
+    <button class="pill" data-level="intermediate">🏂 中級進階</button>
+    <button class="pill" data-level="advanced">🌲 高階野雪</button>
+    <button class="pill" data-level="coach">👨‍🏫 中文教練名冊</button>
+  </div>
+  <div class="row rg" id="regionRow">
+    <button class="pill active" data-region="all">🏔️ 全日本雪場 (27)</button>
+    <button class="pill" data-region="hokkaido">❄️ 北海道 (7)</button>
+    <button class="pill" data-region="niigata">🌾 新潟・湯澤 (6)</button>
+    <button class="pill" data-region="nagano">🏔️ 長野・白馬 (6)</button>
+    <button class="pill" data-region="tohoku">🌲 東北・藏王 (4)</button>
+    <button class="pill" data-region="kanto">♨️ 富士・關東 (4)</button>
+    <button class="pill" data-region="fis">🏆 冬奧FIS賽道 (6)</button>
+  </div>
+</section>
+<div class="divider">❄ ⛰ ❄ ⛰ ❄</div>
+
+<main class="grid" id="grid"></main>
+<p class="note">* 雪況數據與雪道比例為示意資料，正式上線前請串接雪場官方即時資料。本頁含 Trip.com 聯盟連結，透過連結訂購本站可能獲得分潤，不影響您的價格。</p>
+
+<div class="modal" id="camModal" role="dialog" aria-modal="true" aria-label="即時 LiveCam">
+  <div class="modal-box">
+    <div class="modal-head"><strong id="camTitle">即時 LiveCam</strong><span><button id="camAlt" style="display:none;background:var(--blue);margin-right:8px">畫面異常？切換備用</button><button id="camClose">✕ 關閉</button></span></div>
+    <div class="ratio" id="camBox"></div>
+  </div>
+</div>
+
+<script>
+var REGION={hokkaido:"北海道",niigata:"新潟・湯澤",nagano:"長野・白馬",tohoku:"東北・藏王",kanto:"富士・關東"};
+var PIC="https://images.unsplash.com/";
+var IMGS=["photo-1551524559-8af4e6624178","photo-1483728642387-6c3bdd6c93e5","photo-1478700485868-972b69dc3fc4"];
+var BASE="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1="+encodeURIComponent("日本報報_滑雪專案")+"&trip_sub3=D20905663&redirect_url=";
+function aff(u){return u.indexOf("Allianceid=")>-1?u:BASE+encodeURIComponent(u)}
+// 各雪場可替換成更精準的 Trip.com 活動／飯店頁面網址
+var T_ACT="https://tw.trip.com/things-to-do/",T_HOTEL="https://tw.trip.com/hotels/";
+
+var S=[
+{id:"niseko",region:"hokkaido",fis:false,name:"二世谷聯合度假村",jp:"ニセコユナイテッド",en:"Niseko United",
+ snow:"積雪 295cm ｜ 24h新雪 +35cm",hl:"全球粉雪之王・羊蹄山逆富士夜滑・JAPOW野雪樹林",
+ lv:[30,40,30],transit:"新千歲機場接駁巴士約 2.5 小時直達四大雪場門口",tags:["魔毯輸送帶","單板友善"],coach:true,
+ cam:"1ksmiy6EsDo",camAlt:"LQ_Cv4aFuq8",
+ act:"https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=二世谷_教練裝備&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Fniseko-107775%2Ftourist-attractions%2F%3Fcategory%3Dski",
+ pass:"https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=二世谷_雪票&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Fniseko-107775%2Fniseko-united-10758410%2F",
+ hotel:"https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=二世谷_飯店比價&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Fniseko-hotels-list-107775%2F",
+ bus:"https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=二世谷_機場巴士&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Fchitose-107773%2Ftourist-attractions%2F"},
+{id:"rusutsu",region:"hokkaido",fis:false,name:"留壽都度假村",jp:"ルスツリゾート",en:"Rusutsu Resort",
+ snow:"積雪 210cm ｜ 24h新雪 +22cm",hl:"滑雪＋遊樂園一站玩・親子友善寬敞雪道・樹林粉雪",
+ lv:[40,40,20],transit:"新千歲機場接駁巴士約 2 小時，札幌市區有直達巴士",tags:["魔毯輸送帶","單板友善","親子友善"],coach:true,
+ cam:"",camUrl:"https://rusutsu.com/live-camera/",
+ act:T_ACT,
+ pass:"https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=留壽都_雪票&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Frusutsu-107776%2Frusutsu-resort-ski-area-10758411%2F",
+ hotel:"https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=留壽都_飯店比價&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Frusutsu-hotels-list-107776%2F"},
+{id:"kiroro",region:"hokkaido",fis:false,name:"喜樂樂度假村",jp:"キロロリゾート",en:"Kiroro Resort",
+ snow:"積雪 295cm ｜ 24h新雪 +18cm",hl:"山頂積雪冠軍・鬆軟乾粉雪・Ski-in/Ski-out 度假飯店",
+ lv:[30,40,30],transit:"新千歲機場／札幌市區接駁巴士約 2 小時直達",tags:["魔毯輸送帶","單板友善"],coach:true,
+ cam:"",camUrl:"https://www.kiroro.co.jp/snow-report/",
+ act:T_ACT,
+ pass:"https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=喜樂樂_雪票&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Fakaigawa-107777%2Fkiroro-snow-world-10758412%2F",
+ hotel:"https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=喜樂樂_飯店比價&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Fakaigawa-hotels-list-107777%2F"},
+{id:"fujiten",region:"kanto",fis:false,name:"富士天神山滑雪場",jp:"富士見パノラマ／富士天神山",en:"Fujiten Snow Resort",
+ snow:"積雪 60cm ｜ 24h新雪 +0cm",hl:"富士山近景晴空滑雪・初學緩坡晴天率高・東京近郊一日往返",
+ lv:[50,40,10],transit:"河口湖站搭計程車約 25 分鐘，東京新宿出發巴士約 2.5 小時",tags:["魔毯輸送帶","單板友善","初學友善"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"hakuba",region:"nagano",fis:true,name:"白馬八方尾根",jp:"白馬八方尾根",en:"Hakuba Happo-one",
+ snow:"積雪 180cm ｜ 24h新雪 +15cm",hl:"長野冬奧滑降賽道・北阿爾卑斯絕景・高階雪道齊全",
+ lv:[20,40,40],transit:"長野站搭巴士約 1 小時，東京出發新幹線轉巴士約 3.5 小時",tags:["單板友善","冬奧賽道"],coach:true,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"naeba",region:"niigata",fis:false,name:"苗場滑雪場",jp:"苗場スキー場",en:"Naeba Ski Resort",
+ snow:"積雪 150cm ｜ 24h新雪 +10cm",hl:"東京近郊大型雪場・單板公園人氣・新幹線＋接駁輕鬆抵達",
+ lv:[40,40,20],transit:"越後湯澤站搭接駁巴士約 40 分鐘，東京出發約 2 小時",tags:["魔毯輸送帶","單板友善"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"zao",region:"tohoku",fis:false,name:"藏王溫泉滑雪場",jp:"蔵王温泉スキー場",en:"Zao Onsen",
+ snow:"積雪 200cm ｜ 24h新雪 +20cm",hl:"世界級樹冰雪怪奇景・滑雪後泡溫泉・長距離滑降",
+ lv:[30,40,30],transit:"山形站搭巴士約 40 分鐘，東京新幹線約 3 小時",tags:["單板友善","溫泉"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"furano",region:"hokkaido",fis:true,name:"富良野滑雪場",jp:"富良野スキー場",en:"Furano Ski Resort",
+ snow:"積雪 170cm ｜ 24h新雪 +12cm",hl:"北海道中心的乾粉雪・FIS 世界盃賽道・薰衣草故鄉雪景",
+ lv:[30, 40, 30],transit:"旭川機場巴士約 1 小時，札幌出發約 2.5 小時",tags:["魔毯輸送帶", "單板友善"],coach:true,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"teine",region:"hokkaido",fis:true,name:"札幌手稻滑雪場",jp:"札幌手稲スキー場",en:"Sapporo Teine",
+ snow:"積雪 190cm ｜ 24h新雪 +20cm",hl:"札幌市區最近的雪場・可眺望石狩灣・夜滑方便",
+ lv:[25, 40, 35],transit:"札幌站搭 JR 轉巴士約 1 小時",tags:["單板友善", "夜滑"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"tomamu",region:"hokkaido",fis:false,name:"星野 TOMAMU 度假村",jp:"星野リゾート トマム",en:"Hoshino Resorts Tomamu",
+ snow:"積雪 160cm ｜ 24h新雪 +15cm",hl:"雲海露台・Ski-in/Ski-out 度假飯店・親子雪地活動",
+ lv:[40, 40, 20],transit:"新千歲機場直達巴士約 2 小時，JR 至「トマム站」",tags:["魔毯輸送帶", "親子友善"],coach:true,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"kokusai",region:"hokkaido",fis:false,name:"札幌國際滑雪場",jp:"札幌国際スキー場",en:"Sapporo Kokusai",
+ snow:"積雪 260cm ｜ 24h新雪 +25cm",hl:"札幌近郊深雪天堂・樹林野雪・上山纜車直達山頂",
+ lv:[20, 40, 40],transit:"札幌市區巴士約 1 小時 10 分",tags:["單板友善", "野雪"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"gala",region:"niigata",fis:false,name:"GALA 湯澤滑雪場",jp:"GALA湯沢スキー場",en:"Gala Yuzawa",
+ snow:"積雪 120cm ｜ 24h新雪 +8cm",hl:"新幹線直達雪場・東京出發可當日往返・初學友善",
+ lv:[45, 40, 15],transit:"東京站搭上越新幹線約 80 分鐘，月台直通纜車",tags:["魔毯輸送帶", "新幹線直達", "初學友善"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"kagura",region:"niigata",fis:false,name:"神樂滑雪場",jp:"かぐらスキー場",en:"Kagura",
+ snow:"積雪 300cm ｜ 24h新雪 +20cm",hl:"越後湯澤厚雪區・長距離滑降・春季雪況穩定",
+ lv:[25, 40, 35],transit:"越後湯澤站搭巴士約 40 分鐘",tags:["單板友善", "野雪"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"joetsu",region:"niigata",fis:false,name:"上越國際滑雪場",jp:"上越国際スキー場",en:"Joetsu Kokusai",
+ snow:"積雪 140cm ｜ 24h新雪 +10cm",hl:"東京近郊大規模雪場・雪道寬敞・家庭客群",
+ lv:[35, 45, 20],transit:"越後湯澤站搭接駁巴士約 20 分鐘",tags:["魔毯輸送帶", "單板友善"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"suginohara",region:"niigata",fis:false,name:"妙高杉之原滑雪場",jp:"妙高杉ノ原スキー場",en:"Myoko Suginohara",
+ snow:"積雪 250cm ｜ 24h新雪 +18cm",hl:"日本最長滑降距離之一・粉雪品質高・溫泉街相鄰",
+ lv:[30, 40, 30],transit:"長野站搭巴士約 1.5 小時，或 JR 至妙高高原站",tags:["單板友善", "溫泉"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"arai",region:"niigata",fis:false,name:"樂天 ARAI 度假村",jp:"ロッテアライリゾート",en:"Lotte Arai Resort",
+ snow:"積雪 350cm ｜ 24h新雪 +22cm",hl:"新潟豪雪・高級度假飯店・粉雪與樹林滑行",
+ lv:[25, 45, 30],transit:"北陸新幹線上越妙高站接駁約 30 分鐘",tags:["單板友善", "Ski-in/Ski-out"],coach:true,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"cortina",region:"nagano",fis:false,name:"白馬 Cortina 滑雪場",jp:"白馬コルチナスキー場",en:"Hakuba Cortina",
+ snow:"積雪 320cm ｜ 24h新雪 +25cm",hl:"白馬降雪量名列前茅・樹林野雪・粉雪愛好者首選",
+ lv:[15, 40, 45],transit:"白馬站搭巴士約 1 小時",tags:["單板友善", "野雪"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"goryu",region:"nagano",fis:false,name:"白馬五龍滑雪場",jp:"白馬五竜スキー場",en:"Hakuba Goryu",
+ snow:"積雪 200cm ｜ 24h新雪 +14cm",hl:"北阿爾卑斯絕景・初學緩坡豐富・與 Hakuba47 連通",
+ lv:[35, 40, 25],transit:"白馬站搭接駁巴士約 10 分鐘",tags:["魔毯輸送帶", "單板友善"],coach:true,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"shiga",region:"nagano",fis:true,name:"志賀高原",jp:"志賀高原",en:"Shiga Kogen",
+ snow:"積雪 220cm ｜ 24h新雪 +12cm",hl:"日本最大滑雪區・18 處雪場一張券・曾辦冬奧賽事",
+ lv:[30, 45, 25],transit:"長野站搭巴士約 80 分鐘",tags:["單板友善", "溫泉"],coach:true,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"nozawa",region:"nagano",fis:true,name:"野澤溫泉滑雪場",jp:"野沢温泉スキー場",en:"Nozawa Onsen",
+ snow:"積雪 230cm ｜ 24h新雪 +16cm",hl:"溫泉古村風情・日本代表級賽道・可免費泡外湯",
+ lv:[30, 40, 30],transit:"長野站搭巴士約 70 分鐘，或北陸新幹線飯山站",tags:["單板友善", "溫泉"],coach:true,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"iwatake",region:"nagano",fis:false,name:"白馬岩岳山地度假村",jp:"白馬岩岳スノーフィールド",en:"Hakuba Iwatake",
+ snow:"積雪 150cm ｜ 24h新雪 +10cm",hl:"親子友善・平緩寬坡・山頂雪景咖啡座",
+ lv:[45, 40, 15],transit:"白馬站搭巴士約 10 分鐘",tags:["魔毯輸送帶", "親子友善", "初學友善"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"appi",region:"tohoku",fis:true,name:"安比高原滑雪場",jp:"安比高原スキー場",en:"Appi Kogen",
+ snow:"積雪 190cm ｜ 24h新雪 +14cm",hl:"東北代表大型雪場・樹冰風景・FIS 賽事舉辦地",
+ lv:[30, 40, 30],transit:"盛岡站搭接駁巴士約 70 分鐘",tags:["魔毯輸送帶", "單板友善"],coach:true,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"nekoma",region:"tohoku",fis:false,name:"豬苗代 Nekoma 滑雪場",jp:"ネコマ マウンテン",en:"Nekoma Mountain",
+ snow:"積雪 280cm ｜ 24h新雪 +24cm",hl:"東北粉雪名所・日本罕見全日雪質穩定・樹林滑行",
+ lv:[25, 40, 35],transit:"郡山站搭巴士約 1.5 小時",tags:["單板友善", "野雪"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"tazawako",region:"tohoku",fis:false,name:"田澤湖滑雪場",jp:"田沢湖スキー場",en:"Tazawako",
+ snow:"積雪 210cm ｜ 24h新雪 +15cm",hl:"秋田湖景雪場・長距離緩坡・初學進階皆宜",
+ lv:[35, 45, 20],transit:"田澤湖站搭巴士約 20 分鐘",tags:["魔毯輸送帶", "單板友善"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"yeti",region:"kanto",fis:false,name:"富士山滑雪場 Yeti",jp:"ふじてん／スノータウン Yeti",en:"Snow Town Yeti",
+ snow:"積雪 90cm ｜ 24h新雪 +0cm",hl:"富士山腳下滑雪・晴天可見富士山・東京近郊",
+ lv:[45, 40, 15],transit:"JR 御殿場站搭接駁巴士約 40 分鐘",tags:["魔毯輸送帶", "初學友善"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"karuizawa",region:"kanto",fis:false,name:"輕井澤王子滑雪場",jp:"軽井沢プリンスホテルスキー場",en:"Karuizawa Prince",
+ snow:"積雪 70cm ｜ 24h新雪 +0cm",hl:"造雪設備完善・東京近郊一日遊・度假村內住宿",
+ lv:[50, 40, 10],transit:"輕井澤站步行約 5 分鐘，東京新幹線約 70 分鐘",tags:["魔毯輸送帶", "初學友善", "親子友善"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL},
+{id:"tanigawa",region:"kanto",fis:false,name:"谷川岳天神平滑雪場",jp:"谷川岳天神平スキー場",en:"Tanigawadake Tenjindaira",
+ snow:"積雪 200cm ｜ 24h新雪 +12cm",hl:"纜車直達山頂・群馬粉雪名所・山岳景緻",
+ lv:[30, 40, 30],transit:"水上站搭巴士轉纜車約 1 小時",tags:["單板友善", "野雪"],coach:false,
+ cam:"",act:T_ACT,pass:T_ACT,hotel:T_HOTEL}
+];
+
+var level="all",region="all";
+var $=function(i){return document.getElementById(i)};
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+function matchLevel(r){
+  if(level==="all")return true;
+  if(level==="beginner")return r.lv[0]>=30;
+  if(level==="intermediate")return r.lv[1]>=40;
+  if(level==="advanced")return r.lv[2]>=30;
+  if(level==="coach")return r.coach;
+}
+function matchRegion(r){
+  if(region==="all")return true;
+  if(region==="fis")return r.fis;
+  return r.region===region;
+}
+function render(){
+  var list=S.filter(function(r){return matchLevel(r)&&matchRegion(r)});
+  if(!list.length){$("grid").innerHTML='<div class="empty">❄️ 目前沒有符合條件的雪場，換個條件看看吧。</div>';return;}
+  $("grid").innerHTML=list.map(function(r,i){
+    var img=PIC+IMGS[i%IMGS.length]+"?auto=format&fit=crop&w=800&q=75";
+    return '<article class="card" data-id="'+r.id+'">'+
+    '<div class="c-img"><img src="'+img+'" alt="'+esc(r.name)+'" loading="lazy" onerror="this.style.display=\'none\'">'+
+    '<span class="c-region">'+REGION[r.region]+'</span><span class="c-snow">'+esc(r.snow)+'</span></div>'+
+    '<div class="c-body"><h3>'+esc(r.name)+'</h3><div class="names">'+esc(r.jp)+' ／ '+esc(r.en)+'</div>'+
+    '<div class="c-hl">'+esc(r.hl)+'</div>'+
+    '<div class="bar"><i class="e" style="width:'+r.lv[0]+'%"></i><i class="m" style="width:'+r.lv[1]+'%"></i><i class="h" style="width:'+r.lv[2]+'%"></i></div>'+
+    '<div class="legend">🟢 初級 '+r.lv[0]+'% ｜ 🔵 中級 '+r.lv[1]+'% ｜ ⚫ 高級 '+r.lv[2]+'%</div>'+
+    '<div class="transit">🚌 '+esc(r.transit)+'</div>'+
+    '<div class="tags">'+r.tags.map(function(t){return '<span class="tag">'+esc(t)+'</span>'}).join("")+(r.coach?'<span class="tag">中文教練</span>':'')+'</div></div>'+
+    '<div class="c-actions">'+
+    (r.camUrl?'<a class="cam" href="'+esc(r.camUrl)+'" target="_blank" rel="noopener">📹 即時 LiveCam ↗</a>':'<button class="cam" data-cam="'+r.id+'">📹 即時 LiveCam</button>')+
+    '<a href="'+aff(r.act)+'" target="_blank" rel="noopener sponsored">🎿 預約教練/裝備</a>'+
+    '<a href="'+aff(r.pass)+'" target="_blank" rel="noopener sponsored">🎟️ 全山纜車通票</a>'+
+    '<a href="'+aff(r.hotel)+'" target="_blank" rel="noopener sponsored">🏨 直通雪道飯店</a>'+
+    (r.bus?'<a class="wide" href="'+aff(r.bus)+'" target="_blank" rel="noopener sponsored">🚌 新千歲機場直達接駁巴士</a>':'')+
+    '</div></article>';
+  }).join("");
+}
+function bind(rowId,attr,setter){
+  $(rowId).addEventListener("click",function(e){
+    var b=e.target.closest(".pill");if(!b)return;
+    this.querySelectorAll(".pill").forEach(function(x){x.classList.remove("active")});
+    b.classList.add("active");setter(b.dataset[attr]);render();
+  });
+}
+bind("levelRow","level",function(v){level=v});
+bind("regionRow","region",function(v){region=v});
+
+// LiveCam modal
+function playCam(vid,title,alt){
+  $("camBox").innerHTML=vid
+    ?'<iframe src="https://www.youtube.com/embed/'+vid+'?autoplay=1&mute=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="'+esc(title)+' LiveCam"></iframe>'
+    :'<div class="nocam">此雪場的即時畫面尚未提供，敬請期待。</div>';
+  $("camAlt").style.display=alt?"inline-block":"none";
+  $("camAlt").onclick=alt?function(){playCam(alt,title,null);$("camAlt").style.display="none"}:null;
+}
+function openCam(id){
+  var r=S.filter(function(x){return x.id===id})[0];if(!r)return;
+  $("camTitle").textContent="📹 "+r.name+" 即時 LiveCam";
+  playCam(r.cam,r.name,r.camAlt);
+  $("camModal").classList.add("open");document.body.classList.add("lock");
+}
+function closeCam(){
+  $("camModal").classList.remove("open");document.body.classList.remove("lock");
+  $("camBox").innerHTML="";
+}
+$("grid").addEventListener("click",function(e){
+  var b=e.target.closest("[data-cam]");if(b)openCam(b.dataset.cam);
+});
+$("camClose").addEventListener("click",closeCam);
+$("camModal").addEventListener("click",function(e){if(e.target===this)closeCam()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeCam()});
+render();
+</script>
+</body>
+</html>

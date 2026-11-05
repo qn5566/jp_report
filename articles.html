@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本報報 ｜ Deep-Dive Articles</title>
+<style>
+:root{--bg:#F8F9FB;--blue:#3A6B9B;--orange:#E28743;--ice:#E3EEF8;--ink:#222;--sub:#666}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Serif JP","Source Han Serif TC","Hiragino Mincho ProN","Songti TC",serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:50;background:rgba(248,249,251,.95);backdrop-filter:blur(6px);border-bottom:2px solid var(--blue)}
+.nav-in{max-width:1200px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:900;color:var(--blue);font-size:1.15rem}
+.nav-r{display:flex;align-items:center;gap:12px}
+.home{font-weight:700;color:var(--blue);font-size:.9rem}
+.lang-sw{border:2px solid var(--blue);background:#fff;color:var(--blue);font:inherit;font-weight:700;border-radius:999px;padding:5px 12px;cursor:pointer}
+.head{max-width:1200px;margin:0 auto;padding:34px 20px 10px;text-align:center}
+.head h1{color:var(--blue);font-size:clamp(1.6rem,4vw,2.4rem)}
+.head p{color:var(--sub)}
+.head .snow{letter-spacing:.5em;color:var(--blue);opacity:.5}
+.pills{max-width:1200px;margin:10px auto 0;padding:6px 20px;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none}
+.pills::-webkit-scrollbar{display:none}
+.pill{flex:0 0 auto;border:2px solid var(--blue);background:#fff;color:var(--blue);font:inherit;font-weight:700;padding:6px 18px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.pill:hover{background:var(--ice)}
+.pill.active{background:var(--blue);color:#fff}
+.grid{max-width:1200px;margin:0 auto;padding:16px 20px 60px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border:2px solid var(--ink);border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 var(--blue);display:flex;flex-direction:column}
+.cover{position:relative;aspect-ratio:16/10;background:linear-gradient(160deg,#cfe0f1,#8fb2d4)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.badge{position:absolute;left:10px;top:10px;background:var(--orange);color:#fff;font-weight:700;font-size:.8rem;padding:2px 12px;border-radius:6px}
+.body{padding:16px;flex:1}
+.body h2{font-size:1.1rem;color:var(--blue);line-height:1.5;margin-bottom:6px}
+.body p{color:var(--sub);font-size:.9rem}
+.meta{margin-top:8px;font-size:.8rem;color:var(--sub)}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px 16px}
+.acts a{border:2px solid var(--blue);border-radius:999px;text-align:center;padding:7px;font-weight:800;font-size:.85rem;color:var(--blue);background:#fff}
+.acts a.primary{background:var(--blue);color:#fff}
+.acts a:hover{background:var(--ice)}.acts a.primary:hover{background:#2c5580}
+.empty{grid-column:1/-1;text-align:center;color:var(--sub);padding:50px 10px}
+footer{border-top:2px solid var(--blue);text-align:center;color:var(--sub);font-size:.8rem;padding:22px 16px}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.brand{font-size:1rem}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="index.html" id="brand">日本報報</a>
+  <div class="nav-r">
+    <a class="home" href="index.html" id="homeLink">返回首頁</a>
+    <select class="lang-sw" id="langSwitch" aria-label="Language">
+      <option value="zh-tw">🌐 繁體中文 (zh-TW)</option>
+      <option value="en">🌐 English (en)</option>
+      <option value="ja">🌐 日本語 (ja)</option>
+    </select>
+  </div>
+</div></nav>
+
+<header class="head">
+  <div class="snow">❄ ⛰ ❄</div>
+  <h1 id="title"></h1>
+  <p id="sub"></p>
+</header>
+
+<div class="pills" id="pills"></div>
+<main class="grid" id="grid"></main>
+<footer id="footer"></footer>
+
+<script src="data/articles/articles_zh-tw.js"></script>
+<script src="data/articles/articles_en.js"></script>
+<script src="data/articles/articles_ja.js"></script>
+<script src="js/lang_switcher.js"></script>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var cat="all";
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+  // 各語系聯盟網址：保留 Allianceid / SID / trip_sub3
+  var HOST={ "zh-tw":{base:"https://tw.trip.com/",extra:""},
+             "en":{base:"https://www.trip.com/",extra:"&locale=en-US"},
+             "ja":{base:"https://jp.trip.com/",extra:"&locale=ja-JP"} };
+  function affUrl(lang){
+    var h=HOST[lang];
+    var target=h.base+"hotels/";
+    return h.base+"?Allianceid=9507030&SID=325761227&trip_sub1="+encodeURIComponent("日本報報_深度文章_"+lang)+"&trip_sub3=D20905663"+h.extra+"&redirect_url="+encodeURIComponent(target);
+  }
+
+  function renderPills(list){
+    var cats=[];list.forEach(function(a){if(cats.indexOf(a.category)<0)cats.push(a.category)});
+    if(cats.indexOf(cat)<0)cat="all";
+    $("pills").innerHTML='<button class="pill'+(cat==="all"?' active':'')+'" data-cat="all">'+esc(TabiLang.t("filterAll"))+'</button>'+
+      cats.map(function(c){return '<button class="pill'+(cat===c?' active':'')+'" data-cat="'+c+'">'+esc(TabiLang.cat(c))+'</button>'}).join("");
+  }
+  function render(){
+    var lang=TabiLang.get();
+    // 嚴格語系隔離：只取目前語言的文章
+    var list=window.articlesDatabase.filter(function(a){return a.lang===lang});
+    renderPills(list);
+    var shown=list.filter(function(a){return cat==="all"||a.category===cat});
+    $("title").textContent=TabiLang.t("articlesTitle");
+    $("sub").textContent=TabiLang.t("articlesSub");
+    $("brand").textContent=TabiLang.t("siteName");
+    $("homeLink").textContent=TabiLang.t("home");
+    $("footer").textContent=TabiLang.t("footer");
+    $("langSwitch").value=lang;
+    document.title=TabiLang.t("siteName")+" ｜ "+TabiLang.t("articlesTitle");
+    if(!shown.length){$("grid").innerHTML='<div class="empty">❄️ '+esc(TabiLang.t("empty"))+'</div>';return;}
+    var aff=affUrl(lang);
+    $("grid").innerHTML=shown.map(function(a){
+      return '<article class="card"><div class="cover">'+
+        (a.cover?'<img src="'+esc(a.cover)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">':'')+
+        '<span class="badge">'+esc(TabiLang.cat(a.category))+'</span></div>'+
+        '<div class="body"><h2>'+esc(a.title)+'</h2><p>'+esc(a.excerpt)+'</p>'+
+        '<div class="meta">⏱ '+(a.readTime||"")+' '+esc(TabiLang.t("min"))+(a.date?' ｜ '+esc(a.date):'')+'</div></div>'+
+        '<div class="acts"><a class="primary" href="'+esc(a.link)+'">'+esc(TabiLang.t("read"))+'</a>'+
+        '<a href="'+esc(aff)+'" target="_blank" rel="noopener sponsored">🎟️ '+esc(TabiLang.t("book"))+'</a></div></article>';
+    }).join("");
+  }
+
+  $("langSwitch").addEventListener("change",function(){cat="all";TabiLang.set(this.value)});
+  $("pills").addEventListener("click",function(e){
+    var b=e.target.closest(".pill");if(!b)return;cat=b.dataset.cat;render();
+  });
+  TabiLang.onChange(render);
+  TabiLang.init();
+})();
+</script>
+</body>
+</html>
+
