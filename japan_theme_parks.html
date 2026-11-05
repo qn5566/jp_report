@@ -64,34 +64,103 @@ a{color:inherit;text-decoration:none}
   .info-grid{grid-template-columns:1fr}
 }
 
-/* Guide reader */
-.guide{position:fixed;inset:0;z-index:1000;background:var(--bg);color:var(--ink);overflow-y:auto;transform:translateX(100%);visibility:hidden;transition:transform .45s ease,visibility 0s .45s;scroll-behavior:smooth}
+/* Guide reader — Zakkacho MOOK */
+.guide{position:fixed;inset:0;z-index:1000;color:var(--ink);overflow-y:auto;transform:translateX(100%);visibility:hidden;transition:transform .45s ease,visibility 0s .45s;scroll-behavior:smooth;
+ background:#F7F3EF;background-image:radial-gradient(rgba(150,130,110,.09) 1px,transparent 1.5px),radial-gradient(rgba(150,130,110,.06) 1px,transparent 1.5px);background-size:22px 22px,13px 13px;background-position:0 0,6px 7px}
 .guide.open{transform:none;visibility:visible;transition:transform .45s ease}
-.guide-top{position:sticky;top:0;z-index:5;background:rgba(247,243,239,.96);backdrop-filter:blur(6px);border-bottom:2px solid var(--ink);padding:10px 16px}
+.hand,.stamp,.sticky,.polaroid figcaption,.rail time{font-family:"Hannotate TC","Yuppy TC","Kaiti TC","Segoe Print","Comic Sans MS",cursive}
+.guide-wrap{z-index:2}
+/* particles */
+.dg-particles{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.dg-p{position:absolute;top:0;pointer-events:none;animation:dgFall var(--dur) linear var(--delay) infinite;will-change:transform,opacity}
+.dg-p svg{display:block;animation:dgSway var(--sway) ease-in-out infinite alternate}
+@keyframes dgFall{0%{transform:translate(0,-6vh) rotate(0);opacity:0}10%{opacity:var(--o)}82%{opacity:var(--o)}100%{transform:translate(var(--dx),108vh) rotate(var(--rot));opacity:0}}
+@keyframes dgSway{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+@media (prefers-reduced-motion:reduce){.dg-p,.dg-p svg{animation:none}.dg-p{display:none}}
+/* side doodles */
+.dg-side{position:fixed;top:96px;bottom:10px;width:calc((100vw - 1000px)/2 - 14px);max-width:240px;height:calc(100vh - 110px);opacity:.5;pointer-events:none;z-index:1;display:none}
+.dg-side-l{left:6px}.dg-side-r{right:6px}
+@media(min-width:1260px){.dg-side{display:block}}
+/* top bar */
+.guide-top{position:sticky;top:0;z-index:5;background:rgba(247,243,239,.96);backdrop-filter:blur(6px);border-bottom:2px dashed #b9a99a;padding:10px 16px}
 .guide-bar{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.guide-bar strong{font-size:1rem}
-.guide-close{border:2px solid var(--ink);background:var(--pink);font:inherit;font-weight:800;padding:6px 16px;border-radius:999px;cursor:pointer;white-space:nowrap}
-.anchor-pills{max-width:1000px;margin:8px auto 0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.guide-close{border:2px solid var(--ink);background:var(--pink);font:inherit;font-weight:800;padding:6px 16px;border-radius:999px;cursor:pointer;white-space:nowrap;box-shadow:2px 2px 0 var(--ink)}
+.guide-close:hover{transform:rotate(-2deg) scale(1.05)}
+.anchor-pills{max-width:1000px;margin:8px auto 0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:4px 2px 6px}
 .anchor-pills::-webkit-scrollbar{display:none}
-.anchor-pills a{flex:0 0 auto;border:2px solid var(--ink);background:#fff;border-radius:999px;padding:5px 14px;font-weight:700;font-size:.88rem;white-space:nowrap}
+.anchor-pills a{flex:0 0 auto;border:2px solid var(--ink);background:#fff;border-radius:999px;padding:5px 14px 5px 10px;font-weight:700;font-size:.88rem;white-space:nowrap;display:flex;align-items:center;gap:4px;transition:.2s}
+.anchor-pills a i{font-style:normal;font-size:1.1rem}
 .anchor-pills a:hover{background:var(--yellow)}
-.guide-wrap{max-width:1000px;margin:0 auto;padding:28px 18px 80px}
-.guide-title{text-align:center;margin-bottom:30px}
-.guide-title small{display:inline-block;background:var(--yellow);padding:3px 14px;border-radius:6px;transform:rotate(-2deg);font-weight:700}
+.anchor-pills a.active{background:var(--pink);box-shadow:2px 2px 0 var(--ink);animation:stampJump .5s ease}
+.anchor-pills a.active i{animation:stampJump .5s ease}
+@keyframes stampJump{0%{transform:scale(1) rotate(0)}35%{transform:scale(1.28) rotate(-10deg)}65%{transform:scale(.94) rotate(6deg)}100%{transform:scale(1) rotate(0)}}
+/* wrap */
+.guide-wrap{position:relative;max-width:1000px;margin:0 auto;padding:34px 18px 90px}
+.tape{position:absolute;width:110px;height:28px;background:repeating-linear-gradient(45deg,rgba(255,229,154,.85) 0 8px,rgba(255,229,154,.6) 8px 16px);box-shadow:0 1px 3px rgba(0,0,0,.15);z-index:3}
+.tape-tl{left:-8px;top:14px;transform:rotate(-35deg)}.tape-tr{right:-8px;top:14px;transform:rotate(35deg);background:repeating-linear-gradient(45deg,rgba(183,225,209,.9) 0 8px,rgba(183,225,209,.6) 8px 16px)}
+.guide-title{text-align:center;margin-bottom:36px}
+.ribbon{width:min(360px,80%);display:block;margin:0 auto 10px}
+.guide-title small{display:inline-block;background:var(--yellow);padding:3px 14px;border-radius:6px;transform:rotate(-2deg);font-weight:700;border:1.5px solid var(--ink)}
 .guide-title h2{font-size:clamp(1.6rem,4vw,2.5rem);margin-top:10px}
-.g-sec{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:22px;margin-bottom:26px;box-shadow:5px 5px 0 var(--ink);scroll-margin-top:110px}
-.g-sec h3{font-size:1.35rem;margin-bottom:6px}
-.g-sec h3 span{display:inline-block;padding:2px 12px;border-radius:6px;margin-right:8px;font-size:.9rem;border:1.5px solid var(--ink)}
+.hand{color:#8a6f5a;margin-top:4px;font-size:1.05rem}
+/* cards */
+.g-card{position:relative;margin:0 0 40px;filter:drop-shadow(4px 5px 0 rgba(17,17,17,.85));scroll-margin-top:130px;transform:rotate(-.5deg)}
+.g-card:nth-of-type(even){transform:rotate(.5deg)}
+.g-card .g-sec{background:#fff;padding:34px 24px 24px;clip-path:polygon(0 1.5%,4% 0,9% 1.2%,15% .2%,22% 1.4%,30% 0,38% 1.1%,46% .1%,55% 1.3%,63% 0,72% 1.2%,80% .2%,89% 1.4%,95% 0,100% 1%,100% 98.5%,94% 100%,86% 98.8%,78% 100%,70% 98.6%,61% 100%,52% 98.9%,43% 100%,34% 98.7%,25% 100%,16% 98.8%,8% 100%,0 98.6%)}
+.g-card:nth-of-type(even) .g-sec{clip-path:polygon(0 .8%,6% 1.6%,13% 0,21% 1.2%,29% .2%,37% 1.5%,45% 0,54% 1.2%,62% .3%,71% 1.6%,79% 0,88% 1.1%,95% .4%,100% 1.4%,100% 99%,92% 98.4%,84% 100%,75% 98.7%,66% 100%,57% 98.5%,48% 100%,39% 98.8%,30% 100%,20% 98.5%,11% 100%,4% 98.8%,0 100%)}
+.washi{position:absolute;left:50%;top:-14px;width:150px;height:30px;transform:translateX(-50%) rotate(-2deg);z-index:4;box-shadow:0 1px 3px rgba(0,0,0,.18);background:repeating-linear-gradient(135deg,var(--tape) 0 10px,color-mix(in srgb,var(--tape) 70%,#fff) 10px 20px)}
+.c-pink{--tape:#FFB5C1}.c-yellow{--tape:#FFE59A}.c-mint{--tape:#B7E1D1}.c-sky{--tape:#A9D3FF}
+.clip{position:absolute;right:26px;top:-18px;width:20px;height:46px;z-index:5;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 46'%3E%3Cpath d='M6 40V10a5 5 0 0 1 10 0v26a3 3 0 0 1-6 0V14' fill='none' stroke='%239aa3ad' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.g-sec h3{font-size:1.3rem;margin-bottom:10px;display:flex;align-items:center;gap:14px;line-height:1.4}
+.stamp{flex:0 0 auto;position:relative;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;font-weight:900;transform:rotate(-9deg);background:var(--tape);color:var(--ink);border:3px double var(--ink)}
+.stamp::after{content:"";position:absolute;inset:-6px;border:2px dashed var(--ink);border-radius:50%;opacity:.5}
 .g-sec h4{margin:16px 0 6px;font-size:1.05rem;border-left:6px solid var(--yellow);padding-left:10px}
-.g-sec ul{padding-left:1.2em}.g-sec li{margin:6px 0}
 .g-sec p{margin:6px 0}
-.route{background:var(--bg);border-radius:12px;padding:12px 16px;margin:10px 0;border:1.5px dashed var(--ink)}
-.route.a{border-color:#4a9b82}.route.b{border-color:#d9788a}
+.hl{background:linear-gradient(transparent 55%,var(--yellow) 55%)}
+ul.deco{list-style:none;padding:0}
+ul.deco li{margin:10px 0;padding-left:30px;position:relative}
+ul.deco li::before{content:"✦";position:absolute;left:4px;top:0;color:var(--orange);font-size:1.2rem}
+/* sticky notes */
+.sticky{position:relative;margin:18px 6px 14px;padding:16px 18px 14px 56px;background:#FFF3B0;box-shadow:3px 4px 0 rgba(17,17,17,.2);transform:rotate(-1deg);font-size:.98rem;clip-path:polygon(0 0,100% 0,100% 85%,92% 100%,0 100%)}
+.sticky.tip{background:#D9F0E6;transform:rotate(1deg)}
+.sticky em{position:absolute;left:12px;top:10px;font-style:normal;font-size:1.9rem;transform:rotate(-12deg)}
+.sticky.warn{border-left:6px solid #e0605a}
+/* polaroid */
+.polaroids{display:flex;justify-content:flex-end;gap:20px;margin-top:10px}
+.polaroid{position:relative;width:150px;background:#fff;padding:8px 8px 6px;border:1px solid #ddd;box-shadow:3px 4px 8px rgba(0,0,0,.22);transform:rotate(3deg)}
+.polaroid.p2{transform:rotate(-3deg)}.polaroid.p3{transform:rotate(2deg)}
+.polaroid svg{display:block;width:100%}
+.polaroid figcaption{text-align:center;font-size:.9rem;padding-top:4px}
+.pin{position:absolute;left:50%;top:-8px;width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8a8a,#d33);box-shadow:0 2px 3px rgba(0,0,0,.35);transform:translateX(-50%)}
+/* ruler */
+.ruler{background:#FFFBEA;border:2px solid var(--ink);border-radius:12px;padding:10px 12px 6px}
+.r-row{display:grid;grid-template-columns:130px 1fr;grid-template-areas:"cap track" "cap rides";column-gap:12px;padding:8px 0;border-bottom:1px dashed #cdbfa8;align-items:center}
+.r-row:last-of-type{border:0}
+.r-cap{grid-area:cap}.r-cap b{display:block}.r-cap small{color:#777}
+.r-track{grid-area:track;position:relative;height:30px;border-bottom:3px solid var(--ink);background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 10%);background-size:100% 10px;background-repeat:no-repeat;background-position:bottom}
+.thumb{position:absolute;bottom:3px;font-size:1.5rem;transform:translateX(-50%)}
+.r-rides{grid-area:rides;font-size:.92rem}
+.r-scale{display:flex;justify-content:space-between;font-family:"Segoe Print","Comic Sans MS",cursive;font-size:.75rem;color:#777;padding:2px 0 4px 142px}
+/* routes */
+.route-box{margin:12px 0;padding:14px 16px;background:var(--bg);border:2px dashed var(--ink);border-radius:14px}
+.route-box.a{border-color:#4a9b82}.route-box.b{border-color:#d9788a}
+.route-head{font-weight:800;margin-bottom:8px}.route-head span{background:var(--yellow);padding:1px 10px;border-radius:6px;border:1.5px solid var(--ink)}
+ol.rail{list-style:none;padding:0 0 0 0;margin:0;position:relative}
+ol.rail::before{content:"";position:absolute;left:19px;top:12px;bottom:12px;width:8px;background:repeating-linear-gradient(180deg,#8a7a6a 0 3px,transparent 3px 9px);border-left:2px solid #8a7a6a;border-right:2px solid #8a7a6a;opacity:.7}
+ol.rail li{position:relative;padding:8px 0 8px 58px;min-height:44px}
+ol.rail li i{position:absolute;left:0;top:4px;width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--ink);display:grid;place-items:center;font-style:normal;font-size:1.3rem;box-shadow:2px 2px 0 rgba(17,17,17,.3)}
+ol.rail time{display:inline-block;background:var(--yellow);border-radius:4px;padding:0 8px;margin-right:8px;font-size:.88rem;transform:rotate(-2deg)}
 .g-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-.g-cta a{border:2px solid var(--ink);border-radius:999px;padding:9px 20px;font-weight:800;background:var(--sky)}
+.g-cta a{border:2px solid var(--ink);border-radius:999px;padding:9px 20px;font-weight:800;background:var(--sky);box-shadow:3px 3px 0 var(--ink);transition:.15s}
+.g-cta a:hover{transform:translate(-1px,-2px) rotate(-1deg)}
 .g-cta a.pk{background:var(--pink)}.g-cta a.ye{background:var(--yellow)}
 .g-note{font-size:.8rem;color:#555;text-align:center}
 body.lock{overflow:hidden}
+@media(max-width:640px){
+ .g-sec h3{font-size:1.1rem}.stamp{width:46px;height:46px;font-size:1.2rem}
+ .r-row{grid-template-columns:1fr;grid-template-areas:"cap" "track" "rides"}
+ .r-scale{padding-left:0}.g-card .g-sec{padding:30px 16px 20px}.polaroids{justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -141,38 +210,134 @@ body.lock{overflow:hidden}
   </aside>
 </main>
 
-<div class="guide" id="disneyGuide" role="dialog" aria-modal="true" aria-label="東京迪士尼樂園深度攻略特刊">
+<div class="guide disney-guide-modal" id="disneyGuide" role="dialog" aria-modal="true" aria-label="東京迪士尼樂園深度攻略特刊">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="s-mickey" viewBox="0 0 24 24"><circle cx="12" cy="15" r="7" fill="currentColor"/><circle cx="5" cy="7" r="4.5" fill="currentColor"/><circle cx="19" cy="7" r="4.5" fill="currentColor"/></symbol>
+<symbol id="s-minnie" viewBox="0 0 24 24"><circle cx="12" cy="15" r="7" fill="currentColor"/><circle cx="5" cy="8" r="4.2" fill="currentColor"/><circle cx="19" cy="8" r="4.2" fill="currentColor"/><path d="M12 5 7 1.5v7zM12 5l5-3.5v7z" fill="currentColor"/><circle cx="12" cy="5" r="1.7" fill="#fff" opacity=".7"/></symbol>
+<symbol id="s-duffy" viewBox="0 0 24 24"><circle cx="12" cy="14" r="8.5" fill="currentColor"/><circle cx="6" cy="6.5" r="3.4" fill="currentColor"/><circle cx="18" cy="6.5" r="3.4" fill="currentColor"/><circle cx="12" cy="16.5" r="3.2" fill="#fff" opacity=".5"/></symbol>
+<symbol id="s-star" viewBox="0 0 24 24"><path d="M12 1l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z" fill="currentColor"/></symbol>
+</defs></svg>
+<div class="dg-particles" id="dgParticles" aria-hidden="true"></div>
+
+<!-- 兩側手繪線稿（寬螢幕顯示） -->
+<svg class="dg-side dg-side-l" viewBox="0 0 220 520" aria-hidden="true"><g fill="none" stroke="#9a8a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 360V250l12-26 12 26v110M120 360V190l14-44 14 44v170M52 360V300l10-20 10 20M170 360V270l10-24 10 24v90"/><path d="M134 146V118M134 118l14 6-14 6"/><path d="M40 360h160M118 360v-34a10 10 0 0 1 20 0v34"/><path d="M82 224V204"/><path d="M62 280V262M180 246V230"/>
+<path d="M20 90q10-18 28-10 8-16 28-6 18-4 22 14 12 2 12 14H14q-4-10 6-12z" stroke-dasharray="1 5"/><path d="M130 60q8-14 22-8 8-12 24-4 14 0 18 12H124q-2-8 6-0z"/>
+<path d="M30 430l6 12 13 2-10 9 3 13-12-6-12 6 3-13-10-9 13-2z"/><path d="M170 420l4 8 9 1-7 6 2 9-8-4-8 4 2-9-7-6 9-1z"/>
+<g transform="translate(30 470)"><circle cx="10" cy="6" r="6"/><path d="M10 12v22M10 18l-8 10M10 18l8 8M10 34l-6 16M10 34l8 16"/></g><g transform="translate(100 470)"><circle cx="10" cy="6" r="5"/><path d="M10 11v18M10 16l-7 8M10 16l7 6M10 29l-5 14M10 29l7 14"/></g></g></svg>
+<svg class="dg-side dg-side-r" viewBox="0 0 220 520" aria-hidden="true"><g fill="none" stroke="#9a8a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="120" cy="150" r="9"/><path d="M110 144q-8-6-4-14M130 144q8-6 4-14"/><path d="M120 159l-4 28 4 10 4-10z"/><path d="M116 166 70 130q-14 14 6 42zM124 166l46-34q14 14-6 42z"/><path d="M128 172l36 24"/><path d="M168 190l4 8 9 1-7 6 2 9-8-4-8 4 2-9-7-6 9-1z"/>
+<path d="M104 200q-40 30-70 20t-20 50" stroke-dasharray="2 7"/><path d="M40 70q8-14 24-8 8-12 24-4 14 0 18 12H34q-2-8 6 0z"/>
+<path d="M30 400l6 12 13 2-10 9 3 13-12-6-12 6 3-13-10-9 13-2z"/><path d="M180 360l4 8 9 1-7 6 2 9-8-4-8 4 2-9-7-6 9-1z"/>
+<path d="M30 300q70-26 160 0v50q-80-24-160 0z" fill="#fff" fill-opacity=".5"/><text x="46" y="334" font-size="15" fill="#9a8a7a" stroke="none" font-family="cursive" transform="rotate(4 100 330)">Happiest Celebration</text></g></svg>
+
 <div class="guide-top"><div class="guide-bar"><strong>📖 東京迪士尼樂園・極致避坑特刊</strong><button class="guide-close" id="guideClose">✕ 關閉特刊</button></div>
 <nav class="anchor-pills">
-<a href="#g1">👶 帶娃推車與如廁</a><a href="#g2">📏 身高分級與雙路線</a><a href="#g3">🍲 冬季暖胃熱湯餐廳</a><a href="#g4">📱 APP 零課金 vs 課金雙線</a><a href="#g5">🎂 生日特權與慶祝活動</a><a href="#g6">🚌 交通與海外刷卡指南</a>
+<a href="#g1" data-i="1"><i>🍼</i>帶娃推車與如廁</a><a href="#g2" data-i="2"><i>📏</i>身高分級與雙路線</a><a href="#g3" data-i="3"><i>🍲</i>冬季暖胃熱湯餐廳</a><a href="#g4" data-i="4"><i>📱</i>APP 零課金 vs 課金雙線</a><a href="#g5" data-i="5"><i>🎂</i>生日特權與慶祝活動</a><a href="#g6" data-i="6"><i>🚌</i>交通與海外刷卡指南</a>
 </nav></div>
+
 <div class="guide-wrap">
-<div class="guide-title"><small>Tokyo Disney Resort In-Depth Guide</small><h2>東京迪士尼樂園 深度攻略特刊</h2></div>
-<section class="g-sec" id="g1"><h3><span style="background:var(--mint)">01</span>一打一單親爸媽／帶娃排隊與如廁潛規則</h3><h4>排隊中途急需上洗手間</h4><p>切勿默默離隊。向隊伍旁工作人員（CM）說「<b>トイレです（To-i-re desu）</b>」，領取「<b>合流利用券（排隊保留單）</b>」，上完廁所後由專用通道返回原排隊順序，免重新排隊。</p>
+<span class="tape tape-tl"></span><span class="tape tape-tr"></span>
+<div class="guide-title">
+  <svg class="ribbon" viewBox="0 0 360 54" aria-hidden="true"><path d="M20 8h320l-14 19 14 19H20l14-19z" fill="#FFB5C1" stroke="#111" stroke-width="2"/><path d="M20 8 4 14l16 13M340 8l16 6-16 13" fill="#e99aa8" stroke="#111" stroke-width="2"/><text x="180" y="34" text-anchor="middle" font-size="19" font-family="'Hannotate TC','Segoe Print','Comic Sans MS',cursive" fill="#111">✦ Happiest Celebration! ✦</text></svg>
+  <small>Tokyo Disney Resort In-Depth Guide</small>
+  <h2>東京迪士尼樂園 深度攻略特刊</h2>
+  <p class="hand">— 手帳版 · 帶娃也能玩得開心的魔法筆記 —</p>
+</div>
+
+<!-- 01 -->
+<div class="g-card c-pink" id="g1"><span class="washi"></span><span class="clip"></span>
+<section class="g-sec"><h3><b class="stamp">01</b>一打一單親爸媽／帶娃排隊與如廁潛規則</h3>
+<div class="sticky warn"><em>🖐️</em><b>⚠️ 排隊中急需上洗手間？</b><br>切勿默默離隊！向隊伍旁工作人員（CM）說「<b class="hl">トイレです（To-i-re desu）</b>」，領取「<b class="hl">合流利用券（排隊保留單）</b>」，上完廁所後由專用通道返回原排隊順序，免重新排隊。</div>
 <h4>乘車限制</h4><p>1 位大人無法同時抱 2 位未滿 3 歲幼兒乘車。帶雙寶家長建議優先選擇馬克吐溫號、小小世界等大船大車型設施。</p>
-<h4>夫妻同行必備「交代利用（Rider Switch）」</h4><p>一人排隊玩刺激設施，另一人顧娃；玩出後換手，第二人走快速通道免排隊直接玩。</p></section>
-<section class="g-sec" id="g2"><h3><span style="background:var(--yellow)">02</span>身高門檻、分齡適玩與一日排程雙路線</h3><h4>身高限制標竿</h4><ul>
-<li><b>無身高限制（能抱或能坐穩）：</b>小小世界、小熊維尼獵蜜記、旋轉木馬、小飛象、馬克吐溫號、西部沿河鐵路。</li>
-<li><b>需能自行坐穩（不可全程抱腿上）：</b>美女與野獸。</li>
-<li><b>需滿 90cm：</b>飛濺山、艾芝迷你雲霄飛車。</li>
-<li><b>需滿 102cm：</b>巨雷山、星際旅行。</li>
-<li><b>需滿 117cm~120cm（國小生通殺）：</b>太空山。</li></ul>
-<div class="route a"><b>🌱 路線 A（0~3 歲幼兒漫遊線）</b><br>卡通城軟膠地墊散策拍照 → 嬰兒中心裝 70℃ 純淨熱水 → 小小世界（冷氣音樂） → 紅心女王宴會廳喝暖湯 → 馬克吐溫號推車吹風午睡 → 世界市集退場避開晚間人潮。</div>
-<div class="route b"><b>🔥 路線 B（活力國小生挑戰線）</b><br>晨間衝巨雷山 → 巴斯光年射擊競技 → 星際旅行 → 飛濺山落水俯衝 → 幽靈公館 → 中國航海家吃熱拉麵 → 夜間煙火二刷熱門設施。</div><div class="g-cta"><a class="" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_樂園門票&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park" target="_blank" rel="noopener sponsored">🎟️ 預訂迪士尼門票</a></div></section>
-<section class="g-sec" id="g3"><h3><span style="background:var(--pink)">03</span>冬天防寒暖胃餐廳與熱水補給站</h3><ul>
+<div class="sticky tip"><em>💡</em><b>夫妻同行必備「交代利用（Rider Switch）」</b><br>一人排隊玩刺激設施，另一人顧娃；玩出後換手，第二人走快速通道免排隊直接玩。</div>
+<div class="polaroids"><figure class="polaroid p1"><span class="pin"></span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" fill="#FFF3D6"/><g fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"><path d="M30 30h40l8 28H34z" fill="#B7E1D1"/><path d="M30 30q-4-10 8-12M34 58h44"/><circle cx="42" cy="68" r="7" fill="#fff"/><circle cx="72" cy="68" r="7" fill="#fff"/><path d="M78 58l12-8"/></g><text x="86" y="26" font-size="12">✦</text></svg><figcaption>推車也能排隊 🍼</figcaption></figure></div>
+</section></div>
+
+<!-- 02 -->
+<div class="g-card c-yellow" id="g2"><span class="washi"></span><span class="clip"></span>
+<section class="g-sec"><h3><b class="stamp">02</b>身高門檻、分齡適玩與一日排程雙路線</h3>
+<h4>📏 身高量尺</h4>
+<div class="ruler">
+ <div class="r-row"><div class="r-cap"><b>無身高限制</b><small>能抱或能坐穩</small></div><div class="r-track"><span class="thumb" style="left:2%">👶</span></div><div class="r-rides">小小世界、小熊維尼獵蜜記、旋轉木馬、小飛象、馬克吐溫號、西部沿河鐵路</div></div>
+ <div class="r-row"><div class="r-cap"><b>需能自行坐穩</b><small>不可全程抱腿上</small></div><div class="r-track"><span class="thumb" style="left:20%">🧒</span></div><div class="r-rides">美女與野獸</div></div>
+ <div class="r-row"><div class="r-cap"><b>滿 90cm</b><small>幼稚園挑戰</small></div><div class="r-track"><span class="thumb" style="left:50%">🧒</span></div><div class="r-rides">飛濺山、艾芝迷你雲霄飛車 🎢</div></div>
+ <div class="r-row"><div class="r-cap"><b>滿 102cm</b><small>小學低年級</small></div><div class="r-track"><span class="thumb" style="left:72%">🧑‍🎓</span></div><div class="r-rides">巨雷山、星際旅行 🎢</div></div>
+ <div class="r-row"><div class="r-cap"><b>滿 117~120cm</b><small>國小生通殺</small></div><div class="r-track"><span class="thumb" style="left:92%">🧑‍🎓</span></div><div class="r-rides">太空山 🚀</div></div>
+ <div class="r-scale"><span>0</span><span>60</span><span>90</span><span>102</span><span>120cm</span></div>
+</div>
+<h4>🚂 一日排程雙路線</h4>
+<div class="route-box a"><div class="route-head"><span>🌱 路線 A</span> 0~3 歲幼兒漫遊線</div>
+<ol class="rail">
+<li><i>🎨</i><time>上午</time>卡通城軟膠地墊散策拍照</li>
+<li><i>🍼</i><time>上午</time>嬰兒中心裝 70℃ 純淨熱水</li>
+<li><i>🌍</i><time>中午前</time>小小世界（冷氣音樂）</li>
+<li><i>🍲</i><time>午餐</time>紅心女王宴會廳喝暖湯</li>
+<li><i>🚢</i><time>午睡</time>馬克吐溫號推車吹風午睡</li>
+<li><i>🛍️</i><time>傍晚</time>世界市集退場避開晚間人潮</li></ol>
+<p class="hand">☆ 小提醒：寶寶睡著就慢慢逛，別急！</p></div>
+<div class="route-box b"><div class="route-head"><span>🔥 路線 B</span> 活力國小生挑戰線</div>
+<ol class="rail">
+<li><i>⚡</i><time>開園</time>晨間衝巨雷山</li>
+<li><i>🔫</i><time>上午</time>巴斯光年射擊競技</li>
+<li><i>🚀</i><time>上午</time>星際旅行</li>
+<li><i>💦</i><time>午前</time>飛濺山落水俯衝</li>
+<li><i>👻</i><time>午後</time>幽靈公館</li>
+<li><i>🍜</i><time>午餐</time>中國航海家吃熱拉麵</li>
+<li><i>🎆</i><time>夜間</time>夜間煙火二刷熱門設施</li></ol>
+<p class="hand">☆ 小提醒：熱門設施先衝，煙火後再二刷！</p></div>
+<div class="g-cta"><a href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_樂園門票&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park" target="_blank" rel="noopener sponsored">🎟️ 預訂迪士尼門票</a></div>
+</section></div>
+
+<!-- 03 -->
+<div class="g-card c-mint" id="g3"><span class="washi"></span><span class="clip"></span>
+<section class="g-sec"><h3><b class="stamp">03</b>冬天防寒暖胃餐廳與熱水補給站</h3>
+<ul class="deco">
 <li><b>中國航海家餐廳（探險樂園）：</b>全園唯一熱拉麵與角煮湯麵，湯頭可請店員提供熱水調整濃淡，無須預約。</li>
 <li><b>北齋餐廳（世界市集）：</b>日式和食天婦羅熱烏龍麵、茶碗蒸，附低幼兒童餐。需提前 1 個月於官方 App 預約 Priority Seating。</li>
 <li><b>紅心女王宴會廳（夢幻樂園）：</b>愛心麵包丁巧達熱濃湯與軟嫩漢堡排，空間寬敞推車可入桌旁。</li>
-<li><b>園區兩大嬰兒中心（Baby Center）：</b>提供恆溫 70℃ 以上調乳純熱水、微波爐加熱副食品，自備保溫瓶可免費注水取暖。</li></ul></section>
-<section class="g-sec" id="g4"><h3><span style="background:var(--sky)">04</span>APP 實戰排程決策樹（零課金平民線 vs 頂配快速通關線）</h3><div class="route a"><b>💸 零課金平民線</b><br>07:30 抵達安檢門排隊開園第一批放行 → 入園步兵衝「美女與野獸」（等候約 50 分鐘），手機同步搶抽 40 週年免費優先通行證「巨雷山」 → 14:00 日間大遊行開演時發動「人潮轉移術」直衝小熊維尼（排隊驟降至 35 分鐘） → 20:00 煙火散場衝刺二刷巨雷山。</div>
-<div class="route b"><b>👑 頂配快速通關線</b><br>入園三指連彈（買美女與野獸 DPA + 抽小熊維尼免費券 + 買日間大遊行專屬前排席 DPA） → 全天排隊不超過 15 分鐘，中午在鑽石馬蹄餐廳看秀吃排餐。</div><div class="g-cta"><a class="" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_樂園門票&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park" target="_blank" rel="noopener sponsored">🎟️ 門票・快速通關預訂</a></div></section>
-<section class="g-sec" id="g5"><h3><span style="background:var(--pink)">05</span>小女孩公主變裝與生日特權驚喜</h3><ul>
-<li><b>免費生日貼紙魔法：</b>向任何工作人員說「<b>バースデーシールください</b>」，手繪壽星名字貼在胸前或推車上。路程中全體人員祝賀、遊行明星揮手、旋轉杯廣播壽星姓名，偶遇清潔員地面掃帚米奇水畫。</li>
+<li><b>園區兩大嬰兒中心（Baby Center）：</b>提供恆溫 70℃ 以上調乳純熱水、微波爐加熱副食品，自備保溫瓶可免費注水取暖。</li></ul>
+<div class="polaroids"><figure class="polaroid p2"><span class="pin"></span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" fill="#FFF3D6"/><g fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"><path d="M22 44h76a38 30 0 0 1-76 0z" fill="#FFE59A"/><path d="M40 36q-6-8 0-14M60 36q-6-8 0-14M80 36q-6-8 0-14" stroke="#e28743"/><path d="M96 20 62 52"/></g></svg><figcaption>熱呼呼拉麵 🍜</figcaption></figure></div>
+</section></div>
+
+<!-- 04 -->
+<div class="g-card c-sky" id="g4"><span class="washi"></span><span class="clip"></span>
+<section class="g-sec"><h3><b class="stamp">04</b>APP 實戰排程決策樹（零課金平民線 vs 頂配快速通關線）</h3>
+<div class="route-box a"><div class="route-head"><span>💸 零課金平民線</span></div>
+<ol class="rail">
+<li><i>🚪</i><time>07:30</time>抵達安檢門排隊，開園第一批放行</li>
+<li><i>👣</i><time>開園</time>入園步兵衝「美女與野獸」（等候約 50 分鐘），手機同步搶抽 40 週年免費優先通行證「巨雷山」</li>
+<li><i>🎠</i><time>14:00</time>日間大遊行開演時發動「人潮轉移術」直衝小熊維尼（排隊驟降至 35 分鐘）</li>
+<li><i>🎆</i><time>20:00</time>煙火散場衝刺二刷巨雷山</li></ol></div>
+<div class="route-box b"><div class="route-head"><span>👑 頂配快速通關線</span></div>
+<ol class="rail">
+<li><i>📱</i><time>入園</time>三指連彈（買美女與野獸 DPA + 抽小熊維尼免費券 + 買日間大遊行專屬前排席 DPA）</li>
+<li><i>⏱️</i><time>全天</time>排隊不超過 15 分鐘</li>
+<li><i>🍽️</i><time>中午</time>在鑽石馬蹄餐廳看秀吃排餐</li></ol></div>
+<div class="g-cta"><a href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_樂園門票&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park" target="_blank" rel="noopener sponsored">🎟️ 門票・快速通關預訂</a></div>
+</section></div>
+
+<!-- 05 -->
+<div class="g-card c-pink" id="g5"><span class="washi"></span><span class="clip"></span>
+<section class="g-sec"><h3><b class="stamp">05</b>小女孩公主變裝與生日特權驚喜</h3>
+<div class="sticky tip"><em>💡</em><b>免費生日貼紙魔法</b><br>向任何工作人員說「<b class="hl">バースデーシールください</b>」，手繪壽星名字貼在胸前或推車上。路程中全體人員祝賀、遊行明星揮手、旋轉杯廣播壽星姓名，偶遇清潔員地面掃帚米奇水畫。</div>
+<ul class="deco">
 <li><b>神仙教母美容院（Bibbidi Bobbidi Boutique）：</b>3 歲至小學女童專屬沙龍，全套公主禮服、專屬彩妝與宣誓證書（提前 1 個月搶訂）。</li>
-<li><b>官方飯店客房慶生佈置（Celebration Set）：</b>房內預先準備官方米奇鮮花束、香檳與插蠟燭的精緻生日蛋糕。</li></ul><div class="g-cta"><a class="pk" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Ftokyo-hotel-detail-995648%2Ftokyo-disneyland-hotel%2F" target="_blank" rel="noopener sponsored">🏨 迪士尼樂園大飯店比價</a><a class="ye" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼周邊飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Furayasu-hotels-list-107769%2F" target="_blank" rel="noopener sponsored">🏩 舞濱周邊飯店比價</a></div></section>
-<section class="g-sec" id="g6"><h3><span style="background:var(--sky)">06</span>交通指南、海外高回饋刷卡與官方連結庫</h3><h4>交通</h4><p>全線搭乘 JR 京葉線至「舞濱站」。南口往右徒步 5 分鐘抵達陸地，往左搭單軌電車至海洋。或搭乘利木津巴士直達門口。</p>
-<h4>信用卡避坑</h4><p>實體刷卡推薦吉鶴卡、富邦 J 卡、玉山熊本熊卡（免 1.5% 海外手續費且享高回饋）；App 內綁定 DPA 優先選擇 Mastercard 或 JCB 預防 3D 驗證擋刷。</p><div class="g-cta"><a class="" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_私人包車&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F" target="_blank" rel="noopener sponsored">🚗 東京私人包車接送</a><a class="ye" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_樂園門票&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park" target="_blank" rel="noopener sponsored">🎟️ 門票預訂</a><a class="pk" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Ftokyo-hotel-detail-995648%2Ftokyo-disneyland-hotel%2F" target="_blank" rel="noopener sponsored">🏨 迪士尼樂園大飯店</a><a class="ye" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼周邊飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Furayasu-hotels-list-107769%2F" target="_blank" rel="noopener sponsored">🏩 舞濱周邊飯店清單</a></div></section>
-<p class="g-note">* 本頁含 Trip.com 聯盟連結，透過連結訂購本站可能獲得分潤，不影響您的價格。</p></div></div>
+<li><b>官方飯店客房慶生佈置（Celebration Set）：</b>房內預先準備官方米奇鮮花束、香檳與插蠟燭的精緻生日蛋糕。</li></ul>
+<div class="polaroids"><figure class="polaroid p3"><span class="pin"></span><svg viewBox="0 0 120 90" aria-hidden="true"><rect width="120" height="90" fill="#FFF3D6"/><g fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"><rect x="30" y="44" width="60" height="30" rx="4" fill="#FFB5C1"/><path d="M30 56q10 8 20 0t20 0 20 0"/><path d="M45 44V30M60 44V26M75 44V30" /><path d="M45 26q-3-4 0-7 3 3 0 7zM60 22q-3-4 0-7 3 3 0 7zM75 26q-3-4 0-7 3 3 0 7z" fill="#FFE59A"/></g></svg><figcaption>生日快樂 🎂</figcaption></figure></div>
+<div class="g-cta"><a class="pk" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Ftokyo-hotel-detail-995648%2Ftokyo-disneyland-hotel%2F" target="_blank" rel="noopener sponsored">🏨 迪士尼樂園大飯店比價</a><a class="ye" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼周邊飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Furayasu-hotels-list-107769%2F" target="_blank" rel="noopener sponsored">🏩 舞濱周邊飯店比價</a></div>
+</section></div>
+
+<!-- 06 -->
+<div class="g-card c-sky" id="g6"><span class="washi"></span><span class="clip"></span>
+<section class="g-sec"><h3><b class="stamp">06</b>交通指南、海外高回饋刷卡與官方連結庫</h3>
+<h4>🚆 交通</h4><p>全線搭乘 JR 京葉線至「舞濱站」。南口往右徒步 5 分鐘抵達陸地，往左搭單軌電車至海洋。或搭乘利木津巴士直達門口。</p>
+<h4>💳 信用卡避坑</h4><p>實體刷卡推薦吉鶴卡、富邦 J 卡、玉山熊本熊卡（免 1.5% 海外手續費且享高回饋）；App 內綁定 DPA 優先選擇 Mastercard 或 JCB 預防 3D 驗證擋刷。</p>
+<div class="g-cta"><a href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_私人包車&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F" target="_blank" rel="noopener sponsored">🚗 東京私人包車接送</a><a class="ye" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_樂園門票&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park" target="_blank" rel="noopener sponsored">🎟️ 門票預訂</a><a class="pk" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Ftokyo-hotel-detail-995648%2Ftokyo-disneyland-hotel%2F" target="_blank" rel="noopener sponsored">🏨 迪士尼樂園大飯店</a><a class="ye" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼周邊飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Furayasu-hotels-list-107769%2F" target="_blank" rel="noopener sponsored">🏩 舞濱周邊飯店清單</a></div>
+</section></div>
+
+<p class="g-note">* 本頁含 Trip.com 聯盟連結，透過連結訂購本站可能獲得分潤，不影響您的價格。</p>
+</div></div>
 <script>
 var IMG={castle:"photo-1542640244-7e672d6cef4e",coaster:"photo-1536768139911-e290a59011e4",anime:"photo-1528360983277-13d401cdc186",nature:"photo-1469474968028-56623f02e42e",snow:"photo-1491002052546-bf38f186af56",sea:"photo-1507525428034-b723cf961d3e",edo:"photo-1493976040374-85c8e12f0c0e"};
 var R={kanto:"關東",kansai:"關西",chubu:"中部",kyushu:"九州",hokkaido:"北海道",okinawa:"沖繩"};
@@ -222,13 +387,41 @@ function ticketUrl(){
 function openDisneyGuide(){
   var g=document.getElementById("disneyGuide");
   g.scrollTop=0;g.classList.add("open");document.body.classList.add("lock");
+  startParticles();setTimeout(spy,60);
 }
 function closeDisneyGuide(){
   document.getElementById("disneyGuide").classList.remove("open");document.body.classList.remove("lock");
+  stopParticles();
 }
+/* 魔法小花片：米奇／米妮／達菲／星星，淡雅半透明，只在特刊開啟時生成 */
+function startParticles(){
+  var box=document.getElementById("dgParticles");
+  if(box.children.length||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  var types=[["s-mickey","#FFE59A"],["s-minnie","#FFB5C1"],["s-duffy","#E28743"],["s-star","#A9D3FF"],["s-star","#E8B923"],["s-minnie","#FFB5C1"],["s-mickey","#FFE59A"]];
+  var n=window.innerWidth<700?16:28,html="";
+  for(var i=0;i<n;i++){
+    var t=types[Math.floor(Math.random()*types.length)],sz=8+Math.random()*8,o=.15+Math.random()*.2;
+    html+='<span class="dg-p" style="left:'+(Math.random()*100).toFixed(1)+'%;--dur:'+(14+Math.random()*14).toFixed(1)+'s;--delay:-'+(Math.random()*24).toFixed(1)+'s;--sway:'+(2+Math.random()*3).toFixed(1)+'s;--dx:'+((Math.random()*160-80)|0)+'px;--rot:'+((Math.random()*720-360)|0)+'deg;--o:'+o.toFixed(2)+'">'+
+      '<svg width="'+sz.toFixed(1)+'" height="'+sz.toFixed(1)+'" style="color:'+t[1]+'"><use href="#'+t[0]+'"/></svg></span>';
+  }
+  box.innerHTML=html;
+}
+function stopParticles(){document.getElementById("dgParticles").innerHTML="";}
+/* 錨點膠囊：平滑捲動＋捲動偵測印章跳躍 */
+function spy(){
+  var g=document.getElementById("disneyGuide"),cur=null;
+  document.querySelectorAll(".g-card").forEach(function(c){if(c.getBoundingClientRect().top<190)cur=c.id});
+  document.querySelectorAll(".anchor-pills a").forEach(function(a){
+    var on=cur&&a.getAttribute("href")==="#"+cur;
+    if(on&&!a.classList.contains("active")){a.classList.add("active");a.scrollIntoView({block:"nearest",inline:"center"});}
+    else if(!on)a.classList.remove("active");
+  });
+}
+document.getElementById("disneyGuide").addEventListener("scroll",spy,{passive:true});
 document.addEventListener("click",function(e){
   var a=e.target.closest(".anchor-pills a");
-  if(a){e.preventDefault();var t=document.querySelector(a.getAttribute("href"));if(t)t.scrollIntoView({behavior:"smooth",block:"start"});}
+  if(a){e.preventDefault();var t=document.querySelector(a.getAttribute("href"));if(t)t.scrollIntoView({behavior:"smooth",block:"start"});
+    a.classList.remove("active");void a.offsetWidth;a.classList.add("active");}
 });
 document.getElementById("guideClose").addEventListener("click",closeDisneyGuide);
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDisneyGuide()});
