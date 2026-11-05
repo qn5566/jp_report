@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本主題樂園指南 ｜ 特刊名鑑 - 日本報報</title>
+<style>
+:root{--bg:#F7F3EF;--ink:#111111;--yellow:#FFE59A;--pink:#FFB5C1;--mint:#B7E1D1;--sky:#A9D3FF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Serif JP","Source Han Serif TC","Hiragino Mincho ProN","Songti TC",serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+
+/* Hero */
+.hero{position:relative;width:100%;height:82vh;max-height:800px;min-height:460px;overflow:hidden;color:#fff}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.1) 50%,rgba(0,0,0,.35));z-index:1}
+.hero-text{position:relative;z-index:2;padding:12vh 6vw 0;max-width:900px}
+.hero-sub{display:inline-block;background:var(--pink);color:var(--ink);padding:4px 16px;border-radius:6px;transform:rotate(-2deg);font-weight:700;letter-spacing:.12em;font-size:clamp(.9rem,2vw,1.2rem)}
+.hero h1{margin-top:18px;font-size:clamp(1.9rem,5vw,3.6rem);line-height:1.3;text-shadow:0 2px 12px rgba(0,0,0,.45)}
+.hero p{margin-top:12px;font-size:clamp(.95rem,2vw,1.2rem);text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.scroll-hint{position:absolute;z-index:3;left:50%;bottom:64px;transform:translateX(-50%);font-weight:700;letter-spacing:.2em;font-size:.85rem;text-align:center;animation:bob 1.8s ease-in-out infinite;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+.torn{position:absolute;z-index:4;left:0;bottom:-1px;width:100%;height:56px;display:block}
+
+/* Filter */
+.filter-wrap{max-width:1280px;margin:0 auto;padding:8px 20px 4px}
+.filter-tabs{display:flex;gap:10px;overflow-x:auto;padding:10px 2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.filter-tabs::-webkit-scrollbar{display:none}
+.filter-tab{flex:0 0 auto;border:2px solid var(--ink);background:#fff;color:var(--ink);font:inherit;font-weight:700;padding:8px 20px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.2s}
+.filter-tab:hover{background:var(--yellow)}
+.filter-tab.active{background:var(--ink);color:var(--yellow)}
+
+/* Layout */
+.main{max-width:1280px;margin:0 auto;padding:20px;display:grid;grid-template-columns:1fr 2fr;gap:28px;align-items:start}
+.park-ranking-list{display:flex;flex-direction:column;gap:14px;max-height:80vh;overflow-y:auto;padding:4px 6px 4px 2px}
+.park-item{display:flex;gap:12px;align-items:center;background:#fff;border:2px solid var(--ink);border-radius:14px;padding:12px;cursor:pointer;transition:.2s;box-shadow:3px 3px 0 var(--ink)}
+.park-item:hover,.park-item.active{background:var(--yellow);transform:translate(-1px,-1px)}
+.rank{flex:0 0 38px;height:38px;border-radius:50%;background:var(--pink);display:grid;place-items:center;font-weight:900;border:2px solid var(--ink)}
+.park-item h3{font-size:1rem}
+.park-item small{color:#555}
+
+.park-preview-panel{position:sticky;top:20px;background:#fff;border:2px solid var(--ink);border-radius:18px;overflow:hidden;box-shadow:6px 6px 0 var(--ink)}
+.preview-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#ddd}
+.preview-body{padding:22px}
+.preview-body h2{font-size:1.5rem;margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tag{padding:3px 12px;border-radius:6px;font-size:.85rem;font-weight:700;border:1.5px solid var(--ink)}
+.tag.y{background:var(--yellow)}.tag.p{background:var(--pink)}.tag.m{background:var(--mint)}.tag.s{background:var(--sky)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.info-box{background:var(--bg);border-radius:12px;padding:12px 14px;font-size:.92rem}
+.info-box b{display:block;margin-bottom:2px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{flex:1 1 180px;text-align:center;padding:12px 18px;border-radius:999px;font-weight:800;border:2px solid var(--ink);cursor:pointer}
+.btn.sky{background:var(--sky)}.btn.pink{background:var(--pink)}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.park-preview-panel.fade{animation:fadeIn .4s ease}
+@media(max-width:860px){
+  .hero{height:68vh;min-height:420px}
+  .hero-text{padding-top:9vh}
+  .main{grid-template-columns:1fr}
+  .park-ranking-list{max-height:none;overflow:visible}
+  .park-preview-panel{position:static}
+  .info-grid{grid-template-columns:1fr}
+}
+
+/* Guide reader */
+.guide{position:fixed;inset:0;z-index:1000;background:var(--bg);color:var(--ink);overflow-y:auto;transform:translateX(100%);visibility:hidden;transition:transform .45s ease,visibility 0s .45s;scroll-behavior:smooth}
+.guide.open{transform:none;visibility:visible;transition:transform .45s ease}
+.guide-top{position:sticky;top:0;z-index:5;background:rgba(247,243,239,.96);backdrop-filter:blur(6px);border-bottom:2px solid var(--ink);padding:10px 16px}
+.guide-bar{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.guide-bar strong{font-size:1rem}
+.guide-close{border:2px solid var(--ink);background:var(--pink);font:inherit;font-weight:800;padding:6px 16px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.anchor-pills{max-width:1000px;margin:8px auto 0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.anchor-pills::-webkit-scrollbar{display:none}
+.anchor-pills a{flex:0 0 auto;border:2px solid var(--ink);background:#fff;border-radius:999px;padding:5px 14px;font-weight:700;font-size:.88rem;white-space:nowrap}
+.anchor-pills a:hover{background:var(--yellow)}
+.guide-wrap{max-width:1000px;margin:0 auto;padding:28px 18px 80px}
+.guide-title{text-align:center;margin-bottom:30px}
+.guide-title small{display:inline-block;background:var(--yellow);padding:3px 14px;border-radius:6px;transform:rotate(-2deg);font-weight:700}
+.guide-title h2{font-size:clamp(1.6rem,4vw,2.5rem);margin-top:10px}
+.g-sec{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:22px;margin-bottom:26px;box-shadow:5px 5px 0 var(--ink);scroll-margin-top:110px}
+.g-sec h3{font-size:1.35rem;margin-bottom:6px}
+.g-sec h3 span{display:inline-block;padding:2px 12px;border-radius:6px;margin-right:8px;font-size:.9rem;border:1.5px solid var(--ink)}
+.g-sec h4{margin:16px 0 6px;font-size:1.05rem;border-left:6px solid var(--yellow);padding-left:10px}
+.g-sec ul{padding-left:1.2em}.g-sec li{margin:6px 0}
+.g-sec p{margin:6px 0}
+.route{background:var(--bg);border-radius:12px;padding:12px 16px;margin:10px 0;border:1.5px dashed var(--ink)}
+.route.a{border-color:#4a9b82}.route.b{border-color:#d9788a}
+.g-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.g-cta a{border:2px solid var(--ink);border-radius:999px;padding:9px 20px;font-weight:800;background:var(--sky)}
+.g-cta a.pk{background:var(--pink)}.g-cta a.ye{background:var(--yellow)}
+.g-note{font-size:.8rem;color:#555;text-align:center}
+body.lock{overflow:hidden}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="https://images.unsplash.com/photo-1542640244-7e672d6cef4e?auto=format&fit=crop&w=1920&q=80" alt="東京迪士尼灰姑娘城堡">
+  <div class="hero-text">
+    <span class="hero-sub">『夢と魔法の王国へようこそ』</span>
+    <h1>日本主題樂園指南 ｜ 特刊名鑑</h1>
+    <p>全日本 TOP 30 人氣遊樂園・家庭親子與避坑全攻略</p>
+  </div>
+  <div class="scroll-hint">SCROLL DOWN ↓ 探索樂園</div>
+  <svg class="torn" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#F7F3EF" d="M0 56V28l40 6 40-10 40 12 40-8 40 10 40-12 40 8 40-6 40 12 40-10 40 8 40-12 40 10 40-8 40 12 40-10 40 6 40-12 40 10 40-8 40 12 40-10 40 8 40-6 40 10 40-12 40 8 40-6 40 12 40-10 40 8 40-12 40 10 40-8 40 6V56z"/>
+  </svg>
+</header>
+
+<div class="filter-wrap">
+  <nav class="filter-tabs" aria-label="地區篩選">
+    <button class="filter-tab active" data-region="all">全部 (All)</button>
+    <button class="filter-tab" data-region="kanto">🗼 關東</button>
+    <button class="filter-tab" data-region="kansai">⛩️ 關西</button>
+    <button class="filter-tab" data-region="chubu">🗻 中部・富士</button>
+    <button class="filter-tab" data-region="kyushu">🌋 九州</button>
+    <button class="filter-tab" data-region="hokkaido">❄️ 北海道</button>
+    <button class="filter-tab" data-region="okinawa">🏖️ 沖繩</button>
+  </nav>
+</div>
+
+<main class="main">
+  <section class="park-ranking-list" id="parkList" aria-label="樂園排行榜"></section>
+  <aside class="park-preview-panel" id="previewPanel">
+    <img class="preview-img" id="pvImg" src="" alt="">
+    <div class="preview-body" id="pvBody">
+      <div class="tags"><span class="tag s" id="pvRank"></span><span class="tag y" id="pvLoc"></span><span class="tag m" id="pvGroup"></span></div>
+      <h2 id="pvName"></h2>
+      <div class="tags" id="pvTags"></div>
+      <div class="info-grid">
+        <div class="info-box"><b>🚆 交通方式小抄</b><span id="pvTransit"></span></div>
+        <div class="info-box"><b>⏱ 建議停留時間</b><span id="pvStay"></span></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn sky" id="btnTicket" href="#" target="_blank" rel="noopener sponsored">🎟️ 預訂門票 / 快速通關</a>
+        <a class="btn pink" id="btnGuide" href="#">📖 閱讀完整遊園特刊攻略</a>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<div class="guide" id="disneyGuide" role="dialog" aria-modal="true" aria-label="東京迪士尼樂園深度攻略特刊">
+<div class="guide-top"><div class="guide-bar"><strong>📖 東京迪士尼樂園・極致避坑特刊</strong><button class="guide-close" id="guideClose">✕ 關閉特刊</button></div>
+<nav class="anchor-pills">
+<a href="#g1">👶 帶娃推車與如廁</a><a href="#g2">📏 身高分級與雙路線</a><a href="#g3">🍲 冬季暖胃熱湯餐廳</a><a href="#g4">📱 APP 零課金 vs 課金雙線</a><a href="#g5">🎂 生日特權與慶祝活動</a><a href="#g6">🚌 交通與海外刷卡指南</a>
+</nav></div>
+<div class="guide-wrap">
+<div class="guide-title"><small>Tokyo Disney Resort In-Depth Guide</small><h2>東京迪士尼樂園 深度攻略特刊</h2></div>
+<section class="g-sec" id="g1"><h3><span style="background:var(--mint)">01</span>一打一單親爸媽／帶娃排隊與如廁潛規則</h3><h4>排隊中途急需上洗手間</h4><p>切勿默默離隊。向隊伍旁工作人員（CM）說「<b>トイレです（To-i-re desu）</b>」，領取「<b>合流利用券（排隊保留單）</b>」，上完廁所後由專用通道返回原排隊順序，免重新排隊。</p>
+<h4>乘車限制</h4><p>1 位大人無法同時抱 2 位未滿 3 歲幼兒乘車。帶雙寶家長建議優先選擇馬克吐溫號、小小世界等大船大車型設施。</p>
+<h4>夫妻同行必備「交代利用（Rider Switch）」</h4><p>一人排隊玩刺激設施，另一人顧娃；玩出後換手，第二人走快速通道免排隊直接玩。</p></section>
+<section class="g-sec" id="g2"><h3><span style="background:var(--yellow)">02</span>身高門檻、分齡適玩與一日排程雙路線</h3><h4>身高限制標竿</h4><ul>
+<li><b>無身高限制（能抱或能坐穩）：</b>小小世界、小熊維尼獵蜜記、旋轉木馬、小飛象、馬克吐溫號、西部沿河鐵路。</li>
+<li><b>需能自行坐穩（不可全程抱腿上）：</b>美女與野獸。</li>
+<li><b>需滿 90cm：</b>飛濺山、艾芝迷你雲霄飛車。</li>
+<li><b>需滿 102cm：</b>巨雷山、星際旅行。</li>
+<li><b>需滿 117cm~120cm（國小生通殺）：</b>太空山。</li></ul>
+<div class="route a"><b>🌱 路線 A（0~3 歲幼兒漫遊線）</b><br>卡通城軟膠地墊散策拍照 → 嬰兒中心裝 70℃ 純淨熱水 → 小小世界（冷氣音樂） → 紅心女王宴會廳喝暖湯 → 馬克吐溫號推車吹風午睡 → 世界市集退場避開晚間人潮。</div>
+<div class="route b"><b>🔥 路線 B（活力國小生挑戰線）</b><br>晨間衝巨雷山 → 巴斯光年射擊競技 → 星際旅行 → 飛濺山落水俯衝 → 幽靈公館 → 中國航海家吃熱拉麵 → 夜間煙火二刷熱門設施。</div><div class="g-cta"><a class="" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_樂園門票&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park" target="_blank" rel="noopener sponsored">🎟️ 預訂迪士尼門票</a></div></section>
+<section class="g-sec" id="g3"><h3><span style="background:var(--pink)">03</span>冬天防寒暖胃餐廳與熱水補給站</h3><ul>
+<li><b>中國航海家餐廳（探險樂園）：</b>全園唯一熱拉麵與角煮湯麵，湯頭可請店員提供熱水調整濃淡，無須預約。</li>
+<li><b>北齋餐廳（世界市集）：</b>日式和食天婦羅熱烏龍麵、茶碗蒸，附低幼兒童餐。需提前 1 個月於官方 App 預約 Priority Seating。</li>
+<li><b>紅心女王宴會廳（夢幻樂園）：</b>愛心麵包丁巧達熱濃湯與軟嫩漢堡排，空間寬敞推車可入桌旁。</li>
+<li><b>園區兩大嬰兒中心（Baby Center）：</b>提供恆溫 70℃ 以上調乳純熱水、微波爐加熱副食品，自備保溫瓶可免費注水取暖。</li></ul></section>
+<section class="g-sec" id="g4"><h3><span style="background:var(--sky)">04</span>APP 實戰排程決策樹（零課金平民線 vs 頂配快速通關線）</h3><div class="route a"><b>💸 零課金平民線</b><br>07:30 抵達安檢門排隊開園第一批放行 → 入園步兵衝「美女與野獸」（等候約 50 分鐘），手機同步搶抽 40 週年免費優先通行證「巨雷山」 → 14:00 日間大遊行開演時發動「人潮轉移術」直衝小熊維尼（排隊驟降至 35 分鐘） → 20:00 煙火散場衝刺二刷巨雷山。</div>
+<div class="route b"><b>👑 頂配快速通關線</b><br>入園三指連彈（買美女與野獸 DPA + 抽小熊維尼免費券 + 買日間大遊行專屬前排席 DPA） → 全天排隊不超過 15 分鐘，中午在鑽石馬蹄餐廳看秀吃排餐。</div><div class="g-cta"><a class="" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_樂園門票&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park" target="_blank" rel="noopener sponsored">🎟️ 門票・快速通關預訂</a></div></section>
+<section class="g-sec" id="g5"><h3><span style="background:var(--pink)">05</span>小女孩公主變裝與生日特權驚喜</h3><ul>
+<li><b>免費生日貼紙魔法：</b>向任何工作人員說「<b>バースデーシールください</b>」，手繪壽星名字貼在胸前或推車上。路程中全體人員祝賀、遊行明星揮手、旋轉杯廣播壽星姓名，偶遇清潔員地面掃帚米奇水畫。</li>
+<li><b>神仙教母美容院（Bibbidi Bobbidi Boutique）：</b>3 歲至小學女童專屬沙龍，全套公主禮服、專屬彩妝與宣誓證書（提前 1 個月搶訂）。</li>
+<li><b>官方飯店客房慶生佈置（Celebration Set）：</b>房內預先準備官方米奇鮮花束、香檳與插蠟燭的精緻生日蛋糕。</li></ul><div class="g-cta"><a class="pk" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Ftokyo-hotel-detail-995648%2Ftokyo-disneyland-hotel%2F" target="_blank" rel="noopener sponsored">🏨 迪士尼樂園大飯店比價</a><a class="ye" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼周邊飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Furayasu-hotels-list-107769%2F" target="_blank" rel="noopener sponsored">🏩 舞濱周邊飯店比價</a></div></section>
+<section class="g-sec" id="g6"><h3><span style="background:var(--sky)">06</span>交通指南、海外高回饋刷卡與官方連結庫</h3><h4>交通</h4><p>全線搭乘 JR 京葉線至「舞濱站」。南口往右徒步 5 分鐘抵達陸地，往左搭單軌電車至海洋。或搭乘利木津巴士直達門口。</p>
+<h4>信用卡避坑</h4><p>實體刷卡推薦吉鶴卡、富邦 J 卡、玉山熊本熊卡（免 1.5% 海外手續費且享高回饋）；App 內綁定 DPA 優先選擇 Mastercard 或 JCB 預防 3D 驗證擋刷。</p><div class="g-cta"><a class="" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_私人包車&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F" target="_blank" rel="noopener sponsored">🚗 東京私人包車接送</a><a class="ye" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_樂園門票&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park" target="_blank" rel="noopener sponsored">🎟️ 門票預訂</a><a class="pk" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Ftokyo-hotel-detail-995648%2Ftokyo-disneyland-hotel%2F" target="_blank" rel="noopener sponsored">🏨 迪士尼樂園大飯店</a><a class="ye" href="https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=日本報報_迪士尼周邊飯店&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Furayasu-hotels-list-107769%2F" target="_blank" rel="noopener sponsored">🏩 舞濱周邊飯店清單</a></div></section>
+<p class="g-note">* 本頁含 Trip.com 聯盟連結，透過連結訂購本站可能獲得分潤，不影響您的價格。</p></div></div>
+<script>
+var IMG={castle:"photo-1542640244-7e672d6cef4e",coaster:"photo-1536768139911-e290a59011e4",anime:"photo-1528360983277-13d401cdc186",nature:"photo-1469474968028-56623f02e42e",snow:"photo-1491002052546-bf38f186af56",sea:"photo-1507525428034-b723cf961d3e",edo:"photo-1493976040374-85c8e12f0c0e"};
+var R={kanto:"關東",kansai:"關西",chubu:"中部",kyushu:"九州",hokkaido:"北海道",okinawa:"沖繩"};
+var D=[
+["東京迪士尼樂園 (Disneyland)","kanto","千葉",["經典童話","日間夜間大遊行","幼童友善設施最多"],"低幼親子","全日 10–12 小時","JR 京葉線「舞濱站」轉度假區線，或機場巴士直達","castle"],
+["東京迪士尼海洋 (DisneySea)","kanto","千葉",["夢幻泉鄉全新主題","達菲熊","全日唯一海洋景觀"],"情侶・親子","全日 10–12 小時","JR 舞濱站轉度假區線至「東京迪士尼海洋站」","sea"],
+["日本環球影城 (USJ)","kansai","大阪",["超級任天堂世界","咚奇剛國度","哈利波特魔法世界"],"刺激冒險・遊戲迷","全日 10–12 小時","JR 夢咲線「環球影城站」步行約 5 分鐘","coaster"],
+["東京華納兄弟哈利波特影城","kanto","東京",["全球最大室內實景","九又四分之三月台","黃油啤酒"],"哈迷・電影迷","3–5 小時","西武豐島線／都營大江戶線「豐島園站」步行 5 分鐘","castle"],
+["讀賣樂園（含 PokéPark Kanto / Pokémon Wonder）","kanto","東京",["寶可夢森林冒險","冬季寶石點燈","溫和型過山車"],"寶可夢迷・親子","5–8 小時","京王相模原線「京王多摩中心站」轉纜車","anime"],
+["三麗鷗彩虹樂園 (Sanrio Puroland)","kanto","東京",["Hello Kitty 美樂蒂全室內","雨天備案","低幼首選"],"低幼親子","4–6 小時","京王／小田急多摩線「多摩中心站」步行 5 分鐘","anime"],
+["吉卜力公園 (Ghibli Park)","chubu","愛知",["大龍貓森林","魔女之谷","神隱少女實景散策"],"動漫狂熱","全日（需預約）","地下鐵東山線轉 Linimo「愛・地球博紀念公園站」","nature"],
+["富士急樂園 (Fuji-Q Highland)","chubu","山梨",["富士山絕景","世界級絕叫雲霄飛車","戰慄迷宮"],"刺激冒險","6–8 小時","JR 中央線轉富士急行線「富士急樂園站」","coaster"],
+["日本樂高樂園 (LEGOLAND Japan)","chubu","愛知",["2~12歲親子打造","積木互動天地","樂高飯店"],"低幼親子","5–8 小時","名古屋站搭青波線「金城碼頭站」步行 5 分鐘","anime"],
+["長島溫泉樂園 (Nagashima Spa Land)","chubu","三重",["水陸雙棲雲霄飛車聖地","鄰近麵包超人博物館","溫泉度假"],"刺激冒險","全日","名古屋站高速巴士直達約 1 小時","coaster"],
+["豪斯登堡 (Huis Ten Bosch)","kyushu","長崎",["荷蘭運河花海","日本最大夜間光之王國","四季花景"],"情侶・親子","全日","JR 特急「豪斯登堡站」直達","nature"],
+["二次元之森 (Nijigen no Mori)","kansai","兵庫",["淡路島動漫樂園","火影忍者村","等身大哥吉拉"],"動漫狂熱","3–5 小時","神戶三宮／舞子搭高速巴士至淡路島，建議自駕","anime"],
+["橫濱八景島海島樂園","kanto","神奈川",["巨型水族館","海上午夜雲霄飛車","海洋觸摸池"],"親子・情侶","5–7 小時","金澤海岸線「八景島站」","sea"],
+["東條湖玩具王國","kansai","兵庫",["巨型室內玩具試玩館","小汽車森林家族","0歲友善"],"低幼親子","4–6 小時","大阪／神戶出發自駕約 1 小時","anime"],
+["橫濱麵包超人兒童博物館","kanto","神奈川",["專為0~5歲設計","無障礙軟墊遊戲區","麵包工坊表演"],"低幼親子","3–4 小時","港未來線「馬車道站」步行 5 分鐘","anime"],
+["三麗鷗和諧樂園 (Harmonyland)","kyushu","大分",["戶外 Hello Kitty 城堡","四季花景","花車大遊行"],"低幼親子","5–7 小時","JR 日出站轉計程車／接駁巴士","anime"],
+["鈴鹿賽道樂園 (Suzuka Circuit Park)","chubu","三重",["F1級賽道文化","全年齡卡丁車自駕","機械互動"],"賽車迷","5–7 小時","近鐵「白子站」轉接駁巴士至「鈴鹿賽道站」","coaster"],
+["日光江戶村 (Edo Wonderland)","kanto","栃木",["江戶忍者修行","武士體驗","穿越劇造景"],"歷史・親子","5–6 小時","東武鬼怒川線「鬼怒川溫泉站」轉巴士","edo"],
+["白戀人公園 (Shiroi Koibito Park)","hokkaido","札幌",["英倫童話雪景莊園","巧克力手作工坊","整點機關鐘"],"情侶・親子","2–3 小時","地下鐵東西線「宮之澤站」步行 7 分鐘","snow"],
+["志摩西班牙村 (Parque España)","chubu","三重",["地中海白牆異國風","佛朗明哥秀","排隊時間極短"],"情侶・親子","全日","近鐵「鳥羽站」搭巴士直達","sea"],
+["那須高地樂園 (Nasu Highland Park)","kanto","栃木",["森林系避暑勝地","寵物友善","家庭過山車"],"家庭・寵物","5–6 小時","JR 那須塩原站轉巴士，建議自駕","nature"],
+["沖繩名護鳳梨園","okinawa","名護",["自動駕駛鳳梨車","恐龍探險區","自駕停靠推薦"],"自駕親子","1.5–2 小時","那霸自駕沖繩道約 1 小時 15 分","nature"],
+["伊豆仙人掌動物公園","chubu","靜岡",["水豚露天溫泉發源地","松鼠猴零距離互動","仙人掌溫室"],"親子・動物迷","3–4 小時","伊豆急「伊豆高原站」轉巴士","nature"],
+["姆明谷公園 (Moominvalley Park)","kanto","埼玉",["北歐嚕嚕米湖畔童話","自然森林散策","主題餐廳"],"情侶・親子","3–5 小時","西武線「飯能站」轉巴士約 10 分鐘","nature"],
+["枚方公園 (Hirakata Park)","kansai","大阪",["老字號遊樂園","木造過山車","冬季戶外滑冰場"],"家庭","4–6 小時","京阪本線「枚方公園站」步行 1 分鐘","coaster"],
+["登別伊達時代村","hokkaido","登別",["北海道幕府武士街景","忍者機關屋","花魁道中"],"歷史・親子","3–5 小時","JR「登別站」轉巴士約 15 分鐘","edo"],
+["神戶麵包超人兒童博物館","kansai","兵庫",["神戶港旁","海景摩天輪","麵包超人室內市集"],"低幼親子","3–4 小時","地下鐵海岸線「港元町站」步行 5 分鐘","anime"],
+["東京 Joypolis","kanto","東京",["台場 SEGA 室內 VR","電競過山車","雨天避風首選"],"刺激冒險・雨天備案","3–5 小時","百合海鷗號「台場站」步行 3 分鐘","coaster"],
+["太秦映畫村 (Toei Kyoto Studio Park)","kansai","京都",["東映時代劇拍攝實景","福音戰士初號機駕駛艙","忍者表演"],"歷史・動漫","3–5 小時","JR 嵯峨野線「太秦嵐山站」步行 10 分鐘","edo"],
+["沖繩 DINO 恐龍 PARK","okinawa","名護",["亞熱帶蕨類森林","機械恐龍近距離","自駕親子"],"低幼親子","1.5–2 小時","那霸自駕沖繩道約 1 小時 20 分","nature"]
+].map(function(d,i){return{id:"p"+(i+1),rank:i+1,name:d[0],region:d[1],loc:d[2],tags:d[3],group:d[4],stay:d[5],transit:d[6],img:"https://images.unsplash.com/"+IMG[d[7]]+"?auto=format&fit=crop&w=1200&q=80"};});
+
+var FALLBACK="https://images.unsplash.com/"+IMG.castle+"?auto=format&fit=crop&w=1200&q=80";
+var curRegion="all",curId="p1";
+var $=function(i){return document.getElementById(i)};
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+var TAGC=["y","p","m"];
+
+function ticketUrl(){
+  var target="https://tw.trip.com/travel-guide/attraction/tokyo-294/tourist-attractions/?category=theme-park";
+  return "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1="+encodeURIComponent("日本報報_樂園門票")+"&trip_sub3=D20905663&redirect_url="+encodeURIComponent(target);
+}
+function openDisneyGuide(){
+  var g=document.getElementById("disneyGuide");
+  g.scrollTop=0;g.classList.add("open");document.body.classList.add("lock");
+}
+function closeDisneyGuide(){
+  document.getElementById("disneyGuide").classList.remove("open");document.body.classList.remove("lock");
+}
+document.addEventListener("click",function(e){
+  var a=e.target.closest(".anchor-pills a");
+  if(a){e.preventDefault();var t=document.querySelector(a.getAttribute("href"));if(t)t.scrollIntoView({behavior:"smooth",block:"start"});}
+});
+document.getElementById("guideClose").addEventListener("click",closeDisneyGuide);
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDisneyGuide()});
+function visible(){return D.filter(function(p){return curRegion==="all"||p.region===curRegion})}
+
+function renderList(){
+  $("parkList").innerHTML=visible().map(function(p){
+    return '<div class="park-item'+(p.id===curId?' active':'')+'" data-id="'+p.id+'"><div class="rank">'+p.rank+'</div><div><h3>'+esc(p.name)+'</h3><small>'+R[p.region]+'・'+esc(p.loc)+'</small></div></div>';
+  }).join("");
+}
+function renderPreview(animate){
+  var p=D.filter(function(x){return x.id===curId})[0];
+  if(!p)return;
+  var panel=$("previewPanel");
+  if(animate){panel.classList.remove("fade");void panel.offsetWidth;panel.classList.add("fade");}
+  var img=$("pvImg");img.onerror=function(){img.onerror=null;img.src=FALLBACK};
+  img.src=p.img;img.alt=p.name;
+  $("pvRank").textContent="No."+(p.rank<10?"0":"")+p.rank;
+  $("pvLoc").textContent=R[p.region]+"・"+p.loc;
+  $("pvGroup").textContent=p.group;
+  $("pvName").textContent=p.name;
+  $("pvTags").innerHTML=p.tags.map(function(t,i){return '<span class="tag '+TAGC[i%3]+'">'+esc(t)+'</span>'}).join("");
+  $("pvTransit").textContent=p.transit;
+  $("pvStay").textContent=p.stay;
+  $("btnTicket").href=ticketUrl();
+}
+function select(id,animate){curId=id;renderList();renderPreview(animate);}
+
+$("parkList").addEventListener("click",function(e){
+  var it=e.target.closest(".park-item");if(it)select(it.dataset.id,true);
+});
+document.querySelectorAll(".filter-tab").forEach(function(t){
+  t.addEventListener("click",function(){
+    document.querySelectorAll(".filter-tab").forEach(function(x){x.classList.remove("active")});
+    t.classList.add("active");
+    curRegion=t.dataset.region;
+    var list=visible();
+    var inList=list.some(function(p){return p.id===curId});
+    if(!inList&&list.length)select(list[0].id,true);else renderList();
+    $("parkList").scrollTop=0;
+  });
+});
+$("btnGuide").addEventListener("click",function(e){
+  e.preventDefault();
+  if(curId==="p1")openDisneyGuide();
+  else alert("此樂園的完整特刊攻略製作中，敬請期待！");
+});
+select("p1",false);
+</script>
+</body>
+</html>

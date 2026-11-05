@@ -28,10 +28,10 @@
   }
   </script>
 
-  <!-- 字體 -->
+  <!-- Editorial Typography: Kinfolk & Cereal Aesthetic (與 japan_special_edition.html 同步) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Shippori+Mincho:wght@600;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;600;900&family=Noto+Serif+SC:wght@300;400;600;900&family=Noto+Serif+Thai:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
 
@@ -288,9 +288,11 @@
 
     /* 🎨 四大精確莫蘭迪色號規範 (Strict 4-Palette Specification) */
     :root {
-      --font-main: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
-      --font-serif: 'Shippori Mincho', 'Noto Serif TC', serif;
-      --font-en: 'Outfit', sans-serif;
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', Georgia, serif;
+      --font-kanji: 'Shippori Mincho', 'Noto Serif TC', serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-main: 'Outfit', 'Shippori Mincho', 'Noto Serif TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-en: 'Cormorant Garamond', 'Outfit', serif;
 
       --ink-charcoal: #2D3748;
       --sub-morandi: #718096;
@@ -326,11 +328,15 @@
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
     body {
-      font-family: var(--font-main);
+      font-family: var(--font-sans);
       color: var(--ink-charcoal);
       min-height: 100vh;
       background: var(--washi-warm-bg);
-      line-height: 1.6;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, .brand-title-zh {
+      font-family: var(--font-kanji);
     }
 
     /* 頂部 Header：官方規格品牌識別 (中央居中，首頁一致) */
@@ -1112,7 +1118,7 @@
     }
     .brand-title-zh {
       color: #094F8D !important;
-      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif !important;
+      font-family: 'Shippori Mincho', 'Noto Serif TC', serif !important;
       font-weight: 900 !important;
       font-size: 1.62rem !important;
       letter-spacing: 0.5px !important;
@@ -1136,7 +1142,7 @@
     .brand-tag-official {
       background: #ED1A21 !important;
       color: #FFFFFF !important;
-      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif !important;
+      font-family: 'Shippori Mincho', 'Noto Serif TC', serif !important;
       font-size: 0.72rem !important;
       font-weight: 900 !important;
       padding: 2px 7px !important;
@@ -1413,6 +1419,7 @@
     }
 
 </style>
+  <link rel="stylesheet" href="./css/tabi_core.css">
 </head>
 <body>
 
@@ -1442,6 +1449,9 @@
 
     <!-- 🌟 頂部右側統一功能按鈕群 (純文字無外框無ICON ＋ 🌐 Language 保留外框與ICON) -->
     <div class="header-right">
+      <a href="japan_entry_rules.html" class="header-entry-pill" title="最新日本入境規範、免稅新制與海關申報手冊" style="background:#EA580C; color:#FFFFFF; font-weight:700; font-size:0.82rem; padding:5px 12px; border-radius:999px; text-decoration:none; box-shadow:0 2px 8px rgba(234,88,12,0.25); transition:all 0.2s; white-space:nowrap; display:inline-flex; align-items:center; gap:4px; margin-right:4px;">
+        <span>最新入境規範</span>
+      </a>
       <a href="japan_flight_deals.html" class="header-nav-link active" title="Trip 機票即時比價與特惠航線">
         <span>查機票</span>
       </a>
@@ -1506,9 +1516,6 @@
     <!-- 🏔️ 英雄視覺雪山背景區塊 (Image 2 + Image 1 融合) -->
     <section class="flight-hero-wrap">
       <div class="hero-content">
-        <div class="hero-pre-badge">
-          <span>✈️ TRIP.COM X 日旅報報 官方專屬比價</span>
-        </div>
         <h2 class="hero-headline">探索全日本・即時機票比價與特惠航線</h2>
         <p class="hero-subhead">
           全網 500+ 航空公司即時比價 ｜ 官網內直覺搜尋 ｜ 享 30 天安心低價保障與繁中客服
@@ -1770,26 +1777,213 @@
   </main>
 
   <!-- 頁尾 -->
-  <footer class="inbound-footer">
-    <div class="footer-logo-wrap">
-      <img src="./images/japan_tabi_logo.png" alt="Logo" style="width:28px; height:28px; border-radius:50%;">
-      <span style="font-weight:900; color:#1E293B;">日旅報報 JAPAN TABI</span>
+
+
+  <footer class="tabi-footer" style="background:#FAF8F5; border-top:1px solid #1E293B; padding:72px 24px 48px; margin-top:80px; position:relative; z-index:10;">
+    <style>
+      .tabi-footer-manifesto-box {
+        max-width: 1200px; margin: 0 auto 56px; padding: 36px 40px; background: #FFFFFF;
+        border: 1px solid #E2E8F0; border-radius: 20px; box-shadow: 0 8px 30px rgba(15,23,42,0.04);
+        display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: center;
+      }
+      .tabi-footer-cols {
+        max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:48px; border-bottom:1px solid #E2E8F0;
+      }
+      .footer-nav-link {
+        font-size:0.84rem; color:#334155; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:all 0.2s;
+      }
+      .footer-nav-link:hover {
+        color: #C2410C;
+        padding-left: 4px;
+      }
+      .footer-nav-link .footer-nav-arrow {
+        color: #94A3B8;
+        transition: transform 0.2s, color 0.2s;
+      }
+      .footer-nav-link:hover .footer-nav-arrow {
+        color: #C2410C;
+        transform: translate(2px, -2px);
+      }
+      @media (max-width: 960px) {
+        .tabi-footer-manifesto-box {
+          grid-template-columns: 1fr !important;
+          padding: 28px 20px !important;
+          gap: 20px !important;
+        }
+        .tabi-footer-vertical-text {
+          display: none !important;
+        }
+        .tabi-footer-cols {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 32px 20px !important;
+        }
+      }
+      @media (max-width: 600px) {
+        .tabi-footer-cols {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
+    
+    <!-- 🌸 《日旅報報》品牌創立精神 (BRAND MANIFESTO - 深度圖案美學特刊版) -->
+    <div class="tabi-footer-manifesto-box">
+      <div class="tabi-footer-manifesto-left" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding-right:32px; border-right:1px solid #E2E8F0;">
+        <span style="font-family:'Cinzel', serif; font-size:0.68rem; font-weight:700; letter-spacing:2.5px; color:#92400E;">BRAND MANIFESTO</span>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div>
+            <div style="font-family:'Shippori Mincho', serif; font-size:1.05rem; font-weight:700; color:#0F172A; letter-spacing:1px; line-height:1.2;">JAPAN TABI</div>
+            <div style="font-size:0.7rem; color:#64748B; margin-top:2px;">日旅報報 品牌創立</div>
+          </div>
+        </div>
+      </div>
+      <div class="tabi-footer-manifesto-right">
+        <h3 style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.05rem; font-weight:700; color:#0F172A; margin:0 0 10px; letter-spacing:1px;">《日旅報報》品牌創立：</h3>
+        <p style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:0.9rem; color:#1E293B; line-height:1.8; margin:0 0 4px;">「因為太喜歡日本，想把四季最動人、最真實的美麗，完整介紹給全世界熱愛旅行的人。」</p>
+        <p style="font-family:'Shippori Mincho', serif; font-size:0.8rem; color:#64748B; font-style:italic; line-height:1.8; margin:0;">「日本が大好きだからこそ、四季折々の息をのむ美しさを、世界中の旅人へ届けたい。」</p>
+      </div>
     </div>
-    <p>© 2026 日旅報報 JAPAN TABI ｜ 機票比價 全國觀光指南</p>
+
+
+    <div class="tabi-footer-cols">
+      
+      <!-- 第 1 欄：品牌官方認證 -->
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <div style="width:32px; height:32px; border-radius:50%; overflow:hidden; border:1px solid #E2E8F0;">
+            <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <h4 style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.15rem; font-weight:700; margin:0; color:#0F172A; letter-spacing:1px;">日旅報報 JAPAN TABI</h4>
+        </div>
+        <p style="font-size:0.84rem; color:#475569; line-height:1.85; margin-bottom:16px;">
+          日本の四季を彩る花期前線・夏の夜空を彩る花火大会・パウダースノー観測・名所特約ガイド。現地取材に基づき厳選された観光情報を、最高水準の自由旅行へお届けします。
+        </p>
+        <div style="font-size:0.8rem; color:#64748B; line-height:1.75; margin-bottom:16px; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;">
+          <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com" style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
+          <div style="margin-top:2px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
+        </div>
+
+        <div style="padding:12px 16px; background:#FFFFFF; border-left:3px solid #92400E; border-top:1px solid #F1F5F9; border-right:1px solid #F1F5F9; border-bottom:1px solid #F1F5F9; border-radius:4px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <div style="font-weight:700; color:#92400E; margin-bottom:4px; letter-spacing:0.5px;">🏅 官方特約觀測現地取材認證</div>
+          <div>全站情報受著作權保護，未經授權禁止搬運與商業轉載。</div>
+        </div>
+      </div>
+
+      <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          📖 探索日本
+        </h4>
+                <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="tabi_news_preview.html" class="footer-nav-link"><span>首頁情報 ｜ 賞花玩雪最前線</span></a></li>
+          <li><a href="japan_flight_deals.html" class="footer-nav-link"><span>機票比價 ｜ 即時促銷最低價</span></a></li>
+          <li><a href="japan_charter_rental.html" class="footer-nav-link"><span>私人包車 ｜ 彈性包車自由行</span></a></li>
+          <li><a href="japan_okinawa_drive.html" class="footer-nav-link"><span>沖繩自駕 ｜ 自駕環島全攻略</span></a></li>
+          <li><a href="japan_inbound_rankings.html" class="footer-nav-link"><span>美食指南 ｜ 必吃米其林百名店</span></a></li>
+          <li><a href="japan_special_edition.html" class="footer-nav-link" style="color:#92400E; font-weight:700;"><span>深度報導 ｜ 日本文化特刊報導</span></a></li>
+        </ul>
+      </div>
+
+      <!-- 第 3 欄：專題企劃 ＆ 攻略指南 -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          🧭 實用專區
+        </h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="japan_entry_rules.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">最新入境規範專頁</strong><small style="color:#64748B;">2025/2026 免稅新制・VJW 申報手冊</small></a></li>
+          <li><a href="japan_theme_parks.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">遊樂園攻略</strong><small style="color:#64748B;">迪士尼・環球影城 USJ・吉卜力公園</small></a></li>
+          <li><a href="japan_train_tour.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">火車和搭車指南</strong><small style="color:#64748B;">新幹線・JR Pass・觀光列車乘車券</small></a></li>
+          <li><a href="japan_live_bloom_album.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">花況現場即時情報局</strong><small style="color:#64748B;">旅人實拍相簿・景觀咖啡推薦</small></a></li>
+        </ul>
+      </div>
+
+      <!-- 第 4 欄：特別刊號推薦 (深度文章直達連結) -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          ✨ 深度特刊
+        </h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="japan_special_edition.html?vol=7" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 07 沖繩山海極致味覺</strong><small style="color:#64748B;">Halekulani SHIROUX・阿古豬・系滿</small></a></li>
+          <li><a href="japan_special_edition.html?vol=6" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 06 石垣牛與和牛11大名店</strong><small style="color:#64748B;">琉球之牛・本部牧場・燒肉華全指南</small></a></li>
+          <li><a href="japan_special_edition.html?vol=1" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 01 熊野古道：起死回生之道</strong><small style="color:#64748B;">千年朝聖古道・太古雲霧靈湯</small></a></li>
+          <li><a href="japan_special_edition.html?vol=2" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 02 富士五湖與本栖湖</strong><small style="color:#64748B;">神聖逆富士・米其林獵人野味</small></a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 底部版權宣告與社群連結 -->
+    <div style="max-width:1200px; margin:28px auto 0; display:flex; justify-content:space-between; align-items:center; font-size:0.78rem; color:#64748B; flex-wrap:wrap; gap:16px;">
+      <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+        <span style="font-weight:700; color:#334155;">© JAPAN TABI ジャパン・タビ ｜ 全日本観光情報局 All Rights Reserved.</span>
+        <a href="japan_privacy_policy.html" style="color:#64748B; text-decoration:none; margin-left:8px; font-weight:600; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">隱私權政策</a>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》官方 Instagram" style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- Threads -->
+          <a href="https://www.threads.net" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》Threads" style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 3.328 0 6.273-1.624 8.077-4.116-.367-.375-.72-.764-1.057-1.168-1.47 2.05-3.9 3.384-6.65 3.384-4.524 0-8.2-3.676-8.2-8.2s3.676-8.2 8.2-8.2 8.2 3.676 8.2 8.2c0 2.39-.77 4.542-2.316 5.867-1.18.995-2.766 1.433-4.534 1.258-2.678-.266-4.59-2.368-4.59-5.045 0-2.88 2.21-5.18 5.14-5.18 1.94 0 3.518.95 4.19 2.52.17.41.31.85.4 1.3h-1.85c-.08-.3-.21-.58-.38-.83-.45-.66-1.3-1.09-2.36-1.09-1.85 0-3.24 1.45-3.24 3.28 0 1.74 1.25 3.14 3.01 3.31 1.28.13 2.37-.18 3.12-.81.98-.83 1.5-2.22 1.5-3.96 0-5.4-4.32-9.8-9.67-9.8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <button onclick="window.scrollTo({top:0, behavior:'smooth'})" style="background:#FFFFFF; border:1px solid #CBD5E1; border-radius:999px; padding:6px 16px; font-weight:700; cursor:pointer; color:#334155; transition:all 0.2s;" onmouseover="this.style.borderColor='#92400E'; this.style.color='#92400E';" onmouseout="this.style.borderColor='#CBD5E1'; this.style.color='#334155';">
+        ▲ 回到頂部
+      </button>
+    </div>
   </footer>
 
   <script>
-    // Trip.com 官方認證推廣參數 (30 天 Cookie 歸因)
+    // Trip.com 官方認證專屬分潤追蹤參數與短網址 (30 天 Cookie 歸因鎖定機制)
     const TRIP_CONFIG = {
+      shortUrl: "https://www.trip.com/t/fgyJcXow1X2",
       allianceId: "9507030",
       sid: "325761227",
-      adId: "D20272275"
+      tripSub1: "%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1",
+      adId: "D20905663",
+      token: "sl_fgyJcXow1X2"
     };
 
+    const TRIP_AFFILIATE_QUERY = `Allianceid=${TRIP_CONFIG.allianceId}&SID=${TRIP_CONFIG.sid}&trip_sub1=${TRIP_CONFIG.tripSub1}&trip_sub3=${TRIP_CONFIG.adId}&linkhub_token=${TRIP_CONFIG.token}`;
+
     function buildTripDeepLink(path) {
+      if (!path) return TRIP_CONFIG.shortUrl;
       const base = path.startsWith('http') ? path : `https://tw.trip.com${path}`;
       const sep = base.includes('?') ? '&' : '?';
-      return `${base}${sep}Allianceid=${TRIP_CONFIG.allianceId}&SID=${TRIP_CONFIG.sid}&trip_sub3=${TRIP_CONFIG.adId}`;
+      return `${base}${sep}${TRIP_AFFILIATE_QUERY}`;
+    }
+
+    function getRouteUrl(r, originKey) {
+      const savedLang = localStorage.getItem('tabi_selected_lang') || 'zh-TW';
+      const domMap = {
+        'zh-TW': 'https://tw.trip.com',
+        'en': 'https://www.trip.com',
+        'ja': 'https://jp.trip.com',
+        'th': 'https://th.trip.com',
+        'ko': 'https://kr.trip.com',
+        'zh-CN': 'https://hk.trip.com'
+      };
+      const domain = domMap[savedLang] || 'https://tw.trip.com';
+
+      if (r && r.routePath) {
+        return `${domain}${r.routePath}?${TRIP_AFFILIATE_QUERY}`;
+      }
+
+      const airportMap = {
+        'tokyo': 'tyo', 'osaka': 'osa', 'sapporo': 'spk', 'okinawa': 'oka', 'fukuoka': 'fuk', 'nagoya': 'ngo', 'sendai': 'sdj'
+      };
+      const countryFromMap = { 'taiwan': 'tpe', 'thailand': 'bkk', 'singapore': 'sin', 'hongkong': 'hkg', 'korea': 'icn' };
+      const fromC = (r && r.fromCode) || countryFromMap[originKey] || 'tpe';
+      const toC = (r && airportMap[r.destCode]) || 'tyo';
+      return `${domain}/flights/airtickets-${fromC}-${toC}?${TRIP_AFFILIATE_QUERY}`;
     }
 
     // 多國直飛航線資料庫
@@ -1803,7 +1997,8 @@
           meta: "直飛 3h15m ｜ 每日 28 班直飛",
           tag: "Bestseller",
           tagClass: "tag-bestseller",
-          img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/taipei-to-tokyo/tickets-tpe-tyo"
         },
         {
           city: "台北 ⇄ 大阪",
@@ -1813,17 +2008,19 @@
           meta: "直飛 2h40m ｜ 環球影城首選",
           tag: "Popular",
           tagClass: "tag-popular",
-          img: "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/taipei-to-osaka/tickets-tpe-osa"
         },
         {
-          city: "台北 ⇄ 札幌",
+          city: "台北 ⇄ 札幌（北海道）",
           destCode: "sapporo",
           airport: "新千歲機場",
           price: "NT$ 8,890",
           meta: "直飛 3h45m ｜ 冬季粉雪勝地",
           tag: "Trending",
           tagClass: "tag-trending",
-          img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/taipei-to-sapporo/tickets-tpe-spk"
         },
         {
           city: "台北 ⇄ 沖繩",
@@ -1833,7 +2030,8 @@
           meta: "直飛 1h30m ｜ 蔚藍海島度假",
           tag: "Hot Deal",
           tagClass: "tag-bestseller",
-          img: "https://images.unsplash.com/photo-1570459027562-4a916cc6113f?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1570459027562-4a916cc6113f?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/taipei-to-okinawa/tickets-tpe-oka"
         },
         {
           city: "台北 ⇄ 福岡",
@@ -1843,17 +2041,20 @@
           meta: "直飛 2h10m ｜ 九州拉麵屋台",
           tag: "Foodie",
           tagClass: "tag-popular",
-          img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/taipei-to-fukuoka/tickets-tpe-fuk"
         },
         {
-          city: "高雄 ⇄ 東京/大阪",
+          city: "高雄 ⇄ 東京 / 大阪",
           destCode: "tokyo",
-          airport: "成田/關西",
+          fromCode: "khh",
+          airport: "小港 ⇄ 成田/羽田",
           price: "NT$ 6,100",
           meta: "南台灣出發 ｜ 便捷直飛",
           tag: "Popular",
           tagClass: "tag-popular",
-          img: "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/kaohsiung-to-tokyo/tickets-khh-tyo"
         },
         {
           city: "台北 ⇄ 名古屋",
@@ -1863,7 +2064,8 @@
           meta: "直飛 2h45m ｜ 合掌村黑部立山",
           tag: "Heritage",
           tagClass: "tag-trending",
-          img: "https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/taipei-to-nagoya/tickets-tpe-ngo"
         },
         {
           city: "台北 ⇄ 仙台",
@@ -1873,7 +2075,8 @@
           meta: "直飛 3h10m ｜ 東北藏王銀山",
           tag: "Scenic",
           tagClass: "tag-trending",
-          img: "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/taipei-to-sendai/tickets-tpe-sdj"
         }
       ],
       "thailand": [
@@ -1885,7 +2088,8 @@
           meta: "直飛 5h50m ｜ 泰航/Zipair/酷航",
           tag: "Bestseller",
           tagClass: "tag-bestseller",
-          img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/bangkok-to-tokyo/tickets-bkk-tyo"
         },
         {
           city: "曼谷 ⇄ 大阪",
@@ -1895,7 +2099,8 @@
           meta: "直飛 5h30m ｜ 關西美食購物",
           tag: "Popular",
           tagClass: "tag-popular",
-          img: "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/bangkok-to-osaka/tickets-bkk-osa"
         },
         {
           city: "曼谷 ⇄ 札幌",
@@ -1905,7 +2110,8 @@
           meta: "直飛 6h30m ｜ 泰國避暑賞雪首選",
           tag: "Trending",
           tagClass: "tag-trending",
-          img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/bangkok-to-sapporo/tickets-bkk-spk"
         },
         {
           city: "曼谷 ⇄ 福岡",
@@ -1915,7 +2121,8 @@
           meta: "直飛 5h05m ｜ 九州最超值直達",
           tag: "Hot Deal",
           tagClass: "tag-bestseller",
-          img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/bangkok-to-fukuoka/tickets-bkk-fuk"
         }
       ],
       "hk_sea": [
@@ -1927,7 +2134,8 @@
           meta: "直飛 4h10m ｜ 國泰/HK Express",
           tag: "Bestseller",
           tagClass: "tag-bestseller",
-          img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/hong-kong-to-tokyo/tickets-hkg-tyo"
         },
         {
           city: "香港 ⇄ 大阪",
@@ -1937,7 +2145,8 @@
           meta: "直飛 3h45m ｜ 關西直航搶購",
           tag: "Popular",
           tagClass: "tag-popular",
-          img: "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/hong-kong-to-osaka/tickets-hkg-osa"
         },
         {
           city: "新加坡 ⇄ 東京",
@@ -1947,7 +2156,8 @@
           meta: "直飛 6h45m ｜ 新航/酷航直達",
           tag: "Trending",
           tagClass: "tag-trending",
-          img: "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/singapore-to-tokyo/tickets-sin-tyo"
         },
         {
           city: "吉隆坡 ⇄ 東京",
@@ -1957,7 +2167,8 @@
           meta: "直飛 7h00m ｜ 亞航X超值航線",
           tag: "Best Value",
           tagClass: "tag-popular",
-          img: "https://images.unsplash.com/photo-1570459027562-4a916cc6113f?auto=format&fit=crop&w=600&q=80"
+          img: "https://images.unsplash.com/photo-1570459027562-4a916cc6113f?auto=format&fit=crop&w=600&q=80",
+          routePath: "/flights/kuala-lumpur-to-tokyo/tickets-kul-tyo"
         }
       ]
     };
@@ -1977,9 +2188,9 @@
       const routes = ROUTES_DATA[originKey] || [];
 
       container.innerHTML = routes.map(r => {
-        const link = buildTripDeepLink(`/flights/${r.destCode}`);
+        const link = getRouteUrl(r, originKey);
         return `
-          <a href="${link}" target="_blank" class="route-card">
+          <a href="${link}" target="_blank" rel="noopener noreferrer" class="route-card">
             <div class="route-img-wrap">
               <img class="route-img" src="${r.img}" alt="${r.city}" loading="lazy">
               <span class="route-tag-badge ${r.tagClass}">${r.tag}</span>
@@ -2024,6 +2235,7 @@
       if (!formGrid) return;
 
       if (tabKey === 'flights') {
+        formGrid.style.gridTemplateColumns = '';
         formGrid.innerHTML = `
           <!-- 出發地 -->
           <div class="form-field-box">
@@ -2089,8 +2301,9 @@
         `;
         setDefaultDates();
       } else if (tabKey === 'hotels') {
+        formGrid.style.gridTemplateColumns = '1.8fr 1fr 1fr 1.2fr minmax(140px, auto)';
         formGrid.innerHTML = `
-          <div class="form-field-box" style="grid-column: span 2;">
+          <div class="form-field-box">
             <span class="field-label">入住目的地 (City)</span>
             <select id="hotelCity" class="field-select">
               <option value="tokyo" selected>🗼 東京 (新宿/銀座/澀谷/淺草)</option>
@@ -2125,32 +2338,33 @@
         `;
         setHotelDefaultDates();
       } else if (tabKey === 'charter') {
+        formGrid.style.gridTemplateColumns = '2fr 1.2fr 1.4fr minmax(150px, auto)';
         formGrid.innerHTML = `
-          <div class="form-field-box" style="grid-column: span 2;">
-            <span class="field-label">抵達機場 (Airport)</span>
+          <div class="form-field-box">
+            <span class="field-label">抵達機場與路線 (Airport Transfer)</span>
             <select id="charterAirport" class="field-select">
-              <option value="NRT" selected>✈️ 成田國際機場 (NRT) ➔ 東京市區</option>
-              <option value="HND">✈️ 羽田國際機場 (HND) ➔ 東京市區</option>
-              <option value="KIX">✈️ 關西國際機場 (KIX) ➔ 大阪/京都</option>
-              <option value="FUK">✈️ 福岡國際機場 (FUK) ➔ 福岡市區/別府</option>
+              <option value="NRT" selected>✈️ 成田國際機場 (NRT) ➔ 東京市區/富士山</option>
+              <option value="HND">✈️ 羽田國際機場 (HND) ➔ 東京市區/箱根</option>
+              <option value="KIX">✈️ 關西國際機場 (KIX) ➔ 大阪/京都/奈良</option>
+              <option value="FUK">✈️ 福岡國際機場 (FUK) ➔ 福岡市區/由布院</option>
               <option value="CTS">✈️ 新千歲國際機場 (CTS) ➔ 札幌/二世谷</option>
             </select>
           </div>
-          <div class="form-field-box" style="grid-column: span 2;">
-            <span class="field-label">接送日期與時間</span>
+          <div class="form-field-box">
+            <span class="field-label">接送日期</span>
             <input type="date" id="charterDate" class="field-input">
           </div>
           <div class="form-field-box">
-            <span class="field-label">乘坐人數與行李數</span>
+            <span class="field-label">車型與人數</span>
             <select class="field-select">
-              <option selected>1~4 人座 (阿爾法/商務保母車)</option>
-              <option>5~6 人座 (豐田海獅舒適型)</option>
-              <option>7~9 人座 (家庭大團大容量)</option>
+              <option selected>1~6 人座 (Alphard 豪華商務車)</option>
+              <option>5~9 人座 (Toyota Hiace 海獅大空間)</option>
+              <option>自駕租車比價 (ToCoo! / Klook)</option>
             </select>
           </div>
           <div>
             <button class="btn-search-flights" onclick="window.location.href='japan_charter_rental.html'">
-              <span>搜尋中文包車 🚗</span>
+              <span>前往包車專頁 🚗</span>
             </button>
           </div>
         `;
@@ -2158,24 +2372,30 @@
         const el = document.getElementById('charterDate');
         if (el) el.value = d.toISOString().split('T')[0];
       } else if (tabKey === 'jrpass') {
+        formGrid.style.gridTemplateColumns = '2.2fr 1.2fr minmax(140px, auto) minmax(140px, auto)';
         formGrid.innerHTML = `
-          <div class="form-field-box" style="grid-column: span 3;">
-            <span class="field-label">周遊券種類 (JR Pass)</span>
+          <div class="form-field-box">
+            <span class="field-label">周遊券與觀光列車 (JR Pass & Scenic Trains)</span>
             <select id="jrPassType" class="field-select">
               <option value="all_japan" selected>🚄 全日本 JR PASS 鐵路周遊券 (7/14/21日)</option>
               <option value="jr_east">🍁 JR 東日本鐵路周遊券 (東北地區 / 長野新潟)</option>
               <option value="jr_west">🐙 JR 關西廣域周遊券 (大阪/京都/城崎溫泉/岡山)</option>
-              <option value="jr_kyushu">🌋 JR 九州鐵路周遊券 (全九州/北部九州)</option>
+              <option value="jr_kyushu">🌋 JR 九州鐵路周遊券 (由布院之森/雙星4047)</option>
               <option value="hokkaido">❄️ JR 北海道鐵路周遊券 (札幌/函館/富良野)</option>
             </select>
           </div>
-          <div class="form-field-box" style="grid-column: span 2;">
+          <div class="form-field-box">
             <span class="field-label">預計啟用日期</span>
             <input type="date" id="jrPassDate" class="field-input">
           </div>
           <div>
+            <button class="btn-search-flights" onclick="window.location.href='japan_train_tour.html'" style="background:linear-gradient(135deg,#059669 0%,#047857 100%);">
+              <span>51+ 觀光列車圖鑑 🚅</span>
+            </button>
+          </div>
+          <div>
             <button class="btn-search-flights" onclick="executeJrPassSearch()">
-              <span>查詢鐵道票券 🎫</span>
+              <span>購買 JR Pass 🎫</span>
             </button>
           </div>
         `;
@@ -2185,14 +2405,39 @@
       }
     }
 
+    const TRIP_HOTEL_CITY_MAP = {
+      'tokyo': 'tokyo-hotels-list-294',
+      'osaka': 'osaka-hotels-list-219',
+      'kyoto': 'kyoto-hotels-list-734',
+      'okinawa': 'okinawa-hotels-list-614',
+      'sapporo': 'sapporo-hotels-list-704',
+      'hokkaido': 'sapporo-hotels-list-704',
+      'fukuoka': 'fukuoka-hotels-list-267'
+    };
+
+    function buildTripHotelRedirectUrl(cityKey) {
+      const savedLang = localStorage.getItem('tabi_selected_lang') || 'zh-TW';
+      const c = (cityKey || 'tokyo').toLowerCase();
+      const cityPath = TRIP_HOTEL_CITY_MAP[c] || 'tokyo-hotels-list-294';
+      
+      let domain = 'https://tw.trip.com';
+      let sub1 = '%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E4%BD%8F%E5%AE%BF';
+
+      if (savedLang === 'en') {
+        domain = 'https://www.trip.com';
+        sub1 = '%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_EN_Hotel';
+      } else if (savedLang === 'ja') {
+        domain = 'https://jp.trip.com';
+        sub1 = '%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_JP_Hotel';
+      }
+
+      const targetUrl = `${domain}/hotels/${cityPath}/`;
+      return `${domain}/?Allianceid=9507030&SID=325761227&trip_sub1=${sub1}&trip_sub3=D20905663&redirect_url=${encodeURIComponent(targetUrl)}`;
+    }
+
     function executeHotelSearch() {
       const city = document.getElementById('hotelCity')?.value || 'tokyo';
-      const cin = document.getElementById('hotelCheckIn')?.value;
-      const cout = document.getElementById('hotelCheckOut')?.value;
-      let path = `/hotels/list?city=${city}`;
-      if (cin) path += `&checkIn=${cin}`;
-      if (cout) path += `&checkOut=${cout}`;
-      const url = buildTripDeepLink(path);
+      const url = buildTripHotelRedirectUrl(city);
       window.open(url, '_blank');
     }
 
@@ -2218,7 +2463,6 @@
     function setDefaultDates() {
       const today = new Date();
       const nextTue = new Date(today);
-      // 預設 7 天後的週二出發、週日回程（通常是特惠較低價時段）
       const dayOffset = (2 - today.getDay() + 7) % 7 || 7;
       nextTue.setDate(today.getDate() + dayOffset + 7);
       const nextSun = new Date(nextTue);
@@ -2230,24 +2474,120 @@
       if (rInput) rInput.value = nextSun.toISOString().split('T')[0];
     }
 
-    // 執行機票搜尋跳轉 (帶 30 天 Cookie 歸因)
     function executeFlightSearch() {
       const from = document.getElementById('flightFrom')?.value || 'taipei';
       const to = document.getElementById('flightTo')?.value || 'tokyo';
       const dDate = document.getElementById('flightDepartDate')?.value;
       const rDate = document.getElementById('flightReturnDate')?.value;
 
-      let path = `/flights/${from}-to-${to}`;
+      const codeMap = {
+        'taipei': { code: 'tpe', slug: 'taipei' },
+        'kaohsiung': { code: 'khh', slug: 'kaohsiung' },
+        'bangkok': { code: 'bkk', slug: 'bangkok' },
+        'singapore': { code: 'sin', slug: 'singapore' },
+        'hongkong': { code: 'hkg', slug: 'hong-kong' },
+        'kualalumpur': { code: 'kul', slug: 'kuala-lumpur' },
+        'tokyo': { code: 'tyo', slug: 'tokyo' },
+        'osaka': { code: 'osa', slug: 'osaka' },
+        'sapporo': { code: 'spk', slug: 'sapporo' },
+        'fukuoka': { code: 'fuk', slug: 'fukuoka' },
+        'okinawa': { code: 'oka', slug: 'okinawa' },
+        'nagoya': { code: 'ngo', slug: 'nagoya' },
+        'sendai': { code: 'sdj', slug: 'sendai' }
+      };
+      const fromInfo = codeMap[from.toLowerCase()] || { code: 'tpe', slug: 'taipei' };
+      const toInfo = codeMap[to.toLowerCase()] || { code: 'tyo', slug: 'tokyo' };
+
+      const r = {
+        routePath: `/flights/${fromInfo.slug}-to-${toInfo.slug}/tickets-${fromInfo.code}-${toInfo.code}`
+      };
+      let finalUrl = getRouteUrl(r, 'taiwan');
       if (dDate) {
-        path += `?dcity=${from}&acity=${to}&ddate=${dDate}`;
-        if (rDate) path += `&rdate=${rDate}`;
+        finalUrl += `&dcity=${fromInfo.code}&acity=${toInfo.code}&ddate=${dDate}`;
+        if (rDate) finalUrl += `&rdate=${rDate}`;
       }
-      const finalUrl = buildTripDeepLink(path);
       window.open(finalUrl, '_blank');
     }
 
-    // 初始化日期預設值
+    function toggleLangDropdown(event) {
+      if (event) event.stopPropagation();
+      const menu = document.getElementById('langDropdownMenu');
+      if (menu) menu.classList.toggle('show');
+    }
+    function selectLanguage(langCode, langName) {
+      const lbl = document.getElementById('currentLangLabel');
+      if (lbl) lbl.textContent = langName;
+      const menu = document.getElementById('langDropdownMenu');
+      if (menu) menu.classList.remove('show');
+      localStorage.setItem('tabi_selected_lang', langCode);
+      renderRoutesGrid(currentOriginTab);
+    }
+    window.addEventListener('click', function(e) {
+      const wrap = document.getElementById('langSelectorWrap');
+      const menu = document.getElementById('langDropdownMenu');
+      if (wrap && menu && !wrap.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+
+    // 初始化日期預設值與預設台灣航線
     document.addEventListener('DOMContentLoaded', function() {
       setDefaultDates();
-      renderRoutesGrid('all');
+      renderRoutesGrid('taiwan');
     });
+  </script>
+
+  <script>
+    // 🌐 全站外跳連結多國語系安全攔截器 (保證 100% 帶入專屬分潤參數與正確目標語言)
+    document.addEventListener('click', function(e) {
+      const a = e.target.closest('a');
+      if (!a || !a.href) return;
+      const href = a.href;
+      const savedLang = localStorage.getItem('tabi_selected_lang') || 'zh-TW';
+      
+      if (href.includes('trip.com')) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        if (href.includes('/t/fgyJcXow1X2')) return;
+        const domMap = { 'en': 'https://www.trip.com', 'th': 'https://th.trip.com', 'ja': 'https://jp.trip.com', 'ko': 'https://kr.trip.com', 'zh-CN': 'https://hk.trip.com', 'zh-TW': 'https://tw.trip.com' };
+        const base = domMap[savedLang] || 'https://tw.trip.com';
+        let newHref = href.replace(/https:\/\/(tw|jp|th|kr|hk|www)\.trip\.com/, base);
+        if (!newHref.includes('Allianceid=')) {
+          const sep = newHref.includes('?') ? '&' : '?';
+          newHref += `${sep}${TRIP_AFFILIATE_QUERY}`;
+        }
+        a.href = newHref;
+      } else if (href.includes('klook.com')) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        const locMap = { 'en': 'en-US', 'th': 'th', 'ja': 'ja', 'ko': 'ko', 'zh-CN': 'zh-CN', 'zh-TW': 'zh-TW' };
+        const loc = locMap[savedLang] || 'zh-TW';
+        let newHref = href.replace(/klook\.com\/[a-zA-Z_\-]+(\/|$)/, `klook.com/${loc}/`);
+        if (!newHref.includes('aid=')) {
+          const sep = newHref.includes('?') ? '&' : '?';
+          newHref += `${sep}aid=123436&utm_medium=affiliate-alwayson`;
+        }
+        a.href = newHref;
+      } else if (href.includes('booking.com')) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        const locMap = { 'en': 'en-gb', 'th': 'th', 'ja': 'ja', 'ko': 'ko', 'zh-CN': 'zh-cn', 'zh-TW': 'zh-tw' };
+        const curMap = { 'en': 'USD', 'th': 'THB', 'ja': 'JPY', 'ko': 'KRW', 'zh-CN': 'CNY', 'zh-TW': 'TWD' };
+        const loc = locMap[savedLang] || 'zh-tw';
+        const cur = curMap[savedLang] || 'TWD';
+        let newHref = href.replace(/searchresults\.[a-z\-]+\.html/, `searchresults.${loc}.html`);
+        if (!newHref.includes('aid=')) {
+          const sep = newHref.includes('?') ? '&' : '?';
+          newHref += `${sep}aid=2422002`;
+        }
+        if (!newHref.includes('selected_currency=')) {
+          newHref += `&selected_currency=${cur}`;
+        }
+        a.href = newHref;
+      }
+    });
+  </script>
+
+  <script src="./js/tabi_core.js"></script>
+</body>
+</html>

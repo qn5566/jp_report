@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>沖繩海島自駕攻略 ｜ 親子・海景・和牛・5天4夜不繞路 ｜ 日旅報報 JAPAN TABI</title>
   <meta name="description" content="2026 沖繩自駕手帖！告別死板觀光書，實戰 MapCode 一鍵複製、免費停車情報、溜滑梯遮陽度與和牛免排隊秘技。依北部水族館、中部恩納、南部Outlet與那霸市區順路排列。">
+  <!-- Editorial Typography: Kinfolk & Cereal Aesthetic (與 japan_special_edition.html 同步) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Noto+Sans+TC:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@600;700;900&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;600;900&family=Noto+Serif+SC:wght@300;400;600;900&family=Noto+Serif+Thai:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
   <style>
 
 /* 🌟 全站統一極致日系 Header (絕對居中，3-column CSS Grid) */
@@ -262,6 +263,11 @@
     }
 
     :root {
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', Georgia, serif;
+      --font-kanji: 'Shippori Mincho', 'Noto Serif TC', serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-main: 'Outfit', 'Shippori Mincho', 'Noto Serif TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-en: 'Cormorant Garamond', 'Outfit', serif;
       --ocean-blue: #0284C7;
       --ocean-sky: #0EA5E9;
       --ocean-light: #E0F2FE;
@@ -282,12 +288,15 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: var(--font-sans);
       background: #F8FAFC;
       color: var(--text-main);
-      line-height: 1.5;
+      line-height: 1.8;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .brand-title-zh {
+      font-family: var(--font-kanji);
     }
     
     
@@ -446,11 +455,18 @@
     .okinawa-filter-control-wrap {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 28px;
-      padding-bottom: 20px;
+      gap: 16px;
+      margin-top: 60px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
       border-bottom: 1px solid #E2E8F0;
       width: 100%;
+    }
+    @media (max-width: 768px) {
+      .okinawa-filter-control-wrap {
+        margin-top: 42px;
+        margin-bottom: 24px;
+      }
     }
     .okinawa-primary-nav-bar {
       display: flex;
@@ -843,524 +859,390 @@
       line-height: 1.5;
       margin-bottom: 8px;
     }
-    .survival-note-box {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 8px;
-      padding: 7px 9px;
+    /* 🌿 去框線、加間距、極簡高質感資訊條目 (無雜亂 Emoji) */
+    .spot-info-clean-list {
+      background: #FFFFFF;
+      border-top: 1px solid #F1F5F9;
+      border-bottom: 1px solid #F1F5F9;
+      padding: 10px 0;
+      margin: 8px 0 12px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      font-size: 0.7rem;
+      gap: 7px;
     }
-    .survival-item-row {
+    .spot-info-clean-item {
       display: flex;
       align-items: flex-start;
-      gap: 4px;
-      line-height: 1.35;
+      gap: 6px;
+      font-size: 0.74rem;
+      line-height: 1.45;
     }
-    .survival-label {
-      font-weight: 800;
+    .spot-info-icon {
+      color: #94A3B8;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .spot-info-clean-label {
+      font-weight: 700;
       color: #334155;
       flex-shrink: 0;
     }
-    .survival-val {
-      color: #64748B;
-      font-weight: 600;
+    .spot-info-clean-val {
+      color: #475569;
+      font-weight: 500;
     }
-    .spot-actions-trio {
+    .tip-highlight-text {
+      color: #C2410C !important;
+      font-weight: 600 !important;
+    }
+
+    /* 🎯 沖繩景點卡片 4 顆簡約純文字按鈕 (一整排，精緻文青風：map/租車自駕/推薦住宿/包車 - 無邊框扁平設計) */
+    .spot-actions-4col {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 6px;
-      margin-top: 10px;
+      margin-top: 14px;
+      padding-top: 6px;
+      border-top: none;
     }
-    .okinawa-action-btn {
+    .btn-spot-col {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 4px;
+      padding: 8px 2px;
+      font-size: 0.74rem;
+      font-weight: 700;
       border-radius: 8px;
-      font-size: 0.78rem;
-      font-weight: 700;
       text-decoration: none;
-      transition: all 0.18s ease;
+      text-align: center;
       white-space: nowrap;
-      text-align: center;
-      border: none;
-      letter-spacing: 0.02em;
+      border: none !important;
+      transition: all 0.2s ease;
     }
-    .btn-okinawa-map {
+    /* 灰色：map ＆ 包車 */
+    .btn-spot-gray {
       background: #F1F5F9;
-      color: #475569;
+      color: #64748B !important;
+      border: none !important;
     }
-    .btn-okinawa-map:hover {
+    .btn-spot-gray:hover {
       background: #E2E8F0;
-      color: #0F172A;
+      color: #1E293B !important;
+      transform: translateY(-1px);
     }
-    .btn-okinawa-drive {
+    /* 淺藍：租車自駕 */
+    .btn-spot-lightblue {
       background: #E0F2FE;
-      color: #0284C7;
+      color: #0284C7 !important;
+      border: none !important;
     }
-    .btn-okinawa-drive:hover {
-      background: #0284C7;
-      color: #FFFFFF;
-    }
-    .btn-okinawa-hotel {
-      background: #FEF3C7;
-      color: #B45309;
-    }
-    .btn-okinawa-hotel:hover {
-      background: #F59E0B;
-      color: #FFFFFF;
-    }
-    .btn-okinawa-cta {
-      background: #EA580C;
-      color: #FFFFFF;
-      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.25);
-    }
-    .btn-okinawa-cta:hover {
-      background: #C2410C;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
-    }
-    .btn-okinawa-map:hover,
-    .btn-okinawa-drive:hover,
-    .btn-okinawa-hotel:hover {
-      background: #F8FAFC;
-      border-color: #94A3B8;
-      color: #0F172A;
+    .btn-spot-lightblue:hover {
+      background: #BAE6FD;
+      color: #0369A1 !important;
       transform: translateY(-1px);
     }
-    .btn-okinawa-cta {
-      background: linear-gradient(135deg, #FF6B4A 0%, #EA580C 100%);
-      color: #FFFFFF !important;
-      font-weight: 800;
-      border: none;
-      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
+    /* 深藍：推薦住宿 */
+    .btn-spot-darkblue {
+      background: #EEF2FF;
+      color: #1E40AF !important;
+      border: none !important;
     }
-    .btn-okinawa-cta:hover {
-      background: linear-gradient(135deg, #FF7B5C 0%, #F97316 100%);
+    .btn-spot-darkblue:hover {
+      background: #DBEAFE;
+      color: #172554 !important;
       transform: translateY(-1px);
-      box-shadow: 0 4px 10px rgba(234, 88, 12, 0.35);
     }
 
-    /* 📋 複製提示 Toast */
-    .copy-toast {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: rgba(15, 23, 42, 0.94);
-      backdrop-filter: blur(8px);
-      color: #FFFFFF;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-size: 0.82rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 9999;
-      pointer-events: none;
-    }
-    .copy-toast.show {
-      transform: translateX(-50%) translateY(0);
-    }
-
-    /* 頁尾 */
-    .inbound-footer {
-      background: #FFFFFF;
-      border-top: 1px solid var(--border-color);
-      padding: 24px 20px;
-      text-align: center;
-      color: var(--text-light);
-      font-size: 0.8rem;
-    }
-
-    @media (max-width: 900px) {
-      .hero-container {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .hero-main-title { font-size: 1.75rem; }
-      .timeline-cards-row {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      }
-    }
-    @media (max-width: 640px) {
-      .dock-container {
-        flex-wrap: wrap;
-      }
-      .dock-category-scroll {
-        order: 2;
-        width: 100%;
-      }
-      .region-dropdown-wrap {
-        order: 1;
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-      }
-      .spot-actions-trio {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  
-    
-    
-
-    /* 前台語言切換器 (Header Language Selector: 🌐 Language 7 國語言下拉選單) */
-    .lang-selector-dropdown-wrap {
-      position: relative;
-      display: inline-block;
-      flex-shrink: 0;
-    }
-    .lang-selector-dropdown-wrap.open .lang-arrow {
-      transform: rotate(180deg);
-    }
-    .lang-dropdown-menu {
-      position: absolute;
-      top: calc(100% + 8px);
-      right: 0;
-      min-width: 175px;
-      background: #FFFFFF;
-      border: 1.5px solid #E2E8F0;
-      border-radius: 16px;
-      padding: 6px;
-      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.14), 0 3px 8px rgba(0,0,0,0.04);
-      display: none;
-      flex-direction: column;
-      gap: 2px;
-      z-index: 10005;
-      animation: langFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .lang-selector-dropdown-wrap.open .lang-dropdown-menu {
-      display: flex;
-    }
-    .lang-menu-opt {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 10px;
-      border: none;
-      background: transparent;
-      color: #334155;
-      font-size: 0.8rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.15s ease;
-      width: 100%;
-      text-align: left;
-    }
-    .lang-menu-opt:hover {
-      background: #F1F5F9;
-      color: #0F172A;
-    }
-    .lang-menu-opt.active {
-      background: #F0FDF4;
-      color: #16A34A;
-      font-weight: 800;
-    }
-    .lang-flag { font-size: 1rem; }
-    .lang-name { flex: 1; }
-    .lang-check { font-size: 0.85rem; font-weight: 900; }
-
-  
-    /* 🌟 沖繩二級分類橫軸樣式 */
-    .okinawa-tier2-wrapper {
-      padding: 0 16px 14px;
-      margin-top: -6px;
-    }
+    /* 🏷️ 二級細分標籤微膠囊列 (獨立整排，乾淨水平滾動，文青細緻) */
     .okinawa-tier2-pills {
       display: flex;
-      align-items: center;
       gap: 8px;
       overflow-x: auto;
+      padding: 8px 0 2px;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
-      padding: 10px 14px;
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 14px;
-      width: 100%;
-      box-sizing: border-box;
+      white-space: nowrap;
     }
     .okinawa-tier2-pills::-webkit-scrollbar { display: none; }
     .cat-tier2-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
       padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid #CBD5E1;
+      border-radius: 16px;
+      border: 1px solid #E2E8F0;
       background: #FFFFFF;
-      color: #334155;
-      font-size: 0.8rem;
+      color: #64748B;
+      font-size: 0.78rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.18s ease;
       white-space: nowrap;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
     }
     .cat-tier2-btn:hover {
-      background: #F1F5F9;
-      border-color: #94A3B8;
-      color: #0F172A;
-      transform: translateY(-1px);
+      background: #F8FAFC;
+      border-color: #CBD5E1;
+      color: #1E293B;
     }
     .cat-tier2-btn.active {
-      background: #1E3A2F;
-      border-color: #1E3A2F;
-      color: #FFFFFF;
-      font-weight: 700;
-      box-shadow: 0 2px 8px rgba(30, 58, 47, 0.25);
-    }
-
-
-    /* ✈️ 那霸機場接送 ＆ 行李直送專屬區塊樣式 */
-    /* ✈️ 那霸機場直通接送 ＆ 行李直送 (極致精巧緊湊樣式，高度大幅縮減) */
-    .okinawa-airport-luggage-section {
-      margin: 16px 0 20px 0;
-      background: #FFFFFF;
-      border: 1.5px solid #E2E8F0;
-      border-radius: 16px;
-      padding: 12px 14px;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
-    }
-    .service-compact-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    @media (max-width: 768px) {
-      .service-compact-row { grid-template-columns: 1fr; }
-    }
-    .service-compact-card {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 12px;
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .service-compact-card:hover {
-      background: #FFFFFF;
-      border-color: #0284C7;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.1);
-    }
-    .service-compact-icon {
-      font-size: 1.6rem;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-    .service-compact-info {
-      flex: 1;
-      min-width: 0;
-    }
-    .service-compact-head {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 2px;
-    }
-    .service-compact-title {
-      font-size: 0.94rem;
-      font-weight: 800;
-      color: #0F172A;
-    }
-    .service-compact-tag {
-      font-size: 0.68rem;
-      font-weight: 700;
-      background: #E0F2FE;
-      color: #0284C7;
-      padding: 2px 7px;
-      border-radius: 9999px;
-    }
-    .service-compact-desc {
-      font-size: 0.78rem;
-      color: #64748B;
-      margin: 0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      line-height: 1.4;
-    }
-    .service-compact-btn {
-      padding: 6px 13px;
       background: #0284C7;
+      border-color: #0284C7;
       color: #FFFFFF;
-      font-size: 0.76rem;
-      font-weight: 800;
-      border-radius: 8px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: all 0.15s ease;
-    }
-    .service-compact-card:hover .service-compact-btn {
-      background: #0369A1;
-    }
-    .service-compact-card.card-luggage:hover {
-      border-color: #0D9488;
-      box-shadow: 0 6px 18px rgba(13, 148, 136, 0.1);
-    }
-    .service-compact-card.card-luggage .service-compact-tag {
-      background: #CCFBF1;
-      color: #0D9488;
-    }
-    .service-compact-card.card-luggage .service-compact-btn {
-      background: #0D9488;
-    }
-    .service-compact-card.card-luggage:hover .service-compact-btn {
-      background: #0F766E;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
     }
 
-    .okinawa-driving-sop-section {
-      margin: 36px 0 40px 0;
-    }
-    .okinawa-sop-container {
-      background: linear-gradient(135deg, #0284C7 0%, #0369A1 45%, #0D9488 100%);
-      border-radius: 24px;
-      padding: 38px 36px;
-      color: #FFFFFF;
-      box-shadow: 0 20px 50px rgba(2, 132, 199, 0.22);
-      border: 1.5px solid rgba(255, 255, 255, 0.3);
-    }
-    .okinawa-sop-header {
+    /* 📅 行程推薦手帳區塊樣式 (文青優雅版) */
+    .handbook-header-clean {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
+      align-items: center;
       gap: 16px;
-      margin-bottom: 24px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      padding-bottom: 20px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #F1F5F9;
+      flex-wrap: wrap;
     }
-    .okinawa-sop-pill {
+    .handbook-subbar-clean {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .handbook-quick-services {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .quick-service-pill {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #334155;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .quick-service-pill:hover {
+      border-color: #0284C7;
+      color: #0284C7;
+      transform: translateY(-1px);
+    }
+    .qs-arrow {
+      color: #0284C7;
+      font-weight: bold;
+    }
+
+    /* 照片右上角極簡定位標籤 */
+    .spot-corner-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(6px);
+      color: #FFFFFF;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    /* 🛡️ 沖繩自駕手冊彈出視窗 (Modal Backdrop & Dialog - 完美置中無跑版設計) */
+    .sop-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 30px 16px;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+    .sop-modal-backdrop.active {
+      display: flex !important;
+    }
+    .sop-modal-dialog {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      border: 1.5px solid #BAE6FD;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+    .sop-modal-header {
+      background: #FFFFFF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+      border-bottom: 1.5px solid #E2E8F0;
+      gap: 16px;
+      box-sizing: border-box;
+    }
+    .sop-modal-pill {
       font-size: 0.74rem;
       font-weight: 800;
-      background: #F59E0B;
-      color: #0F172A;
-      padding: 4px 12px;
-      border-radius: 9999px;
-      display: inline-block;
-      margin-bottom: 8px;
+      color: #0284C7;
       letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
     }
-    .okinawa-sop-title {
-      font-size: 1.85rem;
+    .sop-modal-title {
+      font-size: 1.2rem;
       font-weight: 900;
-      color: #FFFFFF;
-      margin-bottom: 6px;
-    }
-    .okinawa-sop-desc {
-      font-size: 0.9rem;
-      color: #E0F2FE;
+      color: #0F172A;
       margin: 0;
-      max-width: 800px;
-      line-height: 1.6;
+      line-height: 1.35;
+    }
+    .sop-modal-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #F1F5F9;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #64748B;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+    .sop-modal-close:hover {
+      background: #EF4444;
+      color: #FFFFFF;
+    }
+    .sop-modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      max-height: calc(85vh - 75px);
+      box-sizing: border-box;
     }
     .okinawa-sop-btn-group {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
+      margin-bottom: 20px;
     }
     .btn-sop-tocoo {
-      padding: 10px 18px;
-      background: #FFFFFF;
-      color: #0284C7;
+      padding: 9px 18px;
+      background: #0284C7;
+      color: #FFFFFF !important;
       font-size: 0.82rem;
       font-weight: 800;
       border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 3px 10px rgba(2, 132, 199, 0.2);
       transition: all 0.2s ease;
     }
     .btn-sop-tocoo:hover {
-      background: #F8FAFC;
-      transform: translateY(-2px);
+      background: #0369A1;
+      transform: translateY(-1px);
     }
     .btn-sop-klook {
-      padding: 10px 18px;
+      padding: 9px 18px;
       background: linear-gradient(135deg, #FF5B00 0%, #EA580C 100%);
-      color: #FFFFFF;
+      color: #FFFFFF !important;
       font-size: 0.82rem;
       font-weight: 800;
       border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+      box-shadow: 0 3px 10px rgba(234, 88, 12, 0.25);
       transition: all 0.2s ease;
     }
     .btn-sop-klook:hover {
       background: linear-gradient(135deg, #FF6A1A 0%, #C2410C 100%);
-      transform: translateY(-2px);
+      transform: translateY(-1px);
     }
     .btn-sop-sim {
-      padding: 10px 16px;
-      background: rgba(255, 255, 255, 0.15);
-      color: #FFFFFF;
+      padding: 9px 16px;
+      background: #F8FAFC;
+      color: #334155 !important;
       font-size: 0.82rem;
       font-weight: 800;
       border-radius: 8px;
       text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid #CBD5E1;
       transition: all 0.2s ease;
     }
     .btn-sop-sim:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-2px);
+      background: #E2E8F0;
+      transform: translateY(-1px);
     }
     .okinawa-sop-alert {
-      background: #FFFBEB;
-      border: 2px solid #F59E0B;
-      border-radius: 14px;
-      padding: 20px 24px;
-      margin-bottom: 24px;
+      background: #FEF3C7;
+      border-left: 4px solid #D97706;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 22px;
       display: flex;
-      gap: 16px;
+      gap: 14px;
       align-items: flex-start;
-      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.12);
+      box-sizing: border-box;
     }
     .okinawa-sop-alert-badge {
-      background: #EA580C;
+      background: #D97706;
       color: #FFFFFF;
-      font-weight: 900;
-      font-size: 0.78rem;
-      padding: 4px 10px;
-      border-radius: 6px;
+      font-weight: 800;
+      font-size: 0.76rem;
+      padding: 3px 8px;
+      border-radius: 4px;
       white-space: nowrap;
+      flex-shrink: 0;
       margin-top: 2px;
     }
     .okinawa-sop-alert-text {
-      font-size: 0.88rem;
-      color: #78350F;
-      line-height: 1.7;
+      font-size: 0.85rem;
+      color: #92400E;
+      line-height: 1.65;
     }
     .okinawa-sop-alert-text b {
-      color: #9A3412;
+      color: #78350F;
     }
     .okinawa-sop-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 18px;
-      margin-bottom: 24px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 22px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 768px) {
+      .okinawa-sop-grid {
+        grid-template-columns: 1fr;
+      }
     }
     .okinawa-sop-card {
-      background: #FFFFFF;
-      border: 1.5px solid #BAE6FD;
-      border-radius: 16px;
-      padding: 24px 22px;
-      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08);
-      transition: transform 0.2s ease;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-sizing: border-box;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
     .okinawa-sop-card:hover {
+      border-color: #BAE6FD;
       transform: translateY(-2px);
     }
     .sop-card-tag {
@@ -1372,375 +1254,61 @@
       margin-bottom: 6px;
     }
     .sop-card-h4 {
-      font-size: 1.12rem;
+      font-size: 1.05rem;
       font-weight: 900;
       color: #0F172A;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .sop-card-p {
-      font-size: 0.85rem;
-      color: #334155;
+      font-size: 0.84rem;
+      color: #475569;
       line-height: 1.65;
     }
     .sop-card-tip {
       background: #FEF2F2;
-      border: 1px solid #FECACA;
-      padding: 8px 10px;
-      border-radius: 6px;
+      border-left: 3px solid #EF4444;
+      padding: 8px 12px;
+      border-radius: 4px;
       margin-top: 10px;
       font-size: 0.78rem;
       color: #991B1B;
       line-height: 1.5;
     }
-    .okinawa-sop-rescue-box {
-      background: rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(8px);
-      border: 1.5px solid rgba(255, 255, 255, 0.35);
-      border-radius: 12px;
-      padding: 16px 22px;
+    .okinawa-sop-footer-tip {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-radius: 10px;
+      padding: 14px 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 12px;
+      box-sizing: border-box;
     }
-    .sop-rescue-text {
-      font-size: 0.88rem;
-      color: #FFFFFF;
-      line-height: 1.6;
+    .sop-footer-left {
+      font-size: 0.86rem;
+      color: #166534;
+      line-height: 1.55;
+      flex: 1;
+      min-width: 240px;
     }
-    .sop-rescue-text b {
-      color: #FEF08A;
-    }
-
-
-    /* 🛡️ 自駕手冊彈出按鈕樣式 (小巧精緻、不佔版面) */
-    .sop-trigger-bar {
-      margin-bottom: 14px;
-    }
-    .btn-sop-modal-trigger {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #EFF6FF 0%, #E0F2FE 100%);
-      border: 1.5px solid #BAE6FD;
-      color: #0369A1;
-      padding: 9px 18px;
-      border-radius: 12px;
-      font-size: 0.88rem;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 3px 10px rgba(2, 132, 199, 0.08);
-      transition: all 0.2s ease;
-    }
-    .btn-sop-modal-trigger:hover {
-      background: #FFFFFF;
-      border-color: #0284C7;
-      color: #0284C7;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.16);
-    }
-    .btn-sop-modal-trigger .trigger-icon {
-      font-size: 1.15rem;
-    }
-    .btn-sop-modal-trigger .trigger-badge {
-      background: #0284C7;
-      color: #FFFFFF;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 3px 9px;
-      border-radius: 9999px;
-      margin-left: 4px;
-    }
-
-    /* 🛡️ 彈出視窗 (Modal Backdrop & Dialog) */
-    .sop-modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(8px);
-      z-index: 10000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-    .sop-modal-backdrop.active {
-      display: flex;
-      opacity: 1;
-    }
-    .sop-modal-dialog {
-      background: #FFFFFF;
-      width: 100%;
-      max-width: 960px;
-      max-height: 90vh;
-      border-radius: 20px;
-      overflow-y: auto;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
-      border: 2px solid #BAE6FD;
-      transform: scale(0.95);
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .sop-modal-backdrop.active .sop-modal-dialog {
-      transform: scale(1);
-    }
-    .sop-modal-header {
-      position: sticky;
-      top: 0;
-      background: #FFFFFF;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 28px;
-      border-bottom: 1.5px solid #E2E8F0;
-    }
-    .sop-modal-pill {
-      font-size: 0.72rem;
-      font-weight: 800;
-      color: #0284C7;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .sop-modal-title {
-      font-size: 1.35rem;
-      font-weight: 900;
-      color: #0F172A;
-      margin: 0;
-    }
-    .sop-modal-close {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #F1F5F9;
-      border: none;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #64748B;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-    }
-    .sop-modal-close:hover {
-      background: #EF4444;
-      color: #FFFFFF;
-    }
-    .sop-modal-body {
-      padding: 24px 28px 36px 28px;
-    }
-
-  
-    /* ========================================================
-       🌟 全站統一極致無縫 Header 規格 (保證各分頁零位移、零跳動)
-       ======================================================== */
-    .app-header {
-      position: sticky !important;
-      top: 0 !important;
-      z-index: 1000 !important;
-      background: rgba(250, 248, 245, 0.96) !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
-      border-bottom: 1px solid #E5E0D6 !important;
-      padding: 10px 32px !important;
-      display: grid !important;
-      grid-template-columns: 1fr auto 1fr !important;
-      align-items: center !important;
-      height: 72px !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
-      box-sizing: border-box !important;
-    }
-    .header-left {
-      display: flex !important;
-      align-items: center !important;
-      justify-self: start !important;
-    }
-    .header-center {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      justify-self: center !important;
-    }
-    .header-right {
-      display: flex !important;
-      align-items: center !important;
-      gap: 14px !important;
-      justify-self: end !important;
-    }
-    @media (max-width: 990px) {
-      .app-header {
-        height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 10px !important;
-        padding: 12px 16px !important;
-      }
-      .header-left, .header-right {
-        justify-self: center !important;
-      }
-    }
-    .brand-wrap {
-      display: flex !important;
-      align-items: center !important;
-      gap: 12px !important;
-      text-decoration: none !important;
-      color: inherit !important;
-    }
-    .fuji-logo-box {
-      width: 50px !important;
-      height: 50px !important;
-      border-radius: 50% !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      background: #FFFFFF !important;
-      border: none !important;
-      box-shadow: 0 4px 12px rgba(237, 26, 33, 0.18) !important;
-      overflow: hidden !important;
-      flex-shrink: 0 !important;
-      transition: transform 0.2s ease !important;
-    }
-    .brand-wrap:hover .fuji-logo-box {
-      transform: scale(1.05) !important;
-    }
-    .brand-tabi-logo, .fuji-logo-box img {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      display: block !important;
-    }
-    .brand-text {
-      display: flex !important;
-      flex-direction: column !important;
-      line-height: 1.15 !important;
-    }
-    .brand-text h1, .brand-title-wrap {
-      margin: 0 !important;
-      padding: 0 !important;
-      display: flex !important;
-      align-items: center !important;
-    }
-    .brand-title-zh {
-      color: #094F8D !important;
-      font-family: 'Shippori Mincho', 'Noto Serif TC', serif !important;
-      font-weight: 900 !important;
-      letter-spacing: 2.5px !important;
-      font-size: 1.45rem !important;
-      display: inline-block !important;
-    }
-    .brand-sub-official-wrap {
-      display: flex !important;
-      align-items: center !important;
-      gap: 6px !important;
-      margin-top: 2px !important;
-    }
-    .brand-title-en {
-      color: #ED1A21 !important;
-      font-family: 'Outfit', sans-serif !important;
-      font-size: 0.72rem !important;
-      font-weight: 800 !important;
-      letter-spacing: 1.5px !important;
-    }
-    .brand-tag-official {
-      background: #ED1A21 !important;
+    .btn-sop-sim-action {
+      padding: 8px 16px;
+      background: #16A34A;
       color: #FFFFFF !important;
-      font-size: 0.62rem !important;
-      padding: 1px 6px !important;
-      border-radius: 4px !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.5px !important;
+      font-weight: 700;
+      font-size: 0.82rem;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s ease;
     }
-    .header-nav-link {
-      color: #475569 !important;
-      font-size: 0.86rem !important;
-      font-weight: 700 !important;
-      text-decoration: none !important;
-      padding: 6px 4px !important;
-      border-radius: 4px !important;
-      transition: color 0.2s ease !important;
-      letter-spacing: 0.5px !important;
-      display: inline-block !important;
+    .btn-sop-sim-action:hover {
+      background: #15803D;
     }
-    .header-nav-link:hover {
-      color: #094F8D !important;
-    }
-    .header-nav-link.active {
-      color: #ED1A21 !important;
-      font-weight: 900 !important;
-      border-bottom: 2px solid #ED1A21 !important;
-    }
-    .header-lang-btn {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 5px !important;
-      padding: 5px 12px !important;
-      border-radius: 20px !important;
-      border: 1px solid #CBD5E1 !important;
-      background: #FFFFFF !important;
-      color: #334155 !important;
-      font-size: 0.8rem !important;
-      font-weight: 700 !important;
-      cursor: pointer !important;
-      text-decoration: none !important;
-      transition: all 0.2s ease !important;
-    }
-    .header-lang-btn:hover {
-      background: #F8FAFC !important;
-      border-color: #94A3B8 !important;
-    }
-    .lang-selector-dropdown-wrap {
-      position: relative !important;
-    }
-    .lang-dropdown-menu {
-      display: none;
-      position: absolute !important;
-      top: 100% !important;
-      right: 0 !important;
-      margin-top: 8px !important;
-      background: #FFFFFF !important;
-      border: 1px solid #E2E8F0 !important;
-      border-radius: 12px !important;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
-      padding: 8px !important;
-      min-width: 150px !important;
-      z-index: 2000 !important;
-    }
-    .lang-dropdown-menu.show {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 4px !important;
-    }
-    .lang-menu-opt {
-      display: flex !important;
-      align-items: center !important;
-      gap: 8px !important;
-      width: 100% !important;
-      padding: 8px 12px !important;
-      border: none !important;
-      background: transparent !important;
-      border-radius: 6px !important;
-      font-size: 0.82rem !important;
-      font-weight: 600 !important;
-      color: #334155 !important;
-      cursor: pointer !important;
-      text-align: left !important;
-      transition: background 0.15s ease !important;
-    }
-    .lang-menu-opt:hover {
-      background: #F1F5F9 !important;
-      color: #0F172A !important;
-    }
-    .lang-menu-opt.active {
-      background: #F8FAFC !important;
-      color: #ED1A21 !important;
-      font-weight: 800 !important;
-    }
-
 </style>
+  <link rel="stylesheet" href="./css/tabi_core.css">
 </head>
 <body>
 
@@ -1770,6 +1338,9 @@
 
     <!-- 🌟 頂部右側統一功能按鈕群 (純文字無外框無ICON ＋ 🌐 Language 保留外框與ICON) -->
     <div class="header-right">
+      <a href="japan_entry_rules.html" class="header-entry-pill" title="最新日本入境規範、免稅新制與海關申報手冊" style="background:#EA580C; color:#FFFFFF; font-weight:700; font-size:0.82rem; padding:5px 12px; border-radius:999px; text-decoration:none; box-shadow:0 2px 8px rgba(234,88,12,0.25); transition:all 0.2s; white-space:nowrap; display:inline-flex; align-items:center; gap:4px; margin-right:4px;">
+        <span>最新入境規範</span>
+      </a>
       <a href="japan_flight_deals.html" class="header-nav-link " title="Trip 機票即時比價與特惠航線">
         <span>查機票</span>
       </a>
@@ -1858,32 +1429,38 @@
   <!-- 📅 3. 拯救「5天4夜行程算盤」：時光軸連環手帳 (Timeline Card) -->
   <section class="timeline-handbook-section">
     <div class="handbook-card-main">
-      <div class="handbook-header">
+      <!-- 頂部文青標題與天數切換按鈕列 (同一排精緻對齊) -->
+      <div class="handbook-header-clean">
         <div class="handbook-title-box">
-          <h3><span>📅</span> 沖繩行程推薦</h3>
-          <p>依地理順行規劃，告別南來北往無效折返，後座小孩不哭鬧！</p>
+          <h3 style="font-family:'Shippori Mincho', serif; font-size:1.22rem; font-weight:800; color:#0F172A; margin:0;">沖繩行程推薦</h3>
         </div>
-
-        <!-- 🛡️ 沖繩自駕手冊彈出按鈕 (位於行程按鈕上方，小巧精緻不佔版面) -->
-        <div class="sop-trigger-bar">
-          <button type="button" class="btn-sop-modal-trigger" onclick="openOkinawaSopModal()" title="查看完整日本自駕取還車、保險理賠與緊急救援指南">
-            <span class="trigger-icon">🛡️</span>
-            <span class="trigger-title">沖繩租車自駕注意、保險理賠 ＆ 緊急救援完整指南</span>
-            <span class="trigger-badge">📖 點擊查看手冊 ▾</span>
-          </button>
-        </div>
-
         <div class="plan-switch-pills">
-          <button class="plan-chip-btn active" onclick="switchItineraryPlan('family', this)">👨‍👩‍👧 親子放電 5 日</button>
-          <button class="plan-chip-btn" onclick="switchItineraryPlan('senior', this)">👴 孝親長輩 4 日</button>
-          <button class="plan-chip-btn" onclick="switchItineraryPlan('dive', this)">🤿 浮潛冒險 4 日</button>
-          <button class="plan-chip-btn" onclick="switchItineraryPlan('shopping', this)">🛍️ 購物美食 3 日</button>
+          <button class="plan-chip-btn active" onclick="switchItineraryPlan('family', this)">親子 5 日</button>
+          <button class="plan-chip-btn" onclick="switchItineraryPlan('senior', this)">孝親 4 日</button>
+          <button class="plan-chip-btn" onclick="switchItineraryPlan('dive', this)">浮潛 4 日</button>
+          <button class="plan-chip-btn" onclick="switchItineraryPlan('shopping', this)">購物 3 日</button>
         </div>
       </div>
 
-      <!-- 💡 客群專屬貼心提醒 (Pro-Tips) -->
+      <!-- 貼心配套功能列 (自駕安全手冊 ＋ 機場專車 ＋ 行李直送) -->
+      <div class="handbook-subbar-clean">
+        <button type="button" class="btn-sop-modal-trigger" onclick="openOkinawaSopModal()" title="日本自駕取還車、保險理賠與緊急救援指南" style="padding:7px 16px; border-radius:20px; font-size:0.78rem; font-weight:700; background:#ECFDF5; border:none; color:#065F46; cursor:pointer; transition:all 0.2s ease;">
+          <span>沖繩自駕安全、保險理賠 ＆ 緊急救援指南</span>
+          <span style="color:#059669; margin-left:4px;">查看手冊 ▾</span>
+        </button>
+
+        <div class="handbook-quick-services">
+          <a href="https://www.klook.com/zh-TW/airport-transfers/service/oka-naha-airport/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" rel="noopener noreferrer" class="quick-service-pill" style="background:#E0F2FE; color:#0284C7; border:none; font-weight:700;">
+            <span>那霸機場專車接送</span> <span class="qs-arrow">➔</span>
+          </a>
+          <a href="https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4+%E8%A1%8C%E6%9D%8E%E9%81%9E%E9%80%81&aid=123436&utm_medium=affiliate-alwayson" target="_blank" rel="noopener noreferrer" class="quick-service-pill" style="border:none; font-weight:700;">
+            <span>行李當日直送飯店</span> <span class="qs-arrow">➔</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 客群專屬貼心提醒 (Pro-Tips) -->
       <div class="itinerary-protip-box" id="itineraryProTipBox">
-        <span class="protip-icon">💡</span>
         <span class="protip-text" id="itineraryProTipText">小提醒：日本自駕 6 歲以下幼兒依法必須租用安全座椅，建議預先向租車公司預約。</span>
       </div>
 
@@ -1893,37 +1470,7 @@
     </div>
   </section>
 
-    <!-- ✈️ 專屬模組 1: 那霸機場 24H 專車接送 ＆ 行李當日直送飯店服務 (Klook 連串分潤，高轉換大方雙卡) -->
-    <!-- ✈️ 專屬模組 1: 那霸機場專車接送 ＆ 行李當日直送 (精巧極簡雙卡，大幅縮小高度不佔版面) -->
-    <section class="okinawa-airport-luggage-section" id="sec-airport-luggage">
-      <div class="service-compact-row">
-        <!-- 服務 1: 機場專車接送 -->
-        <a href="https://www.klook.com/zh-TW/airport-transfers/service/oka-naha-airport/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="service-compact-card card-car" title="預約那霸機場專車接送">
-          <span class="service-compact-icon">🚗</span>
-          <div class="service-compact-info">
-            <div class="service-compact-head">
-              <span class="service-compact-title">那霸機場專車接送</span>
-              <span class="service-compact-tag">24H 舉牌接機</span>
-            </div>
-            <p class="service-compact-desc">直達市區・恩納海景飯店或水族館，免轉乘擠單軌</p>
-          </div>
-          <span class="service-compact-btn">預約專車 ➔</span>
-        </a>
-
-        <!-- 服務 2: 行李當日直送 -->
-        <a href="https://www.klook.com/zh-TW/activity/6134-okinawa-airport-luggage-services-naha/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="service-compact-card card-luggage" title="預約那霸機場行李當日直送飯店">
-          <span class="service-compact-icon">🧳</span>
-          <div class="service-compact-info">
-            <div class="service-compact-head">
-              <span class="service-compact-title">行李當日直送飯店</span>
-              <span class="service-compact-tag">雙手空空輕鬆玩</span>
-            </div>
-            <p class="service-compact-desc">機場出關交付行李，傍晚直送全島飯店前台</p>
-          </div>
-          <span class="service-compact-btn">預約託運 ➔</span>
-        </a>
-      </div>
-    </section>
+    
 
     <!-- 🚙 專屬模組 2: 沖繩租車自駕安全手冊與救援專區 (海島大自然冒險配色、高專業信賴感) -->
     
@@ -1974,28 +1521,217 @@
   
 
   <!-- 🏖️ 4. 下方景點卡片：強化「實戰生存筆記」視覺重量 -->
-  <main class="okinawa-main-grid" id="okinawaCardsGrid">
+  <section class="okinawa-main-grid" id="okinawaCardsGrid">
     <!-- JS 動態生成 -->
+  </section>
+
   </main>
 
-  <!-- 📋 複製提示 Toast -->
-  <div class="copy-toast" id="copyToast">
-    <span>✅</span>
-    <span id="copyToastText">已複製 MapCode 🚀 車機導航直接貼上！</span>
-  </div>
-
   <!-- 頁尾 -->
-  <footer class="inbound-footer">
-    <p>© 2026 日旅報報 JAPAN TABI ｜ 沖繩不繞路自駕手帖</p>
+    
+  <footer class="tabi-footer" style="background:#FAF8F5; border-top:1px solid #1E293B; padding:72px 24px 48px; margin-top:80px; position:relative; z-index:10;">
+    <style>
+      .tabi-footer-manifesto-box {
+        max-width: 1200px; margin: 0 auto 56px; padding: 36px 40px; background: #FFFFFF;
+        border: 1px solid #E2E8F0; border-radius: 20px; box-shadow: 0 8px 30px rgba(15,23,42,0.04);
+        display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: center;
+      }
+      .tabi-footer-cols {
+        max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:48px; border-bottom:1px solid #E2E8F0;
+      }
+      .footer-nav-link {
+        font-size:0.84rem; color:#334155; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:all 0.2s;
+      }
+      .footer-nav-link:hover {
+        color: #C2410C;
+        padding-left: 4px;
+      }
+      .footer-nav-link .footer-nav-arrow {
+        color: #94A3B8;
+        transition: transform 0.2s, color 0.2s;
+      }
+      .footer-nav-link:hover .footer-nav-arrow {
+        color: #C2410C;
+        transform: translate(2px, -2px);
+      }
+      @media (max-width: 960px) {
+        .tabi-footer-manifesto-box {
+          grid-template-columns: 1fr !important;
+          padding: 28px 20px !important;
+          gap: 20px !important;
+        }
+        .tabi-footer-vertical-text {
+          display: none !important;
+        }
+        .tabi-footer-cols {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 32px 20px !important;
+        }
+      }
+      @media (max-width: 600px) {
+        .tabi-footer-cols {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
+    
+    <!-- 🌸 《日旅報報》品牌創立精神 (BRAND MANIFESTO - 深度圖案美學特刊版) -->
+    <div class="tabi-footer-manifesto-box">
+      <div class="tabi-footer-manifesto-left" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding-right:32px; border-right:1px solid #E2E8F0;">
+        <span style="font-family:'Cinzel', serif; font-size:0.68rem; font-weight:700; letter-spacing:2.5px; color:#92400E;">BRAND MANIFESTO</span>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div>
+            <div style="font-family:'Shippori Mincho', serif; font-size:1.05rem; font-weight:700; color:#0F172A; letter-spacing:1px; line-height:1.2;">JAPAN TABI</div>
+            <div style="font-size:0.7rem; color:#64748B; margin-top:2px;">日旅報報 品牌創立</div>
+          </div>
+        </div>
+      </div>
+      <div class="tabi-footer-manifesto-right">
+        <h3 style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.05rem; font-weight:700; color:#0F172A; margin:0 0 10px; letter-spacing:1px;">《日旅報報》品牌創立：</h3>
+        <p style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:0.9rem; color:#1E293B; line-height:1.8; margin:0 0 4px;">「因為太喜歡日本，想把四季最動人、最真實的美麗，完整介紹給全世界熱愛旅行的人。」</p>
+        <p style="font-family:'Shippori Mincho', serif; font-size:0.8rem; color:#64748B; font-style:italic; line-height:1.8; margin:0;">「日本が大好きだからこそ、四季折々の息をのむ美しさを、世界中の旅人へ届けたい。」</p>
+      </div>
+    </div>
+
+
+    <div class="tabi-footer-cols">
+      
+      <!-- 第 1 欄：品牌官方認證 -->
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <div style="width:32px; height:32px; border-radius:50%; overflow:hidden; border:1px solid #E2E8F0;">
+            <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <h4 style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.15rem; font-weight:700; margin:0; color:#0F172A; letter-spacing:1px;">日旅報報 JAPAN TABI</h4>
+        </div>
+        <p style="font-size:0.84rem; color:#475569; line-height:1.85; margin-bottom:16px;">
+          日本の四季を彩る花期前線・夏の夜空を彩る花火大会・パウダースノー観測・名所特約ガイド。現地取材に基づき厳選された観光情報を、最高水準の自由旅行へお届けします。
+        </p>
+        <div style="font-size:0.8rem; color:#64748B; line-height:1.75; margin-bottom:16px; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;">
+          <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com" style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
+          <div style="margin-top:2px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
+        </div>
+
+        <div style="padding:12px 16px; background:#FFFFFF; border-left:3px solid #92400E; border-top:1px solid #F1F5F9; border-right:1px solid #F1F5F9; border-bottom:1px solid #F1F5F9; border-radius:4px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <div style="font-weight:700; color:#92400E; margin-bottom:4px; letter-spacing:0.5px;">🏅 官方特約觀測現地取材認證</div>
+          <div>全站情報受著作權保護，未經授權禁止搬運與商業轉載。</div>
+        </div>
+      </div>
+
+      <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          📖 探索日本
+        </h4>
+                <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="tabi_news_preview.html" class="footer-nav-link"><span>首頁情報 ｜ 賞花玩雪最前線</span></a></li>
+          <li><a href="japan_flight_deals.html" class="footer-nav-link"><span>機票比價 ｜ 即時促銷最低價</span></a></li>
+          <li><a href="japan_charter_rental.html" class="footer-nav-link"><span>私人包車 ｜ 彈性包車自由行</span></a></li>
+          <li><a href="japan_okinawa_drive.html" class="footer-nav-link"><span>沖繩自駕 ｜ 自駕環島全攻略</span></a></li>
+          <li><a href="japan_inbound_rankings.html" class="footer-nav-link"><span>美食指南 ｜ 必吃米其林百名店</span></a></li>
+          <li><a href="japan_special_edition.html" class="footer-nav-link" style="color:#92400E; font-weight:700;"><span>深度報導 ｜ 日本文化特刊報導</span></a></li>
+        </ul>
+      </div>
+
+      <!-- 第 3 欄：專題企劃 ＆ 攻略指南 -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          🧭 實用專區
+        </h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="japan_entry_rules.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">最新入境規範專頁</strong><small style="color:#64748B;">2025/2026 免稅新制・VJW 申報手冊</small></a></li>
+          <li><a href="japan_theme_parks.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">遊樂園攻略</strong><small style="color:#64748B;">迪士尼・環球影城 USJ・吉卜力公園</small></a></li>
+          <li><a href="japan_train_tour.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">火車和搭車指南</strong><small style="color:#64748B;">新幹線・JR Pass・觀光列車乘車券</small></a></li>
+          <li><a href="japan_live_bloom_album.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">花況現場即時情報局</strong><small style="color:#64748B;">旅人實拍相簿・景觀咖啡推薦</small></a></li>
+        </ul>
+      </div>
+
+      <!-- 第 4 欄：特別刊號推薦 (深度文章直達連結) -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          ✨ 深度特刊
+        </h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="japan_special_edition.html?vol=7" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 07 沖繩山海極致味覺</strong><small style="color:#64748B;">Halekulani SHIROUX・阿古豬・系滿</small></a></li>
+          <li><a href="japan_special_edition.html?vol=6" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 06 石垣牛與和牛11大名店</strong><small style="color:#64748B;">琉球之牛・本部牧場・燒肉華全指南</small></a></li>
+          <li><a href="japan_special_edition.html?vol=1" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 01 熊野古道：起死回生之道</strong><small style="color:#64748B;">千年朝聖古道・太古雲霧靈湯</small></a></li>
+          <li><a href="japan_special_edition.html?vol=2" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 02 富士五湖與本栖湖</strong><small style="color:#64748B;">神聖逆富士・米其林獵人野味</small></a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 底部版權宣告與社群連結 -->
+    <div style="max-width:1200px; margin:28px auto 0; display:flex; justify-content:space-between; align-items:center; font-size:0.78rem; color:#64748B; flex-wrap:wrap; gap:16px;">
+      <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+        <span style="font-weight:700; color:#334155;">© JAPAN TABI ジャパン・タビ ｜ 全日本観光情報局 All Rights Reserved.</span>
+        <a href="japan_privacy_policy.html" style="color:#64748B; text-decoration:none; margin-left:8px; font-weight:600; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">隱私權政策</a>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》官方 Instagram" style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- Threads -->
+          <a href="https://www.threads.net" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》Threads" style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 3.328 0 6.273-1.624 8.077-4.116-.367-.375-.72-.764-1.057-1.168-1.47 2.05-3.9 3.384-6.65 3.384-4.524 0-8.2-3.676-8.2-8.2s3.676-8.2 8.2-8.2 8.2 3.676 8.2 8.2c0 2.39-.77 4.542-2.316 5.867-1.18.995-2.766 1.433-4.534 1.258-2.678-.266-4.59-2.368-4.59-5.045 0-2.88 2.21-5.18 5.14-5.18 1.94 0 3.518.95 4.19 2.52.17.41.31.85.4 1.3h-1.85c-.08-.3-.21-.58-.38-.83-.45-.66-1.3-1.09-2.36-1.09-1.85 0-3.24 1.45-3.24 3.28 0 1.74 1.25 3.14 3.01 3.31 1.28.13 2.37-.18 3.12-.81.98-.83 1.5-2.22 1.5-3.96 0-5.4-4.32-9.8-9.67-9.8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <button onclick="window.scrollTo({top:0, behavior:'smooth'})" style="background:#FFFFFF; border:1px solid #CBD5E1; border-radius:999px; padding:6px 16px; font-weight:700; cursor:pointer; color:#334155; transition:all 0.2s;" onmouseover="this.style.borderColor='#92400E'; this.style.color='#92400E';" onmouseout="this.style.borderColor='#CBD5E1'; this.style.color='#334155';">
+        ▲ 回到頂部
+      </button>
+    </div>
   </footer>
 
   <script>
+
+    function getHeartSvg(isActive, size) {
+      size = size || 12;
+      if (isActive) {
+        return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="#E11D48" stroke="#E11D48" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>';
+      }
+      return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>';
+    }
+
+    function isFavorite(id) {
+      try {
+        const favs = JSON.parse(localStorage.getItem('TABI_FAVORITES_V1') || '[]');
+        return favs.some(item => String(item.id) === String(id));
+      } catch(e) { return false; }
+    }
+
+    function toggleOkinawaFavorite(spotName, event) {
+      if (event) event.stopPropagation();
+      let found = null;
+      if (typeof OKINAWA_SPOTS !== 'undefined') {
+        for (let r in OKINAWA_SPOTS) {
+          const s = OKINAWA_SPOTS[r].find(x => x.name === spotName);
+          if (s) { found = s; break; }
+        }
+      }
+      if (!found) return;
+      if (typeof toggleFavorite === 'function') {
+        toggleFavorite(found.name, 'okinawa', found.name, found.img, found.region || '', found.cat || '', {
+          desc: found.desc,
+          location: found.sub,
+          navUrl: found.mapUrl
+        });
+      }
+    }
     // const OKINAWA_RENTAL_AFF_URL defined below
 
     // 22 大核心精選名所 (文字精簡提煉，突出實戰數據)
         // 🌺 沖繩自駕全島 50+ 實戰生存名所資料庫 (9大分類・分潤齊全)
-    const OKINAWA_RENTAL_AFF_URL = "https://www2.tocoo.jp/cn/campaign/index?campaign_id=963&vos=clntocoo_affiliate_generic";
-    const KLOOK_AFF_PREFIX = "https://www.klook.com/zh-TW/activity/";
+    const OKINAWA_RENTAL_AFF_URL = "https://afflink.one/s/FruK8";
+    const KLOOK_AFF_PREFIX = "https://www.klook.com/zh-TW/activity/?aid=123436&utm_medium=affiliate-alwayson";
     const KLOOK_AFF_PARAMS = "?aid=123436&utm_medium=affiliate-alwayson";
 
     const OKINAWA_SPOTS = [
@@ -2004,18 +1740,19 @@
         id: "urasoe_park",
         region: "south",
         tier1: "outdoor", subCat: "kids", cat: "kids",
-        name: "浦添大公園 C區",
-        sub: "浦添市 ｜ 90米滾輪超長溜滑梯",
-        img: "https://images.unsplash.com/photo-1596464716127-f2a829822301?auto=format&fit=crop&w=600&q=80",
-        desc: "沖繩最具代表性的超長滾輪滑梯，直衝樹海視野絕佳。設有幼兒專屬軟墊安全區。",
-        mapcode: "33 282 825*33",
-        parking: "免費停車場 (約 80 車位)",
-        shade: "★★★★☆ (設大型遮陽棚推車步道)",
-        tips: "現場提供紙板防磨，周邊有「家庭連鎖定食大戶屋」與「麥當勞」設有親子餐區。",
-        mapUrl: "https://maps.google.com/?q=浦添大公園",
+        city: "Urasoe",
+        name: "浦添大公園 C 區（幼童放電廣場）",
+        sub: "90 米滾輪滑梯全新整修・專屬軟墊幼兒安心區",
+        img: "./images/okinawa_urasoe_park_slide.jpg",
+        desc: "沖繩最具代表性的超長滾輪溜滑梯，近年已全面更新滾輪與防護網，滑順不卡！設有 1～3 歲幼兒專屬防撞地墊安全遊具區、大型遮陽棚休閒涼亭與無障礙推車步道。",
+        mapcode: "33 281 686*55",
+        parking: "C 區專用免費停車場（約 80 車位，設有無障礙專用車格）",
+        shade: "大型遮陽棚休閒涼亭 與無障礙推車步道（09:00 - 21:00 全年無休・夜間路燈充足）",
+        tips: "1. 現場雖有部分紙板，但速度快建議自備「塑膠滑草墊（Daiso 或西松屋可購得）」防發熱燙臀。 2. 園區正對面步行 3 分鐘即為大戶屋定食與麥當勞（設遊戲區），用餐補給免移車。",
+        mapUrl: "https://maps.google.com/?q=Urasoe+Park+C+Zone+Okinawa",
         ctaText: "親子一日包車",
-        ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Urasoe"
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4%E5%8C%85%E8%BB%8A%E4%B8%80%E6%97%A5%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Urasoe&aid=2422002",
       },
       {
         id: "kaigungo_park",
@@ -2023,7 +1760,7 @@
         tier1: "outdoor", subCat: "kids", cat: "kids",
         name: "舊海軍司令部壕公園",
         sub: "豐見城市 ｜ 雙軌立體滾輪滑梯",
-        img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_kaigungo_park.jpg",
         desc: "沿山坡傾瀉而下的立體雙螺旋滑梯，速度感十足，制高點可俯瞰那霸市景與東海。",
         mapcode: "33 036 694*00",
         parking: "免費停車場 (約 100 車位)",
@@ -2032,7 +1769,7 @@
         mapUrl: "https://maps.google.com/?q=舊海軍司令部壕公園",
         ctaText: "租車自駕預約",
         ctaUrl: OKINAWA_RENTAL_AFF_URL,
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Tomigusuku"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Tomigusuku&aid=2422002"
       },
       {
         id: "nakagusuku_park",
@@ -2040,7 +1777,7 @@
         tier1: "outdoor", subCat: "kids", cat: "kids",
         name: "中城公園 (巨型巨無霸蹦床)",
         sub: "中頭郡 ｜ 全島最大巨型彈跳白網",
-        img: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_nakagusuku_park.jpg",
         desc: "沖繩佔地最遼闊的國營公園，巨無霸白色彈跳充氣床與多層次滾輪溜滑梯，放電首選。",
         mapcode: "33 410 668*84",
         parking: "東區/西區大型免費停車場",
@@ -2049,7 +1786,7 @@
         mapUrl: "https://maps.google.com/?q=中城公園",
         ctaText: "親子行程預訂",
         ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nakagusuku"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nakagusuku&aid=2422002"
       },
       {
         id: "nishizaki_park",
@@ -2057,7 +1794,7 @@
         tier1: "outdoor", subCat: "kids", cat: "kids",
         name: "西崎親水公園",
         sub: "糸滿市 ｜ 溪流親水遊具水上滑梯",
-        img: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_nishizaki_park.jpg",
         desc: "結合人工溪流與滑梯的親水水上公園，夏季可赤腳踩水，水深僅至腳踝極安全。",
         mapcode: "232 484 794*81",
         parking: "免費專用停車場",
@@ -2066,7 +1803,7 @@
         mapUrl: "https://maps.google.com/?q=西崎親水公園",
         ctaText: "專車包車預約",
         ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman&aid=2422002"
       },
       {
         id: "peace_memorial_park",
@@ -2074,7 +1811,7 @@
         tier1: "outdoor", subCat: "kids", cat: "kids",
         name: "平和祈念公園 命之卵遊具",
         sub: "糸滿市 ｜ 巨型城堡生命之卵",
-        img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_peace_memorial_park.jpg",
         desc: "佔地壯麗的巨型螺旋城堡與迷宮滑梯，周邊視野遼闊直面蔚藍太平洋海景。",
         mapcode: "232 341 416*37",
         parking: "免費停車場 (500 車位)",
@@ -2083,7 +1820,7 @@
         mapUrl: "https://maps.google.com/?q=平和祈念公園",
         ctaText: "沖繩自駕租車",
         ctaUrl: OKINAWA_RENTAL_AFF_URL,
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman&aid=2422002"
       },
 
       // ==================== 🤿 2. 慶良間浮潛 (Snorkeling & Diving) ====================
@@ -2093,7 +1830,7 @@
         tier1: "outdoor", subCat: "dive", cat: "dive",
         name: "慶良間群島 海龜共游浮潛",
         sub: "座間味/阿嘉 ｜ 世界級透明度慶良間藍",
-        img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_kerama_turtle_spot.jpg",
         desc: "水下能見度高達 30-50 米的世界三大潛點，99% 機率遇見野生綠蠵龜與小丑魚共游。",
         mapcode: "33 158 558*00",
         parking: "那霸三重城港收費停車場",
@@ -2102,7 +1839,7 @@
         mapUrl: "https://maps.google.com/?q=三重城港",
         ctaText: "海龜浮潛預約",
         ctaUrl: "https://www.klook.com/zh-TW/activity/1301-kerama-islands-snorkeling-day-trip-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
       },
       {
         id: "blue_cave",
@@ -2110,7 +1847,7 @@
         tier1: "outdoor", subCat: "dive", cat: "dive",
         name: "真榮田岬 青之洞窟 (藍洞)",
         sub: "恩納村 ｜ 夢幻幽藍水光熱帶魚群",
-        img: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_blue_cave_spot.jpg",
         desc: "沖繩 No.1 浮潛秘境，陽光折射天然幽藍水光，支援中文教練水下免費拍照餵魚。",
         mapcode: "206 062 685*71",
         parking: "計時停車 (100日圓/小時)",
@@ -2119,7 +1856,7 @@
         mapUrl: "https://maps.google.com/?q=真榮田岬",
         ctaText: "藍洞浮潛預約",
         ctaUrl: "https://www.klook.com/zh-TW/activity/1126-blue-cave-snorkeling-experience-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna&aid=2422002"
       },
       {
         id: "kouri_clear_kayak",
@@ -2127,7 +1864,7 @@
         tier1: "outdoor", subCat: "dive", cat: "dive",
         name: "古宇利島 透明獨木舟 ＆ SUP",
         sub: "名護/古宇利 ｜ 蒂芬妮藍果凍海划行",
-        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_kouri_clear_kayak.jpg",
         desc: "完全透明的壓克力獨木舟，向下直視五彩斑斕珊瑚礁，空拍機跟拍畫面宛如漂浮空中。",
         mapcode: "485 693 485*00",
         parking: "古宇利海灘免費停車場",
@@ -2136,7 +1873,7 @@
         mapUrl: "https://maps.google.com/?q=古宇利海灘",
         ctaText: "透明獨木舟預約",
         ctaUrl: "https://www.klook.com/zh-TW/activity/71424-clear-kayak-experience-in-kouri-island-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kouri"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kouri&aid=2422002"
       },
       {
         id: "sesoko_parasailing",
@@ -2144,7 +1881,7 @@
         tier1: "outdoor", subCat: "dive", cat: "dive",
         name: "瀨底島 水上拖曳傘",
         sub: "本部町 ｜ 50米高空鳥瞰珊瑚環礁",
-        img: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_sesoko_parasailing.jpg",
         desc: "快艇加速升空至 50 公尺高空，360 度俯瞰瀨底大橋與伊江島城山絕美漸層海景。",
         mapcode: "206 825 850*44",
         parking: "本部港免費停車場",
@@ -2153,7 +1890,7 @@
         mapUrl: "https://maps.google.com/?q=瀨底海灘",
         ctaText: "拖曳傘線上預訂",
         ctaUrl: "https://www.klook.com/zh-TW/activity/2186-parasailing-experience-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu&aid=2422002"
       },
       {
         id: "minna_island_trip",
@@ -2161,7 +1898,7 @@
         tier1: "outdoor", subCat: "dive", cat: "dive",
         name: "水納島 (牛角麵包島) 快艇浮潛",
         sub: "本部町 ｜ 白沙月牙灣海水透明度第一",
-        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_minna_island_trip.jpg",
         desc: "搭快艇僅 15 分鐘抵達的純白秘境小島，淺灘即可見滿布珊瑚與小丑魚海葵群。",
         mapcode: "553 112 798*22",
         parking: "渡久地港專用免費停車場",
@@ -2170,7 +1907,7 @@
         mapUrl: "https://maps.google.com/?q=水納島",
         ctaText: "水納島一日遊預約",
         ctaUrl: "https://www.klook.com/zh-TW/activity/17812-minna-island-day-trip-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu&aid=2422002"
       },
 
       // ==================== 🥩 3. 頂級和牛燒肉 (Wagyu Beef) ====================
@@ -2180,7 +1917,7 @@
         tier1: "food", subCat: "beef", cat: "beef",
         name: "琉球之牛 恩納本館",
         sub: "恩納村 ｜ 頂級縣產黑毛和牛",
-        img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_ryukyu_no_ushi.jpg",
         desc: "炭火炙燒霜降頂級牛五花與炙燒和牛握壽司，脂香濃郁入口即化，排隊神級名店。",
         mapcode: "206 096 716*71",
         parking: "專用免費停車場 (約 30 車位)",
@@ -2189,7 +1926,7 @@
         mapUrl: "https://maps.google.com/?q=琉球之牛恩納本館",
         ctaText: "租車直達導航",
         ctaUrl: OKINAWA_RENTAL_AFF_URL,
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna&aid=2422002"
       },
       {
         id: "motobu_farm",
@@ -2197,7 +1934,7 @@
         tier1: "food", subCat: "beef", cat: "beef",
         name: "燒肉 Motobu 牧場 本部店",
         sub: "本部町 ｜ 牧場直營獨家牛種",
-        img: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_motobu_farm.jpg",
         desc: "自家牧場酒糟發酵飼育，肉質細嫩融點低，曾獲農林水產大臣賞，產地直送保證。",
         mapcode: "485 540 684*22",
         parking: "門前免費停車場",
@@ -2206,7 +1943,7 @@
         mapUrl: "https://maps.google.com/?q=燒肉Motobu牧場本部店",
         ctaText: "ToCoo! 租車特惠",
         ctaUrl: OKINAWA_RENTAL_AFF_URL,
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu&aid=2422002"
       },
       {
         id: "jojoen_parco",
@@ -2214,7 +1951,7 @@
         tier1: "food", subCat: "beef", cat: "beef",
         name: "敘敘苑 沖繩浦添Parco City",
         sub: "浦添市 ｜ 全景無敵海景燒肉座席",
-        img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_jojoen_parco.jpg",
         desc: "坐擁 180 度全景落日海景，頂級牛小排搭招牌香麻沙拉醬，極致享受無油煙味。",
         mapcode: "33 339 060*33",
         parking: "Parco City 4000個免費停車位",
@@ -2223,7 +1960,7 @@
         mapUrl: "https://maps.google.com/?q=敘敘苑浦添PARCOCITY",
         ctaText: "行李寄送預約",
         ctaUrl: "https://www.klook.com/zh-TW/activity/1659-luggagent-luggage-services-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Urasoe"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Urasoe&aid=2422002"
       },
       {
         id: "wagyu_shimbashi",
@@ -2231,16 +1968,356 @@
         tier1: "food", subCat: "beef", cat: "beef",
         name: "炭火燒肉 琉球神戶牛",
         sub: "那霸市 ｜ A5特選石垣牛/宮崎牛",
-        img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_wagyu_shimbashi.jpg",
         desc: "國際通巷內隱世燒肉，備長炭直火鎖住肉汁，極品和牛橫膈膜與夏多布里昂必點。",
         mapcode: "33 157 382*11",
         parking: "附近收費投幣停車場",
         shade: "★★★★★ (吸煙排氣設備優異)",
         tips: "步行至單軌牧志站 3 分鐘，宵夜營業至凌晨，附中文平板點餐免溝通障礙。",
         mapUrl: "https://maps.google.com/?q=國際通和牛燒肉",
-        ctaText: "那霸訂房比價",
-        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha"
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4%E7%87%92%E8%82%89&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "ganaha_yakiniku",
+        region: "north",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "燒肉乃我那霸 新館 (焼肉乃我覇)",
+        sub: "名護市 ｜ 肉舖直營A5山原和牛＆阿古豬吃到飽",
+        img: "./images/okinawa_ganaha_yakiniku.jpg",
+        desc: "名護超人氣精肉店直營！一樓現切冷藏肉櫃，提供頂級縣產黑毛和牛與純血阿古豬單點及豪華吃到飽。",
+        mapcode: "206 687 130*67",
+        parking: "店前大型免費停車場 (約 50 車位)",
+        shade: "★★★★★ (全室寬敞冷氣沙發席 ｜ 適合大家庭)",
+        tips: "午間定食不到 2000 日圓極划算，晚餐強烈建議透過 Klook 預先訂位免現場苦等 2 小時。",
+        mapUrl: "https://maps.google.com/?q=燒肉乃我那霸新館",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E7%87%92%E8%82%89%E4%B9%83%E6%88%91%E9%82%A3%E9%9C%B8&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nago&aid=2422002"
+      },
+      {
+        id: "yakiniku_hana_naha",
+        region: "naha",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "燒肉 華 (Yakiniku Hana)",
+        sub: "那霸久茂地 ｜ Klook冠軍預約・石垣牛與本部牛炭火燒",
+        img: "./images/okinawa_yakiniku_hana.jpg",
+        desc: "一次集結石垣牛、宮古牛與本部牛三大沖繩名牛！厚切極上牛舌與網烤沙朗脂香四溢，氣氛高雅。",
+        mapcode: "33 156 266*74",
+        parking: "鄰近久茂地收費停車場",
+        shade: "★★★★★ (高檔現代和風裝潢 ｜ 下吸式無煙烤爐)",
+        tips: "單軌美榮橋站步行 5 分鐘，Klook 獨家提供中文套餐預訂，情侶紀念日與家族聚餐首選。",
+        mapUrl: "https://maps.google.com/?q=焼肉華+那覇",
+        ctaText: "Klook餐券",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E9%82%A3%E9%9C%B8+%E7%87%92%E8%82%89%E8%8F%AF&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "steak_house_88_kokusai",
+        region: "naha",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "牛排屋 88 (Steak House 88) 國際通店",
+        sub: "那霸國際通 ｜ Klook熱銷餐券・石垣牛與美式牛排老舖",
+        img: "./images/okinawa_steak_house_88.jpg",
+        desc: "沖繩美式飲食文化代表！超過 20 種部位牛排與特選石垣牛，凡點餐即享濃湯、生菜沙拉與白飯無限自助吧。",
+        mapcode: "33 157 440*55",
+        parking: "國際通周邊投幣停車場",
+        shade: "★★★★★ (復古美式霓虹冷氣卡座)",
+        tips: "必淋沖繩限定「A1酸甜牛排醬」與蒜泥，先在 Klook 購買電子餐券比現場單點更划算。",
+        mapUrl: "https://maps.google.com/?q=Steak+House+88+Kokusai+Dori",
+        ctaText: "Klook餐券",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Steak+House+88+%E6%B2%96%E7%B9%A4&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha&aid=2422002"
+      },
+      {
+        id: "roins_yakiniku_chatan",
+        region: "central",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "Roins 和牛燒肉 (焼肉ロインズ) 北谷店",
+        sub: "北谷美國村 ｜ 頂級冷藏生切牛舌與黑毛和牛炙燒",
+        img: "./images/okinawa_roins_yakiniku.jpg",
+        desc: "全程不冷凍的極鮮冷藏和牛！招牌「專人桌邊炙燒生牛肉蛋黃飯」與厚切蔥鹽牛舌堪稱中部燒肉天花板。",
+        mapcode: "33 525 890*11",
+        parking: "附設專用免費停車位",
+        shade: "★★★★★ (工業風時尚包廂 ｜ 排煙極佳)",
+        tips: "位於北谷國道 58 號旁，逛完美國村晚餐最順路，建議預訂 18:00 首輪時段。",
+        mapUrl: "https://maps.google.com/?q=焼肉ロインズ+北谷",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4+%E5%92%8C%E7%89%9B%E7%87%92%E8%82%89&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Chatan&aid=2422002"
+      },
+      {
+        id: "ishigaki_kinjo_chatan",
+        region: "central",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "石垣牛 燒肉 金城 北谷本店",
+        sub: "北谷町 ｜ 自家石垣島牧場直營正宗A5石垣牛",
+        img: "./images/okinawa_ishigaki_kinjo.jpg",
+        desc: "石垣島直營牧場直送本島！只選用經歷嚴格認證的純正石垣牛，油花細密如大理石紋，甘甜完全不膩口。",
+        mapcode: "33 525 320*44",
+        parking: "店門口免費停車場 (25 車位)",
+        shade: "★★★★★ (全席傳統和室掘ごたつ伸腿座)",
+        tips: "必點「石垣牛特選全牛階梯拼盤」，附設寬敞停車場，長輩與幼童入座極舒適。",
+        mapUrl: "https://maps.google.com/?q=石垣牛焼肉金城+北谷本店",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E7%9F%B3%E5%9E%A3%E7%89%9B+%E7%87%92%E8%82%89&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Chatan&aid=2422002"
+      },
+      {
+        id: "ryukyu_no_ushi_chatan",
+        region: "central",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "琉球之牛 北谷店 (美國村 Depot Island)",
+        sub: "北谷町 ｜ 美國村海濱無煙熟成黑毛和牛專門店",
+        img: "./images/okinawa_ryukyu_no_ushi_chatan.jpg",
+        desc: "坐落美國村摩天輪與落日海灘旁，採用遠紅外線無煙烤爐均勻鎖住和牛油脂，逛街賞夕陽後完美接軌。",
+        mapcode: "33 525 353*22",
+        parking: "美國村共有免費大型停車場",
+        shade: "★★★★★ (半密閉式高隱私包廂設計)",
+        tips: "比恩納本館更容易排到午後時段，現場抽號碼牌後可先在美國村逛街等叫號通知。",
+        mapUrl: "https://maps.google.com/?q=琉球の牛+北谷",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E7%90%89%E7%90%83%E4%B9%8B%E7%89%9B&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Chatan&aid=2422002"
+      },
+      {
+        id: "ryukyu_no_ushi_naha",
+        region: "naha",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "琉球之牛 那霸國際通店",
+        sub: "那霸市 ｜ 國際通頂樓奢華包廂頂級縣產和牛",
+        img: "./images/okinawa_ryukyu_no_ushi_naha.jpg",
+        desc: "國際通最炙手可熱的頂級燒肉殿堂，精選 A5 等級無銘牌特級黑毛和牛，以平實價格提供米其林級肉質。",
+        mapcode: "33 157 552*18",
+        parking: "國際通周邊收費停車場",
+        shade: "★★★★★ (電梯直達頂樓 ｜ 靜謐包廂)",
+        tips: "建議行程確定後立即線上搶訂，必點「厚切蔥花牛舌」與「特選雙層油花牛五花」。",
+        mapUrl: "https://maps.google.com/?q=琉球の牛+那覇国際通り",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E7%90%89%E7%90%83%E4%B9%8B%E7%89%9B&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha&aid=2422002"
+      },
+      {
+        id: "motobu_farm_naha",
+        region: "naha",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "燒肉 Motobu 牧場 那霸店",
+        sub: "那霸久茂地 ｜ 單軌縣廳前站3分・農林水產大臣賞本部牛",
+        img: "./images/okinawa_motobu_farm.jpg",
+        desc: "不必長途跋涉到北部也能品嚐冠軍本部牛！自家牧場酒糟熟成牛肉帶有獨特芳醇乳香，午間牛排丼亦是一絕。",
+        mapcode: "33 156 142*66",
+        parking: "配合收費停車場 (消費享折抵)",
+        shade: "★★★★★ (商務級寬敞桌席 ｜ 嬰兒推車可入)",
+        tips: "距離單軌電車縣廳前站僅步行 3 分鐘，適合還車後住那霸市區當晚大快朵頤。",
+        mapUrl: "https://maps.google.com/?q=焼肉もとぶ牧場+那覇店",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E7%87%92%E8%82%89+%E6%9C%AC%E9%83%A8%E7%89%A7%E5%A0%B4&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "yakiniku_nakama_onna",
+        region: "central",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "琉球燒肉 NAKAMA (恩納村店)",
+        sub: "恩納村 ｜ 58號海岸線人氣名店・石垣牛＆阿古豬大拼盤",
+        img: "./images/okinawa_yakiniku_nakama.jpg",
+        desc: "位於恩納村核心度假飯店帶，招牌「海神丸大拼盤」一次收穫 A5 石垣牛、沖繩黑毛和牛與島豚阿古豬。",
+        mapcode: "206 381 452*33",
+        parking: "店前專用免費停車場",
+        shade: "★★★★★ (挑高木造空間 ｜ 冷氣強勁)",
+        tips: "入住哈雷普那尼或かりゆし海灘飯店步行可達，Klook 可直接預訂雙人與四人豪華套餐。",
+        mapUrl: "https://maps.google.com/?q=琉球焼肉NAKAMA",
+        ctaText: "Klook餐券",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E7%90%89%E7%90%83%E7%87%92%E8%82%89+NAKAMA&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna&aid=2422002"
+      },
+      {
+        id: "yakiniku_yumemaru_onna",
+        region: "central",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "燒肉 夢丸 (Yakiniku Yumemaru) 恩納店",
+        sub: "恩納村 ｜ 恩納飯店免費接駁・本部牛燒肉與涮涮鍋雙享",
+        img: "./images/okinawa_yakiniku_yumemaru.jpg",
+        desc: "同時提供頂級 A5 本部牛炭火燒肉與沖繩紅豚海藻涮涮鍋，一桌滿足想吃烤肉與喝熱湯的全家老小。",
+        mapcode: "206 096 520*14",
+        parking: "免費專用停車場 (30 車位)",
+        shade: "★★★★★ (親子友善榻榻米包廂)",
+        tips: "提供恩納村指定度假飯店免費來回接駁車，小酌 Orion 生啤酒免找代駕超貼心。",
+        mapUrl: "https://maps.google.com/?q=恩納村+焼肉夢丸",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%81%A9%E7%B4%8D+%E7%87%92%E8%82%89&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna&aid=2422002"
+      },
+      {
+        id: "kobe_bar_nakanaka",
+        region: "naha",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "神戶Bar 仲々 (Kobe Bar Nakanaka)",
+        sub: "那霸久茂地 ｜ 頂級A5神戶牛與石垣牛奢華雙重奏",
+        img: "./images/okinawa_kobe_bar_nakanaka.jpg",
+        desc: "大人的隱密奢華食堂！全台少見可同時品嚐血統證書 A5 神戶牛與沖繩特選石垣牛菲力的炭火＆鐵板名店。",
+        mapcode: "33 156 298*41",
+        parking: "周邊投幣式停車場",
+        shade: "★★★★★ (低調奢華吧檯與私密包廂)",
+        tips: "必點「石垣牛與神戶牛夏多布里昂對比套餐」，搭配沖繩海鹽更能凸顯脂香甜度。",
+        mapUrl: "https://maps.google.com/?q=神戸Bar仲々+那覇",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E7%A5%9E%E6%88%B6Bar+%E4%BB%B2&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "sams_sailor_inn_kokusai",
+        region: "naha",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "山姆水手牛排館 (Sam's Sailor Inn) 國際通店",
+        sub: "那霸國際通 ｜ 豪華郵輪船艙・主廚桌邊花式鐵板燒牛排龍蝦",
+        img: "./images/okinawa_sams_sailor_inn.jpg",
+        desc: "走進郵輪船艙般的趣味空間，主廚在鐵板前大秀胡椒罐拋接絕技與火焰秀，鮮嫩菲力牛排配黃金烤大龍蝦。",
+        mapcode: "33 157 412*88",
+        parking: "鄰近牧志收費停車場",
+        shade: "★★★★★ (全室內鐵板包圍席 ｜ 視覺聽覺滿分)",
+        tips: "小朋友最愛的歡樂鐵板秀餐廳，Klook 預訂牛排海陸套餐再享專屬折扣免收服務費。",
+        mapUrl: "https://maps.google.com/?q=Sam's+Sailor+Inn+Kokusai+Dori",
+        ctaText: "Klook餐券",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Sam%27s+%E9%90%B5%E6%9D%BF%E7%87%92+%E6%B2%96%E7%B9%A4&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha&aid=2422002"
+      },
+      {
+        id: "yakiniku_bambohe",
+        region: "naha",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "燒肉 Bambohe (バンボシュ) 國際通牧志店",
+        sub: "那霸國際通 ｜ 超高CP值沖繩和牛＆熟成牛排自助吃到飽",
+        img: "./images/okinawa_yakiniku_bambohe.jpg",
+        desc: "肉食控天堂！提供超過 40 種醃漬牛排、牛舌、阿古豬五花與沖繩熟食咖哩、冰淇淋無限量自助吃到飽。",
+        mapcode: "33 157 618*22",
+        parking: "周邊投幣式停車場",
+        shade: "★★★★★ (寬敞美式自助吧空間)",
+        tips: "午餐時段每人約 2000 日圓出頭即可無限暢吃，學生族與大胃王家庭補充體力首選。",
+        mapUrl: "https://maps.google.com/?q=焼肉バンボシュ+国際通り",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4+%E7%87%92%E8%82%89%E5%90%83%E5%88%B0%E9%A3%BD&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha&aid=2422002"
+      },
+      {
+        id: "gokujo_gyu_naha",
+        region: "naha",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "沖繩燒肉 極上牛 (Gokujo Gyu)",
+        sub: "那霸久茂地 ｜ 宮古牛與石垣牛一頭買稀有部位專門店",
+        img: "./images/okinawa_gokujo_gyu.jpg",
+        desc: "堅持整頭購買 A5 等級宮古牛與石垣牛，每日供應極少量的板腱芯、友三角與橫膈膜，搭配松露鹽絕配。",
+        mapcode: "33 156 385*12",
+        parking: "對面收費立體停車場",
+        shade: "★★★★★ (獨立個室包廂 ｜ 私密性極高)",
+        tips: "招牌「松露月見炙燒和牛壽司」由店員桌邊現烤，入口瞬間化開。",
+        mapUrl: "https://maps.google.com/?q=那覇+極上牛+焼肉",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4+%E7%9F%B3%E5%9E%A3%E7%89%9B%E7%87%92%E8%82%89&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "ushishin_onna",
+        region: "central",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "恩納村 炭火燒肉 牛しん (Ushishin)",
+        sub: "恩納村 ｜ 伊良皆高台備長炭直火・山原黑毛和牛與島豚",
+        img: "./images/okinawa_ushishin_onna.jpg",
+        desc: "讀谷與恩納交界處的在地人私房名店，使用最高級紀州備長炭高溫鎖汁，厚切牛舌彈牙多汁。",
+        mapcode: "33 796 410*33",
+        parking: "店門前專屬免費停車場",
+        shade: "★★★★★ (木質溫馨和室 ｜ 附兒童座椅)",
+        tips: "距離殘波岬與虹夕諾雅僅 10 分鐘車程，免去恩納大街排隊人潮的高品質選擇。",
+        mapUrl: "https://maps.google.com/?q=炭火焼肉+牛しん+沖縄",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4%E7%87%92%E8%82%89&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Yomitan&aid=2422002"
+      },
+      {
+        id: "bistrot_hiro_yakiniku",
+        region: "south",
+        tier1: "food", subCat: "beef", cat: "beef",
+        name: "豐見城 炭火燒肉 琉球皇家豬＆黑毛和牛",
+        sub: "豐見城市 ｜ ASHIBINAA Outlet 5分鐘・南部血拚完吃肉首選",
+        img: "./images/okinawa_bistrot_hiro.jpg",
+        desc: "位於豐見城豐崎商區，嚴選沖繩南部絲滿產黑毛和牛與阿古豬五花，油花豐潤配冰涼 Orion 生啤超過癮。",
+        mapcode: "232 544 620*15",
+        parking: "商場共用大型免費停車場",
+        shade: "★★★★★ (全室冷氣寬敞無障礙通道)",
+        tips: "逛完 ASHIBINAA Outlet 或 DMM 水族館後開車 3 分鐘即達，還車去機場前最後一餐首選。",
+        mapUrl: "https://maps.google.com/?q=豊見城+焼肉",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4%E7%87%92%E8%82%89&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Tomigusuku&aid=2422002"
+      },
+      {
+        id: "chinuman_onna_izakaya",
+        region: "central",
+        tier1: "food", subCat: "izakaya", cat: "beef",
+        name: "島唄與地料理 思念 (ちぬまん) 恩納サンセットモール店",
+        sub: "恩納村 ｜ 每晚三線琴現場民謠Live・阿古豬鐵板與海葡萄",
+        img: "./images/okinawa_chinuman_onna.jpg",
+        desc: "恩納村最熱鬧的民謠居酒屋！每晚固定舉辦琉球傳統三線琴島唄現場演唱，必點石垣牛握壽司、海葡萄與阿古豬。",
+        mapcode: "206 096 115*44",
+        parking: "超大型免費停車場 (100 車位)",
+        shade: "★★★★★ (超過200席琉球紅瓦大空間)",
+        tips: "提供恩納村各大海景飯店免費專車接送，演奏尾聲全場一起跳 Kachashi 舞氣氛嗨翻！",
+        mapUrl: "https://maps.google.com/?q=沖縄料理ちぬまん+恩納サンセットモール名嘉真店",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4+%E5%B1%85%E9%85%92%E5%B1%8B&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna&aid=2422002"
+      },
+      {
+        id: "mekiki_no_ginji_naha",
+        region: "naha",
+        tier1: "food", subCat: "izakaya", cat: "beef",
+        name: "目利きの銀次 新都心本店 (傳奇木桶居酒屋)",
+        sub: "那霸新都心 ｜ 巨型清酒木桶建築・產地直送生魚片船與炭燒和牛",
+        img: "./images/okinawa_mekiki_no_ginji.jpg",
+        desc: "沖繩居酒屋代名詞！外觀宛如巨型木桶，每日從日本全國漁港空運直送極鮮海膽、生蠔與黑毛和牛炭火燒。",
+        mapcode: "33 188 468*74",
+        parking: "店旁附設免費停車位 (建議早到)",
+        shade: "★★★★★ (雙層樓挑高開放式板前與包廂)",
+        tips: "必點「500日圓超豪華生魚片刺盛合」與「明太子起司玉子燒」，建議提前於 Klook 預約座位。",
+        mapUrl: "https://maps.google.com/?q=目利きの銀次+新都心本舗",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E7%9B%AE%E5%88%A9%E3%81%8D%E3%81%AE%E9%8A%80%E6%AC%A1&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Omoromachi+Naha&aid=2422002"
+      },
+      {
+        id: "urizun_ryukyu_izakaya",
+        region: "naha",
+        tier1: "food", subCat: "izakaya", cat: "izakaya",
+        name: "うりずん (Urizun) 琉球料理老舖居酒屋",
+        sub: "那霸安里 ｜ 1972年創業沖繩料理殿堂・炸田芋與全島古酒泡盛",
+        img: "./images/okinawa_urizun_izakaya.jpg",
+        desc: "開業超過半世紀的正統琉球料理居酒屋，收藏沖繩全數 47 家酒造的珍貴泡盛古酒，招牌「ドゥル天炸田芋」外酥內綿。",
+        mapcode: "33 158 752*33",
+        parking: "單軌安里站旁收費停車場",
+        shade: "★★★★★ (古色古香木造兩層樓包廂)",
+        tips: "單軌安里站步行 2 分鐘，想品嚐最道地東道盆、苦瓜炒蛋與花生豆腐的饕客必訪名所。",
+        mapUrl: "https://maps.google.com/?q=琉球料理+うりずん",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4+%E5%B1%85%E9%85%92%E5%B1%8B&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "mine_folk_izakaya_kokusai",
+        region: "naha",
+        tier1: "food", subCat: "izakaya", cat: "izakaya",
+        name: "民謠居酒屋 海音 (Mi-ne) 國際通店",
+        sub: "那霸國際通 ｜ 零距離三線琴大合唱・阿古豬煎餃與石垣牛炙燒",
+        img: "./images/okinawa_mine_izakaya.jpg",
+        desc: "國際通夜晚最歡樂的民謠舞台！知名島唄歌手現場彈唱三線琴，全場舉杯 Orion 生啤高喊「Karii！(乾杯)」。",
+        mapcode: "33 157 520*41",
+        parking: "牧志站周邊收費停車場",
+        shade: "★★★★★ (舞台視野無死角冷氣座席)",
+        tips: "每晚有 19:30、20:45、22:00 三場演出，建議預訂 19:00 入座邊吃邊看第一場表演。",
+        mapUrl: "https://maps.google.com/?q=島唄ライブ居酒屋+海音",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E5%9C%8B%E9%9A%9B%E9%80%9A+%E5%B1%85%E9%85%92%E5%B1%8B&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha&aid=2422002"
       },
 
       // ==================== ☕ 4. 崖景海邊咖啡 (Ocean Cafes) ====================
@@ -2250,7 +2327,7 @@
         tier1: "leisure", subCat: "cafe", cat: "cafe",
         name: "星野 BANTA CAFE",
         sub: "讀谷村 ｜ 全日本規模最大海崖咖啡",
-        img: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_banta_cafe.jpg",
         desc: "星野集團打造，依懸崖地勢劃分大屋頂露台、海邊露台、岩石露台與森林榻榻米座。",
         mapcode: "33 741 850*44",
         parking: "附專用免費停車場",
@@ -2259,7 +2336,7 @@
         mapUrl: "https://maps.google.com/?q=星野BANTACAFE",
         ctaText: "租車一日遊預約",
         ctaUrl: OKINAWA_RENTAL_AFF_URL,
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Yomitan"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Yomitan&aid=2422002"
       },
       {
         id: "hamabe_no_chaya",
@@ -2267,7 +2344,7 @@
         tier1: "leisure", subCat: "cafe", cat: "cafe",
         name: "濱邊茶屋 (浜辺の茶屋)",
         sub: "南城市 ｜ 潮汐推移木窗窗邊海景",
-        img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_hamabe_no_chaya.jpg",
         desc: "沖繩文青咖啡元祖，窗框外即是純淨白沙與浪花，滿潮時海水就在窗台下方拍打。",
         mapcode: "232 469 491*06",
         parking: "對面專屬免費停車場",
@@ -2276,7 +2353,7 @@
         mapUrl: "https://maps.google.com/?q=濱邊茶屋",
         ctaText: "南部包車預約",
         ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nanjo"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nanjo&aid=2422002"
       },
       {
         id: "shiawase_senagajima",
@@ -2284,7 +2361,7 @@
         tier1: "leisure", subCat: "cafe", cat: "cafe",
         name: "幸福鬆餅 瀨長島店",
         sub: "豐見城市 ｜ 階梯海景看飛機起降",
-        img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_shiawase_senagajima.jpg",
         desc: "地中海白色希臘階梯座席，熱呼呼現煎舒芙蕾鬆餅，每 5 分鐘一架客機從頭頂掠過降落。",
         mapcode: "33 002 605*15",
         parking: "瀨長島全島免費停車",
@@ -2293,7 +2370,7 @@
         mapUrl: "https://maps.google.com/?q=幸福鬆餅瀨長島",
         ctaText: "機場專車接送",
         ctaUrl: "https://www.klook.com/zh-TW/activity/1659-luggagent-luggage-services-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Senagajima"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Senagajima&aid=2422002"
       },
       {
         id: "llota_kouri",
@@ -2301,7 +2378,7 @@
         tier1: "leisure", subCat: "cafe", cat: "cafe",
         name: "古宇利島 L LOTA",
         sub: "名護/古宇利 ｜ 遠眺古宇利跨海大橋",
-        img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_llota_kouri.jpg",
         desc: "隱身高台上的純白建築，整片落地窗俯瞰 2 公里跨海大橋全景，法式手作甜點精緻。",
         mapcode: "485 692 291*00",
         parking: "免費專用停車場",
@@ -2310,7 +2387,194 @@
         mapUrl: "https://maps.google.com/?q=LLOTA古宇利島",
         ctaText: "ToCoo! 租車特惠",
         ctaUrl: OKINAWA_RENTAL_AFF_URL,
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kouri"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kouri&aid=2422002"
+      },
+      {
+        id: "yama_no_chaya_rakusui",
+        region: "south",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
+        name: "山之茶屋 樂水 (山の茶屋 楽水)",
+        sub: "南城市 ｜ 濱邊茶屋姊妹店・背靠珊瑚岩壁俯瞰太平洋",
+        img: "./images/okinawa_cafe_yamanochaya_window.jpg",
+        desc: "依傍天然石灰岩山林建造的木造茶屋，高度比濱邊茶屋更高，可從樹冠之上180度俯瞰百名海灘漸層藍海。",
+        mapcode: "232 469 491*06",
+        parking: "與濱邊茶屋共用免費停車場",
+        shade: "★★★★☆ (森林木屋遮蔭涼爽 ｜ 設室內外席)",
+        tips: "若濱邊茶屋候位太久，往上走 1 分鐘即達樂水，招牌「沖繩野菜窯烤披薩」與時令糙米蔬食定食極受好評。",
+        mapUrl: "https://maps.google.com/?q=山の茶屋+楽水",
+        ctaText: "南部包車預約",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nanjo&aid=2422002"
+      },
+      {
+        id: "cafe_lush_nanjo",
+        region: "south",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
+        name: "cafe_lush〜海の家〜🌴沖縄南城市店",
+        sub: "南城市 ｜ 隱世海邊木造海之家・九宮格旬味定食與鮮烤鮭魚飯糰",
+        img: "./images/okinawa_cafe_lush_nanjo.jpg",
+        desc: "南城市海岸線旁充滿島嶼溫度的全木造「海之家」！大面木窗直面蔚藍漸層海景，供應精緻九宮格時令料理、現烤鮭魚厚蛋定食、沖繩特產胡蘿蔔炒蛋與手作海苔飯糰。",
+        mapcode: "232 531 663*51",
+        parking: "店前專屬免費停車位 (約 15 車位)",
+        shade: "★★★★★ (木質冷氣海景觀景席 ｜ 戶外看海露台)",
+        tips: "招牌必點「海之家日替限定九宮格鮭魚定食」，配菜色彩繽紛精緻，拍照極度出片，南城市最新熱門看海秘境！",
+        mapUrl: "https://maps.google.com/?q=cafe_lush+沖縄南城市店",
+        ctaText: "南部一日遊",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nanjo&aid=2422002"
+      },
+      {
+        id: "nettai_chaya_motobu",
+        region: "north",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
+        name: "亞熱帶茶屋 (亜熱帯茶屋)",
+        sub: "本部町 ｜ 雲端海景吊床・九重葛花海俯瞰瀨底島與伊江島",
+        img: "./images/okinawa_cafe_anettai_gapao.jpg",
+        desc: "隱身本部町山巔的巴里島風秘境茶屋！躺在彩繪吊床與草屋發呆亭內，眼前即是整片東海夕陽與瀨底島全景。",
+        mapcode: "206 800 502*44",
+        parking: "店前專屬免費停車場 (約 15 車位)",
+        shade: "★★★★☆ (南洋茅草涼亭遮陽與室內座)",
+        tips: "距離美麗海水族館約 15 分鐘車程，推薦下午 16:00 造訪，點杯招牌「南洋打拋豬肉飯定食佐香甜鳳梨與紫花鮮盤」，配杯冰沙躺吊床看夕陽。",
+        mapUrl: "https://maps.google.com/?q=亜熱帯茶屋+本部町",
+        ctaText: "北部包車預訂",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu&aid=2422002"
+      },
+      {
+        id: "ocean_boo_kouri",
+        region: "north",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
+        name: "Ocean Boo! 古宇利島海景咖啡",
+        sub: "古宇利島 ｜ 180度零死角蒂芬妮藍海・美式鐵板漢堡與漂浮蘇打",
+        img: "./images/okinawa_cafe_ocean_boo_agu.jpg",
+        desc: "古宇利島南岸二樓海景秘密基地，推開窗即是透明見底的古宇利藍海，彩色復古美式裝潢出片率 100%。",
+        mapcode: "485 692 084*11",
+        parking: "一樓專用免費停車位",
+        shade: "★★★★★ (二樓全室內冷氣海景窗邊席)",
+        tips: "過古宇利大橋後右轉即達，必點「藍色海洋冰淇淋汽水」與極品「阿古豬玫瑰花涮涮鍋拼盤（あぐー豚しゃぶしゃぶ）」，如花朵般綻放的頂級肉質配上清甜湯頭。",
+        mapUrl: "https://maps.google.com/?q=Ocean+Boo+古宇利島",
+        ctaText: "古宇利活動",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/71424-clear-kayak-experience-in-kouri-island-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kouri&aid=2422002"
+      },
+      {
+        id: "zhyvago_coffee_roastery_chatan",
+        region: "central",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
+        name: "Zhyvago Coffee Roastery (北谷美式工業風海景烘焙所)",
+        sub: "北谷美國村 ｜ 挑高雙層美西Loft工業風・海堤冠軍手沖單品與現烤甜點",
+        img: "./images/okinawa_cafe_zhyvago_roastery.jpg",
+        desc: "沖繩最具代表性的精品咖啡旗艦店！座落於美國村海岸線，挑高開闊的雙層美式復古工業風Loft空間、中央大型專業烘豆機與復古霓虹燈牆，直面東海蔚藍浪花。",
+        mapcode: "33 525 322*77",
+        parking: "美國村 Depot Island 免費停車場",
+        shade: "★★★★★ (挑高冷氣工業風內用大廳與海景露台)",
+        tips: "二樓木質迴廊拍照視角極佳！推薦點杯自家烘焙手沖單品或海鹽焦糖拿鐵，配上現烤肉桂捲，感受北谷最道地的美西海岸生活步調。",
+        mapUrl: "https://maps.google.com/?q=ZHYVAGO+COFFEE+ROASTERY+Chatan",
+        ctaText: "預約自駕租車",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Chatan&aid=2422002"
+      },
+      {
+        id: "fukugiya_cafe_motobu",
+        region: "north",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
+        name: "Fukugiya Cafe (フクギ屋 備瀨福木林道咖啡美食)",
+        sub: "本部町備瀨 ｜ 百年福木林蔭古民家・鑄鐵鍋特製手打漢堡排配水波蛋起司脆片",
+        img: "./images/okinawa_cafe_fukugiya.jpg",
+        desc: "隱身於沖繩北部備瀨福木林道與備瀨一線天旁的古民家治癒系餐廳！在濃密樹蔭環抱的靜謐綠意中，享用現做熱騰騰的鑄鐵鍋漢堡排與手作咖啡甜點。",
+        mapcode: "553 105 655*71",
+        parking: "店前免費停車場 ｜ 備瀨福木林道免費公共停車場",
+        shade: "★★★★★ (百年福木綠蔭環繞 ｜ 舒適冷氣室內座席)",
+        tips: "招牌必點「熱鐵鍋手打特製漢堡排」，鋪滿烤洋蔥、起司脆片、培根與飽滿流心水波蛋，旗幟打卡超可愛！漫步福木林道與一線天後最佳午間歇腳處。",
+        mapUrl: "https://maps.google.com/?q=フクギ屋+沖縄",
+        ctaText: "水族館門票",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/828-okinawa-churaumi-aquarium-ticket-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu&aid=2422002"
+      },
+      {
+        id: "mui_cafe_motobu",
+        region: "north",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
+        name: "mui たびと風のうつわ cafe (旅與風之器皿咖啡)",
+        sub: "本部町 ｜ 挑高雙層大面森林落地窗・職人手作陶藝器皿與法式精緻泡芙",
+        img: "./images/okinawa_cafe_mui_space.jpg",
+        desc: "隱身於沖繩本部町山巒林野間的現代極簡建築美學咖啡空間。巨幅挑高落地玻璃將亞熱帶原始森林綠意引入室內，金屬鏡面吧台與質樸清水模相互映照，兼具生活陶藝器皿選品。",
+        mapcode: "206 832 154*63",
+        parking: "店前專屬免費停車位",
+        shade: "★★★★★ (大面採光冷氣森林玻璃屋 ｜ 靜謐極簡坐席)",
+        tips: "必嚐店主特製「法式手作泡芙甜點拼盤」與慢工深煎手沖冰滴咖啡，以沖繩陶藝作家特製厚黑陶皿盛裝，靜心聆聽山風吹過樹梢的沙沙聲響。",
+        mapUrl: "https://maps.google.com/?q=mui+たびと風のうつわ+cafe",
+        ctaText: "自駕租車預約",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu&aid=2422002"
+      },
+      {
+        id: "seaside_cafe_hanon",
+        region: "central",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
+        name: "Seaside Cafe Hanon (波音海景鬆餅咖啡)",
+        sub: "北谷美國村 ｜ 希臘藍白愛琴海露台・沖繩紅芋舒芙蕾鬆餅",
+        img: "./images/okinawa_cafe_hanon.jpg",
+        desc: "美國村 Oak Fashion 大樓二樓的純白希臘風海景露台，現點現煎蓬鬆厚實美式酪乳鬆餅與紅芋蒙布朗。",
+        mapcode: "33 525 355*81",
+        parking: "美國村共有免費停車場",
+        shade: "★★★★★ (室內冷氣白磚席與遮陽海景露台)",
+        tips: "早晨 09:00 即開始供應海景早午餐，比瀨長島幸福鬆餅更容易入座且免排長隊。",
+        mapUrl: "https://maps.google.com/?q=Seaside+Cafe+Hanon+Chatan",
+        ctaText: "中部住宿比價",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Chatan&aid=2422002",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Chatan&aid=2422002"
+      },
+      {
+        id: "fifi_parlor_nago",
+        region: "north",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
+        name: "FIFI PARLOR (屋我地島海上鞦韆秘境咖啡)",
+        sub: "名護/屋我地島 ｜ 羽地內海第一排・海面木鞦韆與手沖檸檬咖啡",
+        img: "./images/okinawa_cafe_fifi_drink.jpg",
+        desc: "前往古宇利島必經的屋我地島海邊貨櫃咖啡屋，大樹下懸掛直面蔚藍內海的木製盪鞦韆，微風吹拂宛如電影場景。",
+        mapcode: "485 512 318*22",
+        parking: "路邊專屬免費停車空地",
+        shade: "★★★☆☆ (天然海濱大樹樹蔭與遮陽傘)",
+        tips: "必點「自家製黑糖薑汁汽水」與現烤披薩吐司，距離古宇利大橋僅 8 分鐘車程。",
+        mapUrl: "https://maps.google.com/?q=FIFI+PARLOR+名護",
+        ctaText: "古宇利透明舟",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/71424-clear-kayak-experience-in-kouri-island-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nago&aid=2422002"
+      },
+      {
+        id: "cave_cafe_gangala",
+        region: "south",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
+        name: "CAVE CAFE (Gangala之谷 萬年鍾乳石洞穴咖啡)",
+        sub: "南城市 ｜ 數萬年天然珊瑚礁鐘乳石巨洞・珊瑚烘焙 35 COFFEE",
+        img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80",
+        desc: "全日本唯一坐落於數萬年天然崩塌鍾乳石洞穴內的奇幻咖啡廳！挑高岩壁垂降氣根，夏季洞內天然恆溫涼爽。",
+        mapcode: "232 494 476*11",
+        parking: "沖繩世界文化王國對面大型免費停車場",
+        shade: "★★★★★ (萬年天然巨型岩洞完全遮陽避暑)",
+        tips: "正對面即為「玉泉洞・沖繩世界文化王國」，強烈建議透過 Klook 一併預訂玉泉洞套票順遊。",
+        mapUrl: "https://maps.google.com/?q=ガンガラーの谷+ケイブカフェ",
+        ctaText: "玉泉洞門票",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/2241-okinawa-world-ticket/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nanjo&aid=2422002"
+      },
+      {
+        id: "ploughmans_lunch_bakery",
+        region: "central",
+        tier1: "leisure", subCat: "cafe", cat: "cafe",
+        name: "Ploughman's Lunch Bakery (北中城森林海景麵包屋)",
+        sub: "北中城村 ｜ 常春藤覆蓋歐風石屋・高台遠眺東海岸與手作酵母三明治",
+        img: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80",
+        desc: "宛如吉卜力動畫中的森林石造小屋，爬滿翠綠藤蔓的露台可遠眺沖繩東海岸蔚藍海景，每日出爐天然酵母歐包秒殺。",
+        mapcode: "33 440 212*55",
+        parking: "專屬免費停車場 (約 15 車位)",
+        shade: "★★★★★ (森林綠蔭露台與冷氣老宅室內席)",
+        tips: "距離永旺夢樂城來客夢 (AEON Rycom) 僅 8 分鐘車程，適合早上先來吃早午餐再去商場血拚。",
+        mapUrl: "https://maps.google.com/?q=Ploughman's+Lunch+Bakery+Okinawa",
+        ctaText: "來客夢行李寄送",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1659-luggagent-luggage-services-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kitanakagusuku&aid=2422002"
       },
 
       // ==================== 🛍️ 5. 逛街商場 (Shopping Malls) ====================
@@ -2320,7 +2584,7 @@
         tier1: "leisure", subCat: "shop", cat: "shop",
         name: "永旺夢樂城 沖繩來客夢",
         sub: "北中城村 ｜ 全島最大巨型水族購物城",
-        img: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_aeon_rycom.jpg",
         desc: "230 間名店聚集，中庭擁有 100 噸巨型海水魚水槽，嬰兒推車免費借用，全室內雨備首選。",
         mapcode: "33 530 406*45",
         parking: "免費停車場 (4000 車位)",
@@ -2329,7 +2593,7 @@
         mapUrl: "https://maps.google.com/?q=永旺夢樂城沖繩來客夢",
         ctaText: "行李寄送預約",
         ctaUrl: "https://www.klook.com/zh-TW/activity/1659-luggagent-luggage-services-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Okinawa+City"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Okinawa+City&aid=2422002"
       },
       {
         id: "parco_city",
@@ -2337,7 +2601,7 @@
         tier1: "leisure", subCat: "shop", cat: "shop",
         name: "浦添 PARCO CITY",
         sub: "浦添市 ｜ 臨海 250 家海景名店",
-        img: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_parco_city.jpg",
         desc: "沖繩最新臨海購物地標，無印良品全島旗艦店、驚安唐吉訶德、3COINS 與海景美食街一應俱全。",
         mapcode: "33 339 060*33",
         parking: "立體免費停車場 (4000 車位)",
@@ -2346,7 +2610,7 @@
         mapUrl: "https://maps.google.com/?q=浦添PARCOCITY",
         ctaText: "行李特快宅配",
         ctaUrl: "https://www.klook.com/zh-TW/activity/1659-luggagent-luggage-services-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Urasoe"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Urasoe&aid=2422002"
       },
       {
         id: "ashibinaa_outlet",
@@ -2354,7 +2618,7 @@
         tier1: "leisure", subCat: "shop", cat: "shop",
         name: "ASHIBINAA 奧特萊斯購物城",
         sub: "豐見城市 ｜ 距機場 15 分鐘精品折扣",
-        img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_ashibinaa_outlet.jpg",
         desc: "古希臘建築露天商場，Coach、Gucci、Adidas、Le Creuset鑄鐵鍋等百大品牌免稅 3 折起。",
         mapcode: "232 544 541*00",
         parking: "免費專用停車場 (1000 車位)",
@@ -2363,7 +2627,7 @@
         mapUrl: "https://maps.google.com/?q=ASHIBINAAOutlet",
         ctaText: "租車還車便捷",
         ctaUrl: OKINAWA_RENTAL_AFF_URL,
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Tomigusuku"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Tomigusuku&aid=2422002"
       },
       {
         id: "naha_main_place",
@@ -2371,7 +2635,7 @@
         tier1: "leisure", subCat: "shop", cat: "shop",
         name: "那霸新都心 San-A Main Place",
         sub: "那霸市 ｜ 電器超市服飾一站買齊",
-        img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_naha_main_place.jpg",
         desc: "單軌歌町站步行 5 分鐘，EDION 愛電王大電器行、大型超市、LoFt 與生活雜貨全覆蓋。",
         mapcode: "33 188 559*02",
         parking: "免費室內停車場 (2500 車位)",
@@ -2379,8 +2643,8 @@
         tips: "超市營業至午夜 23:00，沖繩泡盛、黑糖、雪鹽伴手禮種類比國際通更齊全且免排隊。",
         mapUrl: "https://maps.google.com/?q=San-AMainPlace那霸新都心",
         ctaText: "那霸酒店預約",
-        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Omoromachi+Naha",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha"
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Omoromachi+Naha&aid=2422002",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
       },
 
       // ==================== 🏨 6. 海景度假村 (Resorts) ====================
@@ -2390,16 +2654,16 @@
         tier1: "stay", subCat: "resort", cat: "resort",
         name: "虹夕諾雅 沖繩 (HOSHINOYA)",
         sub: "讀谷村 ｜ 琉球城牆臨海頂級隱世村",
-        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_hoshinoya.jpg",
         desc: "沿海岸線構築的現代御城，所有客房皆為海景別墅，無邊際深層海水泳池直面夕陽。",
         mapcode: "33 741 785*12",
         parking: "住客專屬免費代客泊車",
         shade: "★★★★★ (客房私人露台遮陽舒適)",
         tips: "Booking.com 保證早鳥訂房優惠，館內提供琉球道場晨間深呼吸與傳統三線琴體驗。",
         mapUrl: "https://maps.google.com/?q=虹夕諾雅沖繩",
-        ctaText: "查看訂房價格",
-        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hoshinoya+Okinawa",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hoshinoya+Okinawa"
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/hotels/detail/597619-hoshinoya-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hoshinoya+Okinawa&aid=2422002"
       },
       {
         id: "halekulani_okinawa",
@@ -2407,16 +2671,16 @@
         tier1: "stay", subCat: "resort", cat: "resort",
         name: "哈雷普那尼沖繩 (Halekulani)",
         sub: "恩納村 ｜ 頂級天花板夏威夷五星",
-        img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_halekulani.jpg",
         desc: "天國之屋傳奇，鑲嵌 150 萬片馬賽克白花無邊際泳池，世界奢華飯店指南五星榮譽。",
         mapcode: "206 413 798*55",
         parking: "免費代客泊車服務",
         shade: "★★★★★ (頂級海灘服務 ｜ 冰毛巾飲水支援)",
         tips: "館內擁有米其林二星主廚指導法式餐廳，步行即可達恩納海灘，服務細緻極致。",
         mapUrl: "https://maps.google.com/?q=HalekulaniOkinawa",
-        ctaText: "五星訂房優惠",
-        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Halekulani+Okinawa",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Halekulani+Okinawa"
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/hotels/detail/283051-halekulani-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Halekulani+Okinawa&aid=2422002"
       },
       {
         id: "centurion_churaumi",
@@ -2424,16 +2688,16 @@
         tier1: "stay", subCat: "resort", cat: "resort",
         name: "沖繩美麗海世紀飯店",
         sub: "本部町 ｜ 水族館步行 5 分鐘家庭首選",
-        img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_centurion_churaumi.jpg",
         desc: "緊鄰海洋博公園，寬敞四人家庭房直面翡翠海灘，設有兒童戲水池與自助露天烤肉。",
         mapcode: "553 075 425*33",
         parking: "住客專用大型免費停車場",
         shade: "★★★★☆ (室內兒童遊戲室與泳池洋傘)",
         tips: "飯店門口即可借還 ToCoo! 租車，步行即可達水族館早晨開門第一波入場。",
         mapUrl: "https://maps.google.com/?q=沖繩美麗海世紀飯店",
-        ctaText: "特惠訂房查價",
-        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Centurion+Hotel+Okinawa+Churaumi",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Centurion+Hotel+Okinawa+Churaumi"
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4%E7%BE%8E%E9%BA%97%E6%B5%B7%E4%B8%96%E7%B4%80%E9%A3%AF%E5%BA%97&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Centurion+Hotel+Okinawa+Churaumi&aid=2422002"
       },
       {
         id: "ryukyu_onsen_senagajima",
@@ -2441,16 +2705,288 @@
         tier1: "stay", subCat: "resort", cat: "resort",
         name: "琉球溫泉 瀨長島渡假酒店",
         sub: "豐見城市 ｜ 天然黃金溫泉海景立湯",
-        img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_ryukyu_onsen_senagajima.jpg",
         desc: "沖繩唯一的地下天然湧泉溫泉飯店，站立在 1.2 米深露天立湯眺望東海落日與戰機起降。",
         mapcode: "33 002 605*15",
         parking: "免費停車場",
         shade: "★★★★★ (室內外溫泉設施完備)",
         tips: "距那霸機場僅 15 分鐘車程，適合作為自駕第一天或最後一晚極致放鬆享受。",
         mapUrl: "https://maps.google.com/?q=琉球溫泉瀨長島渡假酒店",
-        ctaText: "海景溫泉訂房",
-        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Ryukyu+Onsen+Senagajima+Hotel",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Senagajima"
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E7%90%89%E7%90%83%E6%BA%AB%E6%B3%89+%E7%80%A8%E9%95%B7%E5%B3%B6%E9%85%92%E5%BA%97&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Ryukyu+Onsen+Senagajima+Hotel&aid=2422002"
+      },
+      {
+        id: "hotel_monterey_okinawa",
+        region: "central",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩蒙特利水療度假酒店 (Hotel Monterey)",
+        sub: "恩納村 ｜ 獨佔老虎海灘・全館海景房與人造波浪泳池",
+        img: "./images/okinawa_onna_monterey_resort.jpg",
+        desc: "恩納村親子度假首選！全館客房皆面西海岸碧海，擁有罕見的人造波浪泳池、無邊際泳池、滑水道與天然溫泉。",
+        mapcode: "206 096 047*22",
+        parking: "住客收費立體停車場 (車位充裕)",
+        shade: "★★★★★ (室內恆溫泳池、兒童球池與海灘陽傘)",
+        tips: "飯店大門過馬路即為恩納村美食街（琉球之牛、三線琴居酒屋），生活機能冠絕全島度假村。",
+        mapUrl: "https://maps.google.com/?q=Hotel+Monterey+Okinawa+Spa+and+Resort",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Hotel+Monterey+Okinawa&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hotel+Monterey+Okinawa+Spa+%26+Resort&aid=2422002"
+      },
+      {
+        id: "ana_intercontinental_manza",
+        region: "central",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩萬座海濱洲際度假酒店 (ANA InterContinental)",
+        sub: "恩納村 ｜ 獨佔萬座岬半島・全島最大海上充氣水上樂園",
+        img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
+        desc: "三面環海的純白郵輪造型五星酒店，對岸直望萬座毛象鼻岩，擁有沖繩規模最大的萬座海洋公園海上氣墊樂園。",
+        mapcode: "206 312 868*55",
+        parking: "園區大型停車場",
+        shade: "★★★★★ (俱樂部酒廊、室內兒童遊戲區與大浴場)",
+        tips: "園區內還有超夢幻「Aqualuce 白色海景教堂」，住客搭乘飯店高爾夫球車穿梭海灘超方便。",
+        mapUrl: "https://maps.google.com/?q=ANA+InterContinental+Manza+Beach+Resort",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=ANA+InterContinental+Manza+Beach+Resort&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=ANA+InterContinental+Manza+Beach+Resort&aid=2422002"
+      },
+      {
+        id: "ritz_carlton_okinawa",
+        region: "north",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩麗思卡爾頓酒店 (The Ritz-Carlton, Okinawa)",
+        sub: "名護喜瀨 ｜ 首里城紅瓦意象・森林水療與名護灣雙重絕景",
+        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+        desc: "坐落名護高台被18洞高爾夫果嶺與亞熱帶森林環抱，水盤倒映藍天與名護灣，ESPA頂級森林水療館靜謐奢華。",
+        mapcode: "206 444 185*66",
+        parking: "住客免費代客泊車",
+        shade: "★★★★★ (森林SPA溫水泳池與發呆亭Cabana)",
+        tips: "提供免費接駁車5分鐘直達「喜瀨海灘」專屬沙灘休息區，館內意式餐廳與鐵板燒水準極高。",
+        mapUrl: "https://maps.google.com/?q=The+Ritz-Carlton+Okinawa",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=The+Ritz-Carlton+Okinawa&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=The+Ritz-Carlton+Okinawa&aid=2422002"
+      },
+      {
+        id: "sheraton_okinawa_sunmarina",
+        region: "central",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩太陽碼頭喜來登度假酒店 (Sheraton Sunmarina)",
+        sub: "恩納村 ｜ 250米跨海高空飛索MegaZip・高達3層樓滑水道",
+        img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
+        desc: "一樓大廳內即有海水生態池可餵食熱帶魚與海星！私人遊艇碼頭、跨海高空溜索與83公尺巨型滑水道讓孩子玩瘋。",
+        mapcode: "206 096 297*11",
+        parking: "大型立體停車場",
+        shade: "★★★★★ (室內生態大廳、攀岩室與溫水SPA池)",
+        tips: "每晚大廳舉辦免費「光雕投影三線琴秀」，沙灘水質獲日本環境省最高 AA 級認證。",
+        mapUrl: "https://maps.google.com/?q=Sheraton+Okinawa+Sunmarina+Resort",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Sheraton+Okinawa+Sunmarina+Resort&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Sheraton+Okinawa+Sunmarina+Resort&aid=2422002"
+      },
+      {
+        id: "the_busena_terrace",
+        region: "north",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "部瀨名岬巴塞那特雷斯渡假村 (The Busena Terrace)",
+        sub: "名護市 ｜ 沖繩元首級傳奇海岬・海中展望塔與日落薩克斯風",
+        img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
+        desc: "獨佔整座部瀨名半島的沖繩殿堂級度假村！穿透式迎風大廳直通白沙海灣，黃昏時海邊現場吹奏薩克斯風浪漫至極。",
+        mapcode: "206 442 075*11",
+        parking: "免費代客泊車服務",
+        shade: "★★★★★ (半島花園樹蔭步道、免費紅色復古遊園巴士)",
+        tips: "園區內即有「部瀨名海中公園」海中展望塔與鯨魚玻璃底船，住客享專屬搭乘禮遇。",
+        mapUrl: "https://maps.google.com/?q=The+Busena+Terrace+Okinawa",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=The+Busena+Terrace&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=The+Busena+Terrace&aid=2422002"
+      },
+      {
+        id: "ryukyu_hotel_nashiro_beach",
+        region: "south",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩名城海灘琉球酒店及度假村 (Ryukyu Hotel & Resort)",
+        sub: "糸滿市 ｜ 那霸機場20分最新五星旗艦・6大夢幻泳池群與香檳早午餐",
+        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+        desc: "南部奢華新地標！全館 443 間客房皆具海景陽台，擁有沖繩最大規模的6座泳池（含漂漂河與全年溫水池）及1公里天然白沙灘。",
+        mapcode: "232 399 250*44",
+        parking: "大型平面停車場",
+        shade: "★★★★★ (VIP泳池別墅Cabana與頂級行政酒廊)",
+        tips: "早餐自助餐供應多達 150 道料理，更罕見在早餐時段提供氣泡酒與現切烤牛肉！",
+        mapUrl: "https://maps.google.com/?q=Ryukyu+Hotel+and+Resort+Nashiro+Beach",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Ryukyu+Hotel+and+Resort+Nashiro+Beach&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Ryukyu+Hotel+%26+Resort+Nashiro+Beach&aid=2422002"
+      },
+      {
+        id: "hotel_orion_motobu",
+        region: "north",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩獵戶座本部度假村及水療中心 (Hotel Orion Motobu)",
+        sub: "本部町 ｜ 美麗海水族館正隔壁・翡翠海灘第一排與侏羅紀溫泉",
+        img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
+        desc: "Orion 啤酒集團重金打造！步行 3 分鐘直達美麗海水族館、備瀨福木林道與翡翠海灘，所有房間直望伊江島海景。",
+        mapcode: "553 105 325*22",
+        parking: "大型立體停車場",
+        shade: "★★★★★ (2億年前地層湧出天然美肌溫泉大浴場)",
+        tips: "迎賓直接贈送冰涼 Orion 生啤酒兌換券，是玩沖繩北部最頂級無可取代的五星基地。",
+        mapUrl: "https://maps.google.com/?q=Hotel+Orion+Motobu+Resort+and+Spa",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Hotel+Orion+Motobu+Resort&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hotel+Orion+Motobu+Resort+%26+Spa&aid=2422002"
+      },
+      {
+        id: "hotel_nikko_alivila",
+        region: "central",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩阿利比拉日航度假酒店 (Hotel Nikko Alivila)",
+        sub: "讀谷村 ｜ 西班牙紅瓦白牆修道院美學・Nirai海灘全島最清澈潮間帶",
+        img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
+        desc: "充滿南歐安達盧西亞風情的浪漫紅瓦城堡，門前的「Nirai 海灘」未經人工改造，退潮時在岸邊就能看見成群小丑魚與海星。",
+        mapcode: "33 702 688*33",
+        parking: "住客停車場",
+        shade: "★★★★★ (拱廊迴廊遮陽、歐式花磚中庭泳池)",
+        tips: "早餐招牌「紅芋奶油醬配現煎法式吐司」被譽為沖繩三大飯店早餐之一，緊鄰星野 Banta Cafe。",
+        mapUrl: "https://maps.google.com/?q=Hotel+Nikko+Alivila+Okinawa",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Hotel+Nikko+Alivila&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hotel+Nikko+Alivila&aid=2422002"
+      },
+      {
+        id: "hilton_okinawa_chatan",
+        region: "central",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩北谷希爾頓度假酒店 (Hilton Okinawa Chatan)",
+        sub: "北谷美國村 ｜ 美國村步行即達・雙滑水道三座泳池與跨館共用設施",
+        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+        desc: "坐落北谷美國村海濱中心，住客可同時免費使用隔壁希爾頓逸林酒店的濱海泳池與滑水道，週六夜晚在房內即可看美國村煙火。",
+        mapcode: "33 525 110*44",
+        parking: "住客完全免費停車 (約 200 車位)",
+        shade: "★★★★★ (室內長泳池、雙座戶外礁湖泳池)",
+        tips: "在北谷停車一位難求時，入住希爾頓享住客免費停車且下樓就能逛街吃燒肉，便利性滿分。",
+        mapUrl: "https://maps.google.com/?q=Hilton+Okinawa+Chatan+Resort",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Hilton+Okinawa+Chatan+Resort&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hilton+Okinawa+Chatan+Resort&aid=2422002"
+      },
+      {
+        id: "renaissance_okinawa_resort",
+        region: "central",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩文藝復興度假村 (Renaissance Okinawa Resort)",
+        sub: "恩納村 ｜ 飯店內養海豚與綠蠵龜！親子活動王國與山田溫泉",
+        img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
+        desc: "全日本最強親子海洋動物度假村！私人瀉湖內飼養瓶鼻海豚、綠蠵龜、魟魚與金剛鸚鵡，小朋友可體驗小小馴獸師與海盜船出海。",
+        mapcode: "206 034 655*22",
+        parking: "住客免費代客泊車",
+        shade: "★★★★★ (巨型室內滑水道泳池與半露天山田溫泉)",
+        tips: "連住 3 晚以上即可獲贈「Club Savvy 禮遇」，免費享用吉祥物早餐、山田溫泉與多項水上活動！",
+        mapUrl: "https://maps.google.com/?q=Renaissance+Okinawa+Resort",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Renaissance+Okinawa+Resort&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Renaissance+Okinawa+Resort&aid=2422002"
+      },
+      {
+        id: "kafuu_resort_fuchaku",
+        region: "central",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩卡夫度假富著公寓酒店 (Kafuu Resort Fuchaku)",
+        sub: "恩納村 ｜ 全館70平米超大海景套房・附獨立廚房與洗烘衣機",
+        img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
+        desc: "三代同堂與多孩家庭最愛！平均房型高達 70 平米（約21坪），配備全套 IH 廚房、大型冰箱、洗脫烘衣機與雙座無邊際泳池。",
+        mapcode: "206 096 655*66",
+        parking: "住客完全免費停車 (300+ 車位)",
+        shade: "★★★★★ (頂樓無邊際泳池與超寬敞海景客廳)",
+        tips: "館內提供上百種免費母嬰用品租借（消毒鍋、溫奶器、繪本、沙灘玩具），自駕停車完全免費。",
+        mapUrl: "https://maps.google.com/?q=Kafuu+Resort+Fuchaku+Condo+Hotel",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Kafuu+Resort+Fuchaku&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kafuu+Resort+Fuchaku+Condo+Hotel&aid=2422002"
+      },
+      {
+        id: "hilton_okinawa_sesoko",
+        region: "north",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩瀨底希爾頓度假酒店 (Hilton Okinawa Sesoko)",
+        sub: "本部町瀨底島 ｜ 800米純白瀨底海灘第一排・週六專屬高空煙火",
+        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+        desc: "跨過瀨底大橋即可抵達的離島風五星酒店，下樓步行 2 分鐘即達透明度極高的天然瀨底海灘，全室擁有私人觀海陽台。",
+        mapcode: "206 825 552*11",
+        parking: "住客完全免費停車 (200 車位)",
+        shade: "★★★★★ (室內溫水泳池、戶外花園泳池與行政酒廊)",
+        tips: "每週六晚間 20:30 施放飯店專屬海上煙火，在自己房間陽台就能零距離欣賞震撼花火。",
+        mapUrl: "https://maps.google.com/?q=Hilton+Okinawa+Sesoko+Resort",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Hilton+Okinawa+Sesoko+Resort&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hilton+Okinawa+Sesoko+Resort&aid=2422002"
+      },
+      {
+        id: "okinawa_prince_ginowan",
+        region: "central",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩王子大飯店 海景宜野灣 (Okinawa Prince Hotel)",
+        sub: "宜野灣市 ｜ 雙層高空無邊際泳池・俯瞰最大遊艇港與免費岩盤浴",
+        img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
+        desc: "距離那霸市區僅 20 分鐘的全新海景五星！2樓與14樓皆設有絕美無邊際溫水泳池，所有住客免費享用大浴場、桑拿與岩盤浴。",
+        mapcode: "33 372 418*33",
+        parking: "住客完全免費立體停車場 (213 車位)",
+        shade: "★★★★★ (室內水療SPA區、泳裝桑拿與岩盤浴)",
+        tips: "過馬路即是「宜野灣熱帶海灘」，開車至浦添 PARCO CITY 僅 8 分鐘，兼具度假感與血拚機能。",
+        mapUrl: "https://maps.google.com/?q=Okinawa+Prince+Hotel+Ocean+View+Ginowan",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Okinawa+Prince+Hotel+Ocean+View+Ginowan&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Okinawa+Prince+Hotel+Ocean+View+Ginowan&aid=2422002"
+      },
+      {
+        id: "glamday_style_yomitan",
+        region: "central",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩讀谷村格拉姆戴伊風格飯店 (GLAMDAY STYLE)",
+        sub: "讀谷村 ｜ 輕奢大人的靜謐度假村・全年恆溫無邊際泳池與暢飲酒廊",
+        img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
+        desc: "專為成熟旅人打造的時尚設計酒店，冬天也能游的恆溫無邊際泳池直望東海落日，傍晚池畔微醺香檳與精釀啤酒免費暢飲。",
+        mapcode: "33 764 512*44",
+        parking: "住客免費停車",
+        shade: "★★★★★ (設計師沙發酒廊與池畔遮陽發呆亭)",
+        tips: "早午餐從 07:00 一路供應至 14:00 且不限進入次數，可睡到自然醒再優雅享用鐵板牛排。",
+        mapUrl: "https://maps.google.com/?q=GLAMDAY+STYLE+HOTEL+AND+RESORT+OKINAWA+YOMITAN",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=GLAMDAY+STYLE+OKINAWA&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=GLAMDAY+STYLE+HOTEL+OKINAWA+YOMITAN&aid=2422002"
+      },
+      {
+        id: "hotel_collective_naha",
+        region: "naha",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "沖繩嘉新酒店 (HOTEL COLLECTIVE 國際通正中心五星)",
+        sub: "那霸國際通 ｜ 國際通唯一擁有戶外大泳池與大浴場桑拿的奢華五星",
+        img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+        desc: "下樓0秒就是國際通大街！卻擁有那霸市區極罕見的 25 公尺戶外度假泳池、兒童戲水池、高空景觀大浴場與頂級自助百匯。",
+        mapcode: "33 157 445*22",
+        parking: "地下大型立體停車場 (150 車位)",
+        shade: "★★★★★ (全室五星新穎客房與三溫暖大浴場)",
+        tips: "所有房型皆配備 60 吋大電視與膠囊咖啡機，一蘭拉麵與驚安殿堂唐吉訶德就在正對面。",
+        mapUrl: "https://maps.google.com/?q=HOTEL+COLLECTIVE+Naha",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=HOTEL+COLLECTIVE+Naha&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=HOTEL+COLLECTIVE+Naha&aid=2422002"
+      },
+      {
+        id: "aqua_citta_naha",
+        region: "naha",
+        tier1: "stay", subCat: "resort", cat: "resort",
+        name: "那霸水之城酒店 (Hotel Aqua Citta Naha)",
+        sub: "那霸泊港 ｜ 全沖繩唯一頂樓全透明玻璃無邊際泳池＆高空酒吧",
+        img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
+        desc: "緊鄰前往慶良間諸島的泊港碼頭（步行30秒），頂樓透明壓克力泳池可邊仰泳邊俯瞰那霸市景與夕陽，夜晚變身星空池畔酒吧。",
+        mapcode: "33 187 224*55",
+        parking: "附設機械式立體停車場",
+        shade: "★★★★★ (頂樓恆溫按摩池與時尚大廳迎賓飲品)",
+        tips: "早餐無限量供應義式生火腿、起司與現煮地中海海鮮湯，參加慶良間浮潛或賞鯨住這間最輕鬆。",
+        mapUrl: "https://maps.google.com/?q=Hotel+Aqua+Citta+Naha",
+        ctaText: "Klook訂房",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=Hotel+Aqua+Citta+Naha&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Hotel+Aqua+Citta+Naha&aid=2422002"
       },
 
       // ==================== ☀️ 7. 夏日玩法 (Summer Beach & Water) ====================
@@ -2460,7 +2996,7 @@
         tier1: "outdoor", subCat: "summer", cat: "summer",
         name: "萬座毛 象鼻岩海上拖曳傘",
         sub: "恩納村 ｜ 俯瞰萬人可坐之天然綠草崖",
-        img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_manzamo_parasail.jpg",
         desc: "夏日必玩水上活動，搭乘彩色降落傘翱翔碧海藍天，鳥瞰萬座毛象鼻岩與珊瑚斷崖。",
         mapcode: "206 312 038*55",
         parking: "萬座毛設施收費停車場",
@@ -2469,7 +3005,7 @@
         mapUrl: "https://maps.google.com/?q=萬座毛",
         ctaText: "夏日拖曳傘預約",
         ctaUrl: "https://www.klook.com/zh-TW/activity/2186-parasailing-experience-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna&aid=2422002"
       },
       {
         id: "bise_fukugi_tree",
@@ -2477,7 +3013,7 @@
         tier1: "outdoor", subCat: "summer", cat: "summer",
         name: "備瀨一線天 ＆ 福木林道自行車",
         sub: "本部町 ｜ 綠蔭遮天夏日清涼避暑",
-        img: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_bise_fukugi_tree.jpg",
         desc: "兩萬株古老福木交織成的翠綠隧道，微風徐徐完全阻隔豔陽，租借單車漫遊直達神秘海崖。",
         mapcode: "553 105 654*00",
         parking: "入口公營免費停車場",
@@ -2486,7 +3022,7 @@
         mapUrl: "https://maps.google.com/?q=備瀨福木林道",
         ctaText: "ToCoo! 租車直達",
         ctaUrl: OKINAWA_RENTAL_AFF_URL,
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu&aid=2422002"
       },
       {
         id: "zanpa_sup_sunset",
@@ -2494,7 +3030,7 @@
         tier1: "outdoor", subCat: "summer", cat: "summer",
         name: "殘波岬 夕陽落日 SUP 立槳",
         sub: "讀谷村 ｜ 白色燈塔下的金色餘暉",
-        img: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_zanpa_sup_sunset.jpg",
         desc: "在平靜海面上划著 SUP 立式划槳，伴隨落日沉入東海，金色晚霞染紅整片浪花極浪漫。",
         mapcode: "1005 685 324*55",
         parking: "殘波岬公園免費停車場",
@@ -2503,7 +3039,7 @@
         mapUrl: "https://maps.google.com/?q=殘波岬燈塔",
         ctaText: "落日SUP預約",
         ctaUrl: "https://www.klook.com/zh-TW/activity/71424-clear-kayak-experience-in-kouri-island-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Yomitan"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Yomitan&aid=2422002"
       },
 
       // ==================== ❄️ 8. 冬季溫泉旬味 (Winter Onsen & Food) ====================
@@ -2522,7 +3058,7 @@
         mapUrl: "https://maps.google.com/?q=那霸泊港",
         ctaText: "冬季賞鯨預約",
         ctaUrl: "https://www.klook.com/zh-TW/activity/836-whale-watching-trip-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
       },
       {
         id: "senagajima_ryujin_onsen",
@@ -2530,7 +3066,7 @@
         tier1: "stay", subCat: "winter", cat: "winter",
         name: "瀨長島 龍神之湯天然溫泉",
         sub: "豐見城市 ｜ 沖繩第一天然黃金泉",
-        img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_senagajima_ryujin_onsen.jpg",
         desc: "從地底 1000 米湧出的天然鈉鹽化物強鹽泉，具有絕佳保溫保濕效果，冬季暖身排毒首選。",
         mapcode: "33 002 605*15",
         parking: "瀨長島全島免費停車",
@@ -2538,26 +3074,28 @@
         tips: "非住客亦可購買單日泡湯券，設有芬蘭式 Loyly 蒸氣波，泡完喝一瓶冰涼琉球咖啡牛奶。",
         mapUrl: "https://maps.google.com/?q=龍神之湯",
         ctaText: "泡湯套票預訂",
-        ctaUrl: "https://www.klook.com/zh-TW/activity/67911-taiwan-passport-application-service/?aid=123436&utm_medium=affiliate-alwayson",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Senagajima"
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E9%BE%8D%E7%A5%9E%E4%B9%8B%E6%B9%AF&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Senagajima&aid=2422002"
       },
       {
         id: "kokusai_yatai_mura",
         region: "naha",
-        tier1: "stay", subCat: "winter", cat: "winter",
+        tier1: "food", subCat: "izakaya", cat: "winter",
         name: "國際通 屋台村 (暖心居酒屋)",
         sub: "那霸市 ｜ 20家在地特色小吃通",
-        img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+        img: "./images/okinawa_kokusai_yatai_mura.jpg",
         desc: "熱氣蒸騰的日式屋台街，冬季必吃阿古豬清湯火鍋、熱騰騰沖繩蕎麥麵、山苦瓜炒蛋與泡盛熱熱喝。",
         mapcode: "33 158 450*22",
         parking: "周邊收費停車場",
         shade: "★★★★★ (冬季屋台拉下防風透明暖簾)",
         tips: "每家小店僅容納 8-10 人，人情味極濃，建議點「Orion 生啤酒搭石垣牛握壽司」。",
         mapUrl: "https://maps.google.com/?q=國際通屋台村",
-        ctaText: "國際通住宿查價",
-        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha"
+        ctaText: "Klook美食券",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E5%9C%8B%E9%9A%9B%E9%80%9A%E5%B1%8B%E5%8F%B0%E6%9D%91&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha&aid=2422002"
       },
+
+      // ==================== 🍜 9. 沖繩麵與名店拉麵 (Okinawa Soba & Ramen) ====================
       {
         id: "danbo_ramen_itoman",
         region: "south",
@@ -2573,15 +3111,187 @@
         mapUrl: "https://maps.google.com/?q=暖暮拉麵糸滿店",
         ctaText: "ToCoo! 租車自駕",
         ctaUrl: OKINAWA_RENTAL_AFF_URL,
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman&aid=2422002"
       },
+      {
+        id: "kishimoto_shokudo",
+        region: "north",
+        tier1: "food", subCat: "ramen", cat: "ramen",
+        name: "岸本食堂 本店 (きしもと食堂)",
+        sub: "本部町 ｜ 1905年創業百年木灰手打沖繩麵元祖",
+        img: "./images/okinawa_kishimoto_soba.jpg",
+        desc: "創業超過 115 年的沖繩麵活歷史！堅持古法以相思樹灰澄清液揉製扁平手打麵條，鰹魚豚骨雙湯頭甘醇濃郁。",
+        mapcode: "206 856 434*66",
+        parking: "店旁與鎮公所免費停車場",
+        shade: "★★★★☆ (百年木造老宅與榻榻米座席)",
+        tips: "必加點每日限量「手工沖繩炊飯 (Jushi)」，若本店人潮過多可改往 5 分鐘車程的「岸本食堂 八重岳店」車位極多。",
+        mapUrl: "https://maps.google.com/?q=きしもと食堂+本店",
+        ctaText: "水族館門票",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1399-okinawa-churaumi-aquarium-ticket/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu&aid=2422002"
+      },
+      {
+        id: "shuri_soba_naha",
+        region: "naha",
+        tier1: "food", subCat: "ramen", cat: "ramen",
+        name: "首里蕎麥麵 (首里そば)",
+        sub: "那霸首里 ｜ 每日僅營業3小時完售・極致琥珀清湯百名店",
+        img: "./images/okinawa_shuri_soba.jpg",
+        desc: "Tabelog 百名店常客！湯頭清澈見底如黃金琥珀，手揉粗麵極具嚼勁，三層肉瘦而不柴，連湯都能一飲而盡。",
+        mapcode: "33 161 526*55",
+        parking: "店前免費停車位 (7 車位) 及周邊投幣車格",
+        shade: "★★★★★ (琉球民藝畫廊木屋冷氣座席)",
+        tips: "11:30 開門通常 14:00 前即售罄關門，逛首里城公園前務必第一站先來排隊，飯後必點「黑糖冰ぜんざい」。",
+        mapUrl: "https://maps.google.com/?q=首里そば+那覇",
+        ctaText: "首里城周邊",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "okinawa_soba_eibun",
+        region: "naha",
+        tier1: "food", subCat: "ramen", cat: "ramen",
+        name: "EIBUN 沖繩麵 (OKINAWA SOBA EIBUN)",
+        sub: "那霸壺屋 ｜ 新世代文青創意沖繩麵冠軍・炙燒軟骨滿載",
+        img: "./images/okinawa_soba_eibun.jpg",
+        desc: "顛覆傳統沖繩麵印象的時尚名店！招牌「BUNBUN 滿載沖繩麵」一次吃齊炙燒軟骨、三枚肉與豬腳，還有獨創香菜豆乳沾麵。",
+        mapcode: "33 158 102*33",
+        parking: "壺屋陶器街周邊收費停車場",
+        shade: "★★★★★ (美式衝浪文青店裝 ｜ 平板抽號免罰站)",
+        tips: "本店排隊久時，步行 3 分鐘有二號店「STAND EIBUN」座位更現代寬敞且翻桌極快。",
+        mapUrl: "https://maps.google.com/?q=OKINAWA+SOBA+EIBUN",
+        ctaText: "那霸包車預訂",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1569-private-car-charter-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha&aid=2422002"
+      },
+      {
+        id: "ryukyu_shinmen_tondo",
+        region: "naha",
+        tier1: "food", subCat: "ramen", cat: "ramen",
+        name: "琉球新麵 通堂 小祿本店",
+        sub: "那霸小祿 ｜ 男人麵濃厚豚骨 vs 女人麵清爽鹽味雞湯",
+        img: "./images/okinawa_shinmen_tondo.jpg",
+        desc: "沖繩拉麵界雙璧之一！「おとこ味男人麵」熬煮18小時濃郁豚骨背脂，「おんな味女人麵」則是清甜雞骨昆布鹽味。",
+        mapcode: "33 095 245*88",
+        parking: "附設專用免費停車場 (15 車位)",
+        shade: "★★★★★ (復古昭和屋台木造冷氣大廳)",
+        tips: "桌上整盅「微辣涼拌豆芽菜」完全免費無限續吃！距離那霸機場僅 10 分鐘車程，單軌小祿站步行 3 分鐘。",
+        mapUrl: "https://maps.google.com/?q=琉球新麺+通堂+小禄本店",
+        ctaText: "預約自駕租車",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "nakamura_soba_onna",
+        region: "central",
+        tier1: "food", subCat: "ramen", cat: "ramen",
+        name: "中村蕎麥麵 (なかむらそば)",
+        sub: "恩納村 ｜ 萬座毛旁海景第一排・獨家翠綠海藻アーサ沖繩麵",
+        img: "./images/okinawa_nakamura_soba.jpg",
+        desc: "坐落恩納村 58 號公路海邊！將天然海菜（Ander/アーサ）直接揉入麵條與魚板中，滿滿海洋清香配萬座蔚藍海景。",
+        mapcode: "206 382 280*11",
+        parking: "店前與後方大型免費停車場 (30 車位)",
+        shade: "★★★★★ (室內冷氣榻榻米與戶外海風座席)",
+        tips: "使用食券機點餐翻桌極快，是前往萬座毛或青之洞窟浮潛前後最順路的午餐首選。",
+        mapUrl: "https://maps.google.com/?q=なかむらそば+恩納村",
+        ctaText: "藍洞浮潛預訂",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1126-blue-cave-snorkeling-experience-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Onna&aid=2422002"
+      },
+      {
+        id: "hamaya_soba_chatan",
+        region: "central",
+        tier1: "food", subCat: "ramen", cat: "ramen",
+        name: "浜屋沖繩麵 (浜屋そば)",
+        sub: "北谷宮城海岸 ｜ 衝浪客聖地・入口即化極品膠質軟骨麵",
+        img: "./images/okinawa_hamaya_soba.jpg",
+        desc: "創業 40 餘年的中部沖繩麵霸主，乳白色豚骨鹽味高湯清爽回甘，慢火燉煮的軟骨肉（Soki）連軟骨都化為果凍般柔嫩。",
+        mapcode: "33 584 046*77",
+        parking: "店旁專用免費停車場及海岸防波堤車位",
+        shade: "★★★★★ (寬敞冷氣桌席與和室榻榻米)",
+        tips: "吃完步行 30 秒就能走上北谷宮城海岸步道看海，距離美國村僅 5 分鐘車程。",
+        mapUrl: "https://maps.google.com/?q=浜屋そば+北谷",
+        ctaText: "北谷住宿比價",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Chatan&aid=2422002",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Chatan&aid=2422002"
+      },
+      {
+        id: "tamaya_soba_toyosaki",
+        region: "south",
+        tier1: "food", subCat: "ramen", cat: "ramen",
+        name: "玉家 沖繩麵 豐崎店 (そば処 玉家)",
+        sub: "豐見城市 ｜ ASHIBINAA Outlet 3分鐘・全島沖繩麵排行榜常勝軍",
+        img: "./images/okinawa_tamaya_soba.jpg",
+        desc: "多次榮獲沖繩麵票選第一名！細扁龜濱製麵搭配濃郁柴魚金湯，滷透的排骨肉與軟骨肉分量十足。",
+        mapcode: "232 544 712*44",
+        parking: "店前專屬免費停車場 (20 車位)",
+        shade: "★★★★★ (整潔明亮室內冷氣座 ｜ 幼兒餐椅齊全)",
+        tips: "距離那霸機場與各大租車公司豐崎營業所僅 5 分鐘，是取車後第一碗或還車前最後一碗的最佳選擇。",
+        mapUrl: "https://maps.google.com/?q=そば処+玉家+豊崎店",
+        ctaText: "預約自駕租車",
+        ctaUrl: OKINAWA_RENTAL_AFF_URL,
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Tomigusuku&aid=2422002"
+      },
+      {
+        id: "yanbaru_soba_motobu",
+        region: "north",
+        tier1: "food", subCat: "ramen", cat: "ramen",
+        name: "山原蕎麥麵 (山原そば)",
+        sub: "本部町 ｜ 紅瓦古民家老舖・豪邁厚切三層肉與大排骨",
+        img: "./images/okinawa_yanbaru_soba.jpg",
+        desc: "坐落鳳梨田與山林間的 40 年紅瓦古民家，湯頭濃厚鮮甜，鋪在麵上的帶骨排骨（Hon-Soki）厚實入味令人驚豔。",
+        mapcode: "206 772 340*22",
+        parking: "店旁寬敞免費停車場 (25 車位)",
+        shade: "★★★★★ (傳統古民家榻榻米冷氣座)",
+        tips: "位於名護往美麗海水族館的必經山路上，每日賣完即止，建議中午前抵達。",
+        mapUrl: "https://maps.google.com/?q=山原そば+本部町",
+        ctaText: "水族館門票",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1399-okinawa-churaumi-aquarium-ticket/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu&aid=2422002"
+      },
+      {
+        id: "kouryu_ramen_kokusai",
+        region: "naha",
+        tier1: "food", subCat: "ramen", cat: "ramen",
+        name: "康龍拉麵 那霸國際通店",
+        sub: "那霸國際通 ｜ 票選日本全國拉麵賞・全客製化博多豚骨拉麵",
+        img: "./images/okinawa_kouryu_ramen.jpg",
+        desc: "國際通深夜不敗名店！「自分流客製拉麵」可自由勾選麵條軟硬度、油量、蒜泥與4種自選豪華配料。",
+        mapcode: "33 157 380*66",
+        parking: "國際通周邊收費停車場",
+        shade: "★★★★★ (獨立單人隔板座與多人桌席)",
+        tips: "營業至凌晨，逛完國際通唐吉訶德後的宵夜首選，必點「半熟味玉黑麻油豚骨拉麵」。",
+        mapUrl: "https://maps.google.com/?q=ラーメン康竜+那覇国際通り店",
+        ctaText: "國際通住宿",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha&aid=2422002",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha&aid=2422002"
+      },
+      {
+        id: "tsuboya_soba_kouri",
+        region: "north",
+        tier1: "food", subCat: "ramen", cat: "ramen",
+        name: "古宇利島 くるまえび (車蝦沖繩麵＆活蝦天婦羅)",
+        sub: "古宇利島 ｜ 養殖場直營・巨型野生斑節蝦天婦羅沖繩麵",
+        img: "./images/okinawa_kurumaebi_kouri.jpg",
+        desc: "古宇利島潔淨海水養殖場直營！現撈活跳跳「車蝦（日本對蝦）」炸成金黃酥脆天婦羅與刺身，搭配鮮蝦高湯沖繩麵。",
+        mapcode: "485 722 418*33",
+        parking: "免費大型專用停車場",
+        shade: "★★★★★ (全室冷氣海景餐廳)",
+        tips: "除了網紅蝦蝦飯之外，這間活車蝦專門店有冷氣且免日曬排隊，長輩小孩吃得更舒服。",
+        mapUrl: "https://maps.google.com/?q=くるまえびキッチンTAMAYA+古宇利島",
+        ctaText: "古宇利透明舟",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/71424-clear-kayak-experience-in-kouri-island-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kouri&aid=2422002"
+      },
+
+      // ==================== 🦞 10. 漁港海鮮與米其林百名店 (Seafood & Michelin / Hyakumeiten) ====================
       {
         id: "itoman_fish_market",
         region: "south",
         tier1: "food", subCat: "seafood", cat: "seafood",
         name: "系滿魚市場 (糸満漁業協同組合)",
         sub: "糸滿市 ｜ 現烤焗烤龍蝦與生蠔海鮮生魚片",
-        img: "./images/itoman_fish_market_lobster.jpg",
+        img: "./images/okinawa_itoman_fish_market.jpg",
         desc: "南部超人氣海鮮聖地！現烤大龍蝦搭配金黃濃郁明太子海膽醬、現剖生蠔、肥美海膽與多汁干貝串，百元銅板價即可大快朵頤。",
         mapcode: "232 484 136*85",
         parking: "道之驛系滿超大免費停車場 (500+車位)",
@@ -2590,24 +3300,194 @@
         mapUrl: "https://maps.google.com/?q=糸満漁業協同組合+お魚センター",
         ctaText: "ToCoo! 租車特惠",
         ctaUrl: OKINAWA_RENTAL_AFF_URL,
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman"
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Itoman&aid=2422002"
       },
       {
-        id: "kappo_motobu",
+        id: "ishinagu_motobu",
         region: "north",
         tier1: "food", subCat: "michelin", cat: "michelin",
-        name: "割烹 本部 (Kappo Motobu)",
-        sub: "本部町 ｜ 頂級在地無菜單料理・黑松露與極上旬味",
-        img: "./images/kappo_motobu_omakase.jpg",
-        desc: "本部町頂級在地割烹無菜單料理，嚴選沖繩本部牛、現採山原黑松露與當日近海捕獲名魚，將琉球食材以京都傳統懷石技藝極致呈現。",
-        mapcode: "485 540 812*33",
-        parking: "附設專用免費停車場",
-        shade: "★★★★★ (精緻和風板前座席 ｜ 沉靜私密包廂)",
-        tips: "全預約制無菜單料理，主廚依當日極上品量身定製，建議至少提早 2 週至 1 個月預訂，自駕前往水族館或恩納村極佳順遊動線。",
-        mapUrl: "https://maps.google.com/?q=割烹本部+Okinawa",
-        ctaText: "行程訂房比價",
-        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu",
-        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu"
+        name: "石納格 (うちなーの味 石なぐ)",
+        sub: "本部町字東620-3 ｜ 道地琉球御膳名店・現流刺身海葡萄與手工花生豆腐",
+        img: "./images/okinawa_ishinagu_motobu.jpg",
+        desc: "坐落沖繩縣國頭郡本部町字東 620-3 的超人氣琉球鄉土料理名店！招牌「石なぐ定食」一次品嚐當日近海現流生魚片、爆漿海葡萄、手工濃厚花生豆腐（ジーマーミ豆腐）、水雲醋與沖繩冷麵，亦可單點本部牛與阿古豬料理。",
+        mapcode: "206 859 062*85",
+        parking: "附設專用免費停車場 (約 20 車位)",
+        shade: "★★★★★ (寬敞木質和室榻榻米與一般桌席 ｜ 附設兒童座椅)",
+        tips: "地址：沖縄県国頭郡本部町字東620-3（距離美麗海水族館車程約 12 分鐘，鄰近本部町役場）。午晚餐尖峰人氣極高，建議開門即抵達或提前預約。",
+        mapUrl: "https://maps.google.com/?q=うちなーの味+石なぐ+沖縄県国頭郡本部町字東620-3",
+        ctaText: "水族館門票",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/1399-okinawa-churaumi-aquarium-ticket/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu&aid=2422002"
+      },
+      {
+        id: "ufuya_century_house",
+        region: "north",
+        tier1: "food", subCat: "michelin", cat: "michelin",
+        name: "百年古家 大家 (Ufuya うふやー)",
+        sub: "名護市 ｜ 明治時期百年琉球古民家・極上阿古豬涮涮鍋與炙燒丼百名店",
+        img: "./images/okinawa_ufuya_century_house.jpg",
+        desc: "修復明治後期百年安里家古宅，伴隨山林飛瀑流水聲品嚐頂級「純血阿古豬生薑燒蓋飯」、「阿古豬涮涮鍋」與泡芙甜點，沖繩必訪名所。",
+        mapcode: "206 745 056*82",
+        parking: "超大型免費專用停車場 (100+ 車位)",
+        shade: "★★★★★ (百年紅瓦木造迴廊與冷氣瀑布景觀席)",
+        tips: "晚餐阿古豬火鍋建議透過 Klook 預先訂位；午間阿古豬丼飯與沖繩麵套餐採現場抽號碼牌，等待時可免費參觀古宅花園拍照。",
+        mapUrl: "https://maps.google.com/?q=百年古家+大家",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E7%99%BE%E5%B9%B4%E5%8F%A4%E5%AE%B6+%E5%A4%A7%E5%AE%B6&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Nago&aid=2422002"
+      },
+      {
+        id: "matsumoto_agu_shabu",
+        region: "naha",
+        tier1: "food", subCat: "michelin", cat: "michelin",
+        name: "阿古豬涮涮鍋 まつもと (Matsumoto 本店)",
+        sub: "那霸松山 ｜ Tabelog百名店預約困難店・純正島黑豬玫瑰肉花",
+        img: "./images/okinawa_matsumoto_agu.jpg",
+        desc: "藝名人私訪率第一的阿古豬火鍋天花板！鋪成璀璨玫瑰花瓣狀的粉嫩阿古豬，在秘傳柴魚高湯輕涮3秒配大量海葡萄享用。",
+        mapcode: "33 156 588*44",
+        parking: "鄰近松山收費停車場",
+        shade: "★★★★★ (專人桌邊代煮服務 ｜ 舒適和風坐席)",
+        tips: "最後吸收滿滿豬肉精華的「雜炊粥」堪稱神作，務必提前透過 Klook 預約座位以免向隅。",
+        mapUrl: "https://maps.google.com/?q=あぐーしゃぶしゃぶ+みるく+まつもと",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4+%E9%98%BF%E5%8F%A4%E8%B1%AC+%E6%9D%BE%E6%9C%AC&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "shiroux_halekulani",
+        region: "central",
+        tier1: "food", subCat: "michelin", cat: "michelin",
+        name: "Innovative SHIROUX (ハレクラニ沖縄 イノベーティブ シルー / SHIROUX 創新法式料理)",
+        sub: "恩納村 Halekulani ｜ 東京米其林二星 Florilège 川手寬康主廚主理",
+        img: "./images/okinawa_shiroux_halekulani.jpg",
+        desc: "由亞洲50最佳餐廳、東京米其林二星名廚川手寬康擔任顧問，將沖繩島野菜、近海夜光貝與本部牛化為藝術級法式饗宴；晨間亦供應傳奇榛果舒芙蕾鬆餅。",
+        mapcode: "206 413 798*55",
+        parking: "Halekulani 免費代客泊車",
+        shade: "★★★★★ (五星級純白海景落地窗殿堂)",
+        tips: "非住客亦可預約晚餐或經典「榛果醬舒芙蕾鬆餅早餐」，建議著整齊休閒服裝（Smart Casual）出席。",
+        mapUrl: "https://maps.google.com/?q=SHIROUX+Halekulani+Okinawa",
+        ctaText: "五星飯店查價",
+        ctaUrl: "https://www.klook.com/zh-TW/hotels/detail/283051-halekulani-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Halekulani+Okinawa&aid=2422002"
+      },
+      {
+        id: "la_bombance_kouri",
+        region: "north",
+        tier1: "food", subCat: "michelin", cat: "michelin",
+        name: "La BOMBANCE 古宇利島 (米其林名店海景懷石)",
+        sub: "古宇利島 ｜ 東京西麻布連續10年米其林一星名店唯一沖繩分館",
+        img: "./images/okinawa_la_bombance_kouri.jpg",
+        desc: "坐落 One Suite THE GRAND 頂層，一面俯瞰東海與古宇利藍海，一面品嚐東京米其林一星傳奇名廚打造的創作日本料理。",
+        mapcode: "485 722 315*11",
+        parking: "附設專屬免費停車場",
+        shade: "★★★★★ (全海景玻璃帷幕與無邊際水盤景觀)",
+        tips: "招牌「黑松露海膽釜飯」與「白色提拉米蘇」與東京本店同步供應，午間套餐性價比極高。",
+        mapUrl: "https://maps.google.com/?q=La+BOMBANCE+古宇利島",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=One+Suite+THE+GRAND+Kouri&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=One+Suite+THE+GRAND+Kouri&aid=2422002"
+      },
+      {
+        id: "teppanyaki_heki_kokusai",
+        region: "naha",
+        tier1: "food", subCat: "michelin", cat: "michelin",
+        name: "鐵板燒牛排 碧 國際通松尾店 (鉄板焼ステーキレストラン碧 国際通り松尾店 / Heki Kokusai Street Matsuo branch)",
+        sub: "那霸市松尾1-2-9 ｜ 全女性主廚細膩執鏟・沖繩縣產黑毛和牛鐵板百名店",
+        img: "./images/okinawa_teppanyaki_heki.jpg",
+        desc: "沖繩頂級鐵板燒代名詞！全店由受過嚴格訓練的女性主廚在桌邊精準掌控火候，A5沖繩縣產黑毛和牛菲力與沙朗搭配金黃香脆手炒蒜片、苦瓜與島豆腐。",
+        mapcode: "33 157 265*74",
+        parking: "配合特約停車場 (同集團松尾區域停車場享停車折抵)",
+        shade: "★★★★★ (高雅琉球紅型染布與讀谷山花織裝潢 ｜ 全室鐵板席)",
+        tips: "地址：沖縄県那覇市松尾1-2-9（單軌「縣廳前站」步行 5 分鐘）。午間鐵板燒套餐性價比極高，餐後搭配沖繩黑糖紅豆冰沙完美收尾。",
+        mapUrl: "https://maps.google.com/?q=鉄板焼ステーキレストラン碧+国際通り松尾店",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E6%B2%96%E7%B9%A4+%E9%90%B5%E6%9D%BF%E7%87%92&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Kokusai-dori+Naha&aid=2422002"
+      },
+      {
+        id: "jacks_steak_house",
+        region: "naha",
+        tier1: "food", subCat: "michelin", cat: "michelin",
+        name: "傑克牛排館 (Jack's Steak House)",
+        sub: "那霸旭橋 ｜ 1953年創立沖繩美式牛排開山始祖・Tabelog百名店",
+        img: "./images/okinawa_jacks_steak_house.jpg",
+        desc: "營業超過 70 年的傳奇百名店！店門口的紅綠霓虹「信號燈」顯示目前空位狀況，招牌「特選烤里肌牛排 (Tenderloin)」三分熟極致鮮嫩。",
+        mapcode: "33 125 734*11",
+        parking: "店門口專屬免費停車場 (約 15 車位)",
+        shade: "★★★★★ (1950年代老派美軍俱樂部復古卡座)",
+        tips: "避開 19:00-21:00 尖峰，選擇下午 15:00-17:00 離峰時段前往幾乎免排隊直接入座！",
+        mapUrl: "https://maps.google.com/?q=Jack's+Steak+House+Naha",
+        ctaText: "那霸住宿比價",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "ashibi_jima_okinawa",
+        region: "naha",
+        tier1: "food", subCat: "michelin", cat: "michelin",
+        name: "沖縄料理 あしびJima (Ashibi Jima)",
+        sub: "那霸久茂地・國際通 ｜ やちむん陶器盛裝近海現流刺身與道地琉球料理名店",
+        img: "./images/okinawa_ashibi_jima.jpg",
+        desc: "坐落那霸久茂地的人氣琉球料理名店！以沖繩傳統「やちむん」陶器大船盤盛裝當日漁港直送的近海本鮪魚、青衣魚與鮮章魚刺身，搭配手工花生豆腐、海葡萄與阿古豬料理。",
+        mapcode: "33 156 502*22",
+        parking: "久茂地與國際通周邊收費停車場",
+        shade: "★★★★★ (溫馨琉球古民家風木質包廂與吧台席)",
+        tips: "距離單軌「美榮橋站」與「縣廳前站」步行僅 5 分鐘，店內泡盛酒藏豐富，環境舒適有質感，非常適合家庭與好友聚餐。",
+        mapUrl: "https://maps.google.com/?q=沖縄料理+あしびJima+那覇",
+        ctaText: "Klook訂位",
+        ctaUrl: "https://www.klook.com/zh-TW/search/result/?query=%E9%82%A3%E9%9C%B8+%E6%B2%96%E7%B9%A4%E6%96%99%E7%90%86&aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "posillipo_senagajima",
+        region: "south",
+        tier1: "food", subCat: "michelin", cat: "michelin",
+        name: "POSILLIPO cucina meridionale (瀨長島頂樓海景義式百名店)",
+        sub: "豐見城市瀨長島 ｜ 拿坡里百年傳統柴火窯烤披薩・270度全景日落露台",
+        img: "./images/okinawa_posillipo_senagajima.jpg",
+        desc: "獨佔瀨長島最高點！由義大利職人在砌磚窯爐現烤瑪格麗特水牛起司披薩與生海膽義大利麵，戶外Mare露台直視飛機掠過夕陽海面。",
+        mapcode: "33 002 605*15",
+        parking: "瀨長島免費停車場",
+        shade: "★★★★★ (全玻璃海景冷氣主廳與純白沙發露台)",
+        tips: "傍晚 17:30 的日落窗邊席一位難求，強烈建議提前線上預訂。",
+        mapUrl: "https://maps.google.com/?q=POSILLIPO+cucina+meridionale+Okinawa",
+        ctaText: "瀨長島訂房",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Ryukyu+Onsen+Senagajima+Hotel&aid=2422002",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Ryukyu+Onsen+Senagajima+Hotel&aid=2422002"
+      },
+      {
+        id: "bacar_okinawa_pizza",
+        region: "naha",
+        tier1: "food", subCat: "michelin", cat: "michelin",
+        name: "BACAR OKINAWA (バカール 沖繩傳奇預約制窯烤百名店)",
+        sub: "那霸久茂地 ｜ Tabelog銅賞＆百名店・沖繩夜光貝青醬麵與極致柴燒料理",
+        img: "./images/okinawa_bacar_okinawa.jpg",
+        desc: "連續多年蟬聯 Tabelog Award 銅賞與百名店！將沖繩特產巨型「夜光貝」搭配濃郁羅勒青醬義大利麵，並以相思木高溫柴窯炙烤縣產和牛與壓軸拿坡里披薩。",
+        mapcode: "33 156 355*88",
+        parking: "久茂地周邊收費停車場",
+        shade: "★★★★★ (劇場感開放式窯烤板前席)",
+        tips: "採完全預約制，主廚將琉球旬味與義式柴火料理結合至完美境界，老饕朝聖必訪。",
+        mapUrl: "https://maps.google.com/?q=BACAR+OKINAWA",
+        ctaText: "那霸五星訂房",
+        ctaUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Naha&aid=2422002"
+      },
+      {
+        id: "captain_kangaroo_burger",
+        region: "north",
+        tier1: "food", subCat: "michelin", cat: "michelin",
+        name: "Captain Kangaroo (キャプテンカンガルー 沖繩第一漢堡百名店)",
+        sub: "本部町 ｜ Tabelog漢堡百名店・抱抱高塔酥炸洋蔥圈雙層起司牛堡",
+        img: "./images/okinawa_captain_kangaroo.jpg",
+        desc: "連續入選日本全國漢堡百名店！招牌「Sparky Burger」疊滿厚切手打100%牛肉排、酥脆整圈炸洋蔥、培根與特製肉醬，高度超過15公分。",
+        mapcode: "206 856 312*44",
+        parking: "店前大型免費停車場 (20 車位)",
+        shade: "★★★★★ (美式工業風室內冷氣座席)",
+        tips: "已遷至本部町崎本部新址（離瀨底大橋與美麗海水族館極近），空間與停車位比舊店大上兩倍！",
+        mapUrl: "https://maps.google.com/?q=キャプテンカンガルー+ハンバーガー+本部町",
+        ctaText: "瀨底拖曳傘",
+        ctaUrl: "https://www.klook.com/zh-TW/activity/2186-parasailing-experience-okinawa/?aid=123436&utm_medium=affiliate-alwayson",
+        hotelUrl: "https://www.booking.com/searchresults.zh-tw.html?ss=Motobu&aid=2422002"
       }
     ];
 
@@ -2625,7 +3505,7 @@
         {
           day: "DAY 01",
           title: "南端啟程 ｜ 飛機落日巡禮",
-          img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_senagajima_sunset.jpg",
           stops: [
             { icon: "🛬", text: "那霸機場專車取車" },
             { icon: "🛍️", text: "iias 豐崎水族商場" },
@@ -2637,7 +3517,7 @@
         {
           day: "DAY 02",
           title: "中部設施 ｜ 彈跳床避暑",
-          img: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_onna_monterey_resort.jpg",
           stops: [
             { icon: "🤸", text: "中城公園大型彈簧跳跳床" },
             { icon: "🛍️", text: "永旺夢樂城來客夢 (百噸水族缸避暑)" },
@@ -2648,7 +3528,7 @@
         {
           day: "DAY 03",
           title: "北部生態 ｜ 鯨鯊與玻璃海",
-          img: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_churaumi_whale_shark.jpg",
           stops: [
             { icon: "🐋", text: "美麗海水族館黑潮之海餵食秀" },
             { icon: "🌉", text: "古宇利大橋沙灘踏浪" },
@@ -2659,7 +3539,7 @@
         {
           day: "DAY 04",
           title: "異國風景 ｜ 恐龍探險夜市集",
-          img: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_dino_park.jpg",
           stops: [
             { icon: "🦖", text: "DINO 恐龍 PARK 森林冒險" },
             { icon: "🍰", text: "港川外人住宅甜點散策" },
@@ -2670,7 +3550,7 @@
         {
           day: "DAY 05",
           title: "收尾採買 ｜ 平緩溜滑梯返程",
-          img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_urasoe_park_slide.jpg",
           stops: [
             { icon: "🛝", text: "浦添大公園 C 區幼兒平緩溜滑梯" },
             { icon: "🛍️", text: "ASHIBINAA Outlet 精品採買" },
@@ -2683,7 +3563,7 @@
         {
           day: "DAY 01",
           title: "輕鬆啟程 ｜ 露台下午茶",
-          img: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_umikaji_terrace.jpg",
           stops: [
             { icon: "🚗", text: "那霸機場免排隊專車取車" },
             { icon: "☕", text: "瀨長島 Umikaji Terrace 露台下午茶" },
@@ -2695,7 +3575,7 @@
         {
           day: "DAY 02",
           title: "南部名景 ｜ 無障礙海景步道",
-          img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_cape_chinen.jpg",
           stops: [
             { icon: "🌊", text: "知念岬公園 (無障礙海景步道)" },
             { icon: "☕", text: "濱邊茶屋 (窗景聽濤咖啡品茗)" },
@@ -2707,7 +3587,7 @@
         {
           day: "DAY 03",
           title: "中部絕景 ｜ 電梯展望與名物和牛",
-          img: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_manzamo_cliff.jpg",
           stops: [
             { icon: "🔭", text: "萬座毛全新景觀展望館 (附電梯直達)" },
             { icon: "☕", text: "星野集團 Banta Cafe (海邊甲板席平坐品茗)" },
@@ -2719,7 +3599,7 @@
         {
           day: "DAY 04",
           title: "琉球古韻 ｜ 平推輪椅海景商場",
-          img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_parco_city.jpg",
           stops: [
             { icon: "🏯", text: "首里城公園外圍平緩綠意散策" },
             { icon: "🛍️", text: "PARCO CITY 海景商場 (平推輪椅採買特產)" },
@@ -2732,7 +3612,7 @@
         {
           day: "DAY 01",
           title: "直奔北谷 ｜ 裝備補給與和牛",
-          img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_chatan_american_village.jpg",
           stops: [
             { icon: "🚗", text: "抵達取車直奔北谷美國村" },
             { icon: "🤿", text: "添購潛水防曬與浮潛裝備" },
@@ -2743,7 +3623,7 @@
         {
           day: "DAY 02",
           title: "青之洞窟 ｜ 晨潛水光極致透明",
-          img: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_blue_cave.jpg",
           stops: [
             { icon: "🤿", text: "真榮田岬青之洞窟 (預約 08:00 晨潛水質最清澈)" },
             { icon: "🌊", text: "萬座毛海岸絕美海蝕崖" },
@@ -2755,7 +3635,7 @@
         {
           day: "DAY 03",
           title: "海島疾馳 ｜ 水上摩托與潮間浮潛",
-          img: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_kouri_bridge.jpg",
           stops: [
             { icon: "🚤", text: "古宇利島水上摩托車與拖曳傘" },
             { icon: "🐠", text: "瀨底海灘天然礁石潮間帶浮潛" },
@@ -2766,7 +3646,7 @@
         {
           day: "DAY 04",
           title: "慶良間海龜 ｜ 鮮美海膽返程",
-          img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80",
+          img: "./images/okinawa_kerama_sea_turtle.jpg",
           stops: [
             { icon: "🐢", text: "那霸泊港出發慶良間諸島半日外礁尋海龜" },
             { icon: "🦪", text: "泊港漁市場現剖海膽刺身" },
@@ -2789,19 +3669,19 @@
         },
         {
           day: "DAY 02",
-          title: "瘋狂血拚 ｜ 百噸水族館與頂級割烹",
-          img: "./images/kappo_motobu_omakase.jpg",
+          title: "瘋狂血拚 ｜ 百噸水族館與道地琉球御膳",
+          img: "./images/okinawa_ishinagu_motobu.jpg",
           stops: [
             { icon: "🛍️", text: "永旺夢樂城來客夢 (血拚 5 小時+室內巨型水族缸)" },
             { icon: "👕", text: "美國村特色古著與潮流店" },
-            { icon: "🍣", text: "割烹 本部 (頂級在地無菜單料理)" }
+            { icon: "🍱", text: "石納格 うちなーの味 石なぐ (本部町道地琉球料理御膳)" }
           ],
           drive: "車程約 25 分鐘 ｜ 沖繩自動車道"
         },
         {
           day: "DAY 03",
           title: "Outlet掃貨 ｜ 現烤龍蝦與機場提領",
-          img: "./images/itoman_fish_market_lobster.jpg",
+          img: "./images/okinawa_itoman_fish_market.jpg",
           stops: [
             { icon: "🛍️", text: "ASHIBINAA Outlet 精品採購" },
             { icon: "🦞", text: "系滿魚市場炭烤龍蝦與生蠔" },
@@ -2829,7 +3709,7 @@
       list.forEach(item => {
         let stopsHtml = '';
         item.stops.forEach(s => {
-          stopsHtml += `<div class="journal-stop-item"><span class="stop-ico">${s.icon}</span> <span>${s.text}</span></div>`;
+          stopsHtml += `<div class="journal-stop-item"><span class="stop-dot" style="color:#0284C7; font-weight:bold;">•</span> <span>${s.text}</span></div>`;
         });
 
         html += `
@@ -2843,10 +3723,7 @@
               <div class="journal-stops-line">
                 ${stopsHtml}
               </div>
-              <div class="journal-drive-box">
-                <span>⏱️</span>
-                <span>${item.drive}</span>
-              </div>
+              <div class="journal-drive-box"><span>車程 ${item.drive}</span></div>
             </div>
           </div>
         `;
@@ -2868,39 +3745,39 @@
 
     const OKINAWA_TIER2_CONFIG = {
       'all': [
-        { id: 'all', label: '🔥 全島全部精選' },
-        { id: 'beef', label: '🥩 和牛燒肉' },
-        { id: 'michelin', label: '⭐ 米其林/百名店' },
-        { id: 'ramen', label: '🍜 沖繩麵與拉麵' },
-        { id: 'izakaya', label: '🏮 在地居酒屋' },
-        { id: 'dive', label: '🤿 慶良間浮潛' },
-        { id: 'kids', label: '🦖 親子溜滑梯' },
-        { id: 'cafe', label: '☕ 崖景海邊咖啡' },
-        { id: 'shop', label: '🛍️ 逛街商場' },
-        { id: 'resort', label: '🏨 海景度假村' }
+        { id: 'all', label: '全島精選' },
+        { id: 'beef', label: '和牛燒肉' },
+        { id: 'michelin', label: '米其林百名店' },
+        { id: 'ramen', label: '沖繩麵與拉麵' },
+        { id: 'izakaya', label: '在地居酒屋' },
+        { id: 'dive', label: '慶良間浮潛' },
+        { id: 'kids', label: '親子溜滑梯' },
+        { id: 'cafe', label: '崖景海邊咖啡' },
+        { id: 'shop', label: '逛街商場' },
+        { id: 'resort', label: '海景度假村' }
       ],
       'food': [
-        { id: 'all', label: '🍱 全部美饌' },
-        { id: 'beef', label: '🥩 頂級和牛燒肉' },
-        { id: 'michelin', label: '⭐ 米其林/百名店' },
-        { id: 'ramen', label: '🍜 沖繩麵與名店拉麵' },
-        { id: 'izakaya', label: '🏮 在地民謠居酒屋' }
+        { id: 'all', label: '全部美饌' },
+        { id: 'beef', label: '頂級和牛燒肉' },
+        { id: 'michelin', label: '米其林百名店' },
+        { id: 'ramen', label: '沖繩麵與名店拉麵' },
+        { id: 'izakaya', label: '在地民謠居酒屋' }
       ],
       'outdoor': [
-        { id: 'all', label: '🌊 全部戶外活動' },
-        { id: 'dive', label: '🤿 慶良間浮潛・深潛' },
-        { id: 'summer', label: '☀️ 夏日沙灘水上' },
-        { id: 'kids', label: '🦖 親子溜滑梯公園' }
+        { id: 'all', label: '全部戶外活動' },
+        { id: 'dive', label: '慶良間浮潛・深潛' },
+        { id: 'summer', label: '夏日沙灘水上' },
+        { id: 'kids', label: '親子溜滑梯公園' }
       ],
       'leisure': [
-        { id: 'all', label: '☕ 全部休閒體驗' },
-        { id: 'cafe', label: '☕ 崖景海邊咖啡' },
-        { id: 'shop', label: '🛍️ 逛街購物商場' }
+        { id: 'all', label: '全部休閒體驗' },
+        { id: 'cafe', label: '崖景海邊咖啡' },
+        { id: 'shop', label: '逛街購物商場' }
       ],
       'stay': [
-        { id: 'all', label: '🏨 全部度假住宿' },
-        { id: 'resort', label: '🏨 頂級海景度假村' },
-        { id: 'winter', label: '♨️ 冬季溫泉旬味' }
+        { id: 'all', label: '全部度假住宿' },
+        { id: 'resort', label: '頂級海景度假村' },
+        { id: 'winter', label: '冬季溫泉旬味' }
       ]
     };
 
@@ -2941,6 +3818,22 @@
       switchTier2(subKey, btn);
     }
 
+    function ensureOkinawaBookingAff(url) {
+      if (!url) return 'https://www.booking.com/searchresults.zh-tw.html?ss=Okinawa&aid=2422002';
+      if (!url.includes('booking.com')) return url;
+      if (url.includes('aid=')) return url;
+      const sep = url.includes('?') ? '&' : '?';
+      return url + sep + 'aid=2422002';
+    }
+
+    function ensureOkinawaKlookAff(url) {
+      if (!url) return 'https://www.klook.com/zh-TW/city/38-okinawa-things-to-do/?aid=123436&utm_medium=affiliate-alwayson';
+      if (!url.includes('klook.com')) return url;
+      if (url.includes('aid=123436')) return url;
+      const sep = url.includes('?') ? '&' : '?';
+      return url + sep + 'aid=123436&utm_medium=affiliate-alwayson';
+    }
+
     function renderOkinawaCards() {
       const container = document.getElementById('okinawaCardsGrid');
       if (!container) return;
@@ -2968,26 +3861,41 @@
           kids: '🦖 親子公園',
           dive: '🤿 慶良間浮潛',
           beef: '🥩 頂級和牛',
+          izakaya: '🏮 民謠居酒屋',
+          michelin: '⭐ 米其林百名店',
+          ramen: '🍜 沖繩麵拉麵',
+          seafood: '🦞 漁港海鮮',
           cafe: '☕ 海景咖啡',
           shop: '🛍️ 逛街商場',
-          resort: '🏨 度假村',
+          resort: '🏨 海景度假村',
           summer: '☀️ 夏日玩法',
           winter: '❄️ 冬季溫泉'
         };
-        const catLabel = catMap[spot.cat] || '🌺 沖繩必訪';
-        const hotelLink = spot.hotelUrl || 'https://www.booking.com/searchresults.zh-tw.html?ss=Okinawa';
-        let cleanCtaText = (spot.ctaText || '預約行程').replace(/[^\u4e00-\u9fa5]/g, '');
-        if (cleanCtaText.includes('一日包車') || cleanCtaText.includes('專車包車')) cleanCtaText = '親子包車';
-        else if (cleanCtaText.includes('租車自駕')) cleanCtaText = '預約自駕';
-        else if (cleanCtaText.includes('行程預訂')) cleanCtaText = '預約行程';
-        else if (cleanCtaText.length > 6) cleanCtaText = cleanCtaText.substring(0, 5);
+        const catLabel = catMap[spot.subCat] || catMap[spot.cat] || '🌺 沖繩必訪';
+        const isResort = (spot.subCat === 'resort' || spot.cat === 'resort');
+        const hotelLink = ensureOkinawaBookingAff(spot.hotelUrl || 'https://www.booking.com/searchresults.zh-tw.html?ss=Okinawa');
+        const rawCtaUrl = ensureOkinawaKlookAff(ensureOkinawaBookingAff(spot.ctaUrl || 'https://www.klook.com/zh-TW/city/38-okinawa-things-to-do/'));
+        let cleanCtaText = spot.ctaText || '預約行程';
+        if (!isResort && !cleanCtaText.includes('Klook') && !cleanCtaText.includes('Booking')) {
+          cleanCtaText = cleanCtaText.replace(/[^\u4e00-\u9fa5]/g, '');
+          if (cleanCtaText.includes('一日包車') || cleanCtaText.includes('專車包車')) cleanCtaText = '親子包車';
+          else if (cleanCtaText.includes('租車自駕')) cleanCtaText = '預約自駕';
+          else if (cleanCtaText.includes('行程預訂')) cleanCtaText = '預約行程';
+          else if (cleanCtaText.length > 6) cleanCtaText = cleanCtaText.substring(0, 5);
+        }
+        const bookingBtnText = isResort ? 'Booking訂房' : 'Booking住宿';
+        const ctaBtnText = isResort ? 'Klook訂房' : cleanCtaText;
+        const isFav = typeof isFavorite === 'function' && isFavorite(spot.name);
 
         html += `
           <div class="spot-card">
+            <!-- 乾淨照片區：移除多餘貼紙，僅保留右上方精緻分類標籤 -->
             <div class="spot-img-wrap">
               <img class="spot-img" src="${spot.img}" alt="${spot.name}" loading="lazy">
-              <span class="spot-tag-pill">${regionLabel}</span>
-              <span class="spot-badge-order">${catLabel}</span>
+              <span class="spot-corner-tag">📍 ${regionLabel.replace(/^[^\s]+\s*/, '')} ｜ ${catLabel.replace(/^[^\s]+\s*/, '')}</span>
+              <button class="btn-card-fav ${isFav ? 'active' : ''}" data-fav-id="${spot.name}" onclick="toggleOkinawaFavorite('${spot.name}', event)" title="${isFav ? '已在行程收藏本' : '加入我的行程收藏'}">
+                ${getHeartSvg(isFav, 12)}
+              </button>
             </div>
             <div class="spot-body">
               <div>
@@ -2996,28 +3904,12 @@
                 <p class="spot-desc">${spot.desc}</p>
               </div>
 
-              <!-- 實戰生存筆記 (MapCode、遮陽推車、避坑) -->
-              <div class="survival-note-box">
-                <div class="survival-item-row">
-                  <span class="survival-label">🅿️ 停車情報：</span>
-                  <span class="survival-val">${spot.parking}</span>
-                </div>
-                <div class="survival-item-row">
-                  <span class="survival-label">☀️ 遮陽推車：</span>
-                  <span class="survival-val">${spot.shade}</span>
-                </div>
-                <div class="survival-item-row">
-                  <span class="survival-label">💡 特派員避坑：</span>
-                  <span class="survival-val" style="color:#EA580C;">${spot.tips}</span>
-                </div>
-              </div>
-
-              <!-- 4 大功能按鈕 (消除推擠、零ICON、簡約高質感) -->
-              <div class="spot-actions-trio">
-                <a href="${spot.mapUrl}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-map" title="Google Maps 導航">地圖</a>
-                <a href="${OKINAWA_RENTAL_AFF_URL}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-drive" title="ToCoo! 沖繩租車預約">預約自駕</a>
-                <a href="${hotelLink}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-hotel" title="查看周邊住宿">查看住宿</a>
-                <a href="${spot.ctaUrl}" target="_blank" rel="noopener noreferrer" class="okinawa-action-btn btn-okinawa-cta" title="${cleanCtaText}">${cleanCtaText}</a>
+              <!-- 底部行動按鈕：map / 租車自駕 / 推薦住宿 / 包車 (一整排文青極簡無框四鍵) -->
+              <div class="spot-actions-4col">
+                <a href="${spot.mapUrl}" target="_blank" rel="noopener noreferrer" class="btn-spot-col btn-spot-gray" title="Google Maps 導航">map</a>
+                <a href="https://afflink.one/s/FruK8" target="_blank" rel="noopener noreferrer" class="btn-spot-col btn-spot-lightblue" title="ToCoo! 沖繩自駕租車預約">租車自駕</a>
+                <a href="${hotelLink}" target="_blank" rel="noopener noreferrer" class="btn-spot-col btn-spot-darkblue" title="Booking.com 推薦住宿">推薦住宿</a>
+                <a href="${rawCtaUrl}" target="_blank" rel="noopener noreferrer" class="btn-spot-col btn-spot-gray" title="Klook 沖繩專車包車">包車</a>
               </div>
             </div>
           </div>
@@ -3362,5 +4254,58 @@
     });
   </script>
 
+
+  <script>
+    // 🌐 全站外跳連結多國語系安全攔截器 (保證 100% 帶入專屬分潤參數與正確目標語言)
+    document.addEventListener('click', function(e) {
+      const a = e.target.closest('a');
+      if (!a || !a.href) return;
+      const href = a.href;
+      const savedLang = localStorage.getItem('tabi_selected_lang') || 'zh-TW';
+      
+      if (href.includes('trip.com')) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        if (href.includes('/t/fgyJcXow1X2')) return;
+        const domMap = { 'en': 'https://www.trip.com', 'th': 'https://th.trip.com', 'ja': 'https://jp.trip.com', 'ko': 'https://kr.trip.com', 'zh-CN': 'https://hk.trip.com', 'zh-TW': 'https://tw.trip.com' };
+        const base = domMap[savedLang] || 'https://tw.trip.com';
+        let newHref = href.replace(/https:\/\/(tw|jp|th|kr|hk|www)\.trip\.com/, base);
+        if (!newHref.includes('Allianceid=')) {
+          const sep = newHref.includes('?') ? '&' : '?';
+          newHref += `${sep}Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663&linkhub_token=sl_fgyJcXow1X2`;
+        }
+        a.href = newHref;
+      } else if (href.includes('klook.com')) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        const locMap = { 'en': 'en-US', 'th': 'th', 'ja': 'ja', 'ko': 'ko', 'zh-CN': 'zh-CN', 'zh-TW': 'zh-TW' };
+        const loc = locMap[savedLang] || 'zh-TW';
+        let newHref = href.replace(/klook\.com\/[a-zA-Z_\-]+(\/|$)/, `klook.com/${loc}/`);
+        if (!newHref.includes('aid=')) {
+          const sep = newHref.includes('?') ? '&' : '?';
+          newHref += `${sep}aid=123436&utm_medium=affiliate-alwayson`;
+        }
+        a.href = newHref;
+      } else if (href.includes('booking.com')) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        const locMap = { 'en': 'en-gb', 'th': 'th', 'ja': 'ja', 'ko': 'ko', 'zh-CN': 'zh-cn', 'zh-TW': 'zh-tw' };
+        const curMap = { 'en': 'USD', 'th': 'THB', 'ja': 'JPY', 'ko': 'KRW', 'zh-CN': 'CNY', 'zh-TW': 'TWD' };
+        const loc = locMap[savedLang] || 'zh-tw';
+        const cur = curMap[savedLang] || 'TWD';
+        let newHref = href.replace(/searchresults\.[a-z\-]+\.html/, `searchresults.${loc}.html`);
+        if (!newHref.includes('aid=')) {
+          const sep = newHref.includes('?') ? '&' : '?';
+          newHref += `${sep}aid=2422002`;
+        }
+        if (!newHref.includes('selected_currency=')) {
+          newHref += `&selected_currency=${cur}`;
+        }
+        a.href = newHref;
+      }
+    });
+  </script>
+
+  <script src="./js/tabi_core.js"></script>
 </body>
 </html>

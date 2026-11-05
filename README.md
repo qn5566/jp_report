@@ -37,3 +37,9 @@
 每個 Klook 按鈕與飯店訂房按鈕都會自動加上：
 `?aid=123436&utm_medium=affiliate-alwayson&utm_source=non-network&utm_campaign=123436&aff_label1=<景點ID>`
 方便您在聯盟後台清楚看到是哪一個花季或煙火景點帶來最多訂單！
+
+
+## 更新紀錄 2026-11-05：遊樂園頁面
+- 新增 `japan_theme_parks.html`（Hero、地區篩選、TOP 30 資料庫、雙欄預覽）。
+- 新增東京迪士尼深度攻略特刊（全螢幕滑入閱讀層、六章內容、Trip.com 導購）。
+- 首頁「遊樂園」卡片與各頁 footer「遊樂園攻略」改連至 `japan_theme_parks.html`（根目錄與 `app/` 同步）。

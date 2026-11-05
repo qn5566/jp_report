@@ -6,10 +6,10 @@
   <link rel="icon" type="image/png" href="./images/japan_tabi_logo.png">
   <title>富士五湖與本栖湖：神聖逆富士、山野柴火與深山靜謐 ｜ 日旅報報 深度特刊 No.02</title>
 
-  <!-- Google Fonts: 高階日本明體、襯線體與無襯線現代字體 (拒絕可愛字體) -->
+  <!-- Editorial Typography: Kinfolk & Cereal Aesthetic (與 japan_special_edition.html 同步) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Serif+TC:wght@400;600;900&family=Noto+Sans+TC:wght@400;500;700&family=Shippori+Mincho:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;600;900&family=Noto+Serif+SC:wght@300;400;600;900&family=Noto+Serif+Thai:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -24,8 +24,9 @@
       --flame-amber: #B45309;
       --tea-green: #365314;
       --stone-ash: #F3F1EC;
-      --font-serif: 'Shippori Mincho', 'Noto Serif TC', 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'Noto Sans TC', 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-serif: 'Cormorant Garamond', 'Noto Serif TC', Georgia, serif;
+      --font-kanji: 'Shippori Mincho', 'Noto Serif TC', serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -883,6 +884,7 @@
     }
 
 </style>
+  <link rel="stylesheet" href="./css/tabi_core.css">
 </head>
 <body>
 
@@ -912,6 +914,9 @@
 
     <!-- 🌟 頂部右側統一功能按鈕群 (純文字無外框無ICON ＋ 🌐 Language 保留外框與ICON) -->
     <div class="header-right">
+      <a href="japan_entry_rules.html" class="header-entry-pill" title="最新日本入境規範、免稅新制與海關申報手冊" style="background:#EA580C; color:#FFFFFF; font-weight:700; font-size:0.82rem; padding:5px 12px; border-radius:999px; text-decoration:none; box-shadow:0 2px 8px rgba(234,88,12,0.25); transition:all 0.2s; white-space:nowrap; display:inline-flex; align-items:center; gap:4px; margin-right:4px;">
+        <span>最新入境規範</span>
+      </a>
       <a href="japan_flight_deals.html" class="header-nav-link " title="Trip 機票即時比價與特惠航線">
         <span>查機票</span>
       </a>
@@ -1005,7 +1010,7 @@
 
     <!-- 3. 統一規範：沉浸式底圖封面，標題與引言直接呈現在底圖之上 -->
     <div class="article-hero-cover hero-banner-overlay-wrap">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80" alt="Lake Motosu Inverted Mount Fuji" class="article-hero-img hero-banner-img" />
+      <img src="./images/fuji_motosuko_reflection.jpg" alt="Lake Motosu Inverted Mount Fuji" class="article-hero-img hero-banner-img" />
       <div class="article-hero-scrim hero-banner-scrim"></div>
       <div class="article-hero-title-box hero-banner-text-box">
         <span class="article-hero-vol hero-pretitle-gold" id="fuji_vol">UNESCO WORLD HERITAGE CULTURAL SANCTUARY</span>
@@ -1019,7 +1024,7 @@
     <!-- 區塊 1：典故引言 (雙欄雜誌排版) -->
     <section class="editorial-spread">
       <div class="spread-image">
-        <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80" alt="Fujiko Pilgrimage History" />
+        <img src="./images/fuji_summit_torii.jpg" alt="Fujiko Pilgrimage History" />
       </div>
       <div class="spread-text">
         <span class="section-eyebrow" id="fuji_hist_pre">HISTORICAL PERSPECTIVE</span>
@@ -1037,7 +1042,7 @@
     <!-- 區塊 2：自然地質 (反向雙欄雜誌排版) -->
     <section class="editorial-spread reverse">
       <div class="spread-image">
-        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="Lake Motosu Glacial Water" />
+        <img src="./images/fuji_snow_panorama.jpg" alt="Lake Motosu Glacial Water" />
       </div>
       <div class="spread-text">
         <span class="section-eyebrow">GEOLOGICAL WONDERS</span>
@@ -1048,7 +1053,7 @@
         <p>
           這裡的湖水歷經數十年玄武岩層層天然過濾，水溫長年維持於低溫，清澈見底。日幣千圓紙鈔背後的「逆富士」絕景，正是岡田紅陽於此處按下快門的永恆傑作。
         </p>
-        <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="action-link">預約湖區私人接駁包車 ➔</a>
+        <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663" target="_blank" class="action-link">預約湖區私人接駁包車 ➔</a>
       </div>
     </section>
 
@@ -1069,7 +1074,7 @@
           <p class="editorial-item-body">
             主廚豐島雅也擁有獵師執照，親自深入富士山林採集野生香草與獵捕蝦夷鹿。以正統法餐技法演繹甲州風土，炭燒鹿肉佐松針莓果醬汁令人驚豔，搭配山梨頂級自然派葡萄酒。
           </p>
-          <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="editorial-text-link">
+          <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663" target="_blank" class="editorial-text-link">
             Read More ⟶
           </a>
         </article>
@@ -1084,7 +1089,7 @@
           <p class="editorial-item-body">
             嚴選高海拔契作蕎麥，使用過濾八十年的富士玄武岩冰川湧水每日清晨現打。十割蕎麥香氣濃烈，搭配現磨靜岡真山葵與酥脆炸野菜天婦羅，清甜沁脾，每日限量售完為止。
           </p>
-          <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="editorial-text-link">
+          <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663" target="_blank" class="editorial-text-link">
             Read More ⟶
           </a>
         </article>
@@ -1099,7 +1104,7 @@
           <p class="editorial-item-body">
             將清冽泉水飼育的甲斐鮭魚、甲州葡萄酒牛以岩燒高溫炙烤，佐以富士山特產舞茸土瓶蒸與旬令蔬菜。獨立面湖包廂私密性極高，每一道料理都是視覺與味覺的四季詩篇。
           </p>
-          <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="editorial-text-link">
+          <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663" target="_blank" class="editorial-text-link">
             Read More ⟶
           </a>
         </article>
@@ -1108,9 +1113,32 @@
     </section>
 
     <!-- 🌟 5. 行程安排：純文字淺色連結、嚴禁厚重按鈕 (依使用者要求) -->
+    
+    <!-- 📸 富士光影雙景：春櫻垂水與湖上神社鳥居 -->
+    <section style="margin: 48px auto; max-width: 1080px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div style="border-radius: 8px; overflow: hidden; background: #FAF9F6; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+          <img src="./images/fuji_sakura_reflection.jpg" alt="春櫻倒影與富士山" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+          <div style="padding: 14px 18px;">
+            <span style="font-size: 0.68rem; font-weight: 700; color: #92400E; letter-spacing: 2px; text-transform: uppercase;">SPRING VISTA</span>
+            <h4 style="font-family: 'Shippori Mincho', 'Noto Serif TC', serif; font-size: 1.05rem; margin: 4px 0; color: #0F172A;">春櫻垂水・神聖逆富士</h4>
+            <p style="font-size: 0.78rem; color: #64748B; margin: 0; line-height: 1.6;">晨曦無風微光，粉櫻垂入碧藍水面，映照永恆積雪的靈峰倒影。</p>
+          </div>
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; background: #FAF9F6; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+          <img src="./images/fuji_hakone_torii.jpg" alt="箱根神社水上鳥居與富士山" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+          <div style="padding: 14px 18px;">
+            <span style="font-size: 0.68rem; font-weight: 700; color: #92400E; letter-spacing: 2px; text-transform: uppercase;">SACRED HORIZON</span>
+            <h4 style="font-family: 'Shippori Mincho', 'Noto Serif TC', serif; font-size: 1.05rem; margin: 4px 0; color: #0F172A;">湖上鳥居・靈峰遠眺</h4>
+            <p style="font-size: 0.78rem; color: #64748B; margin: 0; line-height: 1.6;">深邃湖水與朱赤鳥居相映，遠處富士山巍峨聳立於群青之際。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="itinerary">
       <div class="section-eyebrow">CURATED ITINERARY</div>
-      <h2 class="section-header-title">三天兩夜：富士靈性與柴火靜謐藍圖</h2>
+      <h2 class="section-header-title">行程規劃</h2>
 
       <div class="itinerary-box">
         <!-- Day 1 -->
@@ -1122,11 +1150,11 @@
               早晨搭乘私人專車自東京出發，直達新倉山淺間公園避開擁擠人潮。中午於「石原手打蕎麥」品味冰川湧水麵，下午入住河口湖正對富士山第一排的極上旅宿，於客房私人露天風呂洗淨塵囂。
             </p>
             <div class="itinerary-subtle-links-bar">
-              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="subtle-booking-link">
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663" target="_blank" class="subtle-booking-link">
                 🚗 東京至富士五湖私人專車 ↗
               </a>
               <span class="link-dot-sep">・</span>
-              <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="subtle-booking-link">
+              <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663" target="_blank" class="subtle-booking-link">
                 🏨 湖山亭產屋 (Ubuya) 線上訂房 ↗
               </a>
             </div>
@@ -1146,7 +1174,7 @@
                 🎟️ 預約樹海熔岩冰穴專屬導覽 ↗
               </a>
               <span class="link-dot-sep">・</span>
-              <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="subtle-booking-link">
+              <a href="https://tw.trip.com/hotels/list?city=Fujikawaguchiko&Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663" target="_blank" class="subtle-booking-link">
                 🏨 星野集團 富士 (Hoshinoya) 預訂 ↗
               </a>
             </div>
@@ -1162,7 +1190,7 @@
               漫步西湖療癒之里根場的傳統水車水畔，親手體驗和紙手漉工藝。中午前往米其林一星「Restaurant TOYOSHIMA」品嚐極致山林旬味，下午由專用司機平穩接駁返回東京市區或機場。
             </p>
             <div class="itinerary-subtle-links-bar">
-              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" class="subtle-booking-link">
+              <a href="https://tw.trip.com/carhire?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663" target="_blank" class="subtle-booking-link">
                 🚗 富士五湖至東京送機包車 ↗
               </a>
               <span class="link-dot-sep">・</span>
@@ -1175,39 +1203,165 @@
       </div>
     </section>
 
-    <!-- 🌟 6. 品牌專區：置入官方 LOGO ＋ 中日英三語美麗詩意介紹 (拒絕可愛字體) -->
-    <section class="brand-vision-box">
-      <!-- 官方 LOGO 視覺 -->
-      <div class="brand-logo-frame">
-        <div class="logo-official-badge">
-          <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" class="official-tabi-logo">
-        </div>
-        <div class="brand-title-en">JAPAN TABI</div>
-        <div class="brand-title-zh-sub">日旅報報 編輯部</div>
-        <div class="brand-title-ja-sub">ジャパン・タビ 編集室</div>
+  <!-- 頁尾 -->
+  
+  <!-- 🌟 編集室宣言：ONESTORY 雜誌建築細線美學 ＋ 中日英三語詩意 colophon -->
+  <section class="brand-vision-box" style="max-width: 1180px; margin: 48px auto 72px; padding: 64px 24px; background: #FFFFFF; border-top: 1px solid #1E293B; border-bottom: 1px solid #E2E8F0;">
+    <div style="display: grid; grid-template-columns: 32px 240px 1fr; gap: 48px; align-items: center;">
+      <!-- 1. ONESTORY 垂直英文書寫邊欄 -->
+      <div class="onestory-vertical-margin" style="writing-mode: vertical-rl; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 0.76rem; font-style: italic; letter-spacing: 1.6px; color: #94A3B8; height: 180px; display: flex; align-items: center; user-select: none;">
+        The journal of Japanese cultural values
       </div>
 
-      <!-- 品牌理念與初衷介紹 (中日英三語美麗句子) -->
-      <div class="brand-content" style="background: rgba(255, 255, 255, 0.48); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); padding: 36px 40px; border-radius: 16px; border: 1.5px solid rgba(255, 255, 255, 0.75); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
-        <h3 style="font-family: var(--font-serif); font-size: 2.1rem; font-weight: 900; line-height: 1.3; margin-bottom: 8px; color: #0F172A;">四季流轉，在日本的風物裡遇見彼此</h3>
-        <div class="brand-ja-tagline" style="font-family: var(--font-serif); font-size: 0.95rem; color: #334155; margin-bottom: 18px; font-style: italic; font-weight: 600;">移ろいゆく季節の中で、本当の自分を見つける静かな旅へ。</div>
+      <!-- 2. 左側極簡編集室印記 (Colophon Seal) -->
+      <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; border-right: 1px solid #E2E8F0; padding-right: 40px;">
+        <span style="font-size: 0.62rem; font-weight: 700; letter-spacing: 2.5px; color: #92400E; text-transform: uppercase; margin-bottom: 18px;">EDITORIAL COLOPHON</span>
+        <div style="width: 68px; height: 68px; border-radius: 50%; overflow: hidden; background: #FFFFFF; border: 1px solid #E2E8F0; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06); margin-bottom: 18px; display: flex; align-items: center; justify-content: center;">
+          <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.28rem; letter-spacing: 3px; color: #111827; font-weight: 600;">JAPAN TABI</div>
+        <div style="font-family: 'Shippori Mincho', 'Noto Serif TC', serif; font-size: 0.86rem; color: #334155; letter-spacing: 2.5px; margin-top: 6px; font-weight: 600;">日旅報報 編輯部</div>
+        <div style="font-family: 'Shippori Mincho', serif; font-size: 0.72rem; color: #94A3B8; letter-spacing: 1.5px; margin-top: 3px; font-weight: 400;">ジャパン・タビ 編集室</div>
+      </div>
+
+      <!-- 3. 右側 ONESTORY 詩意宣言與留白排版 -->
+      <div style="padding-left: 8px; max-width: 720px;">
+        <span style="display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 2.8px; text-transform: uppercase; color: #92400E; margin-bottom: 14px;">SEASONAL MANIFESTO ｜ 編集室の言葉</span>
+        <h3 style="font-family: 'Shippori Mincho', 'Noto Serif TC', serif; font-size: 1.85rem; font-weight: 600; line-height: 1.4; letter-spacing: 2.5px; margin-bottom: 10px; color: #111827;">四季流轉，在日本的風物裡遇見彼此</h3>
+        <div style="font-family: 'Shippori Mincho', 'Noto Serif TC', serif; font-size: 0.92rem; color: #64748B; letter-spacing: 1.8px; font-weight: 400;">移ろいゆく季節の中で、本当の自分を見つける静かな旅へ。</div>
         
-        <p style="font-size: 1.05rem; color: #1E293B; line-height: 1.95; margin-bottom: 20px; font-weight: 500; letter-spacing: 0.03em;">
+        <div style="width: 44px; height: 1px; background: #92400E; margin: 24px 0; opacity: 0.65;"></div>
+
+        <p style="font-family: 'Shippori Mincho', 'Noto Serif TC', serif; font-size: 1.02rem; color: #334155; line-height: 2.15; margin-bottom: 22px; font-weight: 400; letter-spacing: 0.06em;">
           「春櫻浮水、深冬落雪。我們出發，只為記下日本每一次光影與心跳。在天地盛開與枯榮之間，讓腳步慢下來，遇見最初的自己。」
         </p>
-
-        <span class="brand-en-tagline" style="font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; color: #B45309; display: block; line-height: 1.6; font-weight: 700;">“Encountering Japan with you, one quiet season at a time.”</span>
+        <span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.22rem; font-style: italic; color: #78350F; display: block; line-height: 1.6; font-weight: 500; letter-spacing: 0.8px;">“Encountering Japan with you, one quiet season at a time.”</span>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </div>
 
-  <!-- 頁尾 -->
-  <footer class="mag-footer">
-    <p>© 2026 日旅報報 JAPAN TABI ｜ 深度特刊 No.02：富士五湖與本栖湖篇</p>
-    <p style="margin-top: 6px; font-size: 0.72rem; opacity: 0.7;">
-      全篇文字與考據由日旅報報編輯部親訪製作，保留一切權利。
-    </p>
+<footer class="tabi-footer" style="background:#FAF8F5; border-top:1px solid #1E293B; padding:72px 24px 48px; margin-top:80px; position:relative; z-index:10;">
+    <style>
+      .tabi-footer-manifesto-box {
+        max-width:1200px; margin:0 auto 56px; padding:48px 36px; background:#FFFFFF; border:1px solid #E2E8F0; border-radius:12px; box-shadow:0 8px 30px rgba(15,23,42,0.04); display:grid; grid-template-columns:32px 240px 1fr; gap:40px; align-items:center;
+      }
+      .tabi-footer-cols {
+        max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:48px; border-bottom:1px solid #E2E8F0;
+      }
+      @media (max-width: 900px) {
+        .tabi-footer-manifesto-box {
+          grid-template-columns: 1fr !important;
+          padding: 32px 20px !important;
+          gap: 24px !important;
+        }
+        .tabi-footer-vertical-text {
+          display: none !important;
+        }
+        .tabi-footer-manifesto-left {
+          border-right: none !important;
+          border-bottom: 1px solid #E2E8F0 !important;
+          padding-right: 0 !important;
+          padding-bottom: 20px !important;
+        }
+        .tabi-footer-cols {
+          grid-template-columns: 1fr !important;
+          gap: 32px !important;
+        }
+      }
+    </style>
+    
+    <!-- 質感連結與導覽資訊 4 欄區塊 -->
+    <div class="tabi-footer-cols">
+      
+      <!-- 第 1 欄：品牌官方認證 -->
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <div style="width:32px; height:32px; border-radius:50%; overflow:hidden; border:1px solid #E2E8F0;">
+            <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <h4 style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.15rem; font-weight:700; margin:0; color:#0F172A; letter-spacing:1px;">日旅報報 JAPAN TABI</h4>
+        </div>
+        <p style="font-size:0.84rem; color:#475569; line-height:1.85; margin-bottom:16px;">
+          全日本四季時令前線・夏夜花火大會・雪況觀測・名所官方特約指南。嚴選觀光實勘情報，締造最高規格的自由行旅程。
+        </p>
+        <div style="padding:12px 16px; background:#FFFFFF; border-left:3px solid #92400E; border-top:1px solid #F1F5F9; border-right:1px solid #F1F5F9; border-bottom:1px solid #F1F5F9; border-radius:4px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+          <div style="font-weight:700; color:#92400E; margin-bottom:4px; letter-spacing:0.5px;">🏅 官方特約觀測現地取材認證</div>
+          <div>全站情報受著作權保護，未經授權禁止搬運與商業轉載。</div>
+        </div>
+      </div>
+
+      <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          📖 探索日本 ｜ 核心導覽
+        </h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="tabi_news_preview.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#334155'"><span>首頁 ｜ 四季情報速報</span><span style="color:#94A3B8;">↗</span></a></li>
+          <li><a href="japan_flight_deals.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#334155'"><span>查機票 ｜ Trip 即時特惠</span><span style="color:#94A3B8;">↗</span></a></li>
+          <li><a href="japan_charter_rental.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#334155'"><span>包車租車 ｜ 客製尊榮出行</span><span style="color:#94A3B8;">↗</span></a></li>
+          <li><a href="japan_okinawa_drive.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#334155'"><span>沖繩自駕 ｜ 不繞路指南</span><span style="color:#94A3B8;">↗</span></a></li>
+          <li><a href="japan_inbound_rankings.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#334155'"><span>日本排行 ｜ 必訪百名店</span><span style="color:#94A3B8;">↗</span></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#92400E; font-weight:700; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#92400E'"><span>深度文章 ｜ 文化特刊名鑑</span><span style="color:#92400E;">➔</span></a></li>
+        </ul>
+      </div>
+
+      <!-- 第 3 欄：四季花期 ＆ 前線速報 -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          🌸 時令時節 ｜ 前線速報
+        </h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="tabi_news_preview.html#season-sakura" onclick="if(typeof switchSeason==='function'){switchSeason('sakura');return false;}" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">東京目黑川・千鳥之淵</strong><small style="color:#64748B;">吉野櫻滿開・晨光順光拍攝點</small></a></li>
+          <li><a href="tabi_news_preview.html#season-hanabi" onclick="if(typeof switchSeason==='function'){switchSeason('hanabi');return false;}" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">隅田川・長岡祭花火大會</strong><small style="color:#64748B;">正三尺玉・鳳凰祈願花火觀覽</small></a></li>
+          <li><a href="tabi_news_preview.html#season-snow" onclick="if(typeof switchSeason==='function'){switchSeason('snow');return false;}" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">越後湯澤 ＆ 二世谷粉雪</strong><small style="color:#64748B;">極上 JAPOW 乾粉雪・滑雪攻略</small></a></li>
+          <li><a href="tabi_news_preview.html#season-momiji" onclick="if(typeof switchSeason==='function'){switchSeason('momiji');return false;}" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">京都嵐山天龍寺 ＆ 銀杏大道</strong><small style="color:#64748B;">曹源池借景紅葉回遊庭園</small></a></li>
+        </ul>
+      </div>
+
+      <!-- 第 4 欄：特別刊號推薦 (深度文章直達連結) -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          ✨ 深度特刊 ｜ 精選專欄
+        </h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="japan_special_edition.html?vol=7" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 07 沖繩山海極致味覺</strong><small style="color:#64748B;">Halekulani SHIROUX・阿古豬・系滿</small></a></li>
+          <li><a href="japan_special_edition.html?vol=6" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 06 石垣牛與和牛11大名店</strong><small style="color:#64748B;">琉球之牛・本部牧場・燒肉華全指南</small></a></li>
+          <li><a href="japan_special_edition.html?vol=1" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 01 熊野古道：起死回生之道</strong><small style="color:#64748B;">千年朝聖古道・太古雲霧靈湯</small></a></li>
+          <li><a href="japan_special_edition.html?vol=2" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 02 富士五湖與本栖湖</strong><small style="color:#64748B;">神聖逆富士・米其林獵人野味</small></a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 底部版權宣告與社群連結 -->
+    <div style="max-width:1200px; margin:28px auto 0; display:flex; justify-content:space-between; align-items:center; font-size:0.78rem; color:#64748B; flex-wrap:wrap; gap:16px;">
+      <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+        <span style="font-weight:700; color:#334155;">© 2026 日旅報報 JAPAN TABI ｜ 全日本觀光情報局</span>
+        <a href="japan_entry_rules.html" style="color:#64748B; font-size:0.78rem; font-weight:700; text-decoration:none;">最新入境規範</a>
+        <a href="japan_privacy_policy.html" style="color:#64748B; font-size:0.78rem; font-weight:700; text-decoration:none;">隱私權保護政策</a>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》官方 Instagram" style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- Threads -->
+          <a href="https://www.threads.net" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》Threads" style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 3.328 0 6.273-1.624 8.077-4.116-.367-.375-.72-.764-1.057-1.168-1.47 2.05-3.9 3.384-6.65 3.384-4.524 0-8.2-3.676-8.2-8.2s3.676-8.2 8.2-8.2 8.2 3.676 8.2 8.2c0 2.39-.77 4.542-2.316 5.867-1.18.995-2.766 1.433-4.534 1.258-2.678-.266-4.59-2.368-4.59-5.045 0-2.88 2.21-5.18 5.14-5.18 1.94 0 3.518.95 4.19 2.52.17.41.31.85.4 1.3h-1.85c-.08-.3-.21-.58-.38-.83-.45-.66-1.3-1.09-2.36-1.09-1.85 0-3.24 1.45-3.24 3.28 0 1.74 1.25 3.14 3.01 3.31 1.28.13 2.37-.18 3.12-.81.98-.83 1.5-2.22 1.5-3.96 0-5.4-4.32-9.8-9.67-9.8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <button onclick="window.scrollTo({top:0, behavior:'smooth'})" style="background:#FFFFFF; border:1px solid #CBD5E1; border-radius:999px; padding:6px 16px; font-weight:700; cursor:pointer; color:#334155; transition:all 0.2s;" onmouseover="this.style.borderColor='#92400E'; this.style.color='#92400E';" onmouseout="this.style.borderColor='#CBD5E1'; this.style.color='#334155';">
+        ▲ 回到頂部
+      </button>
+    </div>
   </footer>
 
 
@@ -1312,5 +1466,57 @@
     });
   </script>
 
+
+  <script>
+    // 🌐 全站外跳連結多國語系安全攔截器 (保證 100% 帶入專屬分潤參數與正確目標語言)
+    document.addEventListener('click', function(e) {
+      const a = e.target.closest('a');
+      if (!a || !a.href) return;
+      const href = a.href;
+      const savedLang = localStorage.getItem('tabi_selected_lang') || 'zh-TW';
+      
+      if (href.includes('trip.com')) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        const domMap = { 'en': 'https://www.trip.com', 'th': 'https://th.trip.com', 'ja': 'https://jp.trip.com', 'ko': 'https://kr.trip.com', 'zh-CN': 'https://hk.trip.com', 'zh-TW': 'https://tw.trip.com' };
+        const base = domMap[savedLang] || 'https://tw.trip.com';
+        let newHref = href.replace(/https:\/\/(tw|jp|th|kr|hk|www)\.trip\.com/, base);
+        if (!newHref.includes('Allianceid=')) {
+          const sep = newHref.includes('?') ? '&' : '?';
+          newHref += `${sep}Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663`;
+        }
+        a.href = newHref;
+      } else if (href.includes('klook.com')) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        const locMap = { 'en': 'en-US', 'th': 'th', 'ja': 'ja', 'ko': 'ko', 'zh-CN': 'zh-CN', 'zh-TW': 'zh-TW' };
+        const loc = locMap[savedLang] || 'zh-TW';
+        let newHref = href.replace(/klook\.com\/[a-zA-Z_\-]+(\/|$)/, `klook.com/${loc}/`);
+        if (!newHref.includes('aid=')) {
+          const sep = newHref.includes('?') ? '&' : '?';
+          newHref += `${sep}aid=123436&utm_medium=affiliate-alwayson`;
+        }
+        a.href = newHref;
+      } else if (href.includes('booking.com')) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        const locMap = { 'en': 'en-gb', 'th': 'th', 'ja': 'ja', 'ko': 'ko', 'zh-CN': 'zh-cn', 'zh-TW': 'zh-tw' };
+        const curMap = { 'en': 'USD', 'th': 'THB', 'ja': 'JPY', 'ko': 'KRW', 'zh-CN': 'CNY', 'zh-TW': 'TWD' };
+        const loc = locMap[savedLang] || 'zh-tw';
+        const cur = curMap[savedLang] || 'TWD';
+        let newHref = href.replace(/searchresults\.[a-z\-]+\.html/, `searchresults.${loc}.html`);
+        if (!newHref.includes('aid=')) {
+          const sep = newHref.includes('?') ? '&' : '?';
+          newHref += `${sep}aid=2422002`;
+        }
+        if (!newHref.includes('selected_currency=')) {
+          newHref += `&selected_currency=${cur}`;
+        }
+        a.href = newHref;
+      }
+    });
+  </script>
+
+  <script src="./js/tabi_core.js"></script>
 </body>
 </html>
