@@ -9,14 +9,16 @@
   <!-- 字體 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Shippori+Mincho:wght@600;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;600;900&family=Noto+Serif+SC:wght@300;400;600;900&family=Noto+Serif+Thai:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     /* 🎨 四大精確莫蘭迪色號規範 (Strict 4-Palette Design System) */
     :root {
-      --font-main: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+      --font-main: 'Outfit', 'Shippori Mincho', 'Noto Serif TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-serif: 'Shippori Mincho', 'Noto Serif TC', serif;
-      --font-en: 'Outfit', sans-serif;
+      --font-kanji: 'Shippori Mincho', 'Noto Serif TC', serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-en: 'Cormorant Garamond', 'Outfit', serif;
 
       --ink-charcoal: #2D3748;
       --sub-morandi: #718096;
@@ -52,11 +54,14 @@
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
     body {
-      font-family: var(--font-main);
+      font-family: var(--font-sans);
       color: var(--ink-charcoal);
       min-height: 100vh;
       background: linear-gradient(180deg, #FDFCFB 0%, #F5F2EC 100%);
       line-height: 1.6;
+    }
+    h1, h2, h3, h4, .brand-title-zh {
+      font-family: var(--font-kanji);
     }
 
     /* 頂部 Header：官方規格品牌識別 (中央居中，首頁一致) */
@@ -139,7 +144,7 @@
     }
     .brand-title-zh {
       color: #094F8D !important;
-      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif !important;
+      font-family: 'Shippori Mincho', 'Noto Serif TC', serif !important;
       font-weight: 900 !important;
       font-size: 1.62rem !important;
       letter-spacing: 0.5px !important;
@@ -163,7 +168,7 @@
     .brand-tag-official {
       background: #ED1A21 !important;
       color: #FFFFFF !important;
-      font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif !important;
+      font-family: 'Shippori Mincho', 'Noto Serif TC', serif !important;
       font-size: 0.72rem !important;
       font-weight: 900 !important;
       padding: 2px 7px !important;
