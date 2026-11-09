@@ -1,17 +1,1 @@
-頂部右側統一功能按鈕群 目前的錯誤
-
-深度文章 japan_special_edition.html
-1. header-right 格式歪掉
-
-日本排行 japan_inbound_rankings.html
-1. 字體跟 /japan_flight_deals.html 頁面不一樣
-
-沖神自駕 japan_okinawa_drive
-1. 字體跟 /japan_flight_deals.html 頁面不一樣
-2. 沖繩自駕 沒有選中效果
-
-包車/租車
-正常 
-
-查機票
-正常w
+目前正常
