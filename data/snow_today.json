@@ -1,0 +1,15 @@
+{
+  "updated_at": "2026-11-05 06:00:00",
+  "snow_king": {
+    "name": "二世谷",
+    "stat": "24h 新雪 +35cm"
+  },
+  "depth_king": {
+    "name": "喜樂樂",
+    "stat": "山頂積雪 295cm"
+  },
+  "sunny_pick": {
+    "name": "富士天神山",
+    "stat": "初學緩坡晴天率 85%"
+  }
+}

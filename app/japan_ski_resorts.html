@@ -32,6 +32,8 @@ a{color:inherit;text-decoration:none}
 .alert-card{background:var(--ice);border:2px solid var(--blue);border-radius:14px;padding:12px 16px;box-shadow:3px 3px 0 var(--blue)}
 .alert-card small{color:var(--sub);display:block}
 .alert-card b{color:var(--blue)}
+.alert-card b,.alert-card .num{transition:opacity .5s}
+.alert-card .fade-out{opacity:0}
 .alert-card .num{color:var(--orange);font-weight:900}
 
 /* Filters */
@@ -115,10 +117,10 @@ body.lock{overflow:hidden}
   </svg>
 </header>
 
-<section class="alert-bar" aria-label="今日降雪速報">
-  <div class="alert-card"><small>❄️ 今日降雪王</small><b>二世谷</b>（24h 新雪 <span class="num">+35cm</span>）</div>
-  <div class="alert-card"><small>🎿 積雪深度王</small><b>喜樂樂</b>（山頂積雪 <span class="num">295cm</span>）</div>
-  <div class="alert-card"><small>☀️ 晴空適合初學</small><b>富士天神山滑雪場</b>（初學緩坡晴天率 <span class="num">85%</span>）</div>
+<section class="alert-bar" id="alertBar" aria-label="今日降雪速報">
+  <div class="alert-card"><small>❄️ 今日降雪王</small><b data-k="snow_king-name">二世谷</b>（<span class="num" data-k="snow_king-stat">24h 新雪 +35cm</span>）</div>
+  <div class="alert-card"><small>🎿 積雪深度王</small><b data-k="depth_king-name">喜樂樂</b>（<span class="num" data-k="depth_king-stat">山頂積雪 295cm</span>）</div>
+  <div class="alert-card"><small>☀️ 晴空適合初學</small><b data-k="sunny_pick-name">富士天神山滑雪場</b>（<span class="num" data-k="sunny_pick-stat">初學緩坡晴天率 85%</span>）</div>
 </section>
 
 <section class="filters">
@@ -355,6 +357,23 @@ $("camClose").addEventListener("click",closeCam);
 $("camModal").addEventListener("click",function(e){if(e.target===this)closeCam()});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeCam()});
 render();
+// 今日降雪速報：每日由 GitHub Actions 更新 data/snow_today.json；失敗則保留預設文字
+(function(){
+  fetch("data/snow_today.json",{cache:"no-store"}).then(function(r){
+    if(!r.ok)throw new Error(r.status);return r.json();
+  }).then(function(d){
+    ["snow_king","depth_king","sunny_pick"].forEach(function(k){
+      if(!d[k])return;
+      [["name",d[k].name],["stat",d[k].stat]].forEach(function(p){
+        var el=document.querySelector('[data-k="'+k+'-'+p[0]+'"]');
+        if(!el||!p[1]||el.textContent===p[1])return;
+        el.classList.add("fade-out");
+        setTimeout(function(){el.textContent=p[1];el.classList.remove("fade-out")},500);
+      });
+    });
+    if(d.updated_at)document.getElementById("alertBar").title="資料更新：" + d.updated_at + "（JST）";
+  }).catch(function(){/* 靜默回退為預設展示文字 */});
+})();
 </script>
 </body>
 </html>
