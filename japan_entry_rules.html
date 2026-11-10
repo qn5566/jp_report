@@ -21,8 +21,6 @@
       --brand-gold: #D97706;
       --border-light: #E2E8F0;
       --surface-white: #FFFFFF;
-      --font-serif: 'Shippori Mincho', 'Noto Serif TC', Georgia, serif;
-      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-display: 'Cinzel', serif;
     }
 
@@ -34,115 +32,6 @@
       font-family: var(--font-sans);
       line-height: 1.85;
       -webkit-font-smoothing: antialiased;
-    }
-
-    /* 頂部全站統一導航 */
-    .app-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(250, 248, 245, 0.96);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-light);
-      padding: 12px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .header-left { width: 120px; }
-    .header-center {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .brand-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--brand-navy);
-    }
-    .fuji-logo-box {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 1px solid var(--border-light);
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
-      flex-shrink: 0;
-    }
-    .brand-tabi-logo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .brand-title-zh {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      display: block;
-      line-height: 1.1;
-      color: var(--brand-navy);
-    }
-    .brand-sub-official-wrap {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 2px;
-    }
-    .brand-title-en {
-      font-family: var(--font-display);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--brand-amber);
-    }
-    .brand-tag-official {
-      font-size: 0.62rem;
-      background: #F1F5F9;
-      color: #64748B;
-      padding: 1px 6px;
-      border-radius: 4px;
-      font-weight: 700;
-    }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .header-entry-pill {
-      background: #EA580C;
-      color: #FFFFFF;
-      font-weight: 700;
-      font-size: 0.82rem;
-      padding: 5px 14px;
-      border-radius: 999px;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.25);
-      transition: all 0.2s ease;
-      white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .header-entry-pill:hover {
-      background: #C2410C;
-      transform: translateY(-1px);
-    }
-    .header-nav-link {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--brand-navy);
-      text-decoration: none;
-      padding: 6px 10px;
-      border-radius: 8px;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .header-nav-link:hover {
-      color: var(--brand-orange);
     }
 
     /* 深度文章風格主版面 */
@@ -476,6 +365,7 @@
 
     <!-- 🌟 頂部右側統一功能按鈕群 (純文字無外框 ＋ 最新入境規範專屬突出藥丸膠囊) -->
     <div class="header-right">
+      <div class="header-nav-scroll">
       <a href="japan_entry_rules.html" class="header-entry-pill" title="最新日本入境規範、免稅新制與海關申報手冊" style="background:#C2410C; box-shadow:0 2px 10px rgba(194,65,12,0.35);">
         <span>最新入境規範</span>
       </a>
@@ -494,6 +384,49 @@
       <a href="japan_special_edition.html" class="header-nav-link" title="深度文章・高質感日本文化與戶外誌">
         <span>深度文章</span>
       </a>
+
+      </div>
+
+      <!-- 🌐 前台多國語言切換器 (Language Selector) -->
+      <div class="lang-selector-dropdown-wrap" id="langSelectorWrap">
+        <button class="header-lang-btn" id="langDropdownTrigger" onclick="toggleLangDropdown(event)" title="切換語言">
+          <span class="util-btn-icon">🌐</span>
+          <span id="currentLangLabel">Language</span>
+          <span class="lang-arrow" id="langArrow">▾</span>
+        </button>
+        <div class="lang-dropdown-menu" id="langDropdownMenu">
+          <button class="lang-menu-opt active" data-lang="zh-TW" onclick="selectLanguage('zh-TW', '繁體中文')">
+            <span class="lang-flag">🇹🇼</span>
+            <span class="lang-name">繁體中文</span>
+            <span class="lang-check">✓</span>
+          </button>
+          <button class="lang-menu-opt" data-lang="en" onclick="selectLanguage('en', 'English')">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-name">English</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="ko" onclick="selectLanguage('ko', '한국어')">
+            <span class="lang-flag">🇰🇷</span>
+            <span class="lang-name">한국어</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="zh-CN" onclick="selectLanguage('zh-CN', '简体中文')">
+            <span class="lang-flag">🇨🇳</span>
+            <span class="lang-name">简体中文</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="th" onclick="selectLanguage('th', 'ไทย')">
+            <span class="lang-flag">🇹🇭</span>
+            <span class="lang-name">ไทย</span>
+            <span class="lang-check"></span>
+          </button>
+          <button class="lang-menu-opt" data-lang="ja" onclick="selectLanguage('ja', '日本語')">
+            <span class="lang-flag">🇯🇵</span>
+            <span class="lang-name">日本語</span>
+            <span class="lang-check"></span>
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 

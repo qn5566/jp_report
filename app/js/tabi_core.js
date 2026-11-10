@@ -785,3 +785,57 @@
   window.getFavorites = getFavorites;
   window.isFavorite = isFavorite;
 })();
+
+/* ==========================================================================
+   全站統一 Header 多國語系下拉選單 (toggleLangDropdown / selectLanguage)
+   ========================================================================== */
+(function () {
+  function closeMenu() {
+    var menu = document.getElementById('langDropdownMenu');
+    var wrap = document.getElementById('langSelectorWrap');
+    if (menu) menu.classList.remove('show');
+    if (wrap) wrap.classList.remove('open');
+  }
+
+  if (typeof window.toggleLangDropdown !== 'function') window.toggleLangDropdown = function (event) {
+    if (event) event.stopPropagation();
+    var menu = document.getElementById('langDropdownMenu');
+    var wrap = document.getElementById('langSelectorWrap');
+    if (!menu) return;
+    var show = menu.classList.toggle('show');
+    if (wrap) wrap.classList.toggle('open', show);
+  };
+
+  if (typeof window.selectLanguage !== 'function') window.selectLanguage = function (langCode, langName) {
+    var lbl = document.getElementById('currentLangLabel');
+    if (lbl) lbl.textContent = langName;
+    closeMenu();
+
+    document.querySelectorAll('.lang-menu-opt').forEach(function (opt) {
+      opt.classList.toggle('active', opt.getAttribute('data-lang') === langCode);
+    });
+
+    try { localStorage.setItem('tabi_selected_lang', langCode); } catch (e) {}
+
+    // 深度文章多語系橋接 (special_edition 等頁面)
+    if (typeof window.setArticleLang === 'function') {
+      var key = String(langCode).toLowerCase();
+      var pill = document.querySelector('.btn-trans-choice[data-lang="' + key + '"]');
+      window.setArticleLang(key, pill);
+    }
+
+    // 頁面專屬後續行為 (例如查機票重新渲染)
+    if (typeof window.TabiOnLanguageChange === 'function') {
+      window.TabiOnLanguageChange(langCode, langName);
+    }
+  };
+
+  window.addEventListener('click', function (e) {
+    var wrap = document.getElementById('langSelectorWrap');
+    var menu = document.getElementById('langDropdownMenu');
+    if (wrap && menu && !wrap.contains(e.target)) {
+      menu.classList.remove('show');
+      wrap.classList.remove('open');
+    }
+  });
+})();
