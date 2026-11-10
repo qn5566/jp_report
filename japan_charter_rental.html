@@ -4070,7 +4070,7 @@
               <!-- 三合一高轉換按鈕 (預訂行程 ＋ 查看門票 ＋ 預訂住宿，零冗餘ICON、呼吸感充沛) -->
               <div class="charter-actions-trio">
                 <a href="${trip.url}" target="_blank" class="btn-charter-action btn-charter-book" title="預訂專屬客製化包車一日遊">預訂行程</a>
-                <a href="${trip.ticketUrl || ('https://www.klook.com/zh-TW/search/result/?query=' + encodeURIComponent(trip.city || '日本景點') + '%20%E9%96%80%E7%A5%A8&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="btn-charter-action btn-charter-ticket" title="預約該路線必備熱門景點門票">查看門票</a>
+                <a href="${trip.ticketUrl || ('https://www.klook.com/zh-TW/search/result/?query=&aid=123436&utm_medium=affiliate-alwayson' + encodeURIComponent(trip.city || '日本景點') + '%20%E9%96%80%E7%A5%A8&aid=123436&utm_medium=affiliate-alwayson')}" target="_blank" class="btn-charter-action btn-charter-ticket" title="預約該路線必備熱門景點門票">查看門票</a>
                 <a href="${trip.hotelUrl || ('https://www.booking.com/searchresults.zh-tw.html?ss=' + encodeURIComponent(trip.city || '日本') + '&aid=2422002')}" target="_blank" class="btn-charter-action btn-charter-hotel" title="預訂周邊熱門溫泉飯店與旅館">預訂住宿</a>
               </div>
             </div>
@@ -4282,10 +4282,10 @@
           🧭 實用專區
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+                    <li><a href="japan_ski_resorts.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">⛷️ 滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27 大雪場・中文教練・即時雪況速報</small></a></li>
           <li><a href="japan_entry_rules.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">最新入境規範專頁</strong><small style="color:#64748B;">2025/2026 免稅新制・VJW 申報手冊</small></a></li>
           <li><a href="japan_theme_parks.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">遊樂園攻略</strong><small style="color:#64748B;">迪士尼・環球影城 USJ・吉卜力公園</small></a></li>
           <li><a href="japan_train_tour.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">火車和搭車指南</strong><small style="color:#64748B;">新幹線・JR Pass・觀光列車乘車券</small></a></li>
-          <li><a href="japan_live_bloom_album.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">花況現場即時情報局</strong><small style="color:#64748B;">旅人實拍相簿・景觀咖啡推薦</small></a></li>
         </ul>
       </div>
 

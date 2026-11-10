@@ -2333,10 +2333,10 @@
           🧭 實用專區
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+                    <li><a href="japan_ski_resorts.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">⛷️ 滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27 大雪場・中文教練・即時雪況速報</small></a></li>
           <li><a href="japan_entry_rules.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">最新入境規範專頁</strong><small style="color:#64748B;">2025/2026 免稅新制・VJW 申報手冊</small></a></li>
           <li><a href="japan_theme_parks.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">遊樂園攻略</strong><small style="color:#64748B;">迪士尼・環球影城 USJ・吉卜力公園</small></a></li>
           <li><a href="japan_train_tour.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">火車和搭車指南</strong><small style="color:#64748B;">新幹線・JR Pass・觀光列車乘車券</small></a></li>
-          <li><a href="japan_live_bloom_album.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">花況現場即時情報局</strong><small style="color:#64748B;">旅人實拍相簿・景觀咖啡推薦</small></a></li>
         </ul>
       </div>
 
@@ -2460,7 +2460,7 @@
       }
 
       function withKlookAff(rawUrl) {
-        const base = rawUrl || 'https://www.klook.com/zh-TW/search/result/?query=JR%20Pass';
+        const base = rawUrl || 'https://www.klook.com/zh-TW/search/result/?query=JR%20Pass&aid=123436&utm_medium=affiliate-alwayson';
         if (base.includes('aid=123436')) return base;
         return base + (base.includes('?') ? '&' : '?') + 'aid=123436&utm_medium=affiliate-alwayson';
       }
@@ -2468,7 +2468,7 @@
       grid.innerHTML = trainsList.map(train => {
         const hiTags = (train.highlights || []).slice(0, 3).map(h => `<span class="train-hi-tag">${h}</span>`).join('');
         const passAffUrl = withKlookAff(train.ticket_url);
-        const regionalPassUrl = withKlookAff(train.tour_url || 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E5%91%A8%E9%81%8A%E5%88%B8');
+        const regionalPassUrl = withKlookAff(train.tour_url || 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E5%91%A8%E9%81%8A%E5%88%B8&aid=123436&utm_medium=affiliate-alwayson');
         const shinkansenAffUrl = 'https://www.klook.com/zh-TW/transport/shinkansen/?aid=123436&utm_medium=affiliate-alwayson';
         const isFav = typeof isFavorite === 'function' && isFavorite(train.id);
         return `
@@ -2729,10 +2729,10 @@
 
         <div style="display:flex; flex-wrap:wrap; gap:18px; justify-content:space-between; align-items:center; border-top:1px solid #E2E8F0; padding-top:16px;">
           <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
-            <a href="${(train.ticket_url || 'https://www.klook.com/zh-TW/search/result/?query=JR%20Pass') + ((train.ticket_url || '').includes('?') ? '&' : '?') + 'aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" rel="noopener noreferrer" class="train-aff-text-btn" style="font-size:0.88rem !important;">
+            <a href="${(train.ticket_url || 'https://www.klook.com/zh-TW/search/result/?query=JR%20Pass&aid=123436&utm_medium=affiliate-alwayson') + ((train.ticket_url || '').includes('?') ? '&' : '?') + 'aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" rel="noopener noreferrer" class="train-aff-text-btn" style="font-size:0.88rem !important;">
               <span>🎫 預訂適用 JR Pass ❯</span>
             </a>
-            <a href="${(train.tour_url || 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E5%91%A8%E9%81%8A%E5%88%B8') + ((train.tour_url || '').includes('?') ? '&' : '?') + 'aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" rel="noopener noreferrer" class="train-aff-text-btn pass-link" style="font-size:0.88rem !important;">
+            <a href="${(train.tour_url || 'https://www.klook.com/zh-TW/search/result/?query=%E6%97%A5%E6%9C%AC%E5%91%A8%E9%81%8A%E5%88%B8&aid=123436&utm_medium=affiliate-alwayson') + ((train.tour_url || '').includes('?') ? '&' : '?') + 'aid=123436&utm_medium=affiliate-alwayson'}" target="_blank" rel="noopener noreferrer" class="train-aff-text-btn pass-link" style="font-size:0.88rem !important;">
               <span>🗺️ 預訂地區周遊券 / 票券 ❯</span>
             </a>
             <a href="https://www.klook.com/zh-TW/transport/shinkansen/?aid=123436&utm_medium=affiliate-alwayson" target="_blank" rel="noopener noreferrer" class="train-aff-text-btn shinkansen-link" style="font-size:0.88rem !important;">

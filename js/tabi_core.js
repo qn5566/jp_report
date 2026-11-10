@@ -376,37 +376,89 @@
     }, 2800);
   };
 
-  // 12. 免稅匯率小算盤快速開啟相容
-  window.openFxCalculator = function () {
-    if (typeof window.openQuickExchangeModal === 'function') {
-      window.openQuickExchangeModal();
-    } else {
-      window.location.href = 'tabi_news_preview.html#fx';
+  // 12. 全站通用：免稅日幣匯率試算計算機 (Global FX & Tax-Free Calculator)
+  window.calculateFx = function () {
+    const rateInput = document.getElementById('fxRateInput');
+    const jpyInput = document.getElementById('fxJpyInput');
+    if (!rateInput || !jpyInput) return;
+
+    const rate = parseFloat(rateInput.value) || 0.215;
+    const jpy = parseFloat(jpyInput.value) || 0;
+
+    // 1. 一般含稅原價
+    const normTwd = Math.round(jpy * rate);
+    const normTwdEl = document.getElementById('fxNormTwd');
+    const normJpyEl = document.getElementById('fxNormJpy');
+    if (normTwdEl) normTwdEl.textContent = `NT$ ${normTwd.toLocaleString()}`;
+    if (normJpyEl) normJpyEl.textContent = `含稅 ¥${Math.round(jpy).toLocaleString()}`;
+
+    // 2. 10% 退稅價 (未稅金額 = 含稅 / 1.1)
+    const taxFreeJpy = Math.round(jpy / 1.1);
+    const taxFreeTwd = Math.round(taxFreeJpy * rate);
+    const savedTwd = normTwd - taxFreeTwd;
+    const tfTwdEl = document.getElementById('fxTaxFreeTwd');
+    const tfJpyEl = document.getElementById('fxTaxFreeJpy');
+    if (tfTwdEl) tfTwdEl.textContent = `NT$ ${taxFreeTwd.toLocaleString()}`;
+    if (tfJpyEl) tfJpyEl.textContent = `未稅 ¥${taxFreeJpy.toLocaleString()} (現省 NT$ ${savedTwd.toLocaleString()})`;
+
+    // 3. 免稅 + 百貨/唐吉 5% 優惠券折抵 (未稅 * 0.95)
+    const couponJpy = Math.round(taxFreeJpy * 0.95);
+    const couponTwd = Math.round(couponJpy * rate);
+    const cpTwdEl = document.getElementById('fxCouponTwd');
+    const cpJpyEl = document.getElementById('fxCouponJpy');
+    if (cpTwdEl) cpTwdEl.textContent = `NT$ ${couponTwd.toLocaleString()}`;
+    if (cpJpyEl) cpJpyEl.textContent = `實付 ¥${couponJpy.toLocaleString()} (現省 NT$ ${(normTwd - couponTwd).toLocaleString()})`;
+  };
+
+  window.setQuickJpy = function (val) {
+    const input = document.getElementById('fxJpyInput');
+    if (input) {
+      input.value = val;
+      window.calculateFx();
     }
   };
 
-  // 13. 自動掛載 DOM 元件 (Floating Hub & Favorites Drawer)
+  window.openFxCalculator = function () {
+    const modal = document.getElementById('fxCalculatorModal');
+    const backdrop = document.getElementById('fxBackdrop');
+    if (modal && backdrop) {
+      modal.classList.add('show');
+      backdrop.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      window.calculateFx();
+    }
+  };
+
+  window.closeFxCalculator = function () {
+    const modal = document.getElementById('fxCalculatorModal');
+    const backdrop = document.getElementById('fxBackdrop');
+    if (modal) modal.classList.remove('show');
+    if (backdrop) backdrop.classList.remove('show');
+    document.body.style.overflow = '';
+  };
+
+  // 13. 自動掛載 DOM 元件 (Floating Hub, Favorites Drawer & FX Modal)
   function mountUI() {
-    // 檢查或注入浮動工具箱
+    // (A) 檢查或注入浮動工具箱
     if (!document.getElementById('floatingQuickBar')) {
       const hub = document.createElement('div');
       hub.className = 'floating-square-hub';
       hub.id = 'floatingQuickBar';
       hub.innerHTML = `
         <span class="square-hub-badge" id="favCountBadge" style="display:none;">0</span>
-        <button class="square-hub-item" onclick="openFavoritesDrawer()" aria-label="查看我的日旅行程收藏本" title="查看行程收藏本">
+        <button class="square-hub-item hub-item-fav" onclick="openFavoritesDrawer()" aria-label="查看我的日旅行程收藏本" title="查看行程收藏本">
           <span class="hub-icon-wrap">${getHeartSvg(true, 14)}</span>
           <span class="hub-label">收藏</span>
         </button>
         <div class="square-hub-divider"></div>
-        <button class="square-hub-item" onclick="openFxCalculator()" aria-label="日幣免稅試算" title="日幣免稅試算">
-          <span class="hub-icon-wrap" style="font-size:13px; line-height:1;">💴</span>
+        <button class="square-hub-item hub-item-fx" onclick="openFxCalculator()" aria-label="日幣即時匯率與10%免稅試算" title="日幣即時匯率與10%免稅試算">
+          <span class="hub-icon-wrap" style="font-size:14px; line-height:1;">💴</span>
           <span class="hub-label">免稅</span>
         </button>
       `;
       document.body.appendChild(hub);
     } else {
-      // 若已存在但使用了大 emoji，替換為優雅小 SVG
+      // 若已存在但使用了舊結構，校正按鈕與 icon
       const favBtn = document.querySelector('.floating-square-hub .hub-item-fav, .floating-square-hub button:first-of-type');
       if (favBtn) {
         const icon = favBtn.querySelector('.hub-icon, .hub-icon-wrap');
@@ -414,9 +466,13 @@
           icon.innerHTML = getHeartSvg(true, 14);
         }
       }
+      const fxBtn = document.querySelector('.floating-square-hub .hub-item-fx, .floating-square-hub button:last-of-type');
+      if (fxBtn && !fxBtn.hasAttribute('onclick')) {
+        fxBtn.setAttribute('onclick', 'openFxCalculator()');
+      }
     }
 
-    // 檢查或注入收藏抽屜
+    // (B) 檢查或注入收藏抽屜
     if (!document.getElementById('favoritesDrawer')) {
       const backdrop = document.createElement('div');
       backdrop.className = 'fav-backdrop';
@@ -455,8 +511,219 @@
       document.body.appendChild(drawer);
     }
 
+    // (C) 檢查或注入日幣匯率＆免稅試算小工具 Modal
+    if (!document.getElementById('fxCalculatorModal')) {
+      const fxBackdrop = document.createElement('div');
+      fxBackdrop.className = 'fav-backdrop';
+      fxBackdrop.id = 'fxBackdrop';
+      fxBackdrop.onclick = window.closeFxCalculator;
+      document.body.appendChild(fxBackdrop);
+
+      const fxModal = document.createElement('div');
+      fxModal.className = 'fx-calc-modal';
+      fxModal.id = 'fxCalculatorModal';
+      fxModal.innerHTML = `
+        <div class="fx-calc-header">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-size:20px;">💴</span>
+            <h3>日幣即時匯率 ＆ 免稅試算</h3>
+          </div>
+          <button class="btn-close-circle" onclick="closeFxCalculator()" aria-label="關閉試算小工具">✕</button>
+        </div>
+
+        <div class="fx-calc-body">
+          <!-- 匯率基準 -->
+          <div class="fx-rate-row">
+            <span style="font-size:0.82rem; font-weight:700; color:#475569;">參考匯率 (1 JPY = ? TWD)：</span>
+            <input type="number" id="fxRateInput" step="0.001" value="0.215" oninput="calculateFx()" class="fx-rate-field">
+          </div>
+
+          <!-- 輸入金額 -->
+          <div style="margin:14px 0 8px;">
+            <label style="font-size:0.8rem; font-weight:800; color:#334155;">輸入商品含稅日圓金額 (JPY ¥)：</label>
+            <div class="fx-input-wrap">
+              <span class="fx-curr-symbol">¥</span>
+              <input type="number" id="fxJpyInput" value="10000" placeholder="例如 10000" oninput="calculateFx()" class="fx-amount-input">
+            </div>
+          </div>
+
+          <!-- 快捷金額標籤 -->
+          <div class="fx-quick-tags">
+            <button onclick="setQuickJpy(1000)">¥1,000</button>
+            <button onclick="setQuickJpy(5500)">¥5,500 (免稅門檻)</button>
+            <button onclick="setQuickJpy(10000)">¥10,000</button>
+            <button onclick="setQuickJpy(30000)">¥30,000</button>
+            <button onclick="setQuickJpy(50000)">¥50,000</button>
+            <button onclick="setQuickJpy(100000)">¥100,000</button>
+          </div>
+
+          <!-- 試算結果卡片 -->
+          <div class="fx-result-grid">
+            <!-- 1. 一般含稅原價 -->
+            <div class="fx-card fx-card-normal">
+              <div class="fx-card-lbl">一般含稅原價</div>
+              <div>
+                <div class="fx-card-twd" id="fxNormTwd">NT$ 2,150</div>
+                <div class="fx-card-jpy" id="fxNormJpy">約 ¥10,000</div>
+              </div>
+            </div>
+
+            <!-- 2. 日本 10% 退稅價 -->
+            <div class="fx-card fx-card-taxfree">
+              <div class="fx-card-lbl">✨ 10% 免稅後 (Tax Free)</div>
+              <div>
+                <div class="fx-card-twd text-emerald" id="fxTaxFreeTwd">NT$ 1,955</div>
+                <div class="fx-card-jpy" id="fxTaxFreeJpy">未稅 ¥9,091 (現省 NT$ 195)</div>
+              </div>
+            </div>
+
+            <!-- 3. 免稅 + 5% 優惠券 -->
+            <div class="fx-card fx-card-coupon">
+              <div class="fx-card-lbl">🎉 免稅 + 百貨/唐吉 5% 券</div>
+              <div>
+                <div class="fx-card-twd text-rose" id="fxCouponTwd">NT$ 1,857</div>
+                <div class="fx-card-jpy" id="fxCouponJpy">實付 ¥8,636 (現折 8.6 折！)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fx-tax-tip">
+            💡 <b>日本免稅購物秘笈：</b>同一店家當日購買一般品或消耗品，含稅累積滿 <b>¥5,500（未稅 ¥5,000）</b>即可出示護照正本享有免稅。消耗品（藥妝、食品）出境前請勿拆封！
+          </div>
+        </div>
+      `;
+      document.body.appendChild(fxModal);
+    }
+
     updateFavoriteBadge();
     updateAllHeartButtons();
+  }
+
+
+  // 15. 全球化智慧多國語系外跳分潤攔截與路由對齊引擎 (Affiliate & Geo-Routing Engine)
+  function initAffiliateRouter() {
+    // 取得當前用戶語系：先讀 localStorage，次讀 navigator.language
+    function detectUserLocale() {
+      var saved = localStorage.getItem('tabi_selected_lang');
+      if (saved) return saved.toLowerCase();
+      var nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (nav.startsWith('zh-tw') || nav.startsWith('zh-hk')) return 'zh-tw';
+      if (nav.startsWith('zh')) return 'zh-cn';
+      if (nav.startsWith('ja')) return 'ja';
+      if (nav.startsWith('th')) return 'th';
+      if (nav.startsWith('ko')) return 'ko';
+      if (nav.startsWith('en')) return 'en';
+      return 'zh-tw'; // default
+    }
+
+    // 監聽全站所有點擊連結事件
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (!a || !a.href) return;
+      var href = a.href;
+      if (href.startsWith('javascript:') || href.startsWith('#')) return;
+
+      var locale = detectUserLocale();
+      var isWesternOrGlobal = (locale === 'en' || locale === 'th' || locale === 'ko' || locale === 'ja');
+
+      // (A) Trip.com 智慧路由與分潤掛碼
+      if (href.indexOf('trip.com') > -1) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        // 若為官方短網址則保留快速跳轉
+        if (href.indexOf('/t/fgyJcXow1X2') > -1) return;
+
+        var tripDomains = {
+          'zh-tw': 'https://tw.trip.com',
+          'zh-cn': 'https://hk.trip.com',
+          'en': 'https://www.trip.com',
+          'ja': 'https://jp.trip.com',
+          'th': 'https://th.trip.com',
+          'ko': 'https://kr.trip.com'
+        };
+        var targetDomain = tripDomains[locale] || (isWesternOrGlobal ? 'https://www.trip.com' : 'https://tw.trip.com');
+
+        // 置換主網域為對應語系站
+        var newHref = href.replace(/https:\/\/(tw|jp|th|kr|hk|www)\.trip\.com/, targetDomain);
+        if (!newHref.startsWith('http')) newHref = targetDomain + newHref;
+
+        // 注入四大主力 ID
+        if (newHref.indexOf('Allianceid=') === -1) {
+          var sep = newHref.indexOf('?') > -1 ? '&' : '?';
+          newHref += sep + 'Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275';
+        } else {
+          // 若有舊的 D20905663 或其他 trip_sub3，統一校正為規格書之 D20272275
+          newHref = newHref.replace(/trip_sub3=[A-Za-z0-9_]+/, 'trip_sub3=D20272275');
+        }
+        a.href = newHref;
+      }
+
+      // (B) Klook 景點/體驗/包車/Pass 自動掛碼 aid=123436
+      else if (href.indexOf('klook.com') > -1) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+
+        var klookLocales = {
+          'zh-tw': 'zh-TW',
+          'zh-cn': 'zh-CN',
+          'en': 'en-US',
+          'ja': 'ja',
+          'th': 'th',
+          'ko': 'ko'
+        };
+        var targetKlookLoc = klookLocales[locale] || (isWesternOrGlobal ? 'en-US' : 'zh-TW');
+
+        var newHref = href.replace(/klook\.com\/[a-zA-Z_\-]+(\/|$)/, 'klook.com/' + targetKlookLoc + '/');
+        if (newHref.indexOf('aid=') === -1) {
+          var sep = newHref.indexOf('?') > -1 ? '&' : '?';
+          newHref += sep + 'aid=123436&utm_medium=affiliate-alwayson';
+        }
+        a.href = newHref;
+      }
+
+      // (C) Rakuten Travel / 日本樂天 自動掛碼 592df26a.c525acf4.592df26b.012fa32d
+      else if (href.indexOf('rakuten.co.jp') > -1) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        if (href.indexOf('hb.afl.rakuten.co.jp') === -1 && href.indexOf('592df26a.c525acf4.592df26b.012fa32d') === -1) {
+          var encodedTarget = encodeURIComponent(href);
+          a.href = 'https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=' + encodedTarget;
+        }
+      }
+
+      // (D) Booking.com 歐美外國用戶 Travelpayouts / 多幣別智慧分流
+      else if (href.indexOf('booking.com') > -1) {
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+
+        // 若為歐美旅客 (en) 且有指定 Travelpayouts 專屬短鏈 KhRuaSJR，亦可支援導流
+        var bookingLocs = {
+          'zh-tw': 'zh-tw',
+          'zh-cn': 'zh-cn',
+          'en': 'en-gb',
+          'ja': 'ja',
+          'th': 'th',
+          'ko': 'ko'
+        };
+        var bookingCurs = {
+          'zh-tw': 'TWD',
+          'zh-cn': 'CNY',
+          'en': 'USD',
+          'ja': 'JPY',
+          'th': 'THB',
+          'ko': 'KRW'
+        };
+        var bLoc = bookingLocs[locale] || 'zh-tw';
+        var bCur = bookingCurs[locale] || 'TWD';
+
+        var newHref = href.replace(/searchresults\.[a-z\-]+\.html/, 'searchresults.' + bLoc + '.html');
+        if (newHref.indexOf('selected_currency=') === -1) {
+          var sep = newHref.indexOf('?') > -1 ? '&' : '?';
+          newHref += sep + 'selected_currency=' + bCur;
+        }
+        a.href = newHref;
+      }
+    }, true);
   }
 
   // 14. 官方防盜版、著作權防護與轉載追蹤
@@ -505,10 +772,12 @@
     document.addEventListener('DOMContentLoaded', () => {
       mountUI();
       initCopyrightProtection();
+      initAffiliateRouter();
     });
   } else {
     mountUI();
     initCopyrightProtection();
+    initAffiliateRouter();
   }
 
   // 全域暴露
