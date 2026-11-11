@@ -833,15 +833,19 @@ body.lock{overflow:hidden}
   text-shadow:0 1px 3px rgba(0,0,0,0.6);
 }
 
-/* 回首頁按鈕：沖繩右側的專屬膠囊 */
-.filter-home-btn{
-  flex:0 0 auto;
+/* 回首頁按鈕：置於 Hero 左上角（與滑雪頁面一致） */
+.back-link{
+  position:absolute;
+  z-index:10;
+  left:20px;
+  top:18px;
   border:2px solid #111111;
   background:#FFB5C1;
   color:#111111;
   font:inherit;
   font-weight:800;
-  padding:8px 22px;
+  font-size:0.9rem;
+  padding:7px 20px;
   border-radius:999px;
   text-decoration:none;
   white-space:nowrap;
@@ -851,19 +855,20 @@ body.lock{overflow:hidden}
   box-shadow:3px 3px 0 #111111;
   transition:all .2s;
   cursor:pointer;
-  margin-left:auto;
 }
-.filter-home-btn:hover{
+.back-link:hover{
   background:#FFE59A;
   transform:translate(-1px, -2px);
   box-shadow:4px 4px 0 #111111;
 }
 
 </style>
+  <link rel="stylesheet" href="./css/tabi_core.css">
 </head>
 <body>
 
 <header class="hero">
+  <a href="index.html" class="back-link" title="返回日本報報首頁">🏠 回首頁</a>
   <img src="./images/disney_characters_hero.jpg" alt="東京迪士尼城堡與米奇好朋友 夢と魔法の王国" style="object-position: center 28%;">
   
   <div class="hero-text">
@@ -910,7 +915,6 @@ body.lock{overflow:hidden}
     <button class="filter-tab" data-region="kyushu">🌋 九州</button>
     <button class="filter-tab" data-region="hokkaido">❄️ 北海道</button>
     <button class="filter-tab" data-region="okinawa">🏖️ 沖繩</button>
-    <a href="index.html" class="filter-home-btn" title="返回日本報報首頁">🏠 回首頁</a>
   </nav>
 </div>
 
@@ -3043,9 +3047,10 @@ body.lock{overflow:hidden}
       </div>
 
       <div class="memo-box memo-tip" style="background:#FFFDF0;border-left:5px solid #E5A84B;padding:14px;margin:16px 0;">
-        <span class="memo-tag" style="background:#FFE59A;color:#111111;font-weight:800;padding:2px 8px;border-radius:4px;border:1.5px solid #111111;">🍞 門票分層管制秘密</span><br>
-        <p style="margin-top:8px;line-height:1.6;">橫濱麵包超人兒童博物館採分層規劃：<b>1 樓商場、遊戲廣場與果醬爺爺麵包店「全免門票」自由進出</b>！若要進入 2~3 樓的付費互動博物館，需出發前至官方網站購買「日期時間指定電子門票」。出發前推薦先透過 <a href="https://tw.trip.com/travel-guide/attraction/yokohama/yokohama-anpanman-children-s-museum-107770/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" rel="noopener sponsored" class="inline-aff-link" title="預約Trip.com橫濱觀光門票">Trip.com 安排橫濱周邊景點與專車接送</a>！<br>
-        ➔ <a href="https://www.yokohama-anpanman.jp/" target="_blank" rel="noopener" style="font-weight:800;color:#D9383A;text-decoration:underline;">官方票券預約網站：https://www.yokohama-anpanman.jp/</a></p>
+        <span class="memo-tag" style="background:#FFE59A;color:#111111;font-weight:800;padding:2px 8px;border-radius:4px;border:1.5px solid #111111;">🍞 門票分層管制秘密 ＆ 免排隊購票預約</span><br>
+        <p style="margin-top:8px;line-height:1.6;">橫濱麵包超人兒童博物館採分層規劃：<b>1 樓商場、遊戲廣場與果醬爺爺麵包店「全免門票」自由進出</b>！若要進入 2~3 樓的付費互動博物館，強烈建議出發前先線上預約指定日期時間電子門票，避免現場排隊久候。<br>
+        ➔ <a href="https://tw.trip.com/travel-guide/attraction/yokohama/yokohama-anpanman-children-s-museum-107770/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" rel="noopener sponsored" style="font-weight:800;color:#1F5A96;text-decoration:underline;">🎟️ Trip.com 橫濱景點行程免排隊預約 ➔</a><br>
+        ➔ <a href="https://www.yokohama-anpanman.jp/" target="_blank" rel="noopener" style="font-weight:800;color:#D9383A;text-decoration:underline;">官方指定預約網站：https://www.yokohama-anpanman.jp/</a></p>
       </div>
     </section>
   </div>
@@ -3134,7 +3139,7 @@ body.lock{overflow:hidden}
         </ul>
 
       <div class="g-cta">
-        <a class="ye" href="https://tw.trip.com/travel-guide/attraction/yokohama/yokohama-anpanman-children-s-museum-107770/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" rel="noopener sponsored">🎟️ Trip.com 橫濱行程推薦</a>
+        <a class="ye" href="https://tw.trip.com/travel-guide/attraction/yokohama/yokohama-anpanman-children-s-museum-107770/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" rel="noopener sponsored">🎟️ 預訂 Trip.com 橫濱行程票券 / 免排隊</a>
         <a class="pk" href="https://tw.trip.com/hotels/list?city=yokohama&Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" rel="noopener sponsored">🏨 橫濱親子飯店比價</a>
         <a class="mt" href="https://tw.trip.com/airport-transfers/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275" target="_blank" rel="noopener sponsored">🚐 羽田/東京直達專車</a>
       </div>
@@ -7153,7 +7158,44 @@ var $=function(i){return document.getElementById(i)};
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 var TAGC=["y","p","m"];
 
+var TICKET_URLS = {
+  "p1": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E6%A8%82%E5%9C%92%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park",
+  "p2": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E6%A8%82%E5%9C%92%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park",
+  "p3": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E6%A8%82%E5%9C%92%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Fosaka-219%2Funiversal-studios-japan-10758413%2F",
+  "p4": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E6%A8%82%E5%9C%92%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park",
+  "p5": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E8%AE%80%E8%B3%A3%E6%A8%82%E5%9C%92%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park",
+  "p6": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E4%B8%89%E9%BA%97%E5%86%B7%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park",
+  "p7": "https://tw.trip.com/travel-guide/attraction/nagakute/ghibli-park-135541011/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p8": "https://tw.trip.com/travel-guide/attraction/fujiyoshida/fuji-q-highland-84180/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p9": "https://tw.trip.com/travel-guide/attraction/nagoya/legoland-japan-resort-18818815/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p10": "https://tw.trip.com/travel-guide/attraction/kuwana/nagashima-spa-land-91341/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p11": "https://tw.trip.com/travel-guide/attraction/sasebo/huis-ten-bosch-10524177/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p12": "https://tw.trip.com/travel-guide/attraction/awaji/nijigen-no-mori-56531580/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p13": "https://tw.trip.com/travel-guide/attraction/yokohama/yokohama-hakkeijima-sea-paradise-88185/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p14": "https://tw.trip.com/travel-guide/attraction/kato/tojo-ko-toy-kingdom-88190/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p15": "https://tw.trip.com/travel-guide/attraction/yokohama/yokohama-anpanman-children-s-museum-107770/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p16": "https://tw.trip.com/travel-guide/attraction/hiji/harmonyland-10523491/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p17": "https://tw.trip.com/travel-guide/attraction/suzuka/suzuka-circuit-park-88184/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p18": "https://tw.trip.com/travel-guide/attraction/nikko/edo-wonderland-nikko-edamura-88182/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p19": "https://tw.trip.com/travel-guide/attraction/sapporo/shiroi-koibito-park-10523492/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p20": "https://tw.trip.com/travel-guide/attraction/shima/parque-espana-88186/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p21": "https://tw.trip.com/travel-guide/attraction/nasu/nasu-highland-park-88187/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p22": "https://tw.trip.com/travel-guide/attraction/nago/nago-pineapple-park-88188/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p23": "https://tw.trip.com/travel-guide/attraction/ito/izu-shaboten-zoo-88189/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p24": "https://tw.trip.com/travel-guide/attraction/hanno/moominvalley-park-56531581/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p25": "https://tw.trip.com/travel-guide/attraction/hirakata/hirakata-park-88191/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p26": "https://tw.trip.com/travel-guide/attraction/noboribetsu/noboribetsu-date-jidaimura-88192/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p27": "https://tw.trip.com/travel-guide/attraction/kobe/kobe-anpanman-children-s-museum-mall-88193/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p28": "https://tw.trip.com/travel-guide/attraction/tokyo/tokyo-joypolis-10523493/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p29": "https://tw.trip.com/travel-guide/attraction/kyoto/toei-kyoto-studio-park-88194/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p30": "https://tw.trip.com/travel-guide/attraction/nago/dino-park-yanbaru-subtropical-forest-88195/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+  "p31": "https://tw.trip.com/travel-guide/attraction/usa/kyushu-natural-animal-park-african-safari-88191/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+};
+
 function ticketUrl(){
+  if(TICKET_URLS[curId]){
+    return TICKET_URLS[curId];
+  }
   var target="https://tw.trip.com/travel-guide/attraction/tokyo-294/tourist-attractions/?category=theme-park";
   return "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1="+encodeURIComponent("日本報報_樂園門票")+"&trip_sub3=D20905663&redirect_url="+encodeURIComponent(target);
 }
@@ -7848,5 +7890,170 @@ function startParticles31(){
 
 select("p1",false);
 </script>
+  <script src="./js/tabi_core.js"></script>
+<!-- 頁尾 -->
+
+
+  <footer class="tabi-footer" style="background:#FAF8F5; border-top:1px solid #1E293B; padding:72px 24px 48px; margin-top:80px; position:relative; z-index:10;">
+    <style>
+      .tabi-footer-manifesto-box {
+        max-width: 1200px; margin: 0 auto 56px; padding: 36px 40px; background: #FFFFFF;
+        border: 1px solid #E2E8F0; border-radius: 20px; box-shadow: 0 8px 30px rgba(15,23,42,0.04);
+        display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: center;
+      }
+      .tabi-footer-cols {
+        max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:48px; border-bottom:1px solid #E2E8F0;
+      }
+      .footer-nav-link {
+        font-size:0.84rem; color:#334155; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:all 0.2s;
+      }
+      .footer-nav-link:hover {
+        color: #C2410C;
+        padding-left: 4px;
+      }
+      .footer-nav-link .footer-nav-arrow {
+        color: #94A3B8;
+        transition: transform 0.2s, color 0.2s;
+      }
+      .footer-nav-link:hover .footer-nav-arrow {
+        color: #C2410C;
+        transform: translate(2px, -2px);
+      }
+      @media (max-width: 960px) {
+        .tabi-footer-manifesto-box {
+          grid-template-columns: 1fr !important;
+          padding: 28px 20px !important;
+          gap: 20px !important;
+        }
+        .tabi-footer-vertical-text {
+          display: none !important;
+        }
+        .tabi-footer-cols {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 32px 20px !important;
+        }
+      }
+      @media (max-width: 600px) {
+        .tabi-footer-cols {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
+    
+    <!-- 🌸 《日旅報報》品牌創立精神 (BRAND MANIFESTO - 深度圖案美學特刊版) -->
+    <div class="tabi-footer-manifesto-box">
+      <div class="tabi-footer-manifesto-left" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding-right:32px; border-right:1px solid #E2E8F0;">
+        <span style="font-family:'Cinzel', serif; font-size:0.68rem; font-weight:700; letter-spacing:2.5px; color:#92400E;">BRAND MANIFESTO</span>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div>
+            <div style="font-family:'Shippori Mincho', serif; font-size:1.05rem; font-weight:700; color:#0F172A; letter-spacing:1px; line-height:1.2;">JAPAN TABI</div>
+            <div style="font-size:0.7rem; color:#64748B; margin-top:2px;">日旅報報 品牌創立</div>
+          </div>
+        </div>
+      </div>
+      <div class="tabi-footer-manifesto-right">
+        <h3 style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.05rem; font-weight:700; color:#0F172A; margin:0 0 10px; letter-spacing:1px;">《日旅報報》品牌創立：</h3>
+        <p style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:0.9rem; color:#1E293B; line-height:1.8; margin:0 0 4px;">「因為太喜歡日本，想把四季最動人、最真實的美麗，完整介紹給全世界熱愛旅行的人。」</p>
+        <p style="font-family:'Shippori Mincho', serif; font-size:0.8rem; color:#64748B; font-style:italic; line-height:1.8; margin:0;">「日本が大好きだからこそ、四季折々の息をのむ美しさを、世界中の旅人へ届けたい。」</p>
+      </div>
+    </div>
+
+
+    <div class="tabi-footer-cols">
+      
+      <!-- 第 1 欄：品牌官方認證 -->
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <div style="width:32px; height:32px; border-radius:50%; overflow:hidden; border:1px solid #E2E8F0;">
+            <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <h4 style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.15rem; font-weight:700; margin:0; color:#0F172A; letter-spacing:1px;">日旅報報 JAPAN TABI</h4>
+        </div>
+        <p style="font-size:0.84rem; color:#475569; line-height:1.85; margin-bottom:16px;">
+          日本の四季を彩る花期前線・夏の夜空を彩る花火大会・パウダースノー観測・名所特約ガイド。現地取材に基づき厳選された観光情報を、最高水準の自由旅行へお届けします。
+        </p>
+        <div style="padding:12px 16px; background:#FFFFFF; border-left:3.5px solid #92400E; border-top:1px solid #E2E8F0; border-right:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; border-radius:8px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.03); margin-bottom:14px;">
+          <div style="font-weight:700; color:#92400E; margin-bottom:4px; letter-spacing:0.5px;">🏅 官方特約觀測現地取材認證</div>
+          <div>全站情報受著作權保護，未經授權禁止搬運與商業轉載。</div>
+        </div>
+        <div style="font-size:0.78rem; color:#64748B; line-height:1.75; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.02);">
+          <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com" style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
+          <div style="margin-top:3px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
+        </div>
+      </div>
+
+            <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          探索日本
+        </h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="tabi_news_preview.html" class="footer-nav-link"><span>首頁情報 ｜ 賞花玩雪最前線</span></a></li>
+          <li><a href="japan_flight_deals.html" class="footer-nav-link"><span>機場手帖 ｜ 11大空港散策中心</span></a></li>
+          <li><a href="japan_charter_rental.html" class="footer-nav-link"><span>私人包車 ｜ 彈性包車自由行</span></a></li>
+          <li><a href="japan_okinawa_drive.html" class="footer-nav-link"><span>沖繩自駕 ｜ 自駕環島全攻略</span></a></li>
+          <li><a href="japan_inbound_rankings.html" class="footer-nav-link"><span>美食指南 ｜ 必吃米其林百名店</span></a></li>
+          <li><a href="japan_special_edition.html" class="footer-nav-link" style="color:#92400E; font-weight:700;"><span>深度報導 ｜ 日本文化特刊報導</span></a></li>
+        </ul>
+      </div>
+
+      <!-- 第 3 欄：專題企劃 ＆ 攻略指南 -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          實用專區
+        </h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="japan_ski_resorts.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27 大雪場・中文教練・即時雪況速報</small></a></li>
+          <li><a href="japan_entry_rules.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">最新入境規範專頁</strong><small style="color:#64748B;">2025/2026 免稅新制・VJW 申報手冊</small></a></li>
+          <li><a href="japan_theme_parks.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">遊樂園攻略</strong><small style="color:#64748B;">迪士尼・環球影城 USJ・吉卜力公園</small></a></li>
+          <li><a href="japan_train_tour.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">火車和搭車指南</strong><small style="color:#64748B;">新幹線・JR Pass・觀光列車乘車券</small></a></li>
+          <li><a href="japan_flight_deals.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本空港手帖 ｜ 機場指南</strong><small style="color:#64748B;">全日本 11 大核心機場・必吃美食・展望台・免稅伴手禮</small></a></li>
+        </ul>
+      </div>
+
+      <!-- 第 4 欄：特別刊號推薦 (深度文章直達連結) -->
+      <div>
+        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+          日本精選
+        </h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">沖繩自駕特刊</strong><small style="color:#64748B;">絕景咖啡・海邊巡禮・那霸自駕全攻略</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本米其林和牛</strong><small style="color:#64748B;">石垣牛・神戶牛・11大燒肉名店指南</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">溫泉名湯特輯</strong><small style="color:#64748B;">太古雲霧靈湯・富士山景觀溫泉極致體驗</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本世界遺產</strong><small style="color:#64748B;">熊野古道朝聖・富士山神域・屋久島原始林</small></a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 底部版權宣告與社群連結 -->
+    <div style="max-width:1200px; margin:28px auto 0; display:flex; justify-content:space-between; align-items:center; font-size:0.78rem; color:#64748B; flex-wrap:wrap; gap:16px;">
+      <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+        <span style="font-weight:700; color:#334155;">© JAPAN TABI ジャパン・タビ ｜ 全日本観光情報局 All Rights Reserved.</span>
+        <a href="japan_privacy_policy.html" style="color:#64748B; text-decoration:none; margin-left:8px; font-weight:600; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">隱私權政策</a>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》官方 Instagram" style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- Threads -->
+          <a href="https://www.threads.net" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》Threads" style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 3.328 0 6.273-1.624 8.077-4.116-.367-.375-.72-.764-1.057-1.168-1.47 2.05-3.9 3.384-6.65 3.384-4.524 0-8.2-3.676-8.2-8.2s3.676-8.2 8.2-8.2 8.2 3.676 8.2 8.2c0 2.39-.77 4.542-2.316 5.867-1.18.995-2.766 1.433-4.534 1.258-2.678-.266-4.59-2.368-4.59-5.045 0-2.88 2.21-5.18 5.14-5.18 1.94 0 3.518.95 4.19 2.52.17.41.31.85.4 1.3h-1.85c-.08-.3-.21-.58-.38-.83-.45-.66-1.3-1.09-2.36-1.09-1.85 0-3.24 1.45-3.24 3.28 0 1.74 1.25 3.14 3.01 3.31 1.28.13 2.37-.18 3.12-.81.98-.83 1.5-2.22 1.5-3.96 0-5.4-4.32-9.8-9.67-9.8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <button onclick="window.scrollTo({top:0, behavior:'smooth'})" style="background:#FFFFFF; border:1px solid #CBD5E1; border-radius:999px; padding:6px 16px; font-weight:700; cursor:pointer; color:#334155; transition:all 0.2s;" onmouseover="this.style.borderColor='#92400E'; this.style.color='#92400E';" onmouseout="this.style.borderColor='#CBD5E1'; this.style.color='#334155';">
+        ▲ 回到頂部
+      </button>
+    </div>
+  </footer>
 </body>
 </html>

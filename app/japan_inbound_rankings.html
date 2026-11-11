@@ -67,24 +67,103 @@
       padding: 0 20px 80px 20px;
     }
 
-    /* 🌄 富士山櫻花夕陽英雄視覺橫幅 (左右 100% 滿版全螢幕橫幅，明亮透彩自然光) */
+    /* 🌄 滿版氣派大氣英雄視覺橫幅 (比照滑雪頁面 65~72vh，雜誌封面級品牌旗艦感) */
     .hero-banner {
       position: relative;
       width: 100%;
-      height: 420px;
-      border-radius: 0; /* 滿版不留圓角，延展至全螢幕邊緣 */
+      min-height: 540px;
+      height: 64vh;
+      max-height: 680px;
+      border-radius: 0;
       overflow: hidden;
       background-image: url('./images/hero_fuji_sakura_banner.jpg');
       background-size: cover;
-      background-position: center 42%;
+      background-position: center 38%;
       margin-bottom: 0;
-      border-bottom: 1px solid rgba(226, 232, 240, 0.4);
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 24px;
+      box-sizing: border-box;
     }
+
+    /* 🏛️ 全站統一標準日雜刊頭排版 (Unified Editorial Hero Typography) */
+    .mag-vertical-title-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 頂部斜線小標 ＼ ... ／ */
+    .mag-title-eyebrow {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 5px;
+      margin-bottom: 14px;
+      opacity: 0.95;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 第一行主標 */
+    .mag-title-main {
+      font-family: 'Shippori Mincho', 'Noto Serif TC', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: 0.18em;
+      line-height: 1.15;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    }
+
+    /* 分隔連接豎線 ｜ */
+    .mag-title-divider-line {
+      display: block;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 6px 0;
+      line-height: 1;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 第二行副標 */
+    .mag-title-sub-jp {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: 0.22em;
+      line-height: 1.25;
+      margin: 0;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 640px) {
+      .hero-banner { min-height: 420px; height: 50vh; }
+      .mag-title-eyebrow { font-size: 0.76rem; letter-spacing: 3px; margin-bottom: 8px; }
+      .mag-title-main { font-size: 2.05rem; letter-spacing: 0.12em; }
+      .mag-title-divider-line { font-size: 1.1rem; margin: 4px 0; }
+      .mag-title-sub-jp { font-size: 1.3rem; letter-spacing: 0.15em; }
+    }
+
     .hero-banner-scrim {
       position: absolute;
       inset: 0;
-      /* 🌟 調整：大幅減輕暗度，保留夕陽金光、富士雪山與粉嫩櫻花原生明亮自然光彩 */
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.16) 55%, rgba(0, 0, 0, 0.40) 100%);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.18) 45%, rgba(15, 23, 42, 0.75) 100%);
       z-index: 1;
     }
     .hero-banner-content {
@@ -92,45 +171,64 @@
       left: 50%;
       transform: translateX(-50%);
       width: 100%;
-      max-width: 1240px;
-      padding: 0 24px;
-      bottom: 78px;
+      max-width: 1280px;
+      padding: 0 28px;
+      bottom: 96px;
       z-index: 2;
       color: #FFFFFF;
       text-align: left;
     }
+    /* 雜誌特刊官方郵戳 Stamp 徽章 */
     .hero-tag-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(15, 23, 42, 0.45);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      padding: 5px 14px;
-      border-radius: 20px;
-      font-size: 0.82rem;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255, 255, 255, 0.65);
+      padding: 5px 16px;
+      border-radius: 9999px;
+      font-size: 0.86rem;
       font-weight: 800;
       color: #FFFFFF;
-      margin-bottom: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+      letter-spacing: 0.5px;
     }
+    /* 日雜垂直書法排版 (比照滑雪頁面的 hero-vert) */
+    
     .hero-title {
       font-family: var(--font-serif);
-      font-size: 2.5rem;
+      font-size: clamp(2.2rem, 4.2vw, 3.5rem);
       font-weight: 900;
       color: #FFFFFF;
-      letter-spacing: 1.5px;
-      line-height: 1.25;
-      margin-bottom: 8px;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75), 0 1px 4px rgba(0, 0, 0, 0.9);
+      letter-spacing: 0.5px;
+      line-height: 1.22;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.85), 0 2px 6px rgba(0, 0, 0, 0.95);
     }
     .hero-subtitle {
-      font-size: 0.98rem;
-      color: #FFFFFF;
-      font-weight: 600;
-      line-height: 1.6;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+      color: #F8FAFC;
+      font-weight: 500;
+      line-height: 1.65;
+      max-width: 860px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+      letter-spacing: 0.2px;
+    }
+    /* 滾動指引 */
+    .hero-scroll-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
     }
 
     /* 🌟 圖二 Wanderly 浮動疊加卡盒 (Overlay on Hero Bottom) */
@@ -158,18 +256,22 @@
     }
     @media (max-width: 960px) {
       .hero-banner {
-        height: 310px;
+        height: 56vh;
+        min-height: 440px;
         background-position: center 35%;
       }
+      .hero-banner-vert {
+        display: none;
+      }
       .hero-banner-content {
-        padding: 0 16px;
-        bottom: 60px;
+        padding: 0 20px;
+        bottom: 74px;
       }
       .hero-title {
-        font-size: 1.7rem;
+        font-size: 1.95rem;
       }
       .hero-subtitle {
-        font-size: 0.82rem;
+        font-size: 0.88rem;
       }
       .rank-floating-card-wrap {
         margin-top: -42px;
@@ -1343,8 +1445,8 @@
       <a href="japan_entry_rules.html" class="header-entry-pill" title="最新日本入境規範、免稅新制與海關申報手冊" style="background:#EA580C; color:#FFFFFF; font-weight:700; font-size:0.82rem; padding:5px 12px; border-radius:999px; text-decoration:none; box-shadow:0 2px 8px rgba(234,88,12,0.25); transition:all 0.2s; white-space:nowrap; display:inline-flex; align-items:center; gap:4px; margin-right:4px;">
         <span>最新入境規範</span>
       </a>
-      <a href="japan_flight_deals.html" class="header-nav-link " title="Trip 機票即時比價與特惠航線">
-        <span>查機票</span>
+      <a href="japan_flight_deals.html" class="header-nav-link " title="日本空港手帖・機場探索指南">
+        <span>機場</span>
       </a>
       <a href="japan_charter_rental.html" class="header-nav-link " title="日本客製包車 ＆ 自駕租車指南">
         <span>包車/租車</span>
@@ -1404,13 +1506,14 @@
     </div>
   </header>
 
-  <!-- 🌄 滿版全螢幕英雄視覺橫幅 (明亮透彩自然光，隨分類動態切換) -->
+  <!-- 🌄 滿版氣派旗艦級英雄視覺橫幅 (簡潔洗鍊大氣版) -->
   <div class="hero-banner" id="rankHeroBanner">
     <div class="hero-banner-scrim"></div>
-    <div class="hero-banner-content">
-      <span class="hero-tag-badge" id="heroTagBadge">🌸 2026 日本觀光人氣權威排行榜 ｜ 官方旗艦指南</span>
-      <h1 class="hero-title" id="heroTitle">全日本極上觀光體驗排行榜</h1>
-      <p class="hero-subtitle" id="heroSubtitle">頂級板前和牛割烹・宇治百年抹茶茶道・雪見名湯百選・日本歷史文化散策・盛典賽事狂歡・世界遺產夜景</p>
+    <div class="mag-vertical-title-wrap">
+      <div class="mag-title-eyebrow" id="heroTagBadge">＼ 厳選された日本の至高の旅 ／</div>
+      <h1 class="mag-title-main" id="heroTitle">日本極上排行</h1>
+      <span class="mag-title-divider-line">｜</span>
+      <div class="mag-title-sub-jp" id="heroSubtitle">五感で味わう至高の体験</div>
     </div>
   </div>
 
@@ -1553,25 +1656,24 @@
         <p style="font-size:0.84rem; color:#475569; line-height:1.85; margin-bottom:16px;">
           日本の四季を彩る花期前線・夏の夜空を彩る花火大会・パウダースノー観測・名所特約ガイド。現地取材に基づき厳選された観光情報を、最高水準の自由旅行へお届けします。
         </p>
-        <div style="font-size:0.8rem; color:#64748B; line-height:1.75; margin-bottom:16px; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;">
-          <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com" style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
-          <div style="margin-top:2px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
-        </div>
-
-        <div style="padding:12px 16px; background:#FFFFFF; border-left:3px solid #92400E; border-top:1px solid #F1F5F9; border-right:1px solid #F1F5F9; border-bottom:1px solid #F1F5F9; border-radius:4px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+        <div style="padding:12px 16px; background:#FFFFFF; border-left:3.5px solid #92400E; border-top:1px solid #E2E8F0; border-right:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; border-radius:8px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.03); margin-bottom:14px;">
           <div style="font-weight:700; color:#92400E; margin-bottom:4px; letter-spacing:0.5px;">🏅 官方特約觀測現地取材認證</div>
           <div>全站情報受著作權保護，未經授權禁止搬運與商業轉載。</div>
         </div>
+        <div style="font-size:0.78rem; color:#64748B; line-height:1.75; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.02);">
+          <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com" style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
+          <div style="margin-top:3px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
+        </div>
       </div>
 
-      <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
+            <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          📖 探索日本
+          探索日本
         </h4>
-                <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
           <li><a href="tabi_news_preview.html" class="footer-nav-link"><span>首頁情報 ｜ 賞花玩雪最前線</span></a></li>
-          <li><a href="japan_flight_deals.html" class="footer-nav-link"><span>機票比價 ｜ 即時促銷最低價</span></a></li>
+          <li><a href="japan_flight_deals.html" class="footer-nav-link"><span>機場手帖 ｜ 11大空港散策中心</span></a></li>
           <li><a href="japan_charter_rental.html" class="footer-nav-link"><span>私人包車 ｜ 彈性包車自由行</span></a></li>
           <li><a href="japan_okinawa_drive.html" class="footer-nav-link"><span>沖繩自駕 ｜ 自駕環島全攻略</span></a></li>
           <li><a href="japan_inbound_rankings.html" class="footer-nav-link"><span>美食指南 ｜ 必吃米其林百名店</span></a></li>
@@ -1582,26 +1684,27 @@
       <!-- 第 3 欄：專題企劃 ＆ 攻略指南 -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          🧭 實用專區
+          實用專區
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-                    <li><a href="japan_ski_resorts.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">⛷️ 滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27 大雪場・中文教練・即時雪況速報</small></a></li>
+          <li><a href="japan_ski_resorts.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27 大雪場・中文教練・即時雪況速報</small></a></li>
           <li><a href="japan_entry_rules.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">最新入境規範專頁</strong><small style="color:#64748B;">2025/2026 免稅新制・VJW 申報手冊</small></a></li>
           <li><a href="japan_theme_parks.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">遊樂園攻略</strong><small style="color:#64748B;">迪士尼・環球影城 USJ・吉卜力公園</small></a></li>
           <li><a href="japan_train_tour.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">火車和搭車指南</strong><small style="color:#64748B;">新幹線・JR Pass・觀光列車乘車券</small></a></li>
+          <li><a href="japan_flight_deals.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本空港手帖 ｜ 機場指南</strong><small style="color:#64748B;">全日本 11 大核心機場・必吃美食・展望台・免稅伴手禮</small></a></li>
         </ul>
       </div>
 
       <!-- 第 4 欄：特別刊號推薦 (深度文章直達連結) -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          ✨ 深度特刊
+          日本精選
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-          <li><a href="japan_special_edition.html?vol=7" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 07 沖繩山海極致味覺</strong><small style="color:#64748B;">Halekulani SHIROUX・阿古豬・系滿</small></a></li>
-          <li><a href="japan_special_edition.html?vol=6" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 06 石垣牛與和牛11大名店</strong><small style="color:#64748B;">琉球之牛・本部牧場・燒肉華全指南</small></a></li>
-          <li><a href="japan_special_edition.html?vol=1" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 01 熊野古道：起死回生之道</strong><small style="color:#64748B;">千年朝聖古道・太古雲霧靈湯</small></a></li>
-          <li><a href="japan_special_edition.html?vol=2" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 02 富士五湖與本栖湖</strong><small style="color:#64748B;">神聖逆富士・米其林獵人野味</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">沖繩自駕特刊</strong><small style="color:#64748B;">絕景咖啡・海邊巡禮・那霸自駕全攻略</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本米其林和牛</strong><small style="color:#64748B;">石垣牛・神戶牛・11大燒肉名店指南</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">溫泉名湯特輯</strong><small style="color:#64748B;">太古雲霧靈湯・富士山景觀溫泉極致體驗</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本世界遺產</strong><small style="color:#64748B;">熊野古道朝聖・富士山神域・屋久島原始林</small></a></li>
         </ul>
       </div>
 
@@ -1752,39 +1855,45 @@
       const bannerConfig = {
         'culture': {
           img: './images/hero_rank_matcha.jpg',
-          tag: '🍵 2026 日本茶道 ＆ 宇治百年抹茶名門排行榜 ｜ 官方特輯',
-          title: '日本茶道老舖 ＆ 宇治極上抹茶排行榜',
-          sub: '町家茶道現刷手筅濃茶・京都宇治天保老舖抹茶芭菲・季節生和菓子茶席名所'
+          tag: '＼ 宇治百年の茶道と極上の甘味 ／',
+          title: '宇治茶道名門',
+          sub: '一期一会、心静まる一服の贅沢',
+          vert: ''
         },
         'fuji': {
           img: './images/hero_rank_heritage.jpg',
-          tag: '🏯 2026 日本世界遺產 ＆ 國寶古城排行榜 ｜ 官方旗艦名鑑',
-          title: '日本世界文化遺產 ＆ 國寶歷史名所排行榜',
-          sub: '國寶白鷺姬路城・京都古都歷史文化遺產・富士山靈峰・嚴島神社海上鳥居'
+          tag: '＼ 悠久の時を越える美しき遺産 ／',
+          title: '日本世界遺產',
+          sub: '悠久の時を越え、日本が誇る世界遺産',
+          vert: ''
         },
         'gourmet': {
           img: './images/hero_fuji_sakura_banner.jpg',
-          tag: '🥩 2026 日本米其林 ＆ 頂級和牛板前排行榜 ｜ 官方評選',
-          title: '全日本極上米其林 ＆ 和牛名店排行榜',
-          sub: '三星板前割烹・頂級松阪牛神戶牛炭火燒肉・百年壽喜燒老舖指南'
+          tag: '＼ 厳選された日本の至高の旅 ／',
+          title: '日本極上排行',
+          sub: '五感で味わう至高の体験',
+          vert: ''
         },
         'snow': {
           img: './images/hero_rank_snow_mountains.jpg',
-          tag: '♨️ 2026 日本雪見名湯百選 ＆ 秘境溫泉旅館排行榜 ｜ 官方名鑑',
-          title: '全日本雪見名湯百選 ＆ 極上白雪名所排行榜',
-          sub: '雪見名湯一泊二食・銀山溫泉大雪大正街景・雪山連峰露天風呂・極上黑毛和牛會席'
+          tag: '＼ 湯けむりと白銀が織りなす冬景 ／',
+          title: '雪見名湯百選',
+          sub: '湯けむりと雪景色、至福の癒やし',
+          vert: ''
         },
         'budo': {
           img: './images/hero_rank_heritage.jpg',
-          tag: '🎌 2026 日本文化體驗名鑑 ｜ 大相撲・居合拔刀・茶道藝妓・歌舞伎能樂・深山修行・日料廚藝研習',
-          title: '全日本文化體驗排行榜 ｜ 國技・武道・幽玄雅藝與職人進修',
-          sub: '大相撲本場所觀戰與部屋晨練・真劍居合試斬・百年町家點茶與料亭藝妓席・歌舞伎座一幕見・山伏修驗道・手打蕎麥與壽司進修'
+          tag: '＼ 武道と伝統が宿る幽玄の雅 ／',
+          title: '日本文化體驗',
+          sub: '受け継がれる武士道と幽玄の美学',
+          vert: '極める心、受け継がれる武士道と幽玄。'
         },
         'sports': {
           img: './images/hero_rank_hanabi.jpg',
           tag: '🎆 2026 日本璀璨花火大會 ＆ 甲子園狂歡排行榜 ｜ 盛典限定',
           title: '日本盛典花火 ＆ 甲子園賽事熱血排行榜',
-          sub: '大曲與隅田川花火大會萬發連發・特等觀覽席指南・甲子園棒球聖殿朝聖'
+          sub: '大曲與隅田川花火大會萬發連發・特等觀覽席指南・甲子園棒球聖殿朝聖',
+          vert: '夜空を焦がす熱気、一生に一度の感動。'
         }
       };
 

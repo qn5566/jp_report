@@ -419,14 +419,17 @@
   };
 
   window.openFxCalculator = function () {
-    const modal = document.getElementById('fxCalculatorModal');
-    const backdrop = document.getElementById('fxBackdrop');
-    if (modal && backdrop) {
-      modal.classList.add('show');
-      backdrop.classList.add('show');
-      document.body.style.overflow = 'hidden';
-      window.calculateFx();
+    let modal = document.getElementById('fxCalculatorModal');
+    let backdrop = document.getElementById('fxBackdrop');
+    if (!modal) {
+      if (typeof mountUI === 'function') mountUI();
+      modal = document.getElementById('fxCalculatorModal');
+      backdrop = document.getElementById('fxBackdrop');
     }
+    if (modal) modal.classList.add('show');
+    if (backdrop) backdrop.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    if (typeof window.calculateFx === 'function') window.calculateFx();
   };
 
   window.closeFxCalculator = function () {

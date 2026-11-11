@@ -58,16 +58,21 @@
   position: fixed;
   right: 20px;
   bottom: 24px;
-  z-index: 9990;
-  width: 50px;
+  z-index: 10000;
+  width: 58px;
+  min-height: 84px;
+  height: auto;
   background: #FFFFFF;
   border: 1.5px solid #E2E8F0;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(45, 55, 72, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(45, 55, 72, 0.14), 0 2px 6px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  justify-content: space-between;
   overflow: visible;
+  padding: 4px 0;
+  box-sizing: border-box;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -155,7 +160,7 @@
   background: rgba(15, 23, 42, 0.45);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  z-index: 9998;
+  z-index: 10001;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -647,4 +652,195 @@
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-main: 'Outfit', 'Shippori Mincho', 'Noto Serif TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-en: 'Cormorant Garamond', 'Outfit', serif;
+}
+
+
+/* ===============================================================
+   💴 全站通用：日幣即時匯率 ＆ 10%免稅試算小工具 (Global FX Calculator)
+   =============================================================== */
+.fx-calc-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.92);
+  width: 460px;
+  max-width: 92vw;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  z-index: 10002;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+}
+.fx-calc-modal.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+.fx-calc-header {
+  padding: 16px 20px;
+  background: #FAF8F5;
+  border-bottom: 1px solid #E2E8F0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fx-calc-header h3 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #1E293B;
+  margin: 0;
+}
+.fx-calc-body {
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.fx-rate-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 8px 14px;
+  border-radius: 10px;
+}
+.fx-rate-field {
+  width: 78px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  padding: 4px;
+  color: #0F172A;
+  outline: none;
+}
+.fx-input-wrap {
+  display: flex;
+  align-items: center;
+  background: #FFF;
+  border: 2px solid #CBD5E1;
+  border-radius: 12px;
+  padding: 6px 14px;
+  margin-top: 6px;
+  transition: border-color 0.2s;
+}
+.fx-input-wrap:focus-within {
+  border-color: #6B21A8;
+}
+.fx-curr-symbol {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #64748B;
+  margin-right: 8px;
+}
+.fx-amount-input {
+  flex: 1;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #0F172A;
+  outline: none;
+  width: 100%;
+  background: transparent;
+}
+.fx-quick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.fx-quick-tags button {
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.fx-quick-tags button:hover {
+  background: #E2E8F0;
+  color: #0F172A;
+}
+.fx-result-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+.fx-card {
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid transparent;
+}
+.fx-card-normal {
+  background: #F8FAFC;
+  border-color: #E2E8F0;
+}
+.fx-card-taxfree {
+  background: #ECFDF5;
+  border-color: #A7F3D0;
+}
+.fx-card-coupon {
+  background: #FFF1F2;
+  border-color: #FECDD3;
+}
+.fx-card-lbl {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #475569;
+}
+.fx-card-twd {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #0F172A;
+  text-align: right;
+}
+.fx-card-jpy {
+  font-size: 0.72rem;
+  color: #64748B;
+  text-align: right;
+  margin-top: 2px;
+}
+.text-emerald { color: #059669 !important; }
+.text-rose { color: #E11D48 !important; }
+.fx-tax-tip {
+  margin-top: 16px;
+  background: #FEF9C3;
+  border: 1px dashed #EAB308;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.75rem;
+  color: #713F12;
+  line-height: 1.6;
+}
+.btn-close-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #CBD5E1;
+  background: #FFF;
+  color: #475569;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.btn-close-circle:hover {
+  background: #F1F5F9;
+  color: #0F172A;
 }

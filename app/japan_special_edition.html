@@ -34,6 +34,7 @@
       overflow-x: hidden;
     }
 
+    /* ═════════════════════════════════════════════════
        🌟 視圖 1: 圖一 CATALOG GRID VIEW (EXPLORE ALL OUR TRIPS)
        ═════════════════════════════════════════════════ */
     #catalogSection {
@@ -44,12 +45,90 @@
     /* 頂部全寬橫幅大圖 */
     .catalog-hero-banner {
       width: 100%;
-      height: 400px;
+      min-height: 540px;
+      height: 64vh;
+      max-height: 680px;
       overflow: hidden;
       position: relative;
       display: flex;
-      align-items: flex-end;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 24px;
+      box-sizing: border-box;
     }
+
+    /* 🏛️ 全站統一標準日雜刊頭排版 (Unified Editorial Hero Typography) */
+    .mag-vertical-title-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 頂部斜線小標 ＼ ... ／ */
+    .mag-title-eyebrow {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 5px;
+      margin-bottom: 14px;
+      opacity: 0.95;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 第一行主標 */
+    .mag-title-main {
+      font-family: 'Shippori Mincho', 'Noto Serif TC', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: 0.18em;
+      line-height: 1.15;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    }
+
+    /* 分隔連接豎線 ｜ */
+    .mag-title-divider-line {
+      display: block;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 6px 0;
+      line-height: 1;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 第二行副標 */
+    .mag-title-sub-jp {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: 0.22em;
+      line-height: 1.25;
+      margin: 0;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 640px) {
+      .catalog-hero-banner { min-height: 420px; height: 50vh; }
+      .mag-title-eyebrow { font-size: 0.76rem; letter-spacing: 3px; margin-bottom: 8px; }
+      .mag-title-main { font-size: 2.05rem; letter-spacing: 0.12em; }
+      .mag-title-divider-line { font-size: 1.1rem; margin: 4px 0; }
+      .mag-title-sub-jp { font-size: 1.3rem; letter-spacing: 0.15em; }
+    }
+
     .catalog-hero-img {
       position: absolute;
       inset: 0;
@@ -1495,11 +1574,13 @@
   <section id="catalogSection">
     <!-- 頂部全寬橫幅大圖 -->
     <div class="catalog-hero-banner">
-      <img src="./images/special_edition_banner.jpg" alt="深度文章，探索日本 ｜ In-Depth Stories · Explore Japan" class="catalog-hero-img" />
+      <img src="./images/special_edition_banner.jpg" alt="深度文章 ｜ In-Depth Stories" class="catalog-hero-img" />
       <div class="catalog-hero-scrim"></div>
-      <div class="catalog-hero-content">
-        <div class="catalog-hero-en">In-Depth Stories · Explore Japan</div>
-        <div class="catalog-hero-zh">深度文章，探索日本</div>
+      <div class="mag-vertical-title-wrap">
+        <div class="mag-title-eyebrow">＼ 深く、静かに巡る日本の物語 ／</div>
+        <h1 class="mag-title-main">日本深度特刊</h1>
+        <span class="mag-title-divider-line">｜</span>
+        <div class="mag-title-sub-jp">心に刻む旅の記憶</div>
       </div>
     </div>
 
@@ -1614,7 +1695,7 @@
 
         <!-- 卡片 3: 屋久島 -->
         <div class="trip-card-item" onclick="openArticle(3)">
-          <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80" alt="Yakushima Ancient Cedars" class="trip-card-bg-img" />
+          <img src="./images/yakushima_moss_path.jpg" alt="屋久島：七千年繩文杉、白谷雲水峽與太古苔蘚秘境" class="trip-card-bg-img" />
           <div class="trip-card-scrim"></div>
           <span class="trip-card-top-pill">鹿兒島縣 ｜ 屋久島千年繩文杉</span>
           <div class="trip-card-bottom-info">
@@ -2320,7 +2401,7 @@
       
       <!-- 統一規範：頂部沉浸式大圖與標題引言區塊 -->
       <div class="article-hero-cover">
-        <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1600&q=80" alt="Yakushima Ancient Cedar Forest" class="article-hero-img" />
+        <img src="./images/yakushima_moss_path.jpg" alt="屋久島白谷雲水峽太古苔蘚森林步道" class="article-hero-img" />
         <div class="article-hero-scrim"></div>
         <div class="article-hero-title-box">
           <span class="article-hero-vol">UNESCO WORLD NATURAL HERITAGE SANCTUARY</span>
@@ -2346,7 +2427,7 @@
           <span class="onestory-eyebrow" id="art3_hist_pre">日本首座世界自然遺產・洋上阿爾卑斯聖域</span>
           <h2 class="onestory-h2" id="art3_hist_title">一個月下三十五天的雨：花崗岩隆起的千年屋久杉</h2>
           <p class="onestory-p" id="art3_hist_p">在鹿兒島南端外海60公里處，屋久島以近乎正圓的姿態自黑潮暖流中拔地而起，島中央聳立著九州最高峰——海拔1,936公尺的宮之浦岳。作家林芙美子在《浮雲》中寫道：「屋久島一個月下三十五天的雨。」豐沛的水氣在花崗岩貧瘠山脊上凝結成霧，使杉木生長極度緩慢、樹脂含量極高，造就了千年不腐的「屋久杉」。</p>
-          <p class="onestory-p" id="art3_hist_p2">在屋久島，唯有樹齡超過一千年的巨木方能被尊稱為「屋久杉」。江戶時代以前，島民視深山巨木為神明居所（岳參信仰），不敢揮斧；直至薩摩藩將富含油脂的屋久杉木瓦（平木）列為幕府年貢，森林裡留下了三百年前的巨大樹樁——而新一代幼杉竟在古老樹樁頂端破繭而生，形成世代傳承的「二代杉」生命奇蹟。</p>
+          <p class="onestory-p" id="art3_hist_p2">在屋久島，唯有樹齡超過一千年的巨木方能被尊稱為「屋久杉」。江戶時代以前，島民視深山巨木為神明居所（岳參信仰），不敢揮斧；直至薩摩藩將富含油脂的屋久杉木瓦（平木）列為幕府年貢，森林裡留下了三百年前的巨大樹樁——而新一代幼杉竟在古老樹樁頂端破繭而生，形成世代傳承的「二代杉」生命奇蹟。為免舟車勞頓，造訪深山太古苔林推薦提早預訂 <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%B1%8B%E4%B9%85%E5%B3%B6%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" rel="noopener noreferrer" style="color:#0284C7; font-weight:700; text-decoration:underline;">Klook 屋久島私人包車</a> 或報名 <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%B1%8B%E4%B9%85%E5%B3%B6%E4%B8%80%E6%97%A5%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" rel="noopener noreferrer" style="color:#0284C7; font-weight:700; text-decoration:underline;">白谷雲水峽一日遊行程</a>，由專車與專業嚮導帶路最為安心。</p>
         </div>
       </div>
 
@@ -2355,10 +2436,10 @@
            ═══════════════════════════════════════════════════════════ -->
       <div class="onestory-photo-spread">
         <div>
-          <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=80" alt="Shiratani Unsuikyo Moss Ravine" class="onestory-photo-tall" />
+          <img src="./images/yakushima_ancient_cedar.jpg" alt="屋久島千年古杉巨木根系" class="onestory-photo-tall" />
         </div>
         <div class="onestory-right-offset-col">
-          <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=900&q=80" alt="Yakushima Coastal Tide Pools and Cedars" class="onestory-photo-landscape" />
+          <img src="./images/yakushima_moss_stream.jpg" alt="白谷雲水峽太古苔蘚溪流與靈泉水簾" class="onestory-photo-landscape" />
           <div class="onestory-caption">白谷雲水峽「苔むす森」：海拔800公尺雲霧林帶，宮崎駿《魔法公主》靈感起源地，鹿兒島縣屋久島。</div>
           <div class="onestory-philosophy-box">
             <span class="onestory-phil-tag">自然哲學：萬物有靈的苔蘚宇宙</span>
@@ -2379,7 +2460,7 @@
           <p class="onestory-p">花崗岩整座島嶼無法留住礦物質，使屋久島溪水成為硬度接近零的「超軟水」。無論是用來沖泡屋久島有機深蒸茶、手沖森林烘焙咖啡，或是釀造傳奇芋燒酎「三岳」，都帶有一抹甘冽如絲絨般的圓潤尾韻。</p>
         </div>
         <div class="onestory-split-img-wrap">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Yakushima Waterfall and Granite Gorge" class="onestory-split-img" />
+          <img src="./images/yakushima_moss_path.jpg" alt="屋久島森林深處苔蘚古道" class="onestory-split-img" />
         </div>
       </div>
 
@@ -2401,7 +2482,7 @@
                 <div>
                   <span class="onestory-col-date">MICHELIN PEDIGREE ｜ YAKUSHIMA</span>
                   <div class="onestory-col-thumb">
-                    <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=600&q=80" alt="sankara okas French Dining" />
+                    <img src="./images/yakushima_ancient_cedar.jpg" alt="屋久島千年神木與島嶼風土料理" />
                     <div class="onestory-thumb-overlay">
                       <div class="onestory-thumb-en">SANKARA — OKAS</div>
                       <div class="onestory-thumb-loc">鹿児島県熊毛郡屋久島町</div>
@@ -2428,7 +2509,7 @@
                 <div>
                   <span class="onestory-col-date">CAFE &amp; ROASTERY ｜ ANBŌ RIVER</span>
                   <div class="onestory-col-thumb">
-                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="Smiley Cafe & Nomad Cafe Yakushima" />
+                    <img src="./images/yakushima_moss_stream.jpg" alt="白谷雲水峽純淨甘洌超軟水溪流" />
                     <div class="onestory-thumb-overlay">
                       <div class="onestory-thumb-en">SMILEY &amp; NOMAD CAFE</div>
                       <div class="onestory-thumb-loc">鹿児島県屋久島町安房</div>
@@ -2443,7 +2524,10 @@
                   </div>
                 </div>
                 <div class="onestory-readmore-wrap">
-                  <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%B1%8B%E4%B9%85%E5%B3%B6&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="onestory-readmore-btn">
+                  <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%B1%8B%E4%B9%85%E5%B3%B6%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="onestory-readmore-btn">
+                    <span class="onestory-chevron">⌄</span>
+                    <span class="onestory-readmore-text">KLOOK 預約屋久島包車</span>
+                  </a>
                     <span class="onestory-chevron">⌄</span>
                     <span class="onestory-readmore-text">READ MORE</span>
                   </a>
@@ -2455,7 +2539,7 @@
                 <div>
                   <span class="onestory-col-date">LUXURY VILLA ｜ SANKARA HOTEL &amp; SPA</span>
                   <div class="onestory-col-thumb">
-                    <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80" alt="sankara hotel & spa Yakushima" />
+                    <img src="./images/yakushima_moss_path.jpg" alt="屋久島綠意環抱隱世別墅" />
                     <div class="onestory-thumb-overlay">
                       <div class="onestory-thumb-en">SANKARA HOTEL &amp; SPA</div>
                       <div class="onestory-thumb-loc">鹿児島県熊毛郡屋久島町麦生</div>
@@ -2496,6 +2580,8 @@
             <div class="itinerary-subtle-links-bar">
               <a href="japan_flight_deals.html" class="subtle-booking-link">✈️ 查詢鹿兒島 / 屋久島特惠機票 ↗</a>
               <span class="link-dot-sep">・</span>
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%B1%8B%E4%B9%85%E5%B3%B6%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="subtle-booking-link" style="color:#0284C7; font-weight:700;">🚐 Klook 預約屋久島客製包車 ↗</a>
+              <span class="link-dot-sep">・</span>
               <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663" target="_blank" class="subtle-booking-link">🏨 預約 sankara 奢華別墅宿 ↗</a>
             </div>
           </div>
@@ -2506,7 +2592,9 @@
             <h3 class="day-name" style="font-size: 1.12rem;">荒川登山口森林鐵道 ➔ 威爾森心形樹樁 ➔ 七千年「繩文杉」朝聖</h3>
             <p class="day-desc" style="font-size: 0.86rem;">破曉由專屬登山嚮導陪同自荒川登山口出發，沿百年森林小火車木棧道前行，穿越大王杉、夫婦杉與威爾森心形樹樁，最終仰望樹幹周長16.4公尺的太古神木「繩文杉」。</p>
             <div class="itinerary-subtle-links-bar">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%B1%8B%E4%B9%85%E5%B3%B6&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="subtle-booking-link">🥾 預約繩文杉私人嚮導健行 ↗</a>
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%B9%A9%E6%96%87%E6%9D%89&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="subtle-booking-link" style="color:#0284C7; font-weight:700;">🥾 Klook 繩文杉一日遊健行嚮導 ↗</a>
+              <span class="link-dot-sep">・</span>
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%B1%8B%E4%B9%85%E5%B3%B6%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="subtle-booking-link">🚐 Klook 荒川登山口接送包車 ↗</a>
               <span class="link-dot-sep">・</span>
               <a href="japan_charter_rental.html" class="subtle-booking-link">🚗 預約屋久島環島自駕租車 ↗</a>
             </div>
@@ -2518,7 +2606,9 @@
             <h3 class="day-name" style="font-size: 1.12rem;">白谷雲水峽《魔法公主》苔蘚森林 ➔ 千尋瀑布 ➔ 平內海中溫泉</h3>
             <p class="day-desc" style="font-size: 0.86rem;">晨間漫步於白谷雲水峽600種翠綠苔蘚覆蓋的溪谷與太鼓岩展望台。午後環島造訪花崗岩巨壁傾瀉而下的千尋瀑布，算準退潮時刻浸泡太平洋岸邊的「平內海中溫泉」。</p>
             <div class="itinerary-subtle-links-bar">
-              <a href="https://www.klook.com/zh-TW/search/result/?query=%E7%99%BD%E8%B0%B7%E9%9B%B2%E6%B0%B4%E5%B3%BD&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="subtle-booking-link">🌲 白谷雲水峽半日生態導覽 ↗</a>
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%B1%8B%E4%B9%85%E5%B3%B6%E4%B8%80%E6%97%A5%E9%81%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="subtle-booking-link" style="color:#0284C7; font-weight:700;">🌲 Klook 白谷雲水峽魔法公主森林一日遊 ↗</a>
+              <span class="link-dot-sep">・</span>
+              <a href="https://www.klook.com/zh-TW/search/result/?query=%E5%B1%8B%E4%B9%85%E5%B3%B6%E5%8C%85%E8%BB%8A&aid=123436&utm_medium=affiliate-alwayson" target="_blank" class="subtle-booking-link">🚐 Klook 全日環島包車 ↗</a>
               <span class="link-dot-sep">・</span>
               <a href="https://tw.trip.com/hotels/list?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20905663" target="_blank" class="subtle-booking-link">🏨 尾之間溫泉 / 屋久島海景飯店 ↗</a>
             </div>
@@ -4833,6 +4923,7 @@
       </div>
     </section>
 
+    </article>
   </article>
 
   </section>
@@ -4846,55 +4937,68 @@
 <footer class="tabi-footer" style="background:#FAF8F5; border-top:1px solid #1E293B; padding:72px 24px 48px; margin-top:80px; position:relative; z-index:10;">
     <style>
       .tabi-footer-manifesto-box {
-        max-width:1200px; margin:0 auto 56px; padding:48px 36px; background:#FFFFFF; border:1px solid #E2E8F0; border-radius:12px; box-shadow:0 8px 30px rgba(15,23,42,0.04); display:grid; grid-template-columns:32px 240px 1fr; gap:40px; align-items:center;
+        max-width: 1200px; margin: 0 auto 56px; padding: 36px 40px; background: #FFFFFF;
+        border: 1px solid #E2E8F0; border-radius: 20px; box-shadow: 0 8px 30px rgba(15,23,42,0.04);
+        display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: center;
       }
       .tabi-footer-cols {
         max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:48px; border-bottom:1px solid #E2E8F0;
       }
-      @media (max-width: 900px) {
+      .footer-nav-link {
+        font-size:0.84rem; color:#334155; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:all 0.2s;
+      }
+      .footer-nav-link:hover {
+        color: #C2410C;
+        padding-left: 4px;
+      }
+      .footer-nav-link .footer-nav-arrow {
+        color: #94A3B8;
+        transition: transform 0.2s, color 0.2s;
+      }
+      .footer-nav-link:hover .footer-nav-arrow {
+        color: #C2410C;
+        transform: translate(2px, -2px);
+      }
+      @media (max-width: 960px) {
         .tabi-footer-manifesto-box {
           grid-template-columns: 1fr !important;
-          padding: 32px 20px !important;
-          gap: 24px !important;
+          padding: 28px 20px !important;
+          gap: 20px !important;
         }
         .tabi-footer-vertical-text {
           display: none !important;
         }
-        .tabi-footer-manifesto-left {
-          border-right: none !important;
-          border-bottom: 1px solid #E2E8F0 !important;
-          padding-right: 0 !important;
-          padding-bottom: 20px !important;
+        .tabi-footer-cols {
+          grid-template-columns: 1fr 1fr !important;
+          gap: 32px 20px !important;
         }
+      }
+      @media (max-width: 600px) {
         .tabi-footer-cols {
           grid-template-columns: 1fr !important;
-          gap: 32px !important;
         }
       }
-      .footer-nav-link {
-        font-size: 0.84rem;
-        color: #334155;
-        text-decoration: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: color 0.2s ease;
-      }
-      .footer-nav-link:hover {
-        color: #C2410C !important;
-      }
-      .footer-nav-arrow {
-        opacity: 0.6;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-        display: inline-block;
-        color: #94A3B8;
-      }
-      .footer-nav-link:hover .footer-nav-arrow {
-        opacity: 1;
-        color: #C2410C;
-        transform: translate(2px, -2px);
-      }
     </style>
+    
+    <!-- 🌸 《日旅報報》品牌創立精神 (BRAND MANIFESTO - 深度圖案美學特刊版) -->
+    <div class="tabi-footer-manifesto-box">
+      <div class="tabi-footer-manifesto-left" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding-right:32px; border-right:1px solid #E2E8F0;">
+        <span style="font-family:'Cinzel', serif; font-size:0.68rem; font-weight:700; letter-spacing:2.5px; color:#92400E;">BRAND MANIFESTO</span>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div>
+            <div style="font-family:'Shippori Mincho', serif; font-size:1.05rem; font-weight:700; color:#0F172A; letter-spacing:1px; line-height:1.2;">JAPAN TABI</div>
+            <div style="font-size:0.7rem; color:#64748B; margin-top:2px;">日旅報報 品牌創立</div>
+          </div>
+        </div>
+      </div>
+      <div class="tabi-footer-manifesto-right">
+        <h3 style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.05rem; font-weight:700; color:#0F172A; margin:0 0 10px; letter-spacing:1px;">《日旅報報》品牌創立：</h3>
+        <p style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:0.9rem; color:#1E293B; line-height:1.8; margin:0 0 4px;">「因為太喜歡日本，想把四季最動人、最真實的美麗，完整介紹給全世界熱愛旅行的人。」</p>
+        <p style="font-family:'Shippori Mincho', serif; font-size:0.8rem; color:#64748B; font-style:italic; line-height:1.8; margin:0;">「日本が大好きだからこそ、四季折々の息をのむ美しさを、世界中の旅人へ届けたい。」</p>
+      </div>
+    </div>
+
 
     <div class="tabi-footer-cols">
       
@@ -4909,25 +5013,24 @@
         <p style="font-size:0.84rem; color:#475569; line-height:1.85; margin-bottom:16px;">
           日本の四季を彩る花期前線・夏の夜空を彩る花火大会・パウダースノー観測・名所特約ガイド。現地取材に基づき厳選された観光情報を、最高水準の自由旅行へお届けします。
         </p>
-        <div style="font-size:0.8rem; color:#64748B; line-height:1.75; margin-bottom:16px; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;">
-          <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com" style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
-          <div style="margin-top:2px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
-        </div>
-
-        <div style="padding:12px 16px; background:#FFFFFF; border-left:3px solid #92400E; border-top:1px solid #F1F5F9; border-right:1px solid #F1F5F9; border-bottom:1px solid #F1F5F9; border-radius:4px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+        <div style="padding:12px 16px; background:#FFFFFF; border-left:3.5px solid #92400E; border-top:1px solid #E2E8F0; border-right:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; border-radius:8px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.03); margin-bottom:14px;">
           <div style="font-weight:700; color:#92400E; margin-bottom:4px; letter-spacing:0.5px;">🏅 官方特約觀測現地取材認證</div>
           <div>全站情報受著作權保護，未經授權禁止搬運與商業轉載。</div>
         </div>
+        <div style="font-size:0.78rem; color:#64748B; line-height:1.75; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.02);">
+          <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com" style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
+          <div style="margin-top:3px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
+        </div>
       </div>
 
-      <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
+            <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          📖 探索日本
+          探索日本
         </h4>
-                <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
           <li><a href="tabi_news_preview.html" class="footer-nav-link"><span>首頁情報 ｜ 賞花玩雪最前線</span></a></li>
-          <li><a href="japan_flight_deals.html" class="footer-nav-link"><span>機票比價 ｜ 即時促銷最低價</span></a></li>
+          <li><a href="japan_flight_deals.html" class="footer-nav-link"><span>機場手帖 ｜ 11大空港散策中心</span></a></li>
           <li><a href="japan_charter_rental.html" class="footer-nav-link"><span>私人包車 ｜ 彈性包車自由行</span></a></li>
           <li><a href="japan_okinawa_drive.html" class="footer-nav-link"><span>沖繩自駕 ｜ 自駕環島全攻略</span></a></li>
           <li><a href="japan_inbound_rankings.html" class="footer-nav-link"><span>美食指南 ｜ 必吃米其林百名店</span></a></li>
@@ -4938,25 +5041,27 @@
       <!-- 第 3 欄：專題企劃 ＆ 攻略指南 -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          🧭 攻略指南
+          實用專區
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+          <li><a href="japan_ski_resorts.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27 大雪場・中文教練・即時雪況速報</small></a></li>
           <li><a href="japan_entry_rules.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">最新入境規範專頁</strong><small style="color:#64748B;">2025/2026 免稅新制・VJW 申報手冊</small></a></li>
           <li><a href="japan_theme_parks.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">遊樂園攻略</strong><small style="color:#64748B;">迪士尼・環球影城 USJ・吉卜力公園</small></a></li>
           <li><a href="japan_train_tour.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">火車和搭車指南</strong><small style="color:#64748B;">新幹線・JR Pass・觀光列車乘車券</small></a></li>
+          <li><a href="japan_flight_deals.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本空港手帖 ｜ 機場指南</strong><small style="color:#64748B;">全日本 11 大核心機場・必吃美食・展望台・免稅伴手禮</small></a></li>
         </ul>
       </div>
 
       <!-- 第 4 欄：特別刊號推薦 (深度文章直達連結) -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          ✨ 深度特刊
+          日本精選
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-          <li><a href="japan_special_edition.html?vol=7" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 07 沖繩山海極致味覺</strong><small style="color:#64748B;">Halekulani SHIROUX・阿古豬・系滿</small></a></li>
-          <li><a href="japan_special_edition.html?vol=6" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 06 石垣牛與和牛11大名店</strong><small style="color:#64748B;">琉球之牛・本部牧場・燒肉華全指南</small></a></li>
-          <li><a href="japan_special_edition.html?vol=1" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 01 熊野古道：起死回生之道</strong><small style="color:#64748B;">千年朝聖古道・太古雲霧靈湯</small></a></li>
-          <li><a href="japan_special_edition.html?vol=2" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 02 富士五湖與本栖湖</strong><small style="color:#64748B;">神聖逆富士・米其林獵人野味</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">沖繩自駕特刊</strong><small style="color:#64748B;">絕景咖啡・海邊巡禮・那霸自駕全攻略</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本米其林和牛</strong><small style="color:#64748B;">石垣牛・神戶牛・11大燒肉名店指南</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">溫泉名湯特輯</strong><small style="color:#64748B;">太古雲霧靈湯・富士山景觀溫泉極致體驗</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本世界遺產</strong><small style="color:#64748B;">熊野古道朝聖・富士山神域・屋久島原始林</small></a></li>
         </ul>
       </div>
 

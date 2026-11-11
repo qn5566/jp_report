@@ -4647,10 +4647,9 @@
         /* 🛡️ 浮動正方形功能方塊 (❤️ 行程收藏本 ＆ 💴 免稅小算盤 合併正方形) */
     .floating-square-hub {
       position: fixed;
-      right: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 9990;
+      right: 20px;
+      bottom: 24px;
+      z-index: 10000;
       width: 58px;
       min-height: 84px;
       height: auto;
@@ -4670,7 +4669,7 @@
       -webkit-backdrop-filter: blur(12px);
     }
     .floating-square-hub:hover {
-      transform: translateY(calc(-50% - 2px));
+      transform: translateY(-3px) scale(1.02);
       box-shadow: 0 14px 34px rgba(45, 55, 72, 0.2);
       border-color: #CBD5E1;
     }
@@ -4826,7 +4825,7 @@
       inset: 0;
       background: rgba(15, 23, 42, 0.45);
       backdrop-filter: blur(3px);
-      z-index: 9998;
+      z-index: 10001;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -4989,7 +4988,7 @@
       background: #FFFFFF;
       border-radius: 20px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-      z-index: 10000;
+      z-index: 10002;
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -8154,34 +8153,43 @@
     .brand-text {
       display: flex !important;
       flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: center !important;
       line-height: 1.15 !important;
+      text-align: left !important;
     }
     .brand-text h1, .brand-title-wrap {
       margin: 0 !important;
       padding: 0 !important;
       display: flex !important;
       align-items: center !important;
+      justify-content: flex-start !important;
+      text-align: left !important;
     }
     .brand-title-zh {
       color: #094F8D !important;
       font-family: 'Shippori Mincho', 'Noto Serif TC', serif !important;
       font-weight: 900 !important;
-      letter-spacing: 2.5px !important;
-      font-size: 1.45rem !important;
+      letter-spacing: 0.5px !important;
+      font-size: 1.55rem !important;
       display: inline-block !important;
+      text-align: left !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
     .brand-sub-official-wrap {
       display: flex !important;
       align-items: center !important;
+      justify-content: flex-start !important;
       gap: 6px !important;
-      margin-top: 2px !important;
+      margin-top: 3px !important;
     }
     .brand-title-en {
       color: #ED1A21 !important;
       font-family: 'Outfit', sans-serif !important;
       font-size: 0.72rem !important;
       font-weight: 800 !important;
-      letter-spacing: 1.5px !important;
+      letter-spacing: 1px !important;
     }
     .brand-tag-official {
       background: #ED1A21 !important;
@@ -8379,8 +8387,8 @@
       <a href="japan_entry_rules.html" class="header-entry-pill" title="最新日本入境規範、免稅新制與海關申報手冊" style="background:#EA580C; color:#FFFFFF; font-weight:700; font-size:0.82rem; padding:5px 12px; border-radius:999px; text-decoration:none; box-shadow:0 2px 8px rgba(234,88,12,0.25); transition:all 0.2s; white-space:nowrap; display:inline-flex; align-items:center; gap:4px; margin-right:4px;">
         <span>最新入境規範</span>
       </a>
-      <a href="japan_flight_deals.html" class="header-nav-link " title="Trip 機票即時比價與特惠航線">
-        <span>查機票</span>
+      <a href="japan_flight_deals.html" class="header-nav-link " title="日本空港手帖・機場探索指南">
+        <span>機場</span>
       </a>
       <a href="japan_charter_rental.html" class="header-nav-link " title="日本客製包車 ＆ 自駕租車指南">
         <span>包車/租車</span>
@@ -13889,55 +13897,56 @@
         <p style="font-size:0.84rem; color:#475569; line-height:1.85; margin-bottom:16px;">
           日本の四季を彩る花期前線・夏の夜空を彩る花火大会・パウダースノー観測・名所特約ガイド。現地取材に基づき厳選された観光情報を、最高水準の自由旅行へお届けします。
         </p>
-        <div style="padding:12px 16px; background:#FFFFFF; border-left:3px solid #92400E; border-top:1px solid #F1F5F9; border-right:1px solid #F1F5F9; border-bottom:1px solid #F1F5F9; border-radius:4px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+        <div style="padding:12px 16px; background:#FFFFFF; border-left:3.5px solid #92400E; border-top:1px solid #E2E8F0; border-right:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; border-radius:8px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.03); margin-bottom:14px;">
           <div style="font-weight:700; color:#92400E; margin-bottom:4px; letter-spacing:0.5px;">🏅 官方特約觀測現地取材認證</div>
           <div>全站情報受著作權保護，未經授權禁止搬運與商業轉載。</div>
         </div>
-        <div style="font-size:0.78rem; color:#64748B; line-height:1.75; margin-bottom:12px; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;">
+        <div style="font-size:0.78rem; color:#64748B; line-height:1.75; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.02);">
           <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com" style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
-          <div style="margin-top:2px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
+          <div style="margin-top:3px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
         </div>
 
       </div>
 
-      <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
+            <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          📖 探索日本
+          探索日本
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-          <li><a href="tabi_news_preview.html" class="footer-nav-link"><span>首頁 ｜ 四季情報速報</span></a></li>
-          <li><a href="japan_flight_deals.html" class="footer-nav-link"><span>查機票 ｜ Trip 即時特惠</span></a></li>
-          <li><a href="japan_charter_rental.html" class="footer-nav-link"><span>包車租車 ｜ 客製尊榮出行</span></a></li>
-          <li><a href="japan_okinawa_drive.html" class="footer-nav-link"><span>沖繩自駕 ｜ 不繞路指南</span></a></li>
-          <li><a href="japan_inbound_rankings.html" class="footer-nav-link"><span>日本排行 ｜ 必訪百名店</span></a></li>
-          <li><a href="japan_special_edition.html" class="footer-nav-link" style="color:#92400E; font-weight:700;"><span>深度文章 ｜ 文化特刊名鑑</span></a></li>
+          <li><a href="tabi_news_preview.html" class="footer-nav-link"><span>首頁情報 ｜ 賞花玩雪最前線</span></a></li>
+          <li><a href="japan_flight_deals.html" class="footer-nav-link"><span>機場手帖 ｜ 11大空港散策中心</span></a></li>
+          <li><a href="japan_charter_rental.html" class="footer-nav-link"><span>私人包車 ｜ 彈性包車自由行</span></a></li>
+          <li><a href="japan_okinawa_drive.html" class="footer-nav-link"><span>沖繩自駕 ｜ 自駕環島全攻略</span></a></li>
+          <li><a href="japan_inbound_rankings.html" class="footer-nav-link"><span>美食指南 ｜ 必吃米其林百名店</span></a></li>
+          <li><a href="japan_special_edition.html" class="footer-nav-link" style="color:#92400E; font-weight:700;"><span>深度報導 ｜ 日本文化特刊報導</span></a></li>
         </ul>
       </div>
 
       <!-- 第 3 欄：專題企劃 ＆ 攻略指南 -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          🧭 實用專區
+          實用專區
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-                    <li><a href="japan_ski_resorts.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">⛷️ 滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27 大雪場・中文教練・即時雪況速報</small></a></li>
+          <li><a href="japan_ski_resorts.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27 大雪場・中文教練・即時雪況速報</small></a></li>
           <li><a href="japan_entry_rules.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">最新入境規範專頁</strong><small style="color:#64748B;">2025/2026 免稅新制・VJW 申報手冊</small></a></li>
           <li><a href="japan_theme_parks.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">遊樂園攻略</strong><small style="color:#64748B;">迪士尼・環球影城 USJ・吉卜力公園</small></a></li>
           <li><a href="japan_train_tour.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">火車和搭車指南</strong><small style="color:#64748B;">新幹線・JR Pass・觀光列車乘車券</small></a></li>
+          <li><a href="japan_flight_deals.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本空港手帖 ｜ 機場指南</strong><small style="color:#64748B;">全日本 11 大核心機場・必吃美食・展望台・免稅伴手禮</small></a></li>
         </ul>
       </div>
 
       <!-- 第 4 欄：特別刊號推薦 (深度文章直達連結) -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          ✨ 深度特刊
+          日本精選
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-          <li><a href="japan_special_edition.html?vol=7" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 07 沖繩山海極致味覺</strong><small style="color:#64748B;">Halekulani SHIROUX・阿古豬・系滿</small></a></li>
-          <li><a href="japan_special_edition.html?vol=6" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 06 石垣牛與和牛11大名店</strong><small style="color:#64748B;">琉球之牛・本部牧場・燒肉華全指南</small></a></li>
-          <li><a href="japan_special_edition.html?vol=1" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 01 熊野古道：起死回生之道</strong><small style="color:#64748B;">千年朝聖古道・太古雲霧靈湯</small></a></li>
-          <li><a href="japan_special_edition.html?vol=2" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 02 富士五湖與本栖湖</strong><small style="color:#64748B;">神聖逆富士・米其林獵人野味</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">沖繩自駕特刊</strong><small style="color:#64748B;">絕景咖啡・海邊巡禮・那霸自駕全攻略</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本米其林和牛</strong><small style="color:#64748B;">石垣牛・神戶牛・11大燒肉名店指南</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">溫泉名湯特輯</strong><small style="color:#64748B;">太古雲霧靈湯・富士山景觀溫泉極致體驗</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本世界遺產</strong><small style="color:#64748B;">熊野古道朝聖・富士山神域・屋久島原始林</small></a></li>
         </ul>
       </div>
 
@@ -31235,14 +31244,21 @@
     // 💴 即時日幣匯率 ＆ 10%免稅試算小工具邏輯
     // ===============================================================
     function openFxCalculator() {
-      document.getElementById('fxCalculatorModal').classList.add('show');
-      document.getElementById('fxBackdrop').classList.add('show');
-      calculateFx();
+      const modal = document.getElementById('fxCalculatorModal');
+      const backdrop = document.getElementById('fxBackdrop');
+      if (modal) modal.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      if (typeof calculateFx === 'function') calculateFx();
+      else if (typeof window.calculateFx === 'function') window.calculateFx();
     }
 
     function closeFxCalculator() {
-      document.getElementById('fxCalculatorModal').classList.remove('show');
-      document.getElementById('fxBackdrop').classList.remove('show');
+      const modal = document.getElementById('fxCalculatorModal');
+      const backdrop = document.getElementById('fxBackdrop');
+      if (modal) modal.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+      document.body.style.overflow = '';
     }
 
     function setQuickJpy(val) {

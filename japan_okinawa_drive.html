@@ -100,14 +100,91 @@
     /* 🌊 1. 頂部橫幅 Hero：全景蔚藍珊瑚礁背景 ＋ 詩意文案 ＋ 底部壓邊半透明菜單 */
     .okinawa-hero-luminous {
       position: relative;
-      background: linear-gradient(90deg, rgba(12, 74, 110, 0.65) 0%, rgba(12, 74, 110, 0.35) 45%, rgba(12, 74, 110, 0.05) 75%, transparent 100%), 
+      background: linear-gradient(180deg, rgba(12, 74, 110, 0.45) 0%, rgba(12, 74, 110, 0.25) 45%, rgba(12, 74, 110, 0.65) 100%), 
                   url('./images/okinawa_hero_banner.jpg') center 35% / cover no-repeat;
-      padding: 65px 24px 105px 24px;
+      padding: 30px 24px;
       overflow: hidden;
-      min-height: 440px;
+      min-height: 540px;
+      height: 64vh;
+      max-height: 680px;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      box-sizing: border-box;
     }
+
+    /* 🏛️ 全站統一標準日雜刊頭排版 (Unified Editorial Hero Typography) */
+    .mag-vertical-title-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 頂部斜線小標 ＼ ... ／ */
+    .mag-title-eyebrow {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 5px;
+      margin-bottom: 14px;
+      opacity: 0.95;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 第一行主標 */
+    .mag-title-main {
+      font-family: 'Shippori Mincho', 'Noto Serif TC', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: 0.18em;
+      line-height: 1.15;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    }
+
+    /* 分隔連接豎線 ｜ */
+    .mag-title-divider-line {
+      display: block;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 6px 0;
+      line-height: 1;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 第二行副標 */
+    .mag-title-sub-jp {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: 0.22em;
+      line-height: 1.25;
+      margin: 0;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 640px) {
+      .okinawa-hero-luminous { min-height: 420px; height: 50vh; }
+      .mag-title-eyebrow { font-size: 0.76rem; letter-spacing: 3px; margin-bottom: 8px; }
+      .mag-title-main { font-size: 2.05rem; letter-spacing: 0.12em; }
+      .mag-title-divider-line { font-size: 1.1rem; margin: 4px 0; }
+      .mag-title-sub-jp { font-size: 1.3rem; letter-spacing: 0.15em; }
+    }
+
     .hero-container {
       max-width: 1200px;
       width: 100%;
@@ -1086,8 +1163,8 @@
       <a href="japan_entry_rules.html" class="header-entry-pill" title="最新日本入境規範、免稅新制與海關申報手冊" style="background:#EA580C; color:#FFFFFF; font-weight:700; font-size:0.82rem; padding:5px 12px; border-radius:999px; text-decoration:none; box-shadow:0 2px 8px rgba(234,88,12,0.25); transition:all 0.2s; white-space:nowrap; display:inline-flex; align-items:center; gap:4px; margin-right:4px;">
         <span>最新入境規範</span>
       </a>
-      <a href="japan_flight_deals.html" class="header-nav-link " title="Trip 機票即時比價與特惠航線">
-        <span>查機票</span>
+      <a href="japan_flight_deals.html" class="header-nav-link " title="日本空港手帖・機場探索指南">
+        <span>機場</span>
       </a>
       <a href="japan_charter_rental.html" class="header-nav-link " title="日本客製包車 ＆ 自駕租車指南">
         <span>包車/租車</span>
@@ -1152,21 +1229,11 @@
   <header class="okinawa-hero-luminous" id="okinawaHero">
     <!-- 🫧 蔚藍海洋向上飄浮夢幻泡泡容器 -->
     <div class="ocean-bubbles-container" id="oceanBubbles"></div>
-    <div class="hero-container">
-      <div class="hero-editorial-wrap">
-        <div class="hero-tag-pill">🏝️ 2026 OKINAWA ROAD TRIP ｜ 全島自駕自由行實戰</div>
-        <div class="hero-quote-en">
-          “The essence of travel isn't measured by destinations checked off,<br>
-          but by the unnamed shores that urge you to slow down and stay.”
-        </div>
-        <h1 class="hero-quote-zh">
-          「旅行的意義，不在於抵達了幾座地標，<br>
-          而在於你願意為哪一片無名的浪花，踩下煞車。」
-        </h1>
-        <div class="hero-quote-sub">
-          沿著 58 號海岸線漫遊，串連古宇利大橋、絕景海邊咖啡、海龜浮潛與頂級和牛炭火燒肉。
-        </div>
-      </div>
+    <div class="mag-vertical-title-wrap">
+      <div class="mag-title-eyebrow">＼ 青い海と風が誘う島路 ／</div>
+      <h1 class="mag-title-main">沖繩自駕手帖</h1>
+      <span class="mag-title-divider-line">｜</span>
+      <div class="mag-title-sub-jp">島風と碧海の記憶</div>
     </div>
   </header>
 
@@ -1355,25 +1422,24 @@
         <p style="font-size:0.84rem; color:#475569; line-height:1.85; margin-bottom:16px;">
           日本の四季を彩る花期前線・夏の夜空を彩る花火大会・パウダースノー観測・名所特約ガイド。現地取材に基づき厳選された観光情報を、最高水準の自由旅行へお届けします。
         </p>
-        <div style="font-size:0.8rem; color:#64748B; line-height:1.75; margin-bottom:16px; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;">
-          <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com" style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
-          <div style="margin-top:2px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
-        </div>
-
-        <div style="padding:12px 16px; background:#FFFFFF; border-left:3px solid #92400E; border-top:1px solid #F1F5F9; border-right:1px solid #F1F5F9; border-bottom:1px solid #F1F5F9; border-radius:4px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.02);">
+        <div style="padding:12px 16px; background:#FFFFFF; border-left:3.5px solid #92400E; border-top:1px solid #E2E8F0; border-right:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; border-radius:8px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.03); margin-bottom:14px;">
           <div style="font-weight:700; color:#92400E; margin-bottom:4px; letter-spacing:0.5px;">🏅 官方特約觀測現地取材認證</div>
           <div>全站情報受著作權保護，未經授權禁止搬運與商業轉載。</div>
         </div>
+        <div style="font-size:0.78rem; color:#64748B; line-height:1.75; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.02);">
+          <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com" style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
+          <div style="margin-top:3px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
+        </div>
       </div>
 
-      <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
+            <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          📖 探索日本
+          探索日本
         </h4>
-                <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
           <li><a href="tabi_news_preview.html" class="footer-nav-link"><span>首頁情報 ｜ 賞花玩雪最前線</span></a></li>
-          <li><a href="japan_flight_deals.html" class="footer-nav-link"><span>機票比價 ｜ 即時促銷最低價</span></a></li>
+          <li><a href="japan_flight_deals.html" class="footer-nav-link"><span>機場手帖 ｜ 11大空港散策中心</span></a></li>
           <li><a href="japan_charter_rental.html" class="footer-nav-link"><span>私人包車 ｜ 彈性包車自由行</span></a></li>
           <li><a href="japan_okinawa_drive.html" class="footer-nav-link"><span>沖繩自駕 ｜ 自駕環島全攻略</span></a></li>
           <li><a href="japan_inbound_rankings.html" class="footer-nav-link"><span>美食指南 ｜ 必吃米其林百名店</span></a></li>
@@ -1384,26 +1450,27 @@
       <!-- 第 3 欄：專題企劃 ＆ 攻略指南 -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          🧭 實用專區
+          實用專區
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-                    <li><a href="japan_ski_resorts.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">⛷️ 滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27 大雪場・中文教練・即時雪況速報</small></a></li>
+          <li><a href="japan_ski_resorts.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27 大雪場・中文教練・即時雪況速報</small></a></li>
           <li><a href="japan_entry_rules.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">最新入境規範專頁</strong><small style="color:#64748B;">2025/2026 免稅新制・VJW 申報手冊</small></a></li>
           <li><a href="japan_theme_parks.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">遊樂園攻略</strong><small style="color:#64748B;">迪士尼・環球影城 USJ・吉卜力公園</small></a></li>
           <li><a href="japan_train_tour.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">火車和搭車指南</strong><small style="color:#64748B;">新幹線・JR Pass・觀光列車乘車券</small></a></li>
+          <li><a href="japan_flight_deals.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本空港手帖 ｜ 機場指南</strong><small style="color:#64748B;">全日本 11 大核心機場・必吃美食・展望台・免稅伴手禮</small></a></li>
         </ul>
       </div>
 
       <!-- 第 4 欄：特別刊號推薦 (深度文章直達連結) -->
       <div>
         <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
-          ✨ 深度特刊
+          日本精選
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-          <li><a href="japan_special_edition.html?vol=7" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 07 沖繩山海極致味覺</strong><small style="color:#64748B;">Halekulani SHIROUX・阿古豬・系滿</small></a></li>
-          <li><a href="japan_special_edition.html?vol=6" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 06 石垣牛與和牛11大名店</strong><small style="color:#64748B;">琉球之牛・本部牧場・燒肉華全指南</small></a></li>
-          <li><a href="japan_special_edition.html?vol=1" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 01 熊野古道：起死回生之道</strong><small style="color:#64748B;">千年朝聖古道・太古雲霧靈湯</small></a></li>
-          <li><a href="japan_special_edition.html?vol=2" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">VOL. 02 富士五湖與本栖湖</strong><small style="color:#64748B;">神聖逆富士・米其林獵人野味</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">沖繩自駕特刊</strong><small style="color:#64748B;">絕景咖啡・海邊巡禮・那霸自駕全攻略</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本米其林和牛</strong><small style="color:#64748B;">石垣牛・神戶牛・11大燒肉名店指南</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">溫泉名湯特輯</strong><small style="color:#64748B;">太古雲霧靈湯・富士山景觀溫泉極致體驗</small></a></li>
+          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本世界遺產</strong><small style="color:#64748B;">熊野古道朝聖・富士山神域・屋久島原始林</small></a></li>
         </ul>
       </div>
 
@@ -3896,28 +3963,161 @@
         </div>
 
         <!-- 6 大核心自駕手冊模組 -->
-        <div class="okinawa-sop-grid">
-          <!-- 模組 1: 必備證件 -->
-          <div class="okinawa-sop-card">
-            <div class="sop-card-tag">MODULE 01 ｜ 證件審查</div>
-            <h4 class="sop-card-h4">必備 3 樣正本證件</h4>
-            <div class="sop-card-p">
-              • <b>台灣護照正本</b>（有效期內）。<br>
-              • <b>台灣駕照正本</b>（過期請務必至監理所更換新版）。<br>
-              • <b>監理所核發之「日文譯本正本」</b>（紙本正本）。<br>
-              <div class="sop-card-tip">
-                ⚠️ <b>國際駕照 (IDP) 在日本完全無效！</b>日本依雙邊協定僅承認「台灣駕照正本 ＋ 日文譯本」，持國際駕照會被門市拒絕出車。
+                <div class="okinawa-sop-grid">
+          <!-- 模組 1: 依國籍動態審查證件 -->
+          <script>
+window.switchLicenseCountry = function(countryKey, btn) {
+  try {
+    var card = btn.closest('#license-sop-card') || document.getElementById('license-sop-card');
+    if (!card) return;
+    
+    // 按鈕切換
+    var btns = card.querySelectorAll('.btn-lic-tab');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].style.background = 'transparent';
+      btns[i].style.color = '#64748B';
+    }
+    btn.style.background = '#0284C7';
+    btn.style.color = '#FFFFFF';
+
+    // 面板切換
+    var panels = card.querySelectorAll('.lic-panel');
+    for (var j = 0; j < panels.length; j++) {
+      panels[j].style.display = 'none';
+    }
+    var target = document.getElementById('lic-panel-' + countryKey);
+    if (target) {
+      target.style.display = 'block';
+    }
+  } catch(e) {
+    console.error('switchLicenseCountry error:', e);
+  }
+};
+</script>
+          <div class="okinawa-sop-card" id="license-sop-card">
+            <div class="sop-card-tag">MODULE 01 ｜ 證件審查（依國籍選擇）</div>
+            <h4 class="sop-card-h4" style="margin-bottom:12px;">必備正本證件查詢</h4>
+
+            <!-- 多國籍動態切換 Tab 按鈕 -->
+            <div style="display:flex; gap:6px; margin-bottom:14px; background:#F1F5F9; padding:4px; border-radius:10px; flex-wrap:wrap;">
+              <button type="button" onclick="switchLicenseCountry('tw', this)" class="btn-lic-tab active" style="flex:1; min-width:85px; padding:7px 10px; font-size:0.8rem; font-weight:700; border:none; border-radius:7px; cursor:pointer; background:#0284C7; color:#FFFFFF; transition:all 0.2s;">
+                🇹🇼 台灣
+              </button>
+              <button type="button" onclick="switchLicenseCountry('hkmoc', this)" class="btn-lic-tab" style="flex:1; min-width:85px; padding:7px 10px; font-size:0.8rem; font-weight:700; border:none; border-radius:7px; cursor:pointer; background:transparent; color:#64748B; transition:all 0.2s;">
+                🇭🇰 港澳
+              </button>
+              <button type="button" onclick="switchLicenseCountry('idp', this)" class="btn-lic-tab" style="flex:1; min-width:85px; padding:7px 10px; font-size:0.8rem; font-weight:700; border:none; border-radius:7px; cursor:pointer; background:transparent; color:#64748B; transition:all 0.2s;">
+                🇸🇬 歐美/新加
+              </button>
+              <button type="button" onclick="switchLicenseCountry('eu', this)" class="btn-lic-tab" style="flex:1; min-width:85px; padding:7px 10px; font-size:0.8rem; font-weight:700; border:none; border-radius:7px; cursor:pointer; background:transparent; color:#64748B; transition:all 0.2s;">
+                🇩🇪 德/法/瑞
+              </button>
+              <button type="button" onclick="switchLicenseCountry('cn', this)" class="btn-lic-tab" style="flex:1; min-width:85px; padding:7px 10px; font-size:0.8rem; font-weight:700; border:none; border-radius:7px; cursor:pointer; background:transparent; color:#64748B; transition:all 0.2s;">
+                🇨🇳 中國
+              </button>
+            </div>
+
+            <!-- 內容面版：台灣 -->
+            <div id="lic-panel-tw" class="lic-panel" style="display:block;">
+              <div style="font-size:0.88rem; color:#334155; line-height:1.75; margin-bottom:12px;">
+                <div style="font-weight:800; color:#0369A1; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
+                  <span>🇹🇼 台灣旅客 ｜ 必備 3 樣正本證件</span>
+                  <span style="font-size:0.72rem; padding:1px 6px; background:#E0F2FE; color:#0369A1; border-radius:4px;">雙邊互惠協定</span>
+                </div>
+                • <b>台灣護照正本</b>（入境效期內）。<br>
+                • <b>台灣駕照正本</b>（過期請務必至監理所更換新版無期限證照）。<br>
+                • <b>監理所核發之「日文譯本正本」</b>（紙本正本，出國前至各地監理所申辦 100元）。
               </div>
+              <div class="sop-card-tip" style="background:#FFF1F2; border:1px solid #FECDD3; padding:10px 12px; border-radius:8px; font-size:0.8rem; color:#BE123C; line-height:1.5;">
+                ⚠️ <b>國際駕照 (IDP) 在日本完全無效！</b>日本依雙邊協議僅承認「台灣駕照正本 ＋ 日文譯本」，持台灣國際駕照門市將直接拒絕出車。
+              </div>
+            </div>
+
+            <!-- 內容面版：香港 / 澳門 -->
+            <div id="lic-panel-hkmoc" class="lic-panel" style="display:none;">
+              <div style="font-size:0.88rem; color:#334155; line-height:1.75; margin-bottom:12px;">
+                <div style="font-weight:800; color:#0F766E; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
+                  <span>🇭🇰 香港 / 🇲🇴 澳門旅客 ｜ 必備 3 樣正本證件</span>
+                  <span style="font-size:0.72rem; padding:1px 6px; background:#CCFBF1; color:#0F766E; border-radius:4px;">1949日內瓦公約</span>
+                </div>
+                • <b>香港／澳門特區護照正本</b>（有效期內）。<br>
+                • <b>香港／澳門正式駕駛執照正本</b>（不接受暫准駕駛執照 P牌）。<br>
+                • <b>國際駕駛許可證 (IDP) 正本</b>（必須符合 1949 年日內瓦公約版本，有效期 1 年）。
+              </div>
+              <div style="background:#F0FDF4; border:1px solid #BBF7D0; padding:10px 12px; border-radius:8px; font-size:0.8rem; color:#15803D; line-height:1.5;">
+                ✅ <b>港澳旅客須知：</b>取車時門市人員會同時核對「本國駕駛執照」與「國際駕照 (IDP)」，兩者皆為必備，缺一不可。
+              </div>
+            </div>
+
+            <!-- 內容面版：歐美 / 新加坡 / 國際公約國 -->
+            <div id="lic-panel-idp" class="lic-panel" style="display:none;">
+              <div style="font-size:0.88rem; color:#334155; line-height:1.75; margin-bottom:12px;">
+                <div style="font-weight:800; color:#2563EB; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
+                  <span>🇸🇬 新加坡 / 🇺🇸 美國 / 🇬🇧 英國 / 🇦🇺 澳洲等</span>
+                  <span style="font-size:0.72rem; padding:1px 6px; background:#DBEAFE; color:#2563EB; border-radius:4px;">1949日內瓦公約國</span>
+                </div>
+                • <b>本國護照正本</b>（具有效入境日本許可／免簽資格）。<br>
+                • <b>本國有效正式駕駛執照正本</b>。<br>
+                • <b>國際駕照 (International Driving Permit) 正本</b>（必須蓋有 1949 年 Geneva Convention 印章）。
+              </div>
+              <div style="background:#EFF6FF; border:1px solid #BFDBFE; padding:10px 12px; border-radius:8px; font-size:0.8rem; color:#1E40AF; line-height:1.5;">
+                ℹ️ <b>公約版本核對：</b>日本僅承認 1949 年日內瓦公約版本 IDP；若持有的是 1968 年維也納公約版本 IDP 則無法在日本使用。
+              </div>
+            </div>
+
+            <!-- 內容面版：德 / 法 / 瑞 / 比 / 摩納哥 -->
+            <div id="lic-panel-eu" class="lic-panel" style="display:none;">
+              <div style="font-size:0.88rem; color:#334155; line-height:1.75; margin-bottom:12px;">
+                <div style="font-weight:800; color:#7C3AED; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
+                  <span>🇩🇪 德國 / 🇫🇷 法國 / 🇨🇭 瑞士 / 🇧🇪 比利時 / 🇲🇨 摩納哥</span>
+                  <span style="font-size:0.72rem; padding:1px 6px; background:#F3E8FF; color:#7C3AED; border-radius:4px;">官方指定譯本制</span>
+                </div>
+                • <b>本國護照正本</b>。<br>
+                • <b>本國駕駛執照正本</b>。<br>
+                • <b>官方認可機構核發之日文翻譯本</b>（由各國駐日大使館、領事館或日本汽車聯盟 JAF 出具）。
+              </div>
+              <div style="background:#FAF5FF; border:1px solid #E9D5FF; padding:10px 12px; border-radius:8px; font-size:0.8rem; color:#6B21A8; line-height:1.5;">
+                ℹ️ <b>特定國家專用：</b>上述 5 國與台灣相同，不適用本國國際駕照，必須持「本國駕照 ＋ 官方指定日文譯本」出車。
+              </div>
+            </div>
+
+            <!-- 內容面版：中國大陸 -->
+            <div id="lic-panel-cn" class="lic-panel" style="display:none;">
+              <div style="font-size:0.88rem; color:#334155; line-height:1.75; margin-bottom:12px;">
+                <div style="font-weight:800; color:#DC2626; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
+                  <span>🇨🇳 中國大陸旅客 ｜ 日本駕照規範說明</span>
+                  <span style="font-size:0.72rem; padding:1px 6px; background:#FEE2E2; color:#DC2626; border-radius:4px;">無法直接租車</span>
+                </div>
+                • 中國大陸尚未加入 1949 年《日內瓦道路交通公約》，因此<b>中國駕照在出國辦理的任何「國際駕照翻譯認證件 / KIDA / IDL」在日本皆無法律效力</b>。<br>
+                • 日本所有正規租車門市<b>均無法接受中國駕照或翻譯公證件取車</b>。
+              </div>
+              <div style="background:#FFF1F2; border:1px solid #FECDD3; padding:10px 12px; border-radius:8px; font-size:0.8rem; color:#BE123C; line-height:1.5;">
+                💡 <b>建議出行方案：</b>建議預約本站提供之<b>「包車一日遊 / 專車接送」</b>服務，由日本綠牌專業司機隨行接送，無需自駕也能舒適遊覽全日本！
+              </div>
+            </div>
+
+            <!-- 跳轉 ToCoo! 預約比價連結條 -->
+            <div style="margin-top:14px; padding-top:12px; border-top:1px dashed #BAE6FD; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:0.78rem; color:#0369A1; font-weight:700;">🚗 證件備齊立即比價租車：</span>
+              <a href="https://afflink.one/s/FruK8" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem; font-weight:800; color:#0284C7; text-decoration:none; display:inline-flex; align-items:center; gap:4px; padding:3px 8px; border-radius:6px; background:#E0F2FE; transition:all 0.2s;" onmouseover="this.style.background='#0284C7'; this.style.color='#FFF';" onmouseout="this.style.background='#E0F2FE'; this.style.color='#0284C7';">
+                前往 ToCoo! 租車比價 ↗
+              </a>
             </div>
           </div>
 
-          <!-- 模組 2: 取還車 SOP -->
+          <!-- 模組 2: 取還流程 -->
           <div class="okinawa-sop-card">
             <div class="sop-card-tag">MODULE 02 ｜ 取還流程</div>
             <h4 class="sop-card-h4">取車交車 ＆ 加油還車 SOP</h4>
             <div class="sop-card-p">
               • <b>交車 360 度錄影存證</b>：取車時會同店員以手機錄影車身刮痕、輪框磨損、擋風玻璃小石痕，避免還車糾紛。<br>
               • <b>滿油還車（満タン返却）</b>：還車前務必於門市 5 公里內的正規加油站加滿指定油品（紅色 Regular），並<b>妥善保留加油收據</b>供店員查驗時間。
+            </div>
+            <div style="margin-top:14px; padding-top:10px; border-top:1px dashed #E2E8F0; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:0.76rem; color:#64748B;">全日本跨區還車方案</span>
+              <a href="https://afflink.one/s/FruK8" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem; font-weight:700; color:#0284C7; text-decoration:none;">
+                ToCoo! 異地還車預約 ↗
+              </a>
             </div>
           </div>
 
@@ -3930,9 +4130,15 @@
               • <b>NOC (營業損失)</b>：車輛進廠維修期間租車公司的營業補償（自力開回賠 2 萬日圓，需拖吊賠 5 萬日圓）。<br>
               • <b>最佳解法</b>：預訂時加購<b>全額全險（CDW + NOC 雙免除）</b>，達成真正的 0 自負額無痛安心自駕。
             </div>
+            <div style="margin-top:14px; padding-top:10px; border-top:1px dashed #E2E8F0; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:0.76rem; color:#64748B;">含 T.A.S. 零自負額全險方案</span>
+              <a href="https://afflink.one/s/FruK8" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem; font-weight:700; color:#0284C7; text-decoration:none;">
+                ToCoo! 預訂安心全險 ↗
+              </a>
+            </div>
           </div>
 
-          <!-- 模組 4: 兒童安全座椅 -->
+          <!-- 模組 4: 幼兒法規 -->
           <div class="okinawa-sop-card">
             <div class="sop-card-tag">MODULE 04 ｜ 幼兒法規</div>
             <h4 class="sop-card-h4">未滿 6 歲強制兒童汽座</h4>
@@ -3941,9 +4147,15 @@
               • 租車公司若發現有幼童隨行但未預約安裝汽座，<b>依法有權直接拒絕出車</b>！<br>
               • 分類：嬰兒提籃 (0~1歲)、幼兒座椅 (1~4歲)、學童增高墊 (4歲以上)。
             </div>
+            <div style="margin-top:14px; padding-top:10px; border-top:1px dashed #E2E8F0; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:0.76rem; color:#64748B;">預訂享免費／優惠加選汽座</span>
+              <a href="https://afflink.one/s/FruK8" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem; font-weight:700; color:#0284C7; text-decoration:none;">
+                ToCoo! 汽座家庭車預約 ↗
+              </a>
+            </div>
           </div>
 
-          <!-- 模組 5: 爆胎與失竊 -->
+          <!-- 模組 5: 爆胎失竊 -->
           <div class="okinawa-sop-card">
             <div class="sop-card-tag">MODULE 05 ｜ 爆胎失竊</div>
             <h4 class="sop-card-h4">輪胎破損與車內物品遭竊</h4>
@@ -3951,9 +4163,15 @@
               • <b>行駛爆胎</b>：切換危險燈靠邊停，放置三角反光牌於車後 50m，撥打保險救援卡上的 JAF 救援專線。<br>
               • <b>物品遭竊</b>：在景點或海灘切勿留護照或現金於車內；若遭破窗竊盜，立即撥打 110 取得<b>「盜難證明 (Tounan Shomei)」</b>以利申請旅遊不便險。
             </div>
+            <div style="margin-top:14px; padding-top:10px; border-top:1px dashed #E2E8F0; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:0.76rem; color:#64748B;">自駕附 24H 道路救援保證</span>
+              <a href="https://afflink.one/s/FruK8" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem; font-weight:700; color:#0284C7; text-decoration:none;">
+                ToCoo! 專屬救援方案 ↗
+              </a>
+            </div>
           </div>
 
-          <!-- 模組 6: 緊急電話與通話網卡 -->
+          <!-- 模組 6: 通訊聯絡 -->
           <div class="okinawa-sop-card">
             <div class="sop-card-tag">MODULE 06 ｜ 通訊聯絡</div>
             <h4 class="sop-card-h4">緊急聯絡與必備通話網卡</h4>
@@ -3961,6 +4179,12 @@
               • <b>警察 110 ｜ 救護 119 ｜ JAF 救援 #8139</b><br>
               • <b>台灣駐那霸辦事處急難救助電話</b>：090-1942-1107（24H）<br>
               • <b>強烈建議</b>：自駕請務必備妥<b>「可打電話的日本 SIM / eSIM 網卡」</b>（撥打 110/119 與救援無法靠純上網卡！）。
+            </div>
+            <div style="margin-top:14px; padding-top:10px; border-top:1px dashed #E2E8F0; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:0.76rem; color:#64748B;">全日本比價特惠預約</span>
+              <a href="https://afflink.one/s/FruK8" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem; font-weight:700; color:#0284C7; text-decoration:none;">
+                前往 ToCoo! 即時比價 ↗
+              </a>
             </div>
           </div>
         </div>
@@ -4031,5 +4255,24 @@
   </script>
 
   <script src="./js/tabi_core.js"></script>
+
+  <script>
+    function switchLicenseCountry(countryKey, btn) {
+      const container = btn.closest('#license-sop-card') || document;
+      container.querySelectorAll('.btn-lic-tab').forEach(b => {
+        b.style.background = 'transparent';
+        b.style.color = '#64748B';
+      });
+      btn.style.background = '#0284C7';
+      btn.style.color = '#FFFFFF';
+
+      container.querySelectorAll('.lic-panel').forEach(p => p.style.display = 'none');
+      const targetPanel = container.querySelector('#lic-panel-' + countryKey);
+      if (targetPanel) {
+        targetPanel.style.display = 'block';
+      }
+    }
+  </script>
+
 </body>
 </html>
