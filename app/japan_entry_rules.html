@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="./images/japan_tabi_logo.png">
   <title>2025/2026 最新日本入境規範與免稅新制全典 ｜ 日旅報報 JAPAN TABI 官方特約指南</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+TC:wght@400;600;700;900&family=Shippori+Mincho:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+TC:wght@400;600;700;900&family=Shippori+Mincho:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
@@ -24,8 +27,16 @@
       --font-display: 'Cinzel', serif;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: var(--bg-base);
       color: var(--text-main);
@@ -43,6 +54,7 @@
       grid-template-columns: 36px 1fr;
       gap: 48px;
     }
+
     .editorial-side-label {
       writing-mode: vertical-rl;
       text-orientation: mixed;
@@ -54,6 +66,7 @@
       padding-top: 12px;
       user-select: none;
     }
+
     .editorial-frame {
       background: var(--surface-white);
       border: 1px solid var(--border-light);
@@ -61,11 +74,13 @@
       padding: 56px 64px;
       box-shadow: 0 8px 30px rgba(15, 23, 42, 0.03);
     }
+
     .editorial-header {
       border-bottom: 2px solid var(--brand-navy);
       padding-bottom: 28px;
       margin-bottom: 40px;
     }
+
     .editorial-kicker {
       font-family: var(--font-display);
       font-size: 0.76rem;
@@ -76,6 +91,7 @@
       margin-bottom: 8px;
       text-transform: uppercase;
     }
+
     .editorial-h1 {
       font-family: var(--font-serif);
       font-size: clamp(1.85rem, 3.4vw, 2.5rem);
@@ -85,6 +101,7 @@
       line-height: 1.35;
       margin-bottom: 8px;
     }
+
     .editorial-h1-ja {
       font-family: var(--font-serif);
       font-size: 0.98rem;
@@ -93,6 +110,7 @@
       font-style: italic;
       margin-bottom: 14px;
     }
+
     .editorial-lead {
       font-size: 1.05rem;
       color: #475569;
@@ -100,11 +118,13 @@
       font-weight: 400;
       margin-bottom: 20px;
     }
+
     .editorial-badges-row {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
     }
+
     .editorial-pill-badge {
       font-size: 0.76rem;
       font-weight: 700;
@@ -114,6 +134,7 @@
       border: 1px solid var(--border-light);
       color: #334155;
     }
+
     .editorial-pill-badge.highlight {
       background: #FEF3C7;
       border-color: #FDE68A;
@@ -131,6 +152,7 @@
       border: 1px solid var(--border-light);
       border-radius: 12px;
     }
+
     .toc-item-link {
       text-decoration: none;
       display: flex;
@@ -145,16 +167,19 @@
       font-weight: 700;
       transition: all 0.2s ease;
     }
+
     .toc-item-link:hover {
       border-color: var(--brand-orange);
       color: var(--brand-orange);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(194, 65, 12, 0.08);
     }
+
     .toc-item-link span.arrow {
       color: #94A3B8;
       transition: transform 0.2s ease;
     }
+
     .toc-item-link:hover span.arrow {
       color: var(--brand-orange);
       transform: translateX(2px);
@@ -166,11 +191,13 @@
       padding-bottom: 40px;
       border-bottom: 1px solid #F1F5F9;
     }
+
     .rule-section-card:last-child {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
     }
+
     .rule-sec-kicker {
       font-family: var(--font-display);
       font-size: 0.78rem;
@@ -180,6 +207,7 @@
       display: block;
       margin-bottom: 4px;
     }
+
     .rule-sec-h2 {
       font-family: var(--font-serif);
       font-size: 1.4rem;
@@ -188,12 +216,14 @@
       margin-bottom: 12px;
       line-height: 1.4;
     }
+
     .rule-sec-sub {
       font-size: 0.88rem;
       color: var(--text-muted);
       margin-bottom: 16px;
       font-weight: 500;
     }
+
     .rule-sec-p {
       font-size: 0.94rem;
       color: #334155;
@@ -209,21 +239,25 @@
       font-size: 0.88rem;
       line-height: 1.85;
     }
+
     .rule-callout.note {
       background: #F0F9FF;
       border-left: 4px solid #0284C7;
       color: #0369A1;
     }
+
     .rule-callout.warning {
       background: #FFFBEB;
       border-left: 4px solid #D97706;
       color: #92400E;
     }
+
     .rule-callout.danger {
       background: #FEF2F2;
       border-left: 4px solid #DC2626;
       color: #991B1B;
     }
+
     .rule-callout b {
       display: block;
       margin-bottom: 4px;
@@ -240,6 +274,7 @@
       flex-direction: column;
       gap: 10px;
     }
+
     .rule-items-list li {
       font-size: 0.9rem;
       color: #334155;
@@ -247,6 +282,7 @@
       position: relative;
       line-height: 1.75;
     }
+
     .rule-items-list li::before {
       content: "✦";
       position: absolute;
@@ -272,6 +308,7 @@
       box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
       margin-top: 8px;
     }
+
     .btn-gov-link:hover {
       background: var(--brand-orange);
       transform: translateY(-2px);
@@ -287,50 +324,82 @@
       position: relative;
       z-index: 10;
     }
+
     .tabi-footer-manifesto-box {
-        max-width: 1200px; margin: 0 auto 56px; padding: 36px 40px; background: #FFFFFF;
-        border: 1px solid #E2E8F0; border-radius: 20px; box-shadow: 0 8px 30px rgba(15,23,42,0.04);
-        display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: center;
-      }
+      max-width: 1200px;
+      margin: 0 auto 56px;
+      padding: 36px 40px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
     .tabi-footer-cols {
-      max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid #E2E8F0;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid #E2E8F0;
     }
+
     .footer-nav-link {
-      font-size: 0.84rem; color: #334155; text-decoration: none; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;
+      font-size: 0.84rem;
+      color: #334155;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s;
     }
+
     .footer-nav-link:hover {
       color: #C2410C;
       padding-left: 4px;
     }
+
     .footer-nav-link .footer-nav-arrow {
       color: #94A3B8;
       transition: transform 0.2s, color 0.2s;
     }
+
     .footer-nav-link:hover .footer-nav-arrow {
       color: #C2410C;
       transform: translate(2px, -2px);
     }
+
     @media (max-width: 900px) {
       .editorial-layout {
         grid-template-columns: 1fr;
         gap: 0;
         padding: 0 16px;
       }
+
       .editorial-side-label {
         display: none;
       }
+
       .editorial-frame {
         padding: 36px 20px;
       }
+
       .editorial-toc-grid {
         grid-template-columns: 1fr;
         gap: 8px;
       }
+
       .tabi-footer-manifesto-box {
         grid-template-columns: 1fr !important;
         padding: 32px 20px !important;
         gap: 24px !important;
       }
+
       .tabi-footer-cols {
         grid-template-columns: 1fr !important;
         gap: 32px !important;
@@ -339,13 +408,14 @@
   </style>
   <link rel="stylesheet" href="./css/tabi_core.css">
 </head>
+
 <body>
 
   <!-- 頂部 Header：官方規格品牌識別 (中央品牌 ＆ 右側統一功能按鈕群) -->
   <header class="app-header">
     <div class="header-left"></div>
 
-    <!-- 🌟 官網正中間品牌標誌與文字排版 (50px 官方雙環 Logo，精準居中對齊) -->
+    <!-- 🌟 官網正中間品牌標誌與文字排版 (54px 官方雙環 Logo，精準居中對齊) -->
     <div class="header-center">
       <a href="tabi_news_preview.html" class="brand-wrap brand-centered" title="日旅報報 JAPAN TABI">
         <div class="fuji-logo-box">
@@ -366,24 +436,25 @@
     <!-- 🌟 頂部右側統一功能按鈕群 (純文字無外框 ＋ 最新入境規範專屬突出藥丸膠囊) -->
     <div class="header-right">
       <div class="header-nav-scroll">
-      <a href="japan_entry_rules.html" class="header-entry-pill" title="最新日本入境規範、免稅新制與海關申報手冊" style="background:#C2410C; box-shadow:0 2px 10px rgba(194,65,12,0.35);">
-        <span>最新入境規範</span>
-      </a>
-      <a href="japan_flight_deals.html" class="header-nav-link" title="日本空港手帖・機場探索指南">
-        <span>機場</span>
-      </a>
-      <a href="japan_charter_rental.html" class="header-nav-link" title="日本客製包車 ＆ 自駕租車指南">
-        <span>包車/租車</span>
-      </a>
-      <a href="japan_okinawa_drive.html" class="header-nav-link" title="沖繩海島不繞路自駕攻略">
-        <span>沖繩自駕</span>
-      </a>
-      <a href="japan_inbound_rankings.html" class="header-nav-link" title="日本排行榜">
-        <span>日本排行</span>
-      </a>
-      <a href="japan_special_edition.html" class="header-nav-link" title="深度文章・高質感日本文化與戶外誌">
-        <span>深度文章</span>
-      </a>
+        <a href="japan_entry_rules.html" class="header-entry-pill" title="最新日本入境規範、免稅新制與海關申報手冊"
+          style="background:#C2410C; box-shadow:0 2px 10px rgba(194,65,12,0.35);">
+          <span>最新入境規範</span>
+        </a>
+        <a href="japan_flight_deals.html" class="header-nav-link" title="日本空港手帖・機場探索指南">
+          <span>查機票</span>
+        </a>
+        <a href="japan_charter_rental.html" class="header-nav-link" title="日本客製包車 ＆ 自駕租車指南">
+          <span>包車/租車</span>
+        </a>
+        <a href="japan_okinawa_drive.html" class="header-nav-link" title="沖繩海島不繞路自駕攻略">
+          <span>沖繩自駕</span>
+        </a>
+        <a href="japan_inbound_rankings.html" class="header-nav-link" title="日本排行榜">
+          <span>日本排行</span>
+        </a>
+        <a href="japan_special_edition.html" class="header-nav-link" title="深度文章・高質感日本文化與戶外誌">
+          <span>深度文章</span>
+        </a>
 
       </div>
 
@@ -440,7 +511,8 @@
         <h1 class="editorial-h1">2025/2026 最新日本入境規範與免稅新制權威全典</h1>
         <div class="editorial-h1-ja">日本入国手続・Visit Japan Web・免税新制の完全解説</div>
         <p class="editorial-lead">
-          彙整日本外務省（MOFA）、數位廳 Visit Japan Web、財務省稅關（Japan Customs）與農林水產省動植物檢疫所最新公佈之法令規章。從免稅先付後退防轉賣新制、二合一快速通關 QR Code、違禁品嚴格紅線至常備藥品攜帶上限，出發前 5 分鐘完整對照，杜絕卡關或重罰。
+          彙整日本外務省（MOFA）、數位廳 Visit Japan Web、財務省稅關（Japan Customs）與農林水產省動植物檢疫所最新公佈之法令規章。從免稅先付後退防轉賣新制、二合一快速通關 QR
+          Code、違禁品嚴格紅線至常備藥品攜帶上限，出發前 5 分鐘完整對照，杜絕卡關或重罰。
         </p>
         <div class="editorial-badges-row">
           <span class="editorial-pill-badge highlight">🏅 日本政府官方規章對照認證</span>
@@ -495,7 +567,8 @@
           <li><strong>同行家人原則：</strong>嬰幼兒、學童或無法自行操作智慧型手機的年長者，可直接掛載於同一個成年主帳號底下的「同行家人」合併完成申報。</li>
           <li><strong>離線備用截圖：</strong>填寫完成後系統生成的專屬 QR Code，請務必先於手機相簿中截圖保存。降落時即使機場 Wi-Fi 或國際漫遊瞬時壅塞，亦能從容離線出示。</li>
         </ul>
-        <a href="https://services.digital.go.jp/visit-japan-web-zh-hant/" target="_blank" rel="noopener noreferrer" class="btn-gov-link">
+        <a href="https://services.digital.go.jp/visit-japan-web-zh-hant/" target="_blank" rel="noopener noreferrer"
+          class="btn-gov-link">
           前往日本數位廳 Visit Japan Web 官方入口 ➔
         </a>
       </section>
@@ -506,7 +579,8 @@
         <h2 class="rule-sec-h2">日本免稅制度重大變革：先付稅、機場出境過閘確認後退稅剖析</h2>
         <div class="rule-sec-sub">徹底遏止免稅品境內轉賣 ｜ 接軌歐洲機場出境查驗退稅機制</div>
         <p class="rule-sec-p">
-          日本觀光廳與財務省已拍板全面改革外國旅客購物免稅機制。過往旅客在藥妝店、電器行與百貨專櫃結帳時「現場直接免除 10% 消費稅」的舊有模式將正式走入歷史，全面改採「店面以含稅價格付款，出境機場出示商品核驗後方退還稅款」的新制度。
+          日本觀光廳與財務省已拍板全面改革外國旅客購物免稅機制。過往旅客在藥妝店、電器行與百貨專櫃結帳時「現場直接免除 10%
+          消費稅」的舊有模式將正式走入歷史，全面改採「店面以含稅價格付款，出境機場出示商品核驗後方退還稅款」的新制度。
         </p>
         <div class="rule-callout warning">
           <b>⚠️ 出境退稅核心流程與防坑規範</b>
@@ -515,7 +589,9 @@
         <ul class="rule-items-list">
           <li><strong>退稅門檻金額：</strong>同一旅客、同一免稅商店單日含稅消費總額達 5,000 日圓以上方可申報退稅。</li>
           <li><strong>消耗品密封封條禁拆：</strong>藥妝、化妝品、零食特產等消耗品，專用透明密封袋一旦在出境前拆封，將立即視為境內使用並強制補徵 10% 消費稅。</li>
-          <li><strong>大件免稅品托運須知：</strong>若購買高價電器（如吹風機、水波爐）或大型精品需放入托運行李，報到時請務必主動向航空公司地勤告知，先由海關巡檢核驗後再行托運，避免因行李入艙無法出示商品而喪失退稅權益。</li>
+          <li>
+            <strong>大件免稅品托運須知：</strong>若購買高價電器（如吹風機、水波爐）或大型精品需放入托運行李，報到時請務必主動向航空公司地勤告知，先由海關巡檢核驗後再行托運，避免因行李入艙無法出示商品而喪失退稅權益。
+          </li>
           <li><strong>身分資格限制：</strong>僅限持有有效「短期滯在（停留 90 天以內）」簽證之外國觀光客享有免稅資格，長期留學簽證、工作簽證或打工度假者均不適用。</li>
         </ul>
       </section>
@@ -530,7 +606,8 @@
         </p>
         <div class="rule-callout note">
           <b>🛂 護照效期官方認定原則</b>
-          日本入國管理局法規並無硬性規範「護照必須具備 6 個月以上效期」，其法定基準為護照於預計停留日本全程「均保持有效」。然而，考量突發班機延誤、行程延長或轉機國家對護照效期的嚴格查驗，強烈建議旅客出發時確保護照具備 6 個月以上效期。
+          日本入國管理局法規並無硬性規範「護照必須具備 6 個月以上效期」，其法定基準為護照於預計停留日本全程「均保持有效」。然而，考量突發班機延誤、行程延長或轉機國家對護照效期的嚴格查驗，強烈建議旅客出發時確保護照具備 6
+          個月以上效期。
         </div>
         <ul class="rule-items-list">
           <li><strong>入境天數計算：</strong>90 天免簽天數自入境翌日起算第 1 天。免簽身分於日本境內不得直接申請變更為工作或居留簽。</li>
@@ -552,7 +629,8 @@
           <li><strong>仿冒品與智慧財產權侵權物：</strong>偽造名牌商標之包袋、服飾、球鞋，即便宣稱為「個人自用」，在日本海關法規下均屬違法輸入，一經查驗直接沒入銷毀。</li>
           <li><strong>防身噴霧與管制刀械：</strong>辣椒水、催淚瓦斯防身噴霧器或具攻擊性之折疊刀，未具合法正當理由攜入均屬違反日本銃砲刀劍類所持等取締法。</li>
         </ul>
-        <a href="https://www.maff.go.jp/aqs/languages/bring_meat_tw.html" target="_blank" rel="noopener noreferrer" class="btn-gov-link">
+        <a href="https://www.maff.go.jp/aqs/languages/bring_meat_tw.html" target="_blank" rel="noopener noreferrer"
+          class="btn-gov-link">
           查看日本農林水產省動物檢疫所中文官網 ➔
         </a>
       </section>
@@ -569,7 +647,8 @@
           <li><strong>非處方藥（成藥、維他命、感冒藥）：</strong>每種品項以不超過「2 個月自用量」為限。</li>
           <li><strong>醫師處方藥：</strong>限攜帶「1 個月以內劑量」。如因慢性疾病需攜帶超過 1 個月劑量，必須隨身附帶合格主治醫師開具之英文診斷證明書與處方明細。</li>
           <li><strong>嚴禁管制精神藥物：</strong>含有甲基安非他命前驅物、特定鴉片類可待因成分之強力鎮痛劑，嚴禁擅自攜入，入境前須向厚生勞動省關東信越厚生局申請進口許可。</li>
-          <li><strong>現金與黃金申報：</strong>攜帶總值超過 <strong>100 萬日圓</strong>（或等值外幣現鈔、旅行支票、本票）或黃金純金製品淨重超過 1 公斤者，依法必須填寫申報書主動走海關申報通道（紅色通道）。</li>
+          <li><strong>現金與黃金申報：</strong>攜帶總值超過 <strong>100 萬日圓</strong>（或等值外幣現鈔、旅行支票、本票）或黃金純金製品淨重超過 1
+            公斤者，依法必須填寫申報書主動走海關申報通道（紅色通道）。</li>
         </ul>
       </section>
 
@@ -584,105 +663,156 @@
         <ul class="rule-items-list">
           <li><strong>嬰幼兒配方奶與副食品：</strong>隨身攜帶之液態嬰兒奶、未開封副食品罐頭、保溫瓶沖泡熱水，在通過安檢時主動向查驗人員說明為幼童飲食，經個別儀器檢測後均可隨身帶上飛機。</li>
           <li><strong>嬰兒推車機邊交付：</strong>絕大多數航空公司允許摺疊嬰兒推車在登機門前進行機邊托運，抵達日本後於空橋門口即可取回，免去抱持幼童長途步行的疲勞。</li>
-          <li><strong>家庭優先通關通道（Priority Lane）：</strong>攜帶未滿 2 歲嬰兒或坐輪椅長者之家庭，抵達入境查驗大廳時可主動洽詢現場引導人員，多數機場設有家庭優先禮遇專櫃，縮短排隊等候時間。</li>
+          <li><strong>家庭優先通關通道（Priority Lane）：</strong>攜帶未滿 2 歲嬰兒或坐輪椅長者之家庭，抵達入境查驗大廳時可主動洽詢現場引導人員，多數機場設有家庭優先禮遇專櫃，縮短排隊等候時間。
+          </li>
         </ul>
       </section>
     </article>
   </main>
 
   <!-- 全站頁尾 (與首頁一致之品牌規格) -->
-  <footer class="tabi-footer" style="background:#FAF8F5; border-top:1px solid #1E293B; padding:72px 24px 48px; margin-top:80px; position:relative; z-index:10;">
+  <footer class="tabi-footer"
+    style="background:#FAF8F5; border-top:1px solid #1E293B; padding:72px 24px 48px; margin-top:80px; position:relative; z-index:10;">
     <style>
       .tabi-footer-manifesto-box {
-        max-width: 1200px; margin: 0 auto 56px; padding: 36px 40px; background: #FFFFFF;
-        border: 1px solid #E2E8F0; border-radius: 20px; box-shadow: 0 8px 30px rgba(15,23,42,0.04);
-        display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: center;
+        max-width: 1200px;
+        margin: 0 auto 56px;
+        padding: 36px 40px;
+        background: #FFFFFF;
+        border: 1px solid #E2E8F0;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 40px;
+        align-items: center;
       }
+
       .tabi-footer-cols {
-        max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:48px; border-bottom:1px solid #E2E8F0;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid #E2E8F0;
       }
+
       .footer-nav-link {
-        font-size:0.84rem; color:#334155; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:all 0.2s;
+        font-size: 0.84rem;
+        color: #334155;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.2s;
       }
+
       .footer-nav-link:hover {
         color: #C2410C;
         padding-left: 4px;
       }
+
       .footer-nav-link .footer-nav-arrow {
         color: #94A3B8;
         transition: transform 0.2s, color 0.2s;
       }
+
       .footer-nav-link:hover .footer-nav-arrow {
         color: #C2410C;
         transform: translate(2px, -2px);
       }
+
       @media (max-width: 960px) {
         .tabi-footer-manifesto-box {
           grid-template-columns: 1fr !important;
           padding: 28px 20px !important;
           gap: 20px !important;
         }
+
         .tabi-footer-vertical-text {
           display: none !important;
         }
+
         .tabi-footer-cols {
           grid-template-columns: 1fr 1fr !important;
           gap: 32px 20px !important;
         }
       }
+
       @media (max-width: 600px) {
         .tabi-footer-cols {
           grid-template-columns: 1fr !important;
         }
       }
     </style>
-    
+
     <!-- 🌸 《日旅報報》品牌創立精神 (BRAND MANIFESTO - 深度圖案美學特刊版) -->
     <div class="tabi-footer-manifesto-box">
-      <div class="tabi-footer-manifesto-left" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding-right:32px; border-right:1px solid #E2E8F0;">
-        <span style="font-family:'Cinzel', serif; font-size:0.68rem; font-weight:700; letter-spacing:2.5px; color:#92400E;">BRAND MANIFESTO</span>
+      <div class="tabi-footer-manifesto-left"
+        style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding-right:32px; border-right:1px solid #E2E8F0;">
+        <span
+          style="font-family:'Cinzel', serif; font-size:0.68rem; font-weight:700; letter-spacing:2.5px; color:#92400E;">BRAND
+          MANIFESTO</span>
         <div style="display:flex; align-items:center; gap:10px;">
-          <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; flex-shrink:0;"><img
+              src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo"
+              style="width:100%; height:100%; object-fit:cover;"></div>
           <div>
-            <div style="font-family:'Shippori Mincho', serif; font-size:1.05rem; font-weight:700; color:#0F172A; letter-spacing:1px; line-height:1.2;">JAPAN TABI</div>
+            <div
+              style="font-family:'Shippori Mincho', serif; font-size:1.05rem; font-weight:700; color:#0F172A; letter-spacing:1px; line-height:1.2;">
+              JAPAN TABI</div>
             <div style="font-size:0.7rem; color:#64748B; margin-top:2px;">日旅報報 品牌創立</div>
           </div>
         </div>
       </div>
       <div class="tabi-footer-manifesto-right">
-        <h3 style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.05rem; font-weight:700; color:#0F172A; margin:0 0 10px; letter-spacing:1px;">《日旅報報》品牌創立：</h3>
-        <p style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:0.9rem; color:#1E293B; line-height:1.8; margin:0 0 4px;">「因為太喜歡日本，想把四季最動人、最真實的美麗，完整介紹給全世界熱愛旅行的人。」</p>
-        <p style="font-family:'Shippori Mincho', serif; font-size:0.8rem; color:#64748B; font-style:italic; line-height:1.8; margin:0;">「日本が大好きだからこそ、四季折々の息をのむ美しさを、世界中の旅人へ届けたい。」</p>
+        <h3
+          style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.05rem; font-weight:700; color:#0F172A; margin:0 0 10px; letter-spacing:1px;">
+          《日旅報報》品牌創立：</h3>
+        <p
+          style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:0.9rem; color:#1E293B; line-height:1.8; margin:0 0 4px;">
+          「因為太喜歡日本，想把四季最動人、最真實的美麗，完整介紹給全世界熱愛旅行的人。」</p>
+        <p
+          style="font-family:'Shippori Mincho', serif; font-size:0.8rem; color:#64748B; font-style:italic; line-height:1.8; margin:0;">
+          「日本が大好きだからこそ、四季折々の息をのむ美しさを、世界中の旅人へ届けたい。」</p>
       </div>
     </div>
 
 
     <div class="tabi-footer-cols">
-      
+
       <!-- 第 1 欄：品牌官方認證 -->
       <div>
         <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
           <div style="width:32px; height:32px; border-radius:50%; overflow:hidden; border:1px solid #E2E8F0;">
-            <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo" style="width:100%; height:100%; object-fit:cover;">
+            <img src="./images/japan_tabi_logo.png" alt="JAPAN TABI Logo"
+              style="width:100%; height:100%; object-fit:cover;">
           </div>
-          <h4 style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.15rem; font-weight:700; margin:0; color:#0F172A; letter-spacing:1px;">日旅報報 JAPAN TABI</h4>
+          <h4
+            style="font-family:'Shippori Mincho', 'Noto Serif TC', serif; font-size:1.15rem; font-weight:700; margin:0; color:#0F172A; letter-spacing:1px;">
+            日旅報報 JAPAN TABI</h4>
         </div>
         <p style="font-size:0.84rem; color:#475569; line-height:1.85; margin-bottom:16px;">
           日本の四季を彩る花期前線・夏の夜空を彩る花火大会・パウダースノー観測・名所特約ガイド。現地取材に基づき厳選された観光情報を、最高水準の自由旅行へお届けします。
         </p>
-        <div style="padding:12px 16px; background:#FFFFFF; border-left:3.5px solid #92400E; border-top:1px solid #E2E8F0; border-right:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; border-radius:8px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.03); margin-bottom:14px;">
+        <div
+          style="padding:12px 16px; background:#FFFFFF; border-left:3.5px solid #92400E; border-top:1px solid #E2E8F0; border-right:1px solid #E2E8F0; border-bottom:1px solid #E2E8F0; border-radius:8px; font-size:0.76rem; color:#64748B; line-height:1.65; box-shadow:0 2px 8px rgba(0,0,0,0.03); margin-bottom:14px;">
           <div style="font-weight:700; color:#92400E; margin-bottom:4px; letter-spacing:0.5px;">🏅 官方特約觀測現地取材認證</div>
           <div>全站情報受著作權保護，未經授權禁止搬運與商業轉載。</div>
         </div>
-        <div style="font-size:0.78rem; color:#64748B; line-height:1.75; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.02);">
-          <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com" style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
+        <div
+          style="font-size:0.78rem; color:#64748B; line-height:1.75; padding:10px 14px; background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.02);">
+          <div>✉️ <strong>《日旅報報》合作聯繫信箱：</strong><a href="mailto:himydream.studio0220@gmail.com"
+              style="color:#92400E; text-decoration:none; font-weight:700;">himydream.studio0220@gmail.com</a></div>
           <div style="margin-top:3px;">📍 <strong>日本連絡處：</strong>東京都港区 ｜ JAPAN TABI 編集室 企画推進部</div>
         </div>
       </div>
 
-            <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
+      <!-- 第 2 欄：核心專欄導覽 (完整串連頁面連結) -->
       <div>
-        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+        <h4
+          style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
           探索日本
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
@@ -691,63 +821,105 @@
           <li><a href="japan_charter_rental.html" class="footer-nav-link"><span>私人包車 ｜ 彈性包車自由行</span></a></li>
           <li><a href="japan_okinawa_drive.html" class="footer-nav-link"><span>沖繩自駕 ｜ 自駕環島全攻略</span></a></li>
           <li><a href="japan_inbound_rankings.html" class="footer-nav-link"><span>美食指南 ｜ 必吃米其林百名店</span></a></li>
-          <li><a href="japan_special_edition.html" class="footer-nav-link" style="color:#92400E; font-weight:700;"><span>深度報導 ｜ 日本文化特刊報導</span></a></li>
+          <li><a href="japan_special_edition.html" class="footer-nav-link"
+              style="color:#92400E; font-weight:700;"><span>深度報導 ｜ 日本文化特刊報導</span></a></li>
         </ul>
       </div>
 
       <!-- 第 3 欄：專題企劃 ＆ 攻略指南 -->
       <div>
-        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+        <h4
+          style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
           實用專區
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-          <li><a href="japan_ski_resorts.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27 大雪場・中文教練・即時雪況速報</small></a></li>
-          <li><a href="japan_entry_rules.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">最新入境規範專頁</strong><small style="color:#64748B;">2025/2026 免稅新制・VJW 申報手冊</small></a></li>
-          <li><a href="japan_theme_parks.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">遊樂園攻略</strong><small style="color:#64748B;">迪士尼・環球影城 USJ・吉卜力公園</small></a></li>
-          <li><a href="japan_train_tour.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">火車和搭車指南</strong><small style="color:#64748B;">新幹線・JR Pass・觀光列車乘車券</small></a></li>
-          <li><a href="japan_flight_deals.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本空港手帖 ｜ 機場指南</strong><small style="color:#64748B;">全日本 11 大核心機場・必吃美食・展望台・免稅伴手禮</small></a></li>
+          <li><a href="japan_ski_resorts.html"
+              style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong
+                style="display:block; color:#0F172A;">滑雪預約教練 ｜ 滑雪場名鑑</strong><small style="color:#64748B;">全日本 27
+                大雪場・中文教練・即時雪況速報</small></a></li>
+          <li><a href="japan_entry_rules.html"
+              style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong
+                style="display:block; color:#0F172A;">最新入境規範專頁</strong><small style="color:#64748B;">2025/2026 免稅新制・VJW
+                申報手冊</small></a></li>
+          <li><a href="japan_theme_parks.html"
+              style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong
+                style="display:block; color:#0F172A;">遊樂園攻略</strong><small style="color:#64748B;">迪士尼・環球影城
+                USJ・吉卜力公園</small></a></li>
+          <li><a href="japan_train_tour.html"
+              style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong
+                style="display:block; color:#0F172A;">火車和搭車指南</strong><small style="color:#64748B;">新幹線・JR
+                Pass・觀光列車乘車券</small></a></li>
+          <li><a href="japan_flight_deals.html"
+              style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong
+                style="display:block; color:#0F172A;">日本空港手帖 ｜ 機場指南</strong><small style="color:#64748B;">全日本 11
+                大核心機場・必吃美食・展望台・免稅伴手禮</small></a></li>
         </ul>
       </div>
 
       <!-- 第 4 欄：特別刊號推薦 (深度文章直達連結) -->
       <div>
-        <h4 style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
+        <h4
+          style="font-family:'Shippori Mincho', serif; font-size:0.96rem; font-weight:700; color:#0F172A; letter-spacing:1px; margin-bottom:16px; padding-bottom:8px; border-bottom:1.5px solid #0F172A;">
           日本精選
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">沖繩自駕特刊</strong><small style="color:#64748B;">絕景咖啡・海邊巡禮・那霸自駕全攻略</small></a></li>
-          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本米其林和牛</strong><small style="color:#64748B;">石垣牛・神戶牛・11大燒肉名店指南</small></a></li>
-          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">溫泉名湯特輯</strong><small style="color:#64748B;">太古雲霧靈湯・富士山景觀溫泉極致體驗</small></a></li>
-          <li><a href="japan_special_edition.html" style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong style="display:block; color:#0F172A;">日本世界遺產</strong><small style="color:#64748B;">熊野古道朝聖・富士山神域・屋久島原始林</small></a></li>
+          <li><a href="japan_special_edition.html"
+              style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong
+                style="display:block; color:#0F172A;">沖繩自駕特刊</strong><small
+                style="color:#64748B;">絕景咖啡・海邊巡禮・那霸自駕全攻略</small></a></li>
+          <li><a href="japan_special_edition.html"
+              style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong
+                style="display:block; color:#0F172A;">日本米其林和牛</strong><small
+                style="color:#64748B;">石垣牛・神戶牛・11大燒肉名店指南</small></a></li>
+          <li><a href="japan_special_edition.html"
+              style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong
+                style="display:block; color:#0F172A;">溫泉名湯特輯</strong><small
+                style="color:#64748B;">太古雲霧靈湯・富士山景觀溫泉極致體驗</small></a></li>
+          <li><a href="japan_special_edition.html"
+              style="font-size:0.84rem; color:#334155; text-decoration:none; display:block;"><strong
+                style="display:block; color:#0F172A;">日本世界遺產</strong><small
+                style="color:#64748B;">熊野古道朝聖・富士山神域・屋久島原始林</small></a></li>
         </ul>
       </div>
 
     </div>
 
     <!-- 底部版權宣告與社群連結 -->
-    <div style="max-width:1200px; margin:28px auto 0; display:flex; justify-content:space-between; align-items:center; font-size:0.78rem; color:#64748B; flex-wrap:wrap; gap:16px;">
+    <div
+      style="max-width:1200px; margin:28px auto 0; display:flex; justify-content:space-between; align-items:center; font-size:0.78rem; color:#64748B; flex-wrap:wrap; gap:16px;">
       <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
         <span style="font-weight:700; color:#334155;">© JAPAN TABI ジャパン・タビ ｜ 全日本観光情報局 All Rights Reserved.</span>
-        <a href="japan_privacy_policy.html" style="color:#64748B; text-decoration:none; margin-left:8px; font-weight:600; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">隱私權政策</a>
+        <a href="japan_privacy_policy.html"
+          style="color:#64748B; text-decoration:none; margin-left:8px; font-weight:600; transition:color 0.2s;"
+          onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">隱私權政策</a>
         <div style="display:flex; align-items:center; gap:12px;">
           <!-- Instagram -->
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》官方 Instagram" style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》官方 Instagram"
+            style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'"
+            onmouseout="this.style.color='#64748B'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </a>
           <!-- Threads -->
-          <a href="https://www.threads.net" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》Threads" style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'" onmouseout="this.style.color='#64748B'">
+          <a href="https://www.threads.net" target="_blank" rel="noopener noreferrer" title="追蹤《日旅報報》Threads"
+            style="color:#64748B; transition:color 0.2s;" onmouseover="this.style.color='#C2410C'"
+            onmouseout="this.style.color='#64748B'">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 3.328 0 6.273-1.624 8.077-4.116-.367-.375-.72-.764-1.057-1.168-1.47 2.05-3.9 3.384-6.65 3.384-4.524 0-8.2-3.676-8.2-8.2s3.676-8.2 8.2-8.2 8.2 3.676 8.2 8.2c0 2.39-.77 4.542-2.316 5.867-1.18.995-2.766 1.433-4.534 1.258-2.678-.266-4.59-2.368-4.59-5.045 0-2.88 2.21-5.18 5.14-5.18 1.94 0 3.518.95 4.19 2.52.17.41.31.85.4 1.3h-1.85c-.08-.3-.21-.58-.38-.83-.45-.66-1.3-1.09-2.36-1.09-1.85 0-3.24 1.45-3.24 3.28 0 1.74 1.25 3.14 3.01 3.31 1.28.13 2.37-.18 3.12-.81.98-.83 1.5-2.22 1.5-3.96 0-5.4-4.32-9.8-9.67-9.8z"/>
+              <path
+                d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 3.328 0 6.273-1.624 8.077-4.116-.367-.375-.72-.764-1.057-1.168-1.47 2.05-3.9 3.384-6.65 3.384-4.524 0-8.2-3.676-8.2-8.2s3.676-8.2 8.2-8.2 8.2 3.676 8.2 8.2c0 2.39-.77 4.542-2.316 5.867-1.18.995-2.766 1.433-4.534 1.258-2.678-.266-4.59-2.368-4.59-5.045 0-2.88 2.21-5.18 5.14-5.18 1.94 0 3.518.95 4.19 2.52.17.41.31.85.4 1.3h-1.85c-.08-.3-.21-.58-.38-.83-.45-.66-1.3-1.09-2.36-1.09-1.85 0-3.24 1.45-3.24 3.28 0 1.74 1.25 3.14 3.01 3.31 1.28.13 2.37-.18 3.12-.81.98-.83 1.5-2.22 1.5-3.96 0-5.4-4.32-9.8-9.67-9.8z" />
             </svg>
           </a>
         </div>
       </div>
 
-      <button onclick="window.scrollTo({top:0, behavior:'smooth'})" style="background:#FFFFFF; border:1px solid #CBD5E1; border-radius:999px; padding:6px 16px; font-weight:700; cursor:pointer; color:#334155; transition:all 0.2s;" onmouseover="this.style.borderColor='#92400E'; this.style.color='#92400E';" onmouseout="this.style.borderColor='#CBD5E1'; this.style.color='#334155';">
+      <button onclick="window.scrollTo({top:0, behavior:'smooth'})"
+        style="background:#FFFFFF; border:1px solid #CBD5E1; border-radius:999px; padding:6px 16px; font-weight:700; cursor:pointer; color:#334155; transition:all 0.2s;"
+        onmouseover="this.style.borderColor='#92400E'; this.style.color='#92400E';"
+        onmouseout="this.style.borderColor='#CBD5E1'; this.style.color='#334155';">
         ▲ 回到頂部
       </button>
     </div>
@@ -755,4 +927,5 @@
 
   <script src="./js/tabi_core.js"></script>
 </body>
+
 </html>
