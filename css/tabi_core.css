@@ -551,7 +551,7 @@
 .header-left { display: flex !important; align-items: center !important; justify-self: start !important; }
 .header-center { display: flex !important; align-items: center !important; justify-content: center !important; justify-self: center !important; }
 .header-right { display: flex !important; align-items: center !important; justify-self: end !important; gap: 12px !important; flex-wrap: nowrap !important; }
-.header-nav-scroll { display: flex !important; align-items: center !important; gap: 12px !important; flex-wrap: nowrap !important; }
+.header-nav-scroll { display: flex !important; align-items: center !important; justify-content: center !important; gap: 12px !important; flex-wrap: nowrap !important; }
 
 .brand-wrap { display: flex !important; align-items: center !important; gap: 14px !important; text-decoration: none !important; color: inherit !important; white-space: nowrap !important; flex-shrink: 0 !important; }
 .fuji-logo-box {
