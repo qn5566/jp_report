@@ -1,0 +1,350 @@
+{
+  "family": [
+    {
+      "day": "DAY 01",
+      "title": "南端啟程 ｜ 飛機落日巡禮",
+      "img": "./images/okinawa_senagajima_sunset.jpg",
+      "stops": [
+        {
+          "icon": "🛬",
+          "text": "那霸機場專車取車"
+        },
+        {
+          "icon": "🛍️",
+          "text": "iias 豐崎水族商場"
+        },
+        {
+          "icon": "🌅",
+          "text": "瀨長島看飛機夕陽"
+        },
+        {
+          "icon": "🏨",
+          "text": "入住南部海景飯店"
+        }
+      ],
+      "drive": "車程約 25 分鐘 ｜ 國道 331 號"
+    },
+    {
+      "day": "DAY 02",
+      "title": "中部設施 ｜ 彈跳床避暑",
+      "img": "./images/okinawa_onna_monterey_resort.jpg",
+      "stops": [
+        {
+          "icon": "🤸",
+          "text": "中城公園大型彈簧跳跳床"
+        },
+        {
+          "icon": "🛍️",
+          "text": "永旺夢樂城來客夢 (百噸水族缸避暑)"
+        },
+        {
+          "icon": "🏨",
+          "text": "入住恩納村海景飯店 (蒙特利水上樂園)"
+        }
+      ],
+      "drive": "車程約 35 分鐘 ｜ 沖繩自動車道"
+    },
+    {
+      "day": "DAY 03",
+      "title": "北部生態 ｜ 鯨鯊與玻璃海",
+      "img": "./images/okinawa_churaumi_whale_shark.jpg",
+      "stops": [
+        {
+          "icon": "🐋",
+          "text": "美麗海水族館黑潮之海餵食秀"
+        },
+        {
+          "icon": "🌉",
+          "text": "古宇利大橋沙灘踏浪"
+        },
+        {
+          "icon": "🥩",
+          "text": "燒肉 Motobu 牧場 (本部牛牧場直營)"
+        }
+      ],
+      "drive": "車程約 40 分鐘 ｜ 國道 58 號濱海"
+    },
+    {
+      "day": "DAY 04",
+      "title": "異國風景 ｜ 恐龍探險夜市集",
+      "img": "./images/okinawa_dino_park.jpg",
+      "stops": [
+        {
+          "icon": "🦖",
+          "text": "DINO 恐龍 PARK 森林冒險"
+        },
+        {
+          "icon": "🍰",
+          "text": "港川外人住宅甜點散策"
+        },
+        {
+          "icon": "🎡",
+          "text": "美國村 Depot Island 異國夜景"
+        }
+      ],
+      "drive": "車程約 30 分鐘 ｜ 順行無回頭路"
+    },
+    {
+      "day": "DAY 05",
+      "title": "收尾採買 ｜ 平緩溜滑梯返程",
+      "img": "./images/okinawa_urasoe_park_slide.jpg",
+      "stops": [
+        {
+          "icon": "🛝",
+          "text": "浦添大公園 C 區幼兒平緩溜滑梯"
+        },
+        {
+          "icon": "🛍️",
+          "text": "ASHIBINAA Outlet 精品採買"
+        },
+        {
+          "icon": "🛫",
+          "text": "那霸機場便利還車登機"
+        }
+      ],
+      "drive": "車程約 20 分鐘直達機場"
+    }
+  ],
+  "senior": [
+    {
+      "day": "DAY 01",
+      "title": "輕鬆啟程 ｜ 露台下午茶",
+      "img": "./images/okinawa_umikaji_terrace.jpg",
+      "stops": [
+        {
+          "icon": "🚗",
+          "text": "那霸機場免排隊專車取車"
+        },
+        {
+          "icon": "☕",
+          "text": "瀨長島 Umikaji Terrace 露台下午茶"
+        },
+        {
+          "icon": "🏮",
+          "text": "國際通悠閒平緩漫步"
+        },
+        {
+          "icon": "🏨",
+          "text": "入住那霸市區星級飯店"
+        }
+      ],
+      "drive": "車程約 15~20 分鐘 ｜ 零拉車疲勞"
+    },
+    {
+      "day": "DAY 02",
+      "title": "南部名景 ｜ 無障礙海景步道",
+      "img": "./images/okinawa_cape_chinen.jpg",
+      "stops": [
+        {
+          "icon": "🌊",
+          "text": "知念岬公園 (無障礙海景步道)"
+        },
+        {
+          "icon": "☕",
+          "text": "濱邊茶屋 (窗景聽濤咖啡品茗)"
+        },
+        {
+          "icon": "🏯",
+          "text": "沖繩世界文化王國 (玉泉洞平坦參觀路線)"
+        },
+        {
+          "icon": "♨️",
+          "text": "入住南部琉球溫泉瀨長島飯店"
+        }
+      ],
+      "drive": "車程約 25 分鐘 ｜ 平穩平緩路線"
+    },
+    {
+      "day": "DAY 03",
+      "title": "中部絕景 ｜ 電梯展望與名物和牛",
+      "img": "./images/okinawa_manzamo_cliff.jpg",
+      "stops": [
+        {
+          "icon": "🔭",
+          "text": "萬座毛全新景觀展望館 (附電梯直達)"
+        },
+        {
+          "icon": "☕",
+          "text": "星野集團 Banta Cafe (海邊甲板席平坐品茗)"
+        },
+        {
+          "icon": "🥩",
+          "text": "琉球之牛 (頂級黑毛和牛壽喜燒)"
+        },
+        {
+          "icon": "🍜",
+          "text": "順遊百年古家大家阿古豬"
+        }
+      ],
+      "drive": "車程約 30 分鐘 ｜ 景觀雙線道"
+    },
+    {
+      "day": "DAY 04",
+      "title": "琉球古韻 ｜ 平推輪椅海景商場",
+      "img": "./images/okinawa_parco_city.jpg",
+      "stops": [
+        {
+          "icon": "🏯",
+          "text": "首里城公園外圍平緩綠意散策"
+        },
+        {
+          "icon": "🛍️",
+          "text": "PARCO CITY 海景商場 (平推輪椅採買特產)"
+        },
+        {
+          "icon": "🛫",
+          "text": "那霸機場專人無障礙還車出境"
+        }
+      ],
+      "drive": "車程約 20 分鐘直達機場"
+    }
+  ],
+  "dive": [
+    {
+      "day": "DAY 01",
+      "title": "直奔北谷 ｜ 裝備補給與和牛",
+      "img": "./images/okinawa_chatan_american_village.jpg",
+      "stops": [
+        {
+          "icon": "🚗",
+          "text": "抵達取車直奔北谷美國村"
+        },
+        {
+          "icon": "🤿",
+          "text": "添購潛水防曬與浮潛裝備"
+        },
+        {
+          "icon": "🥩",
+          "text": "Roins 和牛燒肉頂級冷藏牛肉"
+        }
+      ],
+      "drive": "車程約 40 分鐘直達北谷"
+    },
+    {
+      "day": "DAY 02",
+      "title": "青之洞窟 ｜ 晨潛水光極致透明",
+      "img": "./images/okinawa_blue_cave.jpg",
+      "stops": [
+        {
+          "icon": "🤿",
+          "text": "真榮田岬青之洞窟 (預約 08:00 晨潛水質最清澈)"
+        },
+        {
+          "icon": "🌊",
+          "text": "萬座毛海岸絕美海蝕崖"
+        },
+        {
+          "icon": "🦞",
+          "text": "恩納村道之驛海鮮現烤補給"
+        },
+        {
+          "icon": "🏨",
+          "text": "入住恩納村濱海水岸飯店"
+        }
+      ],
+      "drive": "車程約 15 分鐘極度順路"
+    },
+    {
+      "day": "DAY 03",
+      "title": "海島疾馳 ｜ 水上摩托與潮間浮潛",
+      "img": "./images/okinawa_kouri_bridge.jpg",
+      "stops": [
+        {
+          "icon": "🚤",
+          "text": "古宇利島水上摩托車與拖曳傘"
+        },
+        {
+          "icon": "🐠",
+          "text": "瀨底海灘天然礁石潮間帶浮潛"
+        },
+        {
+          "icon": "🍖",
+          "text": "屋我地島海景落日露天 BBQ"
+        }
+      ],
+      "drive": "車程約 35 分鐘 ｜ 馳騁跨海橋梁"
+    },
+    {
+      "day": "DAY 04",
+      "title": "慶良間海龜 ｜ 鮮美海膽返程",
+      "img": "./images/okinawa_kerama_sea_turtle.jpg",
+      "stops": [
+        {
+          "icon": "🐢",
+          "text": "那霸泊港出發慶良間諸島半日外礁尋海龜"
+        },
+        {
+          "icon": "🦪",
+          "text": "泊港漁市場現剖海膽刺身"
+        },
+        {
+          "icon": "🛫",
+          "text": "那霸機場便利還車返程"
+        }
+      ],
+      "drive": "車程約 15 分鐘 ｜ 慶良間船程 20 分"
+    }
+  ],
+  "shopping": [
+    {
+      "day": "DAY 01",
+      "title": "海景大店 ｜ 旗艦商場與屋台",
+      "img": "./images/danbo_ramen_okinawa.jpg",
+      "stops": [
+        {
+          "icon": "🛍️",
+          "text": "直奔 PARCO CITY 浦添 (直面海景旗艦大店、UNIQLO/Loft/無印良品)"
+        },
+        {
+          "icon": "🍜",
+          "text": "暖暮拉麵香濃豚骨拉麵"
+        },
+        {
+          "icon": "🏮",
+          "text": "國際通屋台村熱鬧串燒消夜"
+        }
+      ],
+      "drive": "車程約 15~20 分鐘"
+    },
+    {
+      "day": "DAY 02",
+      "title": "瘋狂血拚 ｜ 百噸水族館與道地琉球御膳",
+      "img": "./images/okinawa_ishinagu_motobu.jpg",
+      "stops": [
+        {
+          "icon": "🛍️",
+          "text": "永旺夢樂城來客夢 (血拚 5 小時+室內巨型水族缸)"
+        },
+        {
+          "icon": "👕",
+          "text": "美國村特色古著與潮流店"
+        },
+        {
+          "icon": "🍱",
+          "text": "石納格 うちなーの味 石なぐ (本部町道地琉球料理御膳)"
+        }
+      ],
+      "drive": "車程約 25 分鐘 ｜ 沖繩自動車道"
+    },
+    {
+      "day": "DAY 03",
+      "title": "Outlet掃貨 ｜ 現烤龍蝦與機場提領",
+      "img": "./images/okinawa_itoman_fish_market.jpg",
+      "stops": [
+        {
+          "icon": "🛍️",
+          "text": "ASHIBINAA Outlet 精品採購"
+        },
+        {
+          "icon": "🦞",
+          "text": "系滿魚市場炭烤龍蝦與生蠔"
+        },
+        {
+          "icon": "🛫",
+          "text": "那霸機場提領免稅品輕鬆登機"
+        }
+      ],
+      "drive": "車程約 15 分鐘直達機場"
+    }
+  ]
+}

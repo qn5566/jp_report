@@ -1,0 +1,274 @@
+{
+  "snow": {
+    "regionLbl": "❄️ 雪場地區：",
+    "regions": [
+      {
+        "key": "all",
+        "label": "🗾 全部粉雪 (6)"
+      },
+      {
+        "key": "niigata",
+        "label": "🌾 新潟・湯澤 (3)"
+      },
+      {
+        "key": "tohoku",
+        "label": "🌲 長野・白馬 (2)"
+      },
+      {
+        "key": "hokkaido",
+        "label": "❄️ 北海道 (1)"
+      }
+    ],
+    "catLbl": "🎿 玩家屬性：",
+    "categories": [
+      {
+        "key": "all",
+        "label": "全部雪道"
+      },
+      {
+        "key": "ski_beginner",
+        "label": "🌱 新手寬緩坡/魔毯"
+      },
+      {
+        "key": "ski_japow",
+        "label": "🏂 JAPOW乾粉雪/野雪"
+      },
+      {
+        "key": "ski_onsen",
+        "label": "♨️ 街區溫泉購物"
+      },
+      {
+        "key": "report-only",
+        "label": "📷 特派員親測"
+      }
+    ]
+  },
+  "sakura": {
+    "regionLbl": "🌸 賞櫻名所：",
+    "regions": [
+      {
+        "key": "all",
+        "label": "🗾 全部櫻花 (7)"
+      },
+      {
+        "key": "tokyo",
+        "label": "🗼 東京首都圈 (4)"
+      },
+      {
+        "key": "kansai",
+        "label": "🐙 關西圈 (2)"
+      },
+      {
+        "key": "tohoku",
+        "label": "🌲 青森弘前 (1)"
+      }
+    ],
+    "catLbl": "🌸 花期階段：",
+    "categories": [
+      {
+        "key": "all",
+        "label": "全部名所"
+      },
+      {
+        "key": "sakura_full",
+        "label": "🌸 滿開中 (100%)"
+      },
+      {
+        "key": "sakura_late",
+        "label": "🍃 晚櫻名所救援"
+      },
+      {
+        "key": "sakura_night",
+        "label": "🌃 夜櫻點燈"
+      },
+      {
+        "key": "report-only",
+        "label": "📷 特派員親測"
+      }
+    ]
+  },
+  "hanabi": {
+    "regionLbl": "🎆 花火會場：",
+    "regions": [
+      {
+        "key": "all",
+        "label": "🗾 全部花火 (4)"
+      },
+      {
+        "key": "tokyo",
+        "label": "🗼 東京隅田川"
+      },
+      {
+        "key": "niigata",
+        "label": "🌾 新潟長岡"
+      },
+      {
+        "key": "kansai",
+        "label": "🐙 關西琵琶湖"
+      },
+      {
+        "key": "kanagawa",
+        "label": "🌊 鎌倉由比濱"
+      }
+    ],
+    "catLbl": "🎆 規格亮點：",
+    "categories": [
+      {
+        "key": "all",
+        "label": "全部大會"
+      },
+      {
+        "key": "hanabi_phoenix",
+        "label": "🎇 20,000發鳳凰連發"
+      },
+      {
+        "key": "hanabi_water",
+        "label": "🌊 水面開花絕景"
+      },
+      {
+        "key": "report-only",
+        "label": "📷 特派員親測"
+      }
+    ]
+  },
+  "momiji": {
+    "regionLbl": "🍁 紅葉名所：",
+    "regions": [
+      {
+        "key": "all",
+        "label": "🗾 全部紅葉 (6)"
+      },
+      {
+        "key": "kansai",
+        "label": "🐙 京都嵐山・東福寺"
+      },
+      {
+        "key": "tohoku",
+        "label": "🌲 東北阿賀野川"
+      },
+      {
+        "key": "niigata",
+        "label": "🌾 越後湯澤"
+      },
+      {
+        "key": "tokyo",
+        "label": "🗼 東京高尾山"
+      }
+    ],
+    "catLbl": "🍁 景觀特色：",
+    "categories": [
+      {
+        "key": "all",
+        "label": "全部名所"
+      },
+      {
+        "key": "momiji_peak",
+        "label": "🍁 見頃盛開"
+      },
+      {
+        "key": "momiji_train",
+        "label": "🚂 鐵道峽谷全景"
+      },
+      {
+        "key": "momiji_temple",
+        "label": "🏯 寺院庭園"
+      },
+      {
+        "key": "report-only",
+        "label": "📷 特派員親測"
+      }
+    ]
+  },
+  "ginkgo": {
+    "regionLbl": "🍂 銀杏大道：",
+    "regions": [
+      {
+        "key": "all",
+        "label": "🗾 全部銀杏 (5)"
+      },
+      {
+        "key": "tokyo",
+        "label": "🗼 神宮外苑・東大"
+      },
+      {
+        "key": "kansai",
+        "label": "🐙 京都西本願寺"
+      },
+      {
+        "key": "hokkaido",
+        "label": "🌲 北海道大學"
+      }
+    ],
+    "catLbl": "🍂 景觀分類：",
+    "categories": [
+      {
+        "key": "all",
+        "label": "全部景點"
+      },
+      {
+        "key": "ginkgo_avenue",
+        "label": "🍂 金黃林蔭隧道"
+      },
+      {
+        "key": "ginkgo_campus",
+        "label": "🏛️ 大學校園名木"
+      },
+      {
+        "key": "report-only",
+        "label": "📷 特派員親測"
+      }
+    ]
+  },
+  "spots": {
+    "regionLbl": "📍 地區：",
+    "regions": [
+      {
+        "key": "all",
+        "label": "🗾 全日本精選 (22+)"
+      },
+      {
+        "key": "tokyo",
+        "label": "🗼 東京首都圈"
+      },
+      {
+        "key": "kansai",
+        "label": "🐙 關西圈 (京阪神)"
+      },
+      {
+        "key": "niigata",
+        "label": "🌾 新潟・長岡"
+      },
+      {
+        "key": "hokkaido",
+        "label": "❄️ 北海道"
+      },
+      {
+        "key": "tohoku",
+        "label": "🌲 東北・長野"
+      }
+    ],
+    "catLbl": "🏷️ 類別：",
+    "categories": [
+      {
+        "key": "all",
+        "label": "全部收錄"
+      },
+      {
+        "key": "flower",
+        "label": "🌸 花季名所"
+      },
+      {
+        "key": "hanabi",
+        "label": "🎆 花火大會"
+      },
+      {
+        "key": "ski",
+        "label": "⛷️ 滑雪雪場"
+      },
+      {
+        "key": "report-only",
+        "label": "📷 僅看特派員報導"
+      }
+    ]
+  }
+}

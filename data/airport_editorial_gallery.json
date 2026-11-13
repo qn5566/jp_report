@@ -1,0 +1,146 @@
+{
+  "NRT": {
+    "quoteJp": "空の旅の玄関口、静かに流れる時間。",
+    "quoteZh": "旅途的起點與終點，靜靜流淌的專屬時光。",
+    "subPhotos": [
+      {
+        "img": "./images/danbo_ramen_okinawa.jpg",
+        "badge": "🍜 必吃沾麵",
+        "title": "中華蕎麥 とみ田",
+        "desc": "千葉松戶沾麵王者・濃厚魚介高湯"
+      },
+      {
+        "img": "./images/fuji_hakone_torii.jpg",
+        "badge": "🛌 機場膠囊",
+        "title": "Nine Hours 膠囊旅館",
+        "desc": "T2 直通・洗澡小睡與紅眼過夜"
+      }
+    ]
+  },
+  "HND": {
+    "quoteJp": "江戸の情緒と、富士を望む展望風呂。",
+    "quoteZh": "江戶古街風情，遠眺富士山景觀溫泉。",
+    "subPhotos": [
+      {
+        "img": "./images/danbo_ramen_okinawa.jpg",
+        "badge": "♨️ 露天溫泉",
+        "title": "泉天空之湯",
+        "desc": "24H 露天看飛機起降泡湯風呂"
+      },
+      {
+        "img": "./images/ryukyu_kobe_seagrapes_salad.jpg",
+        "badge": "🍵 和風名物",
+        "title": "茶寮 伊藤園",
+        "desc": "濃抹茶霜淇淋・江戶小路排隊甜點"
+      }
+    ]
+  },
+  "KIX": {
+    "quoteJp": "海に浮かぶ空港、関西の美食が集う場所。",
+    "quoteZh": "浮於海上的空港，關西頂級名味匯聚之處。",
+    "subPhotos": [
+      {
+        "img": "./images/ryukyu_kobe_seagrapes_salad.jpg",
+        "badge": "🥟 關西必吃",
+        "title": "551 蓬萊現蒸肉包",
+        "desc": "大阪名物・每日新鮮現包排隊王"
+      },
+      {
+        "img": "./images/danbo_ramen_okinawa.jpg",
+        "badge": "🛍️ 免稅中央街",
+        "title": "KIX Duty Free 旗艦店",
+        "desc": "集中免稅提貨專櫃・名品一站購足"
+      }
+    ]
+  },
+  "CTS": {
+    "quoteJp": "北海道の味覚が凝縮された、北の大地への扉。",
+    "quoteZh": "濃縮北國頂級珍味，通往遼闊雪國的大門。",
+    "subPhotos": [
+      {
+        "img": "./images/danbo_ramen_okinawa.jpg",
+        "badge": "🍜 拉麵道場",
+        "title": "北海道 10 大名店",
+        "desc": "一幻濃蝦拉麵・弟子屈豚骨味噌"
+      },
+      {
+        "img": "./images/ryukyu_kobe_seagrapes_salad.jpg",
+        "badge": "🎪 空中主題館",
+        "title": "多啦A夢 ＆ 巧克力工坊",
+        "desc": "Royce' 產線參觀・親子互動天地"
+      }
+    ]
+  },
+  "FUK": {
+    "quoteJp": "市街地まで5分、最も身近な空の拠点。",
+    "quoteZh": "5分鐘直達市中心，全日本最親民的空港。",
+    "subPhotos": [
+      {
+        "img": "./images/danbo_ramen_okinawa.jpg",
+        "badge": "🍜 拉麵跑道",
+        "title": "博多豚骨 一幸舍",
+        "desc": "元祖起泡濃郁拉麵・極細生麵"
+      },
+      {
+        "img": "./images/ryukyu_kobe_seagrapes_salad.jpg",
+        "badge": "🛍️ 九州伴手禮",
+        "title": "福砂屋長崎蛋糕",
+        "desc": "經典雙目糖底部脆粒・限定禮盒"
+      }
+    ]
+  },
+  "OKA": {
+    "quoteJp": "青い海と島風が迎える、南国の旅の始まり。",
+    "quoteZh": "蔚藍大海與海風迎接，南國海島度假的開端。",
+    "subPhotos": [
+      {
+        "img": "./images/ryukyu_kobe_seagrapes_salad.jpg",
+        "badge": "🍙 島嶼名味",
+        "title": "豬肉蛋飯糰 ＆ 沖繩麵",
+        "desc": "波上宮旁名店現做・道地傳統風味"
+      },
+      {
+        "img": "./images/fuji_hakone_torii.jpg",
+        "badge": "🚗 自駕專車",
+        "title": "OTS / ORIX 機場接駁",
+        "desc": "10分鐘直達門市・開啟自駕環島"
+      }
+    ]
+  },
+  "NGO": {
+    "quoteJp": "空と海が交わるセントレア、武将の地の美味。",
+    "quoteZh": "海天交織的新特麗亞，細品尾張武將故里之味。",
+    "subPhotos": [
+      {
+        "img": "./images/kumano_shinto_shrine.jpg",
+        "badge": "✈️ 展望風呂",
+        "title": "風之湯 天然溫泉",
+        "desc": "邊泡露天溫泉邊看飛機起降・超爽快"
+      },
+      {
+        "img": "./images/danbo_ramen_okinawa.jpg",
+        "badge": "🍗 名古屋名物",
+        "title": "矢場町味噌豬排 ＆ 炸雞翅",
+        "desc": "赤味噌現炸豬排・手羽先香辣帶勁"
+      }
+    ]
+  },
+  "SDJ": {
+    "quoteJp": "杜の都の空の玄関、緑と伊達の風情。",
+    "quoteZh": "杜之都綠意門戶，伊達政宗故里的豪邁風情。",
+    "subPhotos": [
+      {
+        "img": "./images/fuji_summit_torii.jpg",
+        "badge": "🥩 炭烤牛舌",
+        "title": "善治郎 炭烤厚切牛舌",
+        "desc": "備長炭現烤厚切・外脆內嫩肉汁香"
+      },
+      {
+        "img": "./images/ryukyu_kobe_seagrapes_salad.jpg",
+        "badge": "🍡 杜之甜品",
+        "title": "ずんだ茶寮 毛豆大福",
+        "desc": "咒術迴戰五條悟同款・冰涼細膩"
+      }
+    ]
+  }
+}

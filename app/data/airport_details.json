@@ -1,0 +1,642 @@
+{
+  "HND": {
+    "name": "羽田機場 (Tokyo Haneda)",
+    "dining": [
+      {
+        "name": "せたが屋 拉麵",
+        "loc": "T3 4F 江戶小路",
+        "highlight": "黑麻油叉燒拉麵，管制區外，營業至深夜 24:00"
+      },
+      {
+        "name": "茶寮 伊藤園",
+        "loc": "T3 4F 江戶小路",
+        "highlight": "濃抹茶霜淇淋、焙茶白玉拿鐵，上機前甜點首選"
+      }
+    ],
+    "showers_and_rest": {
+      "shower": "T3 2F 入境大廳 Shower Rooms（24小時營運，¥1,500/30分，附毛巾洗沐全套、Dyson吹風機）",
+      "nap": "T3 直通 Villa Fontaine 溫泉「泉天空之湯」（露天看飛機與富士山泡湯）",
+      "power_seats": "T3 3F 出境報到大廳後方兩翼長木桌（附 Type-C、110V 插座與高速 Wi-Fi）"
+    },
+    "duty_free": [
+      {
+        "rank": "No.1",
+        "rankCls": "rank-badge-1",
+        "name": "NewYork Perfect Cheese",
+        "loc": "T3 免稅 / 出境前商場",
+        "desc": "世界三大頂級起司大師研發！貓舌餅乾夾白巧克力與高達起司塊，開賣即秒殺的超人氣冠軍伴手禮。"
+      },
+      {
+        "rank": "No.2",
+        "rankCls": "rank-badge-2",
+        "name": "岡田謹製 あんバタ屋 (紅豆奶油夾心金磚)",
+        "loc": "T2 出發大廳限定",
+        "desc": "北海道特產紅豆與發酵牛油結合的成人系甜點，微烤後牛油融化爆漿，羽田機場限定秒殺品。"
+      },
+      {
+        "rank": "No.3",
+        "rankCls": "rank-badge-3",
+        "name": "Tokyo Banana 寶可夢/哆啦A夢限定羽田版",
+        "loc": "T3 TIAT DUTY FREE",
+        "desc": "印有超萌皮卡丘與伊布花紋的香蕉卡士達蛋糕，羽田航廈大盒裝免稅熱賣經典。"
+      },
+      {
+        "rank": "No.4",
+        "rankCls": "rank-badge-n",
+        "name": "銀座空也限定 豆沙餅 (空也もなか・TIAT專屬)",
+        "loc": "T3 管制區內限定",
+        "desc": "東京百年和菓子傳奇名店「空也」與羽田獨家合作，香脆焦香糯米外皮包裹頂級紅豆粒餡。"
+      },
+      {
+        "rank": "No.5",
+        "rankCls": "rank-badge-n",
+        "name": "獺祭二割三分 純米大吟釀 (桐木盒特包)",
+        "loc": "T3 免稅煙酒大街",
+        "desc": "精米步合 23% 的極致清酒，附免稅限定奢華桐木盒包裝，送禮宴客第一指名。"
+      }
+    ],
+    "hotels": [
+      {
+        "tag": "航廈直通・天然溫泉",
+        "tagCls": "hotel-tag-terminal",
+        "name": "羽田機場噴泉別墅飯店 (Villa Fontaine Grand Haneda)",
+        "highlights": "T3 航廈室內連通道 1 分鐘直達 ｜ 頂樓直通 24H 泉天空之湯露天溫泉眺望富士山",
+        "link": "https://tw.trip.com/hotels/list?city=tokyo&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "T3直通・出境首選",
+        "tagCls": "hotel-tag-shuttle",
+        "name": "羽田皇家公園飯店 (The Royal Park Hotel Tokyo Haneda)",
+        "highlights": "T3 出境出發大廳櫃檯旁 ｜ 紅眼班機抵達過境最佳休憩飯店",
+        "link": "https://tw.trip.com/hotels/list?city=tokyo&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "免費接駁・商務首選",
+        "tagCls": "hotel-tag-spa",
+        "name": "京急 EX Inn 羽田創新城 (Keikyu EX Inn Haneda Innovation City)",
+        "highlights": "天空橋站直通 ｜ 機場免費接駁巴士約 5 分鐘 ｜ 附大浴場露天足湯",
+        "link": "https://tw.trip.com/hotels/list?city=tokyo&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      }
+    ]
+  },
+  "NRT": {
+    "name": "成田國際機場 (Tokyo Narita)",
+    "dining": [
+      {
+        "name": "中華蕎麥 とみ田",
+        "loc": "T1 4F 展望台旁",
+        "highlight": "千葉松戶沾麵王者，高湯香濃醇厚，登機前必吃"
+      },
+      {
+        "name": "日本橋玉ゐ 穴子星鰻飯",
+        "loc": "T2 4F 出境前",
+        "highlight": "米其林推薦天然星鰻，肉質細嫩，可熱騰騰外帶登機"
+      }
+    ],
+    "showers_and_rest": {
+      "shower": "T1 中央 2F / T2 3F 淋浴間（07:00-21:00，約 ¥1,050/30分，備品齊全）",
+      "nap": "T2 B1F 直通 Nine Hours (9h) 成田機場膠囊旅館（支援時計小睡與洗澡過夜）",
+      "power_seats": "T2 3F 衛星樓長椅休息區（附全躺式沙發與多孔充電柱）"
+    },
+    "duty_free": [
+      {
+        "rank": "No.1",
+        "rankCls": "rank-badge-1",
+        "name": "NewYork Perfect Cheese 起司奶油脆餅",
+        "loc": "T1/T2 免稅大街",
+        "desc": "白巧克力高達起司捲心，成田機場開賣即排隊秒殺的冠軍熱門伴手禮。"
+      },
+      {
+        "rank": "No.2",
+        "rankCls": "rank-badge-2",
+        "name": "東京芭娜娜 Tokyo Banana (晴空塔聯名款)",
+        "loc": "各航廈出境免稅店",
+        "desc": "海獺花紋咖啡牛奶口味，成田限定大盒裝，日本經典伴手禮代表。"
+      },
+      {
+        "rank": "No.3",
+        "rankCls": "rank-badge-3",
+        "name": "丸久小山園 宇治抹茶夾心法蘭酥",
+        "loc": "Fa-So-La 免稅專櫃",
+        "desc": "京都三百年老茶舖特製，茶香濃郁微苦回甘，長輩送禮第一指名。"
+      },
+      {
+        "rank": "No.4",
+        "rankCls": "rank-badge-n",
+        "name": "銀座千疋屋 特選水果夾心費南雪",
+        "loc": "T1 出境大廳禮品館",
+        "desc": "百年水果老舖嚴選果乾，搭配濃郁發酵奶油烘烤，口感濕潤香氣迷人。"
+      },
+      {
+        "rank": "No.5",
+        "rankCls": "rank-badge-n",
+        "name": "福砂屋 雙目糖長崎蛋糕 (特製五三燒)",
+        "loc": "T2 Fa-So-La TAX FREE",
+        "desc": "底部滿滿爽脆雙目糖粗砂糖粒，傳承近四百年古法純手作，甜點控必收。"
+      }
+    ],
+    "hotels": [
+      {
+        "tag": "航廈直通・膠囊體驗",
+        "tagCls": "hotel-tag-terminal",
+        "name": "成田機場 9 小時膠囊旅館 (Nine Hours Narita Airport)",
+        "highlights": "T2 B1F 直通 ｜ 24 小時櫃檯 ｜ 附設獨立乾濕分離高級衛浴與洗沐用品",
+        "link": "https://tw.trip.com/hotels/list?city=narita&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "免費接送・商場直達",
+        "tagCls": "hotel-tag-shuttle",
+        "name": "成田機場日航酒店 (Hotel Nikko Narita)",
+        "highlights": "免費專車 10 分鐘直達航廈 ｜ 直通 AEON Mall 購物中心 ｜ 服務極佳家庭友善",
+        "link": "https://tw.trip.com/hotels/list?city=narita&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "免費接送・露天溫泉",
+        "tagCls": "hotel-tag-spa",
+        "name": "成田機場假日快捷飯店 (ART Hotel Narita)",
+        "highlights": "機場定時免費巴士 15 分鐘 ｜ 備有天然美湯溫泉大浴場 ｜ 綠意環繞休憩極佳",
+        "link": "https://tw.trip.com/hotels/list?city=narita&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      }
+    ]
+  },
+  "CTS": {
+    "name": "札幌新千歲機場 (Sapporo New Chitose)",
+    "dining": [
+      {
+        "name": "えびそば一幻 (甜蝦拉麵)",
+        "loc": "國內線 3F 拉麵道場",
+        "highlight": "全機場排隊第一！海量甜蝦頭熬煮濃郁赤紅蝦湯，配蝦味麵酥"
+      },
+      {
+        "name": "松尾成吉思汗烤羊肉",
+        "loc": "國內線 3F 美食街",
+        "highlight": "特上生羊肉醃特調蘋果洋蔥汁，鐵鑄鍋滋滋作響，北海道必吃"
+      }
+    ],
+    "showers_and_rest": {
+      "shower": "國內線 4F 新千歲機場溫泉（全日本少見航廈天然溫泉，備露天風呂與烤箱）",
+      "nap": "溫泉館內專用躺椅舒壓休息區（提供過夜包與早餐方案，紅眼過夜首選）",
+      "power_seats": "國際線 3F 出發大廳中庭沙發區（附多功能國際電源插座與景觀大窗）"
+    },
+    "duty_free": [
+      {
+        "rank": "No.1",
+        "rankCls": "rank-badge-1",
+        "name": "白之戀人 ＆ 美冬 (石屋製菓 ISHIYA)",
+        "loc": "國內線 2F 伴手禮大街",
+        "desc": "北海道第一傳奇伴手禮！香脆貓舌薄餅夾特級白巧克力，新千歲更有現烤千層酥「美冬」與限定大鐵盒。"
+      },
+      {
+        "rank": "No.2",
+        "rankCls": "rank-badge-2",
+        "name": "六花亭 蘭姆葡萄奶油夾心餅 (Marusei Butter)",
+        "loc": "國內線 2F 專賣櫃",
+        "desc": "十勝特濃發酵牛油與加州蘭姆葡萄乾調和特製白巧克力，冷藏後品嚐香氣濃郁無比。"
+      },
+      {
+        "rank": "No.3",
+        "rankCls": "rank-badge-3",
+        "name": "LeTAO 雙層乳酪蛋糕 (Double Fromage)",
+        "loc": "國內線 2F LeTAO 專櫃",
+        "desc": "小樽奇蹟甜品！上層凍乳酪慕斯、下層烤乳酪蛋糕，入口即化，機場備有 6 小時專用保冷袋可手提登機。"
+      },
+      {
+        "rank": "No.4",
+        "rankCls": "rank-badge-n",
+        "name": "卡樂比 Calbee 薯條三兄弟 (Jagapokkuru)",
+        "loc": "國內線／國際線出境免稅店",
+        "desc": "100% 北海道嚴選連皮馬鈴薯佐鄂霍次克海焙燒鹽，酥脆爽口，機場人手一整箱秒殺常客。"
+      },
+      {
+        "rank": "No.5",
+        "rankCls": "rank-badge-n",
+        "name": "ROYCE' 生巧克力 (生チョコ 歐蕾/白巧)",
+        "loc": "3F Smile Road / 免稅店",
+        "desc": "北海道鮮奶油高達全脂特級標準，絲綢般絲滑，新千歲設有全球唯一 Royce' 巧克力現場工坊參觀。"
+      }
+    ],
+    "hotels": [
+      {
+        "tag": "航廈直通",
+        "tagCls": "hotel-tag-terminal",
+        "name": "Air Terminal Hotel (新千歲機場航廈飯店)",
+        "highlights": "國內線航廈 3F 直通 ｜ 房客免費無限次享用 4F 新千歲機場天然溫泉 ｜ 免拖行李奔波",
+        "link": "https://tw.trip.com/hotels/detail/?hotelId=1052150&cityId=292&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "免費接送・商場直達",
+        "tagCls": "hotel-tag-shuttle",
+        "name": "千歲全日空皇冠假日酒店 (ANA Crowne Plaza Chitose)",
+        "highlights": "機場免費專車接駁 12 分鐘 ｜ 直通大型商場與餐廳街 ｜ 房間寬敞新穎・出差度假首選",
+        "link": "https://tw.trip.com/hotels/detail/?hotelId=1052200&cityId=292&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "免費接送・天然溫泉",
+        "tagCls": "hotel-tag-spa",
+        "name": "千歲最佳西方 Plus 飯店 (Best Western Plus Chitose)",
+        "highlights": "定時機場免費巴士接送 8 分鐘 ｜ 鄰近 JR 千歲站 ｜ 附大浴場溫泉放鬆舒壓 ｜ CP值極高",
+        "link": "https://tw.trip.com/hotels/detail/?hotelId=1052250&cityId=292&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      }
+    ]
+  },
+  "KIX": {
+    "name": "關西國際機場 (Osaka Kansai)",
+    "dining": [
+      {
+        "name": "551 蓬萊現蒸肉包 (551 HORAI)",
+        "loc": "T1 2F 入境商場",
+        "highlight": "每日手工現包多汁豬肉洋蔥包，關西靈魂美食第一名，排隊必買"
+      },
+      {
+        "name": "神座拉麵 (どうとんぼり神座)",
+        "loc": "T1 3F 餐廳街",
+        "highlight": "關西秘傳白菜甘甜法式高湯，搭配溏心蛋與嫩叉燒，清爽不膩"
+      }
+    ],
+    "showers_and_rest": {
+      "shower": "T1 2F KIX Refresh Lounge / AEROPLAZA 2F 淋浴間（24小時開放，附全套沐浴備品）",
+      "nap": "First Cabin 關西機場頭等艙膠囊飯店（AEROPLAZA 3F，商務艙與頭等艙單人座艙）",
+      "power_seats": "T1 國際出發區新翼長椅充電座（高腳木桌附 USB-A / Type-C / 110V 國際插座）"
+    },
+    "duty_free": [
+      {
+        "rank": "No.1",
+        "rankCls": "rank-badge-1",
+        "name": "551 蓬萊現蒸肉包 ＆ 燒賣冷藏手信盒",
+        "loc": "T1 2F 國內線商場 / 免稅店旁",
+        "desc": "大阪無可撼動的人氣之王！洋蔥甘甜搭配嚴選豬肉餡，備有 5 小時專用保冷袋可帶上飛機。"
+      },
+      {
+        "rank": "No.2",
+        "rankCls": "rank-badge-2",
+        "name": "呼吸巧克力 (呼吸チョコ 北新地提拉米蘇)",
+        "loc": "T1 出境免稅旗艦店",
+        "desc": "關西限定殿堂級甜點！嚴選加州杏仁裹焦糖，外層包覆馬斯卡彭起司巧克力與可可粉，香濃不甜膩。"
+      },
+      {
+        "rank": "No.3",
+        "rankCls": "rank-badge-3",
+        "name": "辻利 宇治抹茶京年輪蛋糕 (お濃い茶)",
+        "loc": "KIX Duty Free 伴手禮大街",
+        "desc": "京都宇治抹茶老舖「辻利」代表作，外層微脆糖霜，內層濕潤綿密，極致抹茶回甘風味。"
+      },
+      {
+        "rank": "No.4",
+        "rankCls": "rank-badge-n",
+        "name": "Mon cher 堂島蛋糕捲 (Dojima Roll)",
+        "loc": "T1 國際線管制區免稅店",
+        "desc": "大阪堂島超人氣名店！北海道特濃生乳鮮奶油捲入舒芙蕾蛋糕體，入口即化輕盈順口。"
+      },
+      {
+        "rank": "No.5",
+        "rankCls": "rank-badge-n",
+        "name": "京都八橋名家 (井筒八ツ橋 夕子生八橋)",
+        "loc": "關西空港國際免稅大廳",
+        "desc": "京都三百年歷史名物，香濃肉桂米皮包裹香甜丹波大納言紅豆餡與抹茶餡，經典和風代表。"
+      }
+    ],
+    "hotels": [
+      {
+        "tag": "航廈直通・五星首選",
+        "tagCls": "hotel-tag-terminal",
+        "name": "關西機場日航酒店 (Hotel Nikko Kansai Airport)",
+        "highlights": "T1 航廈與 AEROPLAZA 連通道步行 3 分鐘直達 ｜ 紅眼早班機首選 ｜ 房間寬敞隔音極佳",
+        "link": "https://tw.trip.com/hotels/list?city=osaka&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "商場直達・購物無敵",
+        "tagCls": "hotel-tag-shuttle",
+        "name": "臨空城全日空門戶飯店 (OMO Kansai Airport by Hoshino Resorts)",
+        "highlights": "臨空城站步行 1 分鐘（機場電車 1 站 5 分） ｜ 星野集團設計 ｜ 直通臨空城 Outlet 大採購",
+        "link": "https://tw.trip.com/hotels/list?city=osaka&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "免費接送・天然溫泉",
+        "tagCls": "hotel-tag-spa",
+        "name": "關西機場海灣之塔飯店 (Kansai Airport Washington Hotel)",
+        "highlights": "機場免費定時 Shuttle 巴士 10 分鐘 ｜ 鄰近臨空歡樂街 ｜ 附大浴場溫泉 ｜ 高 CP 值過夜首選",
+        "link": "https://tw.trip.com/hotels/list?city=osaka&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      }
+    ]
+  },
+  "FUK": {
+    "name": "福岡國際機場 (Fukuoka Airport)",
+    "dining": [
+      {
+        "name": "一幸舍 博多豚骨拉麵",
+        "loc": "國內線 3F 拉麵跑道",
+        "highlight": "博多拉麵代表！招牌綿密元祖起泡脂泡豚骨高湯，極細硬麵配大片叉燒"
+      },
+      {
+        "name": "博多椒房庵 炸魚餅 ＆ 明太子",
+        "loc": "國內線 2F 美食街",
+        "highlight": "鮮烤明太子玉子燒配熱騰騰福岡白米飯，出發前排隊名物"
+      }
+    ],
+    "showers_and_rest": {
+      "shower": "國內線 3F Premium Lounge 福岡（附乾濕分離獨立淋浴間與茶水點心）",
+      "nap": "國際線 3F 休息專區（多功能貴賓沙發席，可平躺小憩充電）",
+      "power_seats": "國際線出發大廳中央長桌（提供全規格 USB、Type-C 與高速 Wi-Fi）"
+    },
+    "duty_free": [
+      {
+        "rank": "No.1",
+        "rankCls": "rank-badge-1",
+        "name": "明月堂 博多通門饅頭 (博多通りもん)",
+        "loc": "國內/國際線免稅店",
+        "desc": "金氏世界紀錄最暢銷饅頭！特濃白豆沙餡拌入生奶油與煉乳，奶香濃郁、入口即化連續 23 年金賞冠軍。"
+      },
+      {
+        "rank": "No.2",
+        "rankCls": "rank-badge-2",
+        "name": "福太郎 博多明太子仙貝 (めんべい Menbei)",
+        "loc": "免稅特產大街",
+        "desc": "嚴選博多新鮮辛口明太子、墨魚與章魚高壓烘烤，微辣爽脆鮮味爆表，下酒零食第一名。"
+      },
+      {
+        "rank": "No.3",
+        "rankCls": "rank-badge-3",
+        "name": "福砂屋 雙目糖長崎蛋糕 (カステラ小切れ)",
+        "loc": "國際出境免稅店",
+        "desc": "九州四百年傳奇甜點！底部粗粒雙目糖帶來脆口驚喜，雞蛋香濃綿密，九州必買頂級手信。"
+      },
+      {
+        "rank": "No.4",
+        "rankCls": "rank-badge-n",
+        "name": "如水庵 筑紫糬 (黑蜜黃豆粉年糕)",
+        "loc": "國內線 2F 伴手禮商場",
+        "desc": "福岡歷史名物！軟嫩糯米年糕裹上炒香黃豆粉，淋上特濃黑糖蜜，香甜不膩的和風經典。"
+      },
+      {
+        "rank": "No.5",
+        "rankCls": "rank-badge-n",
+        "name": "やまや (YAMAYA) 特選明太子手提保冷包",
+        "loc": "國際線出境免稅店",
+        "desc": "羅臼昆布與特調辣醬醃漬 168 小時熟成明太子，機場限定附航太保冷袋可直接手提返台。"
+      }
+    ],
+    "hotels": [
+      {
+        "tag": "地鐵 2 站・博多直達",
+        "tagCls": "hotel-tag-terminal",
+        "name": "博多都飯店 (Miyako Hotel Hakata)",
+        "highlights": "機場地鐵 5 分鐘直達 JR 博多站直通 ｜ 頂樓溫泉泳池 ＆ 景觀足湯 ｜ 交通地理位置無敵",
+        "link": "https://tw.trip.com/hotels/list?city=fukuoka&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "商務首選・性價比高",
+        "tagCls": "hotel-tag-shuttle",
+        "name": "福岡機場前酒店 (Hotel Front Inn Fukuoka Airport)",
+        "highlights": "國內線航廈步行約 8 分鐘 ｜ 紅眼與清晨早班機最佳落腳點 ｜ 免費簡便早餐供應",
+        "link": "https://tw.trip.com/hotels/list?city=fukuoka&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "免費接送・大浴場",
+        "tagCls": "hotel-tag-spa",
+        "name": "福岡君悅酒店 (Grand Hyatt Fukuoka)",
+        "highlights": "地鐵直達博多運河城 ｜ 複合購物中心環繞 ｜ 奢華五星客房 ＆ 三溫暖放鬆享受",
+        "link": "https://tw.trip.com/hotels/list?city=fukuoka&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      }
+    ]
+  },
+  "OKA": {
+    "name": "那霸國際機場 (Okinawa Naha)",
+    "dining": [
+      {
+        "name": "波上宮旁 豬肉蛋飯糰 (ポークたまごおにぎり)",
+        "loc": "國內線 1F 到達大廳",
+        "highlight": "那霸排隊人氣第一！炙烤午餐肉配現煎厚玉子燒，夾入日本香米與海苔"
+      },
+      {
+        "name": "琉球村 沖繩排骨麵 (ソーキそば)",
+        "loc": "國際線 4F 景觀餐廳",
+        "highlight": "燉煮至入口即化的特選豬軟骨，佐鰹魚昆布清湯與特製紅生薑"
+      }
+    ],
+    "showers_and_rest": {
+      "shower": "國內線 1F Lounge 華（附獨立淋浴間、海島香氛備品，¥1,100/回）",
+      "nap": "國際線 3F 觀景休憩區（面海景觀躺椅，近距離看戰鬥機與客機起降）",
+      "power_seats": "國內/國際聯通館 2F 綠意充電庭園（全區設有無障礙插座與沙發席）"
+    },
+    "duty_free": [
+      {
+        "rank": "No.1",
+        "rankCls": "rank-badge-1",
+        "name": "御菓子御殿 元祖紅芋塔 (元祖紅いもタルト)",
+        "loc": "聯通館 2F 專賣大街",
+        "desc": "100% 沖繩讀谷村特產紫心紅薯泥，口感香甜綿密，烤箱微烤後香氣四溢，沖繩最具代表性伴手禮。"
+      },
+      {
+        "rank": "No.2",
+        "rankCls": "rank-badge-2",
+        "name": "南風堂 宮古島雪鹽金楚糕 (雪塩ちんすこう)",
+        "loc": "免稅特產店 / 聯通商場",
+        "desc": "琉球傳統御用菓子結合宮古島天然雪鹽，鹹甜交織爽脆不膩，連年榮獲世界食品品質評鑑大獎。"
+      },
+      {
+        "rank": "No.3",
+        "rankCls": "rank-badge-3",
+        "name": "Fukugiya 沖繩黑糖年輪蛋糕 (ガジュマル)",
+        "loc": "那霸機場國內線 2F",
+        "desc": "使用沖繩特產黑糖與蜂蜜一層層精心手作慢烤，外層酥脆帶有焦糖香氣，內層扎實濕潤。"
+      },
+      {
+        "rank": "No.4",
+        "rankCls": "rank-badge-n",
+        "name": "石垣牛仙貝 ＆ 旨辛辣油點心",
+        "loc": "出境管制區免稅店",
+        "desc": "頂級黑毛和牛「石垣牛」香濃油脂烘焙的薄脆仙貝，配上石垣島邊銀食堂辣油風味，大人系絕妙零食。"
+      },
+      {
+        "rank": "No.5",
+        "rankCls": "rank-badge-n",
+        "name": "泡盛 古酒 殘波白 / 菊之露 VIP GOLD",
+        "loc": "國際線免稅酒類專賣櫃",
+        "desc": "沖繩特產黑麴米釀蒸餾酒，五年熟成古酒香醇順口，免稅專屬琉球陶瓶限定禮盒。"
+      }
+    ],
+    "hotels": [
+      {
+        "tag": "單軌 2 站・購物首選",
+        "tagCls": "hotel-tag-terminal",
+        "name": "那霸 Loisir 露台飯店 (Loisir Terrace & Villas)",
+        "highlights": "單軌電車 5 分鐘直達 ｜ 附室內外天然溫泉風呂 ｜ 設有無邊際景觀海景泳池",
+        "link": "https://tw.trip.com/hotels/list?city=okinawa&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "國際通直達・交通便利",
+        "tagCls": "hotel-tag-shuttle",
+        "name": "沖繩那霸凱悅酒店 (Hyatt Regency Naha)",
+        "highlights": "單軌直通國際通 ｜ 頂級五星度假氛圍 ｜ 步行 3 分鐘抵達熱鬧牧志公設市場",
+        "link": "https://tw.trip.com/hotels/list?city=okinawa&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "免費接送・港灣景觀",
+        "tagCls": "hotel-tag-spa",
+        "name": "那霸斯特拉特飯店 (Hotel Strata Naha)",
+        "highlights": "美榮橋站步行 1 分鐘 ｜ 熱帶森林綠意庭園 ｜ 房型現代新穎・年輕旅客首推",
+        "link": "https://tw.trip.com/hotels/list?city=okinawa&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      }
+    ]
+  },
+  "NGO": {
+    "name": "中部國際機場新特麗亞 (Nagoya Centrair)",
+    "dining": [
+      {
+        "name": "矢場町味噌炸豬排 (矢場とん)",
+        "loc": "第 1 航廈 4F 藍天街",
+        "highlight": "名古屋地標美味！熱騰騰炸豬排現淋濃厚甘甜八丁赤味噌醬"
+      },
+      {
+        "name": "世界山將 幻之手羽先 (世界の山ちゃん)",
+        "loc": "第 1 航廈 4F 提貨專賣",
+        "highlight": "獨門秘製胡椒辛香醬汁炸雞翅，肉質香嫩外皮酥脆，下酒神物"
+      }
+    ],
+    "showers_and_rest": {
+      "shower": "第 1 航廈 4F「風之湯」（全日本第一座看飛機起降的天然展望風呂溫泉）",
+      "nap": "TUBE Sq 膠囊旅館（第 1 航廈 1F，提供短時淋浴與過夜艙房）",
+      "power_seats": "FLIGHT OF DREAMS 2F 景觀餐飲區（近距離仰望波音 787 客機，座位設有完整插座）"
+    },
+    "duty_free": [
+      {
+        "rank": "No.1",
+        "rankCls": "rank-badge-1",
+        "name": "坂角總本舖 海老仙貝 (ゆかり Yukari)",
+        "loc": "第 1 航廈 銘品館 / 免稅店",
+        "desc": "名古屋百年仙貝老店！每片耗費 7 隻天然鮮蝦高溫鐵板雙重烘烤，濃縮極致蝦香，日本皇室指名御用名點。"
+      },
+      {
+        "rank": "No.2",
+        "rankCls": "rank-badge-2",
+        "name": "青柳總本家 青蛙饅頭 (青柳ういろう)",
+        "loc": "4F 藍天城商場",
+        "desc": "萌翻天超人氣伴手禮！香酥外皮包裹綿密紅豆沙餡，外形為招財福氣小青蛙，送禮拍照吸睛度第一。"
+      },
+      {
+        "rank": "No.3",
+        "rankCls": "rank-badge-3",
+        "name": "東海壽 名古屋小倉紅豆吐司夾心餅 (小倉トーストラングドシャ)",
+        "loc": "Centrair 免稅大街",
+        "desc": "完美重現名古屋經典早餐！酥脆薄餅夾入香甜小倉紅豆奶油餡，微烤後如同現烤紅豆吐司。"
+      },
+      {
+        "rank": "No.4",
+        "rankCls": "rank-badge-n",
+        "name": "名古屋交趾雞 濃厚金賞烤布蕾蛋糕",
+        "loc": "銘品館出境特展",
+        "desc": "採用日本三大名雞「名古屋交趾雞」頂級土雞蛋製作，蛋香極度濃郁，表層焦糖脆口迷人。"
+      },
+      {
+        "rank": "No.5",
+        "rankCls": "rank-badge-n",
+        "name": "世界山將 秘傳胡椒炸雞仙貝",
+        "loc": "第 1 航廈出發免稅店",
+        "desc": "將世界山將招牌胡椒香氣濃縮於香脆仙貝中，香辣帶勁，機場限定大包裝手信常客。"
+      }
+    ],
+    "hotels": [
+      {
+        "tag": "航廈直通・極速入住",
+        "tagCls": "hotel-tag-terminal",
+        "name": "中部國際機場新特麗亞酒店 (Centrair Hotel)",
+        "highlights": "第 1 航廈出發大廳步行 130 公尺直達 ｜ 行李直推免出室外 ｜ 早班機過夜首選",
+        "link": "https://tw.trip.com/hotels/list?city=nagoya&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "海景景觀・星級享受",
+        "tagCls": "hotel-tag-shuttle",
+        "name": "新特麗亞四季飯店 (Four Points by Sheraton Nagoya)",
+        "highlights": "航廈空橋步行約 6 分鐘 ｜ 萬豪集團旗下新潮品味 ｜ 海景景觀客房 ＆ 精緻美式酒吧",
+        "link": "https://tw.trip.com/hotels/list?city=nagoya&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "平價便利・商務推薦",
+        "tagCls": "hotel-tag-spa",
+        "name": "東橫 INN 中部國際機場 1 號店 (Toyoko Inn Centrair)",
+        "highlights": "航廈聯絡通道步行 5 分鐘 ｜ 附免費自助早餐 ｜ 乾淨舒適超高性價比過夜首選",
+        "link": "https://tw.trip.com/hotels/list?city=nagoya&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      }
+    ]
+  },
+  "SDJ": {
+    "name": "仙台國際機場 (Sendai Airport)",
+    "dining": [
+      {
+        "name": "善治郎 炭烤牛舌專賣 (牛たん炭火焼 善治郎)",
+        "loc": "航廈 1F 餐廳區",
+        "highlight": "仙台牛舌排隊霸主！厚切牛舌備長炭炭火現烤，佐牛尾清湯與麥飯"
+      },
+      {
+        "name": "ずんだ茶寮 (毛豆奶昔專賣)",
+        "loc": "航廈 2F 出發大廳",
+        "highlight": "仙台靈魂名物！天然毛豆泥拌特濃香草牛奶霜淇淋，濃郁清甜全日本爆紅"
+      }
+    ],
+    "showers_and_rest": {
+      "shower": "航廈 3F 商務貴賓室 Business Lounge（設有安靜辦公艙與冷熱飲品）",
+      "nap": "出發大廳 3F 屋頂展望看台躺椅區（近距離觀賞飛機起降與藏王連峰雪景）",
+      "power_seats": "2F 登機口中央島型充電座（附全插座、無線充電盤與高速免費 Wi-Fi）"
+    },
+    "duty_free": [
+      {
+        "rank": "No.1",
+        "rankCls": "rank-badge-1",
+        "name": "菓匠三全 萩之月 (萩の月)",
+        "loc": "航廈 2F 綜合伴手禮店",
+        "desc": "宮城仙台第一名物！柔軟金黃卡士達海綿蛋糕包裹特調頂級卡士達蛋奶醬，冷藏後品嚐如布丁般絲滑。"
+      },
+      {
+        "rank": "No.2",
+        "rankCls": "rank-badge-2",
+        "name": "喜久水庵 喜久福 毛豆鮮奶油大福 (喜久福)",
+        "loc": "2F 喜久水庵專櫃",
+        "desc": "日本知名動漫《咒術迴戰》五條悟大推名產！薄Q麻糬皮裹微甜毛豆泥與十勝鮮奶油，冰涼綿密絕品。"
+      },
+      {
+        "rank": "No.3",
+        "rankCls": "rank-badge-3",
+        "name": "白謙 笹蒲鉾 (特上吉次魚板 竹葉魚糕)",
+        "loc": "航廈 2F 冰鮮水產專賣",
+        "desc": "三陸海岸頂級吉次魚與鯛魚純手工打漿現烤，外表金黃香脆、口感彈牙爆汁，真空手提包裝。"
+      },
+      {
+        "rank": "No.4",
+        "rankCls": "rank-badge-n",
+        "name": "三陸海苔 ＆ 炭烤牛舌辣油仙貝",
+        "loc": "出發免稅店",
+        "desc": "三陸嚴選海苔結合炭烤牛舌脆粒烘烤而成的香酥米果，微辣焦香酥脆，下酒看劇首選。"
+      },
+      {
+        "rank": "No.5",
+        "rankCls": "rank-badge-n",
+        "name": "宮城一之藏 / 浦霞 純米大吟釀 (伊達政宗限定版)",
+        "loc": "航廈免稅酒類專賣",
+        "desc": "宮城百年名酒莊，取東北清冽山泉釀造，果香芬芳回甘清爽，搭配伊達政宗武將桐木禮盒。"
+      }
+    ],
+    "hotels": [
+      {
+        "tag": "鐵路 17 分・直通仙台",
+        "tagCls": "hotel-tag-terminal",
+        "name": "仙台大都會飯店 (Hotel Metropolitan Sendai)",
+        "highlights": "機場 Access 線 17 分鐘直達 JR 仙台站直通 ｜ 購物中心環繞 ｜ 東北自由行最佳樞紐",
+        "link": "https://tw.trip.com/hotels/list?city=sendai&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "露天溫泉・超高評價",
+        "tagCls": "hotel-tag-shuttle",
+        "name": "天然溫泉 萩之湯 多美迎仙台站前 (Dormy Inn Sendai Ekimae)",
+        "highlights": "JR 仙台站步行 4 分鐘 ｜ 頂樓男女露天天然溫泉與桑拿 ｜ 夜間免費提供現煮拉麵宵夜",
+        "link": "https://tw.trip.com/hotels/list?city=sendai&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      },
+      {
+        "tag": "機場周邊・免費接駁",
+        "tagCls": "hotel-tag-spa",
+        "name": "名取超級飯店 (Super Hotel Sendai Airport Inter)",
+        "highlights": "機場行車約 7 分鐘 ｜ 提供免費健康自助早餐 ｜ 備有消除疲勞的天然離子溫泉大浴場",
+        "link": "https://tw.trip.com/hotels/list?city=sendai&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+      }
+    ]
+  }
+}

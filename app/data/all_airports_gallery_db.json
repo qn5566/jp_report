@@ -1,0 +1,904 @@
+{
+  "NRT": [
+    {
+      "type": "🍜 航廈必吃",
+      "chipClass": "chip-food",
+      "name": "松戶中華蕎麥 とみ田",
+      "loc": "成田 T1 4F 展望台旁 ｜ 營業至 20:30",
+      "intro": "千葉沾麵霸主！特濃魚介豚骨高湯配極粗冷麵，登機前必吃排隊名店。",
+      "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看菜單與位置",
+      "btnAction": "alert('位置：成田機場第一航廈 (T1) 4F 展望台旁')"
+    },
+    {
+      "type": "🍱 米其林推薦",
+      "chipClass": "chip-food",
+      "name": "日本橋玉ゐ 穴子星鰻",
+      "loc": "成田 T2 4F 出境前 ｜ 可外帶上機",
+      "intro": "米其林推薦名物！肉質細嫩鬆軟的天然穴子星鰻，甜鹹特調醬汁，可外帶登機享用。",
+      "img": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看外帶便當指南",
+      "btnAction": "alert('位置：第二航廈 (T2) 4F，提供現做熱騰騰星鰻外帶餐盒')"
+    },
+    {
+      "type": "🛩️ 絕景展望",
+      "chipClass": "chip-spot",
+      "name": "T1/T2 戶外飛機展望台",
+      "loc": "T1 5F / T2 4F 頂樓 ｜ 免費入場",
+      "intro": "近距離感受噴射引擎轟鳴，天氣晴朗時可同時拍攝客機起降與長焦停機坪特寫。",
+      "img": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "開放時間：06:30 - 21:00",
+      "btnAction": "alert('免費開放：T1 展望台配有專用望遠鏡與長焦相機拍攝孔')"
+    },
+    {
+      "type": "🎪 親子與動漫",
+      "chipClass": "chip-spot",
+      "name": "成田動漫甲板 (Anime Deck)",
+      "loc": "成田 T2 2F ｜ 動漫聖地巡禮",
+      "intro": "長達 60 公尺的動漫人物長廊！集結鋼彈、吉卜力、咒術迴戰等限定官方周邊與咖啡廳。",
+      "img": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80",
+      "btnText": "預約吉卜力/樂園門票 ↗",
+      "btnLink": "https://www.klook.com/zh-TW/search/result/?query=吉卜力公園&aid=123436"
+    },
+    {
+      "type": "💊 10%免稅+折扣",
+      "chipClass": "chip-shop",
+      "name": "松本清・成田機場免稅店",
+      "loc": "T1/T2 管制區內外皆有門市",
+      "intro": "合利他命、面膜與常備藥品，出示專屬條碼享 10% 免稅 + 最高 7% 現折，可直接手提上機。",
+      "img": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取藥妝折價券 🎟️",
+      "btnAction": "alert('出示日旅報報專屬條碼：全日本松本清享 10% 免稅 + 最高 7% 現折！')"
+    },
+    {
+      "type": "📷 電器現折7%",
+      "chipClass": "chip-shop",
+      "name": "Air BicCamera 成田店",
+      "loc": "成田 T2 2F ｜ 支援預約提貨",
+      "intro": "美容儀、吹風機、保溫杯與相機鏡頭免稅，支援線上預約直接在機場櫃檯提貨，免搬運。",
+      "img": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+      "btnText": "出示 BicCamera 優惠券 🎟️",
+      "btnAction": "alert('出示條碼：享 10% 免稅 + 7% 電器現折優惠券！')"
+    },
+    {
+      "type": "🐧 零食挖寶",
+      "chipClass": "chip-shop",
+      "name": "空之唐吉訶德 (Soradonki)",
+      "loc": "成田 T1 4F 商場大街",
+      "intro": "銅板價日本零食、限定版抹茶點心，回國前最後一刻掃貨採買的驚安寶庫。",
+      "img": "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=600&q=80",
+      "btnText": "出示唐吉訶德折扣券 🎟️",
+      "btnAction": "alert('出示專屬條碼：唐吉訶德滿額免稅 10% + 最高現折 7%！')"
+    },
+    {
+      "type": "🧸 零錢救星・住宿",
+      "chipClass": "chip-spot",
+      "name": "扭蛋長廊 ＆ 9h 膠囊旅館",
+      "loc": "T1/T2 航廈直通 ｜ 24H 友善",
+      "intro": "登機前把日幣零錢轉光光！數百台動漫扭蛋牆，加上 T2 直通 9h 膠囊旅館，紅眼過夜淋浴第一選。",
+      "img": "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看 9h 預訂與空房 ↗",
+      "btnLink": "https://tw.trip.com/hotels/list?city=narita&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+    }
+  ],
+  "HND": [
+    {
+      "type": "🍜 航廈必吃",
+      "chipClass": "chip-food",
+      "name": "せたが屋 黑麻油拉麵",
+      "loc": "羽田 T3 4F 江戶小路 ｜ 營業至深夜 24:00",
+      "intro": "濃厚小魚乾海鮮高湯搭配香煎黑麻油叉燒，紅眼班機抵達與登機前的溫暖熱湯首選。",
+      "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看位置與菜單",
+      "btnAction": "alert('位置：羽田 T3 4F 江戶小路（出境前商場大街）')"
+    },
+    {
+      "type": "🍵 宇治特濃甜品",
+      "chipClass": "chip-food",
+      "name": "茶寮 伊藤園",
+      "loc": "羽田 T3 4F 江戶小路 ｜ 07:00 - 22:00",
+      "intro": "以老字號宇治抹茶製作的特濃抹茶霜淇淋、焙茶白玉聖代，候機時的最佳日式甜點享受。",
+      "img": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看甜品指南",
+      "btnAction": "alert('推薦：特濃抹茶霜淇淋白玉組合')"
+    },
+    {
+      "type": "🛩️ 絕景展望",
+      "chipClass": "chip-spot",
+      "name": "T3 24小時戶外飛機展望台",
+      "loc": "羽田 T3 5F 頂樓 ｜ 24H 免費開放",
+      "intro": "東京都內拍飛機第一聖地！近距離俯瞰國際線客機起降、木棧道跑道燈與夜間天際線。",
+      "img": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "全日無休免費入場",
+      "btnAction": "alert('亮點：夜間地板有 LED 星空照明，拍照氛圍極佳！')"
+    },
+    {
+      "type": "🎪 露天溫泉泡湯",
+      "chipClass": "chip-spot",
+      "name": "泉天空之湯 (天然溫泉)",
+      "loc": "直通 Haneda Airport Garden 12F",
+      "intro": "全日本少見的機場直通天然溫泉！露天風呂一邊泡湯一邊看飛機起降與富士山絕景。",
+      "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看泡湯與過夜價目",
+      "btnAction": "alert('24小時營運，備有露天風呂、碳酸泉、桑拿與躺椅休憩區')"
+    },
+    {
+      "type": "💊 10%免稅+折扣",
+      "chipClass": "chip-shop",
+      "name": "松本清・羽田機場免稅店",
+      "loc": "T3 出境前後皆有門市",
+      "intro": "出境前免稅選購合利他命、人氣眼藥水與面膜，出示專屬條碼免稅再折，可直接手提登機。",
+      "img": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取藥妝折價券 🎟️",
+      "btnAction": "alert('出示日旅報報專屬條碼：全日本松本清享 10% 免稅 + 最高 7% 現折！')"
+    },
+    {
+      "type": "📷 電器現折7%",
+      "chipClass": "chip-shop",
+      "name": "Air BicCamera 羽田店",
+      "loc": "羽田 T3 2F 入境大廳旁",
+      "intro": "吹風機、保溫杯、相機鏡頭與旅行轉接頭，線上預約可在羽田入境或出境時直接提貨。",
+      "img": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+      "btnText": "出示 BicCamera 優惠券 🎟️",
+      "btnAction": "alert('出示條碼：享 10% 免稅 + 7% 電器現折優惠券！')"
+    },
+    {
+      "type": "🛍️ 機場限定手信",
+      "chipClass": "chip-shop",
+      "name": "TIAT 免稅店限定・銀座空也餅",
+      "loc": "羽田 T3 管制區內免稅大街",
+      "intro": "百年老舖「空也」與羽田合作的獨家紅豆點心，以及限定款東京香蕉，送禮首選。",
+      "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+      "btnText": "樂天伴手禮直郵 ↗",
+      "btnLink": "https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2Ftokyobanana%2F"
+    },
+    {
+      "type": "🏨 直通頂級過夜",
+      "chipClass": "chip-spot",
+      "name": "羽田噴泉別墅飯店 (Villa Fontaine)",
+      "loc": "羽田 T3 航廈室內連通道步行 1 分鐘",
+      "intro": "直通航廈的高級飯店，不必拖著行李吹風受凍，下機出關 3 分鐘躺平睡好覺。",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Trip.com 預約空房 ↗",
+      "btnLink": "https://tw.trip.com/hotels/list?city=tokyo&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+    }
+  ],
+  "KIX": [
+    {
+      "type": "🍜 航廈必吃",
+      "chipClass": "chip-food",
+      "name": "神座拉麵 (KAMUKURA)",
+      "loc": "關西 T1 3F 餐廳街 ｜ 07:00 - 22:00",
+      "intro": "關西代表性蔬菜拉麵！以滿滿白菜熬煮的清甜法式高湯，搭配叉燒與溏心蛋，清爽不膩口。",
+      "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看位置指南",
+      "btnAction": "alert('位置：關西機場 T1 3F 餐廳大街')"
+    },
+    {
+      "type": "🐙 關西靈魂小吃",
+      "chipClass": "chip-food",
+      "name": "たこ昌 章魚燒 (Takomasa)",
+      "loc": "關西 T1 2F / 伴手禮冷藏櫃",
+      "intro": "「大阪帶回家的味道」！外皮酥脆內裡軟嫩的秘傳醬汁章魚燒，上機前最後一盤大阪味。",
+      "img": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看外帶指南",
+      "btnAction": "alert('現場可熱騰騰現吃，亦提供保冷袋裝手信便當盒')"
+    },
+    {
+      "type": "🛩️ 海上機場展望",
+      "chipClass": "chip-spot",
+      "name": "KIX Sky View 展望天台",
+      "loc": "搭乘免費接駁巴士 5 分鐘抵達",
+      "intro": "全視野直面關空雙跑道！近距離欣賞各國廣體巨鳥劃過海面降落，還有全套模擬駕駛艙體驗。",
+      "img": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "接駁專車時刻表",
+      "btnAction": "alert('T1 1F 1號候車處每 20 分鐘一班免費接駁車')"
+    },
+    {
+      "type": "🎪 親子購物放電",
+      "chipClass": "chip-spot",
+      "name": "臨空城 Outlet (Rinku Town)",
+      "loc": "關西機場電車 1 站 (5分鐘)",
+      "intro": "出境前必衝的臨海暢貨中心！摩天輪、250+ 品牌名店，出境前大買 Coach、Nike 與登山裝備。",
+      "img": "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Klook 預訂直達車票 ↗",
+      "btnLink": "https://www.klook.com/zh-TW/search/result/?query=關西機場接送&aid=123436"
+    },
+    {
+      "type": "💊 10%免稅+折扣",
+      "chipClass": "chip-shop",
+      "name": "Kokumin 國民藥妝 關空店",
+      "loc": "關西 T1 3F 購物商場",
+      "intro": "關西地區知名老字號藥妝店！合利他命、龍角散、液體 OK 繃備貨極足，免稅 10% 現結。",
+      "img": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取關西藥妝條碼 🎟️",
+      "btnAction": "alert('出示優惠碼享滿額退稅與折價')"
+    },
+    {
+      "type": "📷 電器免稅預約",
+      "chipClass": "chip-shop",
+      "name": "BicCamera 臨空城/關空門市",
+      "loc": "臨空城 Outlet 站直通",
+      "intro": "吹風機、保溫瓶、Switch 遊戲片，提供關空取貨預約服務，免去市區人擠人提貨困擾。",
+      "img": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+      "btnText": "BicCamera 折價券 🎟️",
+      "btnAction": "alert('出示條碼：免稅 10% + 電器現折 7%')"
+    },
+    {
+      "type": "🛍️ 京都經典手信",
+      "chipClass": "chip-shop",
+      "name": "辻利抹茶 ＆ 生八橋專櫃",
+      "loc": "關西 T1 出境管制區內免稅店",
+      "intro": "京都抹茶名門「辻利」限定抹茶年輪蛋糕、呼吸生巧克力，免排隊一站式掃齊關西甜點。",
+      "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+      "btnText": "樂天官方生八橋 ↗",
+      "btnLink": "https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2Fkyoto%2Bsweets%2F"
+    },
+    {
+      "type": "🏨 航廈過境飯店",
+      "chipClass": "chip-spot",
+      "name": "關西機場日航酒店 (Hotel Nikko)",
+      "loc": "AEROPLAZA 步行 3 分鐘直達",
+      "intro": "紅眼早班機救星！直通第 1 航廈與南海電鐵車站，房間寬敞隔音極佳，帶長輩小孩出國首選。",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Trip.com 預訂日航 ↗",
+      "btnLink": "https://tw.trip.com/hotels/list?city=osaka&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+    }
+  ],
+  "ITM": [
+    {
+      "type": "🍜 關西必吃美食",
+      "chipClass": "chip-food",
+      "name": "道頓堀 今井 烏龍麵",
+      "loc": "伊丹 北航廈 2F 餐廳大街",
+      "intro": "大阪昭和老舖傳奇！昆布極品柴魚金黃高湯配軟嫩豆皮，關西最純粹優雅的湯頭。",
+      "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看招牌豆皮烏龍",
+      "btnAction": "alert('位置：伊丹機場北航廈出發前美食商場')"
+    },
+    {
+      "type": "🥩 頂級黑毛和牛",
+      "chipClass": "chip-food",
+      "name": "松屋 牛肉便當 (Matsuya)",
+      "loc": "伊丹 中央商業區 2F",
+      "intro": "炭火直烤厚切神戶牛與黑毛和牛便當，現點現烤，香氣撲鼻，帶上機享用奢華無比。",
+      "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看便當外帶菜單",
+      "btnAction": "alert('推薦：炭火烤和牛與極品牛舌雙拼餐盒')"
+    },
+    {
+      "type": "🛩️ 親子親水展望",
+      "chipClass": "chip-spot",
+      "name": "展望甲板 La Sora",
+      "loc": "伊丹 4F 頂樓戶外觀景平台",
+      "intro": "全長 400 公尺開闊木棧平台！設有噴泉親水綠意造景，近距離拍攝飛機起降的市區第一席。",
+      "img": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "免費入場參觀",
+      "btnAction": "alert('開放時間：06:00 - 22:00，夜間地面LED情境燈極美')"
+    },
+    {
+      "type": "🎪 親子娛樂天地",
+      "chipClass": "chip-spot",
+      "name": "Bornelund 遊戲森林",
+      "loc": "伊丹 南航廈 2F 候機區旁",
+      "intro": "知名北歐益智積木玩具旗艦店！設有大球池與爬行軟墊區，帶幼童出遊的最佳放電站。",
+      "img": "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Klook 關西親子體驗 ↗",
+      "btnLink": "https://www.klook.com/zh-TW/search/result/?query=關西門票&aid=123436"
+    },
+    {
+      "type": "💊 藥妝生活用品",
+      "chipClass": "chip-shop",
+      "name": "KoKuMiN 國民藥妝 伊丹店",
+      "loc": "伊丹 中央商業區 2F",
+      "intro": "常備胃腸藥、眼藥水、防蚊液與旅行隨身保養品齊全，搭乘國內線前的健康補給站。",
+      "img": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取藥妝優惠 🎟️",
+      "btnAction": "alert('出示專屬優惠碼享滿額折扣')"
+    },
+    {
+      "type": "📷 旅行電器與3C",
+      "chipClass": "chip-shop",
+      "name": "BIC CAMERA 伊丹機場店",
+      "loc": "伊丹 2F 國內線管制區前",
+      "intro": "行動電源、降噪耳機、旅充轉接頭與輕巧整髮器，搭機出遊隨身必備 3C 免排隊買齊。",
+      "img": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+      "btnText": "出示電器折扣券 🎟️",
+      "btnAction": "alert('出示條碼享 10% + 7% 優惠！')"
+    },
+    {
+      "type": "🛍️ 神戶關西甜點",
+      "chipClass": "chip-shop",
+      "name": "關西旅日記 (手信專門館)",
+      "loc": "伊丹 中央商業區 2F",
+      "intro": "神戶布丁、Mon cher 堂島蛋糕卷、551 蓬萊現蒸肉包，關西各大名物一站購足。",
+      "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+      "btnText": "樂天伴手禮直郵 ↗",
+      "btnLink": "https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2Fkobe%2Bsweets%2F"
+    },
+    {
+      "type": "🏨 航廈過境飯店",
+      "chipClass": "chip-spot",
+      "name": "大阪伊丹機場大阪酒店 (Osaka Airport Hotel)",
+      "loc": "航廈中央區 3F 檢票口直通",
+      "intro": "航廈內最核心飯店！走出房門 1 分鐘即可抵達報到櫃台，國內轉機與紅眼早班機最安心選擇。",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Trip.com 預約空房 ↗",
+      "btnLink": "https://tw.trip.com/hotels/list?city=osaka&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+    }
+  ],
+  "CTS": [
+    {
+      "type": "🍜 蝦湯拉麵之王",
+      "chipClass": "chip-food",
+      "name": "えびそば一幻 (一幻甜蝦拉麵)",
+      "loc": "新千歲 國內線 3F 北海道拉麵道場",
+      "intro": "全機場排隊最長的拉麵！海量甜蝦頭慢火熬煮的赤紅蝦湯，配特製蝦味麵酥與溏心蛋。",
+      "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+      "btnText": "拉麵街排隊攻略",
+      "btnAction": "alert('推薦口味：原味濃縮蝦湯 (えびしお) + 粗麵')"
+    },
+    {
+      "type": "🍖 北海道名物料理",
+      "chipClass": "chip-food",
+      "name": "松尾成吉思汗烤羊肉",
+      "loc": "新千歲 國內線 3F 美食街",
+      "intro": "秘傳蘋果洋蔥醬醃漬鮮嫩羊肉，在特製鐵鑄鍋上滋滋作響，下機第一餐或上機前必吃！",
+      "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看定食菜單",
+      "btnAction": "alert('特上生羊肉定食配生啤酒，極致享受')"
+    },
+    {
+      "type": "🎪 機場親子主題館",
+      "chipClass": "chip-spot",
+      "name": "哆啦A夢空中樂園 (Sky Park)",
+      "loc": "新千歲 連絡通路 3F Smile Road",
+      "intro": "全球唯一的機場哆啦A夢主題館！大型時光機模型、道具互動遊戲區與銅鑼燒主題 Cafe。",
+      "img": "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Klook 北海道體驗 ↗",
+      "btnLink": "https://www.klook.com/zh-TW/search/result/?query=北海道門票&aid=123436"
+    },
+    {
+      "type": "🍫 實體烘焙工廠",
+      "chipClass": "chip-shop",
+      "name": "Royce' Chocolate World",
+      "loc": "新千歲 連絡通路 3F",
+      "intro": "玻璃帷幕全自動巧克力生產線！現場販售整條厚切 Royce' 生巧克力夾心現烤牛角可頌。",
+      "img": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80",
+      "btnText": "樂天生巧克力直郵 ↗",
+      "btnLink": "https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2Froyce%2F"
+    },
+    {
+      "type": "♨️ 航廈天然溫泉",
+      "chipClass": "chip-spot",
+      "name": "新千歲機場天然溫泉",
+      "loc": "新千歲 國內線 4F ｜ 10:00 - 次日09:00",
+      "intro": "全日本最奢華的機場風呂！氯化鈉弱鹼性美人湯、露天桑拿、深夜躺椅小憩睡覺室與浴衣提供。",
+      "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看溫泉過夜價",
+      "btnAction": "alert('含毛巾、浴衣全套，深夜 01:00 以後加收深夜滯留費即可躺平過夜')"
+    },
+    {
+      "type": "📷 電器與雪具補給",
+      "chipClass": "chip-shop",
+      "name": "Air BicCamera 千歲店",
+      "loc": "新千歲 國際線航廈",
+      "intro": "冬季滑雪專用相機防寒配件、GoPro 電池、保溫瓶免稅直購，自駕前往滑雪場前最後補給站。",
+      "img": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取 BicCamera 券 🎟️",
+      "btnAction": "alert('出示條碼享 10% 免稅 + 7% 折扣！')"
+    },
+    {
+      "type": "🛍️ 北國限定伴手禮",
+      "chipClass": "chip-shop",
+      "name": "北海道特產大街・白色戀人",
+      "loc": "新千歲 國內線 2F 伴手禮殿堂",
+      "intro": "札幌農學校牛奶餅乾、六花亭葡萄奶油夾心、北菓樓爆漿大泡芙，全日本規模最大的手信聚落。",
+      "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+      "btnText": "樂天白色戀人 ↗",
+      "btnLink": "https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2Fshiroikoibito%2F"
+    },
+    {
+      "type": "🏨 機場直通航廈飯店",
+      "chipClass": "chip-spot",
+      "name": "新千歲機場航廈飯店 (Terminal Hotel)",
+      "loc": "國內線 3F 出發大廳直通",
+      "intro": "下飛機出關搭電梯直達！房客可免費無限次使用 4F 天然溫泉大浴場，滑雪季早班機必住。",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Trip.com 預約空房 ↗",
+      "btnLink": "https://tw.trip.com/hotels/list?city=sapporo&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+    }
+  ],
+  "HKD": [
+    {
+      "type": "🍜 道南招牌麵食",
+      "chipClass": "chip-food",
+      "name": "函館麵廚房 鹽味拉麵 (Ajisai)",
+      "loc": "函館 國內線 2F 餐廳區",
+      "intro": "函館百年傳統透亮金黃鹽味高湯！昆布海味醇厚，搭配細直麵與叉燒，登機前最暖胃的一餐。",
+      "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看鹽味拉麵菜單",
+      "btnAction": "alert('位置：函館機場國內線 2F 出發前餐廳街')"
+    },
+    {
+      "type": "🍦 北海道濃厚生乳",
+      "chipClass": "chip-food",
+      "name": "美鈴咖啡 ＆ 特濃生乳霜淇淋",
+      "loc": "函館 1F 到達大廳",
+      "intro": "北海道最老字號珈琲名店！以新鮮牧場生乳製作的極濃霜淇淋與香濃手沖冰咖啡。",
+      "img": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80",
+      "btnText": "品嚐濃厚生乳霜淇淋",
+      "btnAction": "alert('必試：美鈴珈琲招牌黑咖啡凍霜淇淋聖代')"
+    },
+    {
+      "type": "🛩️ 津輕海峽展望",
+      "chipClass": "chip-spot",
+      "name": "戶外全景飛機送迎展望台",
+      "loc": "函館 3F 頂樓觀景甲板",
+      "intro": "眺望函館山、津輕海峽海天一色！近距離觀賞螺旋槳客機與噴射機降落於綠意跑道。",
+      "img": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "免費開放參觀",
+      "btnAction": "alert('開放時間：07:30 - 19:30，設有長焦相機拍攝孔')"
+    },
+    {
+      "type": "♨️ 日本最近海濱溫泉",
+      "chipClass": "chip-spot",
+      "name": "湯之川溫泉街 (Yunokawa)",
+      "loc": "距機場僅 5 分鐘車程 / 巴士直達",
+      "intro": "全日本離機場最近的古老名湯！下機 10 分鐘跳進露天風呂，一邊泡湯一邊看飛機降落與海面漁火。",
+      "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Klook 函館交通一日券 ↗",
+      "btnLink": "https://www.klook.com/zh-TW/search/result/?query=函館交通&aid=123436"
+    },
+    {
+      "type": "💊 常備藥品與保養",
+      "chipClass": "chip-shop",
+      "name": "鶴羽藥妝 (Tsuruha Drug) 函館櫃",
+      "loc": "函館 2F 國內線商場",
+      "intro": "北海道發源連鎖藥妝巨頭！馬油保濕乳霜、合利他命、止痛貼布現折免稅。",
+      "img": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取藥妝折價條碼 🎟️",
+      "btnAction": "alert('出示專屬優惠券享免稅與現折')"
+    },
+    {
+      "type": "📷 3C 旅行配件",
+      "chipClass": "chip-shop",
+      "name": "函館空港 3C 旅行專區",
+      "loc": "函館 2F 出發大廳",
+      "intro": "防雪寒冷相機手套、隨身充、耳機與記憶卡，自駕前往大沼公園前補給設備。",
+      "img": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看旅行設備",
+      "btnAction": "alert('提供各種相機記憶卡與大容量行動電源現貨')"
+    },
+    {
+      "type": "🛍️ 道南三大限定手信",
+      "chipClass": "chip-shop",
+      "name": "Pastry Snaffle's 起司蛋糕",
+      "loc": "函館 2F 特產免稅商店街",
+      "intro": "函館神級 Catch Cake 輕乳酪蛋糕！口感入口即化像半熟舒芙蕾，冷藏現裝手提帶回台。",
+      "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+      "btnText": "樂天函館名產直郵 ↗",
+      "btnLink": "https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2Fhakodate%2Bsweets%2F"
+    },
+    {
+      "type": "🏨 海景名湯奢華飯店",
+      "chipClass": "chip-spot",
+      "name": "湯之川 渚亭海濱溫泉飯店 (Nagisatei)",
+      "loc": "距機場車程 7 分鐘 ｜ 直面津輕海峽",
+      "intro": "擁有海量客房專屬露天海景風呂！下飛機立刻入住泡湯，品嚐津輕海峽活烏賊與新鮮海膽生魚片。",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Trip.com 預約渚亭 ↗",
+      "btnLink": "https://tw.trip.com/hotels/list?city=hakodate&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+    }
+  ],
+  "FUK": [
+    {
+      "type": "🍜 豚骨拉麵道場",
+      "chipClass": "chip-food",
+      "name": "博多 一幸舍 (IKKOUSHA)",
+      "loc": "福岡 國內線 3F 拉麵滑走路 (Ramen Runway)",
+      "intro": "泡沫系極濃豚骨拉麵代表！骨湯浮著細緻脂泡，配上極細直麵與現壓大蒜，博多道地衝擊感。",
+      "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+      "btnText": "拉麵街位置指南",
+      "btnAction": "alert('位置：國內線 3F 拉麵滑走路，匯集全九州 9 大名店')"
+    },
+    {
+      "type": "🍲 博多名物鍋物",
+      "chipClass": "chip-food",
+      "name": "博多 烤牛腸定食 (もつ鍋 前田屋)",
+      "loc": "福岡 國內線 3F 餐廳街",
+      "intro": "軟嫩多汁的黑毛和牛牛腸定食，搭配特調醬油高湯與滿滿韭菜豆腐，一人也能輕鬆吃牛腸鍋。",
+      "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看定食指南",
+      "btnAction": "alert('提供一人份特製牛腸鍋定食，趕飛機也能吃')"
+    },
+    {
+      "type": "🛩️ 360度近距離展望",
+      "chipClass": "chip-spot",
+      "name": "國內線頂樓全景展望台",
+      "loc": "國內線 4F 頂樓 ｜ 07:00 - 22:00",
+      "intro": "全日本跑道使用率最高的單跑道機場！平均每 2 分鐘就有一架客機起降，距離近到彷彿伸手可及。",
+      "img": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "免費入場拍攝",
+      "btnAction": "alert('設有木造看台與夜間情境燈光')"
+    },
+    {
+      "type": "🚇 地鐵5分鐘直達市區",
+      "chipClass": "chip-spot",
+      "name": "福岡市地下鐵機場線",
+      "loc": "國內線 B2F 直通地鐵站",
+      "intro": "全日本最方便的機場！搭地鐵 5 分鐘抵達博多車站、11 分鐘到天神商圈，無痛切換市區購物。",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Klook 九州 Pass ↗",
+      "btnLink": "https://www.klook.com/zh-TW/search/result/?query=JR九州Pass&aid=123436"
+    },
+    {
+      "type": "💊 10%免稅+折扣",
+      "chipClass": "chip-shop",
+      "name": "松本清・福岡機場免稅店",
+      "loc": "國際線管制區內外皆有門市",
+      "intro": "九州限定面膜、美妝與常備藥品，登機前最後免稅補貨，出示專屬條碼直接享免稅現折優惠。",
+      "img": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取藥妝折扣券 🎟️",
+      "btnAction": "alert('出示日旅報報專屬條碼：全日本松本清享 10% 免稅 + 最高 7% 現折！')"
+    },
+    {
+      "type": "📷 電器免稅預約",
+      "chipClass": "chip-shop",
+      "name": "Air BicCamera 福岡店",
+      "loc": "福岡 國際線航廈",
+      "intro": "小家電、整髮器、刮鬍刀免稅現購，支援線上預約提貨，帶長輩逛街最省力。",
+      "img": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取 BicCamera 券 🎟️",
+      "btnAction": "alert('出示條碼享 10% 免稅 + 7% 折扣！')"
+    },
+    {
+      "type": "🛍️ 九州排隊手信",
+      "chipClass": "chip-shop",
+      "name": "福太郎 明太子仙貝 ＆ 博多通饅頭",
+      "loc": "國內線 2F 伴手禮殿堂",
+      "intro": "鹹香微辣的「Menbei (めんべい)」明太子仙貝，以及連續多年金獎的「博多通りもん」白餡和菓子。",
+      "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+      "btnText": "樂天明太子手信 ↗",
+      "btnLink": "https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2Ffukuoka%2Bmentaiko%2F"
+    },
+    {
+      "type": "🏨 博多站直達飯店",
+      "chipClass": "chip-spot",
+      "name": "博多都飯店 (Miyako Hotel)",
+      "loc": "地鐵 2 站直達博多站筑紫口",
+      "intro": "頂樓設有溫泉瀑布露天泳池與 SPA，從機場出關搭地鐵到飯店 check-in 只要 15 分鐘！",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Trip.com 預訂都飯店 ↗",
+      "btnLink": "https://tw.trip.com/hotels/list?city=fukuoka&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+    }
+  ],
+  "KMJ": [
+    {
+      "type": "🍜 熊本代表拉麵",
+      "chipClass": "chip-food",
+      "name": "味千拉麵 熊本空港店",
+      "loc": "熊本 新航廈 3F 候機美食街",
+      "intro": "黑焦麻油蒜香豚骨發源老牌！以獨家萬能黑麻油烘烤蒜粒，搭配濃厚乳白骨湯與叉燒肉。",
+      "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看招牌黑麻油拉麵",
+      "btnAction": "alert('位置：熊本機場全新航廈管制區內美食街')"
+    },
+    {
+      "type": "🥩 熊本極品和牛",
+      "chipClass": "chip-food",
+      "name": "褐毛和牛阿蘇赤牛丼 (Akaushi)",
+      "loc": "熊本 3F 美食街・あか牛 Dining",
+      "intro": "阿蘇大草原放牧天然褐毛和牛！低脂健康肉質鮮嫩多汁，淋上秘製蒜味醬汁與溫泉蛋爆漿入口。",
+      "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看阿蘇赤牛丼指南",
+      "btnAction": "alert('推薦：阿蘇赤牛炙燒牛排丼搭配生芥末')"
+    },
+    {
+      "type": "🛩️ 阿蘇火山景觀甲板",
+      "chipClass": "chip-spot",
+      "name": "戶外木造展望平台 (展望デッキ)",
+      "loc": "熊本 4F 頂樓觀景台 ｜ 免費入場",
+      "intro": "全木造熊本小國杉打造溫暖建築！遠眺阿蘇五岳火山連峰與客機在綠草山巒間優雅起降。",
+      "img": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "免費入場欣賞",
+      "btnAction": "alert('晴空萬里時可直接看見阿蘇中岳噴煙壯觀景象')"
+    },
+    {
+      "type": "🎪 熊本熊人偶見面",
+      "chipClass": "chip-spot",
+      "name": "Kumamon 熊本熊迎賓廣場",
+      "loc": "熊本 1F 入境大廳 ＆ 出發商場",
+      "intro": "超萌營業部長熊本熊 Kumamon 大型公仔與特製彩繪牆！限定版熊本熊娃娃與限定點心。",
+      "img": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Klook 九州阿蘇火山包車 ↗",
+      "btnLink": "https://www.klook.com/zh-TW/search/result/?query=阿蘇火山包車&aid=123436"
+    },
+    {
+      "type": "💊 熊本空港免稅藥妝",
+      "chipClass": "chip-shop",
+      "name": "Matsumoto Kiyoshi 熊本店",
+      "loc": "熊本 國際線管制區出發候機處",
+      "intro": "合利他命、人氣眼藥水、馬油保濕乳霜，出境前一站免稅掃貨，出示條碼享專屬優惠。",
+      "img": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取藥妝折價條碼 🎟️",
+      "btnAction": "alert('出示日旅報報專屬條碼：松本清免稅 10% + 最高現折 7%！')"
+    },
+    {
+      "type": "📷 自駕電器補給",
+      "chipClass": "chip-shop",
+      "name": "Air BicCamera 熊本出發專櫃",
+      "loc": "熊本 3F 候機商圈",
+      "intro": "相機記憶卡、自駕車用手機支架、大容量行動電源免稅直購，南九州自駕必備配件齊全。",
+      "img": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+      "btnText": "出示電器折扣券 🎟️",
+      "btnAction": "alert('出示條碼：10% 免稅 + 7% 折價')"
+    },
+    {
+      "type": "🛍️ 熊本排隊土產名物",
+      "chipClass": "chip-shop",
+      "name": "香梅 陣太鼓 ＆ 武者返",
+      "loc": "熊本 3F 伴手禮殿堂 (ASO-Sora)",
+      "intro": "熊本名門「お菓子の香梅」最高傑作！薄脆千層酥皮包覆紫豆沙「武者返」，熊本必買第一名物。",
+      "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+      "btnText": "樂天熊本特產直郵 ↗",
+      "btnLink": "https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2Fkumamoto%2Bsweets%2F"
+    },
+    {
+      "type": "🏨 熊本市中心星級飯店",
+      "chipClass": "chip-spot",
+      "name": "熊本星野 OMO5 熊本 (Hoshino)",
+      "loc": "機場利木津巴士直達通町筋站 (約40分)",
+      "intro": "直面熊本城絕景的星野潮流飯店！下樓即是下通商店街，逛街、吃馬肉刺身與拉麵最方便。",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Trip.com 預訂星野 ↗",
+      "btnLink": "https://tw.trip.com/hotels/list?city=kumamoto&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+    }
+  ],
+  "OKA": [
+    {
+      "type": "🍙 沖繩靈魂美食",
+      "chipClass": "chip-food",
+      "name": "豬肉蛋飯糰 (Potama)",
+      "loc": "那霸 國內線 1F 入境大廳 ｜ 07:00 - 22:00",
+      "intro": "下飛機第一站必排！現點現做熱騰騰的炙燒午餐肉搭配軟嫩厚煎蛋，夾入酥脆明太子或炸苦瓜。",
+      "img": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80",
+      "btnText": "點餐推薦清單",
+      "btnAction": "alert('推薦：油炸豆腐海苔飯糰 ＆ 明太子炸蝦豬肉蛋飯糰')"
+    },
+    {
+      "type": "🍔 美式復古漢堡",
+      "chipClass": "chip-food",
+      "name": "A&W 沖繩美式漢堡",
+      "loc": "那霸 國內線 3F ｜ 看飛機景觀席",
+      "intro": "沖繩特有的人氣美式速食！招牌 Mozza 莫札瑞拉起司牛肉堡，配上冰鎮麥根沙士 (Root Beer)。",
+      "img": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看靠窗座位",
+      "btnAction": "alert('店內整片落地玻璃直面滑行道，一邊啃漢堡一邊看飛機起飛')"
+    },
+    {
+      "type": "🛩️ 海景展望天台",
+      "chipClass": "chip-spot",
+      "name": "那霸機場戶外展望台",
+      "loc": "國內線 4F 頂樓南北兩側 ｜ 08:00 - 21:00",
+      "intro": "欣賞蔚藍慶良間海景與自衛隊 F-15 戰鬥機、民航客機交錯起降的絕景天台，海風吹拂極度舒適。",
+      "img": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "免費入場拍攝",
+      "btnAction": "alert('南側看大海，北側看市區天際線與單軌電車')"
+    },
+    {
+      "type": "🚝 單軌電車直通",
+      "chipClass": "chip-spot",
+      "name": "沖繩都市單軌 (Yui Rail) 首站",
+      "loc": "航廈 2F 室內空橋直連「那霸空港站」",
+      "intro": "日本最西端的鐵道車站！免日曬雨淋直達國際通、新都心與首里城，支援 Suica 與悠遊卡感應。",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Klook 交通票券 ↗",
+      "btnLink": "https://www.klook.com/zh-TW/search/result/?query=沖繩交通&aid=123436"
+    },
+    {
+      "type": "💊 10%免稅+折扣",
+      "chipClass": "chip-shop",
+      "name": "松本清・那霸機場分店",
+      "loc": "那霸 國際線 2F 出境大廳",
+      "intro": "防曬乳、蘆薈修護凝膠、消炎止痛貼布，出海潛水浮潛後的補水修護藥妝齊全，享 10% 免稅折扣。",
+      "img": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取藥妝優惠券 🎟️",
+      "btnAction": "alert('出示日旅報報專屬條碼：全日本松本清享 10% 免稅 + 最高 7% 現折！')"
+    },
+    {
+      "type": "📷 電器租借提貨",
+      "chipClass": "chip-shop",
+      "name": "Air BicCamera 那霸航廈店",
+      "loc": "那霸 國際線航廈 2F",
+      "intro": "防水潛水相機、運動攝影機配件與吹風機，出關領車前一站備齊南島自駕裝備。",
+      "img": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+      "btnText": "出示電器優惠券 🎟️",
+      "btnAction": "alert('出示條碼：10% 免稅 + 7% 折價')"
+    },
+    {
+      "type": "🛍️ 南國名物手信",
+      "chipClass": "chip-shop",
+      "name": "御菓子御殿 紅芋塔 ＆ 泡盛地酒",
+      "loc": "那霸 國內線 2F 伴手禮長廊",
+      "intro": "沖繩特產紫心紅薯製作的香甜紅芋蛋塔、石垣牛黑糖辣仙貝，以及琉球百年泡盛酒藏。",
+      "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+      "btnText": "樂天沖繩特產 ↗",
+      "btnLink": "https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2Fokinawa%2Bsweets%2F"
+    },
+    {
+      "type": "🚗 自駕直達溫泉宿",
+      "chipClass": "chip-spot",
+      "name": "琉球溫泉 瀨長島飯店 (Senagajima)",
+      "loc": "距機場車程 10 分鐘 ｜ 瀨長島 Umikaji",
+      "intro": "直面機場跑道的純白海景希臘風度假村！露天「龍神之湯」看飛機掠過夕陽海面，下機首晚必住。",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Trip.com 預約海景房 ↗",
+      "btnLink": "https://tw.trip.com/hotels/list?city=okinawa&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+    }
+  ],
+  "NGO": [
+    {
+      "type": "🍗 名古屋必吃名物",
+      "chipClass": "chip-food",
+      "name": "世界的山將 (世界の山ちゃん)",
+      "loc": "中部 4F 藍天城 (Sky Town)",
+      "intro": "胡椒香辣爆棚的夢幻炸雞翅 (手羽先)！外皮香脆多汁，配生啤酒最過癮的名產料理。",
+      "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看外帶指南",
+      "btnAction": "alert('提供現炸手羽先專用保溫提盒，可攜帶登機')"
+    },
+    {
+      "type": "🍱 鰻魚飯三吃王者",
+      "chipClass": "chip-food",
+      "name": "Maruya 本店 (まるや本店)",
+      "loc": "中部 4F 藍天城",
+      "intro": "名古屋極品鰻魚飯三吃 (Hitsumabushi)！炭火焦香酥脆、第二吃加山葵蔥花、第三吃泡高湯。",
+      "img": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看鰻魚三吃指南",
+      "btnAction": "alert('推薦：特上鰻魚三吃便當')"
+    },
+    {
+      "type": "✈️ 波音實機主題館",
+      "chipClass": "chip-spot",
+      "name": "Flight of Dreams (波音787樂園)",
+      "loc": "第 2 航廈直通 ｜ 全天開放",
+      "intro": "波音 787 初號原型實體展示！在巨大機翼下方享用西雅圖餐飲，體驗光影秀與模擬駕駛艙。",
+      "img": "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Klook 預訂體驗 ↗",
+      "btnLink": "https://www.klook.com/zh-TW/search/result/?query=吉卜力公園&aid=123436"
+    },
+    {
+      "type": "🛩️ 戶外全景甲板",
+      "chipClass": "chip-spot",
+      "name": "Sky Deck 戶外木棧道觀景台",
+      "loc": "4F 延伸至跑道旁 300 公尺長廊",
+      "intro": "全日本距離跑道最近的木棧觀景甲板！延伸至海面上，夕陽灑在伊勢灣海面與客機同框。",
+      "img": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "免費入場拍攝",
+      "btnAction": "alert('開放時間：07:00 - 22:30')"
+    },
+    {
+      "type": "♨️ 展望泡湯風呂",
+      "chipClass": "chip-spot",
+      "name": "風之湯 (Fu no Yu) 展望風呂",
+      "loc": "4F 藍天城 ｜ 08:00 - 22:00",
+      "intro": "全日本第一座「能在浴池內邊泡澡邊看飛機起降」的機場錢湯，配有露天桑拿與按摩浴池。",
+      "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看錢湯價目",
+      "btnAction": "alert('門票約 ¥1,050，附毛巾與洗沐備品')"
+    },
+    {
+      "type": "📷 電器免稅專門",
+      "chipClass": "chip-shop",
+      "name": "Air BicCamera 中部國際店",
+      "loc": "中部 3F 出發大廳",
+      "intro": "前往合掌村與立山黑部前的保溫瓶、暖暖包與相機配件免稅專櫃，出示條碼享 10%+7% 折扣。",
+      "img": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取 BicCamera 券 🎟️",
+      "btnAction": "alert('出示條碼享 10% 免稅 + 7% 折扣！')"
+    },
+    {
+      "type": "🛍️ 愛知特產名物",
+      "chipClass": "chip-shop",
+      "name": "青柳總本家 蝦味煎餅之里 (えびせんべいの里)",
+      "loc": "4F 藍天城大街",
+      "intro": "整包滿滿新鮮海蝦製作的現烤蝦餅、青蛙造型紅豆饅頭，機場提供海量試吃，裝箱掃貨必買！",
+      "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+      "btnText": "樂天名產蝦餅 ↗",
+      "btnLink": "https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2Fnagoya%2Bsweets%2F"
+    },
+    {
+      "type": "🏨 航廈直通飯店",
+      "chipClass": "chip-spot",
+      "name": "新特麗亞飯店 (Centrair Hotel)",
+      "loc": "名鐵車站檢票口與航廈正對面",
+      "intro": "出檢票口推行李車 100 公尺直接走進飯店大廳，設有 Hello Kitty 主題房型，出境無阻力。",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Trip.com 預約空房 ↗",
+      "btnLink": "https://tw.trip.com/hotels/list?city=nagoya&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+    }
+  ],
+  "SDJ": [
+    {
+      "type": "🥩 東北極品名味",
+      "chipClass": "chip-food",
+      "name": "陣中 冠舌屋 極厚炭烤牛舌",
+      "loc": "仙台 國內線 1F 餐廳街",
+      "intro": "仙台牛舌名牌「陣中」！厚切低溫熟成牛舌以備長炭大火現烤，軟嫩多汁，香氣撲鼻。",
+      "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      "btnText": "查看炭烤牛舌定食",
+      "btnAction": "alert('位置：仙台機場 1F，提供熱騰騰牛舌現烤便當可外帶')"
+    },
+    {
+      "type": "🍡 宮城特產甜品",
+      "chipClass": "chip-food",
+      "name": "毛豆茶寮 (Zunda Saryo) 冰沙",
+      "loc": "仙台 2F 出發候機大廳",
+      "intro": "東北必喝靈魂飲品「毛豆奶昔 (Zunda Shake)」！特選鮮嫩毛豆混合濃醇牛奶，甜香滑順絕品。",
+      "img": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80",
+      "btnText": "品嚐經典毛豆奶昔",
+      "btnAction": "alert('推薦：毛豆奶昔 Ex 特濃版 ＋ 毛豆生鮮大福')"
+    },
+    {
+      "type": "🛩️ 藏王連峰絕景展望",
+      "chipClass": "chip-spot",
+      "name": "Smiley SMILE 屋頂露天觀景台",
+      "loc": "仙台 3F / 屋頂 ｜ 免費入場",
+      "intro": "直面太平洋海岸與藏王連峰！天晴時遠眺松島海灣方向，近距離拍攝各型客機起落。",
+      "img": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=600&q=80",
+      "btnText": "免費入場欣賞",
+      "btnAction": "alert('開放時間：06:45 - 20:00，設有航空知識博物館專區')"
+    },
+    {
+      "type": "🚆 鐵道直達市中心",
+      "chipClass": "chip-spot",
+      "name": "仙台機場 Access 線 (快速電車)",
+      "loc": "航廈 2F 連通道直通車站",
+      "intro": "東北交通最神速！免吹風淋雨，快速電車 17 分鐘直抵 JR 仙台站，無縫接駁東北新幹線。",
+      "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Klook 東北 JR Pass ↗",
+      "btnLink": "https://www.klook.com/zh-TW/search/result/?query=JR東日本Pass&aid=123436"
+    },
+    {
+      "type": "💊 東北免稅藥妝",
+      "chipClass": "chip-shop",
+      "name": "Matsumoto Kiyoshi 仙台店",
+      "loc": "仙台 2F 國內/國際線商場",
+      "intro": "前往藏王樹冰與銀山溫泉前的暖暖包、保濕護手霜與常備藥品，出示條碼免稅再享現折。",
+      "img": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
+      "btnText": "領取藥妝折價條碼 🎟️",
+      "btnAction": "alert('出示日旅報報專屬條碼享 10% 免稅 + 最高 7% 現折！')"
+    },
+    {
+      "type": "📷 防寒裝備與電器",
+      "chipClass": "chip-shop",
+      "name": "Air BicCamera 仙台空港店",
+      "loc": "仙台 2F 出發大廳",
+      "intro": "雪季防寒相機電池、除濕袋、轉接頭與吹風機，前往東北雪國秘境前最佳裝備站。",
+      "img": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=600&q=80",
+      "btnText": "出示電器折扣券 🎟️",
+      "btnAction": "alert('出示條碼：享 10% 免稅 + 7% 電器現折！')"
+    },
+    {
+      "type": "🛍️ 宮城第一伴手禮",
+      "chipClass": "chip-shop",
+      "name": "菓匠三全 萩之月 (Hagi no Tsuki)",
+      "loc": "仙台 2F 伴手禮殿堂 (Sora Sola)",
+      "intro": "宮城仙台名物代表！金黃鬆軟蛋糕包裹頂級卡士達奶油，冷藏後品嚐如冰淇淋般濃郁美味。",
+      "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
+      "btnText": "樂天仙台名產直郵 ↗",
+      "btnLink": "https://hb.afl.rakuten.co.jp/ichiba/592df26a.c525acf4.592df26b.012fa32d/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2Fsendai%2Bsweets%2F"
+    },
+    {
+      "type": "🏨 仙台站直通五星飯店",
+      "chipClass": "chip-spot",
+      "name": "仙台大都會飯店 (Hotel Metropolitan Sendai)",
+      "loc": "機場電車 17 分鐘直抵仙台站直通",
+      "intro": "出站 1 分鐘進飯店！房間寬敞氣派，樓下即是百貨商圈與牛舌通，遊歷銀山溫泉與山寺最佳據點。",
+      "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+      "btnText": "Trip.com 預訂大都會 ↗",
+      "btnLink": "https://tw.trip.com/hotels/list?city=sendai&Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
+    }
+  ]
+}

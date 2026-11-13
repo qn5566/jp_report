@@ -1,0 +1,261 @@
+{
+  "park": {
+    "themeMode": "park",
+    "title": "遊樂園",
+    "feedSeason": "park",
+    "subItems": [
+      {
+        "id": "park_all",
+        "icon": "",
+        "name": "全部主題樂園",
+        "type": "park_type",
+        "val": "all"
+      },
+      {
+        "id": "park_disney",
+        "icon": "",
+        "name": "東京迪士尼樂園/海洋",
+        "type": "park_type",
+        "val": "disney"
+      },
+      {
+        "id": "park_usj",
+        "icon": "",
+        "name": "日本環球影城 USJ",
+        "type": "park_type",
+        "val": "usj"
+      },
+      {
+        "id": "park_ghibli",
+        "icon": "",
+        "name": "吉卜力公園",
+        "type": "park_type",
+        "val": "ghibli"
+      },
+      {
+        "id": "park_fujiq",
+        "icon": "",
+        "name": "富士急樂園",
+        "type": "park_type",
+        "val": "fujiq"
+      },
+      {
+        "id": "park_warner",
+        "icon": "",
+        "name": "東京哈利波特影城",
+        "type": "park_type",
+        "val": "warner"
+      }
+    ]
+  },
+  "flower": {
+    "themeMode": "sakura",
+    "title": "賞花前線",
+    "feedSeason": "sakura",
+    "subItems": [
+      {
+        "id": "sakura_bloom",
+        "icon": "",
+        "name": "櫻花前線",
+        "type": "season",
+        "val": "sakura"
+      },
+      {
+        "id": "fuji_wisteria",
+        "icon": "",
+        "name": "紫藤瀑布",
+        "type": "season",
+        "val": "wisteria"
+      },
+      {
+        "id": "nemophila_sea",
+        "icon": "",
+        "name": "粉蝶花海",
+        "type": "season",
+        "val": "nemophila"
+      },
+      {
+        "id": "hydrangea_season",
+        "icon": "",
+        "name": "繡球花季",
+        "type": "season",
+        "val": "hydrangea"
+      },
+      {
+        "id": "momiji_view",
+        "icon": "",
+        "name": "秋季楓紅",
+        "type": "season",
+        "val": "momiji"
+      },
+      {
+        "id": "ginkgo_gold",
+        "icon": "",
+        "name": "黃金銀杏",
+        "type": "season",
+        "val": "ginkgo"
+      },
+      {
+        "id": "lavender_field",
+        "icon": "",
+        "name": "薰衣草",
+        "type": "season",
+        "val": "lavender"
+      },
+      {
+        "id": "shibazakura_carpet",
+        "icon": "",
+        "name": "芝櫻花毯",
+        "type": "season",
+        "val": "shibazakura"
+      },
+      {
+        "id": "cosmos_autumn",
+        "icon": "",
+        "name": "波斯菊/秋櫻",
+        "type": "season",
+        "val": "cosmos"
+      },
+      {
+        "id": "ume_spring",
+        "icon": "",
+        "name": "早春梅花",
+        "type": "season",
+        "val": "ume"
+      }
+    ]
+  },
+  "snow": {
+    "themeMode": "snow",
+    "title": "極上粉雪",
+    "feedSeason": "snow",
+    "subItems": [
+      {
+        "id": "snow_level_all",
+        "icon": "⛷️",
+        "name": "全部難度",
+        "type": "snow_level",
+        "val": "all"
+      },
+      {
+        "id": "snow_level_beginner",
+        "icon": "🟢",
+        "name": "初級新手",
+        "type": "snow_level",
+        "val": "beginner"
+      },
+      {
+        "id": "snow_level_intermediate",
+        "icon": "🔵",
+        "name": "中級進階",
+        "type": "snow_level",
+        "val": "intermediate"
+      },
+      {
+        "id": "snow_level_advanced",
+        "icon": "⚫",
+        "name": "高階野雪",
+        "type": "snow_level",
+        "val": "advanced"
+      },
+      {
+        "id": "snow_coach_portal",
+        "icon": "🏂",
+        "name": "教練名冊",
+        "type": "portal",
+        "val": "openCoachBooking"
+      }
+    ]
+  },
+  "camp_charter": {
+    "themeMode": "camp",
+    "title": "露營自駕",
+    "feedSeason": "spots",
+    "subItems": [
+      {
+        "id": "camp_type_all",
+        "icon": "🏕️",
+        "name": "全部情境",
+        "type": "camp_type",
+        "val": "all"
+      },
+      {
+        "id": "camp_autocamp",
+        "icon": "🚗",
+        "name": "絕景營地",
+        "type": "camp_type",
+        "val": "autocamp"
+      },
+      {
+        "id": "camp_glamping",
+        "icon": "✨",
+        "name": "豪華露營",
+        "type": "camp_type",
+        "val": "glamping"
+      },
+      {
+        "id": "camp_vanlife",
+        "icon": "🚐",
+        "name": "露營車漫遊",
+        "type": "camp_type",
+        "val": "vanlife"
+      },
+      {
+        "id": "camp_charter_portal",
+        "icon": "🚙",
+        "name": "租車包車攻略",
+        "type": "portal",
+        "val": "openCharterRentalPortal"
+      }
+    ]
+  },
+  "topics": {
+    "themeMode": "train",
+    "title": "鐵道之旅",
+    "feedSeason": "train",
+    "subItems": [
+      {
+        "id": "train_season_front",
+        "icon": "🚂",
+        "name": "四季前線",
+        "type": "season_front",
+        "val": "train_season_front"
+      },
+      {
+        "id": "train_winter",
+        "icon": "❄️",
+        "name": "冬雪列車",
+        "type": "season_front",
+        "val": "winter"
+      },
+      {
+        "id": "train_spring",
+        "icon": "🌸",
+        "name": "春花列車",
+        "type": "season_front",
+        "val": "spring"
+      },
+      {
+        "id": "train_summer",
+        "icon": "🌿",
+        "name": "夏綠列車",
+        "type": "season_front",
+        "val": "summer"
+      },
+      {
+        "id": "train_autumn",
+        "icon": "🍁",
+        "name": "秋楓列車",
+        "type": "season_front",
+        "val": "autumn"
+      },
+      {
+        "id": "topic_train",
+        "icon": "🚅",
+        "name": "特急圖鑑",
+        "type": "portal",
+        "val": "openTrainPortal"
+      }
+    ]
+  }
+}

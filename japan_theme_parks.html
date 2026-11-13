@@ -7118,39 +7118,7 @@ function initGuideCandyBubbles(containerId){
 
 var IMG={castle:"photo-1542640244-7e672d6cef4e",coaster:"photo-1536768139911-e290a59011e4",anime:"photo-1528360983277-13d401cdc186",nature:"photo-1469474968028-56623f02e42e",snow:"photo-1491002052546-bf38f186af56",sea:"photo-1507525428034-b723cf961d3e",edo:"photo-1493976040374-85c8e12f0c0e"};
 var R={kanto:"關東",kansai:"關西",chubu:"中部",kyushu:"九州",hokkaido:"北海道",okinawa:"沖繩"};
-var D=[
-["東京迪士尼樂園 (Disneyland)","kanto","千葉",["經典童話","日間夜間大遊行","幼童友善設施最多"],"低幼親子","全日 10–12 小時","JR 京葉線「舞濱站」轉度假區線，或機場巴士直達","castle"],
-["東京迪士尼海洋 (DisneySea)","kanto","千葉",["夢幻泉鄉全新主題","達菲熊","全日唯一海洋景觀"],"情侶・親子","全日 10–12 小時","JR 舞濱站轉度假區線至「東京迪士尼海洋站」","sea"],
-["日本環球影城 (USJ)","kansai","大阪",["超級任天堂世界","咚奇剛國度","哈利波特魔法世界"],"刺激冒險・遊戲迷","全日 10–12 小時","JR 夢咲線「環球影城站」步行約 5 分鐘","coaster"],
-["東京華納兄弟哈利波特影城","kanto","東京",["全球最大室內實景","九又四分之三月台","黃油啤酒"],"哈迷・電影迷","3–5 小時","西武豐島線／都營大江戶線「豐島園站」步行 5 分鐘","castle"],
-["讀賣樂園（含 PokéPark Kanto / Pokémon Wonder）","kanto","東京",["寶可夢森林冒險","冬季寶石點燈","溫和型過山車"],"寶可夢迷・親子","5–8 小時","京王相模原線「京王多摩中心站」轉纜車","anime"],
-["三麗鷗彩虹樂園 (Sanrio Puroland)","kanto","東京",["Hello Kitty 美樂蒂全室內","雨天備案","低幼首選"],"低幼親子","4–6 小時","京王／小田急多摩線「多摩中心站」步行 5 分鐘","anime"],
-["吉卜力公園 (Ghibli Park)","chubu","愛知",["大龍貓森林","魔女之谷","神隱少女實景散策"],"動漫狂熱","全日（需預約）","地下鐵東山線轉 Linimo「愛・地球博紀念公園站」","nature"],
-["富士急樂園 (Fuji-Q Highland)","chubu","山梨",["富士山絕景","世界級絕叫雲霄飛車","戰慄迷宮"],"刺激冒險","6–8 小時","JR 中央線轉富士急行線「富士急樂園站」","coaster"],
-["日本樂高樂園 (LEGOLAND Japan)","chubu","愛知",["2~12歲親子打造","積木互動天地","樂高飯店"],"低幼親子","5–8 小時","名古屋站搭青波線「金城碼頭站」步行 5 分鐘","anime"],
-["長島溫泉樂園 (Nagashima Spa Land)","chubu","三重",["水陸雙棲雲霄飛車聖地","鄰近麵包超人博物館","溫泉度假"],"刺激冒險","全日","名古屋站高速巴士直達約 1 小時","coaster"],
-["豪斯登堡 (Huis Ten Bosch)","kyushu","長崎",["荷蘭運河花海","日本最大夜間光之王國","四季花景"],"情侶・親子","全日","JR 特急「豪斯登堡站」直達","nature"],
-["二次元之森 (Nijigen no Mori)","kansai","兵庫",["淡路島動漫樂園","火影忍者村","等身大哥吉拉"],"動漫狂熱","3–5 小時","神戶三宮／舞子搭高速巴士至淡路島，建議自駕","anime"],
-["橫濱八景島海島樂園","kanto","神奈川",["巨型水族館","海上午夜雲霄飛車","海洋觸摸池"],"親子・情侶","5–7 小時","金澤海岸線「八景島站」","sea"],
-["東條湖玩具王國","kansai","兵庫",["巨型室內玩具試玩館","小汽車森林家族","0歲友善"],"低幼親子","4–6 小時","大阪／神戶出發自駕約 1 小時","anime"],
-["橫濱麵包超人兒童博物館","kanto","神奈川",["專為0~5歲設計","無障礙軟墊遊戲區","麵包工坊表演"],"低幼親子","3–4 小時","港未來線「馬車道站」步行 5 分鐘","anime"],
-["三麗鷗和諧樂園 (Harmonyland)","kyushu","大分",["戶外 Hello Kitty 城堡","四季花景","花車大遊行"],"低幼親子","5–7 小時","JR 日出站轉計程車／接駁巴士","anime"],
-["鈴鹿賽道樂園 (Suzuka Circuit Park)","chubu","三重",["F1級賽道文化","全年齡卡丁車自駕","機械互動"],"賽車迷","5–7 小時","近鐵「白子站」轉接駁巴士至「鈴鹿賽道站」","coaster"],
-["日光江戶村 (Edo Wonderland)","kanto","栃木",["江戶忍者修行","武士體驗","穿越劇造景"],"歷史・親子","5–6 小時","東武鬼怒川線「鬼怒川溫泉站」轉巴士","edo"],
-["白戀人公園 (Shiroi Koibito Park)","hokkaido","札幌",["英倫童話雪景莊園","巧克力手作工坊","整點機關鐘"],"情侶・親子","2–3 小時","地下鐵東西線「宮之澤站」步行 7 分鐘","snow"],
-["志摩西班牙村 (Parque España)","chubu","三重",["地中海白牆異國風","佛朗明哥秀","排隊時間極短"],"情侶・親子","全日","近鐵「鳥羽站」搭巴士直達","sea"],
-["那須高地樂園 (Nasu Highland Park)","kanto","栃木",["森林系避暑勝地","寵物友善","家庭過山車"],"家庭・寵物","5–6 小時","JR 那須塩原站轉巴士，建議自駕","nature"],
-["沖繩名護鳳梨園","okinawa","名護",["自動駕駛鳳梨車","恐龍探險區","自駕停靠推薦"],"自駕親子","1.5–2 小時","那霸自駕沖繩道約 1 小時 15 分","nature"],
-["伊豆仙人掌動物公園","chubu","靜岡",["水豚露天溫泉發源地","松鼠猴零距離互動","仙人掌溫室"],"親子・動物迷","3–4 小時","伊豆急「伊豆高原站」轉巴士","nature"],
-["姆明谷公園 (Moominvalley Park)","kanto","埼玉",["北歐嚕嚕米湖畔童話","自然森林散策","主題餐廳"],"情侶・親子","3–5 小時","西武線「飯能站」轉巴士約 10 分鐘","nature"],
-["枚方公園 (Hirakata Park)","kansai","大阪",["老字號遊樂園","木造過山車","冬季戶外滑冰場"],"家庭","4–6 小時","京阪本線「枚方公園站」步行 1 分鐘","coaster"],
-["登別伊達時代村","hokkaido","登別",["北海道幕府武士街景","忍者機關屋","花魁道中"],"歷史・親子","3–5 小時","JR「登別站」轉巴士約 15 分鐘","edo"],
-["神戶麵包超人兒童博物館","kansai","兵庫",["神戶港旁","海景摩天輪","麵包超人室內市集"],"低幼親子","3–4 小時","地下鐵海岸線「港元町站」步行 5 分鐘","anime"],
-["東京 Joypolis","kanto","東京",["台場 SEGA 室內 VR","電競過山車","雨天避風首選"],"刺激冒險・雨天備案","3–5 小時","百合海鷗號「台場站」步行 3 分鐘","coaster"],
-["太秦映畫村 (Toei Kyoto Studio Park)","kansai","京都",["東映時代劇拍攝實景","福音戰士初號機駕駛艙","忍者表演"],"歷史・動漫","3–5 小時","JR 嵯峨野線「太秦嵐山站」步行 10 分鐘","edo"],
-["沖繩 DINO 恐龍 PARK","okinawa","名護",["亞熱帶蕨類森林","機械恐龍近距離","自駕親子"],"低幼親子","1.5–2 小時","那霸自駕沖繩道約 1 小時 20 分","nature"],
-["九州自然野生動物園 (African Safari)","kyushu","大分",["自駕開車入園","叢林巴士餵獅子","近距離小動物撫摸"],"自駕・親子","4–6 小時","JR 別府站轉乘龜之井巴士約 50 分鐘，或自駕 25 分鐘","nature"]
-].map(function(d,i){return{id:"p"+(i+1),rank:i+1,name:d[0],region:d[1],loc:d[2],tags:d[3],group:d[4],stay:d[5],transit:d[6],img:(i===0 ? "./images/disney_parade_night.jpg" : "https://images.unsplash.com/"+IMG[d[7]]+"?auto=format&fit=crop&w=1200&q=80")};});
+var D = []; // 由 data/theme_parks.json 載入
 
 var FALLBACK="https://images.unsplash.com/"+IMG.castle+"?auto=format&fit=crop&w=1200&q=80";
 var curRegion="all",curId="p1";
@@ -7158,39 +7126,7 @@ var $=function(i){return document.getElementById(i)};
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 var TAGC=["y","p","m"];
 
-var TICKET_URLS = {
-  "p1": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E6%A8%82%E5%9C%92%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park",
-  "p2": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E6%A8%82%E5%9C%92%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park",
-  "p3": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E6%A8%82%E5%9C%92%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Fosaka-219%2Funiversal-studios-japan-10758413%2F",
-  "p4": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E6%A8%82%E5%9C%92%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park",
-  "p5": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E8%AE%80%E8%B3%A3%E6%A8%82%E5%9C%92%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park",
-  "p6": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub3=D20905663&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1_%E4%B8%89%E9%BA%97%E5%86%B7%E9%96%80%E7%A5%A8&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Ftokyo-294%2Ftourist-attractions%2F%3Fcategory%3Dtheme-park",
-  "p7": "https://tw.trip.com/travel-guide/attraction/nagakute/ghibli-park-135541011/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p8": "https://tw.trip.com/travel-guide/attraction/fujiyoshida/fuji-q-highland-84180/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p9": "https://tw.trip.com/travel-guide/attraction/nagoya/legoland-japan-resort-18818815/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p10": "https://tw.trip.com/travel-guide/attraction/kuwana/nagashima-spa-land-91341/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p11": "https://tw.trip.com/travel-guide/attraction/sasebo/huis-ten-bosch-10524177/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p12": "https://tw.trip.com/travel-guide/attraction/awaji/nijigen-no-mori-56531580/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p13": "https://tw.trip.com/travel-guide/attraction/yokohama/yokohama-hakkeijima-sea-paradise-88185/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p14": "https://tw.trip.com/travel-guide/attraction/kato/tojo-ko-toy-kingdom-88190/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p15": "https://tw.trip.com/travel-guide/attraction/yokohama/yokohama-anpanman-children-s-museum-107770/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p16": "https://tw.trip.com/travel-guide/attraction/hiji/harmonyland-10523491/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p17": "https://tw.trip.com/travel-guide/attraction/suzuka/suzuka-circuit-park-88184/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p18": "https://tw.trip.com/travel-guide/attraction/nikko/edo-wonderland-nikko-edamura-88182/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p19": "https://tw.trip.com/travel-guide/attraction/sapporo/shiroi-koibito-park-10523492/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p20": "https://tw.trip.com/travel-guide/attraction/shima/parque-espana-88186/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p21": "https://tw.trip.com/travel-guide/attraction/nasu/nasu-highland-park-88187/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p22": "https://tw.trip.com/travel-guide/attraction/nago/nago-pineapple-park-88188/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p23": "https://tw.trip.com/travel-guide/attraction/ito/izu-shaboten-zoo-88189/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p24": "https://tw.trip.com/travel-guide/attraction/hanno/moominvalley-park-56531581/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p25": "https://tw.trip.com/travel-guide/attraction/hirakata/hirakata-park-88191/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p26": "https://tw.trip.com/travel-guide/attraction/noboribetsu/noboribetsu-date-jidaimura-88192/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p27": "https://tw.trip.com/travel-guide/attraction/kobe/kobe-anpanman-children-s-museum-mall-88193/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p28": "https://tw.trip.com/travel-guide/attraction/tokyo/tokyo-joypolis-10523493/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p29": "https://tw.trip.com/travel-guide/attraction/kyoto/toei-kyoto-studio-park-88194/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p30": "https://tw.trip.com/travel-guide/attraction/nago/dino-park-yanbaru-subtropical-forest-88195/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
-  "p31": "https://tw.trip.com/travel-guide/attraction/usa/kyushu-natural-animal-park-african-safari-88191/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275"
-};
+var TICKET_URLS = {}; // 由 data/theme_park_tickets.json 載入
 
 function ticketUrl(){
   if(TICKET_URLS[curId]){
@@ -7888,7 +7824,20 @@ function startParticles31(){
   initGuideCandyBubbles("dgParticles31");
 }
 
-select("p1",false);
+// 樂園清單與門票連結改由外部 JSON 載入後再首次渲染
+(function(){
+  Promise.all([
+    fetch("data/theme_parks.json",{cache:"no-store"}).then(function(r){return r.json()}),
+    fetch("data/theme_park_tickets.json",{cache:"no-store"}).then(function(r){return r.json()})
+  ]).then(function(results){
+    D = results[0];
+    TICKET_URLS = results[1];
+    select("p1",false);
+  }).catch(function(e){
+    console.error("樂園資料載入失敗:", e);
+    select("p1",false);
+  });
+})();
 </script>
   <script src="./js/tabi_core.js"></script>
 <!-- 頁尾 -->

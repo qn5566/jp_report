@@ -1,0 +1,686 @@
+[
+  {
+    "id": "niseko",
+    "region": "hokkaido",
+    "fis": false,
+    "name": "二世谷聯合度假村",
+    "jp": "ニセコユナイテッド",
+    "en": "Niseko United",
+    "snow": "積雪 295cm ｜ 24h新雪 +35cm",
+    "hl": "全球粉雪之王・羊蹄山逆富士夜滑・JAPOW野雪樹林",
+    "lv": [
+      30,
+      40,
+      30
+    ],
+    "transit": "新千歲機場接駁巴士約 2.5 小時直達四大雪場門口",
+    "tags": [
+      "魔毯輸送帶",
+      "單板友善"
+    ],
+    "coach": true,
+    "cam": "1ksmiy6EsDo",
+    "camAlt": "LQ_Cv4aFuq8",
+    "act": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=二世谷_教練裝備&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Fniseko-107775%2Ftourist-attractions%2F%3Fcategory%3Dski",
+    "pass": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=二世谷_雪票&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Fniseko-107775%2Fniseko-united-10758410%2F",
+    "hotel": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=二世谷_飯店比價&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Fniseko-hotels-list-107775%2F",
+    "bus": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=二世谷_機場巴士&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Fchitose-107773%2Ftourist-attractions%2F"
+  },
+  {
+    "id": "rusutsu",
+    "region": "hokkaido",
+    "fis": false,
+    "name": "留壽都度假村",
+    "jp": "ルスツリゾート",
+    "en": "Rusutsu Resort",
+    "snow": "積雪 210cm ｜ 24h新雪 +22cm",
+    "hl": "滑雪＋遊樂園一站玩・親子友善寬敞雪道・樹林粉雪",
+    "lv": [
+      40,
+      40,
+      20
+    ],
+    "transit": "新千歲機場接駁巴士約 2 小時，札幌市區有直達巴士",
+    "tags": [
+      "魔毯輸送帶",
+      "單板友善",
+      "親子友善"
+    ],
+    "coach": true,
+    "cam": "",
+    "camUrl": "https://rusutsu.com/live-camera/",
+    "act": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=留壽都_教練裝備&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Frusutsu-107776%2Ftourist-attractions%2F%3Fcategory%3Dski",
+    "pass": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=留壽都_雪票&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Frusutsu-107776%2Frusutsu-resort-ski-area-10758411%2F",
+    "hotel": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=留壽都_飯店比價&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Frusutsu-hotels-list-107776%2F"
+  },
+  {
+    "id": "kiroro",
+    "region": "hokkaido",
+    "fis": false,
+    "name": "喜樂樂度假村",
+    "jp": "キロロリゾート",
+    "en": "Kiroro Resort",
+    "snow": "積雪 295cm ｜ 24h新雪 +18cm",
+    "hl": "山頂積雪冠軍・鬆軟乾粉雪・Ski-in/Ski-out 度假飯店",
+    "lv": [
+      30,
+      40,
+      30
+    ],
+    "transit": "新千歲機場／札幌市區接駁巴士約 2 小時直達",
+    "tags": [
+      "魔毯輸送帶",
+      "單板友善"
+    ],
+    "coach": true,
+    "cam": "",
+    "camUrl": "https://www.kiroro.co.jp/snow-report/",
+    "act": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=喜樂樂_教練裝備&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Fakaigawa-107777%2Ftourist-attractions%2F%3Fcategory%3Dski",
+    "pass": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=喜樂樂_雪票&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Ftravel-guide%2Fattraction%2Fakaigawa-107777%2Fkiroro-snow-world-10758412%2F",
+    "hotel": "https://tw.trip.com/?Allianceid=9507030&SID=325761227&trip_sub1=喜樂樂_飯店比價&trip_sub3=D20905663&redirect_url=https%3A%2F%2Ftw.trip.com%2Fhotels%2Fakaigawa-hotels-list-107777%2F"
+  },
+  {
+    "id": "fujiten",
+    "region": "kanto",
+    "fis": false,
+    "name": "富士天神山滑雪場",
+    "jp": "富士見パノラマ／富士天神山",
+    "en": "Fujiten Snow Resort",
+    "snow": "積雪 60cm ｜ 24h新雪 +0cm",
+    "hl": "富士山近景晴空滑雪・初學緩坡晴天率高・東京近郊一日往返",
+    "lv": [
+      50,
+      40,
+      10
+    ],
+    "transit": "河口湖站搭計程車約 25 分鐘，東京新宿出發巴士約 2.5 小時",
+    "tags": [
+      "魔毯輸送帶",
+      "單板友善",
+      "初學友善"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "hakuba",
+    "region": "nagano",
+    "fis": true,
+    "name": "白馬八方尾根",
+    "jp": "白馬八方尾根",
+    "en": "Hakuba Happo-one",
+    "snow": "積雪 180cm ｜ 24h新雪 +15cm",
+    "hl": "長野冬奧滑降賽道・北阿爾卑斯絕景・高階雪道齊全",
+    "lv": [
+      20,
+      40,
+      40
+    ],
+    "transit": "長野站搭巴士約 1 小時，東京出發新幹線轉巴士約 3.5 小時",
+    "tags": [
+      "單板友善",
+      "冬奧賽道"
+    ],
+    "coach": true,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "naeba",
+    "region": "niigata",
+    "fis": false,
+    "name": "苗場滑雪場",
+    "jp": "苗場スキー場",
+    "en": "Naeba Ski Resort",
+    "snow": "積雪 150cm ｜ 24h新雪 +10cm",
+    "hl": "東京近郊大型雪場・單板公園人氣・新幹線＋接駁輕鬆抵達",
+    "lv": [
+      40,
+      40,
+      20
+    ],
+    "transit": "越後湯澤站搭接駁巴士約 40 分鐘，東京出發約 2 小時",
+    "tags": [
+      "魔毯輸送帶",
+      "單板友善"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "zao",
+    "region": "tohoku",
+    "fis": false,
+    "name": "藏王溫泉滑雪場",
+    "jp": "蔵王温泉スキー場",
+    "en": "Zao Onsen",
+    "snow": "積雪 200cm ｜ 24h新雪 +20cm",
+    "hl": "世界級樹冰雪怪奇景・滑雪後泡溫泉・長距離滑降",
+    "lv": [
+      30,
+      40,
+      30
+    ],
+    "transit": "山形站搭巴士約 40 分鐘，東京新幹線約 3 小時",
+    "tags": [
+      "單板友善",
+      "溫泉"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "furano",
+    "region": "hokkaido",
+    "fis": true,
+    "name": "富良野滑雪場",
+    "jp": "富良野スキー場",
+    "en": "Furano Ski Resort",
+    "snow": "積雪 170cm ｜ 24h新雪 +12cm",
+    "hl": "北海道中心的乾粉雪・FIS 世界盃賽道・薰衣草故鄉雪景",
+    "lv": [
+      30,
+      40,
+      30
+    ],
+    "transit": "旭川機場巴士約 1 小時，札幌出發約 2.5 小時",
+    "tags": [
+      "魔毯輸送帶",
+      "單板友善"
+    ],
+    "coach": true,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "teine",
+    "region": "hokkaido",
+    "fis": true,
+    "name": "札幌手稻滑雪場",
+    "jp": "札幌手稲スキー場",
+    "en": "Sapporo Teine",
+    "snow": "積雪 190cm ｜ 24h新雪 +20cm",
+    "hl": "札幌市區最近的雪場・可眺望石狩灣・夜滑方便",
+    "lv": [
+      25,
+      40,
+      35
+    ],
+    "transit": "札幌站搭 JR 轉巴士約 1 小時",
+    "tags": [
+      "單板友善",
+      "夜滑"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "tomamu",
+    "region": "hokkaido",
+    "fis": false,
+    "name": "星野 TOMAMU 度假村",
+    "jp": "星野リゾート トマム",
+    "en": "Hoshino Resorts Tomamu",
+    "snow": "積雪 160cm ｜ 24h新雪 +15cm",
+    "hl": "雲海露台・Ski-in/Ski-out 度假飯店・親子雪地活動",
+    "lv": [
+      40,
+      40,
+      20
+    ],
+    "transit": "新千歲機場直達巴士約 2 小時，JR 至「トマム站」",
+    "tags": [
+      "魔毯輸送帶",
+      "親子友善"
+    ],
+    "coach": true,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "kokusai",
+    "region": "hokkaido",
+    "fis": false,
+    "name": "札幌國際滑雪場",
+    "jp": "札幌国際スキー場",
+    "en": "Sapporo Kokusai",
+    "snow": "積雪 260cm ｜ 24h新雪 +25cm",
+    "hl": "札幌近郊深雪天堂・樹林野雪・上山纜車直達山頂",
+    "lv": [
+      20,
+      40,
+      40
+    ],
+    "transit": "札幌市區巴士約 1 小時 10 分",
+    "tags": [
+      "單板友善",
+      "野雪"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "gala",
+    "region": "niigata",
+    "fis": false,
+    "name": "GALA 湯澤滑雪場",
+    "jp": "GALA湯沢スキー場",
+    "en": "Gala Yuzawa",
+    "snow": "積雪 120cm ｜ 24h新雪 +8cm",
+    "hl": "新幹線直達雪場・東京出發可當日往返・初學友善",
+    "lv": [
+      45,
+      40,
+      15
+    ],
+    "transit": "東京站搭上越新幹線約 80 分鐘，月台直通纜車",
+    "tags": [
+      "魔毯輸送帶",
+      "新幹線直達",
+      "初學友善"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "kagura",
+    "region": "niigata",
+    "fis": false,
+    "name": "神樂滑雪場",
+    "jp": "かぐらスキー場",
+    "en": "Kagura",
+    "snow": "積雪 300cm ｜ 24h新雪 +20cm",
+    "hl": "越後湯澤厚雪區・長距離滑降・春季雪況穩定",
+    "lv": [
+      25,
+      40,
+      35
+    ],
+    "transit": "越後湯澤站搭巴士約 40 分鐘",
+    "tags": [
+      "單板友善",
+      "野雪"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "joetsu",
+    "region": "niigata",
+    "fis": false,
+    "name": "上越國際滑雪場",
+    "jp": "上越国際スキー場",
+    "en": "Joetsu Kokusai",
+    "snow": "積雪 140cm ｜ 24h新雪 +10cm",
+    "hl": "東京近郊大規模雪場・雪道寬敞・家庭客群",
+    "lv": [
+      35,
+      45,
+      20
+    ],
+    "transit": "越後湯澤站搭接駁巴士約 20 分鐘",
+    "tags": [
+      "魔毯輸送帶",
+      "單板友善"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "suginohara",
+    "region": "niigata",
+    "fis": false,
+    "name": "妙高杉之原滑雪場",
+    "jp": "妙高杉ノ原スキー場",
+    "en": "Myoko Suginohara",
+    "snow": "積雪 250cm ｜ 24h新雪 +18cm",
+    "hl": "日本最長滑降距離之一・粉雪品質高・溫泉街相鄰",
+    "lv": [
+      30,
+      40,
+      30
+    ],
+    "transit": "長野站搭巴士約 1.5 小時，或 JR 至妙高高原站",
+    "tags": [
+      "單板友善",
+      "溫泉"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "arai",
+    "region": "niigata",
+    "fis": false,
+    "name": "樂天 ARAI 度假村",
+    "jp": "ロッテアライリゾート",
+    "en": "Lotte Arai Resort",
+    "snow": "積雪 350cm ｜ 24h新雪 +22cm",
+    "hl": "新潟豪雪・高級度假飯店・粉雪與樹林滑行",
+    "lv": [
+      25,
+      45,
+      30
+    ],
+    "transit": "北陸新幹線上越妙高站接駁約 30 分鐘",
+    "tags": [
+      "單板友善",
+      "Ski-in/Ski-out"
+    ],
+    "coach": true,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "cortina",
+    "region": "nagano",
+    "fis": false,
+    "name": "白馬 Cortina 滑雪場",
+    "jp": "白馬コルチナスキー場",
+    "en": "Hakuba Cortina",
+    "snow": "積雪 320cm ｜ 24h新雪 +25cm",
+    "hl": "白馬降雪量名列前茅・樹林野雪・粉雪愛好者首選",
+    "lv": [
+      15,
+      40,
+      45
+    ],
+    "transit": "白馬站搭巴士約 1 小時",
+    "tags": [
+      "單板友善",
+      "野雪"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "goryu",
+    "region": "nagano",
+    "fis": false,
+    "name": "白馬五龍滑雪場",
+    "jp": "白馬五竜スキー場",
+    "en": "Hakuba Goryu",
+    "snow": "積雪 200cm ｜ 24h新雪 +14cm",
+    "hl": "北阿爾卑斯絕景・初學緩坡豐富・與 Hakuba47 連通",
+    "lv": [
+      35,
+      40,
+      25
+    ],
+    "transit": "白馬站搭接駁巴士約 10 分鐘",
+    "tags": [
+      "魔毯輸送帶",
+      "單板友善"
+    ],
+    "coach": true,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "shiga",
+    "region": "nagano",
+    "fis": true,
+    "name": "志賀高原",
+    "jp": "志賀高原",
+    "en": "Shiga Kogen",
+    "snow": "積雪 220cm ｜ 24h新雪 +12cm",
+    "hl": "日本最大滑雪區・18 處雪場一張券・曾辦冬奧賽事",
+    "lv": [
+      30,
+      45,
+      25
+    ],
+    "transit": "長野站搭巴士約 80 分鐘",
+    "tags": [
+      "單板友善",
+      "溫泉"
+    ],
+    "coach": true,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "nozawa",
+    "region": "nagano",
+    "fis": true,
+    "name": "野澤溫泉滑雪場",
+    "jp": "野沢温泉スキー場",
+    "en": "Nozawa Onsen",
+    "snow": "積雪 230cm ｜ 24h新雪 +16cm",
+    "hl": "溫泉古村風情・日本代表級賽道・可免費泡外湯",
+    "lv": [
+      30,
+      40,
+      30
+    ],
+    "transit": "長野站搭巴士約 70 分鐘，或北陸新幹線飯山站",
+    "tags": [
+      "單板友善",
+      "溫泉"
+    ],
+    "coach": true,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "iwatake",
+    "region": "nagano",
+    "fis": false,
+    "name": "白馬岩岳山地度假村",
+    "jp": "白馬岩岳スノーフィールド",
+    "en": "Hakuba Iwatake",
+    "snow": "積雪 150cm ｜ 24h新雪 +10cm",
+    "hl": "親子友善・平緩寬坡・山頂雪景咖啡座",
+    "lv": [
+      45,
+      40,
+      15
+    ],
+    "transit": "白馬站搭巴士約 10 分鐘",
+    "tags": [
+      "魔毯輸送帶",
+      "親子友善",
+      "初學友善"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "appi",
+    "region": "tohoku",
+    "fis": true,
+    "name": "安比高原滑雪場",
+    "jp": "安比高原スキー場",
+    "en": "Appi Kogen",
+    "snow": "積雪 190cm ｜ 24h新雪 +14cm",
+    "hl": "東北代表大型雪場・樹冰風景・FIS 賽事舉辦地",
+    "lv": [
+      30,
+      40,
+      30
+    ],
+    "transit": "盛岡站搭接駁巴士約 70 分鐘",
+    "tags": [
+      "魔毯輸送帶",
+      "單板友善"
+    ],
+    "coach": true,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "nekoma",
+    "region": "tohoku",
+    "fis": false,
+    "name": "豬苗代 Nekoma 滑雪場",
+    "jp": "ネコマ マウンテン",
+    "en": "Nekoma Mountain",
+    "snow": "積雪 280cm ｜ 24h新雪 +24cm",
+    "hl": "東北粉雪名所・日本罕見全日雪質穩定・樹林滑行",
+    "lv": [
+      25,
+      40,
+      35
+    ],
+    "transit": "郡山站搭巴士約 1.5 小時",
+    "tags": [
+      "單板友善",
+      "野雪"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "tazawako",
+    "region": "tohoku",
+    "fis": false,
+    "name": "田澤湖滑雪場",
+    "jp": "田沢湖スキー場",
+    "en": "Tazawako",
+    "snow": "積雪 210cm ｜ 24h新雪 +15cm",
+    "hl": "秋田湖景雪場・長距離緩坡・初學進階皆宜",
+    "lv": [
+      35,
+      45,
+      20
+    ],
+    "transit": "田澤湖站搭巴士約 20 分鐘",
+    "tags": [
+      "魔毯輸送帶",
+      "單板友善"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "yeti",
+    "region": "kanto",
+    "fis": false,
+    "name": "富士山滑雪場 Yeti",
+    "jp": "ふじてん／スノータウン Yeti",
+    "en": "Snow Town Yeti",
+    "snow": "積雪 90cm ｜ 24h新雪 +0cm",
+    "hl": "富士山腳下滑雪・晴天可見富士山・東京近郊",
+    "lv": [
+      45,
+      40,
+      15
+    ],
+    "transit": "JR 御殿場站搭接駁巴士約 40 分鐘",
+    "tags": [
+      "魔毯輸送帶",
+      "初學友善"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "karuizawa",
+    "region": "kanto",
+    "fis": false,
+    "name": "輕井澤王子滑雪場",
+    "jp": "軽井沢プリンスホテルスキー場",
+    "en": "Karuizawa Prince",
+    "snow": "積雪 70cm ｜ 24h新雪 +0cm",
+    "hl": "造雪設備完善・東京近郊一日遊・度假村內住宿",
+    "lv": [
+      50,
+      40,
+      10
+    ],
+    "transit": "輕井澤站步行約 5 分鐘，東京新幹線約 70 分鐘",
+    "tags": [
+      "魔毯輸送帶",
+      "初學友善",
+      "親子友善"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  },
+  {
+    "id": "tanigawa",
+    "region": "kanto",
+    "fis": false,
+    "name": "谷川岳天神平滑雪場",
+    "jp": "谷川岳天神平スキー場",
+    "en": "Tanigawadake Tenjindaira",
+    "snow": "積雪 200cm ｜ 24h新雪 +12cm",
+    "hl": "纜車直達山頂・群馬粉雪名所・山岳景緻",
+    "lv": [
+      30,
+      40,
+      30
+    ],
+    "transit": "水上站搭巴士轉纜車約 1 小時",
+    "tags": [
+      "單板友善",
+      "野雪"
+    ],
+    "coach": false,
+    "cam": "",
+    "act": "https://tw.trip.com/things-to-do/",
+    "pass": "https://tw.trip.com/things-to-do/",
+    "hotel": "https://tw.trip.com/hotels/"
+  }
+]

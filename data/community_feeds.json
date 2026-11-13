@@ -1,0 +1,232 @@
+[
+  {
+    "id": "f1",
+    "season": "sakura",
+    "user": "🌸 昨天下午剛去・小南",
+    "spot": "目黑川櫻並木",
+    "time": "昨天 15:30 實拍",
+    "bloom": "🌸 滿開吹雪 (100%)",
+    "comment": "昨天下午現場已進入最美櫻吹雪！水面全鋪滿粉紅花毯，推薦走到南部橋看櫻花景觀咖啡廳！",
+    "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_sakura_2",
+    "season": "sakura",
+    "user": "🍵 晚櫻避雷・大雄",
+    "spot": "新宿御苑 (晚櫻救援名所)",
+    "time": "昨天上午實拍",
+    "bloom": "🌸 一葉八重櫻滿開中",
+    "comment": "吉野櫻落光了別擔心！新宿御苑八重櫻花團錦簇像繡球花一樣大顆，草地野餐超級舒服！",
+    "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_sakura_3",
+    "season": "sakura",
+    "user": "📷 晨光攝影師・Eason",
+    "spot": "千鳥之淵綠道",
+    "time": "2 天前清晨實拍",
+    "bloom": "🌸 滿開護城河絕景",
+    "comment": "清晨 6:30 抵達完全免排隊，水面無風倒影如鏡，划船請於 9:00 前取號！",
+    "img": "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_sakura_4",
+    "season": "sakura",
+    "user": "<img src=\"./images/icon_matcha.png\" style=\"width:14px; height:14px; object-fit:contain; vertical-align:-2px; margin-right:3px;\">京都散策・宇治抹茶",
+    "spot": "京都 哲學之道 (櫻花水道)",
+    "time": "昨天上午實拍",
+    "bloom": "🌸 滿開吹雪 (100%)",
+    "comment": "水渠兩側櫻花交織成粉紅隧道，落櫻鋪滿整條琵琶湖疏水，清晨八點前來拍照無人空景絕美！",
+    "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_sakura_5",
+    "season": "sakura",
+    "user": "📷 旅拍達人・Kenji",
+    "spot": "東京 上野恩賜公園 (不忍池)",
+    "time": "昨天傍晚實拍",
+    "bloom": "🌸 夜櫻點燈中",
+    "comment": "不忍池畔櫻花滿開，傍晚提燈亮起氣氛超好，野餐席位已開放，下班賞櫻人潮熱絡！",
+    "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_sakura_6",
+    "season": "sakura",
+    "user": "🦌 關西特派員・May",
+    "spot": "奈良 吉野山 (一目千本)",
+    "time": "2 天前實拍",
+    "bloom": "🌸 中千本正盛開",
+    "comment": "整座山頭如粉紅地毯！下千本已開始落櫻，中千本滿開中，纜車排隊約 20 分鐘。",
+    "img": "https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_sakura_7",
+    "season": "sakura",
+    "user": "🗻 富士特派・Yuki",
+    "spot": "富士河口湖大石公園",
+    "time": "昨天 11:00 實拍",
+    "bloom": "🌸 湖畔富士櫻盛開",
+    "comment": "能見度極佳！白雪富士山配上湖畔粉紅櫻花，現場遊客讚嘆聲不斷，清晨無風倒影最美。",
+    "img": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_sakura_8",
+    "season": "sakura",
+    "user": "❄️ 東北巡禮・阿輝",
+    "spot": "青森 弘前公園 (弘前城夜櫻)",
+    "time": "3 天前實拍",
+    "bloom": "🌸 護城河粉紅花筏",
+    "comment": "護城河面已被落櫻鋪成厚厚一層粉紅花海！夜晚天守閣倒映水中，名不虛傳的日本第一櫻！",
+    "img": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f2",
+    "season": "hanabi",
+    "user": "🎆 花火攝影迷・Ken",
+    "spot": "隅田川花火大會 (第一會場側)",
+    "time": "昨天現場探勘回報",
+    "bloom": "🎆 20,000發花火前線",
+    "comment": "今年隅田川花火恢復全規模！推薦淺草河岸側景觀咖啡廳，提早預訂 2F 露台位可以完美避開百萬人潮。",
+    "img": "./images/hero_rank_hanabi.jpg"
+  },
+  {
+    "id": "f_hanabi_2",
+    "season": "hanabi",
+    "user": "🎇 祭典達人・Aoi",
+    "spot": "長岡祭大花火大會",
+    "time": "2 天前席位劃位情報",
+    "bloom": "🎇 復興祈願鳳凰連發",
+    "comment": "右岸贊助席視野毫無遮蔽！信濃川夜風稍涼，記得帶薄外套與折疊野餐墊。",
+    "img": "https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_hanabi_3",
+    "season": "hanabi",
+    "user": "🌊 湘南追風・Ren",
+    "spot": "鎌倉海岸花火大會",
+    "time": "3 天前實拍回報",
+    "bloom": "🎆 水中花火水面開花",
+    "comment": "由比濱海灘坐沙灘看煙火超舒服！出由比濱站步行 5 分鐘即達，散場建議徒步至長谷站分流。",
+    "img": "https://images.unsplash.com/photo-1533230807904-61ad1dd3f061?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f4",
+    "season": "snow",
+    "user": "⛷️ 追雪族・Yuki",
+    "spot": "GALA湯澤滑雪度假村",
+    "time": "昨天下午 14:00 實測",
+    "bloom": "❄️ 積雪 285cm 鬆軟乾粉",
+    "comment": "初級愛之鐘雪道非常厚實，下山泡溫泉街的町家足湯超棒！新幹線出閘 2 分鐘直衝纜車！",
+    "img": "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_snow_2",
+    "season": "snow",
+    "user": "🏂 單板狂熱・Leo",
+    "spot": "北海道・二世谷比羅夫 (Grand Hirafu)",
+    "time": "昨天剛滑完回報",
+    "bloom": "❄️ 極上 JAPOW 粉雪 340cm",
+    "comment": "山頂大雪後粉雪深及膝蓋，滑樹林完全不板底震動！夜滑燈光超美，比羅夫主街居酒屋需提早訂。",
+    "img": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_snow_3",
+    "season": "snow",
+    "user": "🎿 白馬老手・Mark",
+    "spot": "長野・白馬八方尾根滑雪場",
+    "time": "2 天前回報",
+    "bloom": "❄️ 標高差 1,071m 鬆雪道全開",
+    "comment": "奧林匹克名道兔平雪道硬度適中！推薦山頂 HARBOR 景觀露台喝熱可可看北阿爾卑斯連峰！",
+    "img": "https://images.unsplash.com/photo-1565992441121-4367c2967103?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_momiji_1",
+    "season": "momiji",
+    "user": "🍁 京都散策・美智子",
+    "spot": "京都嵐山・天龍寺曹源池",
+    "time": "昨天清晨實拍",
+    "bloom": "🍁 滿開見頃 (紅葉指數 100%)",
+    "comment": "曹源池借景嵐山紅葉倒影太夢幻了！清晨 8:30 開門第一批入場完全無人，竹林小徑也很順光。",
+    "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_momiji_2",
+    "season": "momiji",
+    "user": "📷 富士追光・Taka",
+    "spot": "富士河口湖紅葉迴廊",
+    "time": "2 天前夜楓回報",
+    "bloom": "🍁 60株百年巨木夜楓點燈",
+    "comment": "紅葉迴廊落葉地毯厚達 5 公分！下午 16:30 點燈與富士山剪影同框絕景，推薦湖畔茶屋喝烤糰子。",
+    "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_ginkgo_1",
+    "season": "ginkgo",
+    "user": "🍂 銀杏大道・Sora",
+    "spot": "明治神宮外苑銀杏大道",
+    "time": "昨天下午 15:00 實拍",
+    "bloom": "🍂 純金地毯滿地覆蓋 (100%)",
+    "comment": "青山通往聖德紀念繪畫館的 146 株銀杏已達純金高峰！陽光穿透樹梢超閃耀，Shake Shack 露台位超讚！",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_ginkgo_2",
+    "season": "ginkgo",
+    "user": "☕ 昭和野餐・Nana",
+    "spot": "國立昭和記念公園",
+    "time": "2 天前實拍回報",
+    "bloom": "🍂 200m 運河銀杏並木金黃",
+    "comment": "立川站出站直達，運河倒影純金銀杏太迷人！租台腳踏車繞園區騎行最舒服，推薦自備野餐墊。",
+    "img": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_train_1",
+    "season": "train",
+    "user": "🚂 蒸機狂熱・Kenji",
+    "spot": "SL 磐越物語 (JR東日本)",
+    "time": "昨天出發實拍",
+    "bloom": "🚂 黑鐵貴婦人鳴笛滿載",
+    "comment": "阿賀野川綠意山峽超夢幻！4號車全景展望室拍照順光，車上限定地酒便當在5號車務必一開車就去買！",
+    "img": "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_train_2",
+    "season": "train",
+    "user": "🍵 九州散策・May",
+    "spot": "特急 由布院之森 (JR九州)",
+    "time": "2 天前乘車回報",
+    "bloom": "🌲 高地森綠景觀車廂",
+    "comment": "木質地板配大面綠意景觀窗極度治癒！由布院大豆冰淇淋與特製便當口感驚艷，持JR九州Pass劃位超方便！",
+    "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_camp_1",
+    "season": "camp",
+    "user": "⛺ 湖畔野營・Ray",
+    "spot": "本栖湖浩庵露營場",
+    "time": "昨天清晨實拍",
+    "bloom": "🗻 千圓紙鈔逆富士 100% 能見",
+    "comment": "早上 5:40 走出帳篷看見無風湖面的逆富士，感動到起雞皮疙瘩！自駕租 SUV 載四人裝備直達湖畔超輕鬆！",
+    "img": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_acg_1",
+    "season": "acg",
+    "user": "🎪 原畫朝聖・小林",
+    "spot": "AnimeJapan / 澀谷快閃",
+    "time": "昨天現場實拍",
+    "bloom": "🎪 等身立牌原畫特展公開",
+    "comment": "現場人潮比想像中有秩序！9點前排隊順利拿到11點咖啡廳整理券，特典壓克力立牌質感滿分！",
+    "img": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "f_sports_1",
+    "season": "sports",
+    "user": "⚾ 虎迷魂・阿豪",
+    "spot": "阪神甲子園球場",
+    "time": "昨晚賽事实拍",
+    "bloom": "⚾ 4萬人黃金氣球燃爆夜空",
+    "comment": "七局下半全場齊唱隊歌放氣球的震撼力一生必體驗一次！外野席氣氛超棒，球場甲子園咖哩飯必吃！",
+    "img": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=400&q=80"
+  }
+]

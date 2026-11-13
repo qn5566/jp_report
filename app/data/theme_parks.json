@@ -1,0 +1,498 @@
+[
+  {
+    "id": "p1",
+    "rank": 1,
+    "name": "東京迪士尼樂園 (Disneyland)",
+    "region": "kanto",
+    "loc": "千葉",
+    "tags": [
+      "經典童話",
+      "日間夜間大遊行",
+      "幼童友善設施最多"
+    ],
+    "group": "低幼親子",
+    "stay": "全日 10–12 小時",
+    "transit": "JR 京葉線「舞濱站」轉度假區線，或機場巴士直達",
+    "img": "./images/disney_parade_night.jpg"
+  },
+  {
+    "id": "p2",
+    "rank": 2,
+    "name": "東京迪士尼海洋 (DisneySea)",
+    "region": "kanto",
+    "loc": "千葉",
+    "tags": [
+      "夢幻泉鄉全新主題",
+      "達菲熊",
+      "全日唯一海洋景觀"
+    ],
+    "group": "情侶・親子",
+    "stay": "全日 10–12 小時",
+    "transit": "JR 舞濱站轉度假區線至「東京迪士尼海洋站」",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p3",
+    "rank": 3,
+    "name": "日本環球影城 (USJ)",
+    "region": "kansai",
+    "loc": "大阪",
+    "tags": [
+      "超級任天堂世界",
+      "咚奇剛國度",
+      "哈利波特魔法世界"
+    ],
+    "group": "刺激冒險・遊戲迷",
+    "stay": "全日 10–12 小時",
+    "transit": "JR 夢咲線「環球影城站」步行約 5 分鐘",
+    "img": "https://images.unsplash.com/photo-1536768139911-e290a59011e4?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p4",
+    "rank": 4,
+    "name": "東京華納兄弟哈利波特影城",
+    "region": "kanto",
+    "loc": "東京",
+    "tags": [
+      "全球最大室內實景",
+      "九又四分之三月台",
+      "黃油啤酒"
+    ],
+    "group": "哈迷・電影迷",
+    "stay": "3–5 小時",
+    "transit": "西武豐島線／都營大江戶線「豐島園站」步行 5 分鐘",
+    "img": "https://images.unsplash.com/photo-1542640244-7e672d6cef4e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p5",
+    "rank": 5,
+    "name": "讀賣樂園（含 PokéPark Kanto / Pokémon Wonder）",
+    "region": "kanto",
+    "loc": "東京",
+    "tags": [
+      "寶可夢森林冒險",
+      "冬季寶石點燈",
+      "溫和型過山車"
+    ],
+    "group": "寶可夢迷・親子",
+    "stay": "5–8 小時",
+    "transit": "京王相模原線「京王多摩中心站」轉纜車",
+    "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p6",
+    "rank": 6,
+    "name": "三麗鷗彩虹樂園 (Sanrio Puroland)",
+    "region": "kanto",
+    "loc": "東京",
+    "tags": [
+      "Hello Kitty 美樂蒂全室內",
+      "雨天備案",
+      "低幼首選"
+    ],
+    "group": "低幼親子",
+    "stay": "4–6 小時",
+    "transit": "京王／小田急多摩線「多摩中心站」步行 5 分鐘",
+    "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p7",
+    "rank": 7,
+    "name": "吉卜力公園 (Ghibli Park)",
+    "region": "chubu",
+    "loc": "愛知",
+    "tags": [
+      "大龍貓森林",
+      "魔女之谷",
+      "神隱少女實景散策"
+    ],
+    "group": "動漫狂熱",
+    "stay": "全日（需預約）",
+    "transit": "地下鐵東山線轉 Linimo「愛・地球博紀念公園站」",
+    "img": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p8",
+    "rank": 8,
+    "name": "富士急樂園 (Fuji-Q Highland)",
+    "region": "chubu",
+    "loc": "山梨",
+    "tags": [
+      "富士山絕景",
+      "世界級絕叫雲霄飛車",
+      "戰慄迷宮"
+    ],
+    "group": "刺激冒險",
+    "stay": "6–8 小時",
+    "transit": "JR 中央線轉富士急行線「富士急樂園站」",
+    "img": "https://images.unsplash.com/photo-1536768139911-e290a59011e4?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p9",
+    "rank": 9,
+    "name": "日本樂高樂園 (LEGOLAND Japan)",
+    "region": "chubu",
+    "loc": "愛知",
+    "tags": [
+      "2~12歲親子打造",
+      "積木互動天地",
+      "樂高飯店"
+    ],
+    "group": "低幼親子",
+    "stay": "5–8 小時",
+    "transit": "名古屋站搭青波線「金城碼頭站」步行 5 分鐘",
+    "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p10",
+    "rank": 10,
+    "name": "長島溫泉樂園 (Nagashima Spa Land)",
+    "region": "chubu",
+    "loc": "三重",
+    "tags": [
+      "水陸雙棲雲霄飛車聖地",
+      "鄰近麵包超人博物館",
+      "溫泉度假"
+    ],
+    "group": "刺激冒險",
+    "stay": "全日",
+    "transit": "名古屋站高速巴士直達約 1 小時",
+    "img": "https://images.unsplash.com/photo-1536768139911-e290a59011e4?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p11",
+    "rank": 11,
+    "name": "豪斯登堡 (Huis Ten Bosch)",
+    "region": "kyushu",
+    "loc": "長崎",
+    "tags": [
+      "荷蘭運河花海",
+      "日本最大夜間光之王國",
+      "四季花景"
+    ],
+    "group": "情侶・親子",
+    "stay": "全日",
+    "transit": "JR 特急「豪斯登堡站」直達",
+    "img": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p12",
+    "rank": 12,
+    "name": "二次元之森 (Nijigen no Mori)",
+    "region": "kansai",
+    "loc": "兵庫",
+    "tags": [
+      "淡路島動漫樂園",
+      "火影忍者村",
+      "等身大哥吉拉"
+    ],
+    "group": "動漫狂熱",
+    "stay": "3–5 小時",
+    "transit": "神戶三宮／舞子搭高速巴士至淡路島，建議自駕",
+    "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p13",
+    "rank": 13,
+    "name": "橫濱八景島海島樂園",
+    "region": "kanto",
+    "loc": "神奈川",
+    "tags": [
+      "巨型水族館",
+      "海上午夜雲霄飛車",
+      "海洋觸摸池"
+    ],
+    "group": "親子・情侶",
+    "stay": "5–7 小時",
+    "transit": "金澤海岸線「八景島站」",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p14",
+    "rank": 14,
+    "name": "東條湖玩具王國",
+    "region": "kansai",
+    "loc": "兵庫",
+    "tags": [
+      "巨型室內玩具試玩館",
+      "小汽車森林家族",
+      "0歲友善"
+    ],
+    "group": "低幼親子",
+    "stay": "4–6 小時",
+    "transit": "大阪／神戶出發自駕約 1 小時",
+    "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p15",
+    "rank": 15,
+    "name": "橫濱麵包超人兒童博物館",
+    "region": "kanto",
+    "loc": "神奈川",
+    "tags": [
+      "專為0~5歲設計",
+      "無障礙軟墊遊戲區",
+      "麵包工坊表演"
+    ],
+    "group": "低幼親子",
+    "stay": "3–4 小時",
+    "transit": "港未來線「馬車道站」步行 5 分鐘",
+    "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p16",
+    "rank": 16,
+    "name": "三麗鷗和諧樂園 (Harmonyland)",
+    "region": "kyushu",
+    "loc": "大分",
+    "tags": [
+      "戶外 Hello Kitty 城堡",
+      "四季花景",
+      "花車大遊行"
+    ],
+    "group": "低幼親子",
+    "stay": "5–7 小時",
+    "transit": "JR 日出站轉計程車／接駁巴士",
+    "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p17",
+    "rank": 17,
+    "name": "鈴鹿賽道樂園 (Suzuka Circuit Park)",
+    "region": "chubu",
+    "loc": "三重",
+    "tags": [
+      "F1級賽道文化",
+      "全年齡卡丁車自駕",
+      "機械互動"
+    ],
+    "group": "賽車迷",
+    "stay": "5–7 小時",
+    "transit": "近鐵「白子站」轉接駁巴士至「鈴鹿賽道站」",
+    "img": "https://images.unsplash.com/photo-1536768139911-e290a59011e4?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p18",
+    "rank": 18,
+    "name": "日光江戶村 (Edo Wonderland)",
+    "region": "kanto",
+    "loc": "栃木",
+    "tags": [
+      "江戶忍者修行",
+      "武士體驗",
+      "穿越劇造景"
+    ],
+    "group": "歷史・親子",
+    "stay": "5–6 小時",
+    "transit": "東武鬼怒川線「鬼怒川溫泉站」轉巴士",
+    "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p19",
+    "rank": 19,
+    "name": "白戀人公園 (Shiroi Koibito Park)",
+    "region": "hokkaido",
+    "loc": "札幌",
+    "tags": [
+      "英倫童話雪景莊園",
+      "巧克力手作工坊",
+      "整點機關鐘"
+    ],
+    "group": "情侶・親子",
+    "stay": "2–3 小時",
+    "transit": "地下鐵東西線「宮之澤站」步行 7 分鐘",
+    "img": "https://images.unsplash.com/photo-1491002052546-bf38f186af56?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p20",
+    "rank": 20,
+    "name": "志摩西班牙村 (Parque España)",
+    "region": "chubu",
+    "loc": "三重",
+    "tags": [
+      "地中海白牆異國風",
+      "佛朗明哥秀",
+      "排隊時間極短"
+    ],
+    "group": "情侶・親子",
+    "stay": "全日",
+    "transit": "近鐵「鳥羽站」搭巴士直達",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p21",
+    "rank": 21,
+    "name": "那須高地樂園 (Nasu Highland Park)",
+    "region": "kanto",
+    "loc": "栃木",
+    "tags": [
+      "森林系避暑勝地",
+      "寵物友善",
+      "家庭過山車"
+    ],
+    "group": "家庭・寵物",
+    "stay": "5–6 小時",
+    "transit": "JR 那須塩原站轉巴士，建議自駕",
+    "img": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p22",
+    "rank": 22,
+    "name": "沖繩名護鳳梨園",
+    "region": "okinawa",
+    "loc": "名護",
+    "tags": [
+      "自動駕駛鳳梨車",
+      "恐龍探險區",
+      "自駕停靠推薦"
+    ],
+    "group": "自駕親子",
+    "stay": "1.5–2 小時",
+    "transit": "那霸自駕沖繩道約 1 小時 15 分",
+    "img": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p23",
+    "rank": 23,
+    "name": "伊豆仙人掌動物公園",
+    "region": "chubu",
+    "loc": "靜岡",
+    "tags": [
+      "水豚露天溫泉發源地",
+      "松鼠猴零距離互動",
+      "仙人掌溫室"
+    ],
+    "group": "親子・動物迷",
+    "stay": "3–4 小時",
+    "transit": "伊豆急「伊豆高原站」轉巴士",
+    "img": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p24",
+    "rank": 24,
+    "name": "姆明谷公園 (Moominvalley Park)",
+    "region": "kanto",
+    "loc": "埼玉",
+    "tags": [
+      "北歐嚕嚕米湖畔童話",
+      "自然森林散策",
+      "主題餐廳"
+    ],
+    "group": "情侶・親子",
+    "stay": "3–5 小時",
+    "transit": "西武線「飯能站」轉巴士約 10 分鐘",
+    "img": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p25",
+    "rank": 25,
+    "name": "枚方公園 (Hirakata Park)",
+    "region": "kansai",
+    "loc": "大阪",
+    "tags": [
+      "老字號遊樂園",
+      "木造過山車",
+      "冬季戶外滑冰場"
+    ],
+    "group": "家庭",
+    "stay": "4–6 小時",
+    "transit": "京阪本線「枚方公園站」步行 1 分鐘",
+    "img": "https://images.unsplash.com/photo-1536768139911-e290a59011e4?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p26",
+    "rank": 26,
+    "name": "登別伊達時代村",
+    "region": "hokkaido",
+    "loc": "登別",
+    "tags": [
+      "北海道幕府武士街景",
+      "忍者機關屋",
+      "花魁道中"
+    ],
+    "group": "歷史・親子",
+    "stay": "3–5 小時",
+    "transit": "JR「登別站」轉巴士約 15 分鐘",
+    "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p27",
+    "rank": 27,
+    "name": "神戶麵包超人兒童博物館",
+    "region": "kansai",
+    "loc": "兵庫",
+    "tags": [
+      "神戶港旁",
+      "海景摩天輪",
+      "麵包超人室內市集"
+    ],
+    "group": "低幼親子",
+    "stay": "3–4 小時",
+    "transit": "地下鐵海岸線「港元町站」步行 5 分鐘",
+    "img": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p28",
+    "rank": 28,
+    "name": "東京 Joypolis",
+    "region": "kanto",
+    "loc": "東京",
+    "tags": [
+      "台場 SEGA 室內 VR",
+      "電競過山車",
+      "雨天避風首選"
+    ],
+    "group": "刺激冒險・雨天備案",
+    "stay": "3–5 小時",
+    "transit": "百合海鷗號「台場站」步行 3 分鐘",
+    "img": "https://images.unsplash.com/photo-1536768139911-e290a59011e4?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p29",
+    "rank": 29,
+    "name": "太秦映畫村 (Toei Kyoto Studio Park)",
+    "region": "kansai",
+    "loc": "京都",
+    "tags": [
+      "東映時代劇拍攝實景",
+      "福音戰士初號機駕駛艙",
+      "忍者表演"
+    ],
+    "group": "歷史・動漫",
+    "stay": "3–5 小時",
+    "transit": "JR 嵯峨野線「太秦嵐山站」步行 10 分鐘",
+    "img": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p30",
+    "rank": 30,
+    "name": "沖繩 DINO 恐龍 PARK",
+    "region": "okinawa",
+    "loc": "名護",
+    "tags": [
+      "亞熱帶蕨類森林",
+      "機械恐龍近距離",
+      "自駕親子"
+    ],
+    "group": "低幼親子",
+    "stay": "1.5–2 小時",
+    "transit": "那霸自駕沖繩道約 1 小時 20 分",
+    "img": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": "p31",
+    "rank": 31,
+    "name": "九州自然野生動物園 (African Safari)",
+    "region": "kyushu",
+    "loc": "大分",
+    "tags": [
+      "自駕開車入園",
+      "叢林巴士餵獅子",
+      "近距離小動物撫摸"
+    ],
+    "group": "自駕・親子",
+    "stay": "4–6 小時",
+    "transit": "JR 別府站轉乘龜之井巴士約 50 分鐘，或自駕 25 分鐘",
+    "img": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+  }
+]

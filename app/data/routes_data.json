@@ -1,0 +1,185 @@
+{
+  "taiwan": [
+    {
+      "city": "台北 ⇄ 東京",
+      "destCode": "tokyo",
+      "airport": "成田/羽田",
+      "price": "NT$ 5,888",
+      "meta": "直飛 3h15m ｜ 每日 28 班直飛",
+      "tag": "Bestseller",
+      "tagClass": "tag-bestseller",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/taipei-to-tokyo/tickets-tpe-tyo"
+    },
+    {
+      "city": "台北 ⇄ 大阪",
+      "destCode": "osaka",
+      "airport": "關西國際機場",
+      "price": "NT$ 5,280",
+      "meta": "直飛 2h40m ｜ 環球影城首選",
+      "tag": "Popular",
+      "tagClass": "tag-popular",
+      "img": "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/taipei-to-osaka/tickets-tpe-osa"
+    },
+    {
+      "city": "台北 ⇄ 札幌（北海道）",
+      "destCode": "sapporo",
+      "airport": "新千歲機場",
+      "price": "NT$ 8,890",
+      "meta": "直飛 3h45m ｜ 冬季粉雪勝地",
+      "tag": "Trending",
+      "tagClass": "tag-trending",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/taipei-to-sapporo/tickets-tpe-spk"
+    },
+    {
+      "city": "台北 ⇄ 沖繩",
+      "destCode": "okinawa",
+      "airport": "那霸機場",
+      "price": "NT$ 4,120",
+      "meta": "直飛 1h30m ｜ 蔚藍海島度假",
+      "tag": "Hot Deal",
+      "tagClass": "tag-bestseller",
+      "img": "https://images.unsplash.com/photo-1570459027562-4a916cc6113f?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/taipei-to-okinawa/tickets-tpe-oka"
+    },
+    {
+      "city": "台北 ⇄ 福岡",
+      "destCode": "fukuoka",
+      "airport": "福岡機場",
+      "price": "NT$ 4,980",
+      "meta": "直飛 2h10m ｜ 九州拉麵屋台",
+      "tag": "Foodie",
+      "tagClass": "tag-popular",
+      "img": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/taipei-to-fukuoka/tickets-tpe-fuk"
+    },
+    {
+      "city": "高雄 ⇄ 東京 / 大阪",
+      "destCode": "tokyo",
+      "fromCode": "khh",
+      "airport": "小港 ⇄ 成田/羽田",
+      "price": "NT$ 6,100",
+      "meta": "南台灣出發 ｜ 便捷直飛",
+      "tag": "Popular",
+      "tagClass": "tag-popular",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/kaohsiung-to-tokyo/tickets-khh-tyo"
+    },
+    {
+      "city": "台北 ⇄ 名古屋",
+      "destCode": "nagoya",
+      "airport": "中部國際機場",
+      "price": "NT$ 5,450",
+      "meta": "直飛 2h45m ｜ 合掌村黑部立山",
+      "tag": "Heritage",
+      "tagClass": "tag-trending",
+      "img": "https://images.unsplash.com/photo-1528164344705-475426879c0d?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/taipei-to-nagoya/tickets-tpe-ngo"
+    },
+    {
+      "city": "台北 ⇄ 仙台",
+      "destCode": "sendai",
+      "airport": "仙台機場",
+      "price": "NT$ 6,880",
+      "meta": "直飛 3h10m ｜ 東北藏王銀山",
+      "tag": "Scenic",
+      "tagClass": "tag-trending",
+      "img": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/taipei-to-sendai/tickets-tpe-sdj"
+    }
+  ],
+  "thailand": [
+    {
+      "city": "曼谷 ⇄ 東京",
+      "destCode": "tokyo",
+      "airport": "成田/羽田 (BKK)",
+      "price": "฿ 5,290",
+      "meta": "直飛 5h50m ｜ 泰航/Zipair/酷航",
+      "tag": "Bestseller",
+      "tagClass": "tag-bestseller",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/bangkok-to-tokyo/tickets-bkk-tyo"
+    },
+    {
+      "city": "曼谷 ⇄ 大阪",
+      "destCode": "osaka",
+      "airport": "關西國際機場 (KIX)",
+      "price": "฿ 5,850",
+      "meta": "直飛 5h30m ｜ 關西美食購物",
+      "tag": "Popular",
+      "tagClass": "tag-popular",
+      "img": "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/bangkok-to-osaka/tickets-bkk-osa"
+    },
+    {
+      "city": "曼谷 ⇄ 札幌",
+      "destCode": "sapporo",
+      "airport": "新千歲機場 (CTS)",
+      "price": "฿ 8,900",
+      "meta": "直飛 6h30m ｜ 泰國避暑賞雪首選",
+      "tag": "Trending",
+      "tagClass": "tag-trending",
+      "img": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/bangkok-to-sapporo/tickets-bkk-spk"
+    },
+    {
+      "city": "曼谷 ⇄ 福岡",
+      "destCode": "fukuoka",
+      "airport": "福岡機場 (FUK)",
+      "price": "฿ 4,790",
+      "meta": "直飛 5h05m ｜ 九州最超值直達",
+      "tag": "Hot Deal",
+      "tagClass": "tag-bestseller",
+      "img": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/bangkok-to-fukuoka/tickets-bkk-fuk"
+    }
+  ],
+  "hk_sea": [
+    {
+      "city": "香港 ⇄ 東京",
+      "destCode": "tokyo",
+      "airport": "成田/羽田 (HKG)",
+      "price": "HK$ 1,280",
+      "meta": "直飛 4h10m ｜ 國泰/HK Express",
+      "tag": "Bestseller",
+      "tagClass": "tag-bestseller",
+      "img": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/hong-kong-to-tokyo/tickets-hkg-tyo"
+    },
+    {
+      "city": "香港 ⇄ 大阪",
+      "destCode": "osaka",
+      "airport": "關西國際機場 (KIX)",
+      "price": "HK$ 1,190",
+      "meta": "直飛 3h45m ｜ 關西直航搶購",
+      "tag": "Popular",
+      "tagClass": "tag-popular",
+      "img": "https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/hong-kong-to-osaka/tickets-hkg-osa"
+    },
+    {
+      "city": "新加坡 ⇄ 東京",
+      "destCode": "tokyo",
+      "airport": "樟宜 (SIN) ⇄ 成田",
+      "price": "S$ 290",
+      "meta": "直飛 6h45m ｜ 新航/酷航直達",
+      "tag": "Trending",
+      "tagClass": "tag-trending",
+      "img": "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/singapore-to-tokyo/tickets-sin-tyo"
+    },
+    {
+      "city": "吉隆坡 ⇄ 東京",
+      "destCode": "tokyo",
+      "airport": "KLIA ⇄ 羽田/成田",
+      "price": "RM 880",
+      "meta": "直飛 7h00m ｜ 亞航X超值航線",
+      "tag": "Best Value",
+      "tagClass": "tag-popular",
+      "img": "https://images.unsplash.com/photo-1570459027562-4a916cc6113f?auto=format&fit=crop&w=600&q=80",
+      "routePath": "/flights/kuala-lumpur-to-tokyo/tickets-kul-tyo"
+    }
+  ]
+}

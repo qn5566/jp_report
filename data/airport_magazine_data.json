@@ -1,0 +1,427 @@
+{
+  "regions": [
+    {
+      "id": "kanto",
+      "name": "關東 (東京圈)",
+      "airports": [
+        {
+          "code": "NRT",
+          "name": "成田國際機場 (NRT)",
+          "shortName": "東京成田",
+          "price": 5888,
+          "terminals": [
+            "T1",
+            "T2",
+            "T3 (LCC)"
+          ],
+          "image": "./images/fuji_snow_panorama.jpg",
+          "photoCaption": "成田第 1 / 第 2 航廈展望台・開闊停機坪與晴空遠眺",
+          "buy": "NewYork Perfect 起司、東京芭娜娜、小山園抹茶夾心酥、銀座千疋屋",
+          "food": "米其林推薦穴子鰻魚飯、九十九里拉麵、築地玉壽司",
+          "facilities": "24H 淋浴澡堂、nine hours 膠囊旅館、JAL 櫻花貴賓室",
+          "promoRoute": "台北 ⇄ 成田 (NRT)",
+          "promoDealUrl": "https://tw.trip.com/flights/airtickets-tpe-nrt?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275",
+          "transport": [
+            {
+              "title": "🚗 ToCoo! 日本租車",
+              "url": "japan_charter_rental.html",
+              "cls": "btn-tocoo-rental"
+            },
+            {
+              "title": "🚐 Klook 機場包車",
+              "url": "https://www.klook.com/zh-TW/airport-transfers/?aid=123436",
+              "cls": "btn-klook-charter"
+            },
+            {
+              "title": "🚌 利木津巴士直達市區",
+              "url": "https://www.google.com/maps/search/?api=1&query=成田機場利木津巴士",
+              "cls": ""
+            },
+            {
+              "title": "🚆 Skyliner 36分直達上野",
+              "url": "https://www.google.com/maps/search/?api=1&query=成田機場Skyliner",
+              "cls": ""
+            }
+          ]
+        },
+        {
+          "code": "HND",
+          "name": "東京羽田國際機場 (HND)",
+          "shortName": "東京羽田",
+          "price": 4980,
+          "terminals": [
+            "T1 (JAL)",
+            "T2 (ANA)",
+            "T3 (國際)"
+          ],
+          "image": "./images/flight_deals_hero_fuji.jpg",
+          "photoCaption": "羽田機場國際線 T3・江戶小路與富士山停機坪絕景",
+          "buy": "NEWYORK PERFECT CHEESE、虎屋小形羊羹、資生堂 Parlour 點心",
+          "food": "羽田黑毛和牛燒肉、つるとんたん巨無霸烏龍麵、伊藤園手作抹茶甜點",
+          "facilities": "24H 泉天空之湯露天溫泉＆富士景觀足湯、私人淋浴間",
+          "promoRoute": "台北 ⇄ 羽田 (HND)",
+          "promoDealUrl": "https://tw.trip.com/flights/airtickets-tpe-hnd?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275",
+          "transport": [
+            {
+              "title": "🚗 ToCoo! 日本租車",
+              "url": "japan_charter_rental.html",
+              "cls": "btn-tocoo-rental"
+            },
+            {
+              "title": "🚐 Klook 機場包車",
+              "url": "https://www.klook.com/zh-TW/airport-transfers/?aid=123436",
+              "cls": "btn-klook-charter"
+            },
+            {
+              "title": "🚝 單軌電車 13分直達濱松町",
+              "url": "https://www.google.com/maps/search/?api=1&query=羽田機場單軌電車",
+              "cls": ""
+            },
+            {
+              "title": "🚌 利木津巴士 (銀座/新宿)",
+              "url": "https://www.google.com/maps/search/?api=1&query=羽田機場利木津巴士",
+              "cls": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kansai",
+      "name": "關西 (京阪神)",
+      "airports": [
+        {
+          "code": "KIX",
+          "name": "關西國際機場 (KIX)",
+          "shortName": "大阪關西",
+          "price": 5280,
+          "terminals": [
+            "T1 (本館)",
+            "T2 (LCC樂桃)"
+          ],
+          "image": "./images/fuji_hakone_torii.jpg",
+          "photoCaption": "關西海上人工島機場・海天一線國際出發大廳",
+          "buy": "551 蓬萊現蒸肉包、呼吸巧克力、堂島蛋糕捲、小山進年輪蛋糕",
+          "food": "黑毛和牛鐵板燒、大阪名物章魚燒、京都本家第一旭拉麵",
+          "facilities": "KIX Refresh Space 淋浴休息區、24H 免稅中央旗艦街",
+          "promoRoute": "台北 ⇄ 關西 (KIX)",
+          "promoDealUrl": "https://tw.trip.com/flights/airtickets-tpe-kix?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275",
+          "transport": [
+            {
+              "title": "🚗 ToCoo! 關西自駕租車",
+              "url": "japan_charter_rental.html",
+              "cls": "btn-tocoo-rental"
+            },
+            {
+              "title": "🚐 Klook 京阪專車接送",
+              "url": "https://www.klook.com/zh-TW/airport-transfers/?aid=123436",
+              "cls": "btn-klook-charter"
+            },
+            {
+              "title": "🚆 HARUKA 特急 75分直達京都",
+              "url": "https://www.google.com/maps/search/?api=1&query=關西機場HARUKA特急",
+              "cls": ""
+            },
+            {
+              "title": "🚅 南海電鐵 Rapi:t 難波直達",
+              "url": "https://www.google.com/maps/search/?api=1&query=關西機場南海電鐵",
+              "cls": ""
+            }
+          ]
+        },
+        {
+          "code": "ITM",
+          "name": "大阪伊丹機場 (ITM)",
+          "shortName": "大阪伊丹",
+          "price": 4680,
+          "terminals": [
+            "國內線專用"
+          ],
+          "image": "./images/gion_shirakawa_day_sakura.jpg",
+          "photoCaption": "伊丹國內線頂樓觀景台・飛機起降超近距離震撼視野",
+          "buy": "喜八洲總本舖醬油糰子、點心面限定版、神戶風月堂法蘭酥",
+          "food": "道頓堀美津の大阪燒、極上牛舌定食、伊丹限定現打抹茶牛奶",
+          "facilities": "展望甲板足湯、舒適躺椅商務貴賓室、行李寄存櫃",
+          "promoRoute": "羽田 ⇄ 伊丹 (ITM)",
+          "promoDealUrl": "https://tw.trip.com/flights/airtickets-hnd-itm?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275",
+          "transport": [
+            {
+              "title": "🚗 ToCoo! 租車自駕",
+              "url": "japan_charter_rental.html",
+              "cls": "btn-tocoo-rental"
+            },
+            {
+              "title": "🚌 利木津巴士直達梅田/難波",
+              "url": "https://www.google.com/maps/search/?api=1&query=伊丹機場巴士",
+              "cls": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hokkaido",
+      "name": "北海道",
+      "airports": [
+        {
+          "code": "CTS",
+          "name": "新千歲機場 (CTS)",
+          "shortName": "札幌新千歲",
+          "price": 8890,
+          "terminals": [
+            "國內線 (美食天堂)",
+            "國際線"
+          ],
+          "image": "./images/niseko_yotei_slope.jpg",
+          "photoCaption": "新千歲國內線大廳・全日本公認最好吃好買的空港名所",
+          "buy": "六花亭酒漬葡萄餅乾、美冬千層酥、KINOTOYA 極上起司塔、薯條三兄弟",
+          "food": "北海道拉麵道場 10 大名店、十勝炭火豚丼、花畑牧場起司漢堡",
+          "facilities": "機場頂樓新千歲溫泉湯屋、多啦A夢空中空中樂園、Royce巧克力工坊",
+          "promoRoute": "台北 ⇄ 札幌新千歲 (CTS)",
+          "promoDealUrl": "https://tw.trip.com/flights/airtickets-tpe-cts?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275",
+          "transport": [
+            {
+              "title": "🚗 ToCoo! 雪地防滑租車",
+              "url": "japan_charter_rental.html",
+              "cls": "btn-tocoo-rental"
+            },
+            {
+              "title": "🚐 Klook 二世谷/雪場包車",
+              "url": "https://www.klook.com/zh-TW/airport-transfers/?aid=123436",
+              "cls": "btn-klook-charter"
+            },
+            {
+              "title": "🚆 JR 快速 Airport 號 37分抵札幌",
+              "url": "https://www.google.com/maps/search/?api=1&query=新千歲機場快速Airport",
+              "cls": ""
+            },
+            {
+              "title": "🚌 滑雪度假村直達巴士",
+              "url": "japan_ski_resorts.html",
+              "cls": ""
+            }
+          ]
+        },
+        {
+          "code": "HKD",
+          "name": "函館機場 (HKD)",
+          "shortName": "北海道函館",
+          "price": 7680,
+          "terminals": [
+            "國內/國際聯通館"
+          ],
+          "image": "./images/hirosaki_castle_night.jpg",
+          "photoCaption": "函館空港景觀大廳・離市區與湯之川溫泉僅 10 分鐘車程",
+          "buy": "Snaffle's 輕乳酪蛋糕、函館志濃里布丁、特級夕張哈密瓜果凍",
+          "food": "函館限定鹽味拉麵、極品海膽丼飯、現烤北海道扇貝",
+          "facilities": "商務休憩貴賓室、觀景大天台、免費全館高速 Wi-Fi",
+          "promoRoute": "台北 ⇄ 函館 (HKD)",
+          "promoDealUrl": "https://tw.trip.com/flights/airtickets-tpe-hkd?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275",
+          "transport": [
+            {
+              "title": "🚗 ToCoo! 北海道自駕租車",
+              "url": "japan_charter_rental.html",
+              "cls": "btn-tocoo-rental"
+            },
+            {
+              "title": "🚌 帝產巴士直達函館站與金森倉庫",
+              "url": "https://www.google.com/maps/search/?api=1&query=函館機場巴士",
+              "cls": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kyushu",
+      "name": "九州",
+      "airports": [
+        {
+          "code": "FUK",
+          "name": "福岡國際機場 (FUK)",
+          "shortName": "九州福岡",
+          "price": 4980,
+          "terminals": [
+            "國內線 (地鐵直達)",
+            "國際線"
+          ],
+          "image": "./images/danbo_ramen_okinawa.jpg",
+          "photoCaption": "全球距離市中心最近的核心國際機場之一・地鐵 5 分鐘抵博多",
+          "buy": "福砂屋長崎蛋糕、明太子仙貝 Menbei、博多通布丁夾心",
+          "food": "拉麵跑道豚骨拉麵（一幸舍）、博多牛腸鍋定食、稚加榮明太子",
+          "facilities": "國際線全景展望大台、Lounge Fukuoka 休憩室、免稅提貨專櫃",
+          "promoRoute": "台北 ⇄ 福岡 (FUK)",
+          "promoDealUrl": "https://tw.trip.com/flights/airtickets-tpe-fuk?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275",
+          "transport": [
+            {
+              "title": "🚗 ToCoo! 九州自駕租車",
+              "url": "japan_charter_rental.html",
+              "cls": "btn-tocoo-rental"
+            },
+            {
+              "title": "🚐 Klook 九州機場包車",
+              "url": "https://www.klook.com/zh-TW/airport-transfers/?aid=123436",
+              "cls": "btn-klook-charter"
+            },
+            {
+              "title": "🚇 市營地下鐵 5分直達博多站",
+              "url": "https://www.google.com/maps/search/?api=1&query=福岡機場地下鐵",
+              "cls": ""
+            },
+            {
+              "title": "🚌 西鐵特急巴士 (太宰府/由布院)",
+              "url": "https://www.google.com/maps/search/?api=1&query=福岡機場西鐵巴士",
+              "cls": ""
+            }
+          ]
+        },
+        {
+          "code": "KMJ",
+          "name": "阿蘇熊本機場 (KMJ)",
+          "shortName": "九州熊本",
+          "price": 5380,
+          "terminals": [
+            "全新木質建築新航廈"
+          ],
+          "image": "./images/kumano_ancient_trail_sunlight.jpg",
+          "photoCaption": "熊本全新木造航廈・充滿小國杉和風香氣的現代藝術空間",
+          "buy": "陣太鼓紅豆糕、熊本熊限定點心禮盒、阿蘇小國牛奶夾心餅",
+          "food": "熊本黑亭拉麵、赤牛和牛漢堡定食、馬肉刺身精緻料理",
+          "facilities": "入關後大型美食購物大街、露天飛機展望台、獨立充電區",
+          "promoRoute": "台北 ⇄ 熊本 (KMJ)",
+          "promoDealUrl": "https://tw.trip.com/flights/airtickets-tpe-kmj?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275",
+          "transport": [
+            {
+              "title": "🚗 ToCoo! 熊本租車",
+              "url": "japan_charter_rental.html",
+              "cls": "btn-tocoo-rental"
+            },
+            {
+              "title": "🚌 機場特快巴士 直達熊本櫻町",
+              "url": "https://www.google.com/maps/search/?api=1&query=熊本機場巴士",
+              "cls": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "okinawa",
+      "name": "沖繩・離島",
+      "airports": [
+        {
+          "code": "OKA",
+          "name": "那霸國際機場 (OKA)",
+          "shortName": "沖繩那霸",
+          "price": 4120,
+          "terminals": [
+            "國內/國際聯通館 (逛街必排)"
+          ],
+          "image": "./images/okinawa_hero_banner.jpg",
+          "photoCaption": "那霸機場聯通館・充滿熱帶島嶼度假悠閒氣息的空之玄關",
+          "buy": "御菓子御殿紅芋塔、南風堂雪鹽金楚糕、石垣牛仙貝、黑糖年輪蛋糕",
+          "food": "琉球沖繩麵、A&W 艾德熊美式漢堡薯圈、波上宮旁名物豬肉蛋飯糰",
+          "facilities": "草花木果島嶼香氛休息室、免費手機充電站、戶外看海觀景台",
+          "promoRoute": "台北 ⇄ 沖繩那霸 (OKA)",
+          "promoDealUrl": "https://tw.trip.com/flights/airtickets-tpe-oka?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275",
+          "transport": [
+            {
+              "title": "🚗 ToCoo! 沖繩全島租車",
+              "url": "japan_charter_rental.html",
+              "cls": "btn-tocoo-rental"
+            },
+            {
+              "title": "🚐 Klook 沖繩包車自由行",
+              "url": "https://www.klook.com/zh-TW/airport-transfers/?aid=123436",
+              "cls": "btn-klook-charter"
+            },
+            {
+              "title": "🚝 單軌電車 Yui Rail 直達國際通",
+              "url": "https://www.google.com/maps/search/?api=1&query=那霸機場單軌電車",
+              "cls": ""
+            },
+            {
+              "title": "🚌 機場利木津巴士直達恩納海邊飯店",
+              "url": "https://www.google.com/maps/search/?api=1&query=沖繩機場利木津巴士",
+              "cls": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chubu_hokuriku",
+      "name": "中部・北陸",
+      "airports": [
+        {
+          "code": "NGO",
+          "name": "中部國際機場 (NGO)",
+          "shortName": "名古屋中部",
+          "price": 5450,
+          "terminals": [
+            "T1 (本館)",
+            "T2 (LCC)"
+          ],
+          "image": "./images/kumano_shinto_shrine.jpg",
+          "photoCaption": "中部國際機場・擁有波音 787 飛機主題公園 FLIGHT OF DREAMS",
+          "buy": "青柳總本家青蛙蛋糕、坂角總本舖海老仙貝、名古屋交趾雞蛋糕",
+          "food": "矢場町味噌炸豬排、世界山將炸雞翅、鰻魚三吃備長名店",
+          "facilities": "全日本第一座看飛機泡湯展望風呂「風之湯」、FLIGHT OF DREAMS",
+          "promoRoute": "台北 ⇄ 名古屋中部 (NGO)",
+          "promoDealUrl": "https://tw.trip.com/flights/airtickets-tpe-ngo?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275",
+          "transport": [
+            {
+              "title": "🚗 ToCoo! 中部租車自駕",
+              "url": "japan_charter_rental.html",
+              "cls": "btn-tocoo-rental"
+            },
+            {
+              "title": "🚐 Klook 合掌村/立山黑部包車",
+              "url": "https://www.klook.com/zh-TW/airport-transfers/?aid=123436",
+              "cls": "btn-klook-charter"
+            },
+            {
+              "title": "🚅 名鐵特急 μ-SKY 28分直達名古屋",
+              "url": "https://www.google.com/maps/search/?api=1&query=中部機場名鐵特急",
+              "cls": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tohoku",
+      "name": "東北",
+      "airports": [
+        {
+          "code": "SDJ",
+          "name": "仙台國際機場 (SDJ)",
+          "shortName": "東北仙台",
+          "price": 6880,
+          "terminals": [
+            "東北樞紐聯通航廈"
+          ],
+          "image": "./images/fuji_summit_torii.jpg",
+          "photoCaption": "仙台機場・連結藏王樹冰與松島海岸之東北玄關口",
+          "buy": "萩之月卡士達蛋糕、喜久福毛豆生奶油大福、三陸海苔仙貝",
+          "food": "善治郎碳烤極厚牛舌、毛豆奶昔、三陸直送海鮮生魚片丼",
+          "facilities": "商務辦公空間、免費毛豆霜淇淋休憩點、屋頂展望席",
+          "promoRoute": "台北 ⇄ 仙台 (SDJ)",
+          "promoDealUrl": "https://tw.trip.com/flights/airtickets-tpe-sdj?Allianceid=9507030&SID=325761227&trip_sub1=%E6%97%A5%E6%9C%AC%E5%A0%B1%E5%A0%B1&trip_sub3=D20272275",
+          "transport": [
+            {
+              "title": "🚗 ToCoo! 東北自駕租車",
+              "url": "japan_charter_rental.html",
+              "cls": "btn-tocoo-rental"
+            },
+            {
+              "title": "🚆 仙台機場 Access 線 17分抵仙台站",
+              "url": "https://www.google.com/maps/search/?api=1&query=仙台機場鐵路",
+              "cls": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

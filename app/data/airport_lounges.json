@@ -1,0 +1,171 @@
+{
+  "HND": [
+    {
+      "name": "TIAT Lounge（羽田國際線貴賓室）",
+      "tag": "T3 國際線",
+      "tagCls": "lounge-tag-gold",
+      "loc": "第 3 航廈 4F 出境管制區（114 號登機門旁）",
+      "facilities": "獨立淋浴間・熱食咖哩・生啤酒機・工作艙",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/tokyo/tokyo-international-airport-haneda-airport-77073/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/activity/170909-tokyo-haneda-international-airport-lounge-service-by-airport-lounge-south/?aid=123436&utm_medium=affiliate-alwayson"
+    },
+    {
+      "name": "SKY LOUNGE / SOUTH",
+      "tag": "24H 營運",
+      "tagCls": "lounge-tag-blue",
+      "loc": "第 3 航廈 4F 登機門 114 旁 / 3F 南側",
+      "facilities": "景觀沙發座・冷熱飲暢飲・全席充電座",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/tokyo/tokyo-international-airport-haneda-airport-77073/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/activity/170909-tokyo-haneda-international-airport-lounge-service-by-airport-lounge-south/?aid=123436&utm_medium=affiliate-alwayson"
+    },
+    {
+      "name": "POWER LOUNGE PREMIUM",
+      "tag": "T2 國際線",
+      "tagCls": "lounge-tag-gold",
+      "loc": "第 2 航廈 國際線 3F 出境管制區",
+      "facilities": "現做便當・精緻甜品・乾濕分離淋浴",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/tokyo/tokyo-international-airport-haneda-airport-77073/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/activity/170909-tokyo-haneda-international-airport-lounge-service-by-airport-lounge-south/?aid=123436&utm_medium=affiliate-alwayson"
+    }
+  ],
+  "NRT": [
+    {
+      "name": "IASS Superior Lounge 希和 -NOA-",
+      "tag": "T1 和風",
+      "tagCls": "lounge-tag-gold",
+      "loc": "第 1 航廈 3F 出境管制區（26 號門旁）",
+      "facilities": "現煮抹茶・生啤暢飲・日式蕎麥麵熟食",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/narita-359/tourist-attractions/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/activity/36113-narita-international-airport-lounge-services/?aid=123436&utm_medium=affiliate-alwayson"
+    },
+    {
+      "name": "IASS Superior Lounge 虚空 -KoCoo-",
+      "tag": "T2 動漫風",
+      "tagCls": "lounge-tag-blue",
+      "loc": "第 2 航廈 4F 出境管制區（71 號門對面）",
+      "facilities": "現點日式拉麵・生啤與清酒・靜音睡眠椅",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/narita-359/tourist-attractions/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/activity/36113-narita-international-airport-lounge-services/?aid=123436&utm_medium=affiliate-alwayson"
+    },
+    {
+      "name": "IASS Executive Lounge 1 & 2",
+      "tag": "管制區外",
+      "tagCls": "lounge-tag-blue",
+      "loc": "第 1 航廈 5F / 第 2 航廈 4F（管制區外）",
+      "facilities": "免費迎賓酒 1 杯・冷熱軟飲・充電座位",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/narita-359/tourist-attractions/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/activity/36113-narita-international-airport-lounge-services/?aid=123436&utm_medium=affiliate-alwayson"
+    }
+  ],
+  "KIX": [
+    {
+      "name": "KIX Lounge NODOKA",
+      "tag": "24H 露營風",
+      "tagCls": "lounge-tag-gold",
+      "loc": "AEROPLAZA 2F（T1/T2 聯通道旁）",
+      "facilities": "獨立淋浴間・包廂隔間・冷熱飲零食暢飲",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/osaka/kansai-international-airport-77074/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/search/result/?query=%E9%97%9C%E8%A5%BF%E6%A9%9F%E5%A0%B4%E8%B2%B4%E8%B3%93%E5%AE%A4&aid=123436&utm_medium=affiliate-alwayson"
+    },
+    {
+      "name": "Lounge KANSAI",
+      "tag": "國際出發",
+      "tagCls": "lounge-tag-blue",
+      "loc": "第 1 航廈 國際線出境管制區 2F",
+      "facilities": "關西熱食熟食・生啤酒機・景觀休息座",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/osaka/kansai-international-airport-77074/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/search/result/?query=%E9%97%9C%E8%A5%BF%E6%A9%9F%E5%A0%B4%E8%B2%B4%E8%B3%93%E5%AE%A4&aid=123436&utm_medium=affiliate-alwayson"
+    },
+    {
+      "name": "Card Lounge 金剛 / 六甲",
+      "tag": "快捷小憩",
+      "tagCls": "lounge-tag-blue",
+      "loc": "第 1 航廈 北側 / 南側 登機候機區",
+      "facilities": "沙發充電座・研磨咖啡・免費小茶點",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/osaka/kansai-international-airport-77074/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/search/result/?query=%E9%97%9C%E8%A5%BF%E6%A9%9F%E5%A0%B4%E8%B2%B4%E8%B3%93%E5%AE%A4&aid=123436&utm_medium=affiliate-alwayson"
+    }
+  ],
+  "CTS": [
+    {
+      "name": "Super Lounge",
+      "tag": "國內全景",
+      "tagCls": "lounge-tag-gold",
+      "loc": "國內線航廈 3F 出境大廳南側",
+      "facilities": "全景跑道窗景・十勝鮮奶暢飲・商務辦公座",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/chitose/new-chitose-airport-77068/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/search/result/?query=%E6%96%B0%E5%8D%83%E6%AD%B2%E6%A9%9F%E5%A0%B4%E8%B2%B4%E8%B3%93%E5%AE%A4&aid=123436&utm_medium=affiliate-alwayson"
+    },
+    {
+      "name": "North Lounge",
+      "tag": "國際出發",
+      "tagCls": "lounge-tag-blue",
+      "loc": "國際線航廈 4F 出境管制區內",
+      "facilities": "安靜沙發區・冷熱軟飲・航班動態幕",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/chitose/new-chitose-airport-77068/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/search/result/?query=%E6%96%B0%E5%8D%83%E6%AD%B2%E6%A9%9F%E5%A0%B4%E8%B2%B4%E8%B3%93%E5%AE%A4&aid=123436&utm_medium=affiliate-alwayson"
+    }
+  ],
+  "FUK": [
+    {
+      "name": "Lounge Fukuoka",
+      "tag": "國際出發",
+      "tagCls": "lounge-tag-gold",
+      "loc": "國際線航廈 3F 管制區（56 號門旁）",
+      "facilities": "博多拉麵/咖哩熱食・生啤機・地酒燒酎",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/fukuoka/fukuoka-airport-77071/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/search/result/?query=%E7%A6%8F%E5%B2%A1%E6%A9%9F%E5%A0%B4%E8%B2%B4%E8%B3%93%E5%AE%A4&aid=123436&utm_medium=affiliate-alwayson"
+    },
+    {
+      "name": "Lounge TIME",
+      "tag": "啤酒小憩",
+      "tagCls": "lounge-tag-blue",
+      "loc": "國際線 3F 出發大廳 / 國內線 1F/2F",
+      "facilities": "免費啤酒1罐或飲料暢飲二選一・充電席",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/fukuoka/fukuoka-airport-77071/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/search/result/?query=%E7%A6%8F%E5%B2%A1%E6%A9%9F%E5%A0%B4%E8%B2%B4%E8%B3%93%E5%AE%A4&aid=123436&utm_medium=affiliate-alwayson"
+    }
+  ],
+  "OKA": [
+    {
+      "name": "Lounge 華 ～hana～",
+      "tag": "附淋浴間",
+      "tagCls": "lounge-tag-gold",
+      "loc": "航廈 1F 入境大廳南側（管制區外）",
+      "facilities": "個人獨立淋浴間・香檬汁/芒果汁暢飲・沙發充電",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/naha/naha-airport-77072/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/search/result/?query=%E9%82%A3%E9%9C%B8%E6%A9%9F%E5%A0%B4%E8%B2%B4%E8%B3%93%E5%AE%A4&aid=123436&utm_medium=affiliate-alwayson"
+    }
+  ],
+  "NGO": [
+    {
+      "name": "Centrair Global Lounge",
+      "tag": "國際出發",
+      "tagCls": "lounge-tag-gold",
+      "loc": "第 1 航廈 國際線出境管制區 2F",
+      "facilities": "名古屋熱食・生啤酒機・清酒・淋浴間",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/tokoname/chubu-centrair-international-airport-77075/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/search/result/?query=%E4%B8%AD%E9%83%A8%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4+%E8%B2%B4%E8%B3%93%E5%AE%A4&aid=123436&utm_medium=affiliate-alwayson"
+    },
+    {
+      "name": "Premium Lounge Centrair",
+      "tag": "蝦仙貝生啤",
+      "tagCls": "lounge-tag-blue",
+      "loc": "第 1 航廈 3F 出發大廳（管制區外）",
+      "facilities": "名古屋蝦餅零嘴・生啤酒自由暢飲・辦公位",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/tokoname/chubu-centrair-international-airport-77075/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/search/result/?query=%E4%B8%AD%E9%83%A8%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4+%E8%B2%B4%E8%B3%93%E5%AE%A4&aid=123436&utm_medium=affiliate-alwayson"
+    }
+  ],
+  "SDJ": [
+    {
+      "name": "Business Lounge East Side",
+      "tag": "靜音商務",
+      "tagCls": "lounge-tag-gold",
+      "loc": "航廈 3F 餐廳區旁（管制區外）",
+      "facilities": "獨立辦公包廂・茶飲咖啡・宮城毛豆點心",
+      "tripLink": "https://tw.trip.com/travel-guide/attraction/natori/sendai-airport-10524225/?Allianceid=9507030&SID=325761227&trip_sub3=D20272275",
+      "klookLink": "https://www.klook.com/zh-TW/search/result/?query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4%E8%B2%B4%E8%B3%93%E5%AE%A4&aid=123436&utm_medium=affiliate-alwayson"
+    }
+  ]
+}
