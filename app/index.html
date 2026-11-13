@@ -16657,155 +16657,7 @@
     }
 
     let currentLang = 'zh-TW';
-    const I18N = {
-      'zh-TW': {
-        brandTitle: '日旅報報',
-        brandTag: '日本觀光情報',
-        brandSub: '花期前線・夏夜花火・雪況觀測',
-        tripBtn: 'Trip 查機票',
-        tab_spots: '全部景點',
-        tab_sakura: '櫻花盛典',
-        tab_hanabi: '夏夜花火',
-        tab_snow: '極上粉雪',
-        tab_momiji: '秋楓見頃',
-        tab_ginkgo: '金黃銀杏',
-        tab_train: '鐵道列車',
-        tab_camp: '富士露營',
-        tab_acg: '動漫快閃',
-        tab_sports: '日職馬拉松',
-        feedTitle: '全日本花季即時分享，大家踴躍分享吧',
-        uploadBtn: '我要上傳最新照片 ➔',
-        reporterBadge: '特派員報導',
-        btnDefaultActivity: '🎟️ 預定行程',
-        btnBooking: '🏨 訂房去'
-      },
-      'zh-HK': {
-        brandTitle: '日旅報報',
-        brandTag: '日本觀光情報',
-        brandSub: '花期前線・夏夜花火・雪況觀測',
-        tripBtn: 'Trip 查機票',
-        tab_spots: '全部景點',
-        tab_sakura: '櫻花盛典',
-        tab_hanabi: '夏夜花火',
-        tab_snow: '極上粉雪',
-        tab_momiji: '秋楓見頃',
-        tab_ginkgo: '金黃銀杏',
-        tab_train: '鐵道列車',
-        tab_camp: '富士露營',
-        tab_acg: '動漫快閃',
-        tab_sports: '日職馬拉松',
-        feedTitle: '全日本花季即時分享，大家踴躍分享吧',
-        uploadBtn: '我要上傳最新相片 ➔',
-        reporterBadge: '特派員專欄',
-        btnDefaultActivity: '🎟️ 預訂行程',
-        btnBooking: '🏨 預訂酒店'
-      },
-      'en': {
-        brandTitle: 'Tabi Report',
-        brandTag: 'Japan Travel Guide',
-        brandSub: 'Cherry Blossoms · Fireworks · Ski Conditions',
-        tripBtn: 'Trip Flights',
-        tab_spots: 'All Spots',
-        tab_sakura: 'Cherry Blossoms',
-        tab_hanabi: 'Fireworks',
-        tab_snow: 'Ski & Powder',
-        tab_momiji: 'Autumn Foliage',
-        tab_ginkgo: 'Golden Ginkgo',
-        tab_train: 'Scenic Trains',
-        tab_camp: 'Mt Fuji Camp',
-        tab_acg: 'Anime & Manga',
-        tab_sports: 'NPB Baseball',
-        feedTitle: 'Live Spot Community Reports',
-        uploadBtn: 'Share Latest Photo ➔',
-        reporterBadge: 'Verified Report',
-        btnDefaultActivity: '🎟️ Book Tour',
-        btnBooking: '🏨 Book Hotel'
-      },
-      'ko': {
-        brandTitle: '일본여행 뉴스',
-        brandTag: '일본 공식 관광정보',
-        brandSub: '벚꽃 개화선 · 불꽃축제 · 실시간 적설량',
-        tripBtn: 'Trip 항공권',
-        tab_spots: '전체 명소',
-        tab_sakura: '벚꽃 축제',
-        tab_hanabi: '여름 불꽃놀이',
-        tab_snow: '극상 파우더스노',
-        tab_momiji: '가을 단풍',
-        tab_ginkgo: '황금 은행나무',
-        tab_train: '관광 열차',
-        tab_camp: '후지산 캠핑',
-        tab_acg: '애니메이션',
-        tab_sports: '프로야구 직관',
-        feedTitle: '실시간 여행자 현장 리포트',
-        uploadBtn: '최신 사진 업로드 ➔',
-        reporterBadge: '특파원 리포트',
-        btnDefaultActivity: '🎟️ 투어 예약',
-        btnBooking: '🏨 호텔 예약'
-      },
-      'zh-CN': {
-        brandTitle: '日旅报报',
-        brandTag: '日本观光情报',
-        brandSub: '花期前线・夏夜花火・雪况观测',
-        tripBtn: 'Trip 查机票',
-        tab_spots: '全部景点',
-        tab_sakura: '樱花盛典',
-        tab_hanabi: '夏夜花火',
-        tab_snow: '极上粉雪',
-        tab_momiji: '秋枫见顷',
-        tab_ginkgo: '金黄银杏',
-        tab_train: '铁道列车',
-        tab_camp: '富士露营',
-        tab_acg: '动漫快闪',
-        tab_sports: '日职棒巡礼',
-        feedTitle: '全日本花季实时分享，大家踊跃分享吧',
-        uploadBtn: '我要上传最新照片 ➔',
-        reporterBadge: '特派员报道',
-        btnDefaultActivity: '🎟️ 预定行程',
-        btnBooking: '🏨 订房去'
-      },
-      'th': {
-        brandTitle: 'เที่ยวญี่ปุ่นรายงาน',
-        brandTag: 'ข้อมูลท่องเที่ยวญี่ปุ่น',
-        brandSub: 'ซากุระบาน · ดอกไม้ไฟฤดูร้อน · รายงานหิมะ',
-        tripBtn: 'Trip ค้นหาเที่ยวบิน',
-        tab_spots: 'สถานที่ทั้งหมด',
-        tab_sakura: 'ซากุระบาน',
-        tab_hanabi: 'เทศกาลดอกไม้ไฟ',
-        tab_snow: 'สกีพาวเดอร์สโนว์',
-        tab_momiji: 'ใบไม้เปลี่ยนสี',
-        tab_ginkgo: 'ใบแปะก๊วยสีทอง',
-        tab_train: 'รถไฟชมวิว',
-        tab_camp: 'แคมป์ฟูจิ',
-        tab_acg: 'อนิเมะ',
-        tab_sports: 'เบสบอลญี่ปุ่น',
-        feedTitle: 'รายงานสดจากสถานที่จริง',
-        uploadBtn: 'อัปโหลดภาพล่าสุด ➔',
-        reporterBadge: 'รายงานพิเศษ',
-        btnDefaultActivity: '🎟️ จองทัวร์',
-        btnBooking: '🏨 จองโรงแรม'
-      },
-      'ja': {
-        brandTitle: '旅報報',
-        brandTag: '日本公式観光情報',
-        brandSub: '開花前線・夏夜の花火・積雪ゲレンデ観測',
-        tripBtn: 'Trip 航空券検索',
-        tab_spots: 'すべての名所',
-        tab_sakura: '桜の祭典',
-        tab_hanabi: '夏夜の花火',
-        tab_snow: '極上パウダースノー',
-        tab_momiji: '秋の紅葉見頃',
-        tab_ginkgo: '黄金イチョウ並木',
-        tab_train: '観光列車SL',
-        tab_camp: '富士山キャンプ',
-        tab_acg: 'アニメ巡礼',
-        tab_sports: 'プロ野球観戦',
-        feedTitle: '旅人のリアルタイム現場投稿',
-        uploadBtn: '最新の写真を投稿 ➔',
-        reporterBadge: '特派員レポート',
-        btnDefaultActivity: '🎟️ 体験ツアー予約',
-        btnBooking: '🏨 宿泊予約'
-      }
-    };
+    let I18N = {};
 
     function toggleLangDropdown(e) {
       if (e) e.stopPropagation();
@@ -16910,6 +16762,7 @@
       currentLang = lang;
 
       const t = I18N[lang] || I18N['zh-TW'];
+      if (!t) return;
       const brandTitleZh = document.getElementById('brandTitleZh');
       if (brandTitleZh) brandTitleZh.innerText = t.brandTitle;
       const brandTitleEn = document.getElementById('brandTitleEn');
@@ -16961,7 +16814,7 @@
       container.innerHTML = '';
 
       // 更新實況看板標題、圖示與提示字樣，與當前季節精準連動
-      const t = I18N[currentLang] || I18N['zh-TW'];
+      const t = I18N[currentLang] || I18N['zh-TW'] || {};
       const iconEl = document.getElementById('feedTitleIcon');
       const titleEl = document.getElementById('feedTitleText');
       const hintEl = document.getElementById('feedSubHint');
@@ -18566,7 +18419,7 @@
       COMMUNITY_FEEDS.unshift(newFeed);
       renderCommunityFeeds();
       closeUploadModal();
-      alert(`感謝你的熱心回報！已即刻發佈至【${I18N[currentLang][`feed_${currentSeason}_title`] || '現場實況看板'}】，幫助更多旅人掌握最新情報！`);
+      alert(`感謝你的熱心回報！已即刻發佈至【${I18N[currentLang]?.[`feed_${currentSeason}_title`] || '現場實況看板'}】，幫助更多旅人掌握最新情報！`);
     }
 
     function openReadingSheet(id) {
@@ -19834,7 +19687,8 @@
           fetch('data/hubs.json', { cache: 'no-store' }).then(r => r.json()),
           fetch('data/season_upload_config.json', { cache: 'no-store' }).then(r => r.json()),
           fetch('data/season_filters_config.json', { cache: 'no-store' }).then(r => r.json()),
-          fetch('data/spot_geo_coords.json', { cache: 'no-store' }).then(r => r.json())
+          fetch('data/spot_geo_coords.json', { cache: 'no-store' }).then(r => r.json()),
+          fetch('data/i18n.json', { cache: 'no-store' }).then(r => r.json())
         ]).then(function (data) {
           SPOTS_DATABASE = data[0];
           TRAINS_DATABASE = data[1];
@@ -19843,6 +19697,7 @@
           SEASON_UPLOAD_CONFIG = data[4];
           SEASON_FILTERS_CONFIG = data[5];
           SPOT_GEO_COORDS = data[6];
+          I18N = data[7];
         });
       }
       return _tabiDataPromise;
@@ -19850,6 +19705,7 @@
 
     loadAllData().then(function () {
       renderDynamicRegionBar();
+      setLanguage(currentLang);
       renderCards();
       renderCommunityFeeds();
       initCanvasFX();

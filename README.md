@@ -11,10 +11,9 @@
 
 ## 一、 如何立即打開預覽 App？
 
-不需要安裝任何伺服器，也不用先買網址！
-直接在 Finder 雙擊打開以下檔案即可在瀏覽器體驗完整互動地圖與導購抽屜：
+在專案根目錄執行 `python3 -m http.server 8000 --directory app`，再開啟 `http://localhost:8000/`。頁面會讀取 `app/data/` 的 JSON，因此直接雙擊 HTML 用 `file://` 開啟時，資料可能無法顯示。
 
-- **App 主程式入口**：`japan-go-app/app/index.html`
+資料檔案與欄位請參考 [網站資料維護指南](DATA_GUIDE.md)。
 
 ---
 
