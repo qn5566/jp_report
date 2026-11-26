@@ -1,72 +1,72 @@
 {
-  "updated_at": "2026-11-25 12:51:31",
+  "updated_at": "2026-11-26 12:17:26",
   "snow_king": {
-    "name": "二世谷聯合",
-    "stat": "24h 新雪 +5cm"
+    "name": "喜樂樂",
+    "stat": "24h 新雪 +7cm"
   },
   "depth_king": {
-    "name": "藏王溫泉",
-    "stat": "預估積雪 18cm"
+    "name": "喜樂樂",
+    "stat": "預估積雪 30cm"
   },
   "sunny_pick": {
-    "name": "喜樂樂",
-    "stat": "晴天率 96%"
+    "name": "野澤溫泉",
+    "stat": "晴天率 91%"
   },
   "resorts": {
     "二世谷聯合": {
-      "snowfall_cm": 5,
-      "depth_cm": 7,
-      "sunny_pct": 95
+      "snowfall_cm": 0,
+      "depth_cm": 14,
+      "sunny_pct": 55
     },
     "留壽都": {
-      "snowfall_cm": 3,
-      "depth_cm": 3,
-      "sunny_pct": 95
+      "snowfall_cm": 4,
+      "depth_cm": 11,
+      "sunny_pct": 64
     },
     "喜樂樂": {
-      "snowfall_cm": 2,
-      "depth_cm": 15,
-      "sunny_pct": 96
+      "snowfall_cm": 7,
+      "depth_cm": 30,
+      "sunny_pct": 59
     },
     "富良野": {
-      "snowfall_cm": 2,
-      "depth_cm": 2,
-      "sunny_pct": 92
+      "snowfall_cm": 7,
+      "depth_cm": 7,
+      "sunny_pct": 23
     },
     "星野TOMAMU": {
-      "snowfall_cm": 3,
-      "depth_cm": 6,
-      "sunny_pct": 85
+      "snowfall_cm": 2,
+      "depth_cm": 8,
+      "sunny_pct": 7
     },
     "白馬八方尾根": {
-      "snowfall_cm": 1,
-      "depth_cm": 15,
-      "sunny_pct": 78
+      "snowfall_cm": 0,
+      "depth_cm": 10,
+      "sunny_pct": 90
     },
     "野澤溫泉": {
       "snowfall_cm": 0,
-      "depth_cm": 1,
-      "sunny_pct": 14
+      "depth_cm": 0,
+      "sunny_pct": 91
     },
     "志賀高原": {
-      "snowfall_cm": 4,
-      "depth_cm": 4,
-      "sunny_pct": 77
+      "snowfall_cm": 0,
+      "depth_cm": 3,
+      "sunny_pct": 90
     },
     "苗場滑雪場": {
-      "snowfall_cm": 3,
-      "depth_cm": 2,
-      "sunny_pct": 7
+      "snowfall_cm": 0,
+      "depth_cm": 1,
+      "sunny_pct": 88
     },
     "GALA湯澤": {
       "snowfall_cm": 0,
-      "depth_cm": 4,
-      "sunny_pct": 19
+      "depth_cm": 0,
+      "sunny_pct": 72
     },
     "藏王溫泉": {
-      "snowfall_cm": 4,
-      "depth_cm": 18,
-      "sunny_pct": 33
+      "snowfall_cm": 0,
+      "depth_cm": 21,
+      "sunny_pct": 21
     },
     "富士天神山": {
       "snowfall_cm": 0,
