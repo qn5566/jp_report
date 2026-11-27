@@ -1,47 +1,47 @@
 {
-  "updated_at": "2026-11-26 12:17:26",
+  "updated_at": "2026-11-27 12:21:31",
   "snow_king": {
-    "name": "喜樂樂",
-    "stat": "24h 新雪 +7cm"
+    "name": "二世谷聯合",
+    "stat": "今日無明顯降雪"
   },
   "depth_king": {
     "name": "喜樂樂",
-    "stat": "預估積雪 30cm"
+    "stat": "預估積雪 23cm"
   },
   "sunny_pick": {
-    "name": "野澤溫泉",
-    "stat": "晴天率 91%"
+    "name": "藏王溫泉",
+    "stat": "晴天率 92%"
   },
   "resorts": {
     "二世谷聯合": {
       "snowfall_cm": 0,
-      "depth_cm": 14,
-      "sunny_pct": 55
-    },
-    "留壽都": {
-      "snowfall_cm": 4,
-      "depth_cm": 11,
+      "depth_cm": 3,
       "sunny_pct": 64
     },
+    "留壽都": {
+      "snowfall_cm": 0,
+      "depth_cm": 1,
+      "sunny_pct": 17
+    },
     "喜樂樂": {
-      "snowfall_cm": 7,
-      "depth_cm": 30,
-      "sunny_pct": 59
+      "snowfall_cm": 0,
+      "depth_cm": 23,
+      "sunny_pct": 43
     },
     "富良野": {
-      "snowfall_cm": 7,
-      "depth_cm": 7,
-      "sunny_pct": 23
+      "snowfall_cm": 0,
+      "depth_cm": 1,
+      "sunny_pct": 41
     },
     "星野TOMAMU": {
-      "snowfall_cm": 2,
+      "snowfall_cm": 0,
       "depth_cm": 8,
-      "sunny_pct": 7
+      "sunny_pct": 13
     },
     "白馬八方尾根": {
       "snowfall_cm": 0,
-      "depth_cm": 10,
-      "sunny_pct": 90
+      "depth_cm": 6,
+      "sunny_pct": 89
     },
     "野澤溫泉": {
       "snowfall_cm": 0,
@@ -51,27 +51,27 @@
     "志賀高原": {
       "snowfall_cm": 0,
       "depth_cm": 3,
-      "sunny_pct": 90
+      "sunny_pct": 91
     },
     "苗場滑雪場": {
       "snowfall_cm": 0,
-      "depth_cm": 1,
-      "sunny_pct": 88
+      "depth_cm": 0,
+      "sunny_pct": 91
     },
     "GALA湯澤": {
       "snowfall_cm": 0,
       "depth_cm": 0,
-      "sunny_pct": 72
+      "sunny_pct": 91
     },
     "藏王溫泉": {
       "snowfall_cm": 0,
-      "depth_cm": 21,
-      "sunny_pct": 21
+      "depth_cm": 11,
+      "sunny_pct": 92
     },
     "富士天神山": {
       "snowfall_cm": 0,
       "depth_cm": 0,
-      "sunny_pct": 89
+      "sunny_pct": 90
     }
   }
 }
